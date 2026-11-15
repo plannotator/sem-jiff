@@ -1,0 +1,1024 @@
+[
+  {
+    "id": "cs-name-method-move",
+    "area": "naming",
+    "language": "csharp",
+    "title": "Method moved to the end of its class is named by the method",
+    "expected": "Total moved (unchanged) below Clear; the Sem tab names it \"Total\", not the class \"Order\".",
+    "status": "ok",
+    "old": "namespace Shop;\n\npublic class Order\n{\n    private readonly List<int> _lines = new();\n\n    public int Total()\n    {\n        var sum = 0;\n        foreach (var line in _lines)\n            sum += line;\n        return sum;\n    }\n\n    public void Add(int amount)\n    {\n        _lines.Add(amount);\n    }\n\n    public void Clear()\n    {\n        _lines.Clear();\n    }\n}\n",
+    "new": "namespace Shop;\n\npublic class Order\n{\n    private readonly List<int> _lines = new();\n\n    public void Add(int amount)\n    {\n        _lines.Add(amount);\n    }\n\n    public void Clear()\n    {\n        _lines.Clear();\n    }\n\n    public int Total()\n    {\n        var sum = 0;\n        foreach (var line in _lines)\n            sum += line;\n        return sum;\n    }\n}\n",
+    "ops": [
+      {
+        "type": "moved",
+        "old": [
+          [
+            7,
+            13
+          ]
+        ],
+        "new": [
+          [
+            17,
+            23
+          ]
+        ]
+      }
+    ],
+    "never": [
+      {
+        "type": "movedWithEdit"
+      },
+      {
+        "type": "renamed"
+      }
+    ],
+    "names": [
+      {
+        "type": "moved",
+        "name": "Total",
+        "not": [
+          "Order",
+          "Shop"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "cs-name-nested-move",
+    "area": "naming",
+    "language": "csharp",
+    "title": "Method moved inside a nested class is named by the method",
+    "expected": "Describe moved within Outer.Inner; named \"Describe\", not \"Inner\" or \"Outer\".",
+    "status": "ok",
+    "old": "namespace Shop\n{\n    public class Outer\n    {\n        public int Id { get; set; }\n\n        public class Inner\n        {\n            public string Describe(int count)\n            {\n                var label = count == 1 ? \"item\" : \"items\";\n                return $\"{count} {label}\";\n            }\n\n            public int Weight { get; set; }\n\n            public int Double(int x)\n            {\n                return x * 2;\n            }\n        }\n    }\n}\n",
+    "new": "namespace Shop\n{\n    public class Outer\n    {\n        public int Id { get; set; }\n\n        public class Inner\n        {\n            public int Weight { get; set; }\n\n            public int Double(int x)\n            {\n                return x * 2;\n            }\n\n            public string Describe(int count)\n            {\n                var label = count == 1 ? \"item\" : \"items\";\n                return $\"{count} {label}\";\n            }\n        }\n    }\n}\n",
+    "ops": [
+      {
+        "type": "moved",
+        "old": [
+          [
+            9,
+            13
+          ]
+        ],
+        "new": [
+          [
+            16,
+            20
+          ]
+        ]
+      }
+    ],
+    "never": [
+      {
+        "type": "movedWithEdit"
+      }
+    ],
+    "names": [
+      {
+        "type": "moved",
+        "name": "Describe",
+        "not": [
+          "Inner",
+          "Outer",
+          "Shop"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "cs-name-property-move",
+    "area": "naming",
+    "language": "csharp",
+    "title": "Property with a getter body moved is named by the property",
+    "expected": "FullName moved to the end of Person; named \"FullName\", not \"Person\" or \"get\".",
+    "status": "ok",
+    "old": "public class Person\n{\n    public string First { get; set; } = \"\";\n    public string Last { get; set; } = \"\";\n\n    public string FullName\n    {\n        get\n        {\n            var name = First + \" \" + Last;\n            return name.Trim();\n        }\n    }\n\n    public override string ToString()\n    {\n        return FullName;\n    }\n\n    public bool IsEmpty()\n    {\n        return First.Length == 0 && Last.Length == 0;\n    }\n}\n",
+    "new": "public class Person\n{\n    public string First { get; set; } = \"\";\n    public string Last { get; set; } = \"\";\n\n    public override string ToString()\n    {\n        return FullName;\n    }\n\n    public bool IsEmpty()\n    {\n        return First.Length == 0 && Last.Length == 0;\n    }\n\n    public string FullName\n    {\n        get\n        {\n            var name = First + \" \" + Last;\n            return name.Trim();\n        }\n    }\n}\n",
+    "ops": [
+      {
+        "type": "moved",
+        "old": [
+          [
+            6,
+            13
+          ]
+        ],
+        "new": [
+          [
+            16,
+            23
+          ]
+        ]
+      }
+    ],
+    "never": [
+      {
+        "type": "movedWithEdit"
+      }
+    ],
+    "names": [
+      {
+        "type": "moved",
+        "name": "FullName",
+        "not": [
+          "Person",
+          "get"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "cs-name-swap",
+    "area": "naming",
+    "language": "csharp",
+    "title": "Two methods swapped; the smaller one is the move",
+    "expected": "Small and Big swapped. Big stays as the unchanged anchor and Small is moved; the move is named \"Small\", not \"Calculator\". (A claim that names Big as moved instead is also a true move, but not this case's answer.)",
+    "status": "ok",
+    "old": "public class Calculator\n{\n    public int Small(int x)\n    {\n        return x + 1;\n    }\n\n    public int Big(int x, int y)\n    {\n        var a = x * y;\n        var b = a - x;\n        var c = b + y;\n        if (c > 100)\n            c = 100;\n        return c;\n    }\n}\n",
+    "new": "public class Calculator\n{\n    public int Big(int x, int y)\n    {\n        var a = x * y;\n        var b = a - x;\n        var c = b + y;\n        if (c > 100)\n            c = 100;\n        return c;\n    }\n\n    public int Small(int x)\n    {\n        return x + 1;\n    }\n}\n",
+    "ops": [
+      {
+        "type": "moved",
+        "old": [
+          [
+            3,
+            6
+          ]
+        ],
+        "new": [
+          [
+            13,
+            16
+          ]
+        ]
+      }
+    ],
+    "never": [
+      {
+        "type": "movedWithEdit"
+      },
+      {
+        "type": "renamed"
+      }
+    ],
+    "names": [
+      {
+        "type": "moved",
+        "name": "Small",
+        "not": [
+          "Calculator"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "cs-brace-filescoped",
+    "area": "naming",
+    "language": "csharp",
+    "title": "Method moved to the end of a class in a file-scoped namespace: no stray added blank line or brace",
+    "expected": "First moved below Third. The blank line before it and the class brace \"}\" after it are unchanged layout, not added; the blank line it left behind is not deleted.",
+    "status": "ok",
+    "old": "namespace Shop;\n\npublic class Cart\n{\n    public int First()\n    {\n        return 1;\n    }\n\n    public int Second()\n    {\n        return 2;\n    }\n\n    public int Third()\n    {\n        return 3;\n    }\n}\n",
+    "new": "namespace Shop;\n\npublic class Cart\n{\n    public int Second()\n    {\n        return 2;\n    }\n\n    public int Third()\n    {\n        return 3;\n    }\n\n    public int First()\n    {\n        return 1;\n    }\n}\n",
+    "ops": [
+      {
+        "type": "moved",
+        "old": [
+          [
+            5,
+            8
+          ]
+        ],
+        "new": [
+          [
+            15,
+            18
+          ]
+        ]
+      }
+    ],
+    "never": [
+      {
+        "type": "added",
+        "new": [
+          [
+            14,
+            14
+          ]
+        ]
+      },
+      {
+        "type": "added",
+        "new": [
+          [
+            19,
+            19
+          ]
+        ]
+      },
+      {
+        "type": "deleted",
+        "old": [
+          [
+            9,
+            9
+          ]
+        ]
+      },
+      {
+        "type": "deleted",
+        "old": [
+          [
+            19,
+            19
+          ]
+        ]
+      }
+    ],
+    "names": [
+      {
+        "type": "moved",
+        "name": "First",
+        "not": [
+          "Cart",
+          "Shop"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "cs-brace-block-ns",
+    "area": "naming",
+    "language": "csharp",
+    "title": "Method moved to the end of a class in a block namespace: no stray added blank line or braces",
+    "expected": "First moved below Third. The blank line before it and the class \"    }\" and namespace \"}\" braces after it are unchanged, not added; the blank it left behind is not deleted.",
+    "status": "ok",
+    "old": "namespace Shop\n{\n    public class Cart\n    {\n        public int First()\n        {\n            return 1;\n        }\n\n        public int Second()\n        {\n            return 2;\n        }\n\n        public int Third()\n        {\n            return 3;\n        }\n    }\n}\n",
+    "new": "namespace Shop\n{\n    public class Cart\n    {\n        public int Second()\n        {\n            return 2;\n        }\n\n        public int Third()\n        {\n            return 3;\n        }\n\n        public int First()\n        {\n            return 1;\n        }\n    }\n}\n",
+    "ops": [
+      {
+        "type": "moved",
+        "old": [
+          [
+            5,
+            8
+          ]
+        ],
+        "new": [
+          [
+            15,
+            18
+          ]
+        ]
+      }
+    ],
+    "never": [
+      {
+        "type": "added",
+        "new": [
+          [
+            14,
+            14
+          ]
+        ]
+      },
+      {
+        "type": "added",
+        "new": [
+          [
+            19,
+            20
+          ]
+        ]
+      },
+      {
+        "type": "deleted",
+        "old": [
+          [
+            9,
+            9
+          ]
+        ]
+      },
+      {
+        "type": "deleted",
+        "old": [
+          [
+            19,
+            20
+          ]
+        ]
+      }
+    ],
+    "names": [
+      {
+        "type": "moved",
+        "name": "First",
+        "not": [
+          "Cart",
+          "Shop"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "cs-brace-to-top",
+    "area": "naming",
+    "language": "csharp",
+    "title": "Last method moved to the top of its class: no stray added blank line or opening brace",
+    "expected": "Third moved above First. The class \"{\" before it and the blank line after it are unchanged layout, not added; the blank line above its old place is not deleted.",
+    "status": "ok",
+    "old": "namespace Shop;\n\npublic class Cart\n{\n    public int First()\n    {\n        return 1;\n    }\n\n    public int Second()\n    {\n        return 2;\n    }\n\n    public int Third()\n    {\n        return 3;\n    }\n}\n",
+    "new": "namespace Shop;\n\npublic class Cart\n{\n    public int Third()\n    {\n        return 3;\n    }\n\n    public int First()\n    {\n        return 1;\n    }\n\n    public int Second()\n    {\n        return 2;\n    }\n}\n",
+    "ops": [
+      {
+        "type": "moved",
+        "old": [
+          [
+            15,
+            18
+          ]
+        ],
+        "new": [
+          [
+            5,
+            8
+          ]
+        ]
+      }
+    ],
+    "never": [
+      {
+        "type": "added",
+        "new": [
+          [
+            9,
+            9
+          ]
+        ]
+      },
+      {
+        "type": "added",
+        "new": [
+          [
+            4,
+            4
+          ]
+        ]
+      },
+      {
+        "type": "deleted",
+        "old": [
+          [
+            14,
+            14
+          ]
+        ]
+      },
+      {
+        "type": "deleted",
+        "old": [
+          [
+            19,
+            19
+          ]
+        ]
+      }
+    ],
+    "names": [
+      {
+        "type": "moved",
+        "name": "Third",
+        "not": [
+          "Cart",
+          "Shop"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "cs-name-rename-decl",
+    "area": "naming",
+    "language": "csharp",
+    "title": "Method renamed with its callers is named by the declaration",
+    "expected": "renamed ComputeTotal -> CalculateTotal on the declaration and both call sites; named by the declaration, not by a call-site line or the callers Summary/OverLimit.",
+    "status": "ok",
+    "old": "public class Checkout\n{\n    private decimal _rate = 0.2m;\n\n    public decimal ComputeTotal(decimal net)\n    {\n        return net + net * _rate;\n    }\n\n    public string Summary(decimal net)\n    {\n        var total = ComputeTotal(net);\n        return $\"Total: {total}\";\n    }\n\n    public bool OverLimit(decimal net, decimal limit)\n    {\n        return ComputeTotal(net) > limit;\n    }\n}\n",
+    "new": "public class Checkout\n{\n    private decimal _rate = 0.2m;\n\n    public decimal CalculateTotal(decimal net)\n    {\n        return net + net * _rate;\n    }\n\n    public string Summary(decimal net)\n    {\n        var total = CalculateTotal(net);\n        return $\"Total: {total}\";\n    }\n\n    public bool OverLimit(decimal net, decimal limit)\n    {\n        return CalculateTotal(net) > limit;\n    }\n}\n",
+    "ops": [
+      {
+        "type": "renamed",
+        "old": [
+          [
+            5,
+            5
+          ],
+          [
+            12,
+            12
+          ],
+          [
+            18,
+            18
+          ]
+        ],
+        "new": [
+          [
+            5,
+            5
+          ],
+          [
+            12,
+            12
+          ],
+          [
+            18,
+            18
+          ]
+        ]
+      }
+    ],
+    "never": [
+      {
+        "type": "moved"
+      },
+      {
+        "type": "reformatted"
+      }
+    ],
+    "names": [
+      {
+        "type": "renamed",
+        "name": "ComputeTotal -> CalculateTotal",
+        "not": [
+          "Summary",
+          "OverLimit",
+          "Checkout",
+          "total",
+          "var total = CalculateTotal(net);"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "cs-name-rename-callers-first",
+    "area": "naming",
+    "language": "csharp",
+    "title": "Rename where the call sites come before the declaration",
+    "expected": "renamed FormatHeader -> BuildHeader; the first changed line is a call site in Render, but the name shown is the declaration's, not \"Render\" or \"RenderEmpty\".",
+    "status": "ok",
+    "old": "public class Report\n{\n    public string Render(int[] values)\n    {\n        var header = FormatHeader(values.Length);\n        return header + string.Join(\",\", values);\n    }\n\n    public string RenderEmpty()\n    {\n        return FormatHeader(0);\n    }\n\n    private static string FormatHeader(int count)\n    {\n        return $\"{count} values: \";\n    }\n}\n",
+    "new": "public class Report\n{\n    public string Render(int[] values)\n    {\n        var header = BuildHeader(values.Length);\n        return header + string.Join(\",\", values);\n    }\n\n    public string RenderEmpty()\n    {\n        return BuildHeader(0);\n    }\n\n    private static string BuildHeader(int count)\n    {\n        return $\"{count} values: \";\n    }\n}\n",
+    "ops": [
+      {
+        "type": "renamed",
+        "old": [
+          [
+            5,
+            5
+          ],
+          [
+            11,
+            11
+          ],
+          [
+            14,
+            14
+          ]
+        ],
+        "new": [
+          [
+            5,
+            5
+          ],
+          [
+            11,
+            11
+          ],
+          [
+            14,
+            14
+          ]
+        ]
+      }
+    ],
+    "never": [
+      {
+        "type": "moved"
+      }
+    ],
+    "names": [
+      {
+        "type": "renamed",
+        "name": "FormatHeader -> BuildHeader",
+        "not": [
+          "Render",
+          "RenderEmpty",
+          "Report",
+          "header"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "cs-name-rename-member-access",
+    "area": "naming",
+    "language": "csharp",
+    "title": "Rename of an expression-bodied method used from another class in the file",
+    "expected": "renamed CountOf -> QuantityOf (declaration, a call in InStock, a member call in Shelf.Label); named by the declaration, not \"Label\", \"InStock\" or \"Shelf\".",
+    "status": "ok",
+    "old": "public class Inventory\n{\n    private readonly Dictionary<string, int> _stock = new();\n\n    public int CountOf(string sku) => _stock.TryGetValue(sku, out var n) ? n : 0;\n\n    public bool InStock(string sku) => CountOf(sku) > 0;\n}\n\npublic class Shelf\n{\n    private readonly Inventory _inventory = new();\n\n    public string Label(string sku)\n    {\n        return $\"{sku}: {_inventory.CountOf(sku)}\";\n    }\n}\n",
+    "new": "public class Inventory\n{\n    private readonly Dictionary<string, int> _stock = new();\n\n    public int QuantityOf(string sku) => _stock.TryGetValue(sku, out var n) ? n : 0;\n\n    public bool InStock(string sku) => QuantityOf(sku) > 0;\n}\n\npublic class Shelf\n{\n    private readonly Inventory _inventory = new();\n\n    public string Label(string sku)\n    {\n        return $\"{sku}: {_inventory.QuantityOf(sku)}\";\n    }\n}\n",
+    "ops": [
+      {
+        "type": "renamed",
+        "old": [
+          [
+            5,
+            5
+          ],
+          [
+            7,
+            7
+          ],
+          [
+            16,
+            16
+          ]
+        ],
+        "new": [
+          [
+            5,
+            5
+          ],
+          [
+            7,
+            7
+          ],
+          [
+            16,
+            16
+          ]
+        ]
+      }
+    ],
+    "never": [
+      {
+        "type": "moved"
+      },
+      {
+        "type": "reformatted"
+      }
+    ],
+    "names": [
+      {
+        "type": "renamed",
+        "name": "CountOf -> QuantityOf",
+        "not": [
+          "Label",
+          "InStock",
+          "Shelf",
+          "Inventory"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "cs-overload-move",
+    "area": "moves",
+    "language": "csharp",
+    "title": "Overloads with one name: the string overload moved, paired by parameter types",
+    "expected": "Format(string) moved below Format(double), unchanged. It must not be paired with Format(int) or Format(double) (that would be a movedWithEdit or edit between different overloads).",
+    "status": "ok",
+    "old": "public static class Fmt\n{\n    public static string Format(int value)\n    {\n        var s = value.ToString();\n        return s.PadLeft(8);\n    }\n\n    public static string Format(string value)\n    {\n        var s = value.Trim();\n        return s.PadLeft(8);\n    }\n\n    public static string Format(double value)\n    {\n        var s = value.ToString(\"F2\");\n        return s.PadLeft(8);\n    }\n}\n",
+    "new": "public static class Fmt\n{\n    public static string Format(int value)\n    {\n        var s = value.ToString();\n        return s.PadLeft(8);\n    }\n\n    public static string Format(double value)\n    {\n        var s = value.ToString(\"F2\");\n        return s.PadLeft(8);\n    }\n\n    public static string Format(string value)\n    {\n        var s = value.Trim();\n        return s.PadLeft(8);\n    }\n}\n",
+    "ops": [
+      {
+        "type": "moved",
+        "old": [
+          [
+            9,
+            13
+          ]
+        ],
+        "new": [
+          [
+            15,
+            19
+          ]
+        ]
+      }
+    ],
+    "never": [
+      {
+        "type": "movedWithEdit"
+      },
+      {
+        "type": "moved",
+        "old": [
+          [
+            3,
+            5
+          ]
+        ]
+      },
+      {
+        "type": "renamed"
+      }
+    ],
+    "names": [
+      {
+        "type": "moved",
+        "name": "Format",
+        "not": [
+          "Fmt"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "cs-doc-attr-move",
+    "area": "moves",
+    "language": "csharp",
+    "title": "Method with /// docs and attributes moved: docs and attributes travel with it",
+    "expected": "Fetch moved above Reset together with its four /// lines and two attributes; none of those lines is added or deleted.",
+    "status": "ok",
+    "old": "public class Client\n{\n    private readonly HttpClient _http = new();\n\n    public void Reset()\n    {\n        _http.CancelPendingRequests();\n    }\n\n    /// <summary>\n    /// Fetches the body of <paramref name=\"url\"/>.\n    /// </summary>\n    /// <param name=\"url\">The address.</param>\n    [Obsolete(\"Use FetchAsync\")]\n    [MethodImpl(MethodImplOptions.NoInlining)]\n    public string Fetch(string url)\n    {\n        return _http.GetStringAsync(url).Result;\n    }\n\n    public int Timeout { get; set; } = 30;\n}\n",
+    "new": "public class Client\n{\n    private readonly HttpClient _http = new();\n\n    /// <summary>\n    /// Fetches the body of <paramref name=\"url\"/>.\n    /// </summary>\n    /// <param name=\"url\">The address.</param>\n    [Obsolete(\"Use FetchAsync\")]\n    [MethodImpl(MethodImplOptions.NoInlining)]\n    public string Fetch(string url)\n    {\n        return _http.GetStringAsync(url).Result;\n    }\n\n    public void Reset()\n    {\n        _http.CancelPendingRequests();\n    }\n\n    public int Timeout { get; set; } = 30;\n}\n",
+    "ops": [
+      {
+        "type": "moved",
+        "old": [
+          [
+            10,
+            19
+          ]
+        ],
+        "new": [
+          [
+            5,
+            14
+          ]
+        ]
+      }
+    ],
+    "never": [
+      {
+        "type": "added",
+        "new": [
+          [
+            5,
+            10
+          ]
+        ]
+      },
+      {
+        "type": "deleted",
+        "old": [
+          [
+            10,
+            15
+          ]
+        ]
+      },
+      {
+        "type": "movedWithEdit"
+      }
+    ],
+    "names": [
+      {
+        "type": "moved",
+        "name": "Fetch",
+        "not": [
+          "Client",
+          "Obsolete",
+          "MethodImpl"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "cs-expr-body-to-block",
+    "area": "format",
+    "language": "csharp",
+    "title": "Expression body => x turned into a block body { return x; }",
+    "expected": "Edited, not reformatted: the tokens differ (=> and ; versus { return ; }), even though the result is the same.",
+    "status": "ok",
+    "old": "public class Bag\n{\n    private readonly int[] _items = new int[4];\n\n    public int Count() => _items.Length;\n\n    public bool Any() => Count() > 0;\n}\n",
+    "new": "public class Bag\n{\n    private readonly int[] _items = new int[4];\n\n    public int Count()\n    {\n        return _items.Length;\n    }\n\n    public bool Any() => Count() > 0;\n}\n",
+    "ops": [],
+    "never": [
+      {
+        "type": "reformatted"
+      },
+      {
+        "type": "moved"
+      },
+      {
+        "type": "renamed"
+      }
+    ]
+  },
+  {
+    "id": "cs-partial-move",
+    "area": "moves",
+    "language": "csharp",
+    "title": "Method moved between the two parts of a partial class in one file",
+    "expected": "Area moved from the first part of partial Widget to the second; same class, same meaning, so moved.",
+    "status": "ok",
+    "old": "public partial class Widget\n{\n    public int Width { get; set; }\n\n    public int Area(int height)\n    {\n        var a = Width * height;\n        return a < 0 ? 0 : a;\n    }\n\n    public void Grow()\n    {\n        Width++;\n    }\n}\n\npublic partial class Widget\n{\n    public string Name { get; set; } = \"\";\n}\n",
+    "new": "public partial class Widget\n{\n    public int Width { get; set; }\n\n    public void Grow()\n    {\n        Width++;\n    }\n}\n\npublic partial class Widget\n{\n    public string Name { get; set; } = \"\";\n\n    public int Area(int height)\n    {\n        var a = Width * height;\n        return a < 0 ? 0 : a;\n    }\n}\n",
+    "ops": [
+      {
+        "type": "moved",
+        "old": [
+          [
+            5,
+            9
+          ]
+        ],
+        "new": [
+          [
+            15,
+            19
+          ]
+        ]
+      }
+    ],
+    "never": [
+      {
+        "type": "movedWithEdit"
+      }
+    ],
+    "names": [
+      {
+        "type": "moved",
+        "name": "Area",
+        "not": [
+          "Widget"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "cs-region-into",
+    "area": "moves",
+    "language": "csharp",
+    "title": "Method moved into a new #region at the end of the class",
+    "expected": "IsDigit moved into \"#region Helpers\"; moved, unchanged. The #region and #endregion lines are added and are not part of the move.",
+    "status": "ok",
+    "old": "public class Parser\n{\n    public string Source { get; }\n\n    public Parser(string source)\n    {\n        Source = source;\n    }\n\n    private static bool IsDigit(char c)\n    {\n        return c >= '0' && c <= '9';\n    }\n\n    public int ParseInt()\n    {\n        var n = 0;\n        foreach (var c in Source)\n            if (IsDigit(c)) n = n * 10 + (c - '0');\n        return n;\n    }\n}\n",
+    "new": "public class Parser\n{\n    public string Source { get; }\n\n    public Parser(string source)\n    {\n        Source = source;\n    }\n\n    public int ParseInt()\n    {\n        var n = 0;\n        foreach (var c in Source)\n            if (IsDigit(c)) n = n * 10 + (c - '0');\n        return n;\n    }\n\n    #region Helpers\n\n    private static bool IsDigit(char c)\n    {\n        return c >= '0' && c <= '9';\n    }\n\n    #endregion\n}\n",
+    "ops": [
+      {
+        "type": "moved",
+        "old": [
+          [
+            10,
+            13
+          ]
+        ],
+        "new": [
+          [
+            20,
+            23
+          ]
+        ]
+      }
+    ],
+    "never": [
+      {
+        "type": "moved",
+        "new": [
+          [
+            18,
+            18
+          ],
+          [
+            25,
+            25
+          ]
+        ]
+      },
+      {
+        "type": "movedWithEdit"
+      }
+    ],
+    "names": [
+      {
+        "type": "moved",
+        "name": "IsDigit",
+        "not": [
+          "Parser",
+          "Helpers"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "cs-region-out",
+    "area": "moves",
+    "language": "csharp",
+    "title": "Method moved out of a #region to the end of the class",
+    "expected": "Peek moved out of \"#region Internals\"; moved, unchanged. The region lines stay where they were and are not part of the move (and are not added or deleted).",
+    "status": "ok",
+    "old": "public class Queue2\n{\n    #region Internals\n\n    private readonly List<int> _items = new();\n\n    private int Peek()\n    {\n        if (_items.Count == 0)\n            throw new InvalidOperationException();\n        return _items[0];\n    }\n\n    #endregion\n\n    public int Take()\n    {\n        var x = Peek();\n        _items.RemoveAt(0);\n        return x;\n    }\n}\n",
+    "new": "public class Queue2\n{\n    #region Internals\n\n    private readonly List<int> _items = new();\n\n    #endregion\n\n    public int Take()\n    {\n        var x = Peek();\n        _items.RemoveAt(0);\n        return x;\n    }\n\n    private int Peek()\n    {\n        if (_items.Count == 0)\n            throw new InvalidOperationException();\n        return _items[0];\n    }\n}\n",
+    "ops": [
+      {
+        "type": "moved",
+        "old": [
+          [
+            7,
+            12
+          ]
+        ],
+        "new": [
+          [
+            16,
+            21
+          ]
+        ]
+      }
+    ],
+    "never": [
+      {
+        "type": "moved",
+        "old": [
+          [
+            3,
+            3
+          ],
+          [
+            14,
+            14
+          ]
+        ]
+      },
+      {
+        "type": "added",
+        "new": [
+          [
+            3,
+            3
+          ],
+          [
+            7,
+            7
+          ]
+        ]
+      },
+      {
+        "type": "deleted",
+        "old": [
+          [
+            3,
+            3
+          ],
+          [
+            14,
+            14
+          ]
+        ]
+      },
+      {
+        "type": "movedWithEdit"
+      }
+    ],
+    "names": [
+      {
+        "type": "moved",
+        "name": "Peek",
+        "not": [
+          "Queue2",
+          "Internals"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "cs-rename-hides-edit",
+    "area": "renames",
+    "language": "csharp",
+    "title": "Rename hides a changed argument on one call site",
+    "expected": "renamed ComputeTotal -> CalculateTotal on the declaration and in Twice; the call in Single also changed 10m to 12m, so that line is an edit and must not be covered by the rename.",
+    "status": "ok",
+    "old": "public class Pricing\n{\n    private const decimal Rate = 0.2m;\n\n    public decimal ComputeTotal(decimal net)\n    {\n        return net + net * Rate;\n    }\n\n    public decimal Twice(decimal net)\n    {\n        return ComputeTotal(net) * 2;\n    }\n\n    public decimal Single()\n    {\n        return ComputeTotal(10m);\n    }\n}\n",
+    "new": "public class Pricing\n{\n    private const decimal Rate = 0.2m;\n\n    public decimal CalculateTotal(decimal net)\n    {\n        return net + net * Rate;\n    }\n\n    public decimal Twice(decimal net)\n    {\n        return CalculateTotal(net) * 2;\n    }\n\n    public decimal Single()\n    {\n        return CalculateTotal(12m);\n    }\n}\n",
+    "ops": [
+      {
+        "type": "renamed",
+        "old": [
+          [
+            5,
+            5
+          ],
+          [
+            12,
+            12
+          ]
+        ],
+        "new": [
+          [
+            5,
+            5
+          ],
+          [
+            12,
+            12
+          ]
+        ]
+      }
+    ],
+    "never": [
+      {
+        "type": "renamed",
+        "old": [
+          [
+            17,
+            17
+          ]
+        ],
+        "new": [
+          [
+            17,
+            17
+          ]
+        ]
+      },
+      {
+        "type": "reformatted"
+      }
+    ],
+    "names": [
+      {
+        "type": "renamed",
+        "name": "ComputeTotal -> CalculateTotal",
+        "not": [
+          "Single",
+          "Twice",
+          "Pricing"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "cs-into-nested-class",
+    "area": "moves",
+    "language": "csharp",
+    "title": "Static method moved from a class into its nested class",
+    "expected": "Scale now lives in Shape.Units: its full name and every call change (Scaled now calls Units.Scale), so this is edited, not a plain move (the decided context rule).",
+    "status": "ok",
+    "old": "public class Shape\n{\n    public double Size { get; set; }\n\n    public static double Scale(double value, double factor)\n    {\n        var scaled = value * factor;\n        return Math.Round(scaled, 2);\n    }\n\n    public double Scaled(double factor) => Scale(Size, factor);\n\n    public static class Units\n    {\n        public const double Inch = 2.54;\n    }\n}\n",
+    "new": "public class Shape\n{\n    public double Size { get; set; }\n\n    public double Scaled(double factor) => Units.Scale(Size, factor);\n\n    public static class Units\n    {\n        public const double Inch = 2.54;\n\n        public static double Scale(double value, double factor)\n        {\n            var scaled = value * factor;\n            return Math.Round(scaled, 2);\n        }\n    }\n}\n",
+    "ops": [],
+    "never": [
+      {
+        "type": "moved"
+      }
+    ]
+  },
+  {
+    "id": "cs-move-with-edit",
+    "area": "moves",
+    "language": "csharp",
+    "title": "Method moved and edited on the way (positive control for movedWithEdit)",
+    "expected": "Balance moved below Post and += became -=: movedWithEdit, never a plain moved.",
+    "status": "ok",
+    "old": "public class Ledger\n{\n    private readonly List<decimal> _entries = new();\n\n    public decimal Balance()\n    {\n        var total = 0m;\n        foreach (var e in _entries)\n            total += e;\n        return total;\n    }\n\n    public void Post(decimal amount)\n    {\n        _entries.Add(amount);\n    }\n}\n",
+    "new": "public class Ledger\n{\n    private readonly List<decimal> _entries = new();\n\n    public void Post(decimal amount)\n    {\n        _entries.Add(amount);\n    }\n\n    public decimal Balance()\n    {\n        var total = 0m;\n        foreach (var e in _entries)\n            total -= e;\n        return total;\n    }\n}\n",
+    "ops": [
+      {
+        "type": "movedWithEdit",
+        "old": [
+          [
+            5,
+            11
+          ]
+        ],
+        "new": [
+          [
+            10,
+            16
+          ]
+        ]
+      }
+    ],
+    "never": [
+      {
+        "type": "moved"
+      }
+    ],
+    "names": [
+      {
+        "type": "movedWithEdit",
+        "name": "Balance",
+        "not": [
+          "Ledger"
+        ]
+      }
+    ]
+  }
+]

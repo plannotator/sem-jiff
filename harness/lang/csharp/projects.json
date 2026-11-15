@@ -1,0 +1,99 @@
+[
+  {
+    "name": "polly-mr",
+    "set": "practice-csharp",
+    "labels": "lang-csharp-extracts.json",
+    "url": "https://github.com/App-vNext/Polly.git",
+    "licence": "BSD-3-Clause",
+    "fetch": [
+      "156a9bbee14397989490cc280f09de324ca85191",
+      "19c0488315ac90740c798f04e9aced7ea89ca38a",
+      "3d720f5c4ca4c73d410444e1d02c78bf75e394a8",
+      "41322d96d3adaf023b8a0690c212d3f21ee92c58",
+      "47b2d2444c9c8aaf323e4d9cd1f231f35e151f81",
+      "54cff7ba2641bd3c6149489001bf745995b5ee85",
+      "70d1bd921e90edb41cc545d6bad7582d8613a7e3",
+      "7d6f669ba9e3aad3d7ba673552aa5109c6045dfb",
+      "940c6282dbae997dc2fae330e5f68f2058291b93",
+      "9fd37be6d20c98efb758c8b1f949a9e62e31cb28",
+      "b1ec86347a5a2fe163d484a6bc19e33bbf804bf8",
+      "b703130adf5cb7c3657a7c1fe88ab44668ad3975",
+      "b9ce23203659a78e9847bcdd04c8d3f0d4e6ba6c",
+      "daf152937a53d1c05b0691a89c6e7242da19fbb8",
+      "ed3d603c7bc17e8b4eafdcb8e982916cc6928a2f",
+      "f25f2c54877bb7dab8b18023ceb6d958c6e3bc30",
+      "fae7486bdc3b52b5942d85f96a970db37c066ba4"
+    ],
+    "files": 20
+  },
+  {
+    "name": "newtonsoft-json-mr",
+    "set": "practice-csharp",
+    "labels": "lang-csharp-extracts.json",
+    "url": "https://github.com/JamesNK/Newtonsoft.Json.git",
+    "licence": "MIT",
+    "fetch": [
+      "1a6f7cdada2f00c007150a8662cc75f458035f82",
+      "1abcfb1ace19675857bad25e44a2bd9572daeac2",
+      "28405e7309c17d4acd80cd3f37c4368d9e369912",
+      "5b392b54b8904aff87408819f68a229c42e71afe",
+      "75ca4c8412fabe842ec72520cd10eca99a755dda",
+      "793c9a0a3dfb305295bcf7a792d9afb3ad6b9521",
+      "993215529562866719689206e27e413013d4439c",
+      "ad246c775a6efc6fb42b81311ab35524064d5ec1",
+      "de82488549d724c2f2cef3511e81d7a5305312fc",
+      "fb2a5998bc2e85bde77ab157c5d30eb4791d809f"
+    ],
+    "files": 10
+  },
+  {
+    "name": "serilog-mr",
+    "set": "held-csharp",
+    "labels": "lang-csharp-extracts.json",
+    "url": "https://github.com/serilog/serilog.git",
+    "licence": "Apache-2.0",
+    "fetch": [
+      "09afb7839d9bd51ccc51b467dc37c4757350949b",
+      "3cbf04dda085b9693335f3cdcea91c2253479387",
+      "670058740617c1e16a955411827b873e8dce4021",
+      "90c2867c34c0d6ef8cf9af01e4b6e3b0005726dc",
+      "b412c6c78e0cd72b5e55ba0aea094124ad07f822",
+      "dde160df0cefd3713d3bb2e3212c09e65cb4d56b",
+      "fb964f8b8449d80c563f1e3299d4e372d0f7dc1f"
+    ],
+    "files": 7
+  },
+  {
+    "name": "humanizer-mr",
+    "set": "held-csharp",
+    "labels": "lang-csharp-extracts.json",
+    "url": "https://github.com/Humanizr/Humanizer.git",
+    "licence": "MIT",
+    "fetch": [
+      "13d23549defa07873191567bdef6ad5696d3316e",
+      "1f97be8b615ef8cca265792199b0bd6cd8e38783",
+      "3d43f8e1c3310726c491fd4eade5f89e20e72b5a",
+      "4d7b9cb6b1af377fe8982a9a03ca4a1bdd85d60b",
+      "8f38a4ef9840e28e044d6ab4e1278a42c15c411a",
+      "9357fe0484edcb2efbae76686c87ee55c02035cc",
+      "a3b09e3453c0541df021234ad7b06b13397f67bd",
+      "c14fdeab9a27484391970ce73fa2e61f88d6c930",
+      "ec6936472835eecea3241b3cf9eda23afcbce6e2"
+    ],
+    "files": 9
+  },
+  {
+    "name": "fluentvalidation-mr",
+    "set": "held-csharp",
+    "labels": "lang-csharp-extracts.json",
+    "url": "https://github.com/FluentValidation/FluentValidation.git",
+    "licence": "Apache-2.0",
+    "fetch": [
+      "23d7682bb4834d4b121e60217b7dba2f9d84f8e4",
+      "7865b14da98a726a9b1f559e41e2d85e84987902",
+      "b7550140e070a510808c73b3fbeb3099df1f0319",
+      "dfa64c010a4fd12b795fac3ed37caba634e140f7"
+    ],
+    "files": 4
+  }
+]

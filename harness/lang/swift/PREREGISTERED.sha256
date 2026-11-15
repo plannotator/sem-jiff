@@ -1,0 +1,12 @@
+ebd207faf7096015a9c09b7fc69736afce0fd6d3b08af1eaa954be4a2972879f  test/fixtures/traps/swift.json
+5df173de800be67fa67785d117e5c24ada2034ded7392d4f580f3eff205a2c18  test/fixtures/labels/lang-swift-extracts.json
+c18db535bad779901f6460874919b02c05d32d5ce08c38217e218e87a3c5c2ab  test/fixtures/labels/lang-swift-expected.json
+cce3dd46f8a63cefcf728e5a7c1bbce3d7229b7b0d084f0800c330051b3a2bce  harness/lang/swift/manifest.json
+f7ecb1ee4f58c25f0925f2505f0572f099abf4bf220315359b5a49be5994763d  harness/lang/swift/texts.sha256
+answers fixed 2026-11-15T03:55:52Z, before any engine run on these cases; the engine had not been run on any of them
+
+ae13200a472f0051f10b2031c106460962471a0af6b7f537fec6a657a638e849  test/fixtures/labels/lang-swift-extracts.json
+8d7aaacc1ab551ae9f830a3daf2a9c9583be0c952eb775d4ef3dcbda8e725467  test/fixtures/labels/locked-swift-extracts.json
+753a8096c627a652209791fc38ca95fc4a1f4f28e4491ecff5771ad1b3c8606c  harness/lang/swift/manifest.json
+b4d3449ef9ea04bf6c8d4a68ce8dee586a3db23cd5b462a05a33010e70cc36c9  harness/lang/swift/texts.sha256
+corpus and blind labels fixed 2026-11-15T06:03:45Z, before any engine run on these datasets; the engine had not been run on any of their commits

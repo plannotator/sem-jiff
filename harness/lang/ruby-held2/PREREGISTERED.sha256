@@ -1,0 +1,5 @@
+64ba21c85b12cd65c1cbe434bc935854b5da65195623f1256c36e1499b3a24fd  test/fixtures/labels/locked-ruby2-extracts.json
+45249166cb11e0229a9e9dcac1794e78bc67d876904b22169960d5463b3458ed  harness/lang/ruby-held2/manifest.json
+a0c8ffe60732baafca5e11bc47ec32da9d7ede04df08ff2b8d4a4c23a98de38a  harness/lang/ruby-held2/texts.sha256
+c2a8439dad742e7b9b518cafd5f0f3344f16a0f7f3d670801b134c4f53d715fe  harness/lang/ruby-held2/projects.json
+labels fixed 2026-11-15T08:12:42Z, before any engine run on these files; the engine has not been run on any of them (candidate search and sample with NO_ENGINE=1)

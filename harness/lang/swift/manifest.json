@@ -1,0 +1,4805 @@
+{
+ "vapor": {
+  "76645a882b": [
+   "Package.swift",
+   "Sources/VaporMacrosPlugin/GroupingMacroHelpers.swift"
+  ],
+  "1c53c6060a": [
+   "Performance/Package.swift"
+  ],
+  "0f2a8ee9f3": [
+   "Sources/Vapor/HTTP/Server/HTTPServerHandler.swift"
+  ],
+  "44598acf94": [
+   "Package.swift",
+   "Sources/Vapor/HTTP/Server/NIOHTTPServerAdapter.swift"
+  ],
+  "4245e700c8": [
+   "Sources/VaporMacros/MacroInterface.swift",
+   "Sources/VaporMacrosPlugin/ControllerMacro.swift",
+   "Sources/VaporMacrosPlugin/HTTPMethods/HTTPMethodMacroUtilities.swift",
+   "Sources/VaporMacrosPlugin/HTTPMethods/HTTPPostMacro.swift",
+   "Sources/VaporMacrosPlugin/VaporMacroError.swift"
+  ],
+  "860b71298b": [
+   "Package.swift",
+   "Sources/Development/configure.swift",
+   "Sources/Vapor/HTTP/Server/NIOHTTPServerAdapter.swift",
+   "Sources/Vapor/Server/ServerConfiguration+HTTP2Configuration.swift",
+   "Sources/Vapor/Server/ServerConfiguration.swift"
+  ],
+  "88754c79b3": [
+   "Sources/Development/routes.swift",
+   "Sources/VaporMacros/MacroInterface.swift",
+   "Sources/VaporMacrosPlugin/AuthMiddleware/AuthMiddlewareMacro.swift",
+   "Sources/VaporMacrosPlugin/ControllerMacro.swift",
+   "Sources/VaporMacrosPlugin/HTTPMethods/HTTPMethodMacroUtilities.swift",
+   "Sources/VaporMacrosPlugin/VaporMacroError.swift",
+   "Sources/VaporMacrosPlugin/VaporMacros.swift"
+  ],
+  "896d8d07cc": [
+   "Package.swift"
+  ],
+  "2067b1e471": [
+   "Package.swift",
+   "Performance/Sources/PerformanceServer/main.swift",
+   "Sources/Development/entrypoint.swift",
+   "Sources/Development/routes.swift",
+   "Sources/Vapor/Application.swift",
+   "Sources/Vapor/Environment/Environment.swift",
+   "Sources/VaporTesting/withApp.swift"
+  ],
+  "3fe848c28e": [
+   "Package.swift",
+   "Sources/Vapor/HTTP/Server/HTTPServerHandler.swift",
+   "Sources/Vapor/Request/RequestBodyStream.swift"
+  ],
+  "5c5849e057": [
+   "Sources/Vapor/Application.swift",
+   "Sources/Vapor/Middleware/FileMiddleware.swift",
+   "Sources/Vapor/Server/ServerConfiguration.swift",
+   "Sources/Vapor/Utilities/FileETagHashCache.swift"
+  ],
+  "180a369dab": [
+   "Package.swift",
+   "Sources/Vapor/Responder/DefaultResponder.swift"
+  ],
+  "cbe12f91f0": [
+   "Sources/Vapor/HTTP/Responder.swift"
+  ],
+  "780152cccf": [
+   "Sources/Development/routes.swift",
+   "Sources/Vapor/Application.swift",
+   "Sources/Vapor/Authentication/BasicAuthorization.swift",
+   "Sources/Vapor/Cache/MemoryCache.swift",
+   "Sources/Vapor/Client/ClientRequest.swift",
+   "Sources/Vapor/Client/ClientResponse.swift",
+   "Sources/Vapor/Concurrency/WebSocket+Concurrency.swift",
+   "Sources/Vapor/Content/ContainerGetPathExecutor.swift",
+   "Sources/Vapor/Content/ContentCoders.swift",
+   "Sources/Vapor/Content/ContentConfiguration.swift",
+   "Sources/Vapor/Content/ContentContainer.swift",
+   "Sources/Vapor/Content/JSONCoder+Custom.swift",
+   "Sources/Vapor/Content/JSONCoders+Content.swift",
+   "Sources/Vapor/Content/PlaintextDecoder.swift",
+   "Sources/Vapor/Content/PlaintextEncoder.swift",
+   "Sources/Vapor/Environment/Environment+Process.swift",
+   "Sources/Vapor/Environment/Environment+Secret.swift",
+   "Sources/Vapor/Environment/Environment.swift",
+   "Sources/Vapor/Error/DebuggableError.swift",
+   "Sources/Vapor/HTTP/Client/VaporHTTPClient.swift",
+   "Sources/Vapor/HTTP/EndpointCache.swift",
+   "Sources/Vapor/HTTP/Headers/HTTPCookies.swift",
+   "Sources/Vapor/HTTP/Headers/HTTPFieldCacheControl.swift",
+   "Sources/Vapor/HTTP/Headers/HTTPFieldExpires.swift",
+   "Sources/Vapor/HTTP/Headers/HTTPFieldLastModified.swift",
+   "Sources/Vapor/HTTP/Headers/HTTPFields+Cache.swift",
+   "Sources/Vapor/HTTP/Headers/HTTPFields+ContentRange.swift",
+   "Sources/Vapor/HTTP/Headers/HTTPFields+ResponseCompression.swift",
+   "Sources/Vapor/HTTP/Headers/HTTPMediaType.swift",
+   "Sources/Vapor/HTTP/Headers/HTTPMediaTypePreference.swift",
+   "Sources/Vapor/HTTP/Server/HTTPServerHandler.swift",
+   "Sources/Vapor/Logging/Logger+Report.swift",
+   "Sources/Vapor/Middleware/ErrorMiddleware.swift",
+   "Sources/Vapor/Middleware/FileMiddleware.swift",
+   "Sources/Vapor/Middleware/RouteLoggingMiddleware.swift",
+   "Sources/Vapor/Multipart/File+Multipart.swift",
+   "Sources/Vapor/Multipart/FormDataDecoder+Content.swift",
+   "Sources/Vapor/Multipart/FormDataEncoder+Content.swift",
+   "Sources/Vapor/Request/Request+Body.swift",
+   "Sources/Vapor/Request/Request.swift",
+   "Sources/Vapor/Request/RequestBodyStream.swift",
+   "Sources/Vapor/Responder/DefaultResponder.swift",
+   "Sources/Vapor/Response/Response+Body.swift",
+   "Sources/Vapor/Response/Response.swift",
+   "Sources/Vapor/Routing/Request+WebSocket.swift",
+   "Sources/Vapor/Routing/RoutesBuilder+WebSocket.swift",
+   "Sources/Vapor/Routing/RoutesBuilder.swift",
+   "Sources/Vapor/Sessions/MemorySessions.swift",
+   "Sources/Vapor/Sessions/SessionsConfiguration.swift",
+   "Sources/Vapor/URLEncodedForm/URLEncodedFormData.swift",
+   "Sources/Vapor/URLEncodedForm/URLEncodedFormDecoder.swift",
+   "Sources/Vapor/URLEncodedForm/URLEncodedFormEncoder.swift",
+   "Sources/Vapor/URLEncodedForm/URLEncodedFormParser.swift",
+   "Sources/Vapor/URLEncodedForm/URLQueryFragmentConvertible.swift",
+   "Sources/Vapor/Utilities/Base32.swift",
+   "Sources/Vapor/Utilities/Base64.swift",
+   "Sources/Vapor/Utilities/BaseN.swift",
+   "Sources/Vapor/Utilities/ByteCount.swift",
+   "Sources/Vapor/Utilities/DataProtocol+Copy.swift",
+   "Sources/Vapor/Utilities/Date+RFC1123.swift",
+   "Sources/Vapor/Utilities/DirectoryConfiguration.swift",
+   "Sources/Vapor/Utilities/DotEnv.swift",
+   "Sources/Vapor/Utilities/File.swift",
+   "Sources/Vapor/Utilities/FileETagHashCache.swift",
+   "Sources/Vapor/Utilities/FileIO.swift",
+   "Sources/Vapor/Utilities/String+removingPercentEncoding.swift",
+   "Sources/Vapor/Utilities/URI.swift",
+   "Sources/Vapor/Utilities/VaporSendableMetadataType.swift",
+   "Sources/Vapor/Validation/Validations.swift",
+   "Sources/Vapor/Validation/Validators/CharacterSet.swift",
+   "Sources/Vapor/Validation/Validators/Email.swift",
+   "Sources/Vapor/Validation/Validators/Pattern.swift",
+   "Sources/Vapor/Validation/Validators/URL.swift",
+   "Sources/Vapor/View/PlaintextRenderer.swift",
+   "Sources/Vapor/View/View.swift",
+   "Sources/VaporMacros/MacroInterface.swift",
+   "Sources/VaporMacrosPlugin/ControllerMacro.swift",
+   "Sources/VaporMacrosPlugin/HTTPMethods/FreestandingRouteMacro.swift",
+   "Sources/VaporMacrosPlugin/HTTPMethods/HTTPMethodMacroUtilities.swift",
+   "Sources/VaporTesting/AHCClient.swift",
+   "Sources/VaporTesting/TaskLocalMetricsSystem.swift",
+   "Sources/VaporTesting/TestingApplication.swift",
+   "Sources/VaporTesting/Utilities.swift"
+  ],
+  "3f23bacb4a": [
+   "Package.swift",
+   "Sources/Vapor/Content/ContainerGetPathExecutor.swift",
+   "Sources/Vapor/HTTP/HTTPVersion.swift",
+   "Sources/Vapor/HTTP/Headers/HTTPCookies.swift",
+   "Sources/Vapor/HTTP/Headers/HTTPFieldExpires.swift",
+   "Sources/Vapor/HTTP/Headers/HTTPFields+Directive.swift",
+   "Sources/Vapor/HTTP/Server/HTTPBodyWriter.swift",
+   "Sources/Vapor/Middleware/Middleware.swift",
+   "Sources/Vapor/Request/RequestBodyReader.swift",
+   "Sources/Vapor/Server/ServerConfiguration+HTTP2Configuration.swift",
+   "Sources/Vapor/URLEncodedForm/URLEncodedFormDecoder.swift",
+   "Sources/Vapor/URLEncodedForm/URLEncodedFormParser.swift",
+   "Sources/Vapor/Utilities/Array+Random.swift",
+   "Sources/Vapor/Utilities/Base32.swift",
+   "Sources/Vapor/Utilities/Base64.swift",
+   "Sources/Vapor/Utilities/BaseN.swift",
+   "Sources/Vapor/Utilities/Bytes+Hex.swift",
+   "Sources/Vapor/Utilities/DotEnv.swift",
+   "Sources/Vapor/Validation/Validation.swift"
+  ],
+  "7f838018d0": [
+   "Package.swift",
+   "Performance/Package.swift",
+   "Performance/Sources/PerformanceServer/main.swift",
+   "Sources/Development/configure.swift",
+   "Sources/Development/entrypoint.swift",
+   "Sources/Development/routes.swift",
+   "Sources/Vapor/Application+AddressConfiguration.swift",
+   "Sources/Vapor/Application.swift",
+   "Sources/Vapor/Authentication/Authentication.swift",
+   "Sources/Vapor/Authentication/Authenticator.swift",
+   "Sources/Vapor/Authentication/BasicAuthorization.swift",
+   "Sources/Vapor/Authentication/GuardMiddleware.swift",
+   "Sources/Vapor/Authentication/RedirectMiddleware.swift",
+   "Sources/Vapor/Authentication/SessionAuthenticatable.swift",
+   "Sources/Vapor/Cache/Cache.swift",
+   "Sources/Vapor/Cache/CacheExpirationTime.swift",
+   "Sources/Vapor/Cache/MemoryCache.swift",
+   "Sources/Vapor/Client/Client.swift",
+   "Sources/Vapor/Client/ClientRequest.swift",
+   "Sources/Vapor/Client/ClientResponse.swift",
+   "Sources/Vapor/Concurrency/WebSocket+Concurrency.swift",
+   "Sources/Vapor/Content/ContainerGetPathExecutor.swift",
+   "Sources/Vapor/Content/Content.swift",
+   "Sources/Vapor/Content/ContentCoders.swift",
+   "Sources/Vapor/Content/ContentConfiguration.swift",
+   "Sources/Vapor/Content/ContentContainer.swift",
+   "Sources/Vapor/Content/JSONCoder+Custom.swift",
+   "Sources/Vapor/Content/JSONCoders+Content.swift",
+   "Sources/Vapor/Content/PlaintextDecoder.swift",
+   "Sources/Vapor/Content/PlaintextEncoder.swift",
+   "Sources/Vapor/Content/URLQueryCoders.swift",
+   "Sources/Vapor/Content/URLQueryContainer.swift",
+   "Sources/Vapor/Environment/Environment+Process.swift",
+   "Sources/Vapor/Environment/Environment+Secret.swift",
+   "Sources/Vapor/Environment/Environment.swift",
+   "Sources/Vapor/Error/AbortError.swift",
+   "Sources/Vapor/Error/DebuggableError.swift",
+   "Sources/Vapor/HTTP/Client/StreamingRequestBody.swift",
+   "Sources/Vapor/HTTP/Client/VaporHTTPClient.swift",
+   "Sources/Vapor/HTTP/EndpointCache.swift",
+   "Sources/Vapor/HTTP/Headers/HTTPCookies.swift",
+   "Sources/Vapor/HTTP/Headers/HTTPFieldCacheControl.swift",
+   "Sources/Vapor/HTTP/Headers/HTTPFieldExpires.swift",
+   "Sources/Vapor/HTTP/Headers/HTTPFieldLastModified.swift",
+   "Sources/Vapor/HTTP/Headers/HTTPFields+Cache.swift",
+   "Sources/Vapor/HTTP/Headers/HTTPFields+ContentRange.swift",
+   "Sources/Vapor/HTTP/Headers/HTTPFields+Directive.swift",
+   "Sources/Vapor/HTTP/Headers/HTTPFields+Link.swift",
+   "Sources/Vapor/HTTP/Headers/HTTPFields+ResponseCompression.swift",
+   "Sources/Vapor/HTTP/Headers/HTTPFields+WWWAuthenticate.swift",
+   "Sources/Vapor/HTTP/Headers/HTTPFields.swift",
+   "Sources/Vapor/HTTP/Headers/HTTPMediaType.swift",
+   "Sources/Vapor/HTTP/Headers/HTTPMediaTypePreference.swift",
+   "Sources/Vapor/HTTP/Server/HTTPServerHandler.swift",
+   "Sources/Vapor/HTTP/Server/NIOHTTPBodyWriterStorage.swift",
+   "Sources/Vapor/HTTP/Server/NIOHTTPServerAdapter.swift",
+   "Sources/Vapor/HTTP/Server/SocketAddress+NIOHTTPServer.swift",
+   "Sources/Vapor/Logging/Logger+Report.swift",
+   "Sources/Vapor/Middleware/CORSMiddleware.swift",
+   "Sources/Vapor/Middleware/ErrorMiddleware.swift",
+   "Sources/Vapor/Middleware/FileMiddleware.swift",
+   "Sources/Vapor/Middleware/MetricsMiddleware.swift",
+   "Sources/Vapor/Middleware/Middleware.swift",
+   "Sources/Vapor/Middleware/MiddlewareConfiguration.swift",
+   "Sources/Vapor/Middleware/ResponseCompressionMiddleware.swift",
+   "Sources/Vapor/Middleware/RouteLoggingMiddleware.swift",
+   "Sources/Vapor/Multipart/File+Multipart.swift",
+   "Sources/Vapor/Multipart/FormDataDecoder+Content.swift",
+   "Sources/Vapor/Multipart/FormDataEncoder+Content.swift",
+   "Sources/Vapor/Request/Request+Body.swift",
+   "Sources/Vapor/Request/Request.swift",
+   "Sources/Vapor/Request/RequestBodyStream.swift",
+   "Sources/Vapor/Responder/DefaultResponder.swift",
+   "Sources/Vapor/Response/Response+Body.swift",
+   "Sources/Vapor/Response/Response.swift",
+   "Sources/Vapor/Response/ResponseCodable.swift",
+   "Sources/Vapor/Routing/Application+routesASCIITable.swift",
+   "Sources/Vapor/Routing/Parameters+Require.swift",
+   "Sources/Vapor/Routing/Request+WebSocket.swift",
+   "Sources/Vapor/Routing/Route.swift",
+   "Sources/Vapor/Routing/RoutesBuilder+Group.swift",
+   "Sources/Vapor/Routing/RoutesBuilder+Method.swift",
+   "Sources/Vapor/Routing/RoutesBuilder+Middleware.swift",
+   "Sources/Vapor/Routing/RoutesBuilder+WebSocket.swift",
+   "Sources/Vapor/Routing/RoutesBuilder.swift",
+   "Sources/Vapor/Server/ServerConfiguration+RequestDecompressionConfiguration.swift",
+   "Sources/Vapor/Server/ServerConfiguration+ResponseCompressionConfiguration.swift",
+   "Sources/Vapor/Server/ServerError.swift",
+   "Sources/Vapor/Sessions/MemorySessions.swift",
+   "Sources/Vapor/Sessions/Session.swift",
+   "Sources/Vapor/Sessions/SessionData.swift",
+   "Sources/Vapor/Sessions/SessionsConfiguration.swift",
+   "Sources/Vapor/URLEncodedForm/URLEncodedFormData.swift",
+   "Sources/Vapor/URLEncodedForm/URLEncodedFormDecoder.swift",
+   "Sources/Vapor/URLEncodedForm/URLEncodedFormEncoder.swift",
+   "Sources/Vapor/URLEncodedForm/URLEncodedFormParser.swift",
+   "Sources/Vapor/URLEncodedForm/URLEncodedFormSerializer.swift",
+   "Sources/Vapor/URLEncodedForm/URLQueryFragmentConvertible.swift",
+   "Sources/Vapor/Utilities/Array+Random.swift",
+   "Sources/Vapor/Utilities/Base32.swift",
+   "Sources/Vapor/Utilities/Base64.swift",
+   "Sources/Vapor/Utilities/BaseN.swift",
+   "Sources/Vapor/Utilities/BasicCodingKey.swift",
+   "Sources/Vapor/Utilities/ByteCount.swift",
+   "Sources/Vapor/Utilities/Bytes+Hex.swift",
+   "Sources/Vapor/Utilities/Collection+Safe.swift",
+   "Sources/Vapor/Utilities/DataProtocol+Copy.swift",
+   "Sources/Vapor/Utilities/Date+RFC1123.swift",
+   "Sources/Vapor/Utilities/DirectoryConfiguration.swift",
+   "Sources/Vapor/Utilities/DotEnv.swift",
+   "Sources/Vapor/Utilities/File.swift",
+   "Sources/Vapor/Utilities/FileETagHashCache.swift",
+   "Sources/Vapor/Utilities/FileIO.swift",
+   "Sources/Vapor/Utilities/LifecycleHandler.swift",
+   "Sources/Vapor/Utilities/OptionalType.swift",
+   "Sources/Vapor/Utilities/String+removingPercentEncoding.swift",
+   "Sources/Vapor/Utilities/StringProtocol+isCaseInsensitiveEqualASCII.swift",
+   "Sources/Vapor/Utilities/URI.swift",
+   "Sources/Vapor/Utilities/VaporSendableMetadataType.swift",
+   "Sources/Vapor/Validation/RangeResult.swift",
+   "Sources/Vapor/Validation/Validatable.swift",
+   "Sources/Vapor/Validation/Validation.swift",
+   "Sources/Vapor/Validation/Validations.swift",
+   "Sources/Vapor/Validation/ValidationsError.swift",
+   "Sources/Vapor/Validation/ValidatorResult.swift",
+   "Sources/Vapor/Validation/Validators/And.swift",
+   "Sources/Vapor/Validation/Validators/Case.swift",
+   "Sources/Vapor/Validation/Validators/CharacterSet.swift",
+   "Sources/Vapor/Validation/Validators/Count.swift",
+   "Sources/Vapor/Validation/Validators/Email.swift",
+   "Sources/Vapor/Validation/Validators/Empty.swift",
+   "Sources/Vapor/Validation/Validators/In.swift",
+   "Sources/Vapor/Validation/Validators/Nil.swift",
+   "Sources/Vapor/Validation/Validators/NilIgnoring.swift",
+   "Sources/Vapor/Validation/Validators/Not.swift",
+   "Sources/Vapor/Validation/Validators/Or.swift",
+   "Sources/Vapor/Validation/Validators/Pattern.swift",
+   "Sources/Vapor/Validation/Validators/Range.swift",
+   "Sources/Vapor/Validation/Validators/URL.swift",
+   "Sources/Vapor/Validation/Validators/Valid.swift",
+   "Sources/Vapor/View/PlaintextRenderer.swift",
+   "Sources/Vapor/View/View.swift",
+   "Sources/VaporMacros/MacroInterface.swift",
+   "Sources/VaporMacrosPlugin/ControllerMacro.swift",
+   "Sources/VaporMacrosPlugin/HTTPMethods/FreestandingRouteMacro.swift",
+   "Sources/VaporMacrosPlugin/HTTPMethods/HTTPDeleteMacro.swift",
+   "Sources/VaporMacrosPlugin/HTTPMethods/HTTPGetMacro.swift",
+   "Sources/VaporMacrosPlugin/HTTPMethods/HTTPMethodMacro.swift",
+   "Sources/VaporMacrosPlugin/HTTPMethods/HTTPMethodMacroUtilities.swift",
+   "Sources/VaporMacrosPlugin/HTTPMethods/HTTPPatchMacro.swift",
+   "Sources/VaporMacrosPlugin/HTTPMethods/HTTPPostMacro.swift",
+   "Sources/VaporMacrosPlugin/HTTPMethods/HTTPPutMacro.swift",
+   "Sources/VaporMacrosPlugin/VaporMacros.swift",
+   "Sources/VaporTesting/AHCClient.swift",
+   "Sources/VaporTesting/LiveTestOptions.swift",
+   "Sources/VaporTesting/TaskLocalMetricsSystem.swift",
+   "Sources/VaporTesting/TaskLocalTracingSystem.swift",
+   "Sources/VaporTesting/TestClient.swift",
+   "Sources/VaporTesting/TestingApplication.swift",
+   "Sources/VaporTesting/TestingApplicationTester.swift",
+   "Sources/VaporTesting/Utilities.swift",
+   "Sources/VaporTesting/withApp.swift"
+  ],
+  "e142b03ad0": [
+   "Package.swift"
+  ],
+  "5dfe8b8119": [
+   "Package.swift"
+  ],
+  "898153ce65": [
+   "Package.swift"
+  ],
+  "bce76e9911": [
+   "Package.swift",
+   "Sources/Vapor/HTTP/Server/HTTPServerHandler.swift"
+  ],
+  "47088041e9": [
+   "Package.swift",
+   "Sources/Vapor/Environment/Environment+Process.swift",
+   "Sources/Vapor/HTTP/Server/NIOHTTPServerAdapter.swift",
+   "Sources/Vapor/Security/OTP.swift"
+  ],
+  "0a376672ac": [
+   "Sources/Vapor/Error/DebuggableError.swift",
+   "Sources/Vapor/Logging/Logger+Report.swift",
+   "Sources/Vapor/Middleware/ErrorMiddleware.swift",
+   "Sources/Vapor/Request/Request+Body.swift",
+   "Sources/Vapor/Request/RequestBodyStream.swift"
+  ],
+  "bdf36971f9": [
+   "Package.swift"
+  ],
+  "9c65c0c6e4": [
+   "Sources/Vapor/HTTP/Server/NIOHTTPServerAdapter.swift",
+   "Sources/Vapor/Request/Request.swift",
+   "Sources/Vapor/Server/ServerConfiguration+TLSConfiguration.swift"
+  ],
+  "e5893bde60": [
+   "Package.swift",
+   "Sources/Development/routes.swift",
+   "Sources/Vapor/Application.swift",
+   "Sources/Vapor/Authentication/Authenticator.swift",
+   "Sources/Vapor/Client/Client.swift",
+   "Sources/Vapor/Client/ClientRequest.swift",
+   "Sources/Vapor/Client/ClientResponse.swift",
+   "Sources/Vapor/HTTP/Client/VaporHTTPClient.swift",
+   "Sources/Vapor/HTTP/Server/HTTPBodyWriter.swift",
+   "Sources/Vapor/HTTP/Server/HTTPServerHandler.swift",
+   "Sources/Vapor/Middleware/MetricsMiddleware.swift",
+   "Sources/Vapor/Request/Request+Body.swift",
+   "Sources/Vapor/Request/Request.swift",
+   "Sources/Vapor/Request/RequestBodyReader.swift",
+   "Sources/Vapor/Response/Response+Body.swift",
+   "Sources/Vapor/Routing/Routes.swift",
+   "Sources/Vapor/Routing/RoutesBuilder+Method.swift",
+   "Sources/Vapor/Routing/RoutesBuilder+WebSocket.swift",
+   "Sources/Vapor/Utilities/FileIO.swift",
+   "Sources/Vapor/Validation/Validatable.swift",
+   "Sources/Vapor/Validation/Validations.swift",
+   "Sources/VaporTesting/AHCClient.swift",
+   "Sources/VaporTesting/TestClient.swift",
+   "Sources/VaporTesting/TestingApplicationTester.swift",
+   "Sources/VaporTesting/Utilities.swift"
+  ],
+  "8413daee41": [
+   "Package.swift",
+   "Sources/Vapor/HTTP/Server/HTTPServerHandler.swift",
+   "Sources/VaporTesting/LiveTestOptions.swift",
+   "Sources/VaporTesting/TestClient.swift",
+   "Sources/VaporTesting/TestingApplication.swift",
+   "Sources/VaporTesting/TestingApplicationTester.swift",
+   "Sources/VaporTesting/withApp.swift"
+  ],
+  "e7a674c239": [
+   "Package.swift",
+   "Sources/Vapor/Routing/RoutesBuilder+Method.swift"
+  ],
+  "33d8f02a92": [
+   "Sources/Development/routes.swift",
+   "Sources/Vapor/Authentication/Authenticator.swift",
+   "Sources/Vapor/HTTP/Server/HTTPServerHandler.swift",
+   "Sources/Vapor/Request/Request+Body.swift",
+   "Sources/Vapor/Request/Request.swift",
+   "Sources/Vapor/Routing/RoutesBuilder+Method.swift",
+   "Sources/Vapor/Server/ServerConfiguration.swift"
+  ],
+  "b0579397af": [
+   "Sources/Vapor/Application.swift",
+   "Sources/Vapor/HTTP/Responder.swift",
+   "Sources/Vapor/HTTP/Server/HTTPServerHandler.swift",
+   "Sources/Vapor/HTTP/Server/NIOHTTPServerAdapter.swift",
+   "Sources/Vapor/Middleware/MiddlewareConfiguration.swift",
+   "Sources/Vapor/Request/Request.swift",
+   "Sources/Vapor/Responder/DefaultResponder.swift",
+   "Sources/Vapor/Routing/Routes.swift"
+  ],
+  "38c47ccb1d": [
+   "Package.swift",
+   "Sources/Vapor/Middleware/MetricsMiddleware.swift",
+   "Sources/VaporTesting/TestingApplicationTester.swift",
+   "Sources/VaporTesting/withApp.swift"
+  ],
+  "7e62b8ed81": [
+   "Sources/Development/routes.swift",
+   "Sources/Vapor/Application+AddressConfiguration.swift",
+   "Sources/Vapor/Application.swift",
+   "Sources/Vapor/Cache/MemoryCache.swift",
+   "Sources/Vapor/Client/ClientRequest.swift",
+   "Sources/Vapor/Environment/Environment+Secret.swift",
+   "Sources/Vapor/HTTP/Client/VaporHTTPClient.swift",
+   "Sources/Vapor/HTTP/EndpointCache.swift",
+   "Sources/Vapor/HTTP/Headers/HTTPFields+ContentRange.swift",
+   "Sources/Vapor/HTTP/Server/HTTPServerHandler.swift",
+   "Sources/Vapor/HTTP/Server/NIOHTTPServerAdapter.swift",
+   "Sources/Vapor/Middleware/RouteLoggingMiddleware.swift",
+   "Sources/Vapor/Multipart/File+Multipart.swift",
+   "Sources/Vapor/Request/Request.swift",
+   "Sources/Vapor/Routing/Parameters+Require.swift",
+   "Sources/Vapor/Sessions/Request+Session.swift",
+   "Sources/Vapor/Sessions/Session.swift",
+   "Sources/Vapor/Sessions/SessionCache.swift",
+   "Sources/Vapor/Sessions/SessionsMiddleware.swift",
+   "Sources/Vapor/Utilities/DirectoryConfiguration.swift",
+   "Sources/Vapor/Utilities/DotEnv.swift",
+   "Sources/Vapor/Utilities/File.swift",
+   "Sources/Vapor/Utilities/FileIO.swift",
+   "Sources/Vapor/Utilities/Storage.swift",
+   "Sources/Vapor/Validation/Validations.swift",
+   "Sources/Vapor/View/PlaintextRenderer.swift",
+   "Sources/VaporTesting/AHCClient.swift",
+   "Sources/VaporTesting/withApp.swift"
+  ],
+  "6d2406afbf": [
+   "Sources/Vapor/Application.swift",
+   "Sources/Vapor/HTTP/Server/HTTPServerHandler.swift",
+   "Sources/Vapor/HTTP/Server/NIOHTTPServerAdapter.swift",
+   "Sources/Vapor/Middleware/TracingMiddleware.swift",
+   "Sources/Vapor/Request/Request.swift",
+   "Sources/Vapor/Server/Server.swift",
+   "Sources/VaporTesting/TestClient.swift"
+  ],
+  "2b2fa206ce": [
+   "Sources/Vapor/View/PlaintextRenderer.swift",
+   "Sources/Vapor/View/View.swift"
+  ],
+  "c6bdfe1a5f": [
+   "Sources/Vapor/HTTP/Responder.swift",
+   "Sources/Vapor/HTTP/Server/NIOHTTPServerAdapter.swift",
+   "Sources/Vapor/Response/Response+Body.swift",
+   "Sources/VaporTesting/TestingApplication.swift",
+   "Sources/VaporTesting/TestingApplicationTester.swift",
+   "Sources/VaporTesting/Utilities.swift",
+   "Sources/VaporTesting/withApp.swift"
+  ],
+  "630763c5e0": [
+   "Sources/Vapor/HTTP/Server/HTTPServerHandler.swift",
+   "Sources/Vapor/HTTP/Server/ResponseBodyWriter.swift",
+   "Sources/Vapor/Response/Response+Body.swift"
+  ],
+  "f9d3cbdb46": [
+   "Sources/Vapor/HTTP/Server/HTTPServerHandler.swift",
+   "Sources/Vapor/Response/Response+Body.swift"
+  ],
+  "ccf25d5470": [
+   "Sources/Vapor/HTTP/Headers/HTTPFields+ContentRange.swift",
+   "Sources/Vapor/Utilities/FileIO.swift"
+  ],
+  "44b5704e36": [
+   "Sources/Vapor/HTTP/Server/NIOHTTPServerAdapter.swift"
+  ],
+  "411595f93c": [
+   "Package.swift",
+   "Sources/Vapor/HTTP/Server/NIOHTTPServerAdapter.swift",
+   "Sources/Vapor/Server/ServerConfiguration+TLSConfiguration.swift"
+  ],
+  "55f9f01d96": [
+   "Performance/Sources/PerformanceServer/main.swift",
+   "Sources/Development/routes.swift",
+   "Sources/Vapor/Client/ClientResponse.swift",
+   "Sources/Vapor/Content/Content.swift",
+   "Sources/Vapor/HTTP/EndpointCache.swift",
+   "Sources/Vapor/HTTP/Server/HTTPServerHandler.swift",
+   "Sources/Vapor/Middleware/ErrorMiddleware.swift",
+   "Sources/Vapor/Middleware/FileMiddleware.swift",
+   "Sources/Vapor/Middleware/TracingMiddleware.swift",
+   "Sources/Vapor/Request/Request+Body.swift",
+   "Sources/Vapor/Request/Request.swift",
+   "Sources/Vapor/Responder/DefaultResponder.swift",
+   "Sources/Vapor/Response/ResponseCodable.swift",
+   "Sources/Vapor/Routing/RoutesBuilder+Method.swift",
+   "Sources/Vapor/Sessions/Request+Session.swift",
+   "Sources/Vapor/Sessions/SessionCache.swift",
+   "Sources/Vapor/Sessions/SessionsMiddleware.swift",
+   "Sources/Vapor/Utilities/FileETagHashCache.swift",
+   "Sources/Vapor/Utilities/FileIO.swift",
+   "Sources/Vapor/Validation/Validatable.swift",
+   "Sources/Vapor/Validation/Validations.swift",
+   "Sources/VaporTesting/TestingApplication.swift"
+  ],
+  "219223d752": [
+   "Sources/Vapor/Utilities/FileIO.swift"
+  ],
+  "4813c31be4": [
+   "Sources/Vapor/Client/ClientRequest.swift",
+   "Sources/Vapor/HTTP/Client/EventLoopHTTPClient.swift",
+   "Sources/Vapor/Middleware/FileMiddleware.swift"
+  ],
+  "de7c5f124e": [
+   "Package.swift",
+   "Sources/Vapor/Client/ClientRequest.swift",
+   "Sources/Vapor/HTTP/Server/HTTPServerHandler.swift",
+   "Sources/Vapor/Middleware/MetricsMiddleware.swift",
+   "Sources/Vapor/Response/Response+Body.swift",
+   "Sources/Vapor/Utilities/Base32.swift",
+   "Sources/Vapor/Utilities/Base64.swift",
+   "Sources/Vapor/Utilities/BaseN.swift",
+   "Sources/Vapor/Utilities/Bytes+Hex.swift",
+   "Sources/Vapor/Utilities/DirectoryConfiguration.swift"
+  ],
+  "cf330f6558": [
+   "Performance/Sources/PerformanceServer/main.swift",
+   "Sources/Development/configure.swift",
+   "Sources/Development/routes.swift",
+   "Sources/Vapor/Authentication/GuardMiddleware.swift",
+   "Sources/Vapor/Authentication/RedirectMiddleware.swift",
+   "Sources/Vapor/Authentication/SessionAuthenticatable.swift",
+   "Sources/Vapor/Cache/Cache.swift",
+   "Sources/Vapor/Cache/MemoryCache.swift",
+   "Sources/Vapor/Client/BlackholeClient.swift",
+   "Sources/Vapor/Client/Client.swift",
+   "Sources/Vapor/Client/ClientRequest.swift",
+   "Sources/Vapor/Client/ClientResponse.swift",
+   "Sources/Vapor/Content/Content.swift",
+   "Sources/Vapor/Content/ContentCoders.swift",
+   "Sources/Vapor/Content/ContentConfiguration.swift",
+   "Sources/Vapor/Content/ContentContainer.swift",
+   "Sources/Vapor/Content/JSONCoders+Content.swift",
+   "Sources/Vapor/Content/URLQueryContainer.swift",
+   "Sources/Vapor/HTTP/BasicResponder.swift",
+   "Sources/Vapor/HTTP/Client/EventLoopHTTPClient.swift",
+   "Sources/Vapor/HTTP/EndpointCache.swift",
+   "Sources/Vapor/HTTP/Headers/HTTPFields+Connection.swift",
+   "Sources/Vapor/HTTP/Server/Application+HTTP+Server.swift",
+   "Sources/Vapor/HTTP/Server/HTTPServerHandler.swift",
+   "Sources/Vapor/Middleware/CORSMiddleware.swift",
+   "Sources/Vapor/Middleware/MetricsMiddleware.swift",
+   "Sources/Vapor/Middleware/Middleware.swift",
+   "Sources/Vapor/Middleware/TracingMiddleware.swift",
+   "Sources/Vapor/Multipart/FormDataDecoder+Content.swift",
+   "Sources/Vapor/Request/Redirect.swift",
+   "Sources/Vapor/Request/Request.swift",
+   "Sources/Vapor/Responder/DefaultResponder.swift",
+   "Sources/Vapor/Response/Response+Body.swift",
+   "Sources/Vapor/Response/Response.swift",
+   "Sources/Vapor/Sessions/MemorySessions.swift",
+   "Sources/Vapor/Sessions/SessionDriver.swift",
+   "Sources/Vapor/Sessions/SessionsMiddleware.swift",
+   "Sources/Vapor/Utilities/AnyResponse.swift",
+   "Sources/Vapor/Utilities/FileIO.swift",
+   "Sources/Vapor/Validation/Validators/Range.swift",
+   "Sources/Vapor/View/PlaintextRenderer.swift",
+   "Sources/Vapor/View/ViewRenderer.swift",
+   "Sources/VaporTesting/+TestingHTTPResponse.swift",
+   "Sources/VaporTesting/TaskLocalMetricsSystem.swift",
+   "Sources/VaporTesting/TestingApplication.swift",
+   "Sources/VaporTesting/TestingApplicationNew.swift",
+   "Sources/VaporTesting/TestingApplicationTester.swift",
+   "Sources/VaporTesting/TestingHTTPRequest.swift",
+   "Sources/VaporTesting/TestingHTTPResponse.swift",
+   "Sources/VaporTesting/Utilities.swift",
+   "Sources/VaporTesting/withApp.swift"
+  ],
+  "86ab4300ef": [
+   "Sources/Vapor/Client/ClientRequest.swift",
+   "Sources/Vapor/Client/ClientResponse.swift",
+   "Sources/Vapor/Content/ContentCoders.swift",
+   "Sources/Vapor/Content/ContentContainer.swift",
+   "Sources/Vapor/Content/JSONCoders+Content.swift",
+   "Sources/Vapor/Content/PlaintextDecoder.swift",
+   "Sources/Vapor/Content/PlaintextEncoder.swift",
+   "Sources/Vapor/Middleware/ErrorMiddleware.swift",
+   "Sources/Vapor/Multipart/File+Multipart.swift",
+   "Sources/Vapor/Multipart/FormDataDecoder+Content.swift",
+   "Sources/Vapor/Multipart/FormDataEncoder+Content.swift",
+   "Sources/Vapor/Request/Request.swift",
+   "Sources/Vapor/Response/Response+Body.swift",
+   "Sources/Vapor/Response/Response.swift",
+   "Sources/Vapor/URLEncodedForm/URLEncodedFormDecoder.swift",
+   "Sources/Vapor/URLEncodedForm/URLEncodedFormEncoder.swift",
+   "Sources/Vapor/Validation/Validations.swift",
+   "Sources/Vapor/View/View.swift",
+   "Sources/VaporTesting/+TestingHTTPResponse.swift",
+   "Sources/VaporTesting/TestingApplication.swift",
+   "Sources/VaporTesting/TestingHTTPRequest.swift",
+   "Sources/VaporTesting/TestingHTTPResponse.swift",
+   "Sources/VaporTesting/Utilities.swift"
+  ],
+  "5df92b8deb": [
+   "Performance/Sources/PerformanceServer/main.swift",
+   "Sources/Development/routes.swift",
+   "Sources/Vapor/Client/ClientResponse.swift",
+   "Sources/Vapor/HTTP/Server/HTTPServerHandler.swift",
+   "Sources/Vapor/HTTP/Server/ResponseBodyWriter.swift",
+   "Sources/Vapor/Middleware/ErrorMiddleware.swift",
+   "Sources/Vapor/Response/Response+Body.swift",
+   "Sources/Vapor/Response/Response.swift",
+   "Sources/Vapor/Response/ResponseCodable.swift",
+   "Sources/Vapor/Utilities/FileIO.swift",
+   "Sources/VaporTesting/TestingApplication.swift"
+  ],
+  "41472d241f": [
+   "Package.swift"
+  ],
+  "dc652372a2": [
+   "Sources/VaporTesting/TestingApplication.swift"
+  ],
+  "03e29127a2": [
+   "Sources/VaporTesting/withApp.swift"
+  ],
+  "7de7a9e232": [
+   "Sources/Vapor/Application.swift",
+   "Sources/Vapor/Middleware/FileMiddleware.swift",
+   "Sources/Vapor/Server/ServerConfiguration.swift",
+   "Sources/Vapor/Utilities/FileIO.swift",
+   "Sources/VaporTesting/withApp.swift"
+  ],
+  "e13d8b7f48": [
+   "Sources/Vapor/HTTP/Server/NIOHTTPServerAdapter.swift",
+   "Sources/Vapor/Server/Application+Servers.swift",
+   "Sources/VaporTesting/TestingApplication.swift",
+   "Sources/VaporTesting/TestingApplicationNew.swift",
+   "Sources/VaporTesting/TestingApplicationTester.swift",
+   "Sources/VaporTesting/withApp.swift"
+  ],
+  "8e9497eb22": [
+   "Sources/Vapor/HTTP/Server/HTTPServerHandler.swift",
+   "Sources/Vapor/Utilities/SocketAddress+Hostname.swift"
+  ],
+  "47ccd9960e": [
+   "Sources/Vapor/Application.swift",
+   "Sources/Vapor/HTTP/BodyStream.swift",
+   "Sources/Vapor/HTTP/Server/Application+HTTP+Server.swift",
+   "Sources/Vapor/HTTP/Server/NIOHTTPServerAdapter.swift",
+   "Sources/Vapor/Middleware/TracingMiddleware.swift"
+  ],
+  "6b1d27782c": [
+   "Sources/Vapor/Authentication/Authenticator.swift",
+   "Sources/Vapor/Content/Content.swift",
+   "Sources/Vapor/HTTPNewNew/HTTPServerHandler.swift",
+   "Sources/Vapor/Middleware/CORSMiddleware.swift",
+   "Sources/Vapor/Middleware/FileMiddleware.swift",
+   "Sources/Vapor/Middleware/ResponseCompressionMiddleware.swift",
+   "Sources/Vapor/Request/Redirect.swift",
+   "Sources/Vapor/Response/Response+Body.swift",
+   "Sources/Vapor/Response/Response.swift",
+   "Sources/Vapor/Response/ResponseCodable.swift",
+   "Sources/Vapor/Sessions/SessionsMiddleware.swift",
+   "Sources/Vapor/Utilities/FileIO.swift"
+  ],
+  "e4e49729a5": [
+   "Sources/Development/routes.swift",
+   "Sources/Vapor/HTTP/BodyStream.swift",
+   "Sources/Vapor/HTTP/Server/ResponseBodyWriter.swift",
+   "Sources/Vapor/HTTPNewNew/HTTPServerHandler.swift",
+   "Sources/Vapor/Request/Request+BodyStream.swift",
+   "Sources/Vapor/Response/Response+Body.swift",
+   "Sources/Vapor/Utilities/FileIO.swift"
+  ],
+  "1384436527": [
+   "Sources/Vapor/Response/Response+Body.swift",
+   "Sources/VaporTesting/TestingApplication.swift"
+  ],
+  "26a134417d": [
+   "Package.swift",
+   "Sources/Vapor/HTTPNewNew/NIOHTTPServerAdapter.swift"
+  ],
+  "5d5c597647": [
+   "Package.swift",
+   "Sources/Vapor/Environment/Environment+Process.swift",
+   "Sources/Vapor/Security/OTP.swift",
+   "Sources/Vapor/Utilities/DotEnv.swift",
+   "Sources/Vapor/Utilities/OptionalType.swift",
+   "Sources/Vapor/Validation/Validators/Nil.swift",
+   "Sources/VaporMacrosPlugin/HTTPMethods/FreestandingRouteMacro.swift"
+  ],
+  "5e192a5ab0": [
+   "Package.swift",
+   "Sources/Vapor/Application.swift",
+   "Sources/Vapor/Authentication/BasicAuthorization.swift",
+   "Sources/Vapor/Authentication/BearerAuthorization.swift",
+   "Sources/Vapor/Authentication/GuardMiddleware.swift",
+   "Sources/Vapor/Client/BlackholeClient.swift",
+   "Sources/Vapor/Client/Client.swift",
+   "Sources/Vapor/Client/ClientRequest.swift",
+   "Sources/Vapor/Client/ClientResponse.swift",
+   "Sources/Vapor/Concurrency/RequestBody+Concurrency.swift",
+   "Sources/Vapor/Content/ContentCoders.swift",
+   "Sources/Vapor/Content/JSONCoder+Custom.swift",
+   "Sources/Vapor/Content/JSONCoders+Content.swift",
+   "Sources/Vapor/Content/PlaintextDecoder.swift",
+   "Sources/Vapor/Content/PlaintextEncoder.swift",
+   "Sources/Vapor/Environment/Environment.swift",
+   "Sources/Vapor/Error/Abort.swift",
+   "Sources/Vapor/Error/AbortError.swift",
+   "Sources/Vapor/Error/DebuggableError.swift",
+   "Sources/Vapor/HTTP/BodyStream.swift",
+   "Sources/Vapor/HTTP/Client/EventLoopHTTPClient.swift",
+   "Sources/Vapor/HTTP/EndpointCache.swift",
+   "Sources/Vapor/HTTP/Headers/HTTPCookies.swift",
+   "Sources/Vapor/HTTP/Headers/HTTPFieldCacheControl.swift",
+   "Sources/Vapor/HTTP/Headers/HTTPFieldExpires.swift",
+   "Sources/Vapor/HTTP/Headers/HTTPFieldLastModified.swift",
+   "Sources/Vapor/HTTP/Headers/HTTPFields+Cache.swift",
+   "Sources/Vapor/HTTP/Headers/HTTPFields+Connection.swift",
+   "Sources/Vapor/HTTP/Headers/HTTPFields+ContentDisposition.swift",
+   "Sources/Vapor/HTTP/Headers/HTTPFields+ContentRange.swift",
+   "Sources/Vapor/HTTP/Headers/HTTPFields+Forwarded.swift",
+   "Sources/Vapor/HTTP/Headers/HTTPFields+Link.swift",
+   "Sources/Vapor/HTTP/Headers/HTTPFields+ResponseCompression.swift",
+   "Sources/Vapor/HTTP/Headers/HTTPFields+WWWAuthenticate.swift",
+   "Sources/Vapor/HTTP/Headers/HTTPFields.swift",
+   "Sources/Vapor/HTTP/Headers/HTTPHeaders+Name.swift",
+   "Sources/Vapor/HTTP/Headers/HTTPMediaTypePreference.swift",
+   "Sources/Vapor/HTTP/Server/HTTPServerConfiguration+RequestDecompressionConfiguration.swift",
+   "Sources/Vapor/HTTP/Server/HTTPServerConfiguration+TLSConfiguration.swift",
+   "Sources/Vapor/HTTP/Server/ResponseBodyWriter.swift",
+   "Sources/Vapor/HTTPNewNew/HTTPServerHandler.swift",
+   "Sources/Vapor/Logging/Logger+Report.swift",
+   "Sources/Vapor/Middleware/CORSMiddleware.swift",
+   "Sources/Vapor/Middleware/FileMiddleware.swift",
+   "Sources/Vapor/Middleware/ResponseCompressionMiddleware.swift",
+   "Sources/Vapor/Middleware/RouteLoggingMiddleware.swift",
+   "Sources/Vapor/Middleware/TracingMiddleware.swift",
+   "Sources/Vapor/Multipart/File+Multipart.swift",
+   "Sources/Vapor/Multipart/FormDataDecoder+Content.swift",
+   "Sources/Vapor/Multipart/FormDataEncoder+Content.swift",
+   "Sources/Vapor/Request/Redirect.swift",
+   "Sources/Vapor/Request/Request+Body.swift",
+   "Sources/Vapor/Request/Request.swift",
+   "Sources/Vapor/Responder/DefaultResponder.swift",
+   "Sources/Vapor/Response/Response+Body.swift",
+   "Sources/Vapor/Response/Response.swift",
+   "Sources/Vapor/Response/ResponseCodable.swift",
+   "Sources/Vapor/Routing/Parameters+Require.swift",
+   "Sources/Vapor/Routing/Route.swift",
+   "Sources/Vapor/Routing/RoutesBuilder+Group.swift",
+   "Sources/Vapor/Routing/RoutesBuilder+Method.swift",
+   "Sources/Vapor/Routing/RoutesBuilder.swift",
+   "Sources/Vapor/Security/OTP.swift",
+   "Sources/Vapor/Server/Server.swift",
+   "Sources/Vapor/URLEncodedForm/URLEncodedFormDecoder.swift",
+   "Sources/Vapor/URLEncodedForm/URLEncodedFormEncoder.swift",
+   "Sources/Vapor/Utilities/Base32.swift",
+   "Sources/Vapor/Utilities/File.swift",
+   "Sources/Vapor/Utilities/FileIO.swift",
+   "Sources/Vapor/Utilities/SocketAddress+Hostname.swift",
+   "Sources/Vapor/Validation/ValidationsError.swift",
+   "Sources/Vapor/View/View.swift"
+  ],
+  "b961f9746d": [
+   "Sources/Vapor/HTTPNewNew/NIOHTTPServerAdapter.swift",
+   "Sources/Vapor/Server/ServerConfiguration.swift"
+  ],
+  "c6818be25f": [
+   "Package.swift",
+   "Sources/Development/entrypoint.swift",
+   "Sources/Vapor/Concurrency/WebSocket+Concurrency.swift",
+   "Sources/Vapor/Content/JSONCoders+Content.swift",
+   "Sources/Vapor/Response/Response+Body.swift",
+   "Sources/Vapor/Response/Response.swift",
+   "Sources/Vapor/Routing/Request+WebSocket.swift",
+   "Sources/Vapor/Routing/RoutesBuilder+WebSocket.swift",
+   "Sources/Vapor/Utilities/File.swift"
+  ],
+  "2953575413": [
+   "Package.swift",
+   "Sources/Development/configure.swift",
+   "Sources/Development/routes.swift",
+   "Sources/VaporMacros/MacroInterface.swift",
+   "Sources/VaporMacrosPlugin/AuthMiddleware/AuthMiddlewareMacro.swift",
+   "Sources/VaporMacrosPlugin/ControllerMacro.swift",
+   "Sources/VaporMacrosPlugin/HTTPMethods/FreestandingRouteMacro.swift",
+   "Sources/VaporMacrosPlugin/HTTPMethods/HTTPDeleteMacro.swift",
+   "Sources/VaporMacrosPlugin/HTTPMethods/HTTPGetMacro.swift",
+   "Sources/VaporMacrosPlugin/HTTPMethods/HTTPMethodMacro.swift",
+   "Sources/VaporMacrosPlugin/HTTPMethods/HTTPPatchMacro.swift",
+   "Sources/VaporMacrosPlugin/HTTPMethods/HTTPPostMacro.swift",
+   "Sources/VaporMacrosPlugin/HTTPMethods/HTTPPutMacro.swift",
+   "Sources/VaporTesting/+TestingHTTPResponse.swift",
+   "Sources/VaporTesting/TaskLocalMetricsSystem.swift",
+   "Sources/VaporTesting/TaskLocalTracingSystem.swift",
+   "Sources/VaporTesting/TestingApplication.swift",
+   "Sources/VaporTesting/TestingApplicationNew.swift",
+   "Sources/VaporTesting/TestingApplicationTester.swift",
+   "Sources/VaporTesting/TestingHTTPRequest.swift",
+   "Sources/VaporTesting/TestingHTTPResponse.swift",
+   "Sources/VaporTesting/Utilities.swift",
+   "Sources/VaporTesting/withApp.swift"
+  ],
+  "ae44ef9417": [
+   "Package.swift",
+   "Sources/Development/configure.swift",
+   "Sources/Vapor/HTTP/Server/HTTPServerConfiguration+TLSConfiguration.swift",
+   "Sources/Vapor/HTTPNewNew/NIOHTTPServerAdapter.swift"
+  ],
+  "7ad312af19": [
+   "Package.swift",
+   "Sources/Vapor/HTTPNewNew/HTTPServerHandler.swift",
+   "Sources/Vapor/HTTPNewNew/NIOHTTPServerAdapter.swift"
+  ],
+  "e465b3a98b": [
+   "Sources/Vapor/HTTPNewNew/NIOHTTPServerAdapter.swift",
+   "Sources/Vapor/Server/ServerConfiguration.swift"
+  ],
+  "4024681926": [
+   "Sources/Development/routes.swift",
+   "Sources/Vapor/Authentication/Authenticator.swift",
+   "Sources/Vapor/Authentication/SessionAuthenticatable.swift",
+   "Sources/Vapor/Request/Request.swift"
+  ],
+  "e331072e09": [
+   "Package.swift"
+  ],
+  "6a8285851e": [
+   "Sources/Development/routes.swift",
+   "Sources/Vapor/Routing/Application+routesASCIITable.swift",
+   "Sources/Vapor/Routing/Route.swift",
+   "Sources/Vapor/Routing/RoutesBuilder+Group.swift",
+   "Sources/Vapor/Routing/RoutesBuilder+Method.swift",
+   "Sources/Vapor/Routing/RoutesBuilder+Middleware.swift"
+  ],
+  "50b1c83c13": [
+   "Package.swift",
+   "Sources/Development/routes.swift",
+   "Sources/Vapor/Application.swift",
+   "Sources/Vapor/Client/ClientResponse.swift",
+   "Sources/Vapor/Concurrency/WebSocket+Concurrency.swift",
+   "Sources/Vapor/HTTP/EndpointCache.swift",
+   "Sources/Vapor/HTTP/Server/HTTPServerConfiguration+RequestDecompressionConfiguration.swift",
+   "Sources/Vapor/HTTP/Server/HTTPServerConfiguration+ResponseCompressionConfiguration.swift",
+   "Sources/Vapor/Request/Redirect.swift",
+   "Sources/Vapor/Response/Response.swift",
+   "Sources/Vapor/Response/ResponseCodable.swift",
+   "Sources/Vapor/Routing/Request+WebSocket.swift",
+   "Sources/Vapor/Routing/RoutesBuilder+WebSocket.swift",
+   "Sources/VaporTesting/TestingHTTPResponse.swift"
+  ],
+  "cc6fae9750": [
+   "Sources/Vapor/Authentication/Authenticator.swift"
+  ],
+  "78324ded74": [
+   "Package.swift",
+   "Sources/Development/routes.swift",
+   "Sources/Vapor/Authentication/BasicAuthorization.swift",
+   "Sources/Vapor/Bcrypt/Bcrypt.swift",
+   "Sources/Vapor/Cache/MemoryCache.swift",
+   "Sources/Vapor/Client/ClientRequest.swift",
+   "Sources/Vapor/Client/ClientResponse.swift",
+   "Sources/Vapor/Concurrency/WebSocket+Concurrency.swift",
+   "Sources/Vapor/Content/ContentCoders.swift",
+   "Sources/Vapor/Content/ContentConfiguration.swift",
+   "Sources/Vapor/Content/JSONCoder+Custom.swift",
+   "Sources/Vapor/Content/JSONCoders+Content.swift",
+   "Sources/Vapor/Content/PlaintextEncoder.swift",
+   "Sources/Vapor/Environment/Environment+Process.swift",
+   "Sources/Vapor/Environment/Environment+Secret.swift",
+   "Sources/Vapor/Environment/Environment.swift",
+   "Sources/Vapor/Error/DebuggableError.swift",
+   "Sources/Vapor/HTTP/Client/EventLoopHTTPClient.swift",
+   "Sources/Vapor/HTTP/EndpointCache.swift",
+   "Sources/Vapor/HTTP/Headers/HTTPCookies.swift",
+   "Sources/Vapor/HTTP/Headers/HTTPFieldCacheControl.swift",
+   "Sources/Vapor/HTTP/Headers/HTTPFieldExpires.swift",
+   "Sources/Vapor/HTTP/Headers/HTTPFieldLastModified.swift",
+   "Sources/Vapor/HTTP/Headers/HTTPFields+Cache.swift",
+   "Sources/Vapor/HTTP/Headers/HTTPFields+ContentRange.swift",
+   "Sources/Vapor/HTTP/Headers/HTTPFields+ResponseCompression.swift",
+   "Sources/Vapor/HTTP/Headers/HTTPMediaType.swift",
+   "Sources/Vapor/HTTP/Headers/HTTPMediaTypePreference.swift",
+   "Sources/Vapor/Logging/Logger+Report.swift",
+   "Sources/Vapor/Middleware/ErrorMiddleware.swift",
+   "Sources/Vapor/Middleware/FileMiddleware.swift",
+   "Sources/Vapor/Middleware/RouteLoggingMiddleware.swift",
+   "Sources/Vapor/Passwords/BcryptHasher.swift",
+   "Sources/Vapor/Passwords/PasswordHasher.swift",
+   "Sources/Vapor/Passwords/PlaintextHasher.swift",
+   "Sources/Vapor/Request/Request.swift",
+   "Sources/Vapor/Responder/DefaultResponder.swift",
+   "Sources/Vapor/Response/Response+Body.swift",
+   "Sources/Vapor/Routing/RoutesBuilder.swift",
+   "Sources/Vapor/Security/OTP.swift",
+   "Sources/Vapor/Sessions/MemorySessions.swift",
+   "Sources/Vapor/Sessions/SessionsConfiguration.swift",
+   "Sources/Vapor/URLEncodedForm/URLEncodedFormData.swift",
+   "Sources/Vapor/URLEncodedForm/URLEncodedFormDecoder.swift",
+   "Sources/Vapor/URLEncodedForm/URLEncodedFormEncoder.swift",
+   "Sources/Vapor/URLEncodedForm/URLEncodedFormParser.swift",
+   "Sources/Vapor/URLEncodedForm/URLEncodedFormSerializer.swift",
+   "Sources/Vapor/URLEncodedForm/URLQueryFragmentConvertible.swift",
+   "Sources/Vapor/Utilities/Base32.swift",
+   "Sources/Vapor/Utilities/Base64.swift",
+   "Sources/Vapor/Utilities/BaseN.swift",
+   "Sources/Vapor/Utilities/ByteCount.swift",
+   "Sources/Vapor/Utilities/DataProtocol+Copy.swift",
+   "Sources/Vapor/Utilities/DotEnv.swift",
+   "Sources/Vapor/Utilities/File.swift",
+   "Sources/Vapor/Utilities/FileIO.swift",
+   "Sources/Vapor/Utilities/URI.swift",
+   "Sources/Vapor/Validation/Validations.swift",
+   "Sources/Vapor/Validation/Validators/CharacterSet.swift",
+   "Sources/Vapor/Validation/Validators/Email.swift",
+   "Sources/Vapor/Validation/Validators/Pattern.swift",
+   "Sources/Vapor/Validation/Validators/URL.swift",
+   "Sources/VaporMacrosPlugin/ControllerMacro.swift",
+   "Sources/VaporMacrosPlugin/HTTPMethods/FreestandingRouteMacro.swift",
+   "Sources/VaporMacrosPlugin/HTTPMethods/HTTPMethodMacroUtilities.swift",
+   "Sources/VaporTesting/+TestingHTTPResponse.swift",
+   "Sources/VaporTesting/TaskLocalMetricsSystem.swift",
+   "Sources/VaporTesting/TaskLocalTracingSystem.swift"
+  ],
+  "649c8312c3": [
+   "Sources/Vapor/Utilities/FileIO.swift"
+  ],
+  "e850e18333": [
+   "Sources/Vapor/Request/Request.swift",
+   "Sources/Vapor/Response/Response.swift"
+  ],
+  "cd35bc5213": [
+   "Package.swift",
+   "Sources/Development/configure.swift",
+   "Sources/Development/entrypoint.swift",
+   "Sources/Development/routes.swift",
+   "Sources/Vapor/Application.swift",
+   "Sources/Vapor/HTTP/Client/EventLoopHTTPClient.swift",
+   "Sources/Vapor/HTTP/EndpointCache.swift",
+   "Sources/Vapor/HTTPNewNew/HTTPServerHandler.swift",
+   "Sources/Vapor/HTTPNewNew/NIOHTTPServerAdapter.swift",
+   "Sources/Vapor/Middleware/ErrorMiddleware.swift",
+   "Sources/Vapor/Middleware/RouteLoggingMiddleware.swift",
+   "Sources/Vapor/Request/Request.swift",
+   "Sources/Vapor/Utilities/DotEnv.swift",
+   "Sources/Vapor/Utilities/FileIO.swift",
+   "Sources/Vapor/Utilities/Storage.swift",
+   "Sources/Vapor/View/PlaintextRenderer.swift",
+   "Sources/VaporTesting/TestingApplication.swift",
+   "Sources/VaporTesting/withApp.swift"
+  ],
+  "ee328abb39": [
+   "Package.swift",
+   "Sources/Vapor/Multipart/File+Multipart.swift",
+   "Sources/Vapor/Multipart/FormDataDecoder+Content.swift"
+  ],
+  "720a2ffd0a": [
+   "Sources/Vapor/Validation/Validators/In.swift"
+  ],
+  "361ff11ba5": [
+   "Sources/Vapor/View/PlaintextRenderer.swift"
+  ],
+  "fff4892930": [
+   "Package.swift"
+  ],
+  "1d51fcf751": [
+   "Package.swift"
+  ],
+  "8cfd55759c": [
+   "Package.swift",
+   "Sources/Development/configure.swift",
+   "Sources/Development/entrypoint.swift",
+   "Sources/Development/routes.swift",
+   "Sources/Vapor/Application.swift",
+   "Sources/Vapor/Authentication/AuthenticationCache.swift",
+   "Sources/Vapor/Authentication/Authenticator.swift",
+   "Sources/Vapor/Authentication/BasicAuthorization.swift",
+   "Sources/Vapor/Authentication/BearerAuthorization.swift",
+   "Sources/Vapor/Authentication/GuardMiddleware.swift",
+   "Sources/Vapor/Authentication/RedirectMiddleware.swift",
+   "Sources/Vapor/Authentication/SessionAuthenticatable.swift",
+   "Sources/Vapor/Bcrypt/Bcrypt.swift",
+   "Sources/Vapor/Cache/Cache.swift",
+   "Sources/Vapor/Cache/MemoryCache.swift",
+   "Sources/Vapor/Client/Client.swift",
+   "Sources/Vapor/Client/ClientRequest.swift",
+   "Sources/Vapor/Client/ClientResponse.swift",
+   "Sources/Vapor/Concurrency/RequestBody+Concurrency.swift",
+   "Sources/Vapor/Concurrency/WebSocket+Concurrency.swift",
+   "Sources/Vapor/Content/ContainerGetPathExecutor.swift",
+   "Sources/Vapor/Content/Content.swift",
+   "Sources/Vapor/Content/ContentCoders.swift",
+   "Sources/Vapor/Content/ContentConfiguration.swift",
+   "Sources/Vapor/Content/ContentContainer.swift",
+   "Sources/Vapor/Content/JSONCoder+Custom.swift",
+   "Sources/Vapor/Content/JSONCoders+Content.swift",
+   "Sources/Vapor/Content/PlaintextDecoder.swift",
+   "Sources/Vapor/Content/PlaintextEncoder.swift",
+   "Sources/Vapor/Content/URLQueryCoders.swift",
+   "Sources/Vapor/Content/URLQueryContainer.swift",
+   "Sources/Vapor/Core/Core.swift",
+   "Sources/Vapor/Environment/Environment+Process.swift",
+   "Sources/Vapor/Environment/Environment+Secret.swift",
+   "Sources/Vapor/Environment/Environment.swift",
+   "Sources/Vapor/Error/Abort.swift",
+   "Sources/Vapor/Error/AbortError.swift",
+   "Sources/Vapor/Error/DebuggableError.swift",
+   "Sources/Vapor/Error/ErrorSource.swift",
+   "Sources/Vapor/HTTP/BasicResponder.swift",
+   "Sources/Vapor/HTTP/BodyStream.swift",
+   "Sources/Vapor/HTTP/Client/EventLoopHTTPClient.swift",
+   "Sources/Vapor/HTTP/EndpointCache.swift",
+   "Sources/Vapor/HTTP/HTTPStatus.swift",
+   "Sources/Vapor/HTTP/Headers/HTTPCookies.swift",
+   "Sources/Vapor/HTTP/Headers/HTTPFieldCacheControl.swift",
+   "Sources/Vapor/HTTP/Headers/HTTPFieldExpires.swift",
+   "Sources/Vapor/HTTP/Headers/HTTPFieldLastModified.swift",
+   "Sources/Vapor/HTTP/Headers/HTTPFields+Cache.swift",
+   "Sources/Vapor/HTTP/Headers/HTTPFields+Connection.swift",
+   "Sources/Vapor/HTTP/Headers/HTTPFields+ContentDisposition.swift",
+   "Sources/Vapor/HTTP/Headers/HTTPFields+ContentRange.swift",
+   "Sources/Vapor/HTTP/Headers/HTTPFields+Directive.swift",
+   "Sources/Vapor/HTTP/Headers/HTTPFields+Forwarded.swift",
+   "Sources/Vapor/HTTP/Headers/HTTPFields+Link.swift",
+   "Sources/Vapor/HTTP/Headers/HTTPFields+ResponseCompression.swift",
+   "Sources/Vapor/HTTP/Headers/HTTPHeaders+Name.swift",
+   "Sources/Vapor/HTTP/Headers/HTTPMediaType.swift",
+   "Sources/Vapor/HTTP/Headers/HTTPMediaTypePreference.swift",
+   "Sources/Vapor/HTTP/Responder.swift",
+   "Sources/Vapor/HTTP/Server/Application+HTTP+Server.swift",
+   "Sources/Vapor/HTTP/Server/HTTPServerConfiguration+RequestDecompressionConfiguration.swift",
+   "Sources/Vapor/HTTP/Server/HTTPServerConfiguration+ResponseCompressionConfiguration.swift",
+   "Sources/Vapor/HTTP/Server/HTTPServerUpgradeHandler.swift",
+   "Sources/Vapor/Logging/Logger+Report.swift",
+   "Sources/Vapor/Middleware/Application+Middleware.swift",
+   "Sources/Vapor/Middleware/CORSMiddleware.swift",
+   "Sources/Vapor/Middleware/ErrorMiddleware.swift",
+   "Sources/Vapor/Middleware/FileMiddleware.swift",
+   "Sources/Vapor/Middleware/Middleware.swift",
+   "Sources/Vapor/Middleware/MiddlewareConfiguration.swift",
+   "Sources/Vapor/Middleware/ResponseCompressionMiddleware.swift",
+   "Sources/Vapor/Middleware/RouteLoggingMiddleware.swift",
+   "Sources/Vapor/Middleware/TracingMiddleware.swift",
+   "Sources/Vapor/Multipart/File+Multipart.swift",
+   "Sources/Vapor/Multipart/FormDataDecoder+Content.swift",
+   "Sources/Vapor/Multipart/FormDataEncoder+Content.swift",
+   "Sources/Vapor/Passwords/BcryptHasher.swift",
+   "Sources/Vapor/Passwords/PasswordHasher.swift",
+   "Sources/Vapor/Passwords/PlaintextHasher.swift",
+   "Sources/Vapor/Request/Redirect.swift",
+   "Sources/Vapor/Request/Request+Body.swift",
+   "Sources/Vapor/Request/Request+BodyStream.swift",
+   "Sources/Vapor/Request/Request.swift",
+   "Sources/Vapor/Responder/DefaultResponder.swift",
+   "Sources/Vapor/Response/Response+Body.swift",
+   "Sources/Vapor/Response/Response.swift",
+   "Sources/Vapor/Response/ResponseCodable.swift",
+   "Sources/Vapor/Routing/Parameters+Require.swift",
+   "Sources/Vapor/Routing/Request+WebSocket.swift",
+   "Sources/Vapor/Routing/Route.swift",
+   "Sources/Vapor/Routing/RouteCollection.swift",
+   "Sources/Vapor/Routing/Routes.swift",
+   "Sources/Vapor/Routing/RoutesBuilder+Group.swift",
+   "Sources/Vapor/Routing/RoutesBuilder+Method.swift",
+   "Sources/Vapor/Routing/RoutesBuilder+Middleware.swift",
+   "Sources/Vapor/Routing/RoutesBuilder+WebSocket.swift",
+   "Sources/Vapor/Routing/RoutesBuilder.swift",
+   "Sources/Vapor/Security/OTP.swift",
+   "Sources/Vapor/Security/ValidatedCertificateChain.swift",
+   "Sources/Vapor/Server/Application+Servers.swift",
+   "Sources/Vapor/Server/Server.swift",
+   "Sources/Vapor/Sessions/Application+Sessions.swift",
+   "Sources/Vapor/Sessions/MemorySessions.swift",
+   "Sources/Vapor/Sessions/Request+Session.swift",
+   "Sources/Vapor/Sessions/Session.swift",
+   "Sources/Vapor/Sessions/SessionData.swift",
+   "Sources/Vapor/Sessions/SessionDriver.swift",
+   "Sources/Vapor/Sessions/SessionsConfiguration.swift",
+   "Sources/Vapor/Sessions/SessionsMiddleware.swift",
+   "Sources/Vapor/URLEncodedForm/URLEncodedFormData.swift",
+   "Sources/Vapor/URLEncodedForm/URLEncodedFormDecoder.swift",
+   "Sources/Vapor/URLEncodedForm/URLEncodedFormEncoder.swift",
+   "Sources/Vapor/URLEncodedForm/URLEncodedFormError.swift",
+   "Sources/Vapor/URLEncodedForm/URLEncodedFormParser.swift",
+   "Sources/Vapor/URLEncodedForm/URLEncodedFormSerializer.swift",
+   "Sources/Vapor/Utilities/AnyResponse.swift",
+   "Sources/Vapor/Utilities/BasicCodingKey.swift",
+   "Sources/Vapor/Utilities/DotEnv.swift",
+   "Sources/Vapor/Utilities/Extendable.swift",
+   "Sources/Vapor/Utilities/File.swift",
+   "Sources/Vapor/Utilities/FileIO.swift",
+   "Sources/Vapor/Utilities/LifecycleHandler.swift",
+   "Sources/Vapor/Utilities/OptionalType.swift",
+   "Sources/Vapor/Utilities/RFC1123.swift",
+   "Sources/Vapor/Utilities/Storage.swift",
+   "Sources/Vapor/Utilities/URI.swift",
+   "Sources/Vapor/Validation/Validatable.swift",
+   "Sources/Vapor/Validation/Validation.swift",
+   "Sources/Vapor/Validation/Validations.swift",
+   "Sources/Vapor/Validation/ValidationsError.swift",
+   "Sources/Vapor/Validation/Validator.swift",
+   "Sources/Vapor/Validation/ValidatorResult.swift",
+   "Sources/Vapor/Validation/Validators/And.swift",
+   "Sources/Vapor/Validation/Validators/Case.swift",
+   "Sources/Vapor/Validation/Validators/Email.swift",
+   "Sources/Vapor/Validation/Validators/NilIgnoring.swift",
+   "Sources/Vapor/Validation/Validators/Not.swift",
+   "Sources/Vapor/Validation/Validators/Or.swift",
+   "Sources/Vapor/Validation/Validators/Pattern.swift",
+   "Sources/Vapor/View/PlaintextRenderer.swift",
+   "Sources/Vapor/View/Request+View.swift",
+   "Sources/Vapor/View/View.swift",
+   "Sources/Vapor/View/ViewRenderer.swift",
+   "Sources/VaporTesting/+TestingHTTPResponse.swift",
+   "Sources/VaporTesting/TestingApplicationTester.swift",
+   "Sources/VaporTesting/TestingHTTPResponse.swift",
+   "Sources/VaporTesting/withApp.swift"
+  ],
+  "cfd8f43484": [
+   "Sources/Vapor/HTTP/Server/HTTPServer.swift"
+  ],
+  "a8db2dbda8": [
+   "Sources/Vapor/HTTP/Headers/HTTPCookies.swift"
+  ],
+  "6d06e13021": [
+   "Sources/VaporTestUtils/TestingApplication.swift"
+  ],
+  "6f3db7122c": [
+   "Sources/Vapor/Authentication/SessionAuthenticatable.swift",
+   "Sources/Vapor/Concurrency/Authentication+Concurrency.swift"
+  ],
+  "3014d7de87": [
+   "Sources/Vapor/Responder/DefaultResponder.swift"
+  ],
+  "f7090db273": [
+   "Package.swift",
+   "Sources/Vapor/Logging/LoggingSystem+Environment.swift"
+  ],
+  "6b7a70a607": [
+   "Sources/Vapor/Utilities/String+IsIPAddress.swift"
+  ],
+  "ac3aeb7730": [
+   "Sources/Vapor/Security/OTP.swift",
+   "Sources/Vapor/Utilities/String+IsIPAddress.swift"
+  ],
+  "c84ffd3838": [
+   "Package.swift",
+   "Sources/Vapor/HTTP/Server/HTTPServer.swift",
+   "Sources/Vapor/HTTP/Server/HTTPServerRequestDecoder.swift",
+   "Sources/Vapor/Request/Request.swift"
+  ],
+  "a69c0eabde": [
+   "Package.swift",
+   "Sources/Vapor/Content/JSONCoders+Content.swift",
+   "Sources/Vapor/Content/PlaintextEncoder.swift",
+   "Sources/Vapor/HTTP/HTTPStatus.swift",
+   "Sources/Vapor/HTTP/Headers/HTTPHeaderCacheControl.swift",
+   "Sources/Vapor/HTTP/Headers/HTTPHeaders.swift",
+   "Sources/Vapor/Logging/LoggingSystem+Environment.swift",
+   "Sources/Vapor/Response/Response+Body.swift",
+   "Sources/Vapor/Security/OTP.swift",
+   "Sources/Vapor/Sessions/MemorySessions.swift",
+   "Sources/Vapor/Utilities/DirectoryConfiguration.swift",
+   "Sources/Vapor/Utilities/File.swift",
+   "Sources/Vapor/Utilities/RFC1123.swift",
+   "Sources/Vapor/Utilities/URI.swift",
+   "Sources/Vapor/Validation/Validators/CharacterSet.swift",
+   "Sources/Vapor/_Deprecations.swift",
+   "Sources/VaporTesting/+TestingHTTPResponse.swift",
+   "Sources/VaporTesting/TestingApplicationTester.swift",
+   "Sources/VaporTesting/VaporTestingContext.swift",
+   "Sources/XCTVapor/XCTVaporContext.swift"
+  ],
+  "1757359951": [
+   "Sources/Vapor/HTTP/Headers/HTTPHeaders.swift"
+  ],
+  "d07643bdb4": [
+   "Sources/Vapor/HTTP/Headers/HTTPMediaType.swift"
+  ],
+  "773ea6a635": [
+   "Sources/Vapor/Concurrency/ResponseCodable+Concurrency.swift",
+   "Sources/Vapor/Concurrency/RoutesBuilder+Concurrency.swift",
+   "Sources/Vapor/Content/JSONCoder+Custom.swift",
+   "Sources/Vapor/HTTP/HTTPStatus.swift",
+   "Sources/Vapor/HTTP/Headers/HTTPHeaders.swift",
+   "Sources/Vapor/Logging/LoggingSystem+Environment.swift",
+   "Sources/Vapor/Response/ResponseCodable.swift",
+   "Sources/Vapor/Routing/RoutesBuilder+Method.swift",
+   "Sources/Vapor/Utilities/OptionalType.swift",
+   "Sources/Vapor/Validation/Validators/Case.swift"
+  ],
+  "636fbe688e": [
+   "Sources/Vapor/Application.swift"
+  ],
+  "3636f44347": [
+   "Sources/Vapor/Security/OTP.swift"
+  ],
+  "0386747657": [
+   "Sources/Vapor/HTTP/Server/HTTPServerConfiguration+ResponseCompressionConfiguration.swift"
+  ],
+  "aa6f3af9ad": [
+   "Sources/Vapor/HTTP/Headers/HTTPHeaders+ResponseCompression.swift",
+   "Sources/Vapor/HTTP/Server/HTTPServerConfiguration+ResponseCompressionConfiguration.swift"
+  ],
+  "f746ff3657": [
+   "Sources/Vapor/HTTP/Headers/HTTPMediaType.swift",
+   "Sources/Vapor/HTTP/Server/HTTPServerConfiguration+ResponseCompressionConfiguration.swift"
+  ],
+  "4014016aad": [
+   "Sources/VaporTesting/withApp.swift"
+  ],
+  "87b0edd263": [
+   "Sources/Vapor/Sessions/SessionData.swift"
+  ],
+  "f6459d6417": [
+   "Sources/Vapor/Middleware/FileMiddleware.swift"
+  ],
+  "1fdd1c2ff0": [
+   "Sources/Vapor/HTTP/Server/HTTPServer.swift"
+  ],
+  "c58bf54d36": [
+   "Sources/Vapor/Core/Core.swift"
+  ],
+  "fb0f968593": [
+   "Sources/Vapor/Utilities/Storage.swift"
+  ],
+  "a425e32f9b": [
+   "Sources/Vapor/Services/Service.swift"
+  ],
+  "4f2dcf7d3b": [
+   "Sources/Vapor/Services/Service.swift"
+  ],
+  "91efabd624": [
+   "Package.swift",
+   "Sources/Development/routes.swift",
+   "Sources/Vapor/Application.swift",
+   "Sources/Vapor/Environment/Environment+Secret.swift",
+   "Sources/Vapor/HTTP/Server/HTTPServer.swift",
+   "Sources/Vapor/HTTP/Server/HTTPServerUpgradeHandler.swift",
+   "Sources/Vapor/Utilities/DotEnv.swift",
+   "Sources/Vapor/Utilities/FileIO.swift",
+   "Sources/Vapor/View/PlaintextRenderer.swift"
+  ],
+  "fc2d0c6db9": [
+   "Sources/Vapor/Utilities/DirectoryConfiguration.swift",
+   "Sources/Vapor/Utilities/DotEnv.swift",
+   "Sources/Vapor/Utilities/RFC1123.swift",
+   "Sources/Vapor/Utilities/String+IsIPAddress.swift",
+   "Sources/VaporTesting/+TestingHTTPResponse.swift",
+   "Sources/VaporTesting/TestingApplicationTester.swift",
+   "Sources/VaporTesting/VaporTestingContext.swift",
+   "Sources/XCTVapor/XCTVaporContext.swift"
+  ],
+  "91d6f94fd9": [
+   "Sources/Vapor/Core/Core.swift"
+  ],
+  "8589cb562f": [
+   "Sources/Vapor/Middleware/TracingMiddleware.swift"
+  ],
+  "eafbca78d0": [
+   "Sources/Vapor/HTTP/Server/HTTPServerResponseEncoder.swift"
+  ],
+  "4d7456c0d4": [
+   "Sources/Vapor/Validation/Validation.swift"
+  ],
+  "73dfe634f0": [
+   "Sources/VaporTesting/withApp.swift"
+  ],
+  "4c5d467a96": [
+   "Sources/VaporTesting/VaporTestingContext.swift",
+   "Sources/VaporTesting/withApp.swift",
+   "Sources/XCTVapor/XCTVaporContext.swift"
+  ],
+  "1f29415ed8": [
+   "Package.swift",
+   "Sources/VaporTestUtils/TestingHTTPRequest.swift",
+   "Sources/XCTVapor/+XCTHTTPResponse.swift",
+   "Sources/XCTVapor/Exports.swift",
+   "Sources/XCTVapor/XCTVaporTests.swift"
+  ],
+  "c74e06d482": [
+   "Package.swift",
+   "Sources/Vapor/Application.swift",
+   "Sources/Vapor/HTTP/BasicResponder.swift",
+   "Sources/Vapor/Middleware/Middleware.swift",
+   "Sources/Vapor/Request/Request.swift",
+   "Sources/Vapor/Response/ResponseCodable.swift",
+   "Sources/Vapor/Routing/RoutesBuilder+Method.swift"
+  ],
+  "ec23f07eb2": [
+   "Package.swift",
+   "Sources/Vapor/Commands/RoutesCommand.swift",
+   "Sources/Vapor/Concurrency/Cache+Concurrency.swift",
+   "Sources/Vapor/Content/Content.swift",
+   "Sources/Vapor/Middleware/ErrorMiddleware.swift",
+   "Sources/Vapor/Responder/DefaultResponder.swift",
+   "Sources/Vapor/Routing/Route.swift",
+   "Sources/Vapor/View/View.swift"
+  ],
+  "3aeeb6fab5": [
+   "Sources/Vapor/Content/ContentConfiguration.swift"
+  ],
+  "8903461470": [
+   "Sources/Vapor/Logging/Logger+Report.swift",
+   "Sources/Vapor/Middleware/ErrorMiddleware.swift"
+  ],
+  "7e48dd56db": [
+   "Package.swift"
+  ],
+  "fb619ab648": [
+   "Sources/XCTVapor/XCTApplication.swift"
+  ],
+  "a6f35de0f1": [
+   "Sources/Vapor/HTTP/Headers/HTTPMediaType.swift",
+   "Sources/Vapor/Multipart/FormDataEncoder+Content.swift"
+  ],
+  "9786a424db": [
+   "Sources/Vapor/HTTP/Headers/HTTPMediaType.swift"
+  ],
+  "fb1df8223b": [
+   "Sources/Vapor/HTTP/HTTPMethod+String.swift"
+  ],
+  "4d3bc6ce08": [
+   "Sources/Vapor/Middleware/CORSMiddleware.swift"
+  ],
+  "1310c6f546": [
+   "Package.swift"
+  ],
+  "1466c50e4a": [
+   "Package.swift",
+   "Sources/Vapor/Application.swift",
+   "Sources/Vapor/Commands/ServeCommand.swift",
+   "Sources/Vapor/Content/JSONCoders+Content.swift",
+   "Sources/Vapor/Exports.swift",
+   "Sources/Vapor/HTTP/EndpointCache.swift",
+   "Sources/Vapor/HTTP/Headers/HTTPCookies.swift",
+   "Sources/Vapor/Response/Response+Body.swift",
+   "Sources/Vapor/Utilities/Base32.swift",
+   "Sources/Vapor/Utilities/Base64.swift",
+   "Sources/Vapor/Utilities/BaseN.swift",
+   "Sources/XCTVapor/Exports.swift"
+  ],
+  "a4d7d4d32e": [
+   "Sources/Vapor/URLEncodedForm/URLEncodedFormDecoder.swift"
+  ],
+  "083028c79b": [
+   "Sources/Vapor/URLEncodedForm/URLEncodedFormDecoder.swift"
+  ],
+  "7aa836b776": [
+   "Package.swift",
+   "Package@swift-5.9.swift",
+   "Sources/Vapor/Commands/ServeCommand.swift",
+   "Sources/Vapor/Content/JSONCoders+Content.swift",
+   "Sources/Vapor/Content/PlaintextDecoder.swift",
+   "Sources/Vapor/Content/PlaintextEncoder.swift",
+   "Sources/Vapor/HTTP/Headers/HTTPHeaderCacheControl.swift",
+   "Sources/Vapor/Logging/LoggingSystem+Environment.swift",
+   "Sources/Vapor/Sessions/MemorySessions.swift",
+   "Sources/Vapor/Utilities/RFC1123.swift",
+   "Sources/Vapor/Utilities/URI.swift",
+   "Sources/Vapor/Validation/Validators/CharacterSet.swift"
+  ],
+  "236025b6a2": [
+   "Package.swift",
+   "Package@swift-5.9.swift",
+   "Sources/Vapor/HTTP/Headers/HTTPHeaders+Name.swift",
+   "Sources/Vapor/HTTP/Headers/HTTPMediaType.swift",
+   "Sources/Vapor/HTTP/Server/HTTPServer.swift"
+  ],
+  "498c5e5700": [
+   "Sources/Vapor/Middleware/ErrorMiddleware.swift"
+  ],
+  "1da8bbab10": [
+   "Sources/Vapor/Validation/Validators/Email.swift"
+  ],
+  "4918ddab2c": [
+   "Sources/Vapor/HTTP/Headers/HTTPHeaderLastModified.swift"
+  ],
+  "a823735db5": [
+   "Sources/Vapor/HTTP/Headers/HTTPMediaType.swift"
+  ],
+  "ebbe71c89a": [
+   "Sources/Vapor/Content/ContentCoders.swift",
+   "Sources/Vapor/Content/ContentConfiguration.swift",
+   "Sources/Vapor/Content/JSONCoders+Content.swift",
+   "Sources/Vapor/Content/PlaintextEncoder.swift",
+   "Sources/Vapor/Content/URLQueryCoders.swift",
+   "Sources/Vapor/HTTP/Headers/HTTPHeaderCacheControl.swift",
+   "Sources/Vapor/HTTP/Headers/HTTPHeaders+Name.swift",
+   "Sources/Vapor/HTTP/Server/HTTPServerRequestDecoder.swift",
+   "Sources/Vapor/Logging/LoggingSystem+Environment.swift",
+   "Sources/Vapor/Routing/RoutesBuilder.swift",
+   "Sources/Vapor/URLEncodedForm/URLEncodedFormDecoder.swift",
+   "Sources/Vapor/URLEncodedForm/URLEncodedFormEncoder.swift",
+   "Sources/Vapor/Utilities/RFC1123.swift",
+   "Sources/XCTVapor/XCTApplication.swift",
+   "Sources/XCTVapor/XCTHTTPRequest.swift",
+   "Sources/XCTVapor/XCTHTTPResponse.swift"
+  ],
+  "4b2bce9cfb": [
+   "Package.swift",
+   "Package@swift-5.9.swift"
+  ],
+  "f1c3495b5c": [
+   "Sources/Vapor/URLEncodedForm/URLEncodedFormDecoder.swift"
+  ],
+  "a46552bf13": [
+   "Sources/Vapor/HTTP/Headers/HTTPMediaType.swift"
+  ],
+  "12e9b41cc5": [
+   "Sources/Vapor/Utilities/URI.swift"
+  ],
+  "cc98361cbe": [
+   "Sources/Development/routes.swift",
+   "Sources/Vapor/Application.swift",
+   "Sources/Vapor/Client/ClientResponse.swift",
+   "Sources/Vapor/Commands/ServeCommand.swift",
+   "Sources/Vapor/HTTP/Client/Application+HTTP+Client.swift",
+   "Sources/Vapor/Server/Application+Servers.swift",
+   "Sources/Vapor/Utilities/Storage.swift"
+  ],
+  "2c185b7ec9": [
+   "Sources/Vapor/Application.swift"
+  ],
+  "50c6196657": [
+   "Sources/Vapor/URLEncodedForm/URLEncodedFormSerializer.swift"
+  ],
+  "90da64ad52": [
+   "Sources/Vapor/Application.swift",
+   "Sources/Vapor/Core/Core.swift",
+   "Sources/Vapor/Utilities/LifecycleHandler.swift"
+  ],
+  "5bc1dfa47e": [
+   "Sources/Vapor/Application.swift",
+   "Sources/Vapor/Commands/ServeCommand.swift",
+   "Sources/Vapor/HTTP/Server/HTTPServer.swift",
+   "Sources/Vapor/Server/Server.swift",
+   "Sources/XCTVapor/XCTApplication.swift"
+  ],
+  "d9fa0d3f78": [
+   "Sources/Vapor/Utilities/DirectoryConfiguration.swift",
+   "Sources/Vapor/Utilities/DotEnv.swift"
+  ],
+  "8353aeda9c": [
+   "Sources/Vapor/Application.swift"
+  ],
+  "840d87c195": [
+   "Sources/Development/entrypoint.swift",
+   "Sources/Vapor/Application.swift"
+  ],
+  "d411635810": [
+   "Sources/Development/entrypoint.swift",
+   "Sources/Vapor/Application.swift",
+   "Sources/Vapor/Commands/BootCommand.swift",
+   "Sources/Vapor/Commands/RoutesCommand.swift",
+   "Sources/Vapor/Core/Core.swift",
+   "Sources/Vapor/HTTP/Server/HTTPServer.swift",
+   "Sources/Vapor/Utilities/DotEnv.swift",
+   "Sources/Vapor/Utilities/FileIO.swift"
+  ],
+  "e69a55b532": [
+   "Sources/Vapor/Error/AbortError.swift",
+   "Sources/Vapor/Middleware/ErrorMiddleware.swift"
+  ],
+  "cdbbd04f8d": [
+   "Package.swift",
+   "Package@swift-5.9.swift",
+   "Sources/Vapor/HTTP/Server/HTTPServerHandler.swift",
+   "Sources/Vapor/HTTP/Server/HTTPServerResponseEncoder.swift",
+   "Sources/Vapor/Middleware/FileMiddleware.swift",
+   "Sources/Vapor/Response/Response+Body.swift",
+   "Sources/Vapor/Utilities/FileIO.swift",
+   "Sources/XCTVapor/XCTApplication.swift"
+  ],
+  "af86ea4402": [
+   "Sources/Vapor/HTTP/Server/HTTPServer.swift"
+  ],
+  "c524f6047c": [
+   "Sources/Vapor/HTTP/BodyStream.swift",
+   "Sources/Vapor/HTTP/Server/HTTPServerResponseEncoder.swift",
+   "Sources/Vapor/Request/Request+BodyStream.swift",
+   "Sources/Vapor/Response/Response+Body.swift"
+  ],
+  "e91021cd40": [
+   "Package.swift",
+   "Package@swift-5.9.swift"
+  ],
+  "e5cb0abdad": [
+   "Sources/Vapor/HTTP/Server/HTTPServer.swift"
+  ],
+  "4c80aab7a4": [
+   "Package.swift",
+   "Package@swift-5.9.swift",
+   "Sources/Vapor/Utilities/FileIO.swift"
+  ],
+  "3e3d65b05a": [
+   "Sources/Vapor/Middleware/FileMiddleware.swift",
+   "Sources/Vapor/Utilities/FileIO.swift"
+  ],
+  "0311f9a7ea": [
+   "Sources/Vapor/Responder/DefaultResponder.swift"
+  ],
+  "526a000bb0": [
+   "Sources/Vapor/HTTP/Headers/HTTPHeaders+ContentRange.swift",
+   "Sources/Vapor/Middleware/FileMiddleware.swift",
+   "Sources/Vapor/Utilities/FileIO.swift"
+  ],
+  "0fb4f1dd8b": [
+   "Sources/Vapor/HTTP/Server/HTTPServer.swift"
+  ],
+  "71dff4f3f8": [
+   "Sources/Vapor/HTTP/Server/HTTPServer.swift"
+  ],
+  "096c51992b": [
+   "Sources/Vapor/Commands/ServeCommand.swift"
+  ],
+  "8409c3c296": [
+   "Sources/Vapor/Authentication/AuthenticationCache.swift",
+   "Sources/Vapor/Concurrency/RequestBody+Concurrency.swift",
+   "Sources/Vapor/Content/ContentCoders.swift",
+   "Sources/Vapor/Content/PlaintextEncoder.swift",
+   "Sources/Vapor/Deprecations/DotEnvFile+load.swift",
+   "Sources/Vapor/HTTP/Headers/HTTPCookies.swift",
+   "Sources/Vapor/Request/Request.swift",
+   "Sources/Vapor/URLEncodedForm/URLEncodedFormSerializer.swift",
+   "Sources/Vapor/Utilities/BaseN.swift",
+   "Sources/Vapor/Utilities/DotEnv.swift",
+   "Sources/Vapor/Validation/RangeResult.swift",
+   "Sources/Vapor/Validation/Validators/Range.swift"
+  ],
+  "11cdb29614": [
+   "Sources/Vapor/HTTP/Headers/HTTPHeaders+Connection.swift",
+   "Sources/Vapor/HTTP/Headers/HTTPHeaders+ContentDisposition.swift",
+   "Sources/Vapor/HTTP/Headers/HTTPHeaders+Link.swift",
+   "Sources/Vapor/HTTP/Headers/HTTPHeaders+Name.swift",
+   "Sources/Vapor/Utilities/BaseN.swift"
+  ],
+  "3a7da193a2": [
+   "Sources/Vapor/HTTP/Server/Application+HTTP+Server.swift",
+   "Sources/Vapor/HTTP/Server/HTTPServer.swift"
+  ],
+  "9da9d14f43": [
+   "Sources/Vapor/Request/Request+BodyStream.swift"
+  ],
+  "664a06346c": [
+   "Sources/Vapor/Content/ContainerGetPathExecutor.swift",
+   "Sources/Vapor/Utilities/RFC1123.swift"
+  ],
+  "823f20cf21": [
+   "Package.swift",
+   "Package@swift-5.9.swift"
+  ],
+  "4942d74e84": [
+   "Sources/Vapor/HTTP/Server/HTTPServerRequestDecoder.swift",
+   "Sources/Vapor/Utilities/URI.swift",
+   "Sources/XCTVapor/XCTApplication.swift",
+   "Sources/XCTVapor/XCTHTTPResponse.swift"
+  ],
+  "d5025b3fa0": [
+   "Sources/Vapor/Content/ContainerGetPathExecutor.swift",
+   "Sources/Vapor/Content/ContentCoders.swift",
+   "Sources/Vapor/Content/ContentContainer.swift",
+   "Sources/Vapor/Content/JSONCoders+Content.swift",
+   "Sources/Vapor/Content/PlaintextDecoder.swift",
+   "Sources/Vapor/Content/PlaintextEncoder.swift",
+   "Sources/Vapor/Content/URLQueryCoders.swift",
+   "Sources/Vapor/Content/URLQueryContainer.swift",
+   "Sources/Vapor/Multipart/FormDataDecoder+Content.swift",
+   "Sources/Vapor/Multipart/FormDataEncoder+Content.swift",
+   "Sources/Vapor/URLEncodedForm/URLEncodedFormDecoder.swift",
+   "Sources/Vapor/URLEncodedForm/URLEncodedFormEncoder.swift",
+   "Sources/Vapor/Utilities/URI.swift"
+  ],
+  "0680f9f6bf": [
+   "Package.swift",
+   "Package@swift-5.9.swift"
+  ],
+  "5f7c5a3b87": [
+   "Package.swift",
+   "Package@swift-5.9.swift",
+   "Sources/Vapor/Application.swift",
+   "Sources/Vapor/Concurrency/WebSocket+Concurrency.swift",
+   "Sources/Vapor/Deprecations/DotEnvFile+load.swift",
+   "Sources/Vapor/HTTP/Server/HTTPServer.swift",
+   "Sources/Vapor/Utilities/DotEnv.swift",
+   "Sources/Vapor/View/PlaintextRenderer.swift",
+   "Sources/XCTVapor/XCTApplication.swift"
+  ],
+  "6db3d917b5": [
+   "Package.swift",
+   "Package@swift-5.9.swift",
+   "Sources/Vapor/HTTP/EndpointCache.swift",
+   "Sources/Vapor/HTTP/Headers/HTTPCookies.swift",
+   "Sources/Vapor/Response/Response+Body.swift",
+   "Sources/Vapor/Utilities/URI.swift"
+  ],
+  "67fe736c37": [
+   "Sources/Vapor/Middleware/FileMiddleware.swift"
+  ],
+  "9c830d4628": [
+   "Sources/Vapor/Request/Request.swift"
+  ],
+  "00c902ce53": [
+   "Sources/Vapor/HTTP/Headers/HTTPHeaders.swift"
+  ],
+  "3d62c0c3a4": [
+   "Package.swift",
+   "Package@swift-5.9.swift",
+   "Sources/Development/entrypoint.swift",
+   "Sources/Vapor/Application.swift"
+  ],
+  "c710b8f441": [
+   "Package.swift",
+   "Package@swift-5.9.swift",
+   "Sources/Vapor/Application.swift",
+   "Sources/Vapor/Core/Core.swift"
+  ],
+  "da9c2805b1": [
+   "Package.swift",
+   "Package@swift-5.9.swift",
+   "Sources/Vapor/Concurrency/RequestBody+Concurrency.swift",
+   "Sources/Vapor/Request/Request.swift",
+   "Sources/Vapor/Routing/Route.swift",
+   "Sources/Vapor/Utilities/RFC1123.swift"
+  ],
+  "1aeeaafb00": [
+   "Sources/XCTVapor/XCTHTTPRequest.swift"
+  ],
+  "d682e05fdb": [
+   "Sources/Vapor/Concurrency/RequestBody+Concurrency.swift",
+   "Sources/Vapor/Request/Request+BodyStream.swift"
+  ],
+  "1d075c852a": [
+   "Sources/Vapor/Core/Core.swift"
+  ],
+  "3744d4200c": [
+   "Package.swift",
+   "Package@swift-5.9.swift",
+   "Sources/Development/routes.swift",
+   "Sources/Vapor/Commands/ServeCommand.swift",
+   "Sources/Vapor/Concurrency/Request+Concurrency.swift",
+   "Sources/Vapor/Concurrency/RoutesBuilder+Concurrency.swift",
+   "Sources/Vapor/Concurrency/WebSocket+Concurrency.swift",
+   "Sources/Vapor/HTTP/Headers/HTTPCookies.swift",
+   "Sources/Vapor/HTTP/Headers/HTTPMediaType.swift",
+   "Sources/Vapor/HTTP/Server/HTTPServerHandler.swift",
+   "Sources/Vapor/HTTP/Server/HTTPServerRequestDecoder.swift",
+   "Sources/Vapor/Request/Request+Body.swift",
+   "Sources/Vapor/Request/Request.swift",
+   "Sources/Vapor/Responder/DefaultResponder.swift",
+   "Sources/Vapor/Routing/Route.swift",
+   "Sources/Vapor/Routing/Routes.swift",
+   "Sources/Vapor/Routing/RoutesBuilder+WebSocket.swift",
+   "Sources/Vapor/Server/Server.swift",
+   "Sources/Vapor/Sessions/MemorySessions.swift",
+   "Sources/Vapor/Validation/Validators/CharacterSet.swift"
+  ],
+  "0fa646e517": [
+   "Sources/Vapor/Authentication/AuthenticationCache.swift",
+   "Sources/Vapor/Authentication/Authenticator.swift",
+   "Sources/Vapor/Authentication/GuardMiddleware.swift",
+   "Sources/Vapor/Authentication/RedirectMiddleware.swift"
+  ],
+  "3bf4e73955": [
+   "Package.swift",
+   "Package@swift-5.9.swift",
+   "Sources/Vapor/Commands/ServeCommand.swift",
+   "Sources/Vapor/Concurrency/ResponseCodable+Concurrency.swift",
+   "Sources/Vapor/Concurrency/ViewRenderer+Concurrency.swift",
+   "Sources/Vapor/Core/Core.swift",
+   "Sources/Vapor/HTTP/Server/HTTPServerHandler.swift",
+   "Sources/Vapor/HTTP/Server/HTTPServerResponseEncoder.swift",
+   "Sources/Vapor/HTTP/Server/HTTPServerUpgradeHandler.swift",
+   "Sources/Vapor/Middleware/CORSMiddleware.swift",
+   "Sources/Vapor/Middleware/ErrorMiddleware.swift",
+   "Sources/Vapor/Request/Redirect.swift",
+   "Sources/Vapor/Response/Response+Body.swift",
+   "Sources/Vapor/Response/Response.swift",
+   "Sources/Vapor/Response/ResponseCodable.swift",
+   "Sources/Vapor/Utilities/FileIO.swift",
+   "Sources/Vapor/View/View.swift"
+  ],
+  "600d666e94": [
+   "Sources/Vapor/Request/Request.swift"
+  ],
+  "288d73a368": [
+   "Sources/Vapor/Middleware/FileMiddleware.swift"
+  ],
+  "61c8104bf6": [
+   "Package.swift",
+   "Package@swift-5.9.swift"
+  ],
+  "e38dfe4877": [
+   "Sources/Vapor/HTTP/BodyStream.swift",
+   "Sources/Vapor/HTTP/Server/HTTPServerHandler.swift"
+  ],
+  "c17d9b90d1": [
+   "Package.swift",
+   "Package@swift-5.9.swift"
+  ],
+  "090464a654": [
+   "Sources/Vapor/HTTP/Server/HTTPServer.swift",
+   "Sources/Vapor/HTTP/Server/HTTPServerHandler.swift",
+   "Sources/Vapor/HTTP/Server/HTTPServerRequestDecoder.swift"
+  ],
+  "036d67e4da": [
+   "Sources/Vapor/Cache/Application+Cache.swift",
+   "Sources/Vapor/Client/Application+Clients.swift",
+   "Sources/Vapor/HTTP/BasicResponder.swift",
+   "Sources/Vapor/HTTP/Server/HTTPServerUpgradeHandler.swift",
+   "Sources/Vapor/Middleware/ErrorMiddleware.swift",
+   "Sources/Vapor/Passwords/Application+Passwords.swift",
+   "Sources/Vapor/Request/Request+Body.swift",
+   "Sources/Vapor/Responder/Application+Responder.swift",
+   "Sources/Vapor/Routing/Request+WebSocket.swift",
+   "Sources/Vapor/Server/Application+Servers.swift",
+   "Sources/Vapor/Sessions/Application+Sessions.swift",
+   "Sources/Vapor/Sessions/SessionsConfiguration.swift",
+   "Sources/Vapor/Utilities/FileIO.swift",
+   "Sources/Vapor/Utilities/Thread.swift",
+   "Sources/Vapor/Validation/Validations.swift",
+   "Sources/Vapor/Validation/Validator.swift",
+   "Sources/Vapor/View/Application+Views.swift",
+   "Sources/XCTVapor/XCTApplication.swift"
+  ],
+  "446b8775dc": [
+   "Package.swift",
+   "Package@swift-5.9.swift",
+   "Sources/Development/routes.swift",
+   "Sources/Vapor/Authentication/BasicAuthorization.swift",
+   "Sources/Vapor/Authentication/BearerAuthorization.swift",
+   "Sources/Vapor/Concurrency/ResponseCodable+Concurrency.swift",
+   "Sources/Vapor/HTTP/BodyStream.swift",
+   "Sources/Vapor/HTTP/Server/HTTPServerHandler.swift",
+   "Sources/Vapor/HTTP/Server/HTTPServerRequestDecoder.swift",
+   "Sources/Vapor/HTTP/Server/HTTPServerResponseEncoder.swift",
+   "Sources/Vapor/HTTP/Server/HTTPServerUpgradeHandler.swift",
+   "Sources/Vapor/Request/Request+Body.swift",
+   "Sources/Vapor/Request/Request+BodyStream.swift",
+   "Sources/Vapor/Request/Request.swift",
+   "Sources/Vapor/Response/Response+Body.swift",
+   "Sources/Vapor/Utilities/File.swift",
+   "Sources/Vapor/Utilities/FileIO.swift"
+  ],
+  "1f2b44b173": [
+   "Sources/Vapor/HTTP/Server/HTTPServer.swift"
+  ],
+  "d79fad4a05": [
+   "Sources/Vapor/HTTP/Headers/HTTPHeaders+Name.swift",
+   "Sources/Vapor/Request/Request.swift"
+  ],
+  "a4b071585d": [
+   "Package@swift-5.9.swift"
+  ],
+  "7118641f84": [
+   "Package.swift"
+  ],
+  "8f230c6766": [
+   "Sources/XCTVapor/XCTApplication.swift"
+  ],
+  "b70d50470e": [
+   "Sources/Vapor/Logging/Logger+Report.swift"
+  ],
+  "03a08f6e88": [
+   "Package@swift-5.9.swift",
+   "Sources/Development/routes.swift",
+   "Sources/Vapor/Application.swift",
+   "Sources/Vapor/Error/Abort.swift",
+   "Sources/Vapor/Error/DebuggableError.swift",
+   "Sources/Vapor/Error/StackTrace.swift",
+   "Sources/Vapor/Logging/LoggingSystem+Environment.swift",
+   "Sources/Vapor/Responder/DefaultResponder.swift"
+  ],
+  "096fba1c8f": [
+   "Sources/Vapor/Middleware/ErrorMiddleware.swift"
+  ],
+  "16a0e450eb": [
+   "Sources/Vapor/Middleware/ErrorMiddleware.swift"
+  ],
+  "39fb810441": [
+   "Sources/Vapor/Routing/RoutingGroups.swift"
+  ],
+  "55ecc38879": [
+   "Sources/Vapor/Logging/LoggingSystem+Environment.swift"
+  ],
+  "5aa4fd56ef": [
+   "Sources/Vapor/Engine/EngineClient.swift"
+  ],
+  "72a0428856": [
+   "Sources/Vapor/Routing/RoutingGroups.swift"
+  ],
+  "77b84cf6b9": [
+   "Sources/Vapor/HTTP/Server/HTTPServerHandler.swift"
+  ],
+  "7c6f91f2d5": [
+   "Sources/Vapor/Engine/EngineClient.swift"
+  ],
+  "c28a8887a3": [
+   "Sources/Vapor/Content/ContentConfig.swift"
+  ]
+ },
+ "alamofire": {
+  "e284308a24": [
+   "Source/Core/AFError.swift"
+  ],
+  "bda9ed57d7": [
+   "Source/Alamofire.swift"
+  ],
+  "3494b7c1d4": [
+   "Source/Alamofire.swift"
+  ],
+  "a3756f222b": [
+   "Source/Core/DataRequest.swift",
+   "Source/Core/DownloadRequest.swift",
+   "Source/Features/AuthenticationInterceptor.swift"
+  ],
+  "5c393d870f": [
+   "Package.swift",
+   "Source/Features/EventMonitor.swift"
+  ],
+  "7595cbcf59": [
+   "Source/Alamofire.swift"
+  ],
+  "9a0e640817": [
+   "Source/Core/DataRequest.swift",
+   "Source/Core/DataStreamRequest.swift",
+   "Source/Core/DownloadRequest.swift",
+   "Source/Core/Request.swift",
+   "Source/Core/Session.swift",
+   "Source/Core/SessionDelegate.swift",
+   "Source/Features/AuthenticationInterceptor.swift",
+   "Source/Features/Concurrency.swift",
+   "Source/Features/OfflineRetrier.swift",
+   "Source/Features/Validation.swift"
+  ],
+  "ac016668a1": [
+   "Source/Features/Combine.swift",
+   "Source/Features/MultipartFormData.swift"
+  ],
+  "e938f8c667": [
+   "Source/Alamofire.swift"
+  ],
+  "4e8146009a": [
+   "Package.swift",
+   "Source/Core/Request.swift",
+   "Source/Core/RequestTaskMap.swift",
+   "Source/Core/SessionDelegate.swift",
+   "Source/Features/Concurrency.swift"
+  ],
+  "36f1747e31": [
+   "Source/Core/AFError.swift"
+  ],
+  "3f99050e75": [
+   "Source/Alamofire.swift"
+  ],
+  "b2d6f41fd3": [
+   "Source/Core/DownloadRequest.swift",
+   "Source/Core/Request.swift",
+   "Source/Features/AuthenticationInterceptor.swift",
+   "Source/Features/URLEncodedFormEncoder.swift"
+  ],
+  "7be73f6c2b": [
+   "Source/Alamofire.swift"
+  ],
+  "c279eda711": [
+   "Package.swift",
+   "Package@swift-6.0.swift",
+   "Package@swift-6.1.swift",
+   "Source/Core/DataRequest.swift",
+   "Source/Core/DataStreamRequest.swift",
+   "Source/Core/DownloadRequest.swift",
+   "Source/Core/Request.swift",
+   "Source/Core/Session.swift",
+   "Source/Core/UploadRequest.swift",
+   "Source/Core/WebSocketRequest.swift",
+   "Source/Features/EventMonitor.swift"
+  ],
+  "bfdb63464b": [
+   "Source/Features/RetryPolicy.swift"
+  ],
+  "8f4ecb5c92": [
+   "Source/Features/OfflineRetrier.swift"
+  ],
+  "114113420c": [
+   "Source/Features/ResponseSerialization.swift"
+  ],
+  "9ec78dee16": [
+   "Source/Core/DataRequest.swift",
+   "Source/Core/DownloadRequest.swift",
+   "Source/Core/Protected.swift",
+   "Source/Core/Request.swift",
+   "Source/Features/AuthenticationInterceptor.swift",
+   "Source/Features/MultipartUpload.swift",
+   "Source/Features/OfflineRetrier.swift"
+  ],
+  "d81e8ee41a": [
+   "Source/Core/WebSocketRequest.swift"
+  ],
+  "d8428b9772": [
+   "Source/Alamofire.swift",
+   "Source/Core/HTTPHeaders.swift",
+   "Source/Core/Protected.swift",
+   "Source/Core/WebSocketRequest.swift",
+   "Source/Features/NetworkReachabilityManager.swift",
+   "Source/Features/URLEncodedFormEncoder.swift"
+  ],
+  "cd3d98f41f": [
+   "Source/Core/ParameterEncoder.swift",
+   "watchOS Example/watchOS Example WatchKit Extension/Networking.swift"
+  ],
+  "513364f870": [
+   "Source/Alamofire.swift"
+  ],
+  "93a3bb5dcc": [
+   "Source/Core/DataRequest.swift",
+   "Source/Core/DataStreamRequest.swift",
+   "Source/Core/DownloadRequest.swift",
+   "Source/Core/Request.swift",
+   "Source/Features/Validation.swift"
+  ],
+  "1e8392b4c2": [
+   "Package.swift"
+  ],
+  "e16d3481f5": [
+   "Source/Alamofire.swift"
+  ],
+  "6efcb40286": [
+   "Source/Core/DataRequest.swift",
+   "Source/Core/DataStreamRequest.swift",
+   "Source/Core/DownloadRequest.swift",
+   "Source/Core/Request.swift",
+   "Source/Core/Session.swift",
+   "Source/Core/WebSocketRequest.swift",
+   "Source/Extensions/DispatchQueue+Alamofire.swift",
+   "Source/Features/AuthenticationInterceptor.swift",
+   "Source/Features/Combine.swift",
+   "Source/Features/Concurrency.swift",
+   "Source/Features/EventMonitor.swift",
+   "Source/Features/RedirectHandler.swift",
+   "Source/Features/RequestInterceptor.swift",
+   "Source/Features/URLEncodedFormEncoder.swift"
+  ],
+  "232531d757": [
+   "Source/Core/DataRequest.swift",
+   "Source/Core/DownloadRequest.swift",
+   "Source/Features/ResponseSerialization.swift"
+  ],
+  "229b1a27b6": [
+   "Source/Features/AuthenticationInterceptor.swift"
+  ],
+  "ea6a94b7dd": [
+   "Source/Alamofire.swift",
+   "Source/Core/WebSocketRequest.swift",
+   "Source/Features/MultipartFormData.swift",
+   "Source/Features/ServerTrustEvaluation.swift"
+  ],
+  "079dc27206": [
+   "Package.swift",
+   "Source/Core/DownloadRequest.swift",
+   "Source/Features/Validation.swift"
+  ],
+  "7500a8ec2b": [
+   "Package.swift",
+   "Package@swift-5.10.swift",
+   "Source/Core/AFError.swift",
+   "Source/Core/DataRequest.swift",
+   "Source/Core/DataStreamRequest.swift",
+   "Source/Core/DownloadRequest.swift",
+   "Source/Core/HTTPHeaders.swift",
+   "Source/Core/ParameterEncoder.swift",
+   "Source/Core/ParameterEncoding.swift",
+   "Source/Core/Protected.swift",
+   "Source/Core/Request.swift",
+   "Source/Core/Response.swift",
+   "Source/Core/Session.swift",
+   "Source/Core/SessionDelegate.swift",
+   "Source/Core/URLConvertible+URLRequestConvertible.swift",
+   "Source/Core/UploadRequest.swift",
+   "Source/Core/WebSocketRequest.swift",
+   "Source/Extensions/DispatchQueue+Alamofire.swift",
+   "Source/Features/AuthenticationInterceptor.swift",
+   "Source/Features/CachedResponseHandler.swift",
+   "Source/Features/Combine.swift",
+   "Source/Features/Concurrency.swift",
+   "Source/Features/EventMonitor.swift",
+   "Source/Features/MultipartFormData.swift",
+   "Source/Features/MultipartUpload.swift",
+   "Source/Features/NetworkReachabilityManager.swift",
+   "Source/Features/RedirectHandler.swift",
+   "Source/Features/RequestCompression.swift",
+   "Source/Features/RequestInterceptor.swift",
+   "Source/Features/ResponseSerialization.swift",
+   "Source/Features/RetryPolicy.swift",
+   "Source/Features/ServerTrustEvaluation.swift",
+   "Source/Features/URLEncodedFormEncoder.swift",
+   "Source/Features/Validation.swift",
+   "watchOS Example/watchOS Example WatchKit Extension/Networking.swift"
+  ],
+  "57162788f5": [
+   "Source/Core/AFError.swift",
+   "Source/Core/DataRequest.swift",
+   "Source/Core/DataStreamRequest.swift",
+   "Source/Core/DownloadRequest.swift",
+   "Source/Core/ParameterEncoder.swift",
+   "Source/Core/ParameterEncoding.swift",
+   "Source/Core/Request.swift",
+   "Source/Core/Response.swift",
+   "Source/Core/Session.swift",
+   "Source/Core/SessionDelegate.swift",
+   "Source/Core/URLConvertible+URLRequestConvertible.swift",
+   "Source/Core/UploadRequest.swift",
+   "Source/Core/WebSocketRequest.swift",
+   "Source/Extensions/Result+Alamofire.swift",
+   "Source/Features/AuthenticationInterceptor.swift",
+   "Source/Features/Combine.swift",
+   "Source/Features/Concurrency.swift",
+   "Source/Features/EventMonitor.swift",
+   "Source/Features/MultipartUpload.swift",
+   "Source/Features/RequestCompression.swift",
+   "Source/Features/RequestInterceptor.swift",
+   "Source/Features/ResponseSerialization.swift",
+   "Source/Features/RetryPolicy.swift",
+   "Source/Features/ServerTrustEvaluation.swift",
+   "Source/Features/URLEncodedFormEncoder.swift",
+   "Source/Features/Validation.swift"
+  ],
+  "17c7f9b031": [
+   "Source/Core/Notifications.swift",
+   "Source/Core/Session.swift",
+   "Source/Features/EventMonitor.swift"
+  ],
+  "ba3dc4354d": [
+   "Source/Features/AuthenticationInterceptor.swift"
+  ],
+  "6b3296bd3e": [
+   "Source/Core/DataStreamRequest.swift"
+  ],
+  "f455c29758": [
+   "Source/Alamofire.swift"
+  ],
+  "c8fb5588af": [
+   "Source/Core/HTTPHeaders.swift"
+  ],
+  "9e9943fbdf": [
+   "Source/Core/HTTPMethod.swift"
+  ],
+  "723fa5a6c6": [
+   "Source/Alamofire.swift",
+   "Source/Core/ParameterEncoding.swift",
+   "Source/Core/WebSocketRequest.swift"
+  ],
+  "4cf2abab47": [
+   "Package.swift",
+   "Package@swift-5.9.swift"
+  ],
+  "c265d87660": [
+   "Source/Core/Request.swift",
+   "Source/Features/ResponseSerialization.swift",
+   "Source/Features/ServerTrustEvaluation.swift",
+   "Source/Features/URLEncodedFormEncoder.swift"
+  ],
+  "e9294925c5": [
+   "Source/Core/Request.swift",
+   "Source/Core/URLConvertible+URLRequestConvertible.swift"
+  ],
+  "5c68811d8b": [
+   "Package.swift",
+   "Package@swift-5.7.swift",
+   "Package@swift-5.8.swift",
+   "Package@swift-5.9.swift"
+  ],
+  "7eb18428e2": [
+   "Package.swift"
+  ],
+  "7b38612d31": [
+   "Package.swift",
+   "Package@swift-5.9.swift"
+  ],
+  "4ac6cac370": [
+   "Source/Core/HTTPHeaders.swift"
+  ],
+  "563595b519": [
+   "Package.swift",
+   "Source/Alamofire.swift",
+   "Source/Core/HTTPHeaders.swift"
+  ],
+  "a3fd84e54a": [
+   "Source/ResponseSerialization.swift"
+  ],
+  "801a160ccc": [
+   "Source/AFError.swift"
+  ],
+  "da027bc6f4": [
+   "Package.swift",
+   "Package@swift-5.7.swift",
+   "Package@swift-5.8.swift",
+   "Source/Request.swift",
+   "Source/Session.swift"
+  ],
+  "827a879ae2": [
+   "Package@swift-5.7.swift",
+   "Source/Alamofire.swift",
+   "Source/AuthenticationInterceptor.swift",
+   "Source/Concurrency.swift",
+   "Source/HTTPHeaders.swift",
+   "Source/MultipartFormData.swift",
+   "Source/NetworkReachabilityManager.swift",
+   "Source/ParameterEncoder.swift",
+   "Source/ParameterEncoding.swift",
+   "Source/Request.swift",
+   "Source/RequestCompression.swift",
+   "Source/RequestTaskMap.swift",
+   "Source/Response.swift",
+   "Source/ResponseSerialization.swift",
+   "Source/Result+Alamofire.swift",
+   "Source/ServerTrustEvaluation.swift",
+   "Source/URLConvertible+URLRequestConvertible.swift",
+   "Source/URLEncodedFormEncoder.swift",
+   "Source/Validation.swift"
+  ],
+  "e7d8c0d0d0": [
+   "Source/Concurrency.swift",
+   "Source/EventMonitor.swift",
+   "Source/HTTPHeaders.swift",
+   "Source/Request.swift",
+   "Source/RequestTaskMap.swift",
+   "Source/Session.swift",
+   "Source/SessionDelegate.swift"
+  ],
+  "82b1a7c417": [
+   "Source/ParameterEncoding.swift",
+   "Source/ResponseSerialization.swift"
+  ],
+  "1df2a75e74": [
+   "Source/URLEncodedFormEncoder.swift"
+  ],
+  "e58140b172": [
+   "Source/AuthenticationInterceptor.swift",
+   "Source/Combine.swift",
+   "Source/MultipartUpload.swift",
+   "Source/NetworkReachabilityManager.swift",
+   "Source/Protected.swift",
+   "Source/Request.swift",
+   "Source/ResponseSerialization.swift"
+  ],
+  "b2fa556e4e": [
+   "Source/Alamofire.swift"
+  ],
+  "20d2846db8": [
+   "Package.swift"
+  ],
+  "1da2d91fa6": [
+   "Source/Concurrency.swift",
+   "Source/EventMonitor.swift",
+   "Source/NetworkReachabilityManager.swift",
+   "Source/Request.swift",
+   "Source/SessionDelegate.swift"
+  ],
+  "4413116cc2": [
+   "Source/ServerTrustEvaluation.swift"
+  ],
+  "bf689d61ba": [
+   "Source/Combine.swift",
+   "Source/HTTPHeaders.swift",
+   "Source/MultipartFormData.swift",
+   "Source/Protected.swift",
+   "Source/RequestTaskMap.swift",
+   "Source/ServerTrustEvaluation.swift"
+  ],
+  "d732bc9edf": [
+   "Source/Concurrency.swift",
+   "Source/NetworkReachabilityManager.swift",
+   "Source/Request.swift"
+  ],
+  "9f828f62e2": [
+   "Source/AFError.swift",
+   "Source/MultipartFormData.swift",
+   "Source/NetworkReachabilityManager.swift",
+   "Source/Protected.swift",
+   "Source/Request.swift",
+   "Source/ServerTrustEvaluation.swift",
+   "Source/SessionDelegate.swift"
+  ],
+  "82098ab53e": [
+   "Source/MultipartFormData.swift"
+  ],
+  "4abb04eb7a": [
+   "Source/MultipartFormData.swift",
+   "Source/ServerTrustEvaluation.swift"
+  ],
+  "f094c2d004": [
+   "Source/HTTPHeaders.swift"
+  ],
+  "51a2d50775": [
+   "Source/MultipartFormData.swift",
+   "Source/ServerTrustEvaluation.swift"
+  ],
+  "1153741db9": [
+   "Source/ServerTrustEvaluation.swift"
+  ],
+  "bc268c28fb": [
+   "Source/Alamofire.swift"
+  ],
+  "236844f551": [
+   "Package@swift-5.5.swift",
+   "Package@swift-5.6.swift",
+   "Source/EventMonitor.swift",
+   "Source/HTTPHeaders.swift",
+   "Source/ParameterEncoder.swift",
+   "Source/SessionDelegate.swift"
+  ],
+  "134218330b": [
+   "Source/Alamofire.swift",
+   "Source/NetworkReachabilityManager.swift",
+   "Source/ParameterEncoding.swift"
+  ],
+  "e065ed9eeb": [
+   "Package.swift",
+   "Package@swift-5.5.swift",
+   "Package@swift-5.6.swift",
+   "Source/EventMonitor.swift",
+   "Source/HTTPHeaders.swift",
+   "Source/ParameterEncoder.swift",
+   "Source/ServerTrustEvaluation.swift",
+   "Source/SessionDelegate.swift"
+  ],
+  "5d3cca2d25": [
+   "Source/URLRequest+Alamofire.swift"
+  ],
+  "1264fe105b": [
+   "Source/Request.swift"
+  ],
+  "fd87f7ce74": [
+   "Source/ParameterEncoding.swift",
+   "Source/URLEncodedFormEncoder.swift"
+  ],
+  "f3f0f13615": [
+   "Source/HTTPHeaders.swift"
+  ],
+  "81a29729e7": [
+   "Source/Concurrency.swift",
+   "Source/Request.swift",
+   "Source/ResponseSerialization.swift",
+   "Source/Validation.swift",
+   "watchOS Example/watchOS Example WatchKit Extension/ContentView.swift"
+  ],
+  "e68cfdf9c5": [
+   "Source/URLEncodedFormEncoder.swift"
+  ],
+  "ce0fb463a8": [
+   "Source/URLEncodedFormEncoder.swift"
+  ],
+  "337b29a49f": [
+   "Source/NetworkReachabilityManager.swift",
+   "Source/RetryPolicy.swift"
+  ],
+  "ce7f662709": [
+   "Source/Concurrency.swift"
+  ],
+  "d6f58ed15c": [
+   "Source/Alamofire.swift",
+   "Source/CachedResponseHandler.swift",
+   "Source/ParameterEncoder.swift",
+   "Source/RedirectHandler.swift",
+   "Source/RequestInterceptor.swift",
+   "Source/ResponseSerialization.swift",
+   "Source/RetryPolicy.swift",
+   "Source/ServerTrustEvaluation.swift"
+  ],
+  "78424be314": [
+   "Source/Alamofire.swift"
+  ],
+  "8c926e6012": [
+   "Package.swift"
+  ],
+  "f512df4830": [
+   "Source/Alamofire.swift"
+  ],
+  "da1f2bb108": [
+   "Package.swift",
+   "Package@swift-5.3.swift",
+   "Package@swift-5.4.swift",
+   "Package@swift-5.5.swift"
+  ],
+  "7884a65c6c": [
+   "Source/Concurrency.swift"
+  ],
+  "bdecb2c87a": [
+   "Source/Combine.swift"
+  ],
+  "c3d01308c4": [
+   "Source/Request.swift",
+   "Source/ResponseSerialization.swift",
+   "Source/ServerTrustEvaluation.swift"
+  ],
+  "8dd85aee02": [
+   "Source/Alamofire.swift"
+  ],
+  "dc9d7d4096": [
+   "Source/ResponseSerialization.swift"
+  ],
+  "38d07f329a": [
+   "Source/ParameterEncoding.swift"
+  ],
+  "53a24e8716": [
+   "Source/Request.swift"
+  ],
+  "6b72d947a1": [
+   "Source/ServerTrustEvaluation.swift"
+  ],
+  "354dda32d8": [
+   "Source/Alamofire.swift"
+  ],
+  "824ce8bd36": [
+   "Source/Concurrency.swift"
+  ],
+  "63dfa86548": [
+   "Source/Alamofire.swift",
+   "Source/Session.swift"
+  ],
+  "6bb3f6bd75": [
+   "Source/Concurrency.swift"
+  ],
+  "6eeff3c57e": [
+   "Package.swift"
+  ],
+  "80424faf82": [
+   "Package.swift",
+   "Package@swift-5.3.swift",
+   "Package@swift-5.4.swift"
+  ],
+  "4e1103600b": [
+   "Source/MultipartFormData.swift",
+   "Source/ServerTrustEvaluation.swift"
+  ],
+  "86f518d773": [
+   "Source/HTTPMethod.swift"
+  ],
+  "c05c2b5799": [
+   "Source/Request.swift"
+  ],
+  "6de3f6579b": [
+   "Source/Alamofire.swift"
+  ],
+  "ac892dd077": [
+   "Package.swift"
+  ],
+  "f82c23a8a7": [
+   "Source/Alamofire.swift"
+  ],
+  "0c3780efc9": [
+   "Source/HTTPHeaders.swift",
+   "Source/Protected.swift",
+   "Source/Request.swift",
+   "Source/ResponseSerialization.swift"
+  ],
+  "65b7769490": [
+   "Source/Session.swift"
+  ],
+  "26b8c9a41a": [
+   "Source/Validation.swift"
+  ],
+  "e0edbf64d4": [
+   "Source/Combine.swift"
+  ],
+  "877c524e96": [
+   "Source/Combine.swift",
+   "Source/Request.swift",
+   "Source/Response.swift",
+   "Source/Session.swift",
+   "Source/Validation.swift"
+  ],
+  "92c76834f0": [
+   "Source/ParameterEncoding.swift",
+   "Source/URLEncodedFormEncoder.swift"
+  ],
+  "6de4f23ef3": [
+   "Package.swift",
+   "Source/Combine.swift",
+   "Source/HTTPHeaders.swift",
+   "Source/Request.swift",
+   "Source/ResponseSerialization.swift",
+   "Source/ServerTrustEvaluation.swift"
+  ],
+  "79e9419d40": [
+   "Source/RequestInterceptor.swift",
+   "Source/Session.swift"
+  ],
+  "c039ac798b": [
+   "Source/AuthenticationInterceptor.swift",
+   "Source/MultipartUpload.swift",
+   "Source/Protected.swift",
+   "Source/Request.swift"
+  ],
+  "effb907b0e": [
+   "Source/ResponseSerialization.swift"
+  ],
+  "f3e26fb618": [
+   "Source/CachedResponseHandler.swift",
+   "Source/ParameterEncoder.swift",
+   "Source/RedirectHandler.swift",
+   "Source/RequestInterceptor.swift",
+   "Source/ResponseSerialization.swift",
+   "Source/RetryPolicy.swift",
+   "Source/ServerTrustEvaluation.swift"
+  ],
+  "d120af1e86": [
+   "Source/Alamofire.swift"
+  ],
+  "2397bb9830": [
+   "Source/Combine.swift"
+  ],
+  "c38feeb32c": [
+   "Source/URLEncodedFormEncoder.swift"
+  ],
+  "4a299e3492": [
+   "Source/CachedResponseHandler.swift"
+  ],
+  "a41c07a558": [
+   "Source/AFError.swift",
+   "Source/Alamofire.swift",
+   "Source/HTTPHeaders.swift",
+   "Source/MultipartFormData.swift",
+   "Source/NetworkReachabilityManager.swift",
+   "Source/Protected.swift",
+   "Source/Request.swift",
+   "Source/ServerTrustEvaluation.swift",
+   "Source/SessionDelegate.swift"
+  ],
+  "03e6e9c41d": [
+   "Source/URLSessionConfiguration+Alamofire.swift"
+  ],
+  "f96b619bcb": [
+   "Source/Alamofire.swift",
+   "Source/ServerTrustEvaluation.swift"
+  ],
+  "3fbfb08039": [
+   "Source/Session.swift"
+  ],
+  "4d19ad82f8": [
+   "Source/Alamofire.swift"
+  ],
+  "5a625bcaa1": [
+   "Source/MultipartUpload.swift",
+   "Source/Session.swift"
+  ],
+  "d84770edf4": [
+   "Source/AFError.swift",
+   "Source/MultipartFormData.swift"
+  ],
+  "b359efe63c": [
+   "Source/AFError.swift",
+   "Source/Request.swift"
+  ],
+  "b5dfb35435": [
+   "Source/Request.swift"
+  ],
+  "c244d3275a": [
+   "Source/Alamofire.swift"
+  ],
+  "cbbfc307c7": [
+   "Package.swift",
+   "Source/Alamofire.swift"
+  ],
+  "d9259d107a": [
+   "Source/Combine.swift",
+   "Source/ResponseSerialization.swift"
+  ],
+  "bcbc769c2b": [
+   "Source/Request.swift",
+   "Source/SessionDelegate.swift",
+   "Source/URLRequest+Alamofire.swift"
+  ],
+  "097e1f0316": [
+   "Source/Alamofire.swift",
+   "Source/AlamofireExtended.swift",
+   "Source/HTTPHeaders.swift",
+   "Source/MultipartFormData.swift",
+   "Source/Notifications.swift",
+   "Source/ParameterEncoder.swift",
+   "Source/Request.swift",
+   "Source/ResponseSerialization.swift",
+   "Source/ServerTrustEvaluation.swift",
+   "Source/SessionDelegate.swift",
+   "Source/URLEncodedFormEncoder.swift",
+   "Source/URLRequest+Alamofire.swift"
+  ],
+  "19df306645": [
+   "Source/AuthenticationInterceptor.swift"
+  ],
+  "9e6f3265c3": [
+   "Source/URLRequest+Alamofire.swift"
+  ],
+  "cc183c78ab": [
+   "Source/Request.swift"
+  ],
+  "3b38a99160": [
+   "Source/RequestTaskMap.swift"
+  ],
+  "54b77cef4c": [
+   "Source/MultipartUpload.swift"
+  ],
+  "266919c512": [
+   "Source/Session.swift"
+  ],
+  "5c34603e05": [
+   "Source/RetryPolicy.swift",
+   "Source/Validation.swift"
+  ],
+  "241655eb25": [
+   "Source/ParameterEncoding.swift"
+  ],
+  "becd9a729a": [
+   "Source/Alamofire.swift"
+  ],
+  "94a8bf78e8": [
+   "Package.swift"
+  ],
+  "bd57311bd1": [
+   "Source/HTTPHeaders.swift",
+   "Source/Response.swift"
+  ],
+  "ad1ebf1157": [
+   "Source/HTTPHeaders.swift"
+  ],
+  "23b239a559": [
+   "Source/RetryPolicy.swift",
+   "Source/Validation.swift"
+  ],
+  "a57387a4b2": [
+   "Source/ParameterEncoding.swift"
+  ],
+  "0d4d53aaf7": [
+   "Source/Request.swift",
+   "Source/ResponseSerialization.swift"
+  ],
+  "6efbff050b": [
+   "Source/RetryPolicy.swift"
+  ],
+  "2777659076": [
+   "Source/Alamofire.swift"
+  ],
+  "27a987166a": [
+   "Source/EventMonitor.swift"
+  ],
+  "240669132a": [
+   "Source/Request.swift",
+   "Source/ResponseSerialization.swift",
+   "Source/Validation.swift"
+  ],
+  "30d4d4b94b": [
+   "Source/ResponseSerialization.swift"
+  ],
+  "313be04839": [
+   "Source/ServerTrustEvaluation.swift",
+   "Source/Session.swift"
+  ],
+  "75fc9eafde": [
+   "Source/URLEncodedFormEncoder.swift"
+  ],
+  "346429104e": [
+   "Source/Session.swift"
+  ],
+  "3390ffce4d": [
+   "Source/Request.swift",
+   "Source/ResponseSerialization.swift"
+  ],
+  "4f72b95b49": [
+   "Source/Request.swift"
+  ],
+  "1e9f0fdda1": [
+   "Source/ServerTrustEvaluation.swift"
+  ],
+  "e217713e6d": [
+   "Source/NetworkReachabilityManager.swift"
+  ],
+  "505babfec2": [
+   "Source/RequestInterceptor.swift"
+  ],
+  "fca036f7ae": [
+   "Package.swift",
+   "Source/ResponseSerialization.swift",
+   "Source/Session.swift",
+   "Source/Validation.swift"
+  ],
+  "b18b808a3b": [
+   "Source/Session.swift"
+  ],
+  "508b96ea4d": [
+   "Source/EventMonitor.swift",
+   "Source/Request.swift",
+   "Source/ResponseSerialization.swift",
+   "Source/Result+Alamofire.swift",
+   "Source/Session.swift",
+   "Source/SessionDelegate.swift",
+   "Source/Validation.swift"
+  ],
+  "52eb559f61": [
+   "Source/HTTPHeaders.swift",
+   "Source/MultipartFormData.swift",
+   "Source/ParameterEncoding.swift",
+   "Source/Protected.swift",
+   "Source/RequestTaskMap.swift",
+   "Source/ResponseSerialization.swift"
+  ],
+  "cc57cd7f44": [
+   "Source/AFError.swift",
+   "Source/Alamofire.swift",
+   "Source/AlamofireExtended.swift",
+   "Source/EventMonitor.swift",
+   "Source/HTTPHeaders.swift",
+   "Source/MultipartFormData.swift",
+   "Source/MultipartUpload.swift",
+   "Source/NetworkReachabilityManager.swift",
+   "Source/Notifications.swift",
+   "Source/ParameterEncoder.swift",
+   "Source/ParameterEncoding.swift",
+   "Source/Protected.swift",
+   "Source/Request.swift",
+   "Source/RequestTaskMap.swift",
+   "Source/Response.swift",
+   "Source/ResponseSerialization.swift",
+   "Source/ServerTrustEvaluation.swift",
+   "Source/Session.swift",
+   "Source/URLConvertible+URLRequestConvertible.swift",
+   "Source/URLEncodedFormEncoder.swift",
+   "Source/URLRequest+Alamofire.swift",
+   "Source/Validation.swift"
+  ],
+  "59037bfd28": [
+   "Source/Alamofire.swift"
+  ],
+  "1bc958baee": [
+   "Source/Request.swift",
+   "Source/Session.swift"
+  ],
+  "f3f29dccc8": [
+   "Source/Request.swift",
+   "Source/Session.swift"
+  ],
+  "0cbc2e0e4f": [
+   "Source/Alamofire.swift"
+  ],
+  "69a3338fa7": [
+   "Source/Alamofire.swift"
+  ],
+  "cc54c25416": [
+   "Source/RequestTaskMap.swift",
+   "Source/Response.swift"
+  ],
+  "797b5fb390": [
+   "Source/RetryPolicy.swift"
+  ],
+  "44bcedf248": [
+   "Package.swift",
+   "Source/Request.swift",
+   "Source/RequestTaskMap.swift",
+   "Source/Session.swift",
+   "Source/SessionDelegate.swift"
+  ],
+  "b02c4ee7f1": [
+   "Source/Alamofire.swift"
+  ],
+  "3af908021b": [
+   "Source/AlamofireExtended.swift",
+   "Source/NetworkReachabilityManager.swift",
+   "Source/ServerTrustEvaluation.swift",
+   "Source/Validation.swift"
+  ],
+  "cdb2f4a574": [
+   "Source/Alamofire.swift"
+  ],
+  "f0e7cac1a6": [
+   "Source/AlamofireExtended.swift"
+  ],
+  "0c8cb78d05": [
+   "Source/Alamofire.swift"
+  ],
+  "bbd4b57e04": [
+   "Source/Alamofire.swift",
+   "Source/HTTPHeaders.swift"
+  ],
+  "755853f8fb": [
+   "Source/RedirectHandler.swift",
+   "Source/Request.swift",
+   "Source/RequestInterceptor.swift",
+   "Source/ResponseSerialization.swift"
+  ],
+  "e0a88a8b29": [
+   "Source/URLEncodedFormEncoder.swift"
+  ],
+  "14d54951c5": [
+   "Source/AFResult.swift"
+  ],
+  "34b43bd7e8": [
+   "Source/ServerTrustEvaluation.swift"
+  ],
+  "579d6f4188": [
+   "Source/AFResult.swift"
+  ],
+  "5bedc2af71": [
+   "Source/Session.swift"
+  ],
+  "e03912e76e": [
+   "Source/AFError.swift"
+  ]
+ },
+ "swift-nio": {
+  "b440f7bae8": [
+   "Sources/NIOPosix/SelectableEventLoop.swift"
+  ],
+  "02d6d9ada2": [
+   "Sources/NIOFS/FileSystem.swift",
+   "Sources/NIOFS/FileSystemProtocol.swift",
+   "Sources/_NIOFileSystem/FileSystem.swift",
+   "Sources/_NIOFileSystem/FileSystemProtocol.swift"
+  ],
+  "2f58d8ef84": [
+   "Sources/NIOCore/SingleStepByteToMessageDecoder.swift",
+   "Sources/NIOHTTP1/HTTPPipelineSetup.swift",
+   "Sources/NIOHTTP1Server/main.swift",
+   "Sources/NIOPerformanceTester/main.swift"
+  ],
+  "68624c7abd": [
+   "Sources/NIOFS/Internal/Concurrency Primitives/TokenBucket.swift",
+   "Sources/_NIOFileSystem/Internal/Concurrency Primitives/TokenBucket.swift"
+  ],
+  "108daca35d": [
+   "Sources/NIOCore/SingleStepByteToMessageDecoder.swift",
+   "Sources/NIOHTTP1/HTTPPipelineSetup.swift",
+   "Sources/NIOHTTP1Server/main.swift",
+   "Sources/NIOPerformanceTester/main.swift"
+  ],
+  "eabcc14f9d": [
+   "Sources/NIOCore/ByteBuffer-quicBinaryEncodingStrategy.swift"
+  ],
+  "fcc5b9c153": [
+   "Sources/NIOCore/AsyncAwaitSupport.swift",
+   "Sources/NIOCore/EventLoop+Deprecated.swift",
+   "Sources/NIOCore/EventLoop.swift",
+   "Sources/NIOCore/EventLoopFuture.swift",
+   "Sources/NIOCore/NIOLoopBound.swift"
+  ],
+  "6db9d9abd9": [
+   "Sources/NIOCore/BSDSocketAPI.swift"
+  ],
+  "9cb66c6d7a": [
+   "Sources/NIOCore/RecvByteBufferAllocator.swift"
+  ],
+  "f5b34b27cb": [
+   "Sources/NIOCore/Codec.swift",
+   "Sources/NIOCore/SingleStepByteToMessageDecoder.swift",
+   "Sources/NIOTestUtils/ByteToMessageDecoderVerifier.swift"
+  ],
+  "21de5f08c1": [
+   "Sources/NIOCore/AsyncAwaitSupport.swift"
+  ],
+  "c1ccdbcc95": [
+   "Sources/NIOPosix/SocketChannel.swift",
+   "Sources/NIOPosix/VsockAddress.swift"
+  ],
+  "03f13fb86c": [
+   "Sources/NIOCore/BSDSocketAPI.swift"
+  ],
+  "a8a8f22d99": [
+   "Sources/NIOCore/DispatchQueue+WithFuture.swift"
+  ],
+  "bee661186d": [
+   "Sources/NIOCore/ByteBuffer-core.swift"
+  ],
+  "ae1b32d0a9": [
+   "Sources/NIOPerformanceTester/Benchmark.swift"
+  ],
+  "28b1e07dd8": [
+   "Sources/NIOCore/ByteBuffer-quicBinaryEncodingStrategy.swift"
+  ],
+  "e8e0774c1a": [
+   "Sources/NIOCore/AsyncAwaitSupport.swift",
+   "Sources/NIOCore/ByteBuffer-core.swift",
+   "Sources/NIOCore/CircularBuffer.swift",
+   "Sources/NIOCore/SingleStepByteToMessageDecoder.swift",
+   "Sources/_NIODataStructures/Heap.swift"
+  ],
+  "14059d6536": [
+   "Sources/NIOFS/Internal/BufferedStream.swift",
+   "Sources/NIOFS/Internal/SystemFileHandle.swift",
+   "Sources/NIOHTTP1/ByteCollectionUtils.swift",
+   "Sources/NIOHTTP1/HTTPTypes.swift",
+   "Sources/NIOPosix/ServerSocket.swift",
+   "Sources/NIOPosix/Socket.swift",
+   "Sources/_NIOFileSystem/Internal/BufferedStream.swift",
+   "Sources/_NIOFileSystem/Internal/SystemFileHandle.swift"
+  ],
+  "a931f2c1de": [
+   "Sources/NIOCore/ByteBuffer-core.swift"
+  ],
+  "7800d84cba": [
+   "Sources/NIOCore/EventLoopFuture+AssumeIsolated.swift"
+  ],
+  "385c1a7d48": [
+   "Sources/NIOPosix/BSDSocketAPIWindows.swift"
+  ],
+  "48119dbbd2": [
+   "Sources/NIOCore/SocketAddresses.swift"
+  ],
+  "0be2d1a0af": [
+   "Sources/NIOCore/Utilities.swift"
+  ],
+  "ec51fff05f": [
+   "Sources/NIOPosix/SelectorGeneric.swift"
+  ],
+  "18670a7e97": [
+   "Sources/NIOPosix/SelectableEventLoop.swift"
+  ],
+  "8f5cd5fa9c": [
+   "Sources/NIOFS/ByteCount.swift",
+   "Sources/_NIOFileSystem/ByteCount.swift"
+  ],
+  "72973283d7": [
+   "Sources/NIOPosix/SelectorGeneric.swift"
+  ],
+  "cb487991d8": [
+   "Sources/_NIOFileSystem/FileSystemProtocol.swift"
+  ],
+  "15b77e6400": [
+   "Package.swift"
+  ],
+  "63018571c8": [
+   "Sources/NIOCore/SocketAddresses.swift",
+   "Sources/NIOPosix/ThreadPosix.swift"
+  ],
+  "afc79dd083": [
+   "Sources/NIOPosix/SelectableEventLoop.swift"
+  ],
+  "3777a70115": [
+   "Sources/NIOFS/FileSystemError+Syscall.swift",
+   "Sources/NIOFS/Internal/SystemFileHandle.swift",
+   "Sources/_NIOFileSystem/FileSystemError+Syscall.swift",
+   "Sources/_NIOFileSystem/Internal/SystemFileHandle.swift"
+  ],
+  "199ccb983c": [
+   "Sources/NIOCore/EventLoopFuture+AssumeIsolated.swift",
+   "Sources/NIOCore/EventLoopFuture.swift"
+  ],
+  "3bd6c86af3": [
+   "Sources/NIOCore/ChannelOption.swift",
+   "Sources/NIOFS/Internal/System Calls/SystemPackage+Windows.swift",
+   "Sources/NIOPosix/System.swift",
+   "Sources/_NIOFileSystem/Internal/System Calls/SystemPackage+Windows.swift"
+  ],
+  "590dd7b4bc": [
+   "Package.swift",
+   "Sources/NIOFS/Array+FileSystem.swift",
+   "Sources/NIOFS/ArraySlice+FileSystem.swift",
+   "Sources/NIOFS/DirectoryEntries.swift",
+   "Sources/NIOFS/FileInfo.swift",
+   "Sources/NIOFS/FileSystem.swift",
+   "Sources/NIOFS/FileType.swift",
+   "Sources/NIOFS/Internal/System Calls/CInterop.swift",
+   "Sources/NIOFS/Internal/System Calls/Errno.swift",
+   "Sources/NIOFS/Internal/System Calls/FileDescriptor+Syscalls.swift",
+   "Sources/NIOFS/Internal/System Calls/Mocking.swift",
+   "Sources/NIOFS/Internal/System Calls/Syscall.swift",
+   "Sources/NIOFS/Internal/System Calls/Syscalls.swift",
+   "Sources/NIOFS/Internal/SystemFileHandle.swift",
+   "Sources/_NIOFileSystem/Array+FileSystem.swift",
+   "Sources/_NIOFileSystem/ArraySlice+FileSystem.swift",
+   "Sources/_NIOFileSystem/DirectoryEntries.swift",
+   "Sources/_NIOFileSystem/FileInfo.swift",
+   "Sources/_NIOFileSystem/FileSystem.swift",
+   "Sources/_NIOFileSystem/FileType.swift",
+   "Sources/_NIOFileSystem/Internal/System Calls/CInterop.swift",
+   "Sources/_NIOFileSystem/Internal/System Calls/Errno.swift",
+   "Sources/_NIOFileSystem/Internal/System Calls/FileDescriptor+Syscalls.swift",
+   "Sources/_NIOFileSystem/Internal/System Calls/Mocking.swift",
+   "Sources/_NIOFileSystem/Internal/System Calls/Syscall.swift",
+   "Sources/_NIOFileSystem/Internal/System Calls/Syscalls.swift",
+   "Sources/_NIOFileSystem/Internal/SystemFileHandle.swift"
+  ],
+  "0b18836bd8": [
+   "Sources/NIOHTTP1/HTTPDecoder.swift",
+   "Sources/NIOHTTP1/HTTPEncoder.swift",
+   "Sources/NIOHTTP1/HTTPPipelineSetup.swift",
+   "Sources/NIOHTTP1/HTTPTypedPipelineSetup.swift"
+  ],
+  "53ac1ccab2": [
+   "Sources/NIOCore/ByteBuffer-core.swift"
+  ],
+  "b1f2dd18fc": [
+   "Package.swift"
+  ],
+  "68631de6d8": [
+   "Package.swift",
+   "Sources/NIOCrashTester/CrashTestSuites.swift",
+   "Sources/NIOCrashTester/CrashTests+ByteBuffer.swift",
+   "Sources/NIOCrashTester/CrashTests+EventLoop.swift",
+   "Sources/NIOCrashTester/CrashTests+LoopBound.swift",
+   "Sources/NIOCrashTester/CrashTests+Strict.swift",
+   "Sources/NIOCrashTester/CrashTests+System.swift",
+   "Sources/NIOCrashTester/OutputGrepper.swift",
+   "Sources/NIOCrashTester/main.swift",
+   "Sources/NIOPerformanceTester/main.swift"
+  ],
+  "419f57f136": [
+   "Sources/NIOCore/IO.swift",
+   "Sources/NIOHTTP1Server/main.swift",
+   "Sources/NIOMulticastChat/main.swift",
+   "Sources/NIOPosix/BSDSocketAPIWindows.swift",
+   "Sources/NIOPosix/SelectorGeneric.swift",
+   "Sources/NIOPosix/SelectorWSAPoll.swift",
+   "Sources/NIOPosix/SocketChannel.swift",
+   "Sources/NIOPosix/System.swift",
+   "Sources/NIOPosix/Thread.swift",
+   "Sources/NIOPosix/ThreadWindows.swift"
+  ],
+  "a97b26909b": [
+   "Sources/NIOPosix/PosixSingletons+ConcurrencyTakeOver.swift"
+  ],
+  "eeb20e7f95": [
+   "Sources/NIOHTTP1/HTTPDecoder.swift"
+  ],
+  "74c924fd01": [
+   "Sources/NIOPosix/SelectableEventLoop.swift"
+  ],
+  "849ab561ae": [
+   "Sources/NIOHTTP1Server/main.swift"
+  ],
+  "a8e036cb86": [
+   "Sources/NIOHTTP1/HTTPEncoder.swift"
+  ],
+  "0b38af6217": [
+   "Sources/NIOCore/ByteBuffer-quicBinaryEncodingStrategy.swift"
+  ],
+  "77b84ac2cd": [
+   "Sources/NIOFS/Internal/SystemFileHandle.swift",
+   "Sources/_NIOFileSystem/Internal/SystemFileHandle.swift"
+  ],
+  "03848cb0cc": [
+   "Sources/NIOPosix/NonBlockingFileIO.swift"
+  ],
+  "9ebe69d269": [
+   "Sources/NIOCore/ByteBuffer-multi-int.swift"
+  ],
+  "4e370dc4d7": [
+   "Sources/NIOWebSocket/WebSocketFrameDecoder.swift"
+  ],
+  "d20fa05a64": [
+   "Sources/NIOCore/ByteBuffer-aux.swift"
+  ],
+  "9670fe1d68": [
+   "Sources/NIOHTTP1/NIOTypedHTTPServerUpgraderStateMachine.swift"
+  ],
+  "57c0a08a33": [
+   "Sources/NIOHTTP1/HTTPHeaderValidator.swift",
+   "Sources/NIOHTTP1/HTTPPipelineSetup.swift"
+  ],
+  "b24872d3aa": [
+   "Sources/NIOHTTP1/HTTPDecoder.swift",
+   "Sources/NIOHTTP1/HTTPPipelineSetup.swift",
+   "Sources/NIOHTTP1/HTTPTypedPipelineSetup.swift"
+  ],
+  "87f935b70c": [
+   "Sources/NIOCore/ByteBuffer-core.swift"
+  ],
+  "dd16365724": [
+   "Sources/NIOHTTP1/HTTPHeaderValidator.swift"
+  ],
+  "0ee0fd1b38": [
+   "Sources/NIOCore/SystemCallHelpers.swift",
+   "Sources/NIOCore/Utilities.swift",
+   "Sources/NIOMulticastChat/main.swift"
+  ],
+  "c077074e9f": [
+   "Sources/NIOFS/FileSystem.swift",
+   "Sources/_NIOFileSystem/FileSystem.swift"
+  ],
+  "32f395bc91": [
+   "Sources/NIOCore/ByteBuffer-binaryEncodedLengthPrefix.swift"
+  ],
+  "ad37b30223": [
+   "Package.swift",
+   "Sources/NIOCore/BSDSocketAPI.swift",
+   "Sources/NIOCore/Interfaces.swift",
+   "Sources/NIOCore/SocketAddresses.swift",
+   "Sources/NIOCore/SocketOptionProvider.swift"
+  ],
+  "37e191d35b": [
+   "Sources/NIOCrashTester/CrashTestSuites.swift",
+   "Sources/NIOHTTP1/HTTPEncoder.swift"
+  ],
+  "1c8b29ce10": [
+   "Sources/_NIOFileSystem/DirectoryEntries.swift"
+  ],
+  "f71c8d2a5e": [
+   "Package.swift"
+  ],
+  "38000794f2": [
+   "Package.swift",
+   "Sources/NIOFSFoundationCompat/Data+FileSystem.swift",
+   "Sources/NIOFSFoundationCompat/Date+FileInfo.swift",
+   "Sources/NIOFoundationEssentialsCompat/ByteBuffer-foundation.swift",
+   "Sources/NIOFoundationEssentialsCompat/Codable+ByteBuffer.swift",
+   "Sources/_NIOFileSystemFoundationCompat/Data+FileSystem.swift",
+   "Sources/_NIOFileSystemFoundationCompat/Date+FileInfo.swift"
+  ],
+  "cd6710454f": [
+   "Sources/NIOCore/SocketAddresses.swift",
+   "Sources/NIOPosix/GetaddrinfoResolver.swift"
+  ],
+  "f99e1b6a30": [
+   "Package.swift"
+  ],
+  "98f8824da0": [
+   "Sources/NIOFS/FileSystemError+Syscall.swift",
+   "Sources/_NIOFileSystem/FileSystemError+Syscall.swift"
+  ],
+  "bdf004b44f": [
+   "Sources/NIOPosix/NIOThreadPool.swift"
+  ],
+  "795162f1bc": [
+   "Sources/NIOConcurrencyHelpers/NIOLock.swift",
+   "Sources/NIOConcurrencyHelpers/NIOThreadPoolWorkAvailable.swift",
+   "Sources/NIOConcurrencyHelpers/lock.swift"
+  ],
+  "b9d20d3476": [
+   "Sources/NIOPerformanceTester/main.swift"
+  ],
+  "5b3cab2bb0": [
+   "Sources/NIOPosix/LinuxCPUSet.swift"
+  ],
+  "57a73c653b": [
+   "Sources/NIOCore/Utilities.swift"
+  ],
+  "182ae0b4f9": [
+   "Sources/_NIOFileSystem/FileSystem.swift",
+   "Sources/_NIOFileSystem/FileSystemProtocol.swift",
+   "Sources/_NIOFileSystem/IOStrategy.swift"
+  ],
+  "acf9bbe0fd": [
+   "Sources/NIOCore/SocketAddresses.swift"
+  ],
+  "ada5f7690b": [
+   "Sources/NIOCore/AsyncAwaitSupport.swift",
+   "Sources/NIOCore/AsyncSequences/NIOAsyncWriter.swift",
+   "Sources/NIOCore/AsyncSequences/NIOThrowingAsyncSequenceProducer.swift"
+  ],
+  "83509ed06d": [
+   "Sources/NIOCore/ByteBuffer-core.swift"
+  ],
+  "fff2515d6e": [
+   "Sources/_NIOFileSystem/FileSystem.swift",
+   "Sources/_NIOFileSystem/FileSystemError+Syscall.swift",
+   "Sources/_NIOFileSystem/Internal/System Calls/Syscall.swift",
+   "Sources/_NIOFileSystem/Internal/System Calls/Syscalls.swift",
+   "Sources/_NIOFileSystem/Internal/SystemFileHandle.swift"
+  ],
+  "d38344d14b": [
+   "Sources/NIOPosix/MultiThreadedEventLoopGroup.swift"
+  ],
+  "41fc4a7aff": [
+   "Sources/NIOPosix/MultiThreadedEventLoopGroup.swift",
+   "Sources/NIOPosix/PosixSingletons+ConcurrencyTakeOver.swift"
+  ],
+  "be8fdc13c0": [
+   "Sources/NIOFS/FileSystem.swift",
+   "Sources/NIOFS/FileSystemProtocol.swift",
+   "Sources/NIOFS/IOStrategy.swift"
+  ],
+  "b0e024792a": [
+   "Sources/NIOCore/BSDSocketAPI.swift",
+   "Sources/NIOCore/ChannelPipeline.swift",
+   "Sources/NIOPosix/BSDSocketAPICommon.swift"
+  ],
+  "2fdda6c78e": [
+   "Sources/NIOPosix/SelectableEventLoop.swift"
+  ],
+  "d948192838": [
+   "Sources/NIOPosix/BaseSocketChannel.swift"
+  ],
+  "9b92dcd5c2": [
+   "Sources/NIOPerformanceTester/main.swift",
+   "Sources/NIOPosix/NIOThreadPool.swift"
+  ],
+  "db01d87942": [
+   "Sources/NIOFS/FileSystem.swift",
+   "Sources/NIOFS/FileSystemError+Syscall.swift",
+   "Sources/NIOFS/Internal/System Calls/Syscall.swift",
+   "Sources/NIOFS/Internal/System Calls/Syscalls.swift",
+   "Sources/NIOFS/Internal/SystemFileHandle.swift"
+  ],
+  "6a6f7d7c33": [
+   "Sources/NIOCore/NIOSendable.swift",
+   "Sources/NIOFS/Internal/Cancellation.swift",
+   "Sources/_NIOFileSystem/Internal/Cancellation.swift"
+  ],
+  "37ffc4b8d5": [
+   "Sources/NIOEmbedded/Embedded.swift"
+  ],
+  "5bf0267df4": [
+   "Sources/NIOPosix/BSDSocketAPICommon.swift",
+   "Sources/NIOPosix/BSDSocketAPIPosix.swift",
+   "Sources/NIOPosix/BSDSocketAPIWindows.swift",
+   "Sources/NIOPosix/BaseSocket.swift",
+   "Sources/NIOPosix/BaseSocketChannel+SocketOptionProvider.swift",
+   "Sources/NIOPosix/BaseSocketChannel.swift",
+   "Sources/NIOPosix/BaseStreamSocketChannel.swift",
+   "Sources/NIOPosix/Bootstrap.swift",
+   "Sources/NIOPosix/ControlMessage.swift",
+   "Sources/NIOPosix/DatagramVectorReadManager.swift",
+   "Sources/NIOPosix/Errors+Any.swift",
+   "Sources/NIOPosix/FileDescriptor.swift",
+   "Sources/NIOPosix/GetaddrinfoResolver.swift",
+   "Sources/NIOPosix/HappyEyeballs.swift",
+   "Sources/NIOPosix/IO.swift",
+   "Sources/NIOPosix/IntegerBitPacking.swift",
+   "Sources/NIOPosix/IntegerTypes.swift",
+   "Sources/NIOPosix/Linux.swift",
+   "Sources/NIOPosix/LinuxCPUSet.swift",
+   "Sources/NIOPosix/LinuxUring.swift",
+   "Sources/NIOPosix/MultiThreadedEventLoopGroup.swift",
+   "Sources/NIOPosix/NIOPosixSendableMetatype.swift",
+   "Sources/NIOPosix/NIOThreadPool.swift",
+   "Sources/NIOPosix/NonBlockingFileIO.swift",
+   "Sources/NIOPosix/PendingDatagramWritesManager.swift",
+   "Sources/NIOPosix/PendingWritesManager.swift",
+   "Sources/NIOPosix/PipeChannel.swift",
+   "Sources/NIOPosix/PipePair.swift",
+   "Sources/NIOPosix/Pool.swift",
+   "Sources/NIOPosix/PosixSingletons+ConcurrencyTakeOver.swift",
+   "Sources/NIOPosix/PosixSingletons.swift",
+   "Sources/NIOPosix/RawSocketBootstrap.swift",
+   "Sources/NIOPosix/Resolver.swift",
+   "Sources/NIOPosix/Selectable.swift",
+   "Sources/NIOPosix/SelectableChannel.swift",
+   "Sources/NIOPosix/SelectableEventLoop.swift",
+   "Sources/NIOPosix/SelectorEpoll.swift",
+   "Sources/NIOPosix/SelectorGeneric.swift",
+   "Sources/NIOPosix/SelectorKqueue.swift",
+   "Sources/NIOPosix/SelectorUring.swift",
+   "Sources/NIOPosix/SelectorWSAPoll.swift",
+   "Sources/NIOPosix/ServerSocket.swift",
+   "Sources/NIOPosix/Socket.swift",
+   "Sources/NIOPosix/SocketChannel.swift",
+   "Sources/NIOPosix/SocketProtocols.swift",
+   "Sources/NIOPosix/StructuredConcurrencyHelpers.swift",
+   "Sources/NIOPosix/System.swift",
+   "Sources/NIOPosix/Thread.swift",
+   "Sources/NIOPosix/ThreadPosix.swift",
+   "Sources/NIOPosix/ThreadWindows.swift",
+   "Sources/NIOPosix/UnsafeTransfer.swift",
+   "Sources/NIOPosix/Utilities.swift",
+   "Sources/NIOPosix/VsockAddress.swift",
+   "Sources/NIOPosix/VsockChannelEvents.swift",
+   "Sources/NIOPosix/Windows.swift"
+  ],
+  "3f80264185": [
+   "Sources/NIOEmbedded/AsyncTestingChannel.swift"
+  ],
+  "c337170d91": [
+   "Sources/NIOConcurrencyHelpers/lock.swift"
+  ],
+  "233f61bc2c": [
+   "Sources/NIOConcurrencyHelpers/lock.swift"
+  ],
+  "6ce9173261": [
+   "Sources/NIOConcurrencyHelpers/lock.swift"
+  ],
+  "61053a00bb": [
+   "Sources/NIOHTTP1/NIOTypedHTTPClientUpgradeHandler.swift",
+   "Sources/NIOHTTP1/NIOTypedHTTPClientUpgraderStateMachine.swift"
+  ],
+  "6b33489e64": [
+   "Sources/_NIOFileSystem/FileHandleProtocol.swift",
+   "Sources/_NIOFileSystem/FileSystem.swift",
+   "Sources/_NIOFileSystem/FileSystemProtocol.swift",
+   "Sources/_NIOFileSystem/OpenOptions.swift"
+  ],
+  "608e511d7a": [
+   "Sources/NIOFS/FileSystem.swift",
+   "Sources/NIOFS/FileSystemError+Syscall.swift",
+   "Sources/NIOFS/FileSystemProtocol.swift",
+   "Sources/NIOFS/Internal/System Calls/Syscall.swift",
+   "Sources/NIOFS/Internal/System Calls/Syscalls.swift",
+   "Sources/_NIOFileSystem/FileSystem.swift",
+   "Sources/_NIOFileSystem/FileSystemError+Syscall.swift",
+   "Sources/_NIOFileSystem/FileSystemProtocol.swift",
+   "Sources/_NIOFileSystem/Internal/System Calls/Syscall.swift",
+   "Sources/_NIOFileSystem/Internal/System Calls/Syscalls.swift"
+  ],
+  "4a9a971110": [
+   "Sources/NIOCore/ByteBuffer-conversions.swift"
+  ],
+  "5dc3b4ba4a": [
+   "Sources/NIOEmbedded/AsyncTestingChannel.swift",
+   "Sources/NIOEmbedded/Embedded.swift"
+  ],
+  "e3d5c560e0": [
+   "Sources/NIOCore/Linux.swift",
+   "Sources/NIOCore/SystemCallHelpers.swift",
+   "Sources/NIOCore/Utilities.swift"
+  ],
+  "1268babbc1": [
+   "Sources/NIOPosix/PosixSingletons+ConcurrencyTakeOver.swift"
+  ],
+  "a1605a3303": [
+   "Sources/NIOCore/AsyncChannel/AsyncChannelHandler.swift",
+   "Sources/NIOCore/Codec.swift",
+   "Sources/NIOHTTP1/HTTPEncoder.swift",
+   "Sources/NIOHTTP1/HTTPHeaderValidator.swift",
+   "Sources/NIOHTTP1/HTTPServerPipelineHandler.swift",
+   "Sources/NIOHTTP1/HTTPServerProtocolErrorHandler.swift",
+   "Sources/NIOHTTP1/HTTPServerUpgradeHandler.swift",
+   "Sources/NIOHTTP1/NIOHTTPClientUpgradeHandler.swift",
+   "Sources/NIOHTTP1/NIOHTTPObjectAggregator.swift",
+   "Sources/NIOHTTP1/NIOTypedHTTPClientUpgradeHandler.swift",
+   "Sources/NIOHTTP1/NIOTypedHTTPServerUpgradeHandler.swift",
+   "Sources/NIOPosix/Bootstrap.swift",
+   "Sources/NIOWebSocket/NIOWebSocketFrameAggregator.swift",
+   "Sources/NIOWebSocket/WebSocketFrameDecoder.swift",
+   "Sources/NIOWebSocket/WebSocketFrameEncoder.swift",
+   "Sources/NIOWebSocket/WebSocketProtocolErrorHandler.swift"
+  ],
+  "888f4affd6": [
+   "Sources/NIOCore/ByteBuffer-core.swift"
+  ],
+  "663ddc80f2": [
+   "Sources/NIOFS/Internal/Concurrency Primitives/TokenBucket.swift",
+   "Sources/_NIOFileSystem/Internal/Concurrency Primitives/TokenBucket.swift"
+  ],
+  "b60d141920": [
+   "Sources/NIOChatClient/main.swift",
+   "Sources/NIOChatServer/main.swift",
+   "Sources/NIOCore/Channel.swift",
+   "Sources/NIOHTTP1Client/main.swift"
+  ],
+  "2bc71a6aff": [
+   "Package.swift",
+   "Sources/NIOConcurrencyHelpers/NIOAtomic.swift",
+   "Sources/NIOConcurrencyHelpers/NIOLock.swift",
+   "Sources/NIOConcurrencyHelpers/atomics.swift",
+   "Sources/NIOConcurrencyHelpers/lock.swift",
+   "Sources/NIOCore/BSDSocketAPI.swift",
+   "Sources/NIOCore/Interfaces.swift",
+   "Sources/NIOCore/SocketAddresses.swift",
+   "Sources/NIOCore/SocketOptionProvider.swift",
+   "Sources/NIOCore/Utilities.swift",
+   "Sources/NIOMulticastChat/main.swift",
+   "Sources/NIOPosix/BSDSocketAPICommon.swift",
+   "Sources/NIOPosix/BSDSocketAPIPosix.swift",
+   "Sources/NIOPosix/BaseSocket.swift",
+   "Sources/NIOPosix/Bootstrap.swift",
+   "Sources/NIOPosix/ControlMessage.swift",
+   "Sources/NIOPosix/DatagramVectorReadManager.swift",
+   "Sources/NIOPosix/NonBlockingFileIO.swift",
+   "Sources/NIOPosix/PendingDatagramWritesManager.swift",
+   "Sources/NIOPosix/PendingWritesManager.swift",
+   "Sources/NIOPosix/SelectorGeneric.swift",
+   "Sources/NIOPosix/SelectorKqueue.swift",
+   "Sources/NIOPosix/Socket.swift",
+   "Sources/NIOPosix/SocketChannel.swift",
+   "Sources/NIOPosix/SocketProtocols.swift",
+   "Sources/NIOPosix/System.swift",
+   "Sources/NIOPosix/Thread.swift",
+   "Sources/NIOPosix/ThreadPosix.swift"
+  ],
+  "cda536de37": [
+   "Sources/NIOCore/AsyncSequences/NIOThrowingAsyncSequenceProducer.swift"
+  ],
+  "d2feeaa363": [
+   "Sources/NIOCore/AsyncSequences/NIOAsyncWriter.swift"
+  ],
+  "5bf841dde5": [
+   "Sources/NIOCore/AsyncSequences/NIOAsyncWriter.swift"
+  ],
+  "3eea09220e": [
+   "Sources/NIOPosix/MultiThreadedEventLoopGroup.swift",
+   "Sources/NIOPosix/SelectableEventLoop.swift"
+  ],
+  "6e02c7a246": [
+   "Sources/NIOCore/ByteBuffer-aux.swift",
+   "Sources/NIOCore/ByteBuffer-core.swift"
+  ],
+  "56724a2b6d": [
+   "Sources/NIOEmbedded/AsyncTestingChannel.swift",
+   "Sources/NIOEmbedded/Embedded.swift"
+  ],
+  "45b463c5eb": [
+   "Sources/NIOCore/NIOLoopBound.swift"
+  ],
+  "5741df9cc4": [
+   "Sources/NIOCore/ChannelOption.swift",
+   "Sources/NIOPosix/ControlMessage.swift",
+   "Sources/NIOPosix/SocketChannel.swift"
+  ],
+  "a7da98c3ac": [
+   "Sources/NIOCore/AddressedEnvelope.swift",
+   "Sources/NIOPosix/ControlMessage.swift",
+   "Sources/NIOPosix/PendingDatagramWritesManager.swift",
+   "Sources/NIOPosix/SocketChannel.swift",
+   "Sources/NIOPosix/System.swift"
+  ],
+  "88dc99031f": [
+   "Package.swift",
+   "Sources/NIOCore/ByteBuffer-aux.swift",
+   "Sources/NIOCore/ByteBuffer-core.swift"
+  ],
+  "fd7c6af4f0": [
+   "Sources/NIOCore/ByteBuffer-aux.swift",
+   "Sources/NIOCore/ByteBuffer-binaryEncodedLengthPrefix.swift",
+   "Sources/NIOCore/ByteBuffer-core.swift",
+   "Sources/NIOCore/ByteBuffer-views.swift"
+  ],
+  "cc38f7abcf": [
+   "Sources/NIOFoundationCompat/WaitSpinningRunLoop.swift"
+  ],
+  "d963335ba0": [
+   "Sources/NIOFS/FileSystem.swift",
+   "Sources/NIOFS/Internal/ParallelDirCopy.swift",
+   "Sources/_NIOFileSystem/FileSystem.swift",
+   "Sources/_NIOFileSystem/Internal/ParallelDirCopy.swift"
+  ],
+  "e304a1a363": [
+   "Sources/NIOCore/EventLoopFuture.swift"
+  ],
+  "a24771a4c2": [
+   "Sources/NIOPerformanceTester/main.swift"
+  ],
+  "0469372396": [
+   "Sources/NIOCore/NIODecodedAsyncSequence.swift"
+  ],
+  "f2ad915d57": [
+   "Sources/NIOCore/ByteBuffer-views.swift"
+  ],
+  "7124f0963a": [
+   "Sources/NIOFS/FileSystem.swift",
+   "Sources/_NIOFileSystem/FileSystem.swift"
+  ],
+  "767ea9ee09": [
+   "Sources/NIOCore/ByteBuffer-views.swift"
+  ],
+  "86c5ead5dd": [
+   "Sources/NIOCore/SingleStepByteToMessageDecoder.swift"
+  ],
+  "cdf721f4d6": [
+   "Sources/NIOPosix/PipeChannel.swift"
+  ],
+  "a3ed8e10ab": [
+   "Package.swift",
+   "Sources/NIOConcurrencyHelpers/NIOAtomic.swift",
+   "Sources/NIOConcurrencyHelpers/atomics.swift",
+   "Sources/NIOCore/AsyncChannel/AsyncChannel.swift",
+   "Sources/NIOCore/BSDSocketAPI.swift",
+   "Sources/NIOCore/ByteBuffer-aux.swift",
+   "Sources/NIOCore/NIOLoopBound.swift",
+   "Sources/NIOCrashTester/CrashTests+EventLoop.swift",
+   "Sources/NIOFS/Internal/System Calls/FileDescriptor+Syscalls.swift",
+   "Sources/NIOFS/Internal/System Calls/Mocking.swift",
+   "Sources/NIOFS/Internal/System Calls/Syscall.swift",
+   "Sources/NIOPosix/Linux.swift",
+   "Sources/NIOPosix/MultiThreadedEventLoopGroup.swift",
+   "Sources/NIOPosix/PosixSingletons+ConcurrencyTakeOver.swift",
+   "Sources/NIOPosix/StructuredConcurrencyHelpers.swift",
+   "Sources/NIOPosix/System.swift",
+   "Sources/NIOPosix/Thread.swift",
+   "Sources/NIOTestUtils/ManualTaskExecutor.swift",
+   "Sources/_NIOFileSystem/Internal/System Calls/FileDescriptor+Syscalls.swift",
+   "Sources/_NIOFileSystem/Internal/System Calls/Mocking.swift",
+   "Sources/_NIOFileSystem/Internal/System Calls/Syscall.swift"
+  ],
+  "2e22c89844": [
+   "Sources/NIOCore/ByteBuffer-aux.swift"
+  ],
+  "a18bddb0ac": [
+   "Package.swift",
+   "Sources/NIOFSFoundationCompat/Data+FileSystem.swift",
+   "Sources/NIOFSFoundationCompat/Date+FileInfo.swift",
+   "Sources/NIOFileSystem/Exports.swift"
+  ],
+  "f2ebedb36a": [
+   "Sources/NIOCore/AsyncSequences/NIOAsyncWriter.swift",
+   "Sources/NIOCore/EventLoopFuture.swift",
+   "Sources/NIOFileSystem/FileSystem.swift",
+   "Sources/NIOFileSystem/FileSystemProtocol.swift",
+   "Sources/NIOFileSystem/Internal/ParallelDirCopy.swift",
+   "Sources/NIOPosix/Bootstrap.swift",
+   "Sources/NIOPosix/HappyEyeballs.swift",
+   "Sources/NIOPosix/PosixSingletons+ConcurrencyTakeOver.swift",
+   "Sources/NIOPosix/RawSocketBootstrap.swift",
+   "Sources/_NIOFileSystem/FileSystem.swift",
+   "Sources/_NIOFileSystem/FileSystemProtocol.swift",
+   "Sources/_NIOFileSystem/Internal/ParallelDirCopy.swift"
+  ],
+  "2550c9ed48": [
+   "Package.swift"
+  ],
+  "5679824930": [
+   "Sources/NIOCore/SocketAddresses.swift"
+  ],
+  "66a85ba0e2": [
+   "Package.swift"
+  ],
+  "e95d742160": [
+   "Sources/NIOPosix/IO.swift",
+   "Sources/NIOPosix/NonBlockingFileIO.swift",
+   "Sources/NIOPosix/System.swift",
+   "Sources/NIOPosix/Windows.swift"
+  ],
+  "db4d4c2566": [
+   "Sources/NIOPosix/SelectorWSAPoll.swift"
+  ],
+  "7290551b7f": [
+   "Package.swift",
+   "Sources/NIOFileSystem/Array+FileSystem.swift",
+   "Sources/NIOFileSystem/ArraySlice+FileSystem.swift",
+   "Sources/NIOFileSystem/BufferedReader.swift",
+   "Sources/NIOFileSystem/BufferedWriter.swift",
+   "Sources/NIOFileSystem/ByteBuffer+FileSystem.swift",
+   "Sources/NIOFileSystem/Convenience.swift",
+   "Sources/NIOFileSystem/DirectoryEntries.swift",
+   "Sources/NIOFileSystem/DirectoryEntry.swift",
+   "Sources/NIOFileSystem/FileChunks.swift",
+   "Sources/NIOFileSystem/FileHandleProtocol.swift",
+   "Sources/NIOFileSystem/FileSystem.swift",
+   "Sources/NIOFileSystem/FileSystemProtocol.swift",
+   "Sources/NIOFileSystem/Internal/BufferedOrAnyStream.swift",
+   "Sources/NIOFileSystem/Internal/ParallelDirCopy.swift",
+   "Sources/NIOFileSystem/Internal/ParallelRemoval.swift",
+   "Sources/NIOFileSystem/NIOFileSystemSendableMetatype.swift",
+   "Sources/NIOFileSystem/OpenOptions.swift",
+   "Sources/NIOFileSystem/String+FileSystem.swift",
+   "Sources/NIOFileSystemFoundationCompat/Data+FileSystem.swift",
+   "Sources/NIOFileSystemFoundationCompat/Date+FileInfo.swift"
+  ],
+  "5bf5054a83": [
+   "Sources/NIOPosix/FileDescriptor.swift",
+   "Sources/NIOPosix/NonBlockingFileIO.swift",
+   "Sources/NIOPosix/SelectorWSAPoll.swift",
+   "Sources/NIOPosix/System.swift",
+   "Sources/NIOPosix/Windows.swift"
+  ],
+  "c26397c5b4": [
+   "Sources/NIOPosix/SelectorGeneric.swift"
+  ],
+  "663b627102": [
+   "Sources/NIOPosix/PosixSingletons+ConcurrencyTakeOver.swift"
+  ],
+  "f656af6b79": [
+   "Sources/NIOPosix/SelectableEventLoop.swift"
+  ],
+  "e8c1d6e09b": [
+   "Sources/NIOPosix/Bootstrap.swift",
+   "Sources/NIOPosix/PipePair.swift",
+   "Sources/NIOPosix/Windows.swift"
+  ],
+  "aff71b37f5": [
+   "Sources/NIOPosix/BSDSocketAPIWindows.swift",
+   "Sources/NIOPosix/Socket.swift",
+   "Sources/NIOPosix/Windows.swift"
+  ],
+  "0878179234": [
+   "Sources/NIOPosix/SelectorGeneric.swift"
+  ],
+  "148589720a": [
+   "Sources/NIOPosix/Windows.swift"
+  ],
+  "9cde8e3a00": [
+   "Sources/NIOPosix/System.swift"
+  ],
+  "456921a854": [
+   "Sources/NIOCore/Utilities.swift",
+   "Sources/NIOEmbedded/Embedded.swift",
+   "Sources/NIOPosix/SelectableEventLoop.swift"
+  ],
+  "806a7276b1": [
+   "Sources/NIOPosix/BSDSocketAPIPosix.swift",
+   "Sources/NIOPosix/BSDSocketAPIWindows.swift",
+   "Sources/NIOPosix/Socket.swift"
+  ],
+  "54b0dc09ca": [
+   "Sources/NIOPosix/SocketChannel.swift",
+   "Sources/NIOPosix/VsockAddress.swift"
+  ],
+  "3bf9c1bd2c": [
+   "Sources/NIOPosix/PosixSingletons+ConcurrencyTakeOver.swift"
+  ],
+  "93102a85ee": [
+   "Sources/NIOCore/GlobalSingletons.swift",
+   "Sources/NIOCore/IO.swift",
+   "Sources/NIOCore/SystemCallHelpers.swift",
+   "Sources/NIOCore/Utilities.swift"
+  ],
+  "5dca91e191": [
+   "Sources/NIOPosix/Windows.swift"
+  ],
+  "d21f56b4bd": [
+   "Sources/NIOPosix/ControlMessage.swift"
+  ],
+  "a8b744cb61": [
+   "Sources/NIOPosix/BSDSocketAPICommon.swift",
+   "Sources/NIOPosix/System.swift",
+   "Sources/NIOPosix/Thread.swift"
+  ],
+  "a65e9735ac": [
+   "Sources/NIOHTTP1/HTTPHeaderValidator.swift"
+  ],
+  "2c9b7c6061": [
+   "Sources/NIOHTTP1/HTTPDecoder.swift"
+  ],
+  "8997a24524": [
+   "Sources/NIOFileSystem/Array+FileSystem.swift",
+   "Sources/NIOFileSystem/ArraySlice+FileSystem.swift",
+   "Sources/NIOFileSystem/ByteBuffer+FileSystem.swift",
+   "Sources/NIOFileSystem/Convenience.swift",
+   "Sources/NIOFileSystem/DirectoryEntry.swift",
+   "Sources/NIOFileSystem/FileHandle.swift",
+   "Sources/NIOFileSystem/FileHandleProtocol.swift",
+   "Sources/NIOFileSystem/FileSystem.swift",
+   "Sources/NIOFileSystem/FileSystemProtocol.swift",
+   "Sources/NIOFileSystem/Internal/SystemFileHandle.swift",
+   "Sources/NIOFileSystem/OpenOptions.swift",
+   "Sources/NIOFileSystem/String+FileSystem.swift",
+   "Sources/NIOFileSystemFoundationCompat/Data+FileSystem.swift"
+  ],
+  "b881f6ec60": [
+   "Sources/NIOPosix/BSDSocketAPIPosix.swift",
+   "Sources/NIOPosix/BSDSocketAPIWindows.swift",
+   "Sources/NIOPosix/DatagramVectorReadManager.swift",
+   "Sources/NIOPosix/PendingDatagramWritesManager.swift",
+   "Sources/NIOPosix/Socket.swift"
+  ],
+  "1944fd3721": [
+   "Sources/NIOPosix/NonBlockingFileIO.swift",
+   "Sources/NIOPosix/PipePair.swift",
+   "Sources/NIOPosix/SocketProtocols.swift"
+  ],
+  "1c30f0f205": [
+   "Sources/NIOEmbedded/AsyncTestingChannel.swift",
+   "Sources/NIOEmbedded/Embedded.swift"
+  ],
+  "41b126283c": [
+   "Sources/NIOPosix/Bootstrap.swift"
+  ],
+  "02be63c7f4": [
+   "Sources/NIOConcurrencyHelpers/NIOLock.swift",
+   "Sources/NIOConcurrencyHelpers/NIOLockedValueBox.swift",
+   "Sources/NIOCore/AsyncChannel/AsyncChannelHandler.swift",
+   "Sources/NIOCore/AsyncChannel/AsyncChannelInboundStream.swift",
+   "Sources/NIOCore/AsyncChannel/AsyncChannelOutboundWriter.swift",
+   "Sources/NIOCore/AsyncSequences/NIOAsyncSequenceProducerStrategies.swift",
+   "Sources/NIOCore/AsyncSequences/NIOAsyncWriter.swift",
+   "Sources/NIOCore/AsyncSequences/NIOThrowingAsyncSequenceProducer.swift",
+   "Sources/NIOCore/ByteBuffer-core.swift",
+   "Sources/NIOCore/ByteBuffer-quicBinaryEncodingStrategy.swift",
+   "Sources/NIOCore/Channel.swift",
+   "Sources/NIOCore/EventLoopFuture.swift",
+   "Sources/NIOCore/GlobalSingletons.swift",
+   "Sources/NIOCore/IO.swift",
+   "Sources/NIOCore/IntegerBitPacking.swift",
+   "Sources/NIOCore/SingleStepByteToMessageDecoder.swift",
+   "Sources/NIOCore/UniversalBootstrapSupport.swift",
+   "Sources/NIOCore/Utilities.swift",
+   "Sources/NIOFileSystem/BufferedReader.swift",
+   "Sources/NIOFileSystem/BufferedWriter.swift",
+   "Sources/NIOFileSystem/FileHandle.swift",
+   "Sources/NIOFileSystem/FileSystemError+Syscall.swift",
+   "Sources/NIOFileSystem/Internal/System Calls/Mocking.swift",
+   "Sources/NIOFileSystem/Internal/System Calls/Syscall.swift",
+   "Sources/NIOFileSystem/Internal/SystemFileHandle.swift",
+   "Sources/NIOFileSystem/Internal/Utilities.swift",
+   "Sources/NIOFileSystem/OpenOptions.swift",
+   "Sources/NIOHTTP1/HTTPTypes.swift",
+   "Sources/NIOPosix/IO.swift",
+   "Sources/NIOPosix/IntegerBitPacking.swift",
+   "Sources/NIOPosix/VsockChannelEvents.swift",
+   "Sources/NIOTestUtils/ByteToMessageDecoderVerifier.swift"
+  ],
+  "4205ccaf1c": [
+   "Sources/NIOPosix/BSDSocketAPIWindows.swift",
+   "Sources/NIOPosix/DatagramVectorReadManager.swift",
+   "Sources/NIOPosix/PendingDatagramWritesManager.swift",
+   "Sources/NIOPosix/Socket.swift"
+  ],
+  "1d72f49390": [
+   "Sources/NIOEmbedded/Embedded.swift"
+  ],
+  "d6609623dd": [
+   "Sources/NIOPosix/Bootstrap.swift"
+  ],
+  "cae0a353d1": [
+   "Package.swift"
+  ],
+  "ee67a96bcb": [
+   "Sources/NIOPosix/Bootstrap.swift"
+  ],
+  "5771d50865": [
+   "Sources/NIOEmbedded/AsyncTestingEventLoop.swift"
+  ],
+  "70dfce82b0": [
+   "Sources/NIOPosix/NIOThreadPool.swift"
+  ],
+  "acca4e525c": [
+   "Sources/NIOPosix/MultiThreadedEventLoopGroup.swift"
+  ],
+  "e2bfe0875b": [
+   "Sources/NIOPosix/SelectableEventLoop.swift"
+  ]
+ },
+ "swift-composable-architecture": {
+  "bf66bd83f3": [
+   "Sources/ComposableArchitecture/TestStore.swift"
+  ],
+  "bb175b544d": [
+   "Sources/ComposableArchitecture/Reducer/ReducerBuilder.swift"
+  ],
+  "bc2db5ba8a": [
+   "Sources/ComposableArchitecture/Reducer/Reducers/ForEachReducer.swift",
+   "Sources/ComposableArchitecture/Reducer/Reducers/PresentationReducer.swift",
+   "Sources/ComposableArchitecture/Reducer/Reducers/StackReducer.swift"
+  ],
+  "377da4061d": [
+   "Package.swift"
+  ],
+  "e2fa1df6cd": [
+   "Package.swift",
+   "Sources/ComposableArchitecture/Observation/NavigationStack+Observation.swift"
+  ],
+  "e5a0b43a9d": [
+   "Sources/ComposableArchitecture/Internal/Logger.swift"
+  ],
+  "44d83ff9ba": [
+   "Sources/ComposableArchitecture/Internal/Deprecations.swift",
+   "Sources/ComposableArchitecture/Internal/Logger.swift",
+   "Sources/ComposableArchitecture/Observation/Alert+Observation.swift"
+  ],
+  "d34c1dfe7a": [
+   "Sources/ComposableArchitecture/Store.swift"
+  ],
+  "d9f965e38a": [
+   "Sources/ComposableArchitecture/Observation/IdentifiedArray+Observation.swift",
+   "Sources/ComposableArchitecture/Observation/NavigationStack+Observation.swift",
+   "Sources/ComposableArchitecture/Observation/Store+Observation.swift",
+   "Sources/ComposableArchitecture/Reducer/Reducers/Scope.swift",
+   "Sources/ComposableArchitecture/Store.swift"
+  ],
+  "de5e7aff89": [
+   "Sources/ComposableArchitecture/Observation/IdentifiedArray+Observation.swift",
+   "Sources/ComposableArchitecture/Observation/NavigationStack+Observation.swift",
+   "Sources/ComposableArchitecture/Observation/Store+Observation.swift",
+   "Sources/ComposableArchitecture/Reducer/Reducers/DependencyKeyWritingReducer.swift",
+   "Sources/ComposableArchitecture/Reducer/Reducers/Scope.swift",
+   "Sources/ComposableArchitecture/Store.swift",
+   "Sources/ComposableArchitecture/UIKit/AlertStateUIKit.swift",
+   "Sources/ComposableArchitectureMacros/ReducerMacro.swift"
+  ],
+  "1eaa6fa2ee": [
+   "Sources/ComposableArchitecture/Observation/Store+Observation.swift",
+   "Sources/ComposableArchitectureMacros/ReducerMacro.swift"
+  ],
+  "b15c5bda01": [
+   "Sources/ComposableArchitecture/Observation/Store+Observation.swift",
+   "Sources/ComposableArchitectureMacros/ReducerMacro.swift"
+  ],
+  "b630c37c08": [
+   "Sources/ComposableArchitecture/SwiftUI/Binding.swift"
+  ],
+  "12caa926ed": [
+   "Package.swift"
+  ],
+  "ce8ee57840": [
+   "Sources/ComposableArchitecture/Observation/Binding+Observation.swift"
+  ],
+  "a66ba01a9e": [
+   "Sources/ComposableArchitecture/Store.swift"
+  ],
+  "ac32f69cd8": [
+   "Sources/ComposableArchitectureMacros/ReducerMacro.swift"
+  ],
+  "76be91ab37": [
+   "Package.swift"
+  ],
+  "0679672e58": [
+   "Package.swift",
+   "Sources/ComposableArchitecture/Observation/Store+Observation.swift"
+  ],
+  "d92d0bfd14": [
+   "Sources/ComposableArchitecture/Core.swift",
+   "Sources/ComposableArchitecture/Effect.swift",
+   "Sources/ComposableArchitecture/Effects/Cancellation.swift",
+   "Sources/ComposableArchitecture/Effects/Publisher.swift",
+   "Sources/ComposableArchitecture/Internal/Create.swift",
+   "Sources/ComposableArchitecture/Internal/Deprecations.swift",
+   "Sources/ComposableArchitecture/Internal/EffectActions.swift",
+   "Sources/ComposableArchitecture/Reducer.swift",
+   "Sources/ComposableArchitecture/Reducer/ReducerBuilder.swift",
+   "Sources/ComposableArchitecture/Reducer/Reducers/BindingReducer.swift",
+   "Sources/ComposableArchitecture/Reducer/Reducers/CombineReducers.swift",
+   "Sources/ComposableArchitecture/Reducer/Reducers/DebugReducer.swift",
+   "Sources/ComposableArchitecture/Reducer/Reducers/DependencyKeyWritingReducer.swift",
+   "Sources/ComposableArchitecture/Reducer/Reducers/EmptyReducer.swift",
+   "Sources/ComposableArchitecture/Reducer/Reducers/ForEachReducer.swift",
+   "Sources/ComposableArchitecture/Reducer/Reducers/IfCaseLetReducer.swift",
+   "Sources/ComposableArchitecture/Reducer/Reducers/IfLetReducer.swift",
+   "Sources/ComposableArchitecture/Reducer/Reducers/OnChange.swift",
+   "Sources/ComposableArchitecture/Reducer/Reducers/Optional.swift",
+   "Sources/ComposableArchitecture/Reducer/Reducers/PresentationReducer.swift",
+   "Sources/ComposableArchitecture/Reducer/Reducers/Reduce.swift",
+   "Sources/ComposableArchitecture/Reducer/Reducers/Scope.swift",
+   "Sources/ComposableArchitecture/Reducer/Reducers/SignpostReducer.swift",
+   "Sources/ComposableArchitecture/Reducer/Reducers/StackReducer.swift",
+   "Sources/ComposableArchitecture/TestStore.swift"
+  ],
+  "adf6e52161": [
+   "Sources/ComposableArchitecture/Observation/Store+Observation.swift"
+  ],
+  "658353cfea": [
+   "Sources/ComposableArchitecture/CaseReducer.swift",
+   "Sources/ComposableArchitecture/Observation/Store+Observation.swift"
+  ],
+  "2fc6ed2713": [
+   "Sources/ComposableArchitecture/Effect.swift",
+   "Sources/ComposableArchitecture/Observation/Store+Observation.swift",
+   "Sources/ComposableArchitecture/Reducer/Reducers/OnChange.swift",
+   "Sources/ComposableArchitecture/Store.swift"
+  ],
+  "1a25c6c06b": [
+   "Sources/ComposableArchitectureMacros/ReducerMacro.swift"
+  ],
+  "52bcdf2cbf": [
+   "Sources/ComposableArchitecture/Internal/Deprecations.swift"
+  ],
+  "97f3467a40": [
+   "Sources/ComposableArchitecture/Internal/Deprecations.swift"
+  ],
+  "ea592db934": [
+   "Sources/ComposableArchitecture/Internal/Deprecations.swift"
+  ],
+  "6b4331002d": [
+   "Sources/ComposableArchitecture/Internal/Deprecations.swift"
+  ],
+  "001be98f57": [
+   "Sources/ComposableArchitecture/CaseReducer.swift",
+   "Sources/ComposableArchitecture/Internal/Deprecations.swift",
+   "Sources/ComposableArchitecture/Observation/Store+Observation.swift",
+   "Sources/ComposableArchitectureMacros/ReducerMacro.swift"
+  ],
+  "c159429d1a": [
+   "Sources/ComposableArchitecture/Internal/Deprecations.swift"
+  ],
+  "1c369198c0": [
+   "Sources/ComposableArchitecture/Observation/Store+Observation.swift"
+  ],
+  "b6f5b18652": [
+   "Sources/ComposableArchitecture/Internal/Deprecations.swift",
+   "Sources/ComposableArchitecture/SwiftUI/Binding.swift",
+   "Sources/ComposableArchitecture/TestStore.swift"
+  ],
+  "a2d12f6cf8": [
+   "Sources/ComposableArchitecture/Effect.swift"
+  ],
+  "3b1d3c6feb": [
+   "Sources/ComposableArchitecture/Store.swift"
+  ],
+  "c3d0342823": [
+   "Package.swift",
+   "Sources/ComposableArchitecture/Internal/Deprecations.swift"
+  ],
+  "ab7c8e120c": [
+   "Sources/ComposableArchitecture/Internal/Deprecations.swift",
+   "Sources/ComposableArchitecture/Store.swift"
+  ],
+  "4df0b29190": [
+   "Sources/ComposableArchitecture/Reducer/Reducers/OnChange.swift"
+  ],
+  "877b16868f": [
+   "Package.swift",
+   "Sources/ComposableArchitecture/Core.swift",
+   "Sources/ComposableArchitecture/Effect.swift",
+   "Sources/ComposableArchitecture/Effects/Cancellation.swift",
+   "Sources/ComposableArchitecture/Effects/Publisher.swift",
+   "Sources/ComposableArchitecture/Internal/Create.swift",
+   "Sources/ComposableArchitecture/Internal/Deprecations.swift",
+   "Sources/ComposableArchitecture/Internal/EffectActions.swift",
+   "Sources/ComposableArchitecture/Reducer.swift",
+   "Sources/ComposableArchitecture/Reducer/ReducerBuilder.swift",
+   "Sources/ComposableArchitecture/Reducer/Reducers/BindingReducer.swift",
+   "Sources/ComposableArchitecture/Reducer/Reducers/CombineReducers.swift",
+   "Sources/ComposableArchitecture/Reducer/Reducers/DebugReducer.swift",
+   "Sources/ComposableArchitecture/Reducer/Reducers/DependencyKeyWritingReducer.swift",
+   "Sources/ComposableArchitecture/Reducer/Reducers/EmptyReducer.swift",
+   "Sources/ComposableArchitecture/Reducer/Reducers/ForEachReducer.swift",
+   "Sources/ComposableArchitecture/Reducer/Reducers/IfCaseLetReducer.swift",
+   "Sources/ComposableArchitecture/Reducer/Reducers/IfLetReducer.swift",
+   "Sources/ComposableArchitecture/Reducer/Reducers/OnChange.swift",
+   "Sources/ComposableArchitecture/Reducer/Reducers/Optional.swift",
+   "Sources/ComposableArchitecture/Reducer/Reducers/PresentationReducer.swift",
+   "Sources/ComposableArchitecture/Reducer/Reducers/Reduce.swift",
+   "Sources/ComposableArchitecture/Reducer/Reducers/Scope.swift",
+   "Sources/ComposableArchitecture/Reducer/Reducers/SignpostReducer.swift",
+   "Sources/ComposableArchitecture/Reducer/Reducers/StackReducer.swift",
+   "Sources/ComposableArchitecture/TestStore.swift"
+  ],
+  "68a0237ea6": [
+   "Sources/ComposableArchitecture/Internal/Deprecations.swift"
+  ],
+  "58fe29e6e2": [
+   "Sources/ComposableArchitecture/Internal/Deprecations.swift"
+  ],
+  "b822c9fb00": [
+   "Sources/ComposableArchitecture/Core.swift",
+   "Sources/ComposableArchitecture/Internal/Deprecations.swift",
+   "Sources/ComposableArchitecture/Store.swift"
+  ],
+  "b9e06ef447": [
+   "Sources/ComposableArchitecture/Reducer.swift"
+  ],
+  "89ae6befbb": [
+   "Sources/ComposableArchitecture/Internal/Deprecations.swift",
+   "Sources/ComposableArchitecture/Reducer/Reducers/Scope.swift",
+   "Sources/ComposableArchitectureMacros/ReducerMacro.swift"
+  ],
+  "9dd8a36b4f": [
+   "Sources/ComposableArchitecture/Core.swift",
+   "Sources/ComposableArchitecture/Reducer.swift",
+   "Sources/ComposableArchitecture/Reducer/ReducerBuilder.swift",
+   "Sources/ComposableArchitecture/Reducer/Reducers/BindingReducer.swift",
+   "Sources/ComposableArchitecture/Reducer/Reducers/CombineReducers.swift",
+   "Sources/ComposableArchitecture/Reducer/Reducers/DebugReducer.swift",
+   "Sources/ComposableArchitecture/Reducer/Reducers/DependencyKeyWritingReducer.swift",
+   "Sources/ComposableArchitecture/Reducer/Reducers/EmptyReducer.swift",
+   "Sources/ComposableArchitecture/Reducer/Reducers/ForEachReducer.swift",
+   "Sources/ComposableArchitecture/Reducer/Reducers/IfCaseLetReducer.swift",
+   "Sources/ComposableArchitecture/Reducer/Reducers/IfLetReducer.swift",
+   "Sources/ComposableArchitecture/Reducer/Reducers/OnChange.swift",
+   "Sources/ComposableArchitecture/Reducer/Reducers/Optional.swift",
+   "Sources/ComposableArchitecture/Reducer/Reducers/PresentationReducer.swift",
+   "Sources/ComposableArchitecture/Reducer/Reducers/Reduce.swift",
+   "Sources/ComposableArchitecture/Reducer/Reducers/Scope.swift",
+   "Sources/ComposableArchitecture/Reducer/Reducers/SignpostReducer.swift",
+   "Sources/ComposableArchitecture/Reducer/Reducers/StackReducer.swift",
+   "Sources/ComposableArchitecture/TestStore.swift",
+   "Sources/ComposableArchitectureMacros/ReducerMacro.swift"
+  ],
+  "74a5fa0d02": [
+   "Sources/ComposableArchitecture/Internal/Deprecations.swift"
+  ],
+  "1b236b866b": [
+   "Sources/ComposableArchitecture/Internal/Deprecations.swift"
+  ],
+  "b90608274a": [
+   "Sources/ComposableArchitecture/Internal/Deprecations.swift",
+   "Sources/ComposableArchitecture/Reducer/Reducers/BindingReducer.swift"
+  ],
+  "be8a4d16a6": [
+   "Sources/ComposableArchitecture/Internal/Deprecations.swift",
+   "Sources/ComposableArchitecture/Reducer/Reducers/BindingReducer.swift",
+   "Sources/ComposableArchitecture/Reducer/Reducers/ForEachReducer.swift",
+   "Sources/ComposableArchitecture/Reducer/Reducers/IfCaseLetReducer.swift",
+   "Sources/ComposableArchitecture/Reducer/Reducers/IfLetReducer.swift",
+   "Sources/ComposableArchitecture/Reducer/Reducers/OnChange.swift",
+   "Sources/ComposableArchitecture/Reducer/Reducers/PresentationReducer.swift",
+   "Sources/ComposableArchitecture/Reducer/Reducers/Scope.swift",
+   "Sources/ComposableArchitecture/Reducer/Reducers/StackReducer.swift",
+   "Sources/ComposableArchitecture/SwiftUI/Binding.swift",
+   "Sources/ComposableArchitecture/TestStore.swift"
+  ],
+  "965656af19": [
+   "Sources/ComposableArchitecture/Internal/Deprecations.swift",
+   "Sources/ComposableArchitecture/SwiftUI/Binding.swift",
+   "Sources/ComposableArchitecture/SwiftUI/IfLetStore.swift"
+  ],
+  "808a0be102": [
+   "Sources/ComposableArchitecture/Internal/Deprecations.swift",
+   "Sources/ComposableArchitecture/Store.swift",
+   "Sources/ComposableArchitecture/SwiftUI/Alert.swift",
+   "Sources/ComposableArchitecture/SwiftUI/ConfirmationDialog.swift",
+   "Sources/ComposableArchitecture/SwiftUI/IfLetStore.swift",
+   "Sources/ComposableArchitecture/SwiftUI/NavigationDestination.swift",
+   "Sources/ComposableArchitecture/SwiftUI/Popover.swift",
+   "Sources/ComposableArchitecture/SwiftUI/Sheet.swift"
+  ],
+  "0312154441": [
+   "Sources/ComposableArchitecture/Internal/Deprecations.swift",
+   "Sources/ComposableArchitecture/Reducer/Reducers/PresentationReducer.swift",
+   "Sources/ComposableArchitecture/Reducer/Reducers/StackReducer.swift"
+  ],
+  "c9d778dd0a": [
+   "Sources/ComposableArchitecture/Effects/TaskResult.swift",
+   "Sources/ComposableArchitecture/Internal/Deprecations.swift",
+   "Sources/ComposableArchitecture/Internal/NavigationID.swift"
+  ],
+  "5e4baf5a7a": [
+   "Package.swift",
+   "Sources/ComposableArchitecture/CaseReducer.swift",
+   "Sources/ComposableArchitecture/Core.swift",
+   "Sources/ComposableArchitecture/Effects/Animation.swift",
+   "Sources/ComposableArchitecture/Effects/Cancellation.swift",
+   "Sources/ComposableArchitecture/Effects/Publisher.swift",
+   "Sources/ComposableArchitecture/Effects/TaskResult.swift",
+   "Sources/ComposableArchitecture/Effects/Throttle.swift",
+   "Sources/ComposableArchitecture/Internal/DispatchQueue.swift",
+   "Sources/ComposableArchitecture/Internal/EffectActions.swift",
+   "Sources/ComposableArchitecture/Internal/KeyPath+Sendable.swift",
+   "Sources/ComposableArchitecture/Internal/Logger.swift",
+   "Sources/ComposableArchitecture/Internal/NavigationID.swift",
+   "Sources/ComposableArchitecture/Macros.swift",
+   "Sources/ComposableArchitecture/Observation/Alert+Observation.swift",
+   "Sources/ComposableArchitecture/Observation/Binding+Observation.swift",
+   "Sources/ComposableArchitecture/Observation/IdentifiedArray+Observation.swift",
+   "Sources/ComposableArchitecture/Observation/NavigationStack+Observation.swift",
+   "Sources/ComposableArchitecture/Observation/ObservableState.swift",
+   "Sources/ComposableArchitecture/Observation/Store+Observation.swift",
+   "Sources/ComposableArchitecture/Observation/ViewAction.swift",
+   "Sources/ComposableArchitecture/Reducer/ReducerBuilder.swift",
+   "Sources/ComposableArchitecture/Reducer/Reducers/DebugReducer.swift",
+   "Sources/ComposableArchitecture/Reducer/Reducers/ForEachReducer.swift",
+   "Sources/ComposableArchitecture/Reducer/Reducers/Optional.swift",
+   "Sources/ComposableArchitecture/Reducer/Reducers/PresentationReducer.swift",
+   "Sources/ComposableArchitecture/Reducer/Reducers/Scope.swift",
+   "Sources/ComposableArchitecture/Reducer/Reducers/SignpostReducer.swift",
+   "Sources/ComposableArchitecture/Reducer/Reducers/StackReducer.swift",
+   "Sources/ComposableArchitecture/Store.swift",
+   "Sources/ComposableArchitecture/SwiftUI/Alert.swift",
+   "Sources/ComposableArchitecture/SwiftUI/Binding.swift",
+   "Sources/ComposableArchitecture/SwiftUI/ConfirmationDialog.swift",
+   "Sources/ComposableArchitecture/SwiftUI/Deprecated/ActionSheet.swift",
+   "Sources/ComposableArchitecture/SwiftUI/Deprecated/LegacyAlert.swift",
+   "Sources/ComposableArchitecture/SwiftUI/Deprecated/NavigationLinkStore.swift",
+   "Sources/ComposableArchitecture/SwiftUI/ForEachStore.swift",
+   "Sources/ComposableArchitecture/SwiftUI/FullScreenCover.swift",
+   "Sources/ComposableArchitecture/SwiftUI/IfLetStore.swift",
+   "Sources/ComposableArchitecture/SwiftUI/NavigationDestination.swift",
+   "Sources/ComposableArchitecture/SwiftUI/Popover.swift",
+   "Sources/ComposableArchitecture/SwiftUI/PresentationModifier.swift",
+   "Sources/ComposableArchitecture/SwiftUI/Sheet.swift",
+   "Sources/ComposableArchitecture/SwiftUI/WithViewStore.swift",
+   "Sources/ComposableArchitecture/TestStore.swift",
+   "Sources/ComposableArchitecture/ViewStore.swift",
+   "Sources/ComposableArchitectureMacros/Extensions.swift",
+   "Sources/ComposableArchitectureMacros/ObservableStateMacro.swift",
+   "Sources/ComposableArchitectureMacros/PresentsMacro.swift",
+   "Sources/ComposableArchitectureMacros/ReducerMacro.swift",
+   "Sources/ComposableArchitectureMacros/ViewActionMacro.swift"
+  ],
+  "534a51c0eb": [
+   "Package.swift",
+   "Sources/ComposableArchitecture/Effects/Cancellation.swift",
+   "Sources/ComposableArchitecture/Internal/Deprecations.swift",
+   "Sources/ComposableArchitecture/Internal/EphemeralState.swift",
+   "Sources/ComposableArchitecture/Internal/Logger.swift",
+   "Sources/ComposableArchitecture/Internal/NotificationName.swift",
+   "Sources/ComposableArchitecture/Observation/Alert+Observation.swift",
+   "Sources/ComposableArchitecture/Observation/NavigationStack+Observation.swift",
+   "Sources/ComposableArchitecture/SwiftUI/Alert.swift",
+   "Sources/ComposableArchitecture/SwiftUI/ConfirmationDialog.swift",
+   "Sources/ComposableArchitecture/SwiftUI/FullScreenCover.swift",
+   "Sources/ComposableArchitecture/SwiftUI/NavigationDestination.swift",
+   "Sources/ComposableArchitecture/SwiftUI/NavigationStackStore.swift",
+   "Sources/ComposableArchitecture/TestStore.swift",
+   "Sources/ComposableArchitecture/UIKit/AlertStateUIKit.swift"
+  ],
+  "df934d9c5a": [
+   "Package.swift",
+   "Package@swift-5.9.swift"
+  ],
+  "618891f0e0": [
+   "Sources/ComposableArchitecture/Core.swift"
+  ],
+  "055ca459ca": [
+   "Sources/ComposableArchitecture/Observation/Binding+Observation.swift",
+   "Sources/ComposableArchitecture/SwiftUI/Binding.swift"
+  ],
+  "1b3940c3b0": [
+   "Sources/ComposableArchitecture/Core.swift"
+  ],
+  "f8158b92f2": [
+   "Package.swift",
+   "Package@swift-5.9.swift"
+  ],
+  "5b0890fabf": [
+   "Package.swift",
+   "Package@swift-6.0.swift"
+  ],
+  "e6ad5bfd83": [
+   "Package.swift",
+   "Package@swift-6.0.swift"
+  ],
+  "ee008e1e81": [
+   "Sources/ComposableArchitecture/Effect.swift",
+   "Sources/ComposableArchitecture/Macros.swift"
+  ],
+  "2ef7c09b0b": [
+   "Sources/ComposableArchitecture/Core.swift",
+   "Sources/ComposableArchitecture/Dependencies/Dismiss.swift",
+   "Sources/ComposableArchitecture/Effect.swift",
+   "Sources/ComposableArchitecture/Effects/TaskResult.swift",
+   "Sources/ComposableArchitecture/Observation/Binding+Observation.swift",
+   "Sources/ComposableArchitecture/Observation/NavigationStack+Observation.swift",
+   "Sources/ComposableArchitecture/Observation/Store+Observation.swift",
+   "Sources/ComposableArchitecture/Reducer/Reducers/ForEachReducer.swift",
+   "Sources/ComposableArchitecture/Reducer/Reducers/IfCaseLetReducer.swift",
+   "Sources/ComposableArchitecture/Reducer/Reducers/IfLetReducer.swift",
+   "Sources/ComposableArchitecture/Reducer/Reducers/PresentationReducer.swift",
+   "Sources/ComposableArchitecture/Reducer/Reducers/Scope.swift",
+   "Sources/ComposableArchitecture/Reducer/Reducers/StackReducer.swift",
+   "Sources/ComposableArchitecture/SwiftUI/Binding.swift",
+   "Sources/ComposableArchitecture/TestStore.swift"
+  ],
+  "ae2515f93f": [
+   "Sources/ComposableArchitecture/Store.swift"
+  ],
+  "a9c3fecb5d": [
+   "Sources/ComposableArchitecture/Store.swift"
+  ],
+  "9424b18a64": [
+   "Sources/ComposableArchitecture/Internal/DispatchQueue.swift"
+  ],
+  "3eb62da6fe": [
+   "Sources/ComposableArchitecture/Observation/Binding+Observation.swift",
+   "Sources/ComposableArchitecture/TestStore.swift"
+  ],
+  "552e757b2c": [
+   "Sources/ComposableArchitecture/Internal/DispatchQueue.swift",
+   "Sources/ComposableArchitecture/Observation/Binding+Observation.swift",
+   "Sources/ComposableArchitecture/SwiftUI/Binding.swift",
+   "Sources/ComposableArchitecture/TestStore.swift"
+  ],
+  "2918fcf109": [
+   "Sources/ComposableArchitecture/Macros.swift"
+  ],
+  "149fdf9c20": [
+   "Sources/ComposableArchitecture/Effects/TaskResult.swift",
+   "Sources/ComposableArchitecture/Internal/Deprecations.swift",
+   "Sources/ComposableArchitecture/Observation/Store+Observation.swift",
+   "Sources/ComposableArchitecture/Reducer/Reducers/ForEachReducer.swift",
+   "Sources/ComposableArchitecture/Reducer/Reducers/IfCaseLetReducer.swift",
+   "Sources/ComposableArchitecture/Reducer/Reducers/IfLetReducer.swift",
+   "Sources/ComposableArchitecture/Reducer/Reducers/PresentationReducer.swift",
+   "Sources/ComposableArchitecture/Reducer/Reducers/Scope.swift",
+   "Sources/ComposableArchitecture/Reducer/Reducers/StackReducer.swift",
+   "Sources/ComposableArchitecture/Store.swift",
+   "Sources/ComposableArchitecture/SwiftUI/Alert.swift",
+   "Sources/ComposableArchitecture/SwiftUI/Binding.swift",
+   "Sources/ComposableArchitecture/SwiftUI/ConfirmationDialog.swift",
+   "Sources/ComposableArchitecture/SwiftUI/ForEachStore.swift",
+   "Sources/ComposableArchitecture/SwiftUI/FullScreenCover.swift",
+   "Sources/ComposableArchitecture/SwiftUI/IfLetStore.swift",
+   "Sources/ComposableArchitecture/SwiftUI/NavigationDestination.swift",
+   "Sources/ComposableArchitecture/SwiftUI/NavigationStackStore.swift",
+   "Sources/ComposableArchitecture/SwiftUI/Popover.swift",
+   "Sources/ComposableArchitecture/SwiftUI/Sheet.swift",
+   "Sources/ComposableArchitecture/SwiftUI/SwitchStore.swift",
+   "Sources/ComposableArchitecture/SwiftUI/WithViewStore.swift",
+   "Sources/ComposableArchitecture/TestStore.swift",
+   "Sources/ComposableArchitecture/ViewStore.swift"
+  ],
+  "0ac46b3af4": [
+   "Sources/ComposableArchitecture/Effects/Cancellation.swift",
+   "Sources/ComposableArchitecture/Effects/Debounce.swift",
+   "Sources/ComposableArchitecture/Effects/TaskResult.swift"
+  ],
+  "a851f820f3": [
+   "Sources/ComposableArchitecture/Core.swift",
+   "Sources/ComposableArchitecture/Effect.swift",
+   "Sources/ComposableArchitecture/Effects/Animation.swift",
+   "Sources/ComposableArchitecture/Effects/Cancellation.swift",
+   "Sources/ComposableArchitecture/Effects/Publisher.swift",
+   "Sources/ComposableArchitecture/Internal/EffectActions.swift",
+   "Sources/ComposableArchitecture/Reducer/Reducers/SignpostReducer.swift"
+  ],
+  "2d60d4082d": [
+   "Package.swift",
+   "Package@swift-6.0.swift"
+  ],
+  "85eb525714": [
+   "Sources/ComposableArchitecture/Observation/Store+Observation.swift"
+  ],
+  "d772c216bb": [
+   "Sources/ComposableArchitecture/Reducer/Reducers/DebugReducer.swift"
+  ],
+  "acd9bb8a7c": [
+   "Sources/ComposableArchitecture/Store.swift"
+  ],
+  "4429f7b144": [
+   "Sources/ComposableArchitecture/Core.swift",
+   "Sources/ComposableArchitecture/Observation/IdentifiedArray+Observation.swift",
+   "Sources/ComposableArchitecture/Store.swift"
+  ],
+  "56389302ca": [
+   "Sources/ComposableArchitecture/Effect.swift"
+  ],
+  "1da96de161": [
+   "Sources/ComposableArchitecture/Store.swift"
+  ],
+  "9dae1ff6f6": [
+   "Sources/ComposableArchitecture/Macros.swift",
+   "Sources/ComposableArchitectureMacros/ObservableStateMacro.swift"
+  ],
+  "af60ed2d51": [
+   "Sources/ComposableArchitecture/Macros.swift",
+   "Sources/ComposableArchitecture/Observation/ObservationStateRegistrar.swift",
+   "Sources/ComposableArchitectureMacros/ObservableStateMacro.swift"
+  ],
+  "27db3dfc9f": [
+   "Sources/ComposableArchitecture/Observation/NavigationStack+Observation.swift",
+   "Sources/ComposableArchitecture/Observation/Store+Observation.swift"
+  ],
+  "4c47829a08": [
+   "Sources/ComposableArchitecture/Core.swift"
+  ],
+  "af0a2c7408": [
+   "Package.swift",
+   "Package@swift-6.0.swift",
+   "Sources/ComposableArchitecture/Core.swift",
+   "Sources/ComposableArchitecture/Observation/IdentifiedArray+Observation.swift",
+   "Sources/ComposableArchitecture/Observation/NavigationStack+Observation.swift",
+   "Sources/ComposableArchitecture/Store.swift"
+  ],
+  "d83d00c13d": [
+   "Sources/ComposableArchitecture/Store.swift"
+  ],
+  "b914abbd73": [
+   "Sources/ComposableArchitecture/Effects/Cancellation.swift"
+  ],
+  "5cd90c330d": [
+   "Sources/ComposableArchitecture/Effects/Cancellation.swift"
+  ],
+  "8730c8f733": [
+   "Sources/ComposableArchitecture/Store.swift",
+   "Sources/ComposableArchitecture/ViewStore.swift"
+  ],
+  "6574de2396": [
+   "Sources/ComposableArchitectureMacros/Availability.swift",
+   "Sources/ComposableArchitectureMacros/ObservableStateMacro.swift",
+   "Sources/ComposableArchitectureMacros/PresentsMacro.swift",
+   "Sources/ComposableArchitectureMacros/ReducerMacro.swift"
+  ],
+  "294ac2cbfe": [
+   "Sources/ComposableArchitecture/Reducer.swift"
+  ],
+  "3b0144906c": [
+   "Sources/ComposableArchitecture/Core.swift",
+   "Sources/ComposableArchitecture/Internal/NavigationID.swift"
+  ],
+  "6d6f2b46f6": [
+   "Sources/ComposableArchitecture/Core.swift",
+   "Sources/ComposableArchitecture/Internal/NavigationID.swift",
+   "Sources/ComposableArchitecture/Reducer/Reducers/DependencyKeyWritingReducer.swift",
+   "Sources/ComposableArchitecture/Store.swift",
+   "Sources/ComposableArchitecture/TestStore.swift"
+  ],
+  "dd349490d0": [
+   "Sources/ComposableArchitectureMacros/ObservableStateMacro.swift"
+  ],
+  "129d334771": [
+   "Sources/ComposableArchitectureMacros/ObservableStateMacro.swift"
+  ],
+  "abd1331571": [
+   "Sources/ComposableArchitecture/SwiftUI/Binding.swift"
+  ],
+  "b1d27a82b4": [
+   "Sources/ComposableArchitecture/Observation/NavigationStack+Observation.swift"
+  ],
+  "e05c8fa486": [
+   "Sources/ComposableArchitecture/Observation/NavigationStack+Observation.swift"
+  ],
+  "529ad401fd": [
+   "Sources/ComposableArchitecture/UIKit/NavigationStackControllerUIKit.swift"
+  ],
+  "a2944da218": [
+   "Sources/ComposableArchitectureMacros/ReducerMacro.swift"
+  ],
+  "cf4177a222": [
+   "Sources/ComposableArchitecture/Store.swift"
+  ],
+  "23eb5ac23a": [
+   "Sources/ComposableArchitecture/Reducer/Reducers/PresentationReducer.swift"
+  ],
+  "a36e28e345": [
+   "Sources/ComposableArchitecture/Observation/NavigationStack+Observation.swift"
+  ],
+  "3927f26ed2": [
+   "Sources/ComposableArchitecture/Observation/Binding+Observation.swift",
+   "Sources/ComposableArchitecture/Observation/NavigationStack+Observation.swift",
+   "Sources/ComposableArchitecture/Observation/Store+Observation.swift",
+   "Sources/ComposableArchitecture/Store.swift"
+  ],
+  "a6371b6552": [
+   "Sources/ComposableArchitecture/Core.swift"
+  ],
+  "2a9f48e9f3": [
+   "Sources/ComposableArchitecture/UIKit/AlertStateUIKit.swift"
+  ],
+  "c4d0d2f799": [
+   "Package.swift",
+   "Package@swift-6.0.swift"
+  ],
+  "073610217a": [
+   "Sources/ComposableArchitecture/Core.swift",
+   "Sources/ComposableArchitecture/Effects/Cancellation.swift",
+   "Sources/ComposableArchitecture/Effects/Publisher.swift"
+  ],
+  "292546d3b9": [
+   "Sources/ComposableArchitecture/Observation/IdentifiedArray+Observation.swift",
+   "Sources/ComposableArchitecture/Observation/NavigationStack+Observation.swift",
+   "Sources/ComposableArchitecture/Store.swift",
+   "Sources/ComposableArchitecture/SwiftUI/ForEachStore.swift",
+   "Sources/ComposableArchitecture/SwiftUI/NavigationStackStore.swift",
+   "Sources/ComposableArchitecture/UIKit/NavigationStackControllerUIKit.swift"
+  ],
+  "d4d1df8102": [
+   "Sources/ComposableArchitecture/Internal/CurrentValueRelay.swift",
+   "Sources/ComposableArchitecture/Observation/Binding+Observation.swift",
+   "Sources/ComposableArchitecture/Observation/IdentifiedArray+Observation.swift",
+   "Sources/ComposableArchitecture/Observation/NavigationStack+Observation.swift",
+   "Sources/ComposableArchitecture/Observation/Store+Observation.swift",
+   "Sources/ComposableArchitecture/Store.swift",
+   "Sources/ComposableArchitecture/SwiftUI/Binding.swift",
+   "Sources/ComposableArchitecture/SwiftUI/Deprecated/NavigationLinkStore.swift",
+   "Sources/ComposableArchitecture/SwiftUI/ForEachStore.swift",
+   "Sources/ComposableArchitecture/SwiftUI/IfLetStore.swift",
+   "Sources/ComposableArchitecture/SwiftUI/NavigationStackStore.swift",
+   "Sources/ComposableArchitecture/SwiftUI/PresentationModifier.swift",
+   "Sources/ComposableArchitecture/SwiftUI/SwitchStore.swift",
+   "Sources/ComposableArchitecture/SwiftUI/WithViewStore.swift",
+   "Sources/ComposableArchitecture/TestStore.swift",
+   "Sources/ComposableArchitecture/UIKit/IfLetUIKit.swift",
+   "Sources/ComposableArchitecture/UIKit/NavigationStackControllerUIKit.swift",
+   "Sources/ComposableArchitecture/ViewStore.swift"
+  ],
+  "001d0e9b9e": [
+   "Sources/ComposableArchitecture/RootStore.swift"
+  ],
+  "8ffc4df5d0": [
+   "Sources/ComposableArchitecture/TestStore.swift"
+  ],
+  "a5b96e39fe": [
+   "Package.swift",
+   "Package@swift-6.0.swift",
+   "Sources/ComposableArchitecture/TestStore.swift",
+   "Sources/ComposableArchitecture/UIKit/NavigationStackControllerUIKit.swift"
+  ],
+  "05601a7d81": [
+   "Sources/ComposableArchitecture/TestStore.swift"
+  ],
+  "688802ce32": [
+   "Sources/ComposableArchitecture/TestStore.swift"
+  ],
+  "48795d9064": [
+   "Sources/ComposableArchitecture/Store.swift"
+  ],
+  "eab3982894": [
+   "Sources/ComposableArchitecture/Store.swift"
+  ],
+  "ff1a875668": [
+   "Package.swift",
+   "Package@swift-6.0.swift",
+   "Sources/ComposableArchitecture/Sharing/AppStorageKeyPathKey.swift"
+  ],
+  "42192d4574": [
+   "Sources/ComposableArchitecture/Reducer/Reducers/DebugReducer.swift"
+  ],
+  "cc1713458d": [
+   "Sources/ComposableArchitecture/Observation/IdentifiedArray+Observation.swift"
+  ],
+  "cc49db3cb6": [
+   "Sources/ComposableArchitecture/Reducer/Reducers/StackReducer.swift"
+  ],
+  "547d19c9dc": [
+   "Package.swift",
+   "Package@swift-6.0.swift",
+   "Sources/ComposableArchitecture/Internal/Exports.swift",
+   "Sources/ComposableArchitecture/Reducer/Reducers/DebugReducer.swift",
+   "Sources/ComposableArchitecture/Sharing/AppStorageKeyPathKey.swift",
+   "Sources/ComposableArchitecture/TestStore.swift"
+  ],
+  "fb822844b2": [
+   "Sources/ComposableArchitecture/Effect.swift",
+   "Sources/ComposableArchitecture/Observation/NavigationStack+Observation.swift",
+   "Sources/ComposableArchitecture/Observation/Store+Observation.swift",
+   "Sources/ComposableArchitecture/Reducer/Reducers/ForEachReducer.swift",
+   "Sources/ComposableArchitecture/Reducer/Reducers/IfCaseLetReducer.swift",
+   "Sources/ComposableArchitecture/Reducer/Reducers/IfLetReducer.swift",
+   "Sources/ComposableArchitecture/Reducer/Reducers/PresentationReducer.swift",
+   "Sources/ComposableArchitecture/Reducer/Reducers/Scope.swift",
+   "Sources/ComposableArchitecture/Reducer/Reducers/StackReducer.swift",
+   "Sources/ComposableArchitecture/SwiftUI/NavigationStackStore.swift",
+   "Sources/ComposableArchitecture/SwiftUI/SwitchStore.swift",
+   "Sources/ComposableArchitecture/SwiftUI/WithViewStore.swift",
+   "Sources/ComposableArchitecture/TestStore.swift"
+  ],
+  "69011b636f": [
+   "Sources/ComposableArchitecture/Effect.swift",
+   "Sources/ComposableArchitecture/Observation/IdentifiedArray+Observation.swift",
+   "Sources/ComposableArchitecture/Observation/NavigationStack+Observation.swift",
+   "Sources/ComposableArchitecture/Observation/Store+Observation.swift",
+   "Sources/ComposableArchitecture/Reducer/Reducers/ForEachReducer.swift",
+   "Sources/ComposableArchitecture/Reducer/Reducers/IfCaseLetReducer.swift",
+   "Sources/ComposableArchitecture/Reducer/Reducers/IfLetReducer.swift",
+   "Sources/ComposableArchitecture/Reducer/Reducers/OnChange.swift",
+   "Sources/ComposableArchitecture/Reducer/Reducers/PresentationReducer.swift",
+   "Sources/ComposableArchitecture/Reducer/Reducers/Scope.swift",
+   "Sources/ComposableArchitecture/Reducer/Reducers/StackReducer.swift",
+   "Sources/ComposableArchitecture/SharedState/PersistenceKey/AppStorageKeyPathKey.swift",
+   "Sources/ComposableArchitecture/SharedState/References/ValueReference.swift",
+   "Sources/ComposableArchitecture/SharedState/Shared.swift",
+   "Sources/ComposableArchitecture/SwiftUI/Binding.swift",
+   "Sources/ComposableArchitecture/SwiftUI/ForEachStore.swift",
+   "Sources/ComposableArchitecture/SwiftUI/NavigationStackStore.swift",
+   "Sources/ComposableArchitecture/SwiftUI/SwitchStore.swift",
+   "Sources/ComposableArchitecture/SwiftUI/WithViewStore.swift",
+   "Sources/ComposableArchitecture/TestStore.swift"
+  ],
+  "69247baf7b": [
+   "Sources/ComposableArchitecture/SharedState/PersistenceKey.swift"
+  ],
+  "333aa22e81": [
+   "Sources/ComposableArchitecture/Observation/NavigationStack+Observation.swift"
+  ],
+  "2170719d07": [
+   "Sources/ComposableArchitecture/SharedState/PersistenceKey/FileStorageKey.swift"
+  ],
+  "a952dde0bf": [
+   "Sources/ComposableArchitecture/SharedState/PersistenceKey/AppStorageKey.swift"
+  ],
+  "fdad435ecb": [
+   "Sources/ComposableArchitecture/Internal/CurrentValueRelay.swift"
+  ],
+  "8784f76187": [
+   "Sources/ComposableArchitecture/Internal/Create.swift"
+  ],
+  "12268edde8": [
+   "Sources/ComposableArchitecture/SharedState/PersistenceKey/AppStorageKey.swift",
+   "Sources/ComposableArchitecture/SharedState/PersistenceKey/AppStorageKeyPathKey.swift"
+  ],
+  "3879d2c831": [
+   "Sources/ComposableArchitecture/Internal/KeyPath+Sendable.swift",
+   "Sources/ComposableArchitecture/Observation/Binding+Observation.swift",
+   "Sources/ComposableArchitecture/Reducer/Reducers/PresentationReducer.swift",
+   "Sources/ComposableArchitecture/SharedState/Shared.swift",
+   "Sources/ComposableArchitecture/SwiftUI/Binding.swift"
+  ],
+  "56149436a3": [
+   "Sources/ComposableArchitecture/Internal/CurrentValueRelay.swift"
+  ],
+  "fc5cbeec88": [
+   "Sources/ComposableArchitecture/Effect.swift"
+  ],
+  "f43a154fd4": [
+   "Sources/ComposableArchitecture/Internal/KeyPath+Sendable.swift"
+  ],
+  "1aca801ee2": [
+   "Sources/ComposableArchitecture/Internal/KeyPath+Sendable.swift"
+  ],
+  "2d0590bedd": [
+   "Sources/ComposableArchitecture/Internal/KeyPath+Sendable.swift",
+   "Sources/ComposableArchitecture/Observation/Binding+Observation.swift",
+   "Sources/ComposableArchitecture/Reducer/Reducers/PresentationReducer.swift",
+   "Sources/ComposableArchitecture/SharedState/PersistenceKey/AppStorageKeyPathKey.swift",
+   "Sources/ComposableArchitecture/SharedState/Shared.swift",
+   "Sources/ComposableArchitecture/SwiftUI/Binding.swift",
+   "Sources/ComposableArchitecture/TestStore.swift"
+  ],
+  "4699a1e613": [
+   "Package.swift",
+   "Package@swift-6.0.swift",
+   "Sources/ComposableArchitecture/Observation/NavigationStack+Observation.swift"
+  ],
+  "f9f3e3a4cb": [
+   "Package.swift",
+   "Package@swift-6.0.swift",
+   "Sources/ComposableArchitecture/Effect.swift",
+   "Sources/ComposableArchitecture/Internal/NavigationID.swift"
+  ],
+  "4cd62511ab": [
+   "Package.swift",
+   "Package@swift-6.0.swift"
+  ],
+  "85417e000e": [
+   "Sources/ComposableArchitecture/Reducer/Reducers/StackReducer.swift",
+   "Sources/ComposableArchitecture/TestStore.swift"
+  ],
+  "4c0866420f": [
+   "Sources/ComposableArchitecture/Internal/EphemeralState.swift",
+   "Sources/ComposableArchitecture/Internal/RuntimeWarnings.swift",
+   "Sources/ComposableArchitecture/Macros.swift",
+   "Sources/ComposableArchitecture/Observation/IdentifiedArray+Observation.swift",
+   "Sources/ComposableArchitecture/Observation/NavigationStack+Observation.swift",
+   "Sources/ComposableArchitecture/Reducer/Reducers/DebugReducer.swift",
+   "Sources/ComposableArchitecture/SharedState/Shared.swift",
+   "Sources/ComposableArchitecture/SharedState/SharedReader.swift",
+   "Sources/ComposableArchitecture/SwiftUI/ForEachStore.swift",
+   "Sources/ComposableArchitecture/SwiftUI/NavigationStackStore.swift",
+   "Sources/ComposableArchitecture/SwiftUI/WithViewStore.swift",
+   "Sources/ComposableArchitecture/TestStore.swift",
+   "Sources/ComposableArchitecture/UIKit/NavigationStackControllerUIKit.swift"
+  ],
+  "dcecad3fe2": [
+   "Sources/ComposableArchitecture/UIKit/IfLetUIKit.swift"
+  ],
+  "d750b2a96c": [
+   "Sources/ComposableArchitecture/Macros.swift"
+  ],
+  "f1af33763e": [
+   "Sources/ComposableArchitecture/Macros.swift"
+  ],
+  "03ad0cce2d": [
+   "Package.swift",
+   "Package@swift-6.0.swift",
+   "Sources/ComposableArchitecture/Effects/Cancellation.swift",
+   "Sources/ComposableArchitecture/TestStore.swift"
+  ],
+  "912192b619": [
+   "Sources/ComposableArchitecture/Internal/Exports.swift",
+   "Sources/ComposableArchitecture/Observation/Binding+Observation.swift",
+   "Sources/ComposableArchitecture/Observation/IdentifiedArray+Observation.swift",
+   "Sources/ComposableArchitecture/Observation/NavigationStack+Observation.swift",
+   "Sources/ComposableArchitecture/Observation/ObservableState.swift",
+   "Sources/ComposableArchitecture/Observation/ObservationStateRegistrar.swift",
+   "Sources/ComposableArchitecture/Observation/Store+Observation.swift",
+   "Sources/ComposableArchitecture/RootStore.swift",
+   "Sources/ComposableArchitecture/SharedState/References/ValueReference.swift",
+   "Sources/ComposableArchitecture/Store.swift",
+   "Sources/ComposableArchitecture/SwiftUI/Binding.swift"
+  ],
+  "e0367371e6": [
+   "Package@swift-6.0.swift",
+   "Sources/ComposableArchitecture/Internal/KeyPath+Sendable.swift"
+  ],
+  "71cfb1ef2d": [
+   "Package.swift",
+   "Package@swift-6.0.swift",
+   "Sources/ComposableArchitecture/Effect.swift",
+   "Sources/ComposableArchitecture/Effects/Animation.swift",
+   "Sources/ComposableArchitecture/Effects/Cancellation.swift",
+   "Sources/ComposableArchitecture/Effects/TaskResult.swift",
+   "Sources/ComposableArchitecture/Internal/Create.swift",
+   "Sources/ComposableArchitecture/Internal/KeyPath+Sendable.swift",
+   "Sources/ComposableArchitecture/Observation/ObservableState.swift",
+   "Sources/ComposableArchitecture/Observation/ObservationStateRegistrar.swift",
+   "Sources/ComposableArchitecture/Reducer/Reducers/PresentationReducer.swift",
+   "Sources/ComposableArchitecture/Reducer/Reducers/SignpostReducer.swift",
+   "Sources/ComposableArchitecture/Reducer/Reducers/StackReducer.swift",
+   "Sources/ComposableArchitecture/SharedState/SharedReader.swift",
+   "Sources/ComposableArchitecture/Store.swift",
+   "Sources/ComposableArchitecture/SwiftUI/Binding.swift",
+   "Sources/ComposableArchitecture/TestStore.swift",
+   "Sources/ComposableArchitecture/UIKit/IfLetUIKit.swift",
+   "Sources/ComposableArchitecture/ViewStore.swift",
+   "Sources/ComposableArchitectureMacros/Extensions.swift",
+   "Sources/ComposableArchitectureMacros/ObservableStateMacro.swift",
+   "Sources/ComposableArchitectureMacros/Plugins.swift",
+   "Sources/swift-composable-architecture-benchmark/Common.swift"
+  ],
+  "12280a2253": [
+   "Package@swift-6.0.swift",
+   "Sources/ComposableArchitecture/SharedState/PersistenceKey/AppStorageKey.swift",
+   "Sources/ComposableArchitecture/SharedState/PersistenceKey/FileStorageKey.swift",
+   "Sources/ComposableArchitecture/SharedState/SharedReader.swift"
+  ],
+  "7c6fb26700": [
+   "Package.swift",
+   "Sources/ComposableArchitecture/Reducer/Reducers/PresentationReducer.swift",
+   "Sources/ComposableArchitecture/SharedState/PersistenceKey.swift",
+   "Sources/ComposableArchitecture/SharedState/PersistenceKey/AppStorageKey.swift",
+   "Sources/ComposableArchitecture/SharedState/PersistenceKey/AppStorageKeyPathKey.swift",
+   "Sources/ComposableArchitecture/SharedState/PersistenceKey/FileStorageKey.swift",
+   "Sources/ComposableArchitecture/SharedState/PersistenceKey/InMemoryKey.swift",
+   "Sources/ComposableArchitecture/SharedState/PersistenceKey/PersistenceKeyDefault.swift",
+   "Sources/ComposableArchitecture/SharedState/Reference.swift",
+   "Sources/ComposableArchitecture/SharedState/References/ValueReference.swift",
+   "Sources/ComposableArchitecture/SharedState/Shared.swift",
+   "Sources/ComposableArchitecture/SharedState/SharedChangeTracking.swift",
+   "Sources/ComposableArchitecture/SharedState/SharedReader.swift"
+  ],
+  "83ed123041": [
+   "Sources/ComposableArchitecture/Observation/Binding+Observation.swift"
+  ],
+  "2c8b1c0cad": [
+   "Sources/ComposableArchitecture/Internal/DispatchQueue.swift",
+   "Sources/ComposableArchitecture/Observation/Binding+Observation.swift",
+   "Sources/ComposableArchitecture/SharedState/References/ValueReference.swift"
+  ],
+  "71f8291ee7": [
+   "Sources/ComposableArchitecture/Reducer/Reducers/ForEachReducer.swift",
+   "Sources/ComposableArchitecture/Reducer/Reducers/IfCaseLetReducer.swift",
+   "Sources/ComposableArchitecture/Reducer/Reducers/IfLetReducer.swift",
+   "Sources/ComposableArchitecture/Reducer/Reducers/PresentationReducer.swift",
+   "Sources/ComposableArchitecture/Reducer/Reducers/Scope.swift",
+   "Sources/ComposableArchitecture/Reducer/Reducers/StackReducer.swift"
+  ],
+  "5660c58164": [
+   "Sources/ComposableArchitecture/Internal/CurrentValueRelay.swift",
+   "Sources/ComposableArchitecture/Internal/Locking.swift"
+  ],
+  "64cf3e8509": [
+   "Sources/ComposableArchitecture/Observation/Store+Observation.swift"
+  ],
+  "d5c2d7679f": [
+   "Sources/ComposableArchitecture/Observation/Binding+Observation.swift"
+  ],
+  "bb34f69141": [
+   "Sources/ComposableArchitecture/Observation/IdentifiedArray+Observation.swift"
+  ],
+  "5e3f42070f": [
+   "Sources/ComposableArchitecture/Reducer/Reducers/DebugReducer.swift"
+  ],
+  "40c5fb4eb0": [
+   "Sources/ComposableArchitecture/Reducer/Reducers/DebugReducer.swift"
+  ],
+  "39268ea604": [
+   "Sources/ComposableArchitecture/Effects/Cancellation.swift"
+  ],
+  "890d2ee96f": [
+   "Sources/ComposableArchitecture/Effects/Cancellation.swift",
+   "Sources/swift-composable-architecture-benchmark/StoreSuite.swift"
+  ],
+  "63b078029a": [
+   "Sources/ComposableArchitecture/Effects/Throttle.swift"
+  ],
+  "f02d8f6650": [
+   "Sources/ComposableArchitecture/Internal/EphemeralState.swift",
+   "Sources/ComposableArchitecture/Internal/RuntimeWarnings.swift",
+   "Sources/ComposableArchitecture/Macros.swift",
+   "Sources/ComposableArchitecture/Observation/IdentifiedArray+Observation.swift",
+   "Sources/ComposableArchitecture/Observation/NavigationStack+Observation.swift",
+   "Sources/ComposableArchitecture/Reducer/Reducers/DebugReducer.swift",
+   "Sources/ComposableArchitecture/SharedState/Shared.swift",
+   "Sources/ComposableArchitecture/SharedState/SharedReader.swift",
+   "Sources/ComposableArchitecture/SwiftUI/ForEachStore.swift",
+   "Sources/ComposableArchitecture/SwiftUI/NavigationStackStore.swift",
+   "Sources/ComposableArchitecture/SwiftUI/WithViewStore.swift",
+   "Sources/ComposableArchitecture/UIKit/NavigationStackControllerUIKit.swift"
+  ],
+  "051e5bd653": [
+   "Sources/ComposableArchitecture/RootStore.swift"
+  ],
+  "cad094a6b2": [
+   "Sources/ComposableArchitecture/Effect.swift",
+   "Sources/ComposableArchitecture/Internal/Create.swift",
+   "Sources/ComposableArchitecture/Internal/EffectActions.swift",
+   "Sources/ComposableArchitecture/Internal/NavigationID.swift",
+   "Sources/ComposableArchitecture/Macros.swift",
+   "Sources/ComposableArchitecture/Reducer/Reducers/ForEachReducer.swift",
+   "Sources/ComposableArchitecture/Reducer/Reducers/IfCaseLetReducer.swift",
+   "Sources/ComposableArchitecture/Reducer/Reducers/IfLetReducer.swift",
+   "Sources/ComposableArchitecture/Reducer/Reducers/PresentationReducer.swift",
+   "Sources/ComposableArchitecture/Reducer/Reducers/Scope.swift",
+   "Sources/ComposableArchitecture/Reducer/Reducers/StackReducer.swift",
+   "Sources/ComposableArchitecture/TestStore.swift",
+   "Sources/ComposableArchitecture/ViewStore.swift"
+  ],
+  "b8277a0244": [
+   "Sources/ComposableArchitecture/Effects/Cancellation.swift",
+   "Sources/ComposableArchitecture/Effects/Debounce.swift",
+   "Sources/ComposableArchitecture/Effects/Throttle.swift",
+   "Sources/ComposableArchitecture/Observation/IdentifiedArray+Observation.swift",
+   "Sources/ComposableArchitecture/Reducer/Reducers/ForEachReducer.swift",
+   "Sources/ComposableArchitecture/Reducer/Reducers/PresentationReducer.swift",
+   "Sources/ComposableArchitecture/Reducer/Reducers/StackReducer.swift",
+   "Sources/ComposableArchitecture/SwiftUI/ForEachStore.swift"
+  ],
+  "a7e2e73f83": [
+   "Package.swift",
+   "Sources/ComposableArchitecture/Internal/DispatchQueue.swift",
+   "Sources/ComposableArchitecture/Internal/EphemeralState.swift",
+   "Sources/ComposableArchitecture/Internal/RuntimeWarnings.swift",
+   "Sources/ComposableArchitecture/Macros.swift",
+   "Sources/ComposableArchitecture/Observation/Binding+Observation.swift",
+   "Sources/ComposableArchitecture/Observation/IdentifiedArray+Observation.swift",
+   "Sources/ComposableArchitecture/Observation/NavigationStack+Observation.swift",
+   "Sources/ComposableArchitecture/Reducer/Reducers/DebugReducer.swift",
+   "Sources/ComposableArchitecture/Reducer/Reducers/PresentationReducer.swift",
+   "Sources/ComposableArchitecture/SharedState/Shared.swift",
+   "Sources/ComposableArchitecture/SharedState/SharedReader.swift",
+   "Sources/ComposableArchitecture/Store.swift",
+   "Sources/ComposableArchitecture/SwiftUI/Binding.swift",
+   "Sources/ComposableArchitecture/SwiftUI/ForEachStore.swift",
+   "Sources/ComposableArchitecture/SwiftUI/NavigationStackStore.swift",
+   "Sources/ComposableArchitecture/SwiftUI/WithViewStore.swift",
+   "Sources/ComposableArchitecture/TestStore.swift",
+   "Sources/ComposableArchitecture/UIKit/NavigationStackControllerUIKit.swift"
+  ],
+  "97b7ebb018": [
+   "Package.swift",
+   "Sources/ComposableArchitecture/Internal/Logger.swift",
+   "Sources/ComposableArchitecture/Observation/Alert+Observation.swift",
+   "Sources/ComposableArchitecture/Observation/Binding+Observation.swift",
+   "Sources/ComposableArchitecture/Observation/NavigationStack+Observation.swift",
+   "Sources/ComposableArchitecture/Observation/Store+Observation.swift",
+   "Sources/ComposableArchitecture/SwiftUI/Alert.swift",
+   "Sources/ComposableArchitecture/SwiftUI/ConfirmationDialog.swift",
+   "Sources/ComposableArchitecture/SwiftUI/Deprecated/ActionSheet.swift",
+   "Sources/ComposableArchitecture/SwiftUI/Deprecated/LegacyAlert.swift",
+   "Sources/ComposableArchitecture/SwiftUI/ForEachStore.swift",
+   "Sources/ComposableArchitecture/SwiftUI/IfLetStore.swift",
+   "Sources/ComposableArchitecture/SwiftUI/NavigationDestination.swift",
+   "Sources/ComposableArchitecture/SwiftUI/Popover.swift",
+   "Sources/ComposableArchitecture/SwiftUI/PresentationModifier.swift",
+   "Sources/ComposableArchitecture/SwiftUI/Sheet.swift"
+  ],
+  "0d8980f5bc": [
+   "Package.swift",
+   "Sources/ComposableArchitecture/Dependencies/Dismiss.swift",
+   "Sources/ComposableArchitecture/Internal/Logger.swift",
+   "Sources/ComposableArchitecture/Observation/Alert+Observation.swift",
+   "Sources/ComposableArchitecture/Observation/Binding+Observation.swift",
+   "Sources/ComposableArchitecture/Observation/NavigationStack+Observation.swift",
+   "Sources/ComposableArchitecture/Observation/Store+Observation.swift",
+   "Sources/ComposableArchitecture/Store.swift",
+   "Sources/ComposableArchitecture/SwiftUI/Alert.swift",
+   "Sources/ComposableArchitecture/SwiftUI/ConfirmationDialog.swift",
+   "Sources/ComposableArchitecture/SwiftUI/Deprecated/ActionSheet.swift",
+   "Sources/ComposableArchitecture/SwiftUI/Deprecated/LegacyAlert.swift",
+   "Sources/ComposableArchitecture/SwiftUI/ForEachStore.swift",
+   "Sources/ComposableArchitecture/SwiftUI/IfLetStore.swift",
+   "Sources/ComposableArchitecture/SwiftUI/NavigationDestination.swift",
+   "Sources/ComposableArchitecture/SwiftUI/Popover.swift",
+   "Sources/ComposableArchitecture/SwiftUI/PresentationModifier.swift",
+   "Sources/ComposableArchitecture/SwiftUI/Sheet.swift",
+   "Sources/ComposableArchitecture/SwiftUI/WithViewStore.swift",
+   "Sources/ComposableArchitecture/TestStore.swift",
+   "Sources/ComposableArchitecture/ViewStore.swift"
+  ],
+  "dfa29e0203": [
+   "Sources/ComposableArchitecture/CaseReducer.swift",
+   "Sources/ComposableArchitecture/Observation/ViewAction.swift",
+   "Sources/ComposableArchitecture/Store.swift",
+   "Sources/ComposableArchitecture/SwiftUI/Binding.swift",
+   "Sources/ComposableArchitecture/SwiftUI/PresentationModifier.swift",
+   "Sources/ComposableArchitecture/TestStore.swift",
+   "Sources/ComposableArchitecture/ViewStore.swift"
+  ],
+  "08faf84fe3": [
+   "Sources/ComposableArchitecture/CaseReducer.swift",
+   "Sources/ComposableArchitecture/Effects/Cancellation.swift",
+   "Sources/ComposableArchitecture/Internal/DispatchQueue.swift",
+   "Sources/ComposableArchitecture/Observation/ViewAction.swift",
+   "Sources/ComposableArchitecture/RootStore.swift",
+   "Sources/ComposableArchitecture/SharedState/References/ValueReference.swift",
+   "Sources/ComposableArchitecture/Store.swift",
+   "Sources/ComposableArchitecture/SwiftUI/Binding.swift",
+   "Sources/ComposableArchitecture/SwiftUI/PresentationModifier.swift",
+   "Sources/ComposableArchitecture/TestStore.swift",
+   "Sources/ComposableArchitecture/ViewStore.swift",
+   "Sources/ComposableArchitectureMacros/ReducerMacro.swift"
+  ],
+  "f02fab5000": [
+   "Sources/ComposableArchitecture/Observation/Store+Observation.swift"
+  ],
+  "181b9d2cb3": [
+   "Package.swift"
+  ],
+  "8821d58ea1": [
+   "Sources/ComposableArchitecture/SharedState/PersistenceKey/FileStorageKey.swift"
+  ],
+  "07e5b3340a": [
+   "Sources/ComposableArchitecture/Effect.swift"
+  ],
+  "121b608069": [
+   "Package.swift"
+  ],
+  "b432441cbc": [
+   "Sources/ComposableArchitecture/TestStore.swift",
+   "Sources/ComposableArchitecture/UIKit/NavigationStackControllerUIKit.swift"
+  ],
+  "3a02c5e9fe": [
+   "Package.swift",
+   "Sources/ComposableArchitecture/CaseReducer.swift",
+   "Sources/ComposableArchitecture/Dependencies/Dismiss.swift",
+   "Sources/ComposableArchitecture/Dependencies/IsPresented.swift",
+   "Sources/ComposableArchitecture/Effect.swift",
+   "Sources/ComposableArchitecture/Effects/TaskResult.swift",
+   "Sources/ComposableArchitecture/Macros.swift",
+   "Sources/ComposableArchitecture/Observation/NavigationStack+Observation.swift",
+   "Sources/ComposableArchitecture/Reducer.swift",
+   "Sources/ComposableArchitecture/Reducer/Reducers/ForEachReducer.swift",
+   "Sources/ComposableArchitecture/Reducer/Reducers/IfLetReducer.swift",
+   "Sources/ComposableArchitecture/Reducer/Reducers/OnChange.swift",
+   "Sources/ComposableArchitecture/Reducer/Reducers/PresentationReducer.swift",
+   "Sources/ComposableArchitecture/Reducer/Reducers/Scope.swift",
+   "Sources/ComposableArchitecture/Reducer/Reducers/StackReducer.swift",
+   "Sources/ComposableArchitecture/SharedState/PersistenceKey/FileStorageKey.swift",
+   "Sources/ComposableArchitecture/SwiftUI/Deprecated/NavigationLinkStore.swift",
+   "Sources/ComposableArchitecture/SwiftUI/ForEachStore.swift",
+   "Sources/ComposableArchitecture/SwiftUI/SwitchStore.swift",
+   "Sources/ComposableArchitecture/TestStore.swift",
+   "Sources/ComposableArchitecture/UIKit/NavigationStackControllerUIKit.swift",
+   "Sources/swift-composable-architecture-benchmark/StoreScope.swift"
+  ],
+  "833792ec0f": [
+   "Sources/ComposableArchitecture/SharedState/References/ValueReference.swift"
+  ],
+  "9cf20c1e50": [
+   "Package.swift"
+  ],
+  "2c17a936ef": [
+   "Sources/ComposableArchitecture/Observation/Store+Observation.swift"
+  ],
+  "27adbdc1e6": [
+   "Sources/ComposableArchitecture/UIKit/NavigationStackControllerUIKit.swift"
+  ],
+  "dae1b9aafb": [
+   "Package.swift",
+   "Sources/ComposableArchitecture/Internal/Deprecations.swift",
+   "Sources/ComposableArchitecture/Internal/Exports.swift",
+   "Sources/ComposableArchitecture/Observation/Alert+Observation.swift",
+   "Sources/ComposableArchitecture/Observation/Binding+Observation.swift",
+   "Sources/ComposableArchitecture/Observation/NavigationStack+Observation.swift",
+   "Sources/ComposableArchitecture/Observation/Store+Observation.swift",
+   "Sources/ComposableArchitecture/SwiftUI/NavigationDestination.swift",
+   "Sources/ComposableArchitecture/SwiftUI/PresentationModifier.swift",
+   "Sources/ComposableArchitecture/UIKit/AlertStateUIKit.swift"
+  ],
+  "b5c2a3d7c8": [
+   "Sources/ComposableArchitecture/Internal/AssumeIsolated.swift"
+  ],
+  "e1f07facd9": [
+   "Sources/ComposableArchitecture/Internal/DispatchQueue.swift",
+   "Sources/ComposableArchitecture/SharedState/Shared.swift"
+  ],
+  "3f16c6c927": [
+   "Sources/ComposableArchitecture/SwiftUI/Alert.swift",
+   "Sources/ComposableArchitecture/SwiftUI/ConfirmationDialog.swift",
+   "Sources/ComposableArchitecture/SwiftUI/Deprecated/ActionSheet.swift",
+   "Sources/ComposableArchitecture/SwiftUI/Deprecated/LegacyAlert.swift"
+  ],
+  "8343030d8d": [
+   "Sources/ComposableArchitecture/SharedState/SharedChangeTracking.swift"
+  ],
+  "b35827a61c": [
+   "Package.swift"
+  ],
+  "5b6fbc50ba": [
+   "Package.swift",
+   "Sources/ComposableArchitecture/Reducer/Reducers/StackReducer.swift"
+  ],
+  "dc8638af06": [
+   "Sources/ComposableArchitecture/Macros.swift"
+  ],
+  "d65f3c1b93": [
+   "Sources/ComposableArchitecture/Observation/NavigationStack+Observation.swift",
+   "Sources/ComposableArchitecture/Reducer/Reducers/StackReducer.swift",
+   "Sources/ComposableArchitecture/SwiftUI/NavigationStackStore.swift",
+   "Sources/ComposableArchitecture/TestStore.swift"
+  ],
+  "3e830b575a": [
+   "Package.swift",
+   "Sources/ComposableArchitecture/Dependencies/Dismiss.swift",
+   "Sources/ComposableArchitecture/Effect.swift",
+   "Sources/ComposableArchitecture/Effects/TaskResult.swift",
+   "Sources/ComposableArchitecture/Internal/RuntimeWarnings.swift",
+   "Sources/ComposableArchitecture/Observation/IdentifiedArray+Observation.swift",
+   "Sources/ComposableArchitecture/Observation/NavigationStack+Observation.swift",
+   "Sources/ComposableArchitecture/Observation/Store+Observation.swift",
+   "Sources/ComposableArchitecture/Reducer/Reducers/ForEachReducer.swift",
+   "Sources/ComposableArchitecture/Reducer/Reducers/IfCaseLetReducer.swift",
+   "Sources/ComposableArchitecture/Reducer/Reducers/IfLetReducer.swift",
+   "Sources/ComposableArchitecture/Reducer/Reducers/PresentationReducer.swift",
+   "Sources/ComposableArchitecture/Reducer/Reducers/Scope.swift",
+   "Sources/ComposableArchitecture/Reducer/Reducers/StackReducer.swift",
+   "Sources/ComposableArchitecture/RootStore.swift",
+   "Sources/ComposableArchitecture/SharedState/Shared.swift",
+   "Sources/ComposableArchitecture/SwiftUI/Binding.swift",
+   "Sources/ComposableArchitecture/SwiftUI/NavigationStackStore.swift",
+   "Sources/ComposableArchitecture/SwiftUI/SwitchStore.swift",
+   "Sources/ComposableArchitecture/TestStore.swift",
+   "Sources/ComposableArchitecture/UIKit/NSObject+Observation.swift"
+  ],
+  "ff41e51a4e": [
+   "Sources/ComposableArchitecture/ViewStore.swift"
+  ]
+ }
+}

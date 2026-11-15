@@ -1,0 +1,49 @@
+{
+  "how": "C# extracted/inlined functions met while reading the move/rename commits of lang-csharp-expected.json; curated by reading each diff (harness/LABELLING.md definitions) before any engine run, 2026-11-14. The main C# extract sets stay history-extracts.json and the held-out locked sets.",
+  "labels": [
+    {
+      "repo": "polly-mr",
+      "kind": "extract",
+      "commit": "b703130adf",
+      "file": "src/Polly/Wrap/IPolicyWrapExtension.cs",
+      "helper": "GetPoliciesIterator",
+      "caller": "GetPolicies",
+      "label": "extract",
+      "note": "The iterator body of GetPolicies moved unchanged into new GetPoliciesIterator; GetPolicies now checks the argument and returns a call to it.",
+      "src": "curated"
+    },
+    {
+      "repo": "polly-mr",
+      "kind": "extract",
+      "commit": "3d720f5c4c",
+      "file": "src/Polly/AsyncPolicy.TResult.ExecuteOverloads.cs",
+      "helper": "ExecuteInternalAsync",
+      "caller": "ExecuteAsync",
+      "label": "extract",
+      "note": "The try/finally around ImplementationAsync moved from the async ExecuteAsync into new private ExecuteInternalAsync; ExecuteAsync now validates and returns its task (S4457).",
+      "src": "curated"
+    },
+    {
+      "repo": "polly-mr",
+      "kind": "extract",
+      "commit": "3d720f5c4c",
+      "file": "src/Polly/AsyncPolicy.TResult.ExecuteOverloads.cs",
+      "helper": "ExecuteAndCaptureInternalAsync",
+      "caller": "ExecuteAndCaptureAsync",
+      "label": "extract",
+      "note": "The try/catch capture logic moved out of ExecuteAndCaptureAsync into new private ExecuteAndCaptureInternalAsync, which ExecuteAndCaptureAsync now returns.",
+      "src": "curated"
+    },
+    {
+      "repo": "serilog-mr",
+      "kind": "extract",
+      "commit": "6700587406",
+      "file": "src/Serilog/Parsing/MessageTemplateParser.cs",
+      "helper": "TrySplitTagContent",
+      "caller": "ParsePropertyToken",
+      "label": "extract",
+      "note": "The format/alignment splitting block moved from ParsePropertyToken into new TrySplitTagContent (early returns became return false); the caller now calls it.",
+      "src": "curated"
+    }
+  ]
+}

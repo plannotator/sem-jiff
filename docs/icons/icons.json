@@ -1,0 +1,13 @@
+{
+ "added": "<rect x=\"3\" y=\"3\" width=\"18\" height=\"18\" rx=\"2\"/><path d=\"M12 8v8\"/><path d=\"M8 12h8\"/>",
+ "deleted": "<rect x=\"3\" y=\"3\" width=\"18\" height=\"18\" rx=\"2\"/><path d=\"M8 12h8\"/>",
+ "edited": "<rect x=\"3\" y=\"3\" width=\"18\" height=\"18\" rx=\"2\"/><circle cx=\"12\" cy=\"12\" r=\"1.4\" fill=\"currentColor\" stroke=\"none\"/>",
+ "moved-from": "<rect x=\"2\" y=\"5\" width=\"10\" height=\"14\" rx=\"2\" stroke-dasharray=\"2.2 2.4\"/><path d=\"M14 12H22\"/><path d=\"m19 9 3 3-3 3\"/>",
+ "moved-to": "<path d=\"M2 12H10\"/><path d=\"m7 9 3 3-3 3\"/><rect x=\"12\" y=\"5\" width=\"10\" height=\"14\" rx=\"2\"/><path d=\"M15 10h4\"/><path d=\"M15 14h4\"/>",
+ "moved-edited-to": "<path d=\"M2 12H10\"/><path d=\"m7 9 3 3-3 3\"/><rect x=\"12\" y=\"5\" width=\"10\" height=\"14\" rx=\"2\"/><circle cx=\"17\" cy=\"12\" r=\"1.4\" fill=\"currentColor\" stroke=\"none\"/>",
+ "reordered": "<rect x=\"3\" y=\"4\" width=\"11\" height=\"5\" rx=\"2\"/><rect x=\"3\" y=\"15\" width=\"11\" height=\"5\" rx=\"2\"/><path d=\"M19 6v12\"/><path d=\"m16.5 8.5 2.5-2.5 2.5 2.5\"/><path d=\"m16.5 15.5 2.5 2.5 2.5-2.5\"/>",
+ "renamed": "<circle cx=\"7\" cy=\"11\" r=\"3\"/><path d=\"M10 8v6\"/><circle cx=\"17\" cy=\"11\" r=\"3\"/><path d=\"M14 6v8\"/><path d=\"M3 18.5h18\"/>",
+ "reformatted": "<path d=\"M3 6h18\"/><path d=\"M18 6v3.5a2.5 2.5 0 0 1-2.5 2.5H8\"/><path d=\"m10.5 9.5-2.5 2.5 2.5 2.5\"/><path d=\"M8 18h9\"/>",
+ "extracted": "<path d=\"M6 11H5.5a1.5 1.5 0 0 0-1.5 1.5v1.5a2 2 0 0 1-2 2 2 2 0 0 1 2 2v1.5a1.5 1.5 0 0 0 1.5 1.5h.5\"/><path d=\"M14 11h.5a1.5 1.5 0 0 1 1.5 1.5v1.5a2 2 0 0 0 2 2 2 2 0 0 0-2 2v1.5a1.5 1.5 0 0 1-1.5 1.5h-.5\"/><path d=\"M10 16.5c0-5 2.8-9 6.5-9H19.5\"/><path d=\"m17.5 5.5 2 2-2 2\"/>",
+ "inlined": "<path d=\"M6 11H5.5a1.5 1.5 0 0 0-1.5 1.5v1.5a2 2 0 0 1-2 2 2 2 0 0 1 2 2v1.5a1.5 1.5 0 0 0 1.5 1.5h.5\"/><path d=\"M14 11h.5a1.5 1.5 0 0 1 1.5 1.5v1.5a2 2 0 0 0 2 2 2 2 0 0 0-2 2v1.5a1.5 1.5 0 0 1-1.5 1.5h-.5\"/><path d=\"M20 7.5h-3.5c-3.7 0-6.5 4-6.5 9\"/><path d=\"m8 14.5 2 2 2-2\"/>"
+}

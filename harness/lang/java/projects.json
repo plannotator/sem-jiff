@@ -1,0 +1,74 @@
+[
+  {
+    "name": "guava-mr",
+    "set": "practice-java",
+    "labels": "lang-java-extracts.json",
+    "url": "https://github.com/google/guava.git",
+    "licence": "Apache-2.0",
+    "fetch": [
+      "72a3f9060a600a795c6c9ccfcd907d2ad975753c",
+      "871d9af4be1484d03e38b7bacb699ef56fb1838c",
+      "e9d6b503975ed6bb7a67cc4edce8a3bf653c6f32"
+    ],
+    "files": 5
+  },
+  {
+    "name": "spring-framework-mr",
+    "set": "practice-java",
+    "labels": "lang-java-extracts.json",
+    "url": "https://github.com/spring-projects/spring-framework.git",
+    "licence": "Apache-2.0",
+    "fetch": [
+      "00b9063e7dca0d09c5fe2e2bc100380695c41e0d",
+      "396b055325894b868c96bdca42ac0b1857814815",
+      "3e788e4ca1e4c0fc35d0797ba390d2aff7067a35",
+      "43bbaa9e9679eac410185cc1f0fef802922e2173",
+      "4783c321d9fc9e96aadd4456751c13ca34d801b8",
+      "49ffb833a3fa53977afc9ebc7e055b217e73d7ee",
+      "4a92dd6ed186ed06f8b1034dd94c5de43821f5b5",
+      "64721b3bc02239c0d8f136a537991ce64610905a",
+      "6dcdf191692f79cbb475adae50e7ee26d1930514",
+      "7e919d2c96d185016ca00191a06259053fda8302",
+      "9d57dabe2f1306d0613c0614021a8f31e4a978d3",
+      "c1d241928ce23b868ea0ab8bdda076a832080720",
+      "e340e45f5a689ef622eaa48ca1541d26a83a0d05"
+    ],
+    "files": 14
+  },
+  {
+    "name": "gson-mr",
+    "set": "held-java",
+    "labels": "lang-java-extracts.json",
+    "url": "https://github.com/google/gson.git",
+    "licence": "Apache-2.0",
+    "fetch": [
+      "00028fb5a7f3fc9b72d77b2d028a58e3155dadec",
+      "3bf1967c0a315d8a74a1975a9bbc6edbf1009549",
+      "7a1c94f9863bfc6915eaa56236dcef46876d4674",
+      "7d1973e6c5e270c0c94eaf6a3e81f4f2c5b2a699",
+      "a38b757bc4fddfd57ab762fbf192dd2b3fc6be22",
+      "df01e943e524c1b569930b8b4cf50c873513698c",
+      "f1f838cf2030bdc057ef08ebafce08221bd306cb",
+      "fc748cd0db43e705d020d3396c7f63536e1225c3",
+      "ff521d70b2ecf2ed85dd1012081493ad7d8c0ba6"
+    ],
+    "files": 10
+  },
+  {
+    "name": "commons-lang-mr",
+    "set": "held-java",
+    "labels": "lang-java-extracts.json",
+    "url": "https://github.com/apache/commons-lang.git",
+    "licence": "Apache-2.0",
+    "fetch": [
+      "09430095a93ec3841dca47170f0a3b5ddad34bef",
+      "19adcd792fb514e741cabdeda87e41f405fed268",
+      "24e0b283d1f5887457c30e239f0f1ddb79d9f7bd",
+      "b8286523defe897679c18a3e85be227e9ec2956a",
+      "cc2ade0193e399d186c7fe31a1b90adf2a4a4638",
+      "d5758118b5e245e052fa2378ceb76e049813d324",
+      "e547d704b21a1b10a2dae0158f7288d7afa4d064"
+    ],
+    "files": 8
+  }
+]

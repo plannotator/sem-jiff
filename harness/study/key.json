@@ -1,0 +1,264 @@
+{
+ "seed": 20261109,
+ "replaced": 0,
+ "items": [
+  {
+   "id": "a16ee547",
+   "stratum": "C2",
+   "key": "effect-smol|5805569|packages/tools/oxc/src/oxlint/rules/standard-jsdoc.ts|inline|findModuleJSDoc",
+   "ai": "no",
+   "ai_note": "Module JSDoc lookup removed in the rewrite, not inlined."
+  },
+  {
+   "id": "06fadc96",
+   "stratum": "A",
+   "key": "motel|3598473|src/ui/format.ts|extract|splitDuration",
+   "ai": "extract",
+   "ai_note": "formatDuration body lifted into splitDuration, which it now calls."
+  },
+  {
+   "id": "2bfb82b8",
+   "stratum": "B",
+   "key": "hugo|70db201|resources/resource_transformers/tocss/dartsass/transform.go|extract|sassSourceSyntax",
+   "ai": "extract",
+   "ai_note": "source-syntax suffix checks moved from Load into sassSourceSyntax switch"
+  },
+  {
+   "id": "af5a42d3",
+   "stratum": "B",
+   "key": "playwright|e7edafd|packages/playwright-core/src/client/browserContext.ts|extract|_disableInterception",
+   "ai": "borderline",
+   "ai_note": "One-line wrapper around _updateInterceptionPatterns added for the @internal decorator."
+  },
+  {
+   "id": "95e94654",
+   "stratum": "C2",
+   "key": "hugo|a54c398|resources/resource_transformers/babel/babel.go|extract|sourceMapEnabled",
+   "ai": "no",
+   "ai_note": "new predicate"
+  },
+  {
+   "id": "7c853647",
+   "stratum": "A",
+   "key": "prometheus|5659831|storage/remote/queue_manager.go|extract|convertAndEnqueueNHCB",
+   "ai": "extract",
+   "ai_note": "NHCB conversion and enqueue retry loop moved from AppendHistograms into helper."
+  },
+  {
+   "id": "1d9cd145",
+   "stratum": "A",
+   "key": "opencode|ec4f872|packages/gui-plugins/src/browser/profiling.ts|extract|captureHeap",
+   "ai": "extract",
+   "ai_note": "Heap snapshot chunk collection and takeHeapSnapshot from the heap() method moved into captureHeap."
+  },
+  {
+   "id": "bf3aef8a",
+   "stratum": "A",
+   "key": "beep-effect|ba91642|packages/tooling/tool/cli/src/commands/Reviewer/ReviewerRuleset.ts|extract|enforceReviewerAppGate",
+   "ai": "extract",
+   "ai_note": "enforceReviewerGate's required-app check sequence moved into enforceReviewerAppGate."
+  },
+  {
+   "id": "5b9d7ce6",
+   "stratum": "A",
+   "key": "effect|7217410|packages/effect/src/eventlog/SqlEventLogServerEncrypted.ts|extract|toEntryIds",
+   "ai": "extract",
+   "ai_note": "The 16-byte entry-id splitting loop moved out of toEncryptedRemoteBatch into toEntryIds, now used there and in other row decoders."
+  },
+  {
+   "id": "21f2a947",
+   "stratum": "B",
+   "key": "livestore|c8d4f13|packages/@livestore/common/src/leader-thread/LeaderSyncProcessor.ts|extract|publish",
+   "ai": "no",
+   "ai_note": "New publish step of the rewritten leader; not lifted from make."
+  },
+  {
+   "id": "94a8039a",
+   "stratum": "A",
+   "key": "motel|bb064ba|src/ui/useKeyboardNav.ts|extract|handleOpenCopyKeys",
+   "ai": "extract",
+   "ai_note": "Key-handling block from the old useKeyboard callback lifted into a dispatch helper."
+  },
+  {
+   "id": "da5c148d",
+   "stratum": "A",
+   "key": "watchdog|15db598|packages/core/src/export/provider-body-policy.ts|extract|verdictOf",
+   "ai": "extract",
+   "ai_note": "per-contact verdict line from rawBodyDecision's loop moved into verdictOf"
+  },
+  {
+   "id": "2899ef78",
+   "stratum": "C2",
+   "key": "black|d078e8e|scripts/release.py|extract|is_valid_version",
+   "ai": "no",
+   "ai_note": "New version parsing replaces an isdigit filter; not a moved body."
+  },
+  {
+   "id": "8a7d0a50",
+   "stratum": "A",
+   "key": "effected|22f0891|packages/config-file/src/internal/deepMerge.ts|extract|mergeRecords",
+   "ai": "borderline",
+   "ai_note": "deepMerge's record merge moved into mergeRecords but largely rewritten (memo, depth)."
+  },
+  {
+   "id": "07bdee64",
+   "stratum": "B",
+   "key": "foldkit|2d85d5a|packages/ui/src/dialog/index.ts|extract|isLeaving",
+   "ai": "extract",
+   "ai_note": "The local isLeaving transition-state checks in view and RequestedClose became a module-level helper."
+  },
+  {
+   "id": "57fb7171",
+   "stratum": "A",
+   "key": "janitor|de2ae6a|apps/cluster/src/Labeling/Test.ts|extract|fromView",
+   "ai": "extract",
+   "ai_note": "Entity field mapping from a view, previously inline in make's evaluation, moved into fromView."
+  },
+  {
+   "id": "ae533828",
+   "stratum": "A",
+   "key": "automapper|1f6c603|src/AutoMapper/Execution/TypeMapPlanBuilder.cs|extract|AddBeforeMap",
+   "ai": "extract",
+   "ai_note": "Before-map loop moved from CreateAssignmentFunc into AddBeforeMap with early return."
+  },
+  {
+   "id": "c8ca8364",
+   "stratum": "B",
+   "key": "prometheus|b5ec1f6|model/histogram/convert.go|extract|bucketLabelsFor",
+   "ai": "extract",
+   "ai_note": "Builder Reset/Set/Set/Labels for bucket labels moved into helper (non-cache path), now called for both loops."
+  },
+  {
+   "id": "2bc6f0ae",
+   "stratum": "C1",
+   "key": "foldkit-plus|e41bc6d|packages/remote/src/model.ts|extract|invalidated",
+   "ai": "extract",
+   "ai_note": "The stale-marking model update in reduceRemote's switch case became invalidated."
+  },
+  {
+   "id": "ea30f427",
+   "stratum": "B",
+   "key": "typescript|e8fd69f|tools/scripts/tsc/generate-enums.ts|extract|generateEnum",
+   "ai": "extract",
+   "ai_note": "parseGoEnum + renderEnumTS sequence in generateEnums moved into generateEnum (with metadata branch)."
+  },
+  {
+   "id": "8bdbdcb7",
+   "stratum": "B",
+   "key": "guava|080807c|android/guava/src/com/google/common/util/concurrent/AggregateFutureState.java|inline|decrementAndGetRemainingCount",
+   "ai": "inline",
+   "ai_note": "SafeAtomicHelper one-liner inlined into caller with updater fields hoisted to statics."
+  },
+  {
+   "id": "9b2392b6",
+   "stratum": "C1",
+   "key": "automapper|a71a797|src/AutoMapper/QueryableExtensions/ProjectionBuilder.cs|inline|Include",
+   "ai": "inline",
+   "ai_note": "Recursive Include body rewritten as a foreach loop inside CreateProjection in place of the call."
+  },
+  {
+   "id": "5ad129df",
+   "stratum": "B",
+   "key": "opencode|0d18f55|packages/desktop/src/main/plugin/host.ts|extract|loadModule",
+   "ai": "extract",
+   "ai_note": "The inline sidecar.module ??= await loadClient() line in watchPlugins (twice) moved verbatim into loadModule."
+  },
+  {
+   "id": "870fe7db",
+   "stratum": "B",
+   "key": "foldkit-domains|f8ed292|src/view.ts|extract|searchErrorView",
+   "ai": "extract",
+   "ai_note": "The Failed-state error markup in resultsView became searchErrorView."
+  },
+  {
+   "id": "51172322",
+   "stratum": "B",
+   "key": "hugo|e4dc48c|markup/internal/attributes/attributes.go|extract|writeAttributeValue",
+   "ai": "extract",
+   "ai_note": "attribute value switch moved from RenderASTAttributes (and RenderAttributes) into helper, plus string case"
+  },
+  {
+   "id": "dfde884e",
+   "stratum": "B",
+   "key": "alchemy|338dc88|packages/neon/src/Migrations.ts|extract|clientConfig",
+   "ai": "extract",
+   "ai_note": "Client options built inline in withPgClient moved into helper."
+  },
+  {
+   "id": "7e738847",
+   "stratum": "B",
+   "key": "effect-smol|074e436|packages/effect/src/SchemaAST.ts|extract|combineChecks",
+   "ai": "borderline",
+   "ai_note": "Renamed mergeChecks, also replacing appendChecks' inline concat expression."
+  },
+  {
+   "id": "97e43c14",
+   "stratum": "C1",
+   "key": "excalidraw|a918648|packages/excalidraw/renderer/staticScene.ts|extract|clipElementToFrame",
+   "ai": "extract",
+   "ai_note": "Frame-clip block moved into helper and generalised."
+  },
+  {
+   "id": "2ea0d410",
+   "stratum": "B",
+   "key": "excalidraw|20f694d|packages/excalidraw/data/restore.ts|extract|handleOversizedLinearElements",
+   "ai": "extract",
+   "ai_note": "Caller code moved verbatim into new helper and replaced with a call."
+  },
+  {
+   "id": "0f445c73",
+   "stratum": "A",
+   "key": "uv|063712b|crates/uv-resolver/src/resolver/provider.rs|extract|classify_metadata_error",
+   "ai": "extract",
+   "ai_note": "Client error classification match moved into classify_metadata_error."
+  },
+  {
+   "id": "be941ff0",
+   "stratum": "C2",
+   "key": "jellyfin|c5f5377|src/Jellyfin.Database/Jellyfin.Database.Providers.Sqlite/SqliteDatabaseProvider.cs|extract|HasLibraryItemsAsync",
+   "ai": "no",
+   "ai_note": "New library-emptiness check, not code from OptimizeAsync."
+  },
+  {
+   "id": "b4f7e9bf",
+   "stratum": "A",
+   "key": "alchemy|0069593|packages/aws/src/Lambda/Function.ts|extract|readFunctionUrlConfig",
+   "ai": "extract",
+   "ai_note": "getFunctionUrlConfig read moved from read into helper."
+  },
+  {
+   "id": "90adab28",
+   "stratum": "A",
+   "key": "excalidraw|816c81c|packages/element/src/shape.ts|extract|getArrowheadLineOptions",
+   "ai": "extract",
+   "ai_note": "Arrowhead code removed from caller now in helper."
+  },
+  {
+   "id": "8fc7b506",
+   "stratum": "B",
+   "key": "janitor|71fb877|apps/web/src/main.ts|extract|sidebarPanel",
+   "ai": "extract",
+   "ai_note": "Sidebar slot array from view's content lambda moved into sidebarPanel."
+  },
+  {
+   "id": "1d20c1d7",
+   "stratum": "A",
+   "key": "efffrida|1079f5e|packages/gplayapi/src/internal/auth.ts|extract|deviceConfiguration",
+   "ai": "extract",
+   "ai_note": "duplicated deviceConfiguration object literal moved into a function"
+  },
+  {
+   "id": "d9869c2f",
+   "stratum": "C1",
+   "key": "typescript|59f5b02|tsc/internal/module/resolver.go|extract|resolvePathForModule",
+   "ai": "extract",
+   "ai_note": "NormalizePath(CombinePaths(dir, name)) in caller now goes through resolvePathForModule, generalised for dynamic paths."
+  }
+ ],
+ "repeats": [
+  "5b9d7ce6",
+  "1d9cd145",
+  "57fb7171",
+  "7c853647"
+ ]
+}

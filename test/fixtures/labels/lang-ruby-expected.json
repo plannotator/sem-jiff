@@ -1,0 +1,928 @@
+{
+ "how": "Ruby corpus (2026-11-14): real same-file moves, renames, reformatting and \"never plain moved\" cases from rails, rubocop (practice) and jekyll, Homebrew/brew (held out), labelled by reading each diff before any Ruby engine code existed (harness/audit/AUDIT.md labels). Line numbers refer to the texts pinned in harness/lang/ruby/texts.sha256.",
+ "labels": [
+  {
+   "id": 1,
+   "project": "rails",
+   "commit": "1a8dda450b",
+   "file": "railties/lib/rails/commands/query/query_command.rb",
+   "kind": "moved",
+   "old": [
+    [
+     46,
+     62
+    ]
+   ],
+   "new": [
+    [
+     93,
+     111
+    ]
+   ],
+   "label": "correct",
+   "name": "run_query",
+   "note": "run_query moved down within the private section; only blank lines were added inside it."
+  },
+  {
+   "id": 2,
+   "project": "rails",
+   "commit": "8c3eac10f9",
+   "file": "activemodel/lib/active_model/attribute_set/builder.rb",
+   "kind": "renamed",
+   "old": [
+    [
+     153,
+     154
+    ]
+   ],
+   "new": [
+    [
+     153,
+     154
+    ]
+   ],
+   "label": "correct",
+   "name": "slot",
+   "note": "Block parameter ord renamed to slot on both lines, nothing else changed."
+  },
+  {
+   "id": 3,
+   "project": "rails",
+   "commit": "8c3eac10f9",
+   "file": "activemodel/lib/active_model/attribute_set/builder.rb",
+   "kind": "renamed",
+   "old": [
+    [
+     165,
+     165
+    ]
+   ],
+   "new": [
+    [
+     165,
+     165
+    ]
+   ],
+   "label": "wrong",
+   "expect": "edited",
+   "name": "names_for",
+   "note": "The .ord call is dropped (indexes[name].ord became indexes[name]); no name is replaced."
+  },
+  {
+   "id": 4,
+   "project": "rails",
+   "commit": "8c3eac10f9",
+   "file": "activemodel/lib/active_model/attribute_set/builder.rb",
+   "kind": "renamed",
+   "old": [
+    [
+     173,
+     174
+    ]
+   ],
+   "new": [
+    [
+     173,
+     174
+    ]
+   ],
+   "label": "borderline",
+   "name": "last_slot",
+   "note": "Two names change on line 173: the local last_ord and the call max_ord -> max_slot, a method renamed in another file."
+  },
+  {
+   "id": 5,
+   "project": "rails",
+   "commit": "8c3eac10f9",
+   "file": "activerecord/lib/active_record/attribute_methods/read.rb",
+   "kind": "renamed",
+   "old": [
+    [
+     19,
+     19
+    ]
+   ],
+   "new": [
+    [
+     19,
+     19
+    ]
+   ],
+   "label": "wrong",
+   "expect": "edited",
+   "name": "slot",
+   "note": "ord -> slot also drops the trailing &.ord call on this line."
+  },
+  {
+   "id": 6,
+   "project": "rails",
+   "commit": "8c3eac10f9",
+   "file": "activerecord/lib/active_record/attribute_methods/read.rb",
+   "kind": "renamed",
+   "old": [
+    [
+     23,
+     23
+    ]
+   ],
+   "new": [
+    [
+     23,
+     23
+    ]
+   ],
+   "label": "wrong",
+   "expect": "edited",
+   "name": "namespace",
+   "note": "Besides ord -> slot, the symbol text changes from active_record_ord_ to active_record_slot_, a different cache namespace."
+  },
+  {
+   "id": 7,
+   "project": "rails",
+   "commit": "8c3eac10f9",
+   "file": "activerecord/lib/active_record/attribute_methods/read.rb",
+   "kind": "renamed",
+   "old": [
+    [
+     28,
+     29
+    ]
+   ],
+   "new": [
+    [
+     28,
+     29
+    ]
+   ],
+   "label": "correct",
+   "name": "slot",
+   "note": "Only the local ord -> slot, including inside the interpolation."
+  },
+  {
+   "id": 8,
+   "project": "rails",
+   "commit": "527449a206",
+   "file": "activerecord/lib/active_record/connection_adapters/abstract/database_statements.rb",
+   "kind": "renamed",
+   "old": [
+    [
+     12,
+     13
+    ]
+   ],
+   "new": [
+    [
+     12,
+     13
+    ]
+   ],
+   "label": "correct",
+   "name": "to_sql",
+   "note": "Parameter arel_or_sql_string renamed to arel_or_sql, nothing else changed."
+  },
+  {
+   "id": 9,
+   "project": "rails",
+   "commit": "527449a206",
+   "file": "activerecord/lib/active_record/connection_adapters/abstract/database_statements.rb",
+   "kind": "renamed",
+   "old": [
+    [
+     17,
+     49
+    ]
+   ],
+   "new": [
+    [
+     17,
+     49
+    ]
+   ],
+   "label": "correct",
+   "name": "to_sql_and_binds",
+   "note": "Parameter arel_or_sql_string renamed to arel_or_sql on every use, nothing else changed."
+  },
+  {
+   "id": 10,
+   "project": "rails",
+   "commit": "527449a206",
+   "file": "activerecord/lib/active_record/connection_adapters/abstract/database_statements.rb",
+   "kind": "renamed",
+   "old": [
+    [
+     251,
+     251
+    ],
+    [
+     261,
+     261
+    ]
+   ],
+   "new": [
+    [
+     251,
+     251
+    ],
+    [
+     261,
+     261
+    ]
+   ],
+   "label": "correct",
+   "name": "insert",
+   "note": "Parameter arel renamed to arel_or_sql; the keyword label arel: is unchanged."
+  },
+  {
+   "id": 11,
+   "project": "rails",
+   "commit": "527449a206",
+   "file": "activerecord/lib/active_record/connection_adapters/abstract/database_statements.rb",
+   "kind": "renamed",
+   "old": [
+    [
+     277,
+     278
+    ]
+   ],
+   "new": [
+    [
+     277,
+     278
+    ]
+   ],
+   "label": "correct",
+   "name": "update",
+   "note": "Parameter arel renamed to arel_or_sql; the keyword label arel: is unchanged."
+  },
+  {
+   "id": 12,
+   "project": "rails",
+   "commit": "527449a206",
+   "file": "activerecord/lib/active_record/connection_adapters/abstract/database_statements.rb",
+   "kind": "renamed",
+   "old": [
+    [
+     296,
+     297
+    ]
+   ],
+   "new": [
+    [
+     296,
+     297
+    ]
+   ],
+   "label": "correct",
+   "name": "delete",
+   "note": "Parameter arel renamed to arel_or_sql; the keyword label arel: is unchanged."
+  },
+  {
+   "id": 13,
+   "project": "rails",
+   "commit": "debbd18c56",
+   "file": "railties/lib/rails/commands/query/query_command.rb",
+   "kind": "moved",
+   "old": [
+    [
+     196,
+     207
+    ]
+   ],
+   "new": [
+    [
+     152,
+     163
+    ]
+   ],
+   "label": "correct",
+   "name": "execute_sql",
+   "note": "execute_sql moved up within the private section, unchanged."
+  },
+  {
+   "id": 14,
+   "project": "rails",
+   "commit": "debbd18c56",
+   "file": "railties/lib/rails/commands/query/query_command.rb",
+   "kind": "renamed",
+   "old": [
+    [
+     152,
+     152
+    ]
+   ],
+   "new": [
+    [
+     165,
+     165
+    ]
+   ],
+   "label": "correct",
+   "name": "execute_expression",
+   "note": "Method execute_ar renamed to execute_expression; the body is unchanged."
+  },
+  {
+   "id": 15,
+   "project": "rails",
+   "commit": "debbd18c56",
+   "file": "railties/lib/rails/commands/query/query_command.rb",
+   "kind": "renamed",
+   "old": [
+    [
+     105,
+     105
+    ]
+   ],
+   "new": [
+    [
+     105,
+     105
+    ]
+   ],
+   "label": "correct",
+   "name": "execute_expression",
+   "note": "The call follows the method rename, arguments unchanged."
+  },
+  {
+   "id": 16,
+   "project": "rails",
+   "commit": "9076963e2e",
+   "file": "activemodel/lib/active_model/secure_password/bcrypt_password.rb",
+   "kind": "moved",
+   "old": [
+    [
+     21,
+     23
+    ]
+   ],
+   "new": [
+    [
+     40,
+     42
+    ]
+   ],
+   "label": "correct",
+   "name": "algorithm_name",
+   "note": "algorithm_name moved to the end of the public section, unchanged (still above private)."
+  },
+  {
+   "id": 17,
+   "project": "rails",
+   "commit": "9076963e2e",
+   "file": "activemodel/lib/active_model/secure_password/bcrypt_password.rb",
+   "kind": "moved",
+   "old": [
+    [
+     25,
+     30
+    ]
+   ],
+   "new": [
+    [
+     33,
+     38
+    ]
+   ],
+   "label": "correct",
+   "name": "validate",
+   "note": "validate moved below password_salt, unchanged, still public."
+  },
+  {
+   "id": 18,
+   "project": "rails",
+   "commit": "1d8e6af2a3",
+   "file": "actionview/lib/action_view/helpers/form_helper.rb",
+   "kind": "reformatted",
+   "old": [
+    [
+     2026,
+     2032
+    ]
+   ],
+   "new": [
+    [
+     2026,
+     2032
+    ]
+   ],
+   "label": "correct",
+   "name": "class_eval",
+   "note": "Block re-indented two columns (Layout/BlockAlignment); the strings are one-line literals and unchanged."
+  },
+  {
+   "id": 19,
+   "project": "rails",
+   "commit": "be4e19c057",
+   "file": "activesupport/lib/active_support/duration/iso8601_serializer.rb",
+   "kind": "reformatted",
+   "old": [
+    [
+     75,
+     75
+    ]
+   ],
+   "new": [
+    [
+     75,
+     75
+    ]
+   ],
+   "label": "correct",
+   "name": "serialize",
+   "note": "'e' became \"e\": same string, no escapes or interpolation."
+  },
+  {
+   "id": 20,
+   "project": "rubocop",
+   "commit": "7042de6350",
+   "file": "lib/rubocop/cop/naming/binary_operator_parameter_name.rb",
+   "kind": "moved",
+   "old": [
+    [
+     61,
+     65
+    ]
+   ],
+   "new": [
+    [
+     46,
+     50
+    ]
+   ],
+   "label": "correct",
+   "name": "op_method?",
+   "note": "op_method? moved to the top of the private section, unchanged."
+  },
+  {
+   "id": 21,
+   "project": "rubocop",
+   "commit": "e9defb651d",
+   "file": "lib/rubocop/comment_config.rb",
+   "kind": "moved",
+   "old": [
+    [
+     85,
+     96
+    ]
+   ],
+   "new": [
+    [
+     73,
+     84
+    ]
+   ],
+   "label": "wrong",
+   "expect": "edited",
+   "name": "opt_in_cops",
+   "note": "Same body, but it moved from below private to above it: opt_in_cops became public."
+  },
+  {
+   "id": 22,
+   "project": "rubocop",
+   "commit": "e9defb651d",
+   "file": "lib/rubocop/comment_config.rb",
+   "kind": "movedWithEdit",
+   "old": [
+    [
+     85,
+     96
+    ]
+   ],
+   "new": [
+    [
+     68,
+     84
+    ]
+   ],
+   "label": "borderline",
+   "name": "opt_in_cops",
+   "note": "Only a doc comment was added on the way; the real change is the visibility, which v1 calls edited."
+  },
+  {
+   "id": 23,
+   "project": "jekyll",
+   "commit": "0dedc09ab3",
+   "file": "lib/jekyll/path_manager.rb",
+   "kind": "reformatted",
+   "old": [
+    [
+     19,
+     29
+    ]
+   ],
+   "new": [
+    [
+     20,
+     30
+    ]
+   ],
+   "label": "wrong",
+   "expect": "edited",
+   "name": "join",
+   "note": "def self.join became def join inside class << self: a different declaration form, not layout."
+  },
+  {
+   "id": 24,
+   "project": "jekyll",
+   "commit": "0dedc09ab3",
+   "file": "lib/jekyll/path_manager.rb",
+   "kind": "moved",
+   "old": [
+    [
+     19,
+     29
+    ]
+   ],
+   "new": [
+    [
+     20,
+     30
+    ]
+   ],
+   "label": "wrong",
+   "expect": "edited",
+   "name": "join",
+   "note": "The def line changed (self. dropped, now inside class << self), so it is not unchanged."
+  },
+  {
+   "id": 25,
+   "project": "jekyll",
+   "commit": "0dedc09ab3",
+   "file": "lib/jekyll/path_manager.rb",
+   "kind": "movedWithEdit",
+   "old": [
+    [
+     19,
+     29
+    ]
+   ],
+   "new": [
+    [
+     20,
+     30
+    ]
+   ],
+   "label": "borderline",
+   "name": "join",
+   "note": "Same singleton method in the other style; the spec allows movedWithEdit or edited."
+  },
+  {
+   "id": 26,
+   "project": "jekyll",
+   "commit": "0dedc09ab3",
+   "file": "lib/jekyll/path_manager.rb",
+   "kind": "reformatted",
+   "old": [
+    [
+     31,
+     60
+    ]
+   ],
+   "new": [
+    [
+     32,
+     61
+    ]
+   ],
+   "label": "wrong",
+   "expect": "edited",
+   "name": "sanitized_path",
+   "note": "def self.sanitized_path became def sanitized_path inside class << self: a different declaration form, not layout."
+  },
+  {
+   "id": 27,
+   "project": "jekyll",
+   "commit": "0dedc09ab3",
+   "file": "lib/jekyll/path_manager.rb",
+   "kind": "moved",
+   "old": [
+    [
+     31,
+     60
+    ]
+   ],
+   "new": [
+    [
+     32,
+     61
+    ]
+   ],
+   "label": "wrong",
+   "expect": "edited",
+   "name": "sanitized_path",
+   "note": "The def line changed (self. dropped, now inside class << self), so it is not unchanged."
+  },
+  {
+   "id": 28,
+   "project": "jekyll",
+   "commit": "0dedc09ab3",
+   "file": "lib/jekyll/path_manager.rb",
+   "kind": "movedWithEdit",
+   "old": [
+    [
+     31,
+     60
+    ]
+   ],
+   "new": [
+    [
+     32,
+     61
+    ]
+   ],
+   "label": "borderline",
+   "name": "sanitized_path",
+   "note": "Same singleton method in the other style; the spec allows movedWithEdit or edited."
+  },
+  {
+   "id": 29,
+   "project": "jekyll",
+   "commit": "3f46f02108",
+   "file": "lib/jekyll/converters/markdown/kramdown_parser.rb",
+   "kind": "reformatted",
+   "old": [
+    [
+     163,
+     163
+    ]
+   ],
+   "new": [
+    [
+     163,
+     163
+    ]
+   ],
+   "label": "wrong",
+   "expect": "edited",
+   "name": "strip_coderay_prefix",
+   "note": "gsub(regex, \"\") became delete_prefix: a different call."
+  },
+  {
+   "id": 30,
+   "project": "jekyll",
+   "commit": "3f46f02108",
+   "file": "lib/jekyll/page.rb",
+   "kind": "reformatted",
+   "old": [
+    [
+     147,
+     147
+    ]
+   ],
+   "new": [
+    [
+     147,
+     147
+    ]
+   ],
+   "label": "wrong",
+   "expect": "edited",
+   "name": "relative_path",
+   "note": "sub(regex, \"\") became delete_prefix: a different call."
+  },
+  {
+   "id": 31,
+   "project": "jekyll",
+   "commit": "3f46f02108",
+   "file": "lib/jekyll/external.rb",
+   "kind": "reformatted",
+   "old": [
+    [
+     24,
+     32
+    ]
+   ],
+   "new": [
+    [
+     24,
+     30
+    ]
+   ],
+   "label": "borderline",
+   "name": "require_if_present",
+   "note": "begin/rescue/end inside the block became a block-level rescue: same meaning since Ruby 2.5, but the begin node is gone."
+  },
+  {
+   "id": 32,
+   "project": "brew",
+   "commit": "5ad8947a94",
+   "file": "Library/Homebrew/dev-cmd/bump.rb",
+   "kind": "renamed",
+   "old": [
+    [
+     193,
+     193
+    ]
+   ],
+   "new": [
+    [
+     193,
+     193
+    ]
+   ],
+   "label": "correct",
+   "name": "skip_ineligible_package!",
+   "note": "Method name changed only."
+  },
+  {
+   "id": 33,
+   "project": "brew",
+   "commit": "5ad8947a94",
+   "file": "Library/Homebrew/dev-cmd/bump.rb",
+   "kind": "renamed",
+   "old": [
+    [
+     890,
+     890
+    ]
+   ],
+   "new": [
+    [
+     890,
+     890
+    ]
+   ],
+   "label": "correct",
+   "name": "skip_ineligible_package!",
+   "note": "Call follows the rename, nothing else changed."
+  },
+  {
+   "id": 34,
+   "project": "rails",
+   "commit": "560645a8c2",
+   "file": "activerecord/lib/active_record/migration/command_recorder.rb",
+   "kind": "moved",
+   "old": [
+    [
+     96,
+     102
+    ]
+   ],
+   "new": [
+    [
+     122,
+     128
+    ]
+   ],
+   "label": "wrong",
+   "expect": "edited",
+   "name": "record",
+   "note": "Body unchanged, but it moved from the public section to below private: record became private."
+  },
+  {
+   "id": 35,
+   "project": "rails",
+   "commit": "560645a8c2",
+   "file": "activerecord/lib/active_record/migration/command_recorder.rb",
+   "kind": "moved",
+   "old": [
+    [
+     111,
+     120
+    ]
+   ],
+   "new": [
+    [
+     130,
+     139
+    ]
+   ],
+   "label": "wrong",
+   "expect": "edited",
+   "name": "inverse_of",
+   "note": "Body (with its heredoc) unchanged, but it moved below private: inverse_of became private."
+  },
+  {
+   "id": 36,
+   "project": "rails",
+   "commit": "560645a8c2",
+   "file": "activerecord/lib/active_record/migration/command_recorder.rb",
+   "kind": "movedWithEdit",
+   "old": [
+    [
+     92,
+     102
+    ]
+   ],
+   "new": [
+    [
+     122,
+     128
+    ]
+   ],
+   "label": "borderline",
+   "name": "record",
+   "note": "Only the doc comment was dropped on the way; the real change is the visibility, which v1 calls edited."
+  },
+  {
+   "id": 37,
+   "project": "rails",
+   "commit": "560645a8c2",
+   "file": "activerecord/lib/active_record/migration/command_recorder.rb",
+   "kind": "movedWithEdit",
+   "old": [
+    [
+     104,
+     120
+    ]
+   ],
+   "new": [
+    [
+     130,
+     139
+    ]
+   ],
+   "label": "borderline",
+   "name": "inverse_of",
+   "note": "Only the doc comment was dropped on the way; the real change is the visibility, which v1 calls edited."
+  },
+  {
+   "id": 38,
+   "project": "rubocop",
+   "commit": "68f9201a0d",
+   "file": "lib/rubocop/lsp/routes.rb",
+   "kind": "moved",
+   "old": [
+    [
+     181,
+     190
+    ]
+   ],
+   "new": [
+    [
+     41,
+     50
+    ]
+   ],
+   "label": "correct",
+   "name": "handle_unsupported_method",
+   "note": "Moved up within the public part of the class, unchanged."
+  },
+  {
+   "id": 39,
+   "project": "rubocop",
+   "commit": "68f9201a0d",
+   "file": "lib/rubocop/lsp/routes.rb",
+   "kind": "moved",
+   "old": [
+    [
+     192,
+     196
+    ]
+   ],
+   "new": [
+    [
+     52,
+     56
+    ]
+   ],
+   "label": "correct",
+   "name": "handle_method_missing",
+   "note": "Moved up with handle_unsupported_method, unchanged, still public."
+  },
+  {
+   "id": 40,
+   "project": "rubocop",
+   "commit": "96c7f49947",
+   "file": "lib/rubocop/config_loader.rb",
+   "kind": "reformatted",
+   "old": [
+    [
+     78,
+     78
+    ]
+   ],
+   "new": [
+    [
+     78,
+     80
+    ]
+   ],
+   "label": "wrong",
+   "expect": "edited",
+   "name": "load_yaml_configuration",
+   "note": "Modifier unless became a block unless (fine), but the raised class also changed from TypeError to ValidationError."
+  },
+  {
+   "id": 41,
+   "project": "brew",
+   "commit": "7e837121be",
+   "file": "Library/Homebrew/cmd/update-report.rb",
+   "kind": "moved",
+   "old": [
+    [
+     306,
+     314
+    ]
+   ],
+   "new": [
+    [
+     336,
+     344
+    ]
+   ],
+   "label": "correct",
+   "name": "Tap.installed.select",
+   "note": "The tap-branch warning loop (with its comment) moved below the report block of the same method, unchanged."
+  }
+ ]
+}

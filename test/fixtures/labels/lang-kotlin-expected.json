@@ -1,0 +1,1239 @@
+{
+  "how": "Kotlin real-commit answers (moved/movedWithEdit/renamed/reformatted/reordered and never-plain-moved cases), written 2026-11-14 by reading each diff, before any Kotlin engine code or run. Practice: okhttp, kotlinx-coroutines. Held out: ktor, exposed (whole projects). Labels follow harness/audit/AUDIT.md; line ranges refer to the texts pinned in harness/lang/kotlin/texts.sha256.",
+  "labels": [
+    {
+      "id": 1,
+      "project": "kotlinx-coroutines",
+      "commit": "d559909f68",
+      "file": "kotlinx-coroutines-core/jvm/src/flow/internal/SafeCollector.kt",
+      "kind": "renamed",
+      "old": [
+        [
+          26,
+          26
+        ],
+        [
+          35,
+          36
+        ],
+        [
+          41,
+          41
+        ],
+        [
+          48,
+          48
+        ],
+        [
+          60,
+          60
+        ],
+        [
+          86,
+          86
+        ],
+        [
+          93,
+          93
+        ]
+      ],
+      "new": [
+        [
+          26,
+          26
+        ],
+        [
+          35,
+          36
+        ],
+        [
+          41,
+          41
+        ],
+        [
+          48,
+          48
+        ],
+        [
+          60,
+          60
+        ],
+        [
+          86,
+          86
+        ],
+        [
+          93,
+          93
+        ]
+      ],
+      "label": "correct",
+      "name": "completion",
+      "note": "Private field completion renamed to completion_ with every use and comment mention; nothing else changed."
+    },
+    {
+      "id": 2,
+      "project": "kotlinx-coroutines",
+      "commit": "2f2110215c",
+      "file": "kotlinx-coroutines-core/common/src/JobSupport.kt",
+      "kind": "moved",
+      "old": [
+        [
+          613,
+          613
+        ]
+      ],
+      "new": [
+        [
+          610,
+          610
+        ]
+      ],
+      "label": "correct",
+      "name": "onCancelling",
+      "note": "onCancelling moved above invoke inside SelectOnJoinCompletionHandler, text unchanged."
+    },
+    {
+      "id": 3,
+      "project": "kotlinx-coroutines",
+      "commit": "2f2110215c",
+      "file": "kotlinx-coroutines-core/common/src/JobSupport.kt",
+      "kind": "movedWithEdit",
+      "old": [
+        [
+          1269,
+          1269
+        ]
+      ],
+      "new": [
+        [
+          1266,
+          1266
+        ]
+      ],
+      "label": "correct",
+      "name": "onCancelling",
+      "note": "Moved above invoke in ChildCompletion and the explicit : Boolean type dropped (inferred, same meaning)."
+    },
+    {
+      "id": 4,
+      "project": "kotlinx-coroutines",
+      "commit": "2f2110215c",
+      "file": "kotlinx-coroutines-core/common/src/JobSupport.kt",
+      "kind": "movedWithEdit",
+      "old": [
+        [
+          1386,
+          1386
+        ]
+      ],
+      "new": [
+        [
+          1381,
+          1381
+        ]
+      ],
+      "label": "correct",
+      "name": "onCancelling",
+      "note": "Moved above invoke in SelectOnAwaitCompletionHandler and the explicit : Boolean type dropped."
+    },
+    {
+      "id": 5,
+      "project": "kotlinx-coroutines",
+      "commit": "2f2110215c",
+      "file": "kotlinx-coroutines-core/common/src/JobSupport.kt",
+      "kind": "moved",
+      "old": [
+        [
+          1492,
+          1497
+        ]
+      ],
+      "new": [
+        [
+          1466,
+          1471
+        ]
+      ],
+      "label": "correct",
+      "name": "onCancelling",
+      "note": "abstract val onCancelling with its KDoc moved up within JobNode, unchanged."
+    },
+    {
+      "id": 6,
+      "project": "kotlinx-coroutines",
+      "commit": "2f2110215c",
+      "file": "kotlinx-coroutines-core/common/src/JobSupport.kt",
+      "kind": "moved",
+      "old": [
+        [
+          1558,
+          1558
+        ]
+      ],
+      "new": [
+        [
+          1547,
+          1547
+        ]
+      ],
+      "label": "correct",
+      "name": "onCancelling",
+      "note": "onCancelling moved from after invoke to before it in ResumeAwaitOnCompletion, unchanged."
+    },
+    {
+      "id": 7,
+      "project": "kotlinx-coroutines",
+      "commit": "2f2110215c",
+      "file": "kotlinx-coroutines-core/common/src/JobSupport.kt",
+      "kind": "moved",
+      "old": [
+        [
+          1571,
+          1571
+        ]
+      ],
+      "new": [
+        [
+          1569,
+          1569
+        ]
+      ],
+      "label": "correct",
+      "name": "onCancelling",
+      "note": "onCancelling moved above invoke in InvokeOnCancelling, unchanged."
+    },
+    {
+      "id": 8,
+      "project": "kotlinx-coroutines",
+      "commit": "2f2110215c",
+      "file": "kotlinx-coroutines-core/common/src/JobSupport.kt",
+      "kind": "moved",
+      "old": [
+        [
+          1532,
+          1532
+        ]
+      ],
+      "new": [
+        [
+          1534,
+          1534
+        ]
+      ],
+      "label": "correct",
+      "name": "invoke",
+      "note": "invoke and onCancelling swapped in InvokeOnCompletion; either line may be reported as the moved one."
+    },
+    {
+      "id": 9,
+      "project": "kotlinx-coroutines",
+      "commit": "7353c11050",
+      "file": "kotlinx-coroutines-core/common/src/JobSupport.kt",
+      "kind": "reformatted",
+      "old": [
+        [
+          580,
+          580
+        ]
+      ],
+      "new": [
+        [
+          580,
+          580
+        ]
+      ],
+      "label": "wrong",
+      "expect": "edited",
+      "name": "onCancelling",
+      "note": "= false became get() = false: the property loses its backing field (the point of the memory fix); not a layout change."
+    },
+    {
+      "id": 10,
+      "project": "kotlinx-coroutines",
+      "commit": "7353c11050",
+      "file": "kotlinx-coroutines-core/common/src/JobSupport.kt",
+      "kind": "reformatted",
+      "old": [
+        [
+          1413,
+          1413
+        ]
+      ],
+      "new": [
+        [
+          1413,
+          1413
+        ]
+      ],
+      "label": "wrong",
+      "expect": "edited",
+      "name": "onCancelling",
+      "note": "Initializer replaced by a getter; different tokens and different storage."
+    },
+    {
+      "id": 11,
+      "project": "kotlinx-coroutines",
+      "commit": "1c840d698c",
+      "file": "kotlinx-coroutines-core/wasmWasi/src/EventLoop.kt",
+      "kind": "moved",
+      "old": [
+        [
+          50,
+          52
+        ]
+      ],
+      "new": [
+        [
+          44,
+          46
+        ]
+      ],
+      "label": "borderline",
+      "name": "init",
+      "note": "The if block moved unchanged from the enqueue override into a new init block: same text, but it now runs once at object creation instead of on every enqueue."
+    },
+    {
+      "id": 12,
+      "project": "okhttp",
+      "commit": "6846f1f679",
+      "file": "okhttp-dnsoverhttps/src/main/kotlin/okhttp3/dnsoverhttps/DnsOverHttps.kt",
+      "kind": "renamed",
+      "old": [
+        [
+          233,
+          233
+        ]
+      ],
+      "new": [
+        [
+          233,
+          233
+        ]
+      ],
+      "label": "correct",
+      "name": "includeServiceMetadata",
+      "note": "Only includeHttps -> includeServiceMetadata changes on this line."
+    },
+    {
+      "id": 13,
+      "project": "okhttp",
+      "commit": "6846f1f679",
+      "file": "okhttp-dnsoverhttps/src/main/kotlin/okhttp3/dnsoverhttps/DnsOverHttps.kt",
+      "kind": "renamed",
+      "old": [
+        [
+          261,
+          261
+        ]
+      ],
+      "new": [
+        [
+          261,
+          261
+        ]
+      ],
+      "label": "correct",
+      "name": "includeServiceMetadata",
+      "note": "Constructor argument renamed, nothing else."
+    },
+    {
+      "id": 14,
+      "project": "okhttp",
+      "commit": "6846f1f679",
+      "file": "okhttp-dnsoverhttps/src/main/kotlin/okhttp3/dnsoverhttps/DnsOverHttps.kt",
+      "kind": "renamed",
+      "old": [
+        [
+          284,
+          287
+        ]
+      ],
+      "new": [
+        [
+          282,
+          285
+        ]
+      ],
+      "label": "correct",
+      "name": "includeServiceMetadata",
+      "note": "Builder method, its parameter and the assignment renamed consistently; body otherwise identical."
+    },
+    {
+      "id": 15,
+      "project": "okhttp",
+      "commit": "6846f1f679",
+      "file": "okhttp-dnsoverhttps/src/main/kotlin/okhttp3/dnsoverhttps/DnsOverHttps.kt",
+      "kind": "renamed",
+      "old": [
+        [
+          248,
+          248
+        ]
+      ],
+      "new": [
+        [
+          248,
+          248
+        ]
+      ],
+      "label": "wrong",
+      "expect": "edited",
+      "name": "includeServiceMetadata",
+      "note": "The rename hides a changed default: includeHttps = false became includeServiceMetadata = true."
+    },
+    {
+      "id": 16,
+      "project": "okhttp",
+      "commit": "6846f1f679",
+      "file": "okhttp-dnsoverhttps/src/main/kotlin/okhttp3/dnsoverhttps/DnsOverHttps.kt",
+      "kind": "renamed",
+      "old": [
+        [
+          56,
+          56
+        ]
+      ],
+      "new": [
+        [
+          56,
+          56
+        ]
+      ],
+      "label": "borderline",
+      "name": "includeServiceMetadata",
+      "note": "Property renamed, but the @get:JvmName string also changes, which changes the Java-visible getter name; a rename of the name in a string literal is defensible either way."
+    },
+    {
+      "id": 17,
+      "project": "okhttp",
+      "commit": "8bf87e8d2f",
+      "file": "okhttp-dnsoverhttps/src/main/kotlin/okhttp3/dnsoverhttps/DnsOverHttps.kt",
+      "kind": "renamed",
+      "old": [
+        [
+          177,
+          177
+        ]
+      ],
+      "new": [
+        [
+          175,
+          175
+        ]
+      ],
+      "label": "wrong",
+      "expect": "edited",
+      "name": "decodeResponse",
+      "note": "readResponse -> decodeResponse also changes private to internal and the return type List<InetAddress> to List<ResourceRecord>."
+    },
+    {
+      "id": 18,
+      "project": "okhttp",
+      "commit": "8bf87e8d2f",
+      "file": "okhttp-dnsoverhttps/src/main/kotlin/okhttp3/dnsoverhttps/DnsOverHttps.kt",
+      "kind": "renamed",
+      "old": [
+        [
+          217,
+          220
+        ]
+      ],
+      "new": [
+        [
+          205,
+          208
+        ]
+      ],
+      "label": "wrong",
+      "expect": "edited",
+      "name": "createCall",
+      "note": "buildRequest -> createCall also changes private to internal, the return type Request to Call, and the body now wraps client.newCall."
+    },
+    {
+      "id": 19,
+      "project": "okhttp",
+      "commit": "d2e91f7cb4",
+      "file": "okhttp/src/main/kotlin/okhttp3/Cache.kt",
+      "kind": "moved",
+      "old": [
+        [
+          158,
+          158
+        ]
+      ],
+      "new": [
+        [
+          156,
+          156
+        ]
+      ],
+      "label": "wrong",
+      "expect": "edited",
+      "name": "fileSystem",
+      "note": "fileSystem moved from last to first parameter of the public constructor: positional calls change meaning (the commit also updates its callers)."
+    },
+    {
+      "id": 20,
+      "project": "okhttp",
+      "commit": "d2e91f7cb4",
+      "file": "okhttp/src/main/kotlin/okhttp3/Cache.kt",
+      "kind": "movedWithEdit",
+      "old": [
+        [
+          186,
+          191
+        ]
+      ],
+      "new": [
+        [
+          166,
+          171
+        ]
+      ],
+      "label": "correct",
+      "name": "constructor",
+      "note": "The File constructor moved up next to the other constructor; its delegation arguments were reordered to the new parameter order, same values."
+    },
+    {
+      "id": 21,
+      "project": "okhttp",
+      "commit": "23dbc1e643",
+      "file": "okhttp/src/main/kotlin/okhttp3/OkHttpClient.kt",
+      "kind": "renamed",
+      "old": [
+        [
+          583,
+          583
+        ]
+      ],
+      "new": [
+        [
+          583,
+          583
+        ]
+      ],
+      "label": "correct",
+      "name": "webSocketCloseTimeout",
+      "note": "Builder field closeTimeout renamed; initializer unchanged."
+    },
+    {
+      "id": 22,
+      "project": "okhttp",
+      "commit": "23dbc1e643",
+      "file": "okhttp/src/main/kotlin/okhttp3/OkHttpClient.kt",
+      "kind": "renamed",
+      "old": [
+        [
+          1298,
+          1298
+        ],
+        [
+          1315,
+          1315
+        ],
+        [
+          1317,
+          1317
+        ],
+        [
+          1328,
+          1328
+        ],
+        [
+          1330,
+          1330
+        ]
+      ],
+      "new": [
+        [
+          1298,
+          1298
+        ],
+        [
+          1315,
+          1315
+        ],
+        [
+          1317,
+          1317
+        ],
+        [
+          1328,
+          1328
+        ],
+        [
+          1330,
+          1330
+        ]
+      ],
+      "label": "correct",
+      "name": "webSocketCloseTimeout",
+      "note": "The three closeTimeout builder overloads and their field assignments renamed; nothing else on these lines."
+    },
+    {
+      "id": 23,
+      "project": "okhttp",
+      "commit": "23dbc1e643",
+      "file": "okhttp/src/main/kotlin/okhttp3/OkHttpClient.kt",
+      "kind": "renamed",
+      "old": [
+        [
+          1302,
+          1302
+        ]
+      ],
+      "new": [
+        [
+          1302,
+          1302
+        ]
+      ],
+      "label": "wrong",
+      "expect": "edited",
+      "name": "webSocketCloseTimeout",
+      "note": "Besides the rename, the checkDuration name argument changed from \"timeout\" to \"webSocketCloseTimeout\", which changes the exception message."
+    },
+    {
+      "id": 24,
+      "project": "okhttp",
+      "commit": "23dbc1e643",
+      "file": "okhttp/src/main/kotlin/okhttp3/OkHttpClient.kt",
+      "kind": "renamed",
+      "old": [
+        [
+          259,
+          260
+        ],
+        [
+          618,
+          618
+        ]
+      ],
+      "new": [
+        [
+          259,
+          260
+        ],
+        [
+          618,
+          618
+        ]
+      ],
+      "label": "borderline",
+      "name": "webSocketCloseTimeout",
+      "note": "Two different names (closeTimeoutMillis and closeTimeout) both become webSocketCloseTimeout on these lines, and the JvmName string changes; each rename is consistent, but it is not one name replaced by another."
+    },
+    {
+      "id": 25,
+      "project": "okhttp",
+      "commit": "a228fd64cc",
+      "file": "okhttp-brotli/src/main/kotlin/okhttp3/brotli/BrotliInterceptor.kt",
+      "kind": "reformatted",
+      "old": [
+        [
+          31,
+          33
+        ]
+      ],
+      "new": [
+        [
+          31,
+          34
+        ]
+      ],
+      "label": "correct",
+      "name": "intercept",
+      "note": "Spotless re-wrap of the builder chain after =; tokens identical."
+    },
+    {
+      "id": 26,
+      "project": "okhttp",
+      "commit": "a228fd64cc",
+      "file": "okhttp-brotli/src/main/kotlin/okhttp3/brotli/internal/Uncompress.kt",
+      "kind": "reformatted",
+      "old": [
+        [
+          33,
+          39
+        ]
+      ],
+      "new": [
+        [
+          33,
+          40
+        ]
+      ],
+      "label": "correct",
+      "name": "uncompress",
+      "note": "when expression moved to its own line after = and re-indented; tokens identical."
+    },
+    {
+      "id": 27,
+      "project": "okhttp",
+      "commit": "a228fd64cc",
+      "file": "mockwebserver/src/main/kotlin/mockwebserver3/QueueDispatcher.kt",
+      "kind": "reformatted",
+      "old": [
+        [
+          71,
+          75
+        ]
+      ],
+      "new": [
+        [
+          71,
+          76
+        ]
+      ],
+      "label": "correct",
+      "name": "setFailFast",
+      "note": "if expression moved to its own line after = and re-indented; tokens identical."
+    },
+    {
+      "id": 28,
+      "project": "okhttp",
+      "commit": "a228fd64cc",
+      "file": "okhttp-tls/src/main/kotlin/okhttp3/tls/Certificates.kt",
+      "kind": "reformatted",
+      "old": [
+        [
+          48,
+          50
+        ]
+      ],
+      "new": [
+        [
+          48,
+          52
+        ]
+      ],
+      "label": "correct",
+      "name": "decodeCertificatePem",
+      "note": "Line breaks, indentation and a trailing comma in the argument list only."
+    },
+    {
+      "id": 29,
+      "project": "okhttp",
+      "commit": "a228fd64cc",
+      "file": "okhttp-sse/src/main/kotlin/okhttp3/sse/EventSources.kt",
+      "kind": "reformatted",
+      "old": [
+        [
+          48,
+          48
+        ]
+      ],
+      "new": [
+        [
+          48,
+          51
+        ]
+      ],
+      "label": "correct",
+      "name": "processResponse",
+      "note": "Parameter list split one per line with a trailing comma; tokens otherwise identical."
+    },
+    {
+      "id": 30,
+      "project": "okhttp",
+      "commit": "a228fd64cc",
+      "file": "okhttp-tls/src/main/kotlin/okhttp3/tls/internal/der/DerHeader.kt",
+      "kind": "reformatted",
+      "old": [
+        [
+          34,
+          53
+        ]
+      ],
+      "new": [
+        [
+          34,
+          50
+        ]
+      ],
+      "label": "correct",
+      "name": "DerHeader",
+      "note": "Blank lines between constructor parameters removed and a trailing comma added; nothing else."
+    },
+    {
+      "id": 31,
+      "project": "okhttp",
+      "commit": "e44fc31bb7",
+      "file": "okhttp/src/commonJvmAndroid/kotlin/okhttp3/internal/connection/RealConnection.kt",
+      "kind": "reformatted",
+      "old": [
+        [
+          327,
+          328
+        ]
+      ],
+      "new": [
+        [
+          327,
+          330
+        ]
+      ],
+      "label": "correct",
+      "name": "isHealthy",
+      "note": "The || chain is split one operand per line; same tokens."
+    },
+    {
+      "id": 32,
+      "project": "okhttp",
+      "commit": "53308654cf",
+      "file": "okhttp/src/jvmMain/kotlin/okhttp3/ConnectionPool.kt",
+      "kind": "moved",
+      "old": [
+        [
+          51,
+          51
+        ]
+      ],
+      "new": [
+        [
+          55,
+          55
+        ]
+      ],
+      "label": "wrong",
+      "expect": "edited",
+      "name": "connectionListener",
+      "note": "Constructor parameter moved from first to last: positional calls ConnectionPool(a, b, c) now bind differently, so the move changes meaning."
+    },
+    {
+      "id": 33,
+      "project": "okhttp",
+      "commit": "53308654cf",
+      "file": "okhttp/src/jvmMain/kotlin/okhttp3/ConnectionPool.kt",
+      "kind": "reordered",
+      "old": [
+        [
+          51,
+          54
+        ]
+      ],
+      "new": [
+        [
+          52,
+          55
+        ]
+      ],
+      "label": "wrong",
+      "expect": "edited",
+      "name": "constructor",
+      "note": "Reordered constructor parameters change positional binding; never a harmless reorder."
+    },
+    {
+      "id": 34,
+      "project": "ktor",
+      "commit": "17839c5cc6",
+      "file": "ktor-http/common/src/io/ktor/http/RangesSpecifier.kt",
+      "kind": "reformatted",
+      "old": [
+        [
+          24,
+          30
+        ]
+      ],
+      "new": [
+        [
+          24,
+          31
+        ]
+      ],
+      "label": "correct",
+      "name": "isValid",
+      "note": "Line break after && and re-indent of the lambda; tokens identical."
+    },
+    {
+      "id": 35,
+      "project": "ktor",
+      "commit": "17839c5cc6",
+      "file": "ktor-network/jvmAndPosix/src/io/ktor/network/selector/SelectorManagerCommon.kt",
+      "kind": "reformatted",
+      "old": [
+        [
+          46,
+          46
+        ]
+      ],
+      "new": [
+        [
+          46,
+          49
+        ]
+      ],
+      "label": "correct",
+      "name": "SelectInterest",
+      "note": "Enum entries split one per line; same tokens and order."
+    },
+    {
+      "id": 36,
+      "project": "ktor",
+      "commit": "17839c5cc6",
+      "file": "ktor-server/ktor-server-core/common/src/io/ktor/server/util/Paths.kt",
+      "kind": "reformatted",
+      "old": [
+        [
+          44,
+          44
+        ]
+      ],
+      "new": [
+        [
+          44,
+          46
+        ]
+      ],
+      "label": "correct",
+      "name": "processAndReplaceComponent",
+      "note": "|| operands split one per line."
+    },
+    {
+      "id": 37,
+      "project": "ktor",
+      "commit": "17839c5cc6",
+      "file": "ktor-server/ktor-server-plugins/ktor-server-sessions/common/src/io/ktor/server/sessions/SessionsBuilder.kt",
+      "kind": "reformatted",
+      "old": [
+        [
+          328,
+          328
+        ]
+      ],
+      "new": [
+        [
+          328,
+          330
+        ]
+      ],
+      "label": "correct",
+      "name": "serializer",
+      "note": "One-line setter body set(value) { _serializer = value } reflowed to three lines."
+    },
+    {
+      "id": 38,
+      "project": "ktor",
+      "commit": "17839c5cc6",
+      "file": "ktor-server/ktor-server-plugins/ktor-server-cors/common/src/io/ktor/server/plugins/cors/CORSUtils.kt",
+      "kind": "reformatted",
+      "old": [
+        [
+          54,
+          56
+        ]
+      ],
+      "new": [
+        [
+          54,
+          58
+        ]
+      ],
+      "label": "correct",
+      "name": "corsCheckOrigins",
+      "note": "|| chain re-wrapped and the any { } lambda joined onto one line; same tokens."
+    },
+    {
+      "id": 39,
+      "project": "ktor",
+      "commit": "17839c5cc6",
+      "file": "ktor-server/ktor-server-plugins/ktor-server-cors/common/src/io/ktor/server/plugins/cors/CORSUtils.kt",
+      "kind": "reformatted",
+      "old": [
+        [
+          89,
+          91
+        ]
+      ],
+      "new": [
+        [
+          91,
+          93
+        ]
+      ],
+      "label": "correct",
+      "name": "isValidOrigin",
+      "note": "&& chain re-wrapped and the all { } lambda joined onto one line; same tokens."
+    },
+    {
+      "id": 40,
+      "project": "ktor",
+      "commit": "a3ea489759",
+      "file": "ktor-shared/ktor-serialization/ktor-serialization-jackson/jvm/src/JacksonConverter.kt",
+      "kind": "renamed",
+      "old": [
+        [
+          44,
+          44
+        ]
+      ],
+      "new": [
+        [
+          55,
+          55
+        ]
+      ],
+      "label": "correct",
+      "name": "streamBody",
+      "note": "Only streamRequestBody -> streamBody."
+    },
+    {
+      "id": 41,
+      "project": "ktor",
+      "commit": "a3ea489759",
+      "file": "ktor-shared/ktor-serialization/ktor-serialization-jackson/jvm/src/JacksonConverter.kt",
+      "kind": "renamed",
+      "old": [
+        [
+          163,
+          163
+        ]
+      ],
+      "new": [
+        [
+          174,
+          174
+        ]
+      ],
+      "label": "correct",
+      "name": "streamBody",
+      "note": "Parameter of Configuration.jackson renamed, nothing else."
+    },
+    {
+      "id": 42,
+      "project": "ktor",
+      "commit": "a3ea489759",
+      "file": "ktor-shared/ktor-serialization/ktor-serialization-jackson/jvm/src/JacksonConverter.kt",
+      "kind": "renamed",
+      "old": [
+        [
+          177,
+          177
+        ]
+      ],
+      "new": [
+        [
+          188,
+          188
+        ]
+      ],
+      "label": "correct",
+      "name": "streamBody",
+      "note": "Argument renamed with its parameter."
+    },
+    {
+      "id": 43,
+      "project": "ktor",
+      "commit": "a3ea489759",
+      "file": "ktor-shared/ktor-serialization/ktor-serialization-jackson/jvm/src/JacksonConverter.kt",
+      "kind": "renamed",
+      "old": [
+        [
+          35,
+          35
+        ]
+      ],
+      "new": [
+        [
+          35,
+          35
+        ]
+      ],
+      "label": "borderline",
+      "name": "streamBody",
+      "note": "Constructor property renamed, plus a trailing comma added on the same line (formatting only)."
+    },
+    {
+      "id": 44,
+      "project": "exposed",
+      "commit": "2ae9dbb043",
+      "file": "exposed-core/src/main/kotlin/org/jetbrains/exposed/v1/core/transactions/suspend/TransactionContextElement.kt",
+      "kind": "renamed",
+      "old": [
+        [
+          59,
+          59
+        ],
+        [
+          69,
+          69
+        ]
+      ],
+      "new": [
+        [
+          59,
+          59
+        ],
+        [
+          69,
+          69
+        ]
+      ],
+      "label": "correct",
+      "name": "transactionId",
+      "note": "Every .id read becomes .transactionId; nothing else on these lines."
+    },
+    {
+      "id": 45,
+      "project": "exposed",
+      "commit": "2ae9dbb043",
+      "file": "exposed-core/src/main/kotlin/org/jetbrains/exposed/v1/core/transactions/suspend/TransactionContextElement.kt",
+      "kind": "renamed",
+      "old": [
+        [
+          52,
+          52
+        ],
+        [
+          61,
+          61
+        ],
+        [
+          71,
+          72
+        ],
+        [
+          76,
+          76
+        ]
+      ],
+      "new": [
+        [
+          52,
+          52
+        ],
+        [
+          61,
+          61
+        ],
+        [
+          71,
+          72
+        ],
+        [
+          76,
+          76
+        ]
+      ],
+      "label": "correct",
+      "name": "transactionId",
+      "note": ".id -> .transactionId inside string templates; text otherwise unchanged."
+    },
+    {
+      "id": 46,
+      "project": "exposed",
+      "commit": "0f4edd3788",
+      "file": "exposed-core/src/main/kotlin/org/jetbrains/exposed/v1/core/transactions/ThreadLocalTransactionsStack.kt",
+      "kind": "renamed",
+      "old": [
+        [
+          32,
+          32
+        ]
+      ],
+      "new": [
+        [
+          41,
+          41
+        ]
+      ],
+      "label": "wrong",
+      "expect": "edited",
+      "name": "storeTransaction",
+      "note": "pushTransaction -> storeTransaction also adds override (it now implements TransactionsHolder)."
+    },
+    {
+      "id": 47,
+      "project": "exposed",
+      "commit": "0f4edd3788",
+      "file": "exposed-core/src/main/kotlin/org/jetbrains/exposed/v1/core/transactions/ThreadLocalTransactionsStack.kt",
+      "kind": "renamed",
+      "old": [
+        [
+          45,
+          45
+        ]
+      ],
+      "new": [
+        [
+          54,
+          54
+        ]
+      ],
+      "label": "wrong",
+      "expect": "edited",
+      "name": "removeTransaction",
+      "note": "popTransaction -> removeTransaction also adds override."
+    },
+    {
+      "id": 48,
+      "project": "exposed",
+      "commit": "0f4edd3788",
+      "file": "exposed-core/src/main/kotlin/org/jetbrains/exposed/v1/core/transactions/ThreadLocalTransactionsStack.kt",
+      "kind": "renamed",
+      "old": [
+        [
+          106,
+          107
+        ]
+      ],
+      "new": [
+        [
+          113,
+          114
+        ]
+      ],
+      "label": "wrong",
+      "expect": "edited",
+      "name": "getTransactionsAsIds",
+      "note": "threadTransactions -> getTransactionsAsIds changes the return type and the body (maps to ids)."
+    },
+    {
+      "id": 49,
+      "project": "ktor",
+      "commit": "355822b9d0",
+      "file": "ktor-shared/ktor-sse/common/src/io/ktor/sse/ServerSentEvent.kt",
+      "kind": "moved",
+      "old": [
+        [
+          84,
+          84
+        ]
+      ],
+      "new": [
+        [
+          89,
+          89
+        ]
+      ],
+      "label": "wrong",
+      "expect": "edited",
+      "name": "eventToString",
+      "note": "appendField(\"data\") moved below appendField(\"event\"): the serialized field order changes, which is the point of the commit."
+    },
+    {
+      "id": 50,
+      "project": "ktor",
+      "commit": "355822b9d0",
+      "file": "ktor-shared/ktor-sse/common/src/io/ktor/sse/ServerSentEvent.kt",
+      "kind": "reordered",
+      "old": [
+        [
+          84,
+          85
+        ]
+      ],
+      "new": [
+        [
+          88,
+          89
+        ]
+      ],
+      "label": "wrong",
+      "expect": "edited",
+      "name": "eventToString",
+      "note": "Swapping two appendField calls changes the output; not a harmless reorder."
+    }
+  ]
+}

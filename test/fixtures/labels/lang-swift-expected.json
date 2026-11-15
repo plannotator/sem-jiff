@@ -1,0 +1,1177 @@
+{
+ "how": "Swift real-commit answers, written by reading each diff before any Swift engine code or run (2026-11-14). Practice: vapor, alamofire. Held out: swift-nio, swift-composable-architecture (totals only). Labels follow harness/audit/AUDIT.md; wrong items are moves whose context changed (decided rule) or claims that would hide an edit.",
+ "labels": [
+  {
+   "id": 1,
+   "project": "vapor",
+   "commit": "780152cccf",
+   "file": "Sources/Vapor/Cache/MemoryCache.swift",
+   "kind": "reformatted",
+   "old": [
+    [
+     2,
+     4
+    ]
+   ],
+   "new": [
+    [
+     2,
+     4
+    ]
+   ],
+   "label": "correct",
+   "note": "Imports inside #if canImport/#else lose their indentation only.",
+   "name": "import FoundationEssentials"
+  },
+  {
+   "id": 2,
+   "project": "vapor",
+   "commit": "780152cccf",
+   "file": "Sources/Vapor/Content/ContentConfiguration.swift",
+   "kind": "reformatted",
+   "old": [
+    [
+     52,
+     54
+    ]
+   ],
+   "new": [
+    [
+     52,
+     54
+    ]
+   ],
+   "label": "correct",
+   "note": "Statements inside #if Multipart re-indented; same tokens.",
+   "name": "default"
+  },
+  {
+   "id": 3,
+   "project": "vapor",
+   "commit": "780152cccf",
+   "file": "Sources/Vapor/Middleware/FileMiddleware.swift",
+   "kind": "reformatted",
+   "old": [
+    [
+     138,
+     161
+    ]
+   ],
+   "new": [
+    [
+     138,
+     161
+    ]
+   ],
+   "label": "correct",
+   "note": "Whole convenience init inside #if re-indented one level; same tokens.",
+   "name": "init(bundle:)"
+  },
+  {
+   "id": 4,
+   "project": "vapor",
+   "commit": "7f838018d0",
+   "file": "Sources/Vapor/Validation/Validators/Range.swift",
+   "kind": "reformatted",
+   "old": [
+    [
+     41,
+     42
+    ]
+   ],
+   "new": [
+    [
+     41,
+     41
+    ]
+   ],
+   "label": "correct",
+   "note": "Opening brace joined to the where-clause line; same tokens.",
+   "name": "range"
+  },
+  {
+   "id": 5,
+   "project": "vapor",
+   "commit": "7f838018d0",
+   "file": "Sources/Vapor/Utilities/Bytes+Hex.swift",
+   "kind": "reformatted",
+   "old": [
+    [
+     14,
+     14
+    ]
+   ],
+   "new": [
+    [
+     14,
+     14
+    ]
+   ],
+   "label": "correct",
+   "note": "Two spaces before a trailing comment instead of one.",
+   "name": "hexEncodedBytes"
+  },
+  {
+   "id": 6,
+   "project": "vapor",
+   "commit": "7f838018d0",
+   "file": "Sources/Vapor/Utilities/Bytes+Hex.swift",
+   "kind": "reformatted",
+   "old": [
+    [
+     37,
+     39
+    ]
+   ],
+   "new": [
+    [
+     37,
+     39
+    ]
+   ],
+   "label": "borderline",
+   "note": "Trailing comma added (format) but fileprivate became private: same access at file scope, still a token change.",
+   "name": "radix16table_uppercase"
+  },
+  {
+   "id": 7,
+   "project": "vapor",
+   "commit": "7f838018d0",
+   "file": "Sources/Vapor/Utilities/Bytes+Hex.swift",
+   "kind": "reformatted",
+   "old": [
+    [
+     41,
+     43
+    ]
+   ],
+   "new": [
+    [
+     41,
+     43
+    ]
+   ],
+   "label": "borderline",
+   "note": "Trailing comma added (format) but fileprivate became private: same access at file scope, still a token change.",
+   "name": "radix16table_lowercase"
+  },
+  {
+   "id": 8,
+   "project": "vapor",
+   "commit": "7f838018d0",
+   "file": "Sources/Vapor/Utilities/OptionalType.swift",
+   "kind": "reformatted",
+   "old": [
+    [
+     34,
+     34
+    ]
+   ],
+   "new": [
+    [
+     34,
+     34
+    ]
+   ],
+   "label": "borderline",
+   "note": "Return type Optional<Wrapped> written as Wrapped?: same type, different tokens.",
+   "name": "makeOptionalType"
+  },
+  {
+   "id": 9,
+   "project": "vapor",
+   "commit": "7f838018d0",
+   "file": "Sources/Vapor/Validation/RangeResult.swift",
+   "kind": "reformatted",
+   "old": [
+    [
+     27,
+     35
+    ]
+   ],
+   "new": [
+    [
+     27,
+     35
+    ]
+   ],
+   "label": "borderline",
+   "note": "case let .x(a) rewritten as case .x(let a): same pattern meaning, different tokens.",
+   "name": "description"
+  },
+  {
+   "id": 10,
+   "project": "vapor",
+   "commit": "7f838018d0",
+   "file": "Sources/Vapor/Validation/RangeResult.swift",
+   "kind": "reformatted",
+   "old": [
+    [
+     46,
+     54
+    ]
+   ],
+   "new": [
+    [
+     46,
+     54
+    ]
+   ],
+   "label": "borderline",
+   "note": "case let (...) rewritten with let moved inside the tuple pattern: same meaning, different tokens.",
+   "name": "init(min:max:value:)"
+  },
+  {
+   "id": 11,
+   "project": "vapor",
+   "commit": "c28a8887a3",
+   "file": "Sources/Vapor/Content/ContentConfig.swift",
+   "kind": "moved",
+   "old": [
+    [
+     141,
+     171
+    ]
+   ],
+   "new": [
+    [
+     26,
+     56
+    ]
+   ],
+   "label": "correct",
+   "note": "default() moved unchanged from a plain extension ContentConfig into the struct body (a new doc comment is added above it).",
+   "name": "default"
+  },
+  {
+   "id": 12,
+   "project": "vapor",
+   "commit": "39fb810441",
+   "file": "Sources/Vapor/Routing/RoutingGroups.swift",
+   "kind": "moved",
+   "old": [
+    [
+     34,
+     77
+    ]
+   ],
+   "new": [
+    [
+     164,
+     207
+    ]
+   ],
+   "label": "correct",
+   "note": "fileprivate class RouteGroup with its doc comment moved unchanged to the end of the file.",
+   "name": "RouteGroup"
+  },
+  {
+   "id": 13,
+   "project": "vapor",
+   "commit": "72a0428856",
+   "file": "Sources/Vapor/Routing/RoutingGroups.swift",
+   "kind": "movedWithEdit",
+   "old": [
+    [
+     49,
+     77
+    ]
+   ],
+   "new": [
+    [
+     4,
+     32
+    ]
+   ],
+   "label": "correct",
+   "note": "extension Router moved to the top; RouteGroup became Router in four signatures.",
+   "name": "Router"
+  },
+  {
+   "id": 14,
+   "project": "vapor",
+   "commit": "16a0e450eb",
+   "file": "Sources/Vapor/Middleware/ErrorMiddleware.swift",
+   "kind": "moved",
+   "old": [
+    [
+     92,
+     99
+    ]
+   ],
+   "new": [
+    [
+     3,
+     10
+    ]
+   ],
+   "label": "wrong",
+   "note": "Top-level struct ErrorResponse moved inside class ErrorMiddleware: its name becomes ErrorMiddleware.ErrorResponse, so meaning changes.",
+   "name": "ErrorResponse",
+   "expect": "edited"
+  },
+  {
+   "id": 15,
+   "project": "vapor",
+   "commit": "096fba1c8f",
+   "file": "Sources/Vapor/Middleware/ErrorMiddleware.swift",
+   "kind": "movedWithEdit",
+   "old": [
+    [
+     15,
+     22
+    ]
+   ],
+   "new": [
+    [
+     92,
+     99
+    ]
+   ],
+   "label": "borderline",
+   "note": "Local struct inside default() moved to file scope and made public + Decodable: same body, but scope and API change.",
+   "name": "ErrorResponse"
+  },
+  {
+   "id": 16,
+   "project": "alamofire",
+   "commit": "14d54951c5",
+   "file": "Source/AFResult.swift",
+   "kind": "moved",
+   "old": [
+    [
+     113,
+     124
+    ]
+   ],
+   "new": [
+    [
+     44,
+     55
+    ]
+   ],
+   "label": "correct",
+   "note": "init with its doc comment moved unchanged from one extension AFResult into another extension AFResult.",
+   "name": "init(value:error:)"
+  },
+  {
+   "id": 17,
+   "project": "alamofire",
+   "commit": "579d6f4188",
+   "file": "Source/AFResult.swift",
+   "kind": "moved",
+   "old": [
+    [
+     42,
+     53
+    ]
+   ],
+   "new": [
+    [
+     113,
+     124
+    ]
+   ],
+   "label": "correct",
+   "note": "init with its doc comment moved unchanged into a new plain extension AFResult at the end of the file.",
+   "name": "init(value:error:)"
+  },
+  {
+   "id": 18,
+   "project": "alamofire",
+   "commit": "34b43bd7e8",
+   "file": "Source/ServerTrustEvaluation.swift",
+   "kind": "movedWithEdit",
+   "old": [
+    [
+     88,
+     104
+    ]
+   ],
+   "new": [
+    [
+     339,
+     355
+    ]
+   ],
+   "label": "correct",
+   "note": "extension Array where Element == ServerTrustEvaluating moved to the end and became public extension.",
+   "name": "Array"
+  },
+  {
+   "id": 19,
+   "project": "alamofire",
+   "commit": "34b43bd7e8",
+   "file": "Source/ServerTrustEvaluation.swift",
+   "kind": "moved",
+   "old": [
+    [
+     92,
+     102
+    ]
+   ],
+   "new": [
+    [
+     343,
+     353
+    ]
+   ],
+   "label": "wrong",
+   "note": "evaluate(_:forHost:) text is unchanged but the enclosing extension became public, so the method is now public API.",
+   "name": "evaluate",
+   "expect": "movedWithEdit"
+  },
+  {
+   "id": 20,
+   "project": "alamofire",
+   "commit": "e03912e76e",
+   "file": "Source/AFError.swift",
+   "kind": "moved",
+   "old": [
+    [
+     30,
+     36
+    ]
+   ],
+   "new": [
+    [
+     60,
+     66
+    ]
+   ],
+   "label": "correct",
+   "note": "Nested enum moved unchanged within enum AFError.",
+   "name": "ParameterEncodingFailureReason"
+  },
+  {
+   "id": 21,
+   "project": "alamofire",
+   "commit": "e03912e76e",
+   "file": "Source/AFError.swift",
+   "kind": "moved",
+   "old": [
+    [
+     38,
+     51
+    ]
+   ],
+   "new": [
+    [
+     68,
+     81
+    ]
+   ],
+   "label": "correct",
+   "note": "Nested enum moved unchanged within enum AFError.",
+   "name": "ParameterEncoderFailureReason"
+  },
+  {
+   "id": 22,
+   "project": "alamofire",
+   "commit": "e03912e76e",
+   "file": "Source/AFError.swift",
+   "kind": "moved",
+   "old": [
+    [
+     161,
+     164
+    ]
+   ],
+   "new": [
+    [
+     186,
+     189
+    ]
+   ],
+   "label": "correct",
+   "note": "Two enum cases with their doc comments moved to the end of the case list; no raw values, so order does not matter.",
+   "name": "sessionDeinitialized"
+  },
+  {
+   "id": 23,
+   "project": "alamofire",
+   "commit": "e03912e76e",
+   "file": "Source/AFError.swift",
+   "kind": "moved",
+   "old": [
+    [
+     430,
+     436
+    ]
+   ],
+   "new": [
+    [
+     458,
+     464
+    ]
+   ],
+   "label": "correct",
+   "note": "Two switch cases moved lower in the same switch over AFError; patterns do not overlap, so order does not matter.",
+   "name": "errorDescription"
+  },
+  {
+   "id": 24,
+   "project": "alamofire",
+   "commit": "52eb559f61",
+   "file": "Source/Protected.swift",
+   "kind": "moved",
+   "old": [
+    [
+     51,
+     59
+    ]
+   ],
+   "new": [
+    [
+     33,
+     41
+    ]
+   ],
+   "label": "wrong",
+   "note": "around<T>(_:) moved unchanged from class UnfairLock into extension Lock (a new private protocol): a different type.",
+   "name": "around",
+   "expect": "edited"
+  },
+  {
+   "id": 25,
+   "project": "alamofire",
+   "commit": "52eb559f61",
+   "file": "Source/Protected.swift",
+   "kind": "movedWithEdit",
+   "old": [
+    [
+     61,
+     67
+    ]
+   ],
+   "new": [
+    [
+     43,
+     49
+    ]
+   ],
+   "label": "borderline",
+   "note": "around(_:) moved from class UnfairLock into extension Lock and lost a return: same code, different type.",
+   "name": "around"
+  },
+  {
+   "id": 26,
+   "project": "alamofire",
+   "commit": "4e1103600b",
+   "file": "Source/MultipartFormData.swift",
+   "kind": "moved",
+   "old": [
+    [
+     511,
+     523
+    ]
+   ],
+   "new": [
+    [
+     569,
+     581
+    ]
+   ],
+   "label": "wrong",
+   "note": "mimeType(forPathExtension:) moved unchanged into extension MultipartFormData inside the #else branch of #if canImport(UniformTypeIdentifiers).",
+   "name": "mimeType",
+   "expect": "edited"
+  },
+  {
+   "id": 27,
+   "project": "alamofire",
+   "commit": "9a0e640817",
+   "file": "Source/Core/Session.swift",
+   "kind": "moved",
+   "old": [
+    [
+     89,
+     94
+    ]
+   ],
+   "new": [
+    [
+     90,
+     95
+    ]
+   ],
+   "label": "wrong",
+   "note": "Three stored properties of Session now sit inside a new nested struct MutableState: members of a different type.",
+   "name": "requestTaskMap",
+   "expect": "edited"
+  },
+  {
+   "id": 28,
+   "project": "alamofire",
+   "commit": "9a0e640817",
+   "file": "Source/Core/Session.swift",
+   "kind": "reformatted",
+   "old": [
+    [
+     89,
+     94
+    ]
+   ],
+   "new": [
+    [
+     90,
+     95
+    ]
+   ],
+   "label": "wrong",
+   "note": "Looks like a re-indent, but the properties moved into the new struct MutableState.",
+   "name": "requestTaskMap",
+   "expect": "edited"
+  },
+  {
+   "id": 29,
+   "project": "alamofire",
+   "commit": "1e9f0fdda1",
+   "file": "Source/ServerTrustEvaluation.swift",
+   "kind": "renamed",
+   "old": [
+    [
+     338,
+     338
+    ]
+   ],
+   "new": [
+    [
+     344,
+     344
+    ]
+   ],
+   "label": "correct",
+   "note": "class DisabledEvaluator renamed DisabledTrustEvaluator; body unchanged (a deprecated typealias with the old name is added above).",
+   "name": "DisabledTrustEvaluator"
+  },
+  {
+   "id": 30,
+   "project": "alamofire",
+   "commit": "81a29729e7",
+   "file": "Source/Validation.swift",
+   "kind": "reformatted",
+   "old": [
+    [
+     188,
+     188
+    ]
+   ],
+   "new": [
+    [
+     188,
+     188
+    ]
+   ],
+   "label": "borderline",
+   "note": "Explicit self. dropped inside an [unowned self] closure: same member, but a token change.",
+   "name": "validate"
+  },
+  {
+   "id": 31,
+   "project": "alamofire",
+   "commit": "5c34603e05",
+   "file": "Source/Validation.swift",
+   "kind": "reformatted",
+   "old": [
+    [
+     86,
+     86
+    ]
+   ],
+   "new": [
+    [
+     86,
+     86
+    ]
+   ],
+   "label": "borderline",
+   "note": ".success(Void()) written as .success(()): the same value, different tokens.",
+   "name": "validate"
+  },
+  {
+   "id": 32,
+   "project": "vapor",
+   "commit": "3f23bacb4a",
+   "file": "Sources/Vapor/Utilities/Bytes+Hex.swift",
+   "kind": "renamed",
+   "old": [
+    [
+     37,
+     37
+    ]
+   ],
+   "new": [
+    [
+     37,
+     37
+    ]
+   ],
+   "label": "correct",
+   "note": "radix16table_uppercase renamed radix16TableUppercase; its uses on lines 11 and 24 change the same way.",
+   "name": "radix16TableUppercase"
+  },
+  {
+   "id": 33,
+   "project": "vapor",
+   "commit": "3f23bacb4a",
+   "file": "Sources/Vapor/Utilities/Bytes+Hex.swift",
+   "kind": "renamed",
+   "old": [
+    [
+     41,
+     41
+    ]
+   ],
+   "new": [
+    [
+     41,
+     41
+    ]
+   ],
+   "label": "correct",
+   "note": "radix16table_lowercase renamed radix16TableLowercase; its uses on lines 11 and 24 change the same way.",
+   "name": "radix16TableLowercase"
+  },
+  {
+   "id": 34,
+   "project": "vapor",
+   "commit": "3f23bacb4a",
+   "file": "Sources/Vapor/Content/ContainerGetPathExecutor.swift",
+   "kind": "renamed",
+   "old": [
+    [
+     18,
+     18
+    ],
+    [
+     61,
+     61
+    ]
+   ],
+   "new": [
+    [
+     18,
+     18
+    ],
+    [
+     61,
+     61
+    ]
+   ],
+   "label": "correct",
+   "note": "fileprivate method and its one call renamed consistently; nothing else changed.",
+   "name": "_unsafeInplaceSuperDecoder"
+  },
+  {
+   "id": 35,
+   "project": "vapor",
+   "commit": "4813c31be4",
+   "file": "Sources/Vapor/Client/ClientRequest.swift",
+   "kind": "renamed",
+   "old": [
+    [
+     16,
+     16
+    ],
+    [
+     25,
+     25
+    ]
+   ],
+   "new": [
+    [
+     16,
+     16
+    ],
+    [
+     25,
+     25
+    ]
+   ],
+   "label": "wrong",
+   "note": "TimeAmount replaced by Duration: a property and parameter type change, not a rename.",
+   "name": "timeout",
+   "expect": "edited"
+  },
+  {
+   "id": 36,
+   "project": "swift-composable-architecture",
+   "commit": "d9f965e38a",
+   "file": "Sources/ComposableArchitecture/Store.swift",
+   "kind": "reformatted",
+   "old": [
+    [
+     307,
+     307
+    ]
+   ],
+   "new": [
+    [
+     307,
+     307
+    ]
+   ],
+   "label": "correct",
+   "note": "A space added after a comma inside an @available attribute.",
+   "name": "scope"
+  },
+  {
+   "id": 37,
+   "project": "swift-composable-architecture",
+   "commit": "1eaa6fa2ee",
+   "file": "Sources/ComposableArchitectureMacros/ReducerMacro.swift",
+   "kind": "reformatted",
+   "old": [
+    [
+     445,
+     445
+    ]
+   ],
+   "new": [
+    [
+     445,
+     446
+    ]
+   ],
+   "label": "correct",
+   "note": "Enum case parameter list wrapped onto a second line.",
+   "name": "element"
+  },
+  {
+   "id": 38,
+   "project": "swift-composable-architecture",
+   "commit": "1eaa6fa2ee",
+   "file": "Sources/ComposableArchitectureMacros/ReducerMacro.swift",
+   "kind": "reformatted",
+   "old": [
+    [
+     632,
+     632
+    ]
+   ],
+   "new": [
+    [
+     633,
+     634
+    ]
+   ],
+   "label": "correct",
+   "note": "Line break after return before a long string literal; the literal itself is unchanged.",
+   "name": "storeCase"
+  },
+  {
+   "id": 39,
+   "project": "swift-composable-architecture",
+   "commit": "1eaa6fa2ee",
+   "file": "Sources/ComposableArchitectureMacros/ReducerMacro.swift",
+   "kind": "reformatted",
+   "old": [
+    [
+     730,
+     736
+    ]
+   ],
+   "new": [
+    [
+     732,
+     739
+    ]
+   ],
+   "label": "correct",
+   "note": "Trailing-closure call argument re-wrapped and re-indented; same tokens.",
+   "name": "resolvingExplicitActions"
+  },
+  {
+   "id": 40,
+   "project": "swift-composable-architecture",
+   "commit": "1eaa6fa2ee",
+   "file": "Sources/ComposableArchitecture/Observation/Store+Observation.swift",
+   "kind": "reformatted",
+   "old": [
+    [
+     268,
+     269
+    ]
+   ],
+   "new": [
+    [
+     268,
+     268
+    ]
+   ],
+   "label": "correct",
+   "note": "message: and the opening \"\"\" joined on one line; the multi-line string content is unchanged.",
+   "name": "scope"
+  },
+  {
+   "id": 41,
+   "project": "swift-composable-architecture",
+   "commit": "68a0237ea6",
+   "file": "Sources/ComposableArchitecture/Internal/Deprecations.swift",
+   "kind": "reformatted",
+   "old": [
+    [
+     18,
+     19
+    ]
+   ],
+   "new": [
+    [
+     18,
+     19
+    ]
+   ],
+   "label": "correct",
+   "note": "Attribute arguments re-indented by one space.",
+   "name": "animation"
+  },
+  {
+   "id": 42,
+   "project": "swift-composable-architecture",
+   "commit": "68a0237ea6",
+   "file": "Sources/ComposableArchitecture/Internal/Deprecations.swift",
+   "kind": "reformatted",
+   "old": [
+    [
+     21,
+     21
+    ]
+   ],
+   "new": [
+    [
+     21,
+     21
+    ]
+   ],
+   "label": "borderline",
+   "note": "Whitespace removed from a blank line inside a multi-line string literal: the string value is the same, but it is string interior.",
+   "name": "animation"
+  },
+  {
+   "id": 43,
+   "project": "swift-composable-architecture",
+   "commit": "912192b619",
+   "file": "Sources/ComposableArchitecture/Observation/IdentifiedArray+Observation.swift",
+   "kind": "reformatted",
+   "old": [
+    [
+     5,
+     136
+    ]
+   ],
+   "new": [
+    [
+     4,
+     135
+    ]
+   ],
+   "label": "borderline",
+   "note": "The #if canImport(Perception) wrapper was removed and the extension dedented: same tokens, and the condition was always true here, but the code left an #if block.",
+   "name": "Store"
+  },
+  {
+   "id": 44,
+   "project": "swift-composable-architecture",
+   "commit": "ff41e51a4e",
+   "file": "Sources/ComposableArchitecture/ViewStore.swift",
+   "kind": "reformatted",
+   "old": [
+    [
+     338,
+     487
+    ]
+   ],
+   "new": [
+    [
+     337,
+     486
+    ]
+   ],
+   "label": "correct",
+   "note": "Nested #if compiler(>=5.5) && canImport / #if compiler(>=5.5.2) merged into one equivalent #if; the kept branch is only dedented.",
+   "name": "ViewStore"
+  },
+  {
+   "id": 45,
+   "project": "swift-composable-architecture",
+   "commit": "ff41e51a4e",
+   "file": "Sources/ComposableArchitecture/ViewStore.swift",
+   "kind": "movedWithEdit",
+   "old": [
+    [
+     489,
+     607
+    ]
+   ],
+   "new": [
+    [
+     337,
+     486
+    ]
+   ],
+   "label": "wrong",
+   "note": "The #else branch (pre-5.5.2 copy) was deleted; pairing it with the kept #if branch would call a deletion a move.",
+   "name": "ViewStore",
+   "expect": "deleted"
+  },
+  {
+   "id": 46,
+   "project": "swift-nio",
+   "commit": "acca4e525c",
+   "file": "Sources/NIOPosix/MultiThreadedEventLoopGroup.swift",
+   "kind": "renamed",
+   "old": [
+    [
+     60,
+     60
+    ]
+   ],
+   "new": [
+    [
+     60,
+     60
+    ]
+   ],
+   "label": "wrong",
+   "note": "Typealias renamed but private was also removed on the same line.",
+   "name": "_ShutdownGracefullyCallback",
+   "expect": "edited"
+  },
+  {
+   "id": 47,
+   "project": "swift-nio",
+   "commit": "acca4e525c",
+   "file": "Sources/NIOPosix/MultiThreadedEventLoopGroup.swift",
+   "kind": "renamed",
+   "old": [
+    [
+     64,
+     64
+    ]
+   ],
+   "new": [
+    [
+     64,
+     64
+    ]
+   ],
+   "label": "correct",
+   "note": "Use of the renamed typealias; nothing else changed on the line.",
+   "name": "_ShutdownGracefullyCallback"
+  },
+  {
+   "id": 48,
+   "project": "swift-nio",
+   "commit": "70dfce82b0",
+   "file": "Sources/NIOPosix/NIOThreadPool.swift",
+   "kind": "renamed",
+   "old": [
+    [
+     98,
+     98
+    ]
+   ],
+   "new": [
+    [
+     105,
+     106
+    ]
+   ],
+   "label": "wrong",
+   "note": "state renamed _state but private became internal and @usableFromInline was added.",
+   "name": "_state",
+   "expect": "edited"
+  },
+  {
+   "id": 49,
+   "project": "swift-nio",
+   "commit": "e8e0774c1a",
+   "file": "Sources/_NIODataStructures/Heap.swift",
+   "kind": "renamed",
+   "old": [
+    [
+     33,
+     33
+    ]
+   ],
+   "new": [
+    [
+     33,
+     33
+    ]
+   ],
+   "label": "wrong",
+   "note": "storage renamed _storage but private(set) was dropped, and a new computed storage property reuses the old name.",
+   "name": "_storage",
+   "expect": "edited"
+  },
+  {
+   "id": 50,
+   "project": "swift-nio",
+   "commit": "14059d6536",
+   "file": "Sources/NIOHTTP1/HTTPTypes.swift",
+   "kind": "renamed",
+   "old": [
+    [
+     533,
+     533
+    ]
+   ],
+   "new": [
+    [
+     533,
+     533
+    ]
+   ],
+   "label": "wrong",
+   "note": "Doc comment parameter name changed and its description rewritten.",
+   "name": "write(headers:)",
+   "expect": "edited"
+  },
+  {
+   "id": 51,
+   "project": "swift-nio",
+   "commit": "14059d6536",
+   "file": "Sources/NIOFS/Internal/BufferedStream.swift",
+   "kind": "renamed",
+   "old": [
+    [
+     389,
+     389
+    ]
+   ],
+   "new": [
+    [
+     389,
+     389
+    ]
+   ],
+   "label": "borderline",
+   "note": "Only the parameter name inside a doc comment changed (sequence -> element); comments are not code names.",
+   "name": "write"
+  },
+  {
+   "id": 52,
+   "project": "swift-nio",
+   "commit": "14059d6536",
+   "file": "Sources/NIOPosix/Socket.swift",
+   "kind": "renamed",
+   "old": [
+    [
+     82,
+     82
+    ]
+   ],
+   "new": [
+    [
+     82,
+     82
+    ]
+   ],
+   "label": "borderline",
+   "note": "Only the parameter name inside a doc comment changed (descriptor -> socket); comments are not code names.",
+   "name": "init(socket:)"
+  }
+ ]
+}

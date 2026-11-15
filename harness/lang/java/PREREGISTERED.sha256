@@ -1,0 +1,6 @@
+547467739a044bbfff43cb08e9064cad39bb2fa866f0877b0de5650e6a72eeac  test/fixtures/traps/java.json
+a786431c1f8685ad781aa8ca9a0e233345d339676888b29c36cb66c3e6ece899  test/fixtures/labels/lang-java-extracts.json
+42e30bc753d3262ce39e604abd55634c96310d06c05caa65eca6e68b24782855  test/fixtures/labels/lang-java-expected.json
+e70020d6eae205c1bebc8c4938774ee52984f5bce91d4bf7cf9024abdfc71b09  harness/lang/java/manifest.json
+d8a62075b9cfc3699e7c96a8f075889354f79b3eab7fc754e8faadda1c63ff8c  harness/lang/java/texts.sha256
+answers fixed 2026-11-15T03:55:52Z, before any engine run on these cases; the engine had not been run on any of them

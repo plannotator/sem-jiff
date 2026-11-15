@@ -1,0 +1,2833 @@
+{
+ "how": "Second movedWithEdit audit, 2026-11-08: 381 fresh practice claims; every one Jev (yes/no) scored below 0.3 plus a random 60 of the rest, labelled blind (harness/audit/AUDIT.md). The two groups are not a random sample of all claims together: weight them (68 of 68 flagged, 60 of 313 others).",
+ "labels": [
+  {
+   "id": 1,
+   "project": "foldkit",
+   "commit": "64387effee",
+   "file": "packages/foldkit/src/devTools/protocol.ts",
+   "kind": "movedWithEdit",
+   "old": [
+    [
+     189,
+     192
+    ]
+   ],
+   "new": [
+    [
+     169,
+     172
+    ]
+   ],
+   "label": "correct",
+   "note": "Same schema fields, indentation only.",
+   "jev": 0.94
+  },
+  {
+   "id": 3,
+   "project": "foldkit",
+   "commit": "64387effee",
+   "file": "packages/website/src/route.ts",
+   "kind": "movedWithEdit",
+   "old": [
+    [
+     40,
+     40
+    ]
+   ],
+   "new": [
+    [
+     218,
+     218
+    ]
+   ],
+   "label": "correct",
+   "note": "PlaygroundRoute type alias moved; now derived from AppRoute.Playground.",
+   "jev": 0.8
+  },
+  {
+   "id": 6,
+   "project": "foldkit",
+   "commit": "64387effee",
+   "file": "packages/website/src/route.ts",
+   "kind": "movedWithEdit",
+   "old": [
+    [
+     228,
+     235
+    ]
+   ],
+   "new": [
+    [
+     17,
+     116
+    ]
+   ],
+   "label": "wrong",
+   "note": "AppRoute rewritten from a 6-member S.Union into a ~100-line defineRouteUnion record; only the name is shared.",
+   "jev": 0.06
+  },
+  {
+   "id": 9,
+   "project": "ghui",
+   "commit": "b16b45079d",
+   "file": "src/surfaces/WorkspaceContent.tsx",
+   "kind": "movedWithEdit",
+   "old": [
+    [
+     67,
+     68
+    ]
+   ],
+   "new": [
+    [
+     24,
+     24
+    ]
+   ],
+   "label": "correct",
+   "note": "Field moved; only the preceding section comment dropped.",
+   "jev": 0.97
+  },
+  {
+   "id": 10,
+   "project": "effect-smol",
+   "commit": "ca2498e702",
+   "file": "packages/effect/src/unstable/ai/Model.ts",
+   "kind": "movedWithEdit",
+   "old": [
+    [
+     61,
+     64
+    ]
+   ],
+   "new": [
+    [
+     70,
+     73
+    ]
+   ],
+   "label": "correct",
+   "note": "Type args moved, indentation only.",
+   "jev": 0.93
+  },
+  {
+   "id": 17,
+   "project": "foldkit-plus",
+   "commit": "89401d7338",
+   "file": "packages/remote/src/persistence.ts",
+   "kind": "movedWithEdit",
+   "old": [
+    [
+     124,
+     130
+    ]
+   ],
+   "new": [
+    [
+     282,
+     288
+    ]
+   ],
+   "label": "correct",
+   "note": "Same entry fields moved, indentation only.",
+   "jev": 0.93
+  },
+  {
+   "id": 20,
+   "project": "storybook",
+   "commit": "99ed5f58ca",
+   "file": "scripts/build/utils/generate-bundle.ts",
+   "kind": "movedWithEdit",
+   "old": [
+    [
+     328,
+     338
+    ]
+   ],
+   "new": [
+    [
+     317,
+     327
+    ]
+   ],
+   "label": "correct",
+   "note": "Runtime entry setup moved; chunkedRuntimeOutput now takes entryPoint string instead of a destructured BuildEntry.",
+   "jev": 0.87
+  },
+  {
+   "id": 23,
+   "project": "typescript",
+   "commit": "e8c1ac1603",
+   "file": "packages/typescript/src/api/sync/api.ts",
+   "kind": "movedWithEdit",
+   "old": [
+    [
+     1830,
+     1836
+    ]
+   ],
+   "new": [
+    [
+     2052,
+     2058
+    ]
+   ],
+   "label": "correct",
+   "note": "Same apiRequest block moved; projectId became owner.project.id.",
+   "jev": 0.9
+  },
+  {
+   "id": 28,
+   "project": "janitor",
+   "commit": "8fd4f804f5",
+   "file": "apps/web/src/components/rule-editor.ts",
+   "kind": "movedWithEdit",
+   "old": [
+    [
+     1811,
+     1829
+    ]
+   ],
+   "new": [
+    [
+     1367,
+     1385
+    ]
+   ],
+   "label": "correct",
+   "note": "Same confidence-slider markup moved and reindented; class strings edited.",
+   "jev": 0.81
+  },
+  {
+   "id": 32,
+   "project": "beep-effect",
+   "commit": "453364b0af",
+   "file": "packages/tooling/library/repo-utils/src/schemas/BiomeJson.ts",
+   "kind": "movedWithEdit",
+   "old": [
+    [
+     108,
+     110
+    ]
+   ],
+   "new": [
+    [
+     107,
+     109
+    ]
+   ],
+   "label": "correct",
+   "note": "Covered lines identical apart from indentation; the block really moved (any edit lies outside these lines).",
+   "jev": 0.94
+  },
+  {
+   "id": 34,
+   "project": "drizzle-orm",
+   "commit": "2263c3c67c",
+   "file": "drizzle-orm/type-tests/mysql/select.ts",
+   "kind": "movedWithEdit",
+   "old": [
+    [
+     127,
+     130
+    ]
+   ],
+   "new": [
+    [
+     914,
+     917
+    ]
+   ],
+   "label": "correct",
+   "note": "Same type test lines, indentation only.",
+   "jev": 0.89
+  },
+  {
+   "id": 36,
+   "project": "prisma",
+   "commit": "dd160d117b",
+   "file": "packages/2-sql/9-family/src/core/generator-functions.ts",
+   "kind": "movedWithEdit",
+   "old": [
+    [
+     44,
+     47
+    ]
+   ],
+   "new": [
+    [
+     287,
+     290
+    ]
+   ],
+   "label": "correct",
+   "note": "Same nanoid generator docs moved, indentation only.",
+   "jev": 0.94
+  },
+  {
+   "id": 37,
+   "project": "vite",
+   "commit": "97ad042170",
+   "file": "docs/.vitepress/theme/index.ts",
+   "kind": "movedWithEdit",
+   "old": [
+    [
+     13,
+     13
+    ]
+   ],
+   "new": [
+    [
+     9,
+     10
+    ]
+   ],
+   "label": "correct",
+   "note": "Same import with a comment added.",
+   "jev": 0.94
+  },
+  {
+   "id": 44,
+   "project": "livestore",
+   "commit": "c8d4f13a4a",
+   "file": "packages/@livestore/common/src/leader-thread/LeaderSyncProcessor.ts",
+   "kind": "movedWithEdit",
+   "old": [
+    [
+     98,
+     101
+    ]
+   ],
+   "new": [
+    [
+     77,
+     79
+    ]
+   ],
+   "label": "correct",
+   "note": "pullQueue member moved; doc comment dropped.",
+   "jev": 0.93
+  },
+  {
+   "id": 45,
+   "project": "livestore",
+   "commit": "c8d4f13a4a",
+   "file": "packages/@livestore/common/src/leader-thread/LeaderSyncProcessor.ts",
+   "kind": "movedWithEdit",
+   "old": [
+    [
+     103,
+     111
+    ]
+   ],
+   "new": [
+    [
+     74,
+     75
+    ]
+   ],
+   "label": "correct",
+   "note": "push signature moved and collapsed to one line; doc comment shortened.",
+   "jev": 0.72
+  },
+  {
+   "id": 46,
+   "project": "livestore",
+   "commit": "c8d4f13a4a",
+   "file": "packages/@livestore/common/src/sync/ClientSessionSyncProcessor.ts",
+   "kind": "movedWithEdit",
+   "old": [
+    [
+     592,
+     618
+    ]
+   ],
+   "new": [
+    [
+     32,
+     46
+    ]
+   ],
+   "label": "correct",
+   "note": "Same interface moved; three members replaced by commit (edit), rest the same.",
+   "jev": 0.24
+  },
+  {
+   "id": 49,
+   "project": "prisma",
+   "commit": "b313e84c58",
+   "file": "packages/1-framework/3-tooling/config-loader/src/load.ts",
+   "kind": "movedWithEdit",
+   "old": [
+    [
+     266,
+     277
+    ]
+   ],
+   "new": [
+    [
+     292,
+     303
+    ]
+   ],
+   "label": "correct",
+   "note": "Same block moved; layers destructuring changed and !== became === (edit).",
+   "jev": 0.65
+  },
+  {
+   "id": 51,
+   "project": "prisma",
+   "commit": "b32ec30b6d",
+   "file": "packages/3-targets/3-targets/sqlite/src/core/data-types.ts",
+   "kind": "movedWithEdit",
+   "old": [
+    [
+     88,
+     88
+    ]
+   ],
+   "new": [
+    [
+     44,
+     44
+    ]
+   ],
+   "label": "correct",
+   "note": "sqliteBlob moved; writtenAs changed to storedAs.",
+   "jev": 0.89
+  },
+  {
+   "id": 56,
+   "project": "effected",
+   "commit": "43c7aba215",
+   "file": "packages/schemastore/src/SchemastoreConfig.ts",
+   "kind": "movedWithEdit",
+   "old": [
+    [
+     180,
+     181
+    ]
+   ],
+   "new": [
+    [
+     197,
+     198
+    ]
+   ],
+   "label": "wrong",
+   "note": "Pairs the removed catalogPath field with an unrelated name field.",
+   "jev": 0.1
+  },
+  {
+   "id": 59,
+   "project": "kafka",
+   "commit": "54026bcf81",
+   "file": "group-coordinator/src/main/java/org/apache/kafka/coordinator/group/assignor/uniform2/IndexedGroup.java",
+   "kind": "movedWithEdit",
+   "old": [
+    [
+     324,
+     346
+    ]
+   ],
+   "new": [
+    [
+     184,
+     206
+    ]
+   ],
+   "label": "correct",
+   "note": "Renumbering loop moved into a nested scope; fields became locals and a few names/args changed.",
+   "jev": 0.75
+  },
+  {
+   "id": 76,
+   "project": "watchdog",
+   "commit": "673cc198da",
+   "file": "packages/core/src/proposals/suppress-and-propose.ts",
+   "kind": "movedWithEdit",
+   "old": [
+    [
+     15,
+     19
+    ]
+   ],
+   "new": [
+    [
+     11,
+     15
+    ]
+   ],
+   "label": "correct",
+   "note": "Import moved; path changed from infra to errors.",
+   "jev": 0.95
+  },
+  {
+   "id": 78,
+   "project": "opencode",
+   "commit": "9b86075195",
+   "file": "packages/process-daemon/src/service.rs",
+   "kind": "movedWithEdit",
+   "old": [
+    [
+     1527,
+     1533
+    ]
+   ],
+   "new": [
+    [
+     85,
+     107
+    ]
+   ],
+   "label": "wrong",
+   "note": "Old Linux-only ProcessInfo (pid/ppid/pgrp/name) was renamed to ProcStat; the new pub ProcessInfo is an unrelated API struct.",
+   "jev": 0.03
+  },
+  {
+   "id": 79,
+   "project": "opencode",
+   "commit": "9b86075195",
+   "file": "packages/process-daemon/src/service.rs",
+   "kind": "movedWithEdit",
+   "old": [
+    [
+     447,
+     447
+    ],
+    [
+     454,
+     454
+    ]
+   ],
+   "new": [
+    [
+     377,
+     378
+    ],
+    [
+     380,
+     380
+    ]
+   ],
+   "label": "wrong",
+   "note": "Old private registry lookup get() became handle() with the same body; the new pub get() returning ProcessInfo is a different function.",
+   "jev": 0.29
+  },
+  {
+   "id": 80,
+   "project": "herdr-ts-sdk",
+   "commit": "f45427708e",
+   "file": "src/herdr-models.ts",
+   "kind": "movedWithEdit",
+   "old": [
+    [
+     1718,
+     1724
+    ]
+   ],
+   "new": [
+    [
+     734,
+     742
+    ]
+   ],
+   "label": "wrong",
+   "note": "Pairs PaneGraphicsInfo (still present elsewhere in the new file) with the new, unrelated ServerSshAgentRegisterInput interface.",
+   "jev": 0.27
+  },
+  {
+   "id": 87,
+   "project": "language-service",
+   "commit": "7d2e6dc5cc",
+   "file": "src/core/TypeParser.ts",
+   "kind": "movedWithEdit",
+   "old": [
+    [
+     645,
+     648
+    ]
+   ],
+   "new": [
+    [
+     641,
+     644
+    ]
+   ],
+   "label": "correct",
+   "note": "Same check moved; type argument became undefined.",
+   "jev": 0.95
+  },
+  {
+   "id": 89,
+   "project": "excalidraw",
+   "commit": "5ca083436d",
+   "file": "packages/excalidraw/components/App.tsx",
+   "kind": "movedWithEdit",
+   "old": [
+    [
+     6053,
+     6061
+    ]
+   ],
+   "new": [
+    [
+     995,
+     1032
+    ]
+   ],
+   "label": "correct",
+   "note": "isToolSupported moved and rewritten (public, props param, interaction checks); same method, original UIOptions check kept.",
+   "jev": 0.18
+  },
+  {
+   "id": 101,
+   "project": "kafka",
+   "commit": "d53a249e6e",
+   "file": "group-coordinator/src/main/java/org/apache/kafka/coordinator/group/modern/TargetAssignmentBuilder.java",
+   "kind": "movedWithEdit",
+   "old": [
+    [
+     27,
+     27
+    ]
+   ],
+   "new": [
+    [
+     23,
+     23
+    ]
+   ],
+   "label": "wrong",
+   "note": "Pairs removed SubscriptionType import with unrelated new GroupSpec import.",
+   "jev": 0.16
+  },
+  {
+   "id": 103,
+   "project": "automapper",
+   "commit": "3481aee4b3",
+   "file": "src/AutoMapper/Internal/TypeDetails.cs",
+   "kind": "movedWithEdit",
+   "old": [
+    [
+     157,
+     157
+    ]
+   ],
+   "new": [
+    [
+     9,
+     9
+    ]
+   ],
+   "label": "correct",
+   "note": "Type property moved to primary-constructor form with initializer.",
+   "jev": 0.89
+  },
+  {
+   "id": 104,
+   "project": "automapper",
+   "commit": "3481aee4b3",
+   "file": "src/AutoMapper/Internal/TypeDetails.cs",
+   "kind": "movedWithEdit",
+   "old": [
+    [
+     158,
+     158
+    ]
+   ],
+   "new": [
+    [
+     10,
+     10
+    ]
+   ],
+   "label": "correct",
+   "note": "Config property moved to primary-constructor form with initializer.",
+   "jev": 0.88
+  },
+  {
+   "id": 106,
+   "project": "scrapy",
+   "commit": "f52c4efe1b",
+   "file": "scrapy/core/_http2/protocol.py",
+   "kind": "movedWithEdit",
+   "old": [
+    [
+     39,
+     39
+    ]
+   ],
+   "new": [
+    [
+     38,
+     38
+    ]
+   ],
+   "label": "correct",
+   "note": "Same import, module path utils.ssl -> utils._ssl.",
+   "jev": 0.94
+  },
+  {
+   "id": 109,
+   "project": "scrapy",
+   "commit": "f52c4efe1b",
+   "file": "scrapy/utils/log.py",
+   "kind": "movedWithEdit",
+   "old": [
+    [
+     20,
+     20
+    ]
+   ],
+   "new": [
+    [
+     19,
+     19
+    ]
+   ],
+   "label": "correct",
+   "note": "Import moved; module path changed to _versions.",
+   "jev": 0.94
+  },
+  {
+   "id": 116,
+   "project": "prisma",
+   "commit": "b419f377de",
+   "file": "packages/3-extensions/supabase/src/runtime/supabase.ts",
+   "kind": "movedWithEdit",
+   "old": [
+    [
+     464,
+     473
+    ]
+   ],
+   "new": [
+    [
+     348,
+     357
+    ]
+   ],
+   "label": "correct",
+   "note": "Same block moved; one comment sentence reworded.",
+   "jev": 0.95
+  },
+  {
+   "id": 118,
+   "project": "avalonia",
+   "commit": "fd6f6fff56",
+   "file": "src/Headless/Avalonia.Headless/HeadlessPlatformRenderInterface.cs",
+   "kind": "movedWithEdit",
+   "old": [
+    [
+     461,
+     466
+    ]
+   ],
+   "new": [
+    [
+     521,
+     526
+    ]
+   ],
+   "label": "correct",
+   "note": "Same Track method; _points became Points.",
+   "jev": 0.87
+  },
+  {
+   "id": 124,
+   "project": "typescript",
+   "commit": "4a4b24d5dc",
+   "file": "Herebyfile.mjs",
+   "kind": "movedWithEdit",
+   "old": [
+    [
+     297,
+     337
+    ]
+   ],
+   "new": [
+    [
+     815,
+     863
+    ]
+   ],
+   "label": "correct",
+   "note": "buildWatch task moved and its watch callback/paths rewritten; same task.",
+   "jev": 0.1
+  },
+  {
+   "id": 127,
+   "project": "kafka",
+   "commit": "95621a0929",
+   "file": "jmh-benchmarks/src/main/java/org/apache/kafka/jmh/assignor/TargetAssignmentBuilderBenchmark.java",
+   "kind": "movedWithEdit",
+   "old": [
+    [
+     132,
+     137
+    ]
+   ],
+   "new": [
+    [
+     219,
+     224
+    ]
+   ],
+   "label": "correct",
+   "note": "Spec builder chain moved from setup field assignment into buildGroupSpec() as a return.",
+   "jev": 0.91
+  },
+  {
+   "id": 129,
+   "project": "foldkit",
+   "commit": "bb42870388",
+   "file": "packages/foldkit/src/subscription/fromEvent.ts",
+   "kind": "movedWithEdit",
+   "old": [
+    [
+     143,
+     150
+    ],
+    [
+     158,
+     168
+    ]
+   ],
+   "new": [
+    [
+     226,
+     226
+    ]
+   ],
+   "label": "wrong",
+   "note": "24 old lines of fromEventFilterMap mapped to a single blank new line.",
+   "jev": 0.07
+  },
+  {
+   "id": 130,
+   "project": "ghui",
+   "commit": "e97bdd19b0",
+   "file": "src/ui/issues/atoms.ts",
+   "kind": "movedWithEdit",
+   "old": [
+    [
+     34,
+     34
+    ]
+   ],
+   "new": [
+    [
+     111,
+     112
+    ]
+   ],
+   "label": "correct",
+   "note": "Same helper moved, now exported with a comment added.",
+   "jev": 0.95
+  },
+  {
+   "id": 134,
+   "project": "drizzle-orm",
+   "commit": "50a8b163e6",
+   "file": "drizzle-orm/src/mysql-core/query-builders/select.types.ts",
+   "kind": "movedWithEdit",
+   "old": [
+    [
+     123,
+     131
+    ]
+   ],
+   "new": [
+    [
+     139,
+     147
+    ]
+   ],
+   "label": "correct",
+   "note": "Cross-join branch of MySqlJoinFn moved into MySqlCrossJoinFn with TJoinType fixed to 'cross'.",
+   "jev": 0.87
+  },
+  {
+   "id": 141,
+   "project": "efffrida",
+   "commit": "8b81daa971",
+   "file": "packages/gplayapi/src/internal/auth.ts",
+   "kind": "movedWithEdit",
+   "old": [
+    [
+     7,
+     9
+    ]
+   ],
+   "new": [
+    [
+     6,
+     8
+    ]
+   ],
+   "label": "correct",
+   "note": "Imports moved; module paths changed from effect/unstable/http to effect/http.",
+   "jev": 0.94
+  },
+  {
+   "id": 149,
+   "project": "jellyfin",
+   "commit": "46dd7d8e99",
+   "file": "MediaBrowser.Controller/Providers/DirectoryService.cs",
+   "kind": "movedWithEdit",
+   "old": [
+    [
+     18,
+     18
+    ]
+   ],
+   "new": [
+    [
+     14,
+     15
+    ]
+   ],
+   "label": "correct",
+   "note": "_cache field moved; type changed from DirectoryCache to ConcurrentDictionary with initializer.",
+   "jev": 0.13
+  },
+  {
+   "id": 152,
+   "project": "ghui",
+   "commit": "226f517805",
+   "file": "src/domain.ts",
+   "kind": "movedWithEdit",
+   "old": [
+    [
+     10,
+     10
+    ]
+   ],
+   "new": [
+    [
+     9,
+     9
+    ]
+   ],
+   "label": "borderline",
+   "note": "Same type name but definition replaced (schema-derived -> literal union); one line, edit fully visible.",
+   "jev": 0.19
+  },
+  {
+   "id": 153,
+   "project": "ghui",
+   "commit": "226f517805",
+   "file": "src/domain.ts",
+   "kind": "movedWithEdit",
+   "old": [
+    [
+     12,
+     12
+    ]
+   ],
+   "new": [
+    [
+     7,
+     7
+    ]
+   ],
+   "label": "borderline",
+   "note": "Same declaration name but value replaced from a filter expression to a literal tuple; one line, so the edit is fully visible.",
+   "jev": 0.19
+  },
+  {
+   "id": 156,
+   "project": "alchemy",
+   "commit": "338dc88ff2",
+   "file": "packages/neon/src/Migrations.ts",
+   "kind": "movedWithEdit",
+   "old": [
+    [
+     84,
+     93
+    ]
+   ],
+   "new": [
+    [
+     29,
+     33
+    ]
+   ],
+   "label": "correct",
+   "note": "runSql moved; implementation switched to withPgExecutor and doc shortened.",
+   "jev": 0.33
+  },
+  {
+   "id": 161,
+   "project": "excalidraw",
+   "commit": "1acf66edab",
+   "file": "packages/element/src/dragElements.ts",
+   "kind": "movedWithEdit",
+   "old": [
+    [
+     310,
+     315
+    ]
+   ],
+   "new": [
+    [
+     276,
+     281
+    ]
+   ],
+   "label": "correct",
+   "note": "Same getMinTextElementWidth call moved; const binding dropped.",
+   "jev": 0.87
+  },
+  {
+   "id": 162,
+   "project": "tokio",
+   "commit": "d893623953",
+   "file": "tokio/src/runtime/task/trace/mod.rs",
+   "kind": "movedWithEdit",
+   "old": [
+    [
+     463,
+     471
+    ]
+   ],
+   "new": [
+    [
+     311,
+     319
+    ]
+   ],
+   "label": "correct",
+   "note": "Same with_scheduler block; &waker_ref became cx.waker().",
+   "jev": 0.9
+  },
+  {
+   "id": 164,
+   "project": "typescript",
+   "commit": "192ede8dcf",
+   "file": "tsc/internal/api/callbackfs.go",
+   "kind": "movedWithEdit",
+   "old": [
+    [
+     240,
+     243
+    ]
+   ],
+   "new": [
+    [
+     324,
+     367
+    ]
+   ],
+   "label": "correct",
+   "note": "Stat moved and gained callback handling; base delegation kept as one branch.",
+   "jev": 0.05
+  },
+  {
+   "id": 165,
+   "project": "janitor",
+   "commit": "2ee0198e36",
+   "file": "apps/cluster/src/Labeling/Classifier.ts",
+   "kind": "movedWithEdit",
+   "old": [
+    [
+     570,
+     573
+    ]
+   ],
+   "new": [
+    [
+     569,
+     572
+    ]
+   ],
+   "label": "correct",
+   "note": "Same SQL query moved; assignment became a return.",
+   "jev": 0.94
+  },
+  {
+   "id": 170,
+   "project": "janitor",
+   "commit": "de14e0ad0e",
+   "file": "apps/cluster/src/Ingress/Live.ts",
+   "kind": "movedWithEdit",
+   "old": [
+    [
+     26,
+     28
+    ]
+   ],
+   "new": [
+    [
+     22,
+     24
+    ]
+   ],
+   "label": "correct",
+   "note": "Same expression moved, indentation only.",
+   "jev": 0.97
+  },
+  {
+   "id": 176,
+   "project": "opencode",
+   "commit": "dd39237ddf",
+   "file": "packages/plugin-browser/src/connection.ts",
+   "kind": "movedWithEdit",
+   "old": [
+    [
+     219,
+     224
+    ]
+   ],
+   "new": [
+    [
+     217,
+     222
+    ]
+   ],
+   "label": "correct",
+   "note": "Covered lines identical apart from indentation; the block really moved (any edit lies outside these lines).",
+   "jev": 0.93
+  },
+  {
+   "id": 182,
+   "project": "svelte",
+   "commit": "af6f1d309b",
+   "file": "benchmarking/run.js",
+   "kind": "movedWithEdit",
+   "old": [
+    [
+     5,
+     7
+    ]
+   ],
+   "new": [
+    [
+     31,
+     33
+    ]
+   ],
+   "label": "correct",
+   "note": "Same filter lines moved into a function, indentation only.",
+   "jev": 0.97
+  },
+  {
+   "id": 189,
+   "project": "typescript",
+   "commit": "1ac2d5aed0",
+   "file": "Herebyfile.mjs",
+   "kind": "movedWithEdit",
+   "old": [
+    [
+     375,
+     379
+    ]
+   ],
+   "new": [
+    [
+     1271,
+     1275
+    ]
+   ],
+   "label": "borderline",
+   "note": "Same generate task name but description and run->dependencies replaced, so behaviour differs; identity is defensible.",
+   "jev": 0.27
+  },
+  {
+   "id": 196,
+   "project": "foldkit",
+   "commit": "12a51d6b03",
+   "file": "packages/ui/src/hoverIntent/hoverIntent.ts",
+   "kind": "movedWithEdit",
+   "old": [
+    [
+     105,
+     114
+    ]
+   ],
+   "new": [
+    [
+     223,
+     232
+    ]
+   ],
+   "label": "wrong",
+   "note": "close rewritten: old if/evo body replaced by a call to dismiss; nothing but the name shared.",
+   "jev": 0.11
+  },
+  {
+   "id": 197,
+   "project": "alchemy",
+   "commit": "8cf77e86d1",
+   "file": "packages/domain/src/Aggregate.ts",
+   "kind": "movedWithEdit",
+   "old": [
+    [
+     479,
+     487
+    ]
+   ],
+   "new": [
+    [
+     478,
+     481
+    ]
+   ],
+   "label": "correct",
+   "note": "Same setup lines moved; decide call became a cls-guarded decisionOf (edit).",
+   "jev": 0.18
+  },
+  {
+   "id": 200,
+   "project": "excalidraw",
+   "commit": "704db6803c",
+   "file": "packages/excalidraw/actions/actionFrame.ts",
+   "kind": "movedWithEdit",
+   "old": [
+    [
+     13,
+     13
+    ]
+   ],
+   "new": [
+    [
+     14,
+     14
+    ]
+   ],
+   "label": "wrong",
+   "note": "Pairs getCommonBounds import (now merged into another import) with unrelated new fixBindingsAfterDeletion import.",
+   "jev": 0.11
+  },
+  {
+   "id": 205,
+   "project": "effect-aws",
+   "commit": "4b16fbebce",
+   "file": "packages/client-account/src/AccountService.ts",
+   "kind": "movedWithEdit",
+   "old": [
+    [
+     281,
+     287
+    ]
+   ],
+   "new": [
+    [
+     337,
+     371
+    ]
+   ],
+   "label": "correct",
+   "note": "Class moved below makeXService unchanged; only additions are the new static layer members (the edit).",
+   "jev": 0.1
+  },
+  {
+   "id": 206,
+   "project": "effect-aws",
+   "commit": "4b16fbebce",
+   "file": "packages/client-api-gateway-management-api/src/ApiGatewayManagementApiService.ts",
+   "kind": "movedWithEdit",
+   "old": [
+    [
+     90,
+     96
+    ]
+   ],
+   "new": [
+    [
+     146,
+     188
+    ]
+   ],
+   "label": "correct",
+   "note": "Service class moved below its make* constructor and gained static defaultLayer/layer/baseLayer members; old declaration kept intact.",
+   "jev": 0.1
+  },
+  {
+   "id": 207,
+   "project": "effect-aws",
+   "commit": "4b16fbebce",
+   "file": "packages/client-bedrock/src/BedrockService.ts",
+   "kind": "movedWithEdit",
+   "old": [
+    [
+     1016,
+     1022
+    ]
+   ],
+   "new": [
+    [
+     1072,
+     1106
+    ]
+   ],
+   "label": "correct",
+   "note": "Service class moved below its make* constructor and gained static defaultLayer/layer/baseLayer members; old declaration kept intact.",
+   "jev": 0.1
+  },
+  {
+   "id": 208,
+   "project": "effect-aws",
+   "commit": "4b16fbebce",
+   "file": "packages/client-cloudsearch/src/CloudSearchService.ts",
+   "kind": "movedWithEdit",
+   "old": [
+    [
+     526,
+     532
+    ]
+   ],
+   "new": [
+    [
+     582,
+     619
+    ]
+   ],
+   "label": "correct",
+   "note": "Service class moved below its make* constructor and gained static defaultLayer/layer/baseLayer members; old declaration kept intact.",
+   "jev": 0.09
+  },
+  {
+   "id": 209,
+   "project": "effect-aws",
+   "commit": "4b16fbebce",
+   "file": "packages/client-cloudtrail/src/CloudTrailService.ts",
+   "kind": "movedWithEdit",
+   "old": [
+    [
+     1352,
+     1358
+    ]
+   ],
+   "new": [
+    [
+     1408,
+     1442
+    ]
+   ],
+   "label": "correct",
+   "note": "Class moved below makeXService unchanged; only additions are the new static layer members (the edit).",
+   "jev": 0.1
+  },
+  {
+   "id": 210,
+   "project": "effect-aws",
+   "commit": "4b16fbebce",
+   "file": "packages/client-cloudwatch-events/src/CloudWatchEventsService.ts",
+   "kind": "movedWithEdit",
+   "old": [
+    [
+     914,
+     920
+    ]
+   ],
+   "new": [
+    [
+     970,
+     1009
+    ]
+   ],
+   "label": "correct",
+   "note": "Class moved below makeXService unchanged; only additions are the new static layer members (the edit).",
+   "jev": 0.11
+  },
+  {
+   "id": 211,
+   "project": "effect-aws",
+   "commit": "4b16fbebce",
+   "file": "packages/client-cloudwatch-logs/src/CloudWatchLogsService.ts",
+   "kind": "movedWithEdit",
+   "old": [
+    [
+     1472,
+     1478
+    ]
+   ],
+   "new": [
+    [
+     1528,
+     1567
+    ]
+   ],
+   "label": "correct",
+   "note": "Class moved below makeXService unchanged; only additions are the new static layer members (the edit).",
+   "jev": 0.09
+  },
+  {
+   "id": 212,
+   "project": "effect-aws",
+   "commit": "4b16fbebce",
+   "file": "packages/client-cloudwatch/src/CloudWatchService.ts",
+   "kind": "movedWithEdit",
+   "old": [
+    [
+     679,
+     685
+    ]
+   ],
+   "new": [
+    [
+     735,
+     769
+    ]
+   ],
+   "label": "correct",
+   "note": "Class moved below makeXService unchanged; only additions are the new static layer members (the edit).",
+   "jev": 0.1
+  },
+  {
+   "id": 213,
+   "project": "effect-aws",
+   "commit": "4b16fbebce",
+   "file": "packages/client-codedeploy/src/CodeDeployService.ts",
+   "kind": "movedWithEdit",
+   "old": [
+    [
+     1177,
+     1183
+    ]
+   ],
+   "new": [
+    [
+     1233,
+     1267
+    ]
+   ],
+   "label": "correct",
+   "note": "Class moved below makeXService unchanged; only additions are the new static layer members (the edit).",
+   "jev": 0.09
+  },
+  {
+   "id": 214,
+   "project": "effect-aws",
+   "commit": "4b16fbebce",
+   "file": "packages/client-cognito-identity-provider/src/CognitoIdentityProviderService.ts",
+   "kind": "movedWithEdit",
+   "old": [
+    [
+     2447,
+     2453
+    ]
+   ],
+   "new": [
+    [
+     2503,
+     2545
+    ]
+   ],
+   "label": "correct",
+   "note": "Class moved below makeXService unchanged; only additions are the new static layer members (the edit).",
+   "jev": 0.1
+  },
+  {
+   "id": 215,
+   "project": "effect-aws",
+   "commit": "4b16fbebce",
+   "file": "packages/client-dynamodb/src/DynamoDBService.ts",
+   "kind": "movedWithEdit",
+   "old": [
+    [
+     1132,
+     1138
+    ]
+   ],
+   "new": [
+    [
+     1188,
+     1222
+    ]
+   ],
+   "label": "correct",
+   "note": "Service class moved below its make* constructor and gained static defaultLayer/layer/baseLayer members; old declaration kept intact.",
+   "jev": 0.11
+  },
+  {
+   "id": 216,
+   "project": "effect-aws",
+   "commit": "4b16fbebce",
+   "file": "packages/client-ec2/src/EC2Service.ts",
+   "kind": "movedWithEdit",
+   "old": [
+    [
+     8947,
+     8954
+    ]
+   ],
+   "new": [
+    [
+     9254,
+     9289
+    ]
+   ],
+   "label": "correct",
+   "note": "Service class moved below its make* constructor and gained static defaultLayer/layer/baseLayer members; old declaration kept intact.",
+   "jev": 0.1
+  },
+  {
+   "id": 217,
+   "project": "effect-aws",
+   "commit": "4b16fbebce",
+   "file": "packages/client-elasticache/src/ElastiCacheService.ts",
+   "kind": "movedWithEdit",
+   "old": [
+    [
+     1653,
+     1659
+    ]
+   ],
+   "new": [
+    [
+     1709,
+     1746
+    ]
+   ],
+   "label": "correct",
+   "note": "Service class moved below its make* constructor and gained static defaultLayer/layer/baseLayer members; old declaration kept intact.",
+   "jev": 0.11
+  },
+  {
+   "id": 218,
+   "project": "effect-aws",
+   "commit": "4b16fbebce",
+   "file": "packages/client-eventbridge/src/EventBridgeService.ts",
+   "kind": "movedWithEdit",
+   "old": [
+    [
+     1011,
+     1017
+    ]
+   ],
+   "new": [
+    [
+     1067,
+     1104
+    ]
+   ],
+   "label": "correct",
+   "note": "Class moved below makeXService unchanged; only additions are the new static layer members (the edit).",
+   "jev": 0.1
+  },
+  {
+   "id": 219,
+   "project": "effect-aws",
+   "commit": "4b16fbebce",
+   "file": "packages/client-iam/src/IAMService.ts",
+   "kind": "movedWithEdit",
+   "old": [
+    [
+     2765,
+     2772
+    ]
+   ],
+   "new": [
+    [
+     2821,
+     2856
+    ]
+   ],
+   "label": "correct",
+   "note": "Service class moved below its make* constructor and gained static defaultLayer/layer/baseLayer members; old declaration kept intact.",
+   "jev": 0.08
+  },
+  {
+   "id": 220,
+   "project": "effect-aws",
+   "commit": "4b16fbebce",
+   "file": "packages/client-kinesis/src/KinesisService.ts",
+   "kind": "movedWithEdit",
+   "old": [
+    [
+     684,
+     690
+    ]
+   ],
+   "new": [
+    [
+     740,
+     774
+    ]
+   ],
+   "label": "correct",
+   "note": "Class moved below makeXService unchanged; only additions are the new static layer members (the edit).",
+   "jev": 0.13
+  },
+  {
+   "id": 221,
+   "project": "effect-aws",
+   "commit": "4b16fbebce",
+   "file": "packages/client-kms/src/KMSService.ts",
+   "kind": "movedWithEdit",
+   "old": [
+    [
+     1261,
+     1268
+    ]
+   ],
+   "new": [
+    [
+     1317,
+     1352
+    ]
+   ],
+   "label": "correct",
+   "note": "Class moved below makeXService unchanged; only additions are the new static layer members (the edit).",
+   "jev": 0.1
+  },
+  {
+   "id": 222,
+   "project": "effect-aws",
+   "commit": "4b16fbebce",
+   "file": "packages/client-lambda/src/LambdaService.ts",
+   "kind": "movedWithEdit",
+   "old": [
+    [
+     1439,
+     1445
+    ]
+   ],
+   "new": [
+    [
+     1495,
+     1529
+    ]
+   ],
+   "label": "correct",
+   "note": "Service class moved below its make* constructor and gained static defaultLayer/layer/baseLayer members; old declaration kept intact.",
+   "jev": 0.09
+  },
+  {
+   "id": 223,
+   "project": "effect-aws",
+   "commit": "4b16fbebce",
+   "file": "packages/client-mq/src/MqService.ts",
+   "kind": "movedWithEdit",
+   "old": [
+    [
+     466,
+     473
+    ]
+   ],
+   "new": [
+    [
+     522,
+     557
+    ]
+   ],
+   "label": "correct",
+   "note": "Service class moved below its make* constructor and gained static defaultLayer/layer/baseLayer members; old declaration kept intact.",
+   "jev": 0.1
+  },
+  {
+   "id": 224,
+   "project": "effect-aws",
+   "commit": "4b16fbebce",
+   "file": "packages/client-opensearch-serverless/src/OpenSearchServerlessService.ts",
+   "kind": "movedWithEdit",
+   "old": [
+    [
+     674,
+     680
+    ]
+   ],
+   "new": [
+    [
+     730,
+     772
+    ]
+   ],
+   "label": "correct",
+   "note": "Class moved below makeXService unchanged; only additions are the new static layer members (the edit).",
+   "jev": 0.1
+  },
+  {
+   "id": 225,
+   "project": "effect-aws",
+   "commit": "4b16fbebce",
+   "file": "packages/client-opensearch/src/OpenSearchService.ts",
+   "kind": "movedWithEdit",
+   "old": [
+    [
+     1372,
+     1378
+    ]
+   ],
+   "new": [
+    [
+     1428,
+     1462
+    ]
+   ],
+   "label": "correct",
+   "note": "Class moved below makeXService unchanged; only additions are the new static layer members (the edit).",
+   "jev": 0.1
+  },
+  {
+   "id": 226,
+   "project": "effect-aws",
+   "commit": "4b16fbebce",
+   "file": "packages/client-rds/src/RDSService.ts",
+   "kind": "movedWithEdit",
+   "old": [
+    [
+     3163,
+     3170
+    ]
+   ],
+   "new": [
+    [
+     3219,
+     3254
+    ]
+   ],
+   "label": "correct",
+   "note": "Class moved below makeXService unchanged; only additions are the new static layer members (the edit).",
+   "jev": 0.1
+  },
+  {
+   "id": 227,
+   "project": "effect-aws",
+   "commit": "4b16fbebce",
+   "file": "packages/client-s3/src/S3Service.ts",
+   "kind": "movedWithEdit",
+   "old": [
+    [
+     1337,
+     1344
+    ]
+   ],
+   "new": [
+    [
+     1403,
+     1438
+    ]
+   ],
+   "label": "correct",
+   "note": "Service class moved below its make* constructor and gained static defaultLayer/layer/baseLayer members; old declaration kept intact.",
+   "jev": 0.09
+  },
+  {
+   "id": 228,
+   "project": "effect-aws",
+   "commit": "4b16fbebce",
+   "file": "packages/client-scheduler/src/SchedulerService.ts",
+   "kind": "movedWithEdit",
+   "old": [
+    [
+     275,
+     281
+    ]
+   ],
+   "new": [
+    [
+     331,
+     365
+    ]
+   ],
+   "label": "correct",
+   "note": "Service class moved below its make* constructor and gained static defaultLayer/layer/baseLayer members; old declaration kept intact.",
+   "jev": 0.1
+  },
+  {
+   "id": 229,
+   "project": "effect-aws",
+   "commit": "4b16fbebce",
+   "file": "packages/client-secrets-manager/src/SecretsManagerService.ts",
+   "kind": "movedWithEdit",
+   "old": [
+    [
+     507,
+     513
+    ]
+   ],
+   "new": [
+    [
+     563,
+     602
+    ]
+   ],
+   "label": "correct",
+   "note": "Class moved below makeXService unchanged; only additions are the new static layer members (the edit).",
+   "jev": 0.11
+  },
+  {
+   "id": 230,
+   "project": "effect-aws",
+   "commit": "4b16fbebce",
+   "file": "packages/client-sfn/src/SFNService.ts",
+   "kind": "movedWithEdit",
+   "old": [
+    [
+     759,
+     766
+    ]
+   ],
+   "new": [
+    [
+     815,
+     850
+    ]
+   ],
+   "label": "correct",
+   "note": "Class moved below makeXService unchanged; only additions are the new static layer members (the edit).",
+   "jev": 0.1
+  },
+  {
+   "id": 231,
+   "project": "effect-aws",
+   "commit": "4b16fbebce",
+   "file": "packages/client-sns/src/SNSService.ts",
+   "kind": "movedWithEdit",
+   "old": [
+    [
+     903,
+     910
+    ]
+   ],
+   "new": [
+    [
+     959,
+     994
+    ]
+   ],
+   "label": "correct",
+   "note": "Service class moved below its make* constructor and gained static defaultLayer/layer/baseLayer members; old declaration kept intact.",
+   "jev": 0.11
+  },
+  {
+   "id": 232,
+   "project": "effect-aws",
+   "commit": "4b16fbebce",
+   "file": "packages/client-sqs/src/SQSService.ts",
+   "kind": "movedWithEdit",
+   "old": [
+    [
+     570,
+     577
+    ]
+   ],
+   "new": [
+    [
+     626,
+     661
+    ]
+   ],
+   "label": "correct",
+   "note": "Service class moved below its make* constructor and gained static defaultLayer/layer/baseLayer members; old declaration kept intact.",
+   "jev": 0.1
+  },
+  {
+   "id": 233,
+   "project": "effect-aws",
+   "commit": "4b16fbebce",
+   "file": "packages/client-ssm/src/SSMService.ts",
+   "kind": "movedWithEdit",
+   "old": [
+    [
+     2698,
+     2705
+    ]
+   ],
+   "new": [
+    [
+     2754,
+     2789
+    ]
+   ],
+   "label": "correct",
+   "note": "Service class moved below its make* constructor and gained static defaultLayer/layer/baseLayer members; old declaration kept intact.",
+   "jev": 0.1
+  },
+  {
+   "id": 234,
+   "project": "effect-aws",
+   "commit": "4b16fbebce",
+   "file": "packages/client-sts/src/STSService.ts",
+   "kind": "movedWithEdit",
+   "old": [
+    [
+     176,
+     183
+    ]
+   ],
+   "new": [
+    [
+     232,
+     267
+    ]
+   ],
+   "label": "correct",
+   "note": "Service class moved below its make* constructor and gained static defaultLayer/layer/baseLayer members; old declaration kept intact.",
+   "jev": 0.11
+  },
+  {
+   "id": 235,
+   "project": "effect-aws",
+   "commit": "4b16fbebce",
+   "file": "packages/client-textract/src/TextractService.ts",
+   "kind": "movedWithEdit",
+   "old": [
+    [
+     651,
+     657
+    ]
+   ],
+   "new": [
+    [
+     707,
+     741
+    ]
+   ],
+   "label": "correct",
+   "note": "Class moved below makeXService unchanged; only additions are the new static layer members (the edit).",
+   "jev": 0.11
+  },
+  {
+   "id": 236,
+   "project": "helix",
+   "commit": "2d903f82ba",
+   "file": "helix-loader/src/workspace_trust.rs",
+   "kind": "movedWithEdit",
+   "old": [
+    [
+     14,
+     18
+    ]
+   ],
+   "new": [
+    [
+     67,
+     79
+    ]
+   ],
+   "label": "correct",
+   "note": "Same TrustStatus enum moved, with derives, docs and variants added.",
+   "jev": 0.17
+  },
+  {
+   "id": 239,
+   "project": "excalidraw",
+   "commit": "b9a255407f",
+   "file": "packages/common/src/colors.ts",
+   "kind": "movedWithEdit",
+   "old": [
+    [
+     134,
+     137
+    ]
+   ],
+   "new": [
+    [
+     165,
+     165
+    ]
+   ],
+   "label": "borderline",
+   "note": "Same ColorPickerColor name but type redefined from an oc-key union to keyof COLOR_PALETTE.",
+   "jev": 0.17
+  },
+  {
+   "id": 240,
+   "project": "excalidraw",
+   "commit": "b9a255407f",
+   "file": "packages/common/src/colors.ts",
+   "kind": "movedWithEdit",
+   "old": [
+    [
+     139,
+     142
+    ]
+   ],
+   "new": [
+    [
+     164,
+     164
+    ]
+   ],
+   "label": "correct",
+   "note": "ColorPalette type moved and redefined as typeof COLOR_PALETTE.",
+   "jev": 0.16
+  },
+  {
+   "id": 242,
+   "project": "prisma",
+   "commit": "de28d3db10",
+   "file": "packages/3-targets/mysql/3-driver/src/core/normalize-error.ts",
+   "kind": "movedWithEdit",
+   "old": [
+    [
+     14,
+     21
+    ]
+   ],
+   "new": [
+    [
+     115,
+     135
+    ]
+   ],
+   "label": "wrong",
+   "note": "normalizeMysqlError rewritten for mariadb with many new branches; only the final SqlQueryError return resembles the old.",
+   "jev": 0.08
+  },
+  {
+   "id": 251,
+   "project": "vite",
+   "commit": "94fc91be25",
+   "file": "playground/legacy/vite.config.js",
+   "kind": "movedWithEdit",
+   "old": [
+    [
+     22,
+     25
+    ]
+   ],
+   "new": [
+    [
+     7,
+     10
+    ]
+   ],
+   "label": "correct",
+   "note": "Rollup input object moved out of nested config, indentation only.",
+   "jev": 0.97
+  },
+  {
+   "id": 256,
+   "project": "avalonia",
+   "commit": "9d078f173c",
+   "file": "samples/ControlCatalog/Pages/PointerCanvas.cs",
+   "kind": "movedWithEdit",
+   "old": [
+    [
+     19,
+     19
+    ]
+   ],
+   "new": [
+    [
+     78,
+     78
+    ]
+   ],
+   "label": "correct",
+   "note": "_statusUpdated field moved and renamed to _statusTimer (same DispatcherTimer role).",
+   "jev": 0.77
+  },
+  {
+   "id": 257,
+   "project": "avalonia",
+   "commit": "9d078f173c",
+   "file": "samples/ControlCatalog/Pages/PointerCanvas.cs",
+   "kind": "movedWithEdit",
+   "old": [
+    [
+     96,
+     96
+    ]
+   ],
+   "new": [
+    [
+     71,
+     71
+    ]
+   ],
+   "label": "wrong",
+   "note": "Pairs removed _threadSleep field with unrelated new _points field.",
+   "jev": 0.15
+  },
+  {
+   "id": 260,
+   "project": "avalonia",
+   "commit": "9d078f173c",
+   "file": "samples/ControlCatalog/Pages/PointerCanvas.cs",
+   "kind": "movedWithEdit",
+   "old": [
+    [
+     225,
+     229
+    ]
+   ],
+   "new": [
+    [
+     143,
+     147
+    ]
+   ],
+   "label": "correct",
+   "note": "OnPointerReleased moved; call order swapped and HandleEvent gained an argument.",
+   "jev": 0.77
+  },
+  {
+   "id": 263,
+   "project": "alchemy-async",
+   "commit": "6f26c18892",
+   "file": "alchemy/src/cloudflare/worker-subdomain.ts",
+   "kind": "movedWithEdit",
+   "old": [
+    [
+     68,
+     75
+    ]
+   ],
+   "new": [
+    [
+     148,
+     155
+    ]
+   ],
+   "label": "correct",
+   "note": "URL computation moved out to a function; props.X became plain parameters.",
+   "jev": 0.91
+  },
+  {
+   "id": 280,
+   "project": "beep-effect",
+   "commit": "690afb9e57",
+   "file": "packages/tooling/tool/cli/src/internal/repo-run/GitExec.ts",
+   "kind": "movedWithEdit",
+   "old": [
+    [
+     43,
+     49
+    ]
+   ],
+   "new": [
+    [
+     32,
+     38
+    ]
+   ],
+   "label": "correct",
+   "note": "Covered lines identical apart from indentation; the block really moved (any edit lies outside these lines).",
+   "jev": 0.88
+  },
+  {
+   "id": 283,
+   "project": "janitor",
+   "commit": "a6f6bd88d6",
+   "file": "apps/cluster/src/Labeling/Classifier.ts",
+   "kind": "movedWithEdit",
+   "old": [
+    [
+     550,
+     552
+    ]
+   ],
+   "new": [
+    [
+     537,
+     539
+    ]
+   ],
+   "label": "correct",
+   "note": "Covered lines identical apart from indentation; the block really moved (any edit lies outside these lines).",
+   "jev": 0.94
+  },
+  {
+   "id": 286,
+   "project": "prometheus",
+   "commit": "0650346191",
+   "file": "scrape/scrape.go",
+   "kind": "movedWithEdit",
+   "old": [
+    [
+     1638,
+     1672
+    ]
+   ],
+   "new": [
+    [
+     1586,
+     1620
+    ]
+   ],
+   "label": "correct",
+   "note": "Covered lines identical apart from indentation; the block really moved (any edit lies outside these lines).",
+   "jev": 0.96
+  },
+  {
+   "id": 289,
+   "project": "effect-smol",
+   "commit": "7ce7344c41",
+   "file": "packages/effect/src/SchemaAST.ts",
+   "kind": "movedWithEdit",
+   "old": [
+    [
+     1786,
+     1786
+    ]
+   ],
+   "new": [
+    [
+     3620,
+     3620
+    ]
+   ],
+   "label": "correct",
+   "note": "Regex constant moved and renamed isNumberStringRegExp -> isStringNumberRegExp.",
+   "jev": 0.94
+  },
+  {
+   "id": 290,
+   "project": "ghui",
+   "commit": "62dd2a28d4",
+   "file": "src/keymap/diffView.ts",
+   "kind": "movedWithEdit",
+   "old": [
+    [
+     11,
+     11
+    ]
+   ],
+   "new": [
+    [
+     21,
+     21
+    ]
+   ],
+   "label": "wrong",
+   "note": "addComment was removed and openChangedFiles is a new, unrelated member; not a move.",
+   "jev": 0.25
+  },
+  {
+   "id": 293,
+   "project": "prisma",
+   "commit": "d13613775f",
+   "file": "packages/3-targets/3-targets/postgres/src/core/authoring.ts",
+   "kind": "movedWithEdit",
+   "old": [
+    [
+     531,
+     563
+    ]
+   ],
+   "new": [
+    [
+     141,
+     144
+    ]
+   ],
+   "label": "borderline",
+   "note": "policyTargetParam pairing is right, but old range includes the unrelated 'Field presets' doc comment that still exists at new line 480, plus a deleted comment.",
+   "jev": 0.28
+  },
+  {
+   "id": 294,
+   "project": "prisma",
+   "commit": "d13613775f",
+   "file": "packages/3-targets/3-targets/postgres/src/core/authoring.ts",
+   "kind": "movedWithEdit",
+   "old": [
+    [
+     564,
+     568
+    ]
+   ],
+   "new": [
+    [
+     145,
+     148
+    ]
+   ],
+   "label": "correct",
+   "note": "Same policyRolesParam declaration moved; its kind/of shape replaced by a type field (the edit).",
+   "jev": 0.21
+  },
+  {
+   "id": 295,
+   "project": "prisma",
+   "commit": "d13613775f",
+   "file": "packages/3-targets/3-targets/postgres/src/core/authoring.ts",
+   "kind": "movedWithEdit",
+   "old": [
+    [
+     575,
+     580
+    ]
+   ],
+   "new": [
+    [
+     157,
+     161
+    ]
+   ],
+   "label": "correct",
+   "note": "policyPermissiveParam moved; descriptor shape changed to type: optional(bool()), documentation kept.",
+   "jev": 0.38
+  },
+  {
+   "id": 296,
+   "project": "typescript",
+   "commit": "ed4807212c",
+   "file": "tools/gen-proto/main.go",
+   "kind": "movedWithEdit",
+   "old": [
+    [
+     733,
+     738
+    ]
+   ],
+   "new": [
+    [
+     802,
+     810
+    ]
+   ],
+   "label": "correct",
+   "note": "importType moved and gained a type/value conflict panic.",
+   "jev": 0.65
+  },
+  {
+   "id": 298,
+   "project": "typescript",
+   "commit": "ed4807212c",
+   "file": "tsc/internal/lsp/lsproto/lsp.go",
+   "kind": "movedWithEdit",
+   "old": [
+    [
+     77,
+     83
+    ]
+   ],
+   "new": [
+    [
+     19,
+     75
+    ]
+   ],
+   "label": "wrong",
+   "note": "DocumentUri.Path rewritten: new signature and an entirely different ~57-line body, not the old 7-line code.",
+   "jev": 0.06
+  },
+  {
+   "id": 302,
+   "project": "ghui",
+   "commit": "c8d4c22334",
+   "file": "src/services/GitHubService.ts",
+   "kind": "movedWithEdit",
+   "old": [
+    [
+     284,
+     296
+    ]
+   ],
+   "new": [
+    [
+     319,
+     331
+    ]
+   ],
+   "label": "wrong",
+   "note": "pullRequestSearchQuery (PR detail query) was deleted; issueSearchQuery is a new Issue query, not the same code moved.",
+   "jev": 0.43
+  },
+  {
+   "id": 314,
+   "project": "alchemy-async",
+   "commit": "d80a0ce8ba",
+   "file": "alchemy/src/cloudflare/next.ts",
+   "kind": "movedWithEdit",
+   "old": [
+    [
+     52,
+     56
+    ]
+   ],
+   "new": [
+    [
+     35,
+     39
+    ]
+   ],
+   "label": "correct",
+   "note": "Same dev command config moved from object property to const.",
+   "jev": 0.92
+  },
+  {
+   "id": 316,
+   "project": "language-service",
+   "commit": "5858fd1d87",
+   "file": "packages/language-service/src/diagnostics/effectFnOpportunity.ts",
+   "kind": "movedWithEdit",
+   "old": [
+    [
+     248,
+     251
+    ]
+   ],
+   "new": [
+    [
+     301,
+     326
+    ]
+   ],
+   "label": "borderline",
+   "note": "Doc comment moved unchanged, but new range swallows the function header and guard checks whose old counterparts lie outside the old range.",
+   "jev": 0.06
+  },
+  {
+   "id": 320,
+   "project": "scrapy",
+   "commit": "f67c87db61",
+   "file": "scrapy/extensions/feedexport.py",
+   "kind": "movedWithEdit",
+   "old": [
+    [
+     34,
+     34
+    ]
+   ],
+   "new": [
+    [
+     30,
+     30
+    ]
+   ],
+   "label": "correct",
+   "note": "Same import, module path utils.ftp -> utils._ftp.",
+   "jev": 0.94
+  },
+  {
+   "id": 322,
+   "project": "beep-effect",
+   "commit": "7d78dae90e",
+   "file": "packages/tooling/tool/cli/src/commands/Worktree/Fleet.command.ts",
+   "kind": "movedWithEdit",
+   "old": [
+    [
+     374,
+     381
+    ]
+   ],
+   "new": [
+    [
+     495,
+     502
+    ]
+   ],
+   "label": "correct",
+   "note": "Same catchTag handler; message prefix now uses label.",
+   "jev": 0.93
+  },
+  {
+   "id": 325,
+   "project": "scrapy",
+   "commit": "6f7cae2031",
+   "file": "scrapy/extensions/spiderstate.py",
+   "kind": "movedWithEdit",
+   "old": [
+    [
+     32,
+     33
+    ]
+   ],
+   "new": [
+    [
+     77,
+     88
+    ]
+   ],
+   "label": "wrong",
+   "note": "spider_closed body entirely replaced (deprecation warning + signal); only the def line shared.",
+   "jev": 0.06
+  },
+  {
+   "id": 326,
+   "project": "tokio",
+   "commit": "2598543b8a",
+   "file": "tokio/src/io/async_fd.rs",
+   "kind": "movedWithEdit",
+   "old": [
+    [
+     211,
+     231
+    ]
+   ],
+   "new": [
+    [
+     903,
+     913
+    ]
+   ],
+   "label": "borderline",
+   "note": "new moved to the deprecated section but is now a one-line wrapper over register; old doc/body went to register, little code shared.",
+   "jev": 0.27
+  },
+  {
+   "id": 327,
+   "project": "tokio",
+   "commit": "2598543b8a",
+   "file": "tokio/src/io/async_fd.rs",
+   "kind": "movedWithEdit",
+   "old": [
+    [
+     233,
+     248
+    ]
+   ],
+   "new": [
+    [
+     915,
+     925
+    ]
+   ],
+   "label": "borderline",
+   "note": "with_interest moved to the deprecated section but is a new one-line wrapper over register_with_interest; old doc/body went to register_with_interest, little code shared.",
+   "jev": 0.42
+  },
+  {
+   "id": 328,
+   "project": "tokio",
+   "commit": "2598543b8a",
+   "file": "tokio/src/io/async_fd.rs",
+   "kind": "movedWithEdit",
+   "old": [
+    [
+     259,
+     282
+    ]
+   ],
+   "new": [
+    [
+     927,
+     937
+    ]
+   ],
+   "label": "borderline",
+   "note": "try_new moved to the deprecated section but is now a wrapper over register with a new error type; old doc/body went to register, little code shared.",
+   "jev": 0.21
+  },
+  {
+   "id": 329,
+   "project": "tokio",
+   "commit": "2598543b8a",
+   "file": "tokio/src/io/async_fd.rs",
+   "kind": "movedWithEdit",
+   "old": [
+    [
+     284,
+     302
+    ]
+   ],
+   "new": [
+    [
+     939,
+     952
+    ]
+   ],
+   "label": "wrong",
+   "note": "try_with_interest rewritten: old docs and body replaced by a deprecated wrapper calling register_with_interest; little old code remains.",
+   "jev": 0.18
+  },
+  {
+   "id": 334,
+   "project": "typescript",
+   "commit": "0b0aeb31e4",
+   "file": "Herebyfile.mjs",
+   "kind": "movedWithEdit",
+   "old": [
+    [
+     3028,
+     3031
+    ]
+   ],
+   "new": [
+    [
+     3284,
+     3287
+    ]
+   ],
+   "label": "correct",
+   "note": "Covered lines identical apart from indentation; the block really moved (any edit lies outside these lines).",
+   "jev": 0.93
+  },
+  {
+   "id": 339,
+   "project": "drizzle-orm",
+   "commit": "fa9aa1e0d0",
+   "file": "drizzle-orm/src/sqlite-core/session.ts",
+   "kind": "movedWithEdit",
+   "old": [
+    [
+     7,
+     8
+    ]
+   ],
+   "new": [
+    [
+     6,
+     6
+    ]
+   ],
+   "label": "correct",
+   "note": "Import moved; commented-out duplicate import dropped.",
+   "jev": 0.91
+  },
+  {
+   "id": 342,
+   "project": "effect-smol",
+   "commit": "c2a5edc3ab",
+   "file": "packages/effect/src/unstable/httpapi/HttpApiGroup.ts",
+   "kind": "movedWithEdit",
+   "old": [
+    [
+     151,
+     159
+    ]
+   ],
+   "new": [
+    [
+     147,
+     161
+    ]
+   ],
+   "label": "correct",
+   "note": "ToService type moved; type parameter and mapped service changed, doc rewritten.",
+   "jev": 0.19
+  },
+  {
+   "id": 343,
+   "project": "effect-aws",
+   "commit": "cc97eaed1f",
+   "file": "packages/lib-dynamodb/src/DynamoDBDocumentService.ts",
+   "kind": "movedWithEdit",
+   "old": [
+    [
+     322,
+     328
+    ]
+   ],
+   "new": [
+    [
+     379,
+     416
+    ]
+   ],
+   "label": "correct",
+   "note": "Service class moved below its make* constructor and gained static defaultLayer/layer/baseLayer members; old declaration kept intact.",
+   "jev": 0.1
+  },
+  {
+   "id": 348,
+   "project": "janitor",
+   "commit": "d3b451f412",
+   "file": "apps/cluster/src/Slack/Processor.ts",
+   "kind": "movedWithEdit",
+   "old": [
+    [
+     278,
+     285
+    ]
+   ],
+   "new": [
+    [
+     438,
+     445
+    ]
+   ],
+   "label": "correct",
+   "note": "Same processDue moved; query gained a retry_not_before condition.",
+   "jev": 0.92
+  },
+  {
+   "id": 352,
+   "project": "guava",
+   "commit": "3e65944ec9",
+   "file": "android/guava-testlib/src/com/google/common/collect/testing/testers/SortedSetNavigationTester.java",
+   "kind": "movedWithEdit",
+   "old": [
+    [
+     95,
+     98
+    ]
+   ],
+   "new": [
+    [
+     83,
+     86
+    ]
+   ],
+   "label": "correct",
+   "note": "testFirst moved; size annotation and expected element changed.",
+   "jev": 0.76
+  },
+  {
+   "id": 354,
+   "project": "storybook",
+   "commit": "feb98fe6d3",
+   "file": "code/renderers/svelte/src/svelte-csf/utils/error/parser/analyse/define-meta.ts",
+   "kind": "movedWithEdit",
+   "old": [
+    [
+     1,
+     1
+    ]
+   ],
+   "new": [
+    [
+     4,
+     4
+    ]
+   ],
+   "label": "correct",
+   "note": "Import moved and gained filepathURL.",
+   "jev": 0.89
+  },
+  {
+   "id": 358,
+   "project": "discord-bot",
+   "commit": "df73fd4e0c",
+   "file": "packages/runner/src/Conversation.ts",
+   "kind": "movedWithEdit",
+   "old": [
+    [
+     8,
+     30
+    ]
+   ],
+   "new": [
+    [
+     69,
+     94
+    ]
+   ],
+   "label": "correct",
+   "note": "Same entity layer moved; AI API calls updated (edit).",
+   "jev": 0.26
+  },
+  {
+   "id": 367,
+   "project": "effect",
+   "commit": "38f96d8154",
+   "file": "packages/ai/anthropic/src/Generated.ts",
+   "kind": "movedWithEdit",
+   "old": [
+    [
+     70,
+     73
+    ]
+   ],
+   "new": [
+    [
+     5937,
+     5940
+    ]
+   ],
+   "label": "correct",
+   "note": "Same schema moved; identifier annotation added.",
+   "jev": 0.95
+  },
+  {
+   "id": 369,
+   "project": "effect",
+   "commit": "38f96d8154",
+   "file": "packages/ai/anthropic/src/Generated.ts",
+   "kind": "movedWithEdit",
+   "old": [
+    [
+     91,
+     95
+    ]
+   ],
+   "new": [
+    [
+     3105,
+     3109
+    ]
+   ],
+   "label": "correct",
+   "note": "Same schema moved; identifier annotation added.",
+   "jev": 0.95
+  },
+  {
+   "id": 371,
+   "project": "effect",
+   "commit": "38f96d8154",
+   "file": "packages/ai/anthropic/src/Generated.ts",
+   "kind": "movedWithEdit",
+   "old": [
+    [
+     110,
+     113
+    ]
+   ],
+   "new": [
+    [
+     5942,
+     5945
+    ]
+   ],
+   "label": "correct",
+   "note": "Generated schema moved; identifier annotation added.",
+   "jev": 0.95
+  },
+  {
+   "id": 372,
+   "project": "effect",
+   "commit": "38f96d8154",
+   "file": "packages/ai/anthropic/src/Generated.ts",
+   "kind": "movedWithEdit",
+   "old": [
+    [
+     114,
+     117
+    ]
+   ],
+   "new": [
+    [
+     6328,
+     6331
+    ]
+   ],
+   "label": "correct",
+   "note": "Generated type moved; files made required and display_title replaced by display_name.",
+   "jev": 0.24
+  },
+  {
+   "id": 373,
+   "project": "effect",
+   "commit": "38f96d8154",
+   "file": "packages/ai/anthropic/src/Generated.ts",
+   "kind": "movedWithEdit",
+   "old": [
+    [
+     118,
+     133
+    ]
+   ],
+   "new": [
+    [
+     6332,
+     6345
+    ]
+   ],
+   "label": "correct",
+   "note": "Same generated schema constant moved; fields reordered/renamed and files made required.",
+   "jev": 0.27
+  },
+  {
+   "id": 376,
+   "project": "effect",
+   "commit": "38f96d8154",
+   "file": "packages/ai/anthropic/src/Generated.ts",
+   "kind": "movedWithEdit",
+   "old": [
+    [
+     161,
+     172
+    ]
+   ],
+   "new": [
+    [
+     5632,
+     5647
+    ]
+   ],
+   "label": "correct",
+   "note": "Generated schema moved; checks gained expected annotations and identifier added.",
+   "jev": 0.9
+  }
+ ]
+}

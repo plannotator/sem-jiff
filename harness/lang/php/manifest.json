@@ -1,0 +1,2986 @@
+{
+ "laravel": {
+  "422be65624": [
+   "src/Illuminate/JsonSchema/Deserializer.php",
+   "src/Illuminate/JsonSchema/JsonSchema.php"
+  ],
+  "3c8d07f405": [
+   "src/Illuminate/Redis/Connections/Connection.php",
+   "src/Illuminate/Redis/Connections/PhpRedisConnection.php",
+   "src/Illuminate/Redis/Connections/PredisConnection.php",
+   "src/Illuminate/Redis/Connectors/PredisConnector.php"
+  ],
+  "2042590a36": [
+   "src/Illuminate/View/DynamicComponent.php"
+  ],
+  "4b06fcb289": [
+   "src/Illuminate/Foundation/Testing/Concerns/InteractsWithTestCaseLifecycle.php"
+  ],
+  "c980cb5827": [
+   "src/Illuminate/Cache/RedisStore.php",
+   "src/Illuminate/Cache/RedisTaggedCache.php",
+   "src/Illuminate/Redis/Connections/PhpRedisConnection.php"
+  ],
+  "98d49e77d3": [
+   "src/Illuminate/View/Compilers/ComponentTagCompiler.php",
+   "src/Illuminate/View/DynamicComponent.php"
+  ],
+  "b19327914a": [
+   "src/Illuminate/Validation/Concerns/ValidatesAttributes.php"
+  ],
+  "d324cee9e5": [
+   "src/Illuminate/Database/Schema/Grammars/PostgresGrammar.php"
+  ],
+  "40c84439a1": [
+   "src/Illuminate/Validation/Validator.php"
+  ],
+  "af898223d9": [
+   "src/Illuminate/Support/Facades/DB.php"
+  ],
+  "489cabc47f": [
+   "src/Illuminate/Database/Connection.php"
+  ],
+  "94f01e8545": [
+   "src/Illuminate/Foundation/Console/ComponentMakeCommand.php",
+   "src/Illuminate/Foundation/Console/StubPublishCommand.php",
+   "src/Illuminate/View/Component.php"
+  ],
+  "507be989d7": [
+   "src/Illuminate/Database/Query/Builder.php"
+  ],
+  "20d231fe50": [
+   "src/Illuminate/Database/DatabaseTransactionsManager.php"
+  ],
+  "b2c21bc689": [
+   "src/Illuminate/Database/Eloquent/Concerns/HasAttributes.php",
+   "src/Illuminate/Database/Eloquent/Model.php"
+  ],
+  "21d4d8a49d": [
+   "src/Illuminate/Database/Concerns/BuildsQueries.php"
+  ],
+  "9e1684e76a": [
+   "src/Illuminate/Events/Dispatcher.php",
+   "src/Illuminate/Mail/SendQueuedMailable.php",
+   "src/Illuminate/Notifications/SendQueuedNotifications.php",
+   "src/Illuminate/Queue/Console/RetryCommand.php",
+   "src/Illuminate/Queue/Queue.php"
+  ],
+  "d48449f1eb": [
+   "src/Illuminate/Queue/InteractsWithQueue.php"
+  ],
+  "21e7a4c871": [
+   "src/Illuminate/Validation/Rules/DatabaseRule.php"
+  ],
+  "2b517db47f": [
+   "src/Illuminate/Validation/DatabasePresenceVerifier.php"
+  ],
+  "c33d357a57": [
+   "src/Illuminate/Queue/Console/WorkCommand.php"
+  ],
+  "d604d5bc03": [
+   "src/Illuminate/Filesystem/Filesystem.php"
+  ],
+  "a5f102335e": [
+   "src/Illuminate/Database/Eloquent/Builder.php"
+  ],
+  "86c0362a41": [
+   "src/Illuminate/Support/Stringable.php"
+  ],
+  "aeaf7f9bdd": [
+   "src/Illuminate/Validation/Concerns/ValidatesAttributes.php"
+  ],
+  "ef1821b332": [
+   "src/Illuminate/Validation/Concerns/ValidatesAttributes.php",
+   "src/Illuminate/Validation/Rules/DatabaseRule.php",
+   "src/Illuminate/Validation/ValidationRuleParser.php"
+  ],
+  "525a08ad25": [
+   "src/Illuminate/Validation/Concerns/ValidatesAttributes.php"
+  ],
+  "f5c01f6b63": [
+   "src/Illuminate/Foundation/Application.php"
+  ],
+  "b089d3020e": [
+   "src/Illuminate/Foundation/Application.php"
+  ],
+  "95934d2868": [
+   "src/Illuminate/Foundation/Application.php"
+  ],
+  "aa9deaa769": [
+   "src/Illuminate/Routing/RouteUrlGenerator.php"
+  ],
+  "ba9e21eb94": [
+   "src/Illuminate/Routing/UrlGenerator.php",
+   "src/Illuminate/Validation/ValidationData.php"
+  ],
+  "3e17dfe208": [
+   "src/Illuminate/Routing/UrlGenerator.php"
+  ],
+  "b79483b42b": [
+   "src/Illuminate/Validation/ValidationData.php"
+  ],
+  "c31f733d24": [
+   "src/Illuminate/Database/Schema/Grammars/PostgresGrammar.php"
+  ],
+  "9c4b57b7d5": [
+   "src/Illuminate/Routing/RouteUrlGenerator.php"
+  ],
+  "338e44065c": [
+   "src/Illuminate/Session/Store.php"
+  ],
+  "4997a3c160": [
+   "src/Illuminate/Database/Schema/Blueprint.php"
+  ],
+  "703ffc3617": [
+   "src/Illuminate/Database/Concerns/ManagesTransactions.php"
+  ],
+  "f8080dd48e": [
+   "src/Illuminate/Support/Uri.php"
+  ],
+  "aca3cc22f3": [
+   "src/Illuminate/Http/Resources/JsonApi/Concerns/ResolvesJsonApiElements.php"
+  ],
+  "45943ab53b": [
+   "src/Illuminate/Support/Facades/Process.php"
+  ],
+  "34de79944f": [
+   "src/Illuminate/Validation/Concerns/ValidatesAttributes.php"
+  ],
+  "fdaba1b7c0": [
+   "src/Illuminate/Database/Migrations/Migrator.php"
+  ],
+  "fe640a7940": [
+   "src/Illuminate/Process/PendingProcess.php"
+  ],
+  "a31d610be5": [
+   "src/Illuminate/Console/Scheduling/ScheduleListCommand.php"
+  ],
+  "3ee9f38b4b": [
+   "src/Illuminate/Console/Scheduling/ScheduleListCommand.php"
+  ],
+  "b3b868a50e": [
+   "src/Illuminate/Routing/UrlGenerator.php"
+  ],
+  "1e10b71404": [
+   "src/Illuminate/Auth/TokenGuard.php"
+  ],
+  "ee85b20dec": [
+   "src/Illuminate/Support/Facades/Request.php"
+  ],
+  "32be37ad4f": [
+   "src/Illuminate/Database/Eloquent/Builder.php"
+  ],
+  "4541ca67e8": [
+   "src/Illuminate/Support/Traits/InteractsWithData.php"
+  ],
+  "7053c0fb4d": [
+   "src/Illuminate/Support/Facades/Request.php"
+  ],
+  "7c10fad3d0": [
+   "src/Illuminate/Support/Traits/InteractsWithData.php"
+  ],
+  "21719b7b76": [
+   "src/Illuminate/Broadcasting/Broadcasters/Ably2Broadcaster.php",
+   "src/Illuminate/Broadcasting/Broadcasters/AblyBroadcaster.php",
+   "src/Illuminate/Foundation/Console/BroadcastingInstallCommand.php"
+  ],
+  "7d6d8e8613": [
+   "src/Illuminate/Database/Schema/Grammars/SQLiteGrammar.php"
+  ],
+  "4c15d932dd": [
+   "src/Illuminate/Broadcasting/Broadcasters/PusherBroadcaster.php"
+  ],
+  "330ea309de": [
+   "src/Illuminate/Collections/Arr.php",
+   "types/Support/Arr.php"
+  ],
+  "6721027ede": [
+   "src/Illuminate/Bus/Dispatcher.php"
+  ],
+  "2f92c1886d": [
+   "src/Illuminate/Support/Facades/Broadcast.php"
+  ],
+  "43bbd79f01": [
+   "src/Illuminate/Broadcasting/BroadcastManager.php"
+  ],
+  "e0cd2e0ee9": [
+   "src/Illuminate/Database/LostConnectionDetector.php"
+  ],
+  "53388cc754": [
+   "src/Illuminate/Queue/Jobs/BeanstalkdJob.php"
+  ],
+  "b5b1661573": [
+   "src/Illuminate/Database/Schema/Grammars/SQLiteGrammar.php"
+  ],
+  "ddbf5ebcde": [
+   "src/Illuminate/Console/Events/ScheduledTaskSkipped.php",
+   "src/Illuminate/Console/Scheduling/ScheduleRunCommand.php"
+  ],
+  "f51168461c": [
+   "src/Illuminate/Database/Eloquent/Relations/BelongsToMany.php",
+   "types/Database/Eloquent/Relations.php"
+  ],
+  "64dc24f5d9": [
+   "src/Illuminate/Foundation/Application.php"
+  ],
+  "1449bf2410": [
+   "src/Illuminate/Foundation/Application.php"
+  ],
+  "0f904940d1": [
+   "src/Illuminate/Concurrency/Console/InvokeSerializedClosureCommand.php",
+   "src/Illuminate/Concurrency/ProcessDriver.php"
+  ],
+  "c37133b89b": [
+   "src/Illuminate/Concurrency/Console/InvokeSerializedClosureCommand.php",
+   "src/Illuminate/Concurrency/ProcessDriver.php"
+  ],
+  "1571da1acb": [
+   "src/Illuminate/Http/Resources/JsonApi/AnonymousResourceCollection.php"
+  ],
+  "b20bf7f442": [
+   "src/Illuminate/Support/Facades/DB.php"
+  ],
+  "86d3106af7": [
+   "src/Illuminate/Database/Connection.php",
+   "src/Illuminate/Database/MariaDbConnection.php",
+   "src/Illuminate/Database/MySqlConnection.php",
+   "src/Illuminate/Database/PostgresConnection.php"
+  ],
+  "c40be6abbd": [
+   "src/Illuminate/Support/Facades/Request.php"
+  ],
+  "9a484bf7e2": [
+   "src/Illuminate/Support/Traits/InteractsWithData.php"
+  ],
+  "3f50fa318e": [
+   "src/Illuminate/Database/LostConnectionDetector.php"
+  ],
+  "ce1e6faac5": [
+   "src/Illuminate/Support/Stringable.php",
+   "src/Illuminate/Validation/Rules/Url.php"
+  ],
+  "d10fc6c9ce": [
+   "src/Illuminate/Database/Concerns/BuildsQueries.php"
+  ],
+  "e2e5d64b67": [
+   "src/Illuminate/Database/Eloquent/Concerns/QueriesRelationships.php",
+   "src/Illuminate/Database/Query/Grammars/Grammar.php",
+   "src/Illuminate/Database/Query/Grammars/SqlServerGrammar.php"
+  ],
+  "49c580d5cd": [
+   "src/Illuminate/Support/Str.php"
+  ],
+  "e99f2fb070": [
+   "src/Illuminate/Support/Str.php"
+  ],
+  "965c4ce8ff": [
+   "src/Illuminate/Broadcasting/Broadcasters/PusherBroadcaster.php"
+  ],
+  "515abbcfe2": [
+   "src/Illuminate/Queue/CallQueuedHandler.php"
+  ],
+  "f7bbe69af9": [
+   "src/Illuminate/Foundation/Console/KeyGenerateCommand.php"
+  ],
+  "4bfe20a394": [
+   "src/Illuminate/Image/Image.php"
+  ],
+  "7f910b7d03": [
+   "src/Illuminate/Collections/Traits/TransformsToResourceCollection.php"
+  ],
+  "974cd809d8": [
+   "src/Illuminate/Database/Concerns/ManagesTransactions.php"
+  ],
+  "63495736b1": [
+   "src/Illuminate/Support/Facades/Schedule.php"
+  ],
+  "ed72ad8930": [
+   "src/Illuminate/Console/Scheduling/Schedule.php"
+  ],
+  "dc56c51750": [
+   "src/Illuminate/Database/Query/Grammars/SQLiteGrammar.php"
+  ],
+  "13810f2bc4": [
+   "src/Illuminate/Console/Scheduling/ScheduleRunCommand.php"
+  ],
+  "e5c6d1f0dc": [
+   "src/Illuminate/Foundation/CloudBootstrapper.php"
+  ],
+  "feab8b12a7": [
+   "src/Illuminate/Foundation/Configuration/Middleware.php"
+  ],
+  "5a787ee008": [
+   "src/Illuminate/Queue/Console/WorkCommand.php"
+  ],
+  "340cc1ccfd": [
+   "src/Illuminate/Foundation/Configuration/Middleware.php"
+  ],
+  "305702bf54": [
+   "src/Illuminate/Foundation/Bootstrap/HandleExceptions.php"
+  ],
+  "321e584223": [
+   "src/Illuminate/Database/Query/Grammars/SqlServerGrammar.php"
+  ],
+  "de1345d6f6": [
+   "src/Illuminate/Contracts/Pagination/CursorPaginator.php",
+   "src/Illuminate/Contracts/Pagination/Paginator.php",
+   "types/Pagination/Paginator.php"
+  ],
+  "fd6e608d5b": [
+   "src/Illuminate/Validation/Rules/File.php"
+  ],
+  "1f8b053dbe": [
+   "src/Illuminate/Cookie/CookieJar.php"
+  ],
+  "6065d21b3e": [
+   "src/Illuminate/Support/Facades/Queue.php"
+  ],
+  "71df784ca5": [
+   "src/Illuminate/Queue/QueueManager.php"
+  ],
+  "3bee83859c": [
+   "src/Illuminate/Database/Query/Grammars/PostgresGrammar.php"
+  ],
+  "f118593837": [
+   "src/Illuminate/Database/Concerns/ManagesTransactions.php"
+  ],
+  "aac63a8a8e": [
+   "src/Illuminate/Database/Schema/Grammars/PostgresGrammar.php"
+  ],
+  "1cdff38df9": [
+   "src/Illuminate/Cache/RedisTaggedCache.php"
+  ],
+  "f3f1e27fe4": [
+   "src/Illuminate/Support/Traits/InteractsWithData.php"
+  ],
+  "aefdfecfad": [
+   "src/Illuminate/Database/Schema/Grammars/SqlServerGrammar.php"
+  ],
+  "de027ed628": [
+   "src/Illuminate/Database/Eloquent/Relations/BelongsToMany.php"
+  ],
+  "b78cdb4491": [
+   "src/Illuminate/Database/Query/Builder.php",
+   "src/Illuminate/Database/Query/Grammars/MySqlGrammar.php"
+  ],
+  "56b5f27177": [
+   "src/Illuminate/Pagination/Paginator.php",
+   "types/Pagination/Paginator.php"
+  ],
+  "4dc928b47c": [
+   "src/Illuminate/Foundation/Application.php"
+  ],
+  "d52c3b3129": [
+   "src/Illuminate/Foundation/Application.php"
+  ],
+  "41840cfda2": [
+   "src/Illuminate/Foundation/Console/BroadcastingInstallCommand.php"
+  ],
+  "f10b9a1572": [
+   "src/Illuminate/Process/PendingProcess.php"
+  ],
+  "e093e46783": [
+   "src/Illuminate/Foundation/Testing/RefreshDatabase.php",
+   "src/Illuminate/Foundation/Testing/Traits/CanConfigureMigrationCommands.php"
+  ],
+  "c4a246eec3": [
+   "src/Illuminate/Database/Eloquent/Relations/HasOneOrManyThrough.php"
+  ],
+  "07279a6b11": [
+   "src/Illuminate/Database/Eloquent/Casts/AsArrayObject.php",
+   "src/Illuminate/Database/Eloquent/Casts/AsCollection.php",
+   "src/Illuminate/Database/Eloquent/Casts/AsEncryptedArrayObject.php",
+   "src/Illuminate/Database/Eloquent/Casts/AsEncryptedCollection.php",
+   "src/Illuminate/Database/Eloquent/Casts/AsFluent.php"
+  ],
+  "723b151f2f": [
+   "src/Illuminate/Database/Eloquent/Model.php"
+  ],
+  "377f5ce7eb": [
+   "src/Illuminate/Database/Concerns/ManagesTransactions.php"
+  ],
+  "2ff984f7b5": [
+   "src/Illuminate/Queue/Failed/DatabaseFailedJobProvider.php",
+   "src/Illuminate/Queue/Failed/DatabaseUuidFailedJobProvider.php",
+   "src/Illuminate/Queue/Failed/DynamoDbFailedJobProvider.php",
+   "src/Illuminate/Queue/Failed/FailedJobProviderInterface.php",
+   "src/Illuminate/Queue/Failed/FileFailedJobProvider.php",
+   "src/Illuminate/Queue/Failed/NullFailedJobProvider.php"
+  ],
+  "f3adacd431": [
+   "src/Illuminate/Console/Scheduling/ScheduleInterruptCommand.php"
+  ],
+  "02e2f700a3": [
+   "src/Illuminate/Filesystem/Filesystem.php"
+  ],
+  "7dcbfa6a23": [
+   "src/Illuminate/Database/Eloquent/Concerns/HasAttributes.php"
+  ],
+  "7b994e0468": [
+   "src/Illuminate/Validation/Concerns/ValidatesAttributes.php"
+  ],
+  "a4e3874c56": [
+   "src/Illuminate/Validation/Rules/ArrayRule.php",
+   "src/Illuminate/Validation/ValidationRuleParser.php"
+  ],
+  "26f2d5fe40": [
+   "src/Illuminate/Bus/DebounceLock.php",
+   "src/Illuminate/Bus/Dispatcher.php",
+   "src/Illuminate/Bus/UniqueLock.php"
+  ],
+  "e130a2e7f3": [
+   "src/Illuminate/Foundation/Cloud/ExceptionReporter.php"
+  ],
+  "5c395e811f": [
+   "src/Illuminate/Foundation/Cloud/ExceptionReporter.php"
+  ],
+  "0ef381ade5": [
+   "src/Illuminate/Foundation/Console/DownCommand.php"
+  ],
+  "2487a5371a": [
+   "src/Illuminate/Support/Facades/Request.php"
+  ],
+  "ba834b221c": [
+   "src/Illuminate/Http/Request.php",
+   "types/Http/Request.php"
+  ],
+  "e2214eb048": [
+   "src/Illuminate/Foundation/Testing/RefreshDatabase.php"
+  ],
+  "3f732656b1": [
+   "src/Illuminate/Foundation/Application.php",
+   "src/Illuminate/Foundation/Cloud/Events.php",
+   "src/Illuminate/Foundation/Cloud/FailedJobProvider.php",
+   "src/Illuminate/Foundation/CloudBootstrapper.php",
+   "src/Illuminate/Foundation/Console/Kernel.php",
+   "src/Illuminate/Foundation/Exceptions/Handler.php",
+   "src/Illuminate/Foundation/Exceptions/Renderer/Mappers/BladeMapper.php",
+   "src/Illuminate/Support/Facades/Artisan.php",
+   "src/Illuminate/Support/Facades/Exceptions.php"
+  ],
+  "5d77975287": [
+   "src/Illuminate/Queue/SyncQueue.php"
+  ],
+  "10d81444de": [
+   "src/Illuminate/Database/Eloquent/Relations/BelongsToMany.php",
+   "src/Illuminate/Database/Eloquent/Relations/HasOneOrMany.php"
+  ],
+  "a62d615489": [
+   "src/Illuminate/Support/Testing/Fakes/MailFake.php"
+  ],
+  "dae3927571": [
+   "src/Illuminate/Notifications/Channels/MailChannel.php"
+  ],
+  "a21f9d110a": [
+   "src/Illuminate/Filesystem/Filesystem.php"
+  ],
+  "04ef272fac": [
+   "src/Illuminate/Routing/Router.php"
+  ],
+  "99892b3f45": [
+   "src/Illuminate/Validation/Rules/AnyOf.php"
+  ],
+  "1de9acf205": [
+   "src/Illuminate/Support/Once.php",
+   "src/Illuminate/Support/Onceable.php"
+  ],
+  "719bf5a318": [
+   "src/Illuminate/Http/Resources/JsonApi/AnonymousResourceCollection.php",
+   "src/Illuminate/Http/Resources/JsonApi/Concerns/ResolvesJsonApiElements.php"
+  ],
+  "3c91eca113": [
+   "src/Illuminate/Queue/DatabaseQueue.php"
+  ],
+  "166e8385b2": [
+   "src/Illuminate/Foundation/Cloud/ExceptionReporter.php"
+  ],
+  "f1c10664f4": [
+   "src/Illuminate/Foundation/Exceptions/Handler.php"
+  ],
+  "d8f93dacc8": [
+   "src/Illuminate/Foundation/Providers/ArtisanServiceProvider.php"
+  ],
+  "6956459735": [
+   "src/Illuminate/Database/Eloquent/Builder.php"
+  ],
+  "6490f9d830": [
+   "src/Illuminate/Image/Image.php"
+  ],
+  "5c0486f5a5": [
+   "src/Illuminate/Auth/Authenticatable.php",
+   "src/Illuminate/Auth/GenericUser.php",
+   "src/Illuminate/Contracts/Auth/Authenticatable.php"
+  ],
+  "f9cfb505d6": [
+   "src/Illuminate/Database/Eloquent/Relations/BelongsToMany.php"
+  ],
+  "e7cdac0c0c": [
+   "src/Illuminate/Database/Eloquent/Relations/BelongsToMany.php",
+   "types/Database/Eloquent/Relations.php"
+  ],
+  "5513a777e3": [
+   "src/Illuminate/Database/Eloquent/Relations/BelongsToMany.php"
+  ],
+  "0ee9ca28ce": [
+   "src/Illuminate/Pagination/Paginator.php"
+  ],
+  "6d0f491630": [
+   "src/Illuminate/Database/Query/Builder.php"
+  ],
+  "2c393c13c0": [
+   "src/Illuminate/Support/Testing/Fakes/BusFake.php"
+  ],
+  "e09fc54263": [
+   "src/Illuminate/Foundation/Application.php"
+  ],
+  "b5acc27da9": [
+   "src/Illuminate/Http/Client/Batch.php"
+  ],
+  "dd4184fd93": [
+   "src/Illuminate/Cache/RedisStore.php"
+  ],
+  "835946cb16": [
+   "src/Illuminate/Routing/Router.php"
+  ],
+  "6f3025721c": [
+   "src/Illuminate/Queue/Console/RetryCommand.php"
+  ],
+  "422370f89e": [
+   "src/Illuminate/Support/Facades/Http.php",
+   "src/Illuminate/Support/Facades/Process.php"
+  ],
+  "794b29c75a": [
+   "src/Illuminate/Cache/MemoizedTaggedCache.php",
+   "src/Illuminate/Cache/TaggedCache.php",
+   "src/Illuminate/Collections/Collection.php",
+   "src/Illuminate/Collections/LazyCollection.php",
+   "src/Illuminate/Console/Application.php",
+   "src/Illuminate/Console/Scheduling/CallbackEvent.php",
+   "src/Illuminate/Console/View/Components/Factory.php",
+   "src/Illuminate/Contracts/Debug/ExceptionHandler.php",
+   "src/Illuminate/Http/Client/Factory.php",
+   "src/Illuminate/Http/Client/PendingRequest.php",
+   "src/Illuminate/Image/Transformations/Blur.php",
+   "src/Illuminate/Image/Transformations/Sharpen.php",
+   "src/Illuminate/Log/LogManager.php",
+   "src/Illuminate/Mail/Mailable.php",
+   "src/Illuminate/Mail/Message.php",
+   "src/Illuminate/Mail/PendingMail.php",
+   "src/Illuminate/Notifications/Messages/MailMessage.php",
+   "src/Illuminate/Notifications/Messages/SimpleMessage.php",
+   "src/Illuminate/Notifications/SendQueuedNotifications.php",
+   "src/Illuminate/Pagination/AbstractCursorPaginator.php",
+   "src/Illuminate/Pagination/AbstractPaginator.php",
+   "src/Illuminate/Pagination/LengthAwarePaginator.php",
+   "src/Illuminate/Pagination/Paginator.php",
+   "src/Illuminate/Pipeline/Hub.php",
+   "src/Illuminate/Process/FakeProcessSequence.php",
+   "src/Illuminate/Process/PendingProcess.php",
+   "src/Illuminate/Queue/CallQueuedHandler.php",
+   "src/Illuminate/Queue/Connectors/RedisConnector.php",
+   "src/Illuminate/Queue/Failed/FileFailedJobProvider.php",
+   "src/Illuminate/Queue/Jobs/FakeJob.php",
+   "src/Illuminate/Queue/Jobs/Job.php",
+   "src/Illuminate/Queue/ListenerOptions.php",
+   "src/Illuminate/Queue/Queue.php",
+   "src/Illuminate/Queue/RedisQueue.php",
+   "src/Illuminate/Redis/Events/CommandExecuted.php",
+   "src/Illuminate/Redis/Events/CommandFailed.php",
+   "src/Illuminate/Routing/Route.php",
+   "src/Illuminate/Routing/Router.php",
+   "src/Illuminate/Session/Middleware/StartSession.php",
+   "src/Illuminate/Support/DateFactory.php",
+   "src/Illuminate/Support/MessageBag.php",
+   "src/Illuminate/Support/Pluralizer.php",
+   "src/Illuminate/Support/Testing/Fakes/MailFake.php",
+   "src/Illuminate/Support/Traits/Localizable.php",
+   "src/Illuminate/Translation/Translator.php",
+   "src/Illuminate/Validation/DatabasePresenceVerifier.php",
+   "src/Illuminate/Validation/DatabasePresenceVerifierInterface.php",
+   "src/Illuminate/Validation/PresenceVerifierInterface.php",
+   "src/Illuminate/Validation/Rules/File.php",
+   "src/Illuminate/Validation/Validator.php"
+  ],
+  "c97ff59f53": [
+   "src/Illuminate/Testing/Constraints/SeeInHtml.php"
+  ],
+  "2184bbe435": [
+   "src/Illuminate/Cache/DatabaseLock.php"
+  ],
+  "8b5b8865f4": [
+   "src/Illuminate/Foundation/Console/ConfigCacheCommand.php",
+   "src/Illuminate/Foundation/Console/EventCacheCommand.php",
+   "src/Illuminate/Foundation/Console/RouteCacheCommand.php"
+  ],
+  "dec3460a23": [
+   "src/Illuminate/Queue/Events/JobAttempted.php",
+   "src/Illuminate/Queue/Worker.php"
+  ],
+  "31dbc2b9b0": [
+   "src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php",
+   "src/Illuminate/Foundation/Http/Middleware/TrimStrings.php"
+  ],
+  "4b3f451bf5": [
+   "src/Illuminate/Database/Eloquent/Attributes/Table.php",
+   "src/Illuminate/Database/Eloquent/Model.php"
+  ],
+  "0d6b451894": [
+   "src/Illuminate/View/FileViewFinder.php"
+  ],
+  "95e37cb4b1": [
+   "src/Illuminate/Redis/Connections/PhpRedisConnection.php"
+  ],
+  "c42f9abd4a": [
+   "src/Illuminate/Foundation/Application.php"
+  ],
+  "e50ad778f6": [
+   "src/Illuminate/Support/Facades/DB.php"
+  ],
+  "4b3f2d8e1c": [
+   "src/Illuminate/Database/Connection.php"
+  ],
+  "3b2ebe0109": [
+   "src/Illuminate/Support/Facades/App.php"
+  ],
+  "b0e1c0ae96": [
+   "src/Illuminate/Console/Application.php",
+   "src/Illuminate/Console/Scheduling/CallbackEvent.php",
+   "src/Illuminate/Console/Scheduling/ManagesAttributes.php",
+   "src/Illuminate/Console/Scheduling/Schedule.php",
+   "src/Illuminate/Container/Container.php",
+   "src/Illuminate/Cookie/CookieJar.php",
+   "src/Illuminate/Database/Connection.php",
+   "src/Illuminate/Database/Console/Migrations/TableGuesser.php",
+   "src/Illuminate/Database/DatabaseTransactionRecord.php",
+   "src/Illuminate/Database/Eloquent/Builder.php",
+   "src/Illuminate/Database/Eloquent/Casts/Attribute.php",
+   "src/Illuminate/Database/Eloquent/Concerns/QueriesRelationships.php",
+   "src/Illuminate/Database/Eloquent/Model.php",
+   "src/Illuminate/Database/Eloquent/ModelInfo.php",
+   "src/Illuminate/Database/Eloquent/ModelInspector.php",
+   "src/Illuminate/Database/Events/QueryExecuted.php",
+   "src/Illuminate/Database/Migrations/Migrator.php",
+   "src/Illuminate/Database/Query/Builder.php",
+   "src/Illuminate/Database/Schema/Blueprint.php",
+   "src/Illuminate/Database/Schema/Builder.php",
+   "src/Illuminate/Database/Seeder.php",
+   "src/Illuminate/Encryption/Encrypter.php",
+   "src/Illuminate/Events/QueuedClosure.php",
+   "src/Illuminate/Filesystem/LocalFilesystemAdapter.php",
+   "src/Illuminate/Foundation/AliasLoader.php",
+   "src/Illuminate/Foundation/Application.php",
+   "src/Illuminate/Foundation/Bootstrap/HandleExceptions.php",
+   "src/Illuminate/Foundation/Cloud/ExceptionReporter.php",
+   "src/Illuminate/Foundation/Console/ServeCommand.php",
+   "src/Illuminate/Foundation/Exceptions/Renderer/Exception.php",
+   "src/Illuminate/Foundation/PackageManifest.php",
+   "src/Illuminate/Foundation/ProviderRepository.php",
+   "src/Illuminate/Hashing/AbstractHasher.php",
+   "src/Illuminate/Hashing/Argon2IdHasher.php",
+   "src/Illuminate/Hashing/ArgonHasher.php",
+   "src/Illuminate/Hashing/BcryptHasher.php",
+   "src/Illuminate/Http/Client/PendingRequest.php",
+   "src/Illuminate/Http/Client/ResponseSequence.php",
+   "src/Illuminate/Http/Request.php"
+  ],
+  "89f37d3529": [
+   "src/Illuminate/Validation/Concerns/ValidatesAttributes.php"
+  ],
+  "1b8b12d307": [
+   "src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php"
+  ],
+  "d794ce96ed": [
+   "src/Illuminate/Broadcasting/BroadcastManager.php"
+  ],
+  "0f4fb7adef": [
+   "src/Illuminate/Database/Concerns/BuildsQueries.php"
+  ],
+  "50509af8e6": [
+   "src/Illuminate/Database/Console/Migrations/ResetCommand.php",
+   "src/Illuminate/Database/Console/Migrations/RollbackCommand.php",
+   "src/Illuminate/Database/Eloquent/Concerns/HasAttributes.php",
+   "src/Illuminate/Foundation/Testing/Concerns/InteractsWithRedis.php",
+   "src/Illuminate/Queue/Middleware/ThrottlesExceptionsWithRedis.php"
+  ],
+  "5e48babe46": [
+   "src/Illuminate/Bus/PendingBatch.php"
+  ],
+  "ec2802aa9e": [
+   "src/Illuminate/Support/Facades/Auth.php"
+  ],
+  "9049e0ce07": [
+   "src/Illuminate/Auth/AuthManager.php",
+   "src/Illuminate/Auth/Middleware/Authorize.php",
+   "src/Illuminate/Auth/Notifications/ResetPassword.php",
+   "src/Illuminate/Auth/Notifications/VerifyEmail.php",
+   "src/Illuminate/Auth/SessionGuard.php",
+   "src/Illuminate/Broadcasting/AnonymousEvent.php",
+   "src/Illuminate/Broadcasting/BroadcastManager.php",
+   "src/Illuminate/Broadcasting/Broadcasters/PusherBroadcaster.php",
+   "src/Illuminate/Bus/Batchable.php",
+   "src/Illuminate/Bus/DynamoBatchRepository.php",
+   "src/Illuminate/Bus/Queueable.php",
+   "src/Illuminate/Cache/DatabaseStore.php",
+   "src/Illuminate/Cache/MemoizedTaggedCache.php",
+   "src/Illuminate/Cache/RedisStore.php",
+   "src/Illuminate/Collections/Arr.php",
+   "src/Illuminate/Collections/Enumerable.php",
+   "src/Illuminate/Collections/LazyCollection.php"
+  ],
+  "3bbfbac4a3": [
+   "src/Illuminate/Console/Scheduling/Schedule.php"
+  ],
+  "15a01b35eb": [
+   "src/Illuminate/Database/Eloquent/Relations/Relation.php"
+  ],
+  "12be372474": [
+   "src/Illuminate/Database/Schema/BlueprintState.php"
+  ],
+  "0fd0747167": [
+   "src/Illuminate/Collections/Traits/EnumeratesValues.php"
+  ],
+  "4145fdea5a": [
+   "src/Illuminate/Database/Eloquent/Model.php"
+  ],
+  "8a8401e926": [
+   "src/Illuminate/Notifications/NotificationSender.php"
+  ],
+  "6823482a9d": [
+   "src/Illuminate/Collections/Collection.php"
+  ],
+  "e355670673": [
+   "src/Illuminate/Foundation/CloudBootstrapper.php"
+  ],
+  "e51b5fe16d": [
+   "src/Illuminate/Foundation/Configuration/ApplicationBuilder.php"
+  ],
+  "6f2b5b77e6": [
+   "src/Illuminate/Events/CallQueuedListener.php",
+   "src/Illuminate/Events/Dispatcher.php",
+   "src/Illuminate/Mail/SendQueuedMailable.php",
+   "src/Illuminate/Notifications/SendQueuedNotifications.php"
+  ],
+  "f72822e5b8": [
+   "src/Illuminate/Database/Eloquent/Relations/Concerns/CanBeOneOfMany.php",
+   "src/Illuminate/Database/Eloquent/Relations/MorphOne.php"
+  ],
+  "e0b81354b3": [
+   "src/Illuminate/Database/Eloquent/Relations/Concerns/CanBeOneOfMany.php"
+  ],
+  "8998ef4555": [
+   "src/Illuminate/Collections/Traits/EnumeratesValues.php",
+   "types/Support/Collection.php",
+   "types/Support/LazyCollection.php"
+  ],
+  "67905cc363": [
+   "src/Illuminate/Validation/Rules/DatabaseRule.php"
+  ],
+  "685f8d6c2a": [
+   "src/Illuminate/Foundation/Application.php"
+  ],
+  "af81bbbc15": [
+   "src/Illuminate/Foundation/CloudBootstrapper.php"
+  ],
+  "fbc2b3e944": [
+   "src/Illuminate/Events/Dispatcher.php"
+  ],
+  "6d2eefbb14": [
+   "src/Illuminate/Database/Connection.php"
+  ],
+  "ff0d6b967f": [
+   "src/Illuminate/Database/Console/Migrations/StatusCommand.php",
+   "src/Illuminate/Database/Migrations/Migrator.php"
+  ],
+  "bff5d2a24e": [
+   "src/Illuminate/Database/Eloquent/Concerns/HasAttributes.php"
+  ],
+  "940f3452ab": [
+   "src/Illuminate/Validation/Rule.php"
+  ],
+  "c413cff982": [
+   "src/Illuminate/Cache/DynamoDbStore.php"
+  ],
+  "9bfc37320a": [
+   "src/Illuminate/Validation/Rule.php",
+   "src/Illuminate/Validation/Rules/Numeric.php"
+  ],
+  "da949b41e4": [
+   "src/Illuminate/Database/Eloquent/Concerns/HasAttributes.php"
+  ],
+  "531cd578bd": [
+   "src/Illuminate/Http/RedirectResponse.php"
+  ],
+  "a02558ef15": [
+   "src/Illuminate/Database/Eloquent/Relations/HasOneOrManyThrough.php"
+  ],
+  "42e87f0c9c": [
+   "src/Illuminate/Database/Eloquent/Concerns/QueriesRelationships.php"
+  ],
+  "840b2a96a6": [
+   "src/Illuminate/Database/Eloquent/Relations/HasOneThrough.php"
+  ],
+  "f43d77daf2": [
+   "src/Illuminate/Image/Drivers/InterventionDriver.php",
+   "src/Illuminate/Image/Image.php",
+   "src/Illuminate/Image/ImageOutputOptions.php"
+  ],
+  "957afcdc93": [
+   "src/Illuminate/Support/Testing/Fakes/QueueFake.php"
+  ],
+  "c4340e646a": [
+   "src/Illuminate/Database/Eloquent/Builder.php"
+  ],
+  "6ea1b32090": [
+   "src/Illuminate/Http/Resources/JsonApi/Concerns/ResolvesJsonApiElements.php"
+  ],
+  "7920fe1d6a": [
+   "src/Illuminate/Mail/Markdown.php"
+  ],
+  "c3e586825b": [
+   "src/Illuminate/Queue/Console/ForgetFailedCommand.php"
+  ],
+  "c90a0c8d51": [
+   "src/Illuminate/Filesystem/FilesystemManager.php"
+  ],
+  "5cc36e3233": [
+   "src/Illuminate/View/Component.php",
+   "src/Illuminate/View/InvokableComponentVariable.php"
+  ],
+  "c1e3626ae0": [
+   "src/Illuminate/Database/Eloquent/Collection.php"
+  ],
+  "ce7a0de5ae": [
+   "src/Illuminate/Database/Eloquent/SoftDeletingScope.php"
+  ],
+  "9b4b444019": [
+   "src/Illuminate/Database/Eloquent/Relations/HasOneOrManyThrough.php"
+  ],
+  "04c07c33d9": [
+   "src/Illuminate/Http/Resources/JsonApi/Concerns/ResolvesJsonApiElements.php"
+  ],
+  "43a4488e5f": [
+   "src/Illuminate/Database/Eloquent/Builder.php"
+  ],
+  "3727a91780": [
+   "src/Illuminate/Console/Events/ScheduledTaskFailed.php",
+   "src/Illuminate/Console/Scheduling/ScheduleRunCommand.php"
+  ],
+  "b597847d46": [
+   "src/Illuminate/Queue/Console/ListFailedCommand.php"
+  ],
+  "78a5c48ea3": [
+   "src/Illuminate/Database/Eloquent/Concerns/QueriesRelationships.php",
+   "types/Database/Eloquent/Builder.php"
+  ],
+  "a0d6db3446": [
+   "src/Illuminate/Database/Eloquent/Relations/HasOne.php"
+  ],
+  "8a58e4696c": [
+   "src/Illuminate/Foundation/Bus/PendingDispatch.php"
+  ],
+  "f9aed736a8": [
+   "src/Illuminate/Database/Schema/Grammars/MySqlGrammar.php"
+  ],
+  "6168f60d55": [
+   "src/Illuminate/Cache/Limiters/ConcurrencyLimiter.php",
+   "src/Illuminate/Redis/Limiters/ConcurrencyLimiter.php",
+   "src/Illuminate/Redis/Limiters/DurationLimiter.php"
+  ],
+  "0fd73881de": [
+   "src/Illuminate/Console/Scheduling/CacheEventMutex.php"
+  ],
+  "4a4554f4d8": [
+   "src/Illuminate/Foundation/Application.php"
+  ],
+  "e5626e3813": [
+   "src/Illuminate/Foundation/Application.php"
+  ],
+  "9bbacaf625": [
+   "src/Illuminate/Database/Eloquent/Model.php"
+  ],
+  "7b8a685ab0": [
+   "src/Illuminate/Container/Container.php"
+  ],
+  "686f6bf4d1": [
+   "src/Illuminate/Database/Connection.php"
+  ],
+  "84744cdc2f": [
+   "config/broadcasting.php",
+   "src/Illuminate/Broadcasting/BroadcastManager.php",
+   "src/Illuminate/Broadcasting/Broadcasters/MercureBroadcaster.php",
+   "src/Illuminate/Broadcasting/Mercure/CreatesMercureDrivers.php"
+  ],
+  "631f8a6e68": [
+   "src/Illuminate/Process/PendingProcess.php"
+  ],
+  "14e4c05951": [
+   "src/Illuminate/Broadcasting/UniqueBroadcastEvent.php"
+  ],
+  "88aadc10c5": [
+   "src/Illuminate/Queue/Queue.php"
+  ],
+  "1adc68b20f": [
+   "src/Illuminate/Console/Scheduling/CallbackEvent.php"
+  ],
+  "e8b96d9369": [
+   "src/Illuminate/Http/Middleware/TrustProxies.php"
+  ],
+  "479bd9f5c3": [
+   "src/Illuminate/Http/Middleware/TrustProxies.php"
+  ],
+  "3496cdf700": [
+   "src/Illuminate/Queue/LuaScripts.php"
+  ],
+  "83bf547da6": [
+   "src/Illuminate/Collections/Arr.php"
+  ],
+  "1ee6d193db": [
+   "src/Illuminate/Notifications/ChannelManager.php"
+  ],
+  "f618f7911d": [
+   "src/Illuminate/Database/Eloquent/Concerns/HasAttributes.php"
+  ],
+  "f33f395826": [
+   "src/Illuminate/Database/Schema/Builder.php"
+  ],
+  "73a25a4ad3": [
+   "src/Illuminate/Database/Eloquent/Relations/BelongsToMany.php",
+   "types/Database/Eloquent/Relations.php"
+  ],
+  "01ac36d93a": [
+   "src/Illuminate/Log/Context/Repository.php"
+  ],
+  "a9c22e409e": [
+   "src/Illuminate/Queue/Worker.php"
+  ],
+  "224c7e6a57": [
+   "src/Illuminate/Database/Eloquent/Relations/MorphTo.php"
+  ],
+  "3517d4dbb2": [
+   "src/Illuminate/Database/Eloquent/Relations/HasOneOrManyThrough.php"
+  ],
+  "17bc0b1378": [
+   "src/Illuminate/Foundation/Testing/Concerns/InteractsWithExceptionHandling.php",
+   "types/Support/Arr.php"
+  ],
+  "40c0d0b1d5": [
+   "src/Illuminate/Redis/Connections/PhpRedisConnection.php"
+  ],
+  "dc3455f165": [
+   "src/Illuminate/Validation/Rule.php",
+   "src/Illuminate/Validation/Rules/Date.php",
+   "src/Illuminate/Validation/ValidationRuleParser.php"
+  ],
+  "68e78fe401": [
+   "src/Illuminate/Database/MySqlConnection.php"
+  ],
+  "d73760a879": [
+   "src/Illuminate/Mail/Markdown.php"
+  ],
+  "355d1e1e3a": [
+   "src/Illuminate/Routing/ResponseFactory.php"
+  ],
+  "847f73b00d": [
+   "src/Illuminate/Mail/MailManager.php"
+  ],
+  "09c6dc3d90": [
+   "src/Illuminate/Support/Number.php"
+  ],
+  "7ee7a6467b": [
+   "src/Illuminate/Translation/FileLoader.php"
+  ],
+  "c7deadb839": [
+   "src/Illuminate/Foundation/Console/Kernel.php"
+  ],
+  "fc2cd955eb": [
+   "src/Illuminate/Http/Middleware/TrustProxies.php"
+  ],
+  "6ed8e044ef": [
+   "src/Illuminate/Database/Query/Builder.php"
+  ],
+  "8d1bb8f0d9": [
+   "src/Illuminate/View/Compilers/ComponentTagCompiler.php"
+  ],
+  "2795df5abc": [
+   "src/Illuminate/Foundation/Console/Kernel.php",
+   "tests/Foundation/Console/KernelTest.php"
+  ]
+ },
+ "symfony": {
+  "d652ba8fb1": [
+   "src/Symfony/Bundle/DebugBundle/DependencyInjection/Configuration.php",
+   "src/Symfony/Bundle/FrameworkBundle/DependencyInjection/Configuration.php",
+   "src/Symfony/Bundle/SecurityBundle/DependencyInjection/MainConfiguration.php",
+   "src/Symfony/Bundle/SecurityBundle/DependencyInjection/Security/AccessToken/CasTokenHandlerFactory.php",
+   "src/Symfony/Bundle/SecurityBundle/DependencyInjection/Security/AccessToken/OAuth2TokenHandlerFactory.php",
+   "src/Symfony/Bundle/SecurityBundle/DependencyInjection/Security/AccessToken/OidcTokenHandlerFactory.php",
+   "src/Symfony/Bundle/SecurityBundle/DependencyInjection/Security/AccessToken/OidcUserInfoTokenHandlerFactory.php",
+   "src/Symfony/Bundle/SecurityBundle/DependencyInjection/Security/AccessToken/ServiceTokenHandlerFactory.php",
+   "src/Symfony/Bundle/SecurityBundle/DependencyInjection/Security/Factory/AbstractFactory.php",
+   "src/Symfony/Bundle/SecurityBundle/DependencyInjection/Security/Factory/AccessTokenFactory.php",
+   "src/Symfony/Bundle/SecurityBundle/DependencyInjection/Security/Factory/CustomAuthenticatorFactory.php",
+   "src/Symfony/Bundle/SecurityBundle/DependencyInjection/Security/Factory/FormLoginLdapFactory.php",
+   "src/Symfony/Bundle/SecurityBundle/DependencyInjection/Security/Factory/HttpBasicFactory.php",
+   "src/Symfony/Bundle/SecurityBundle/DependencyInjection/Security/Factory/HttpBasicLdapFactory.php",
+   "src/Symfony/Bundle/SecurityBundle/DependencyInjection/Security/Factory/JsonLoginLdapFactory.php",
+   "src/Symfony/Bundle/SecurityBundle/DependencyInjection/Security/Factory/LoginLinkFactory.php",
+   "src/Symfony/Bundle/SecurityBundle/DependencyInjection/Security/Factory/LoginThrottlingFactory.php",
+   "src/Symfony/Bundle/SecurityBundle/DependencyInjection/Security/Factory/OidcLoginFactory.php",
+   "src/Symfony/Bundle/SecurityBundle/DependencyInjection/Security/Factory/RememberMeFactory.php",
+   "src/Symfony/Bundle/SecurityBundle/DependencyInjection/Security/Factory/RemoteUserFactory.php",
+   "src/Symfony/Bundle/SecurityBundle/DependencyInjection/Security/Factory/X509Factory.php",
+   "src/Symfony/Bundle/SecurityBundle/DependencyInjection/Security/UserProvider/LdapFactory.php",
+   "src/Symfony/Bundle/TwigBundle/DependencyInjection/Configuration.php",
+   "src/Symfony/Bundle/WebProfilerBundle/DependencyInjection/Configuration.php",
+   "src/Symfony/Component/Asset/AssetBundle.php",
+   "src/Symfony/Component/AssetMapper/AssetMapperBundle.php",
+   "src/Symfony/Component/Cache/CacheBundle.php",
+   "src/Symfony/Component/HtmlSanitizer/HtmlSanitizerBundle.php",
+   "src/Symfony/Component/HttpClient/HttpClientBundle.php",
+   "src/Symfony/Component/KeyManagement/KeyManagementBundle.php",
+   "src/Symfony/Component/Mailer/MailerBundle.php",
+   "src/Symfony/Component/Messenger/MessengerBundle.php",
+   "src/Symfony/Component/Notifier/NotifierBundle.php",
+   "src/Symfony/Component/PropertyAccess/PropertyAccessBundle.php",
+   "src/Symfony/Component/PropertyInfo/PropertyInfoBundle.php",
+   "src/Symfony/Component/RateLimiter/RateLimiterBundle.php",
+   "src/Symfony/Component/Routing/RouterBundle.php",
+   "src/Symfony/Component/Scheduler/SchedulerBundle.php",
+   "src/Symfony/Component/Serializer/SerializerBundle.php",
+   "src/Symfony/Component/Translation/TranslationBundle.php",
+   "src/Symfony/Component/Validator/ValidationBundle.php",
+   "src/Symfony/Component/Webhook/WebhookBundle.php",
+   "src/Symfony/Component/Workflow/WorkflowBundle.php"
+  ],
+  "08c6fc5956": [
+   "src/Symfony/Component/HttpKernel/Kernel.php"
+  ],
+  "99f59b63c7": [
+   "src/Symfony/Component/HttpKernel/Kernel.php"
+  ],
+  "4f810904cd": [
+   "src/Symfony/Bundle/FrameworkBundle/DependencyInjection/Compiler/UnusedTagsPass.php",
+   "src/Symfony/Component/PropertyInfo/CacheWarmer/PropertyInfoCacheWarmer.php",
+   "src/Symfony/Component/PropertyInfo/Resources/config/property_info.php",
+   "src/Symfony/Component/Serializer/CacheWarmer/SerializerCacheWarmer.php",
+   "src/Symfony/Component/Serializer/Resources/config/serializer.php",
+   "src/Symfony/Component/Validator/CacheWarmer/ValidatorCacheWarmer.php",
+   "src/Symfony/Component/Validator/Resources/config/validator.php"
+  ],
+  "d179c06634": [
+   "src/Symfony/Component/HttpKernel/DependencyInjection/RegisterControllerArgumentLocatorsPass.php"
+  ],
+  "8363d217df": [
+   "src/Symfony/Component/JsonSchema/PropertySchemaEnricher/ValidatorPropertySchemaEnricher.php",
+   "src/Symfony/Component/JsonSchema/SchemaGenerator.php"
+  ],
+  "7fe94b256b": [
+   "src/Symfony/Component/JsonSchema/SchemaGenerator.php"
+  ],
+  "4a576821e6": [
+   "src/Symfony/Bridge/Doctrine/Validator/Constraints/UniqueEntityValidator.php"
+  ],
+  "8768709738": [
+   "src/Symfony/Component/JsonSchema/PropertySchemaEnricher/ValidatorPropertySchemaEnricher.php"
+  ],
+  "ab5920ce7e": [
+   "src/Symfony/Component/HttpClient/Chunk/ServerSentEvent.php"
+  ],
+  "a8fa24665a": [
+   "src/Symfony/Component/HttpClient/EventSourceHttpClient.php"
+  ],
+  "3f4075338e": [
+   "src/Symfony/Component/DependencyInjection/ContainerBuilder.php"
+  ],
+  "c9c844c3f6": [
+   "src/Symfony/Component/Security/Http/Authenticator/AccessTokenAuthenticator.php"
+  ],
+  "08293799f5": [
+   "src/Symfony/Component/Routing/RouteCompiler.php"
+  ],
+  "312e94b172": [
+   "src/Symfony/Bundle/FrameworkBundle/DependencyInjection/FrameworkExtension.php",
+   "src/Symfony/Component/Cache/Adapter/ChainAdapter.php",
+   "src/Symfony/Component/Cache/Adapter/TraceableAdapter.php",
+   "src/Symfony/Component/Cache/Messenger/EarlyExpirationDispatcher.php",
+   "src/Symfony/Component/Cache/Messenger/EarlyExpirationMessage.php"
+  ],
+  "c124c06680": [
+   "src/Symfony/Component/HttpClient/CurlHttpClient.php"
+  ],
+  "049fc1500f": [
+   "src/Symfony/Component/HttpFoundation/HeaderBag.php",
+   "src/Symfony/Component/HttpFoundation/Response.php"
+  ],
+  "7777045798": [
+   "src/Symfony/Component/Runtime/Runner/FrankenPhpWorkerRunner.php"
+  ],
+  "95b9b25c8d": [
+   "src/Symfony/Component/HttpClient/RetryableHttpClient.php"
+  ],
+  "7f5abb0f96": [
+   "src/Symfony/Component/HttpClient/AmpHttpClient.php",
+   "src/Symfony/Component/HttpClient/HttpClientTrait.php"
+  ],
+  "0dceacf012": [
+   "src/Symfony/Component/HttpClient/CachingHttpClient.php",
+   "src/Symfony/Component/HttpClient/Response/StreamWrapper.php"
+  ],
+  "2178fb8d12": [
+   "src/Symfony/Component/HttpFoundation/RateLimiter/AbstractRequestRateLimiter.php",
+   "src/Symfony/Component/RateLimiter/CompoundLimiter.php"
+  ],
+  "5ad48181ca": [
+   "src/Symfony/Component/Cache/Adapter/AbstractTagAwareAdapter.php",
+   "src/Symfony/Component/Cache/Adapter/ChainAdapter.php"
+  ],
+  "5ad20483d0": [
+   "src/Symfony/Component/HttpClient/NoPrivateNetworkHttpClient.php"
+  ],
+  "569176a769": [
+   "src/Symfony/Component/HttpClient/CurlHttpClient.php",
+   "src/Symfony/Component/HttpClient/HttpClientTrait.php",
+   "src/Symfony/Component/HttpClient/RetryableHttpClient.php"
+  ],
+  "d4cefaf9db": [
+   "src/Symfony/Component/Cache/Traits/ValueWrapper.php"
+  ],
+  "fce680be66": [
+   "src/Symfony/Component/ObjectMapper/ObjectMapper.php"
+  ],
+  "9e5f02475f": [
+   "src/Symfony/Component/Messenger/Bridge/Amqp/Transport/AmqpTransport.php",
+   "src/Symfony/Component/Messenger/Bridge/Amqp/Transport/Connection.php"
+  ],
+  "1e3fd25f51": [
+   "src/Symfony/Component/Cache/Traits/AbstractAdapterTrait.php"
+  ],
+  "1487092aa0": [
+   "src/Symfony/Component/Mailer/Transport/Smtp/EsmtpTransportFactory.php"
+  ],
+  "19afb627c0": [
+   "src/Symfony/Component/Notifier/Bridge/Instagram/InstagramTransportFactory.php",
+   "src/Symfony/Component/Notifier/Bridge/Threads/ThreadsTransportFactory.php"
+  ],
+  "fc32620e3b": [
+   "src/Symfony/Component/Notifier/Bridge/Ntfy/NtfyTransportFactory.php",
+   "src/Symfony/Component/Notifier/Bridge/SpotHit/SpotHitTransportFactory.php"
+  ],
+  "cacaa27a83": [
+   "src/Symfony/Component/Notifier/Bridge/Ntfy/NtfyTransportFactory.php",
+   "src/Symfony/Component/Notifier/Bridge/SpotHit/SpotHitTransportFactory.php"
+  ],
+  "c6d55909af": [
+   "src/Symfony/Component/Cache/Adapter/MemcachedAdapter.php"
+  ],
+  "fc5082ba1f": [
+   "src/Symfony/Component/Messenger/Bridge/Amqp/Transport/Connection.php"
+  ],
+  "360d01b831": [
+   "src/Symfony/Component/HttpClient/Internal/AmpBody.php"
+  ],
+  "2622840907": [
+   "src/Symfony/Bundle/SecurityBundle/DataCollector/SecurityDataCollector.php",
+   "src/Symfony/Bundle/SecurityBundle/Resources/config/security_authenticator_remember_me.php"
+  ],
+  "4ea74dbfd3": [
+   "src/Symfony/Component/Notifier/Bridge/MicrosoftTeams/MicrosoftTeamsOptions.php",
+   "src/Symfony/Component/Notifier/Bridge/MicrosoftTeams/MicrosoftTeamsTransport.php"
+  ],
+  "2f1fd67118": [
+   "src/Symfony/Component/Mailer/Bridge/Sweego/Transport/SweegoApiTransport.php"
+  ],
+  "dc133e826e": [
+   "src/Symfony/Component/Validator/Constraints/IbanValidator.php",
+   "src/Symfony/Component/Validator/Resources/bin/sync-iban-formats.php"
+  ],
+  "2441c53559": [
+   "src/Symfony/Bundle/FrameworkBundle/Resources/config/test.php"
+  ],
+  "6377f2e643": [
+   "src/Symfony/Component/HttpClient/CachingHttpClient.php"
+  ],
+  "c31f819edb": [
+   "src/Symfony/Component/HttpClient/CachingHttpClient.php"
+  ],
+  "22b2c54d74": [
+   "src/Symfony/Component/Notifier/Bridge/Brevo/BrevoTransport.php"
+  ],
+  "56fc277cad": [
+   "src/Symfony/Component/Mailer/Bridge/AhaSend/Transport/AhaSendApiTransport.php"
+  ],
+  "2ea25d1c6c": [
+   "src/Symfony/Component/Scheduler/Generator/MessageGenerator.php"
+  ],
+  "5934b23deb": [
+   "src/Symfony/Component/RateLimiter/Policy/TokenBucketLimiter.php"
+  ],
+  "1c85f603da": [
+   "src/Symfony/Component/HttpClient/NoPrivateNetworkHttpClient.php"
+  ],
+  "76f8e2ae4e": [
+   "src/Symfony/Component/AssetMapper/ImportMap/ImportMapAuditor.php",
+   "src/Symfony/Component/AssetMapper/ImportMap/ImportMapUpdateChecker.php",
+   "src/Symfony/Component/AssetMapper/ImportMap/ImportMapVersionChecker.php"
+  ],
+  "96050b875d": [
+   "src/Symfony/Component/Yaml/Inline.php",
+   "src/Symfony/Component/Yaml/Parser.php"
+  ],
+  "095431b0d5": [
+   "src/Symfony/Component/Mailer/Bridge/Postal/Transport/PostalApiTransport.php"
+  ],
+  "eb3e1caa0f": [
+   "src/Symfony/Bundle/SecurityBundle/Resources/config/security_debug.php",
+   "src/Symfony/Component/Security/Core/Authorization/TraceableAccessDecisionManager.php"
+  ],
+  "d06f0b027b": [
+   "src/Symfony/Bundle/SecurityBundle/Debug/TraceableFirewallListener.php"
+  ],
+  "0063a625bf": [
+   "src/Symfony/Component/AssetMapper/ImportMap/ImportMapUpdateChecker.php"
+  ],
+  "ed13c27a67": [
+   "src/Symfony/Component/BrowserKit/AbstractBrowser.php",
+   "src/Symfony/Component/HttpClient/CurlHttpClient.php"
+  ],
+  "89993e5da4": [
+   "src/Symfony/Component/Mailer/Bridge/AhaSend/Transport/AhaSendSmtpTransport.php",
+   "src/Symfony/Component/Mailer/Bridge/AhaSend/Transport/AhaSendTransportFactory.php",
+   "src/Symfony/Component/Mailer/Bridge/Infobip/Transport/InfobipSmtpTransport.php",
+   "src/Symfony/Component/Mailer/Bridge/Infobip/Transport/InfobipTransportFactory.php",
+   "src/Symfony/Component/Mailer/Bridge/MailPace/Transport/MailPaceSmtpTransport.php",
+   "src/Symfony/Component/Mailer/Bridge/MailPace/Transport/MailPaceTransportFactory.php",
+   "src/Symfony/Component/Mailer/Bridge/Mailchimp/Transport/MandrillSmtpTransport.php",
+   "src/Symfony/Component/Mailer/Bridge/Mailchimp/Transport/MandrillTransportFactory.php",
+   "src/Symfony/Component/Mailer/Bridge/MailerSend/Transport/MailerSendSmtpTransport.php",
+   "src/Symfony/Component/Mailer/Bridge/MailerSend/Transport/MailerSendTransportFactory.php",
+   "src/Symfony/Component/Mailer/Bridge/Mailgun/Transport/MailgunSmtpTransport.php",
+   "src/Symfony/Component/Mailer/Bridge/Mailgun/Transport/MailgunTransportFactory.php",
+   "src/Symfony/Component/Mailer/Bridge/Mailjet/Transport/MailjetSmtpTransport.php",
+   "src/Symfony/Component/Mailer/Bridge/Mailjet/Transport/MailjetTransportFactory.php",
+   "src/Symfony/Component/Mailer/Bridge/Mailomat/Transport/MailomatSmtpTransport.php",
+   "src/Symfony/Component/Mailer/Bridge/Mailomat/Transport/MailomatTransportFactory.php",
+   "src/Symfony/Component/Mailer/Bridge/Mailtrap/Transport/MailtrapSmtpTransport.php",
+   "src/Symfony/Component/Mailer/Bridge/Mailtrap/Transport/MailtrapTransportFactory.php",
+   "src/Symfony/Component/Mailer/Bridge/Postmark/Transport/PostmarkSmtpTransport.php",
+   "src/Symfony/Component/Mailer/Bridge/Postmark/Transport/PostmarkTransportFactory.php"
+  ],
+  "554c488313": [
+   "src/Symfony/Component/RateLimiter/RateLimit.php"
+  ],
+  "cb38efff33": [
+   "src/Symfony/Component/DependencyInjection/Loader/FileLoader.php",
+   "src/Symfony/Component/Routing/Loader/Configurator/RoutingConfigurator.php",
+   "src/Symfony/Component/Routing/Loader/PhpFileLoader.php",
+   "src/Symfony/Component/Routing/Loader/XmlFileLoader.php",
+   "src/Symfony/Component/Routing/Loader/YamlFileLoader.php"
+  ],
+  "3a38e24303": [
+   "src/Symfony/Component/Messenger/Worker.php"
+  ],
+  "6e7c75d76d": [
+   "src/Symfony/Component/Yaml/Schema/SchemaValidator.php"
+  ],
+  "ec870b14dc": [
+   "src/Symfony/Component/Mailer/Bridge/AhaSend/RemoteEvent/AhaSendPayloadConverter.php",
+   "src/Symfony/Component/Mailer/Bridge/AhaSend/Transport/AhaSendApiTransport.php"
+  ],
+  "e0ebbf7c7a": [
+   "src/Symfony/Component/Messenger/Command/ConsumeMessagesCommand.php",
+   "src/Symfony/Component/Messenger/Execution/DispatchTask.php",
+   "src/Symfony/Component/Messenger/Execution/ParallelExecutionStrategy.php"
+  ],
+  "ca025ad7bb": [
+   "src/Symfony/Component/Cache/Traits/RedisTrait.php",
+   "src/Symfony/Component/Messenger/Bridge/Beanstalkd/Transport/Connection.php"
+  ],
+  "b4a31c8508": [
+   "src/Symfony/Component/Cache/Traits/RedisTrait.php",
+   "src/Symfony/Component/Messenger/Bridge/AmazonSqs/Transport/Connection.php",
+   "src/Symfony/Component/Messenger/Bridge/Amqp/Transport/Connection.php",
+   "src/Symfony/Component/Messenger/Bridge/Doctrine/Transport/Connection.php",
+   "src/Symfony/Component/Messenger/Bridge/Redis/Transport/Connection.php"
+  ],
+  "f81fe4b086": [
+   "src/Symfony/Component/Scheduler/Generator/Checkpoint.php",
+   "src/Symfony/Component/Scheduler/Generator/MessageGenerator.php",
+   "src/Symfony/Component/Scheduler/Trigger/PeriodicalTrigger.php"
+  ],
+  "b2ef39a44a": [
+   "src/Symfony/Component/Config/ResourceCheckerConfigCache.php"
+  ],
+  "b2d8d417c8": [
+   "src/Symfony/Component/Semaphore/Store/RedisStore.php"
+  ],
+  "04fc3bba18": [
+   "src/Symfony/Component/Cache/Adapter/MemcachedAdapter.php",
+   "src/Symfony/Component/HttpFoundation/Session/Storage/Handler/MemcachedSessionHandler.php",
+   "src/Symfony/Component/Lock/Store/MemcachedStore.php"
+  ],
+  "50160571d2": [
+   "src/Symfony/Component/Lock/Bridge/DynamoDb/Store/DynamoDbStore.php",
+   "src/Symfony/Component/Lock/Store/DoctrineDbalStore.php",
+   "src/Symfony/Component/Lock/Store/InMemoryStore.php",
+   "src/Symfony/Component/Lock/Store/MemcachedStore.php",
+   "src/Symfony/Component/Lock/Store/MongoDbStore.php",
+   "src/Symfony/Component/Lock/Store/PdoStore.php",
+   "src/Symfony/Component/Lock/Store/RedisStore.php",
+   "src/Symfony/Component/Lock/Store/ZookeeperStore.php"
+  ],
+  "25f2d3142f": [
+   "src/Symfony/Component/Yaml/Inline.php"
+  ],
+  "86a9dac423": [
+   "src/Symfony/Component/Lock/Store/RedisStore.php",
+   "src/Symfony/Component/Semaphore/Store/RedisStore.php"
+  ],
+  "e40cb457b3": [
+   "src/Symfony/Component/Mailer/Bridge/AhaSend/Transport/AhaSendSmtpTransport.php"
+  ],
+  "f95d2a76fe": [
+   "src/Symfony/Component/Messenger/Bridge/Redis/Transport/Connection.php"
+  ],
+  "6aec1518ee": [
+   "src/Symfony/Component/Lock/Store/MemcachedStore.php"
+  ],
+  "136870e1b0": [
+   "src/Symfony/Component/Messenger/Bridge/Redis/Transport/Connection.php",
+   "src/Symfony/Component/Messenger/Bridge/Redis/Transport/RedisReceiver.php"
+  ],
+  "0b692b619f": [
+   "src/Symfony/Component/RateLimiter/CompoundLimiter.php"
+  ],
+  "ecaa9312d1": [
+   "src/Symfony/Component/Scheduler/Trigger/PeriodicalTrigger.php"
+  ],
+  "229ff336f7": [
+   "src/Symfony/Component/RateLimiter/Policy/SlidingWindow.php",
+   "src/Symfony/Component/RateLimiter/Policy/SlidingWindowLimiter.php"
+  ],
+  "7ed973010b": [
+   "src/Symfony/Component/Config/Definition/ArrayShapeGenerator.php",
+   "src/Symfony/Component/Config/Definition/Dumper/YamlReferenceDumper.php"
+  ],
+  "ae66ea9edc": [
+   "src/Symfony/Component/Scheduler/Generator/MessageGenerator.php"
+  ],
+  "6643cc839e": [
+   "src/Symfony/Component/Lock/Store/RedisStore.php"
+  ],
+  "5f67d9d780": [
+   "src/Symfony/Component/Lock/Store/MongoDbStore.php"
+  ],
+  "38b1e8329b": [
+   "src/Symfony/Component/Lock/Store/MemcachedStore.php"
+  ],
+  "244826c200": [
+   "src/Symfony/Component/Scheduler/Generator/Checkpoint.php"
+  ],
+  "c8d70900ec": [
+   "src/Symfony/Bridge/Twig/Form/TwigRendererEngine.php",
+   "src/Symfony/Bridge/Twig/Node/TransDefaultDomainNode.php",
+   "src/Symfony/Bridge/Twig/NodeVisitor/TranslationDefaultDomainNodeVisitor.php",
+   "src/Symfony/Bridge/Twig/TokenParser/TransDefaultDomainTokenParser.php"
+  ],
+  "f98f4e6ae5": [
+   "src/Symfony/Component/TypeInfo/TypeFactoryTrait.php"
+  ],
+  "2925a58156": [
+   "src/Symfony/Bundle/SecurityBundle/DependencyInjection/SecurityExtension.php",
+   "src/Symfony/Bundle/SecurityBundle/Resources/config/security_authenticator.php",
+   "src/Symfony/Component/Security/Http/EventListener/LoginThrottlingListener.php",
+   "src/Symfony/Component/Security/Http/RateLimiter/DefaultLoginRateLimiter.php"
+  ],
+  "b4af8c3048": [
+   "src/Symfony/Component/Security/Http/RateLimiter/DefaultLoginRateLimiter.php"
+  ],
+  "3b1c5afdfa": [
+   "src/Symfony/Component/Routing/Matcher/Dumper/CompiledUrlMatcherDumper.php"
+  ],
+  "dd3eb32ce5": [
+   "src/Symfony/Component/Routing/Matcher/Dumper/CompiledUrlMatcherDumper.php"
+  ],
+  "6c73503f9c": [
+   "src/Symfony/Component/Security/Http/RateLimiter/DefaultLoginRateLimiter.php"
+  ],
+  "6926df2c9b": [
+   "src/Symfony/Component/Messenger/Bridge/Doctrine/Transport/PostgreSqlConnection.php"
+  ],
+  "4ef6bc46c0": [
+   "src/Symfony/Component/AssetMapper/AssetMapperBundle.php"
+  ],
+  "bc82bb09ef": [
+   "src/Symfony/Component/Routing/Matcher/Dumper/CompiledUrlMatcherTrait.php"
+  ],
+  "a15c76e43e": [
+   "src/Symfony/Component/Messenger/Bridge/Redis/Transport/Connection.php"
+  ],
+  "d870e248dd": [
+   "src/Symfony/Component/RateLimiter/Policy/TokenBucketLimiter.php",
+   "src/Symfony/Component/RateLimiter/RateLimit.php"
+  ],
+  "4cfa18461d": [
+   "src/Symfony/Component/Yaml/Parser.php"
+  ],
+  "04fdb45053": [
+   "src/Symfony/Component/Messenger/Bridge/Redis/Transport/Connection.php"
+  ],
+  "269c5c614e": [
+   "src/Symfony/Component/Messenger/Execution/DispatchTask.php"
+  ],
+  "d6f24151d0": [
+   "src/Symfony/Component/RateLimiter/CompoundLimiter.php"
+  ],
+  "4decf9c7c5": [
+   "src/Symfony/Component/Routing/Matcher/Dumper/CompiledUrlMatcherDumper.php",
+   "src/Symfony/Component/Routing/RouteCompiler.php"
+  ],
+  "18c3cb0de9": [
+   "src/Symfony/Component/Semaphore/Store/LockStore.php"
+  ],
+  "4287f72428": [
+   "src/Symfony/Component/Messenger/Worker.php"
+  ],
+  "3677b743f8": [
+   "src/Symfony/Component/Messenger/Execution/DispatchTask.php",
+   "src/Symfony/Component/Messenger/Execution/ParallelExecutionStrategy.php"
+  ],
+  "8af78bfe86": [
+   "src/Symfony/Component/Tui/Ansi/TextWrapper.php"
+  ],
+  "7d721628a9": [
+   "src/Symfony/Component/Config/Resource/GlobResource.php",
+   "src/Symfony/Component/Routing/Loader/XmlFileLoader.php"
+  ],
+  "89c8737776": [
+   "src/Symfony/Component/VarDumper/Caster/Caster.php",
+   "src/Symfony/Component/VarDumper/Caster/LinkStub.php",
+   "src/Symfony/Component/VarDumper/Dumper/CliDumper.php",
+   "src/Symfony/Component/VarDumper/Dumper/HtmlDumper.php"
+  ],
+  "21539703b1": [
+   "src/Symfony/Component/PropertyInfo/Extractor/PhpDocExtractor.php",
+   "src/Symfony/Component/PropertyInfo/Extractor/PhpStanExtractor.php",
+   "src/Symfony/Component/TypeInfo/TypeContext/TypeContextFactory.php"
+  ],
+  "5af622f1d5": [
+   "src/Symfony/Component/JsonStreamer/Read/StreamReaderGenerator.php",
+   "src/Symfony/Component/JsonStreamer/Write/StreamWriterGenerator.php"
+  ],
+  "6359b65879": [
+   "src/Symfony/Component/Security/Http/RateLimiter/DefaultLoginRateLimiter.php"
+  ],
+  "6ddb335916": [
+   "src/Symfony/Component/Mailer/Bridge/Brevo/Transport/BrevoSmtpTransport.php",
+   "src/Symfony/Component/Mailer/Bridge/Brevo/Transport/BrevoTransportFactory.php",
+   "src/Symfony/Component/Mailer/Bridge/MailKite/Transport/MailKiteSmtpTransport.php",
+   "src/Symfony/Component/Mailer/Bridge/MailKite/Transport/MailKiteTransportFactory.php",
+   "src/Symfony/Component/Mailer/Bridge/TurboSmtp/Transport/TurboSmtpSmtpTransport.php",
+   "src/Symfony/Component/Mailer/Bridge/TurboSmtp/Transport/TurboSmtpTransportFactory.php",
+   "src/Symfony/Component/Mailer/Bridge/ZohoCpaas/Transport/ZohoCpaasSmtpTransport.php",
+   "src/Symfony/Component/Mailer/Bridge/ZohoCpaas/Transport/ZohoCpaasTransportFactory.php"
+  ],
+  "b0c8efe8ab": [
+   "src/Symfony/Component/Tui/Ansi/AnsiCodeTracker.php"
+  ],
+  "b7b42f2943": [
+   "src/Symfony/Component/Tui/Ansi/TextWrapper.php"
+  ],
+  "6f95dac087": [
+   "src/Symfony/Component/Lock/Store/DoctrineDbalPostgreSqlStore.php",
+   "src/Symfony/Component/Lock/Store/PostgreSqlStore.php"
+  ],
+  "c51ef64ed0": [
+   "src/Symfony/Component/Lock/Store/DoctrineDbalPostgreSqlStore.php",
+   "src/Symfony/Component/Lock/Store/PostgreSqlStore.php"
+  ],
+  "576b937533": [
+   "src/Symfony/Component/VarDumper/Dumper/HtmlDumper.php"
+  ],
+  "7d8626bbb3": [
+   "src/Symfony/Component/Messenger/Execution/ParallelExecutionFailureSanitizer.php"
+  ],
+  "f2784631b5": [
+   "src/Symfony/Component/HttpKernel/EventListener/RateLimitAttributeListener.php"
+  ],
+  "3b411c1f49": [
+   "src/Symfony/Component/Validator/Constraints/IbanValidator.php"
+  ],
+  "b502fed360": [
+   "src/Symfony/Bundle/SecurityBundle/DependencyInjection/Security/AccessToken/OAuth2TokenHandlerFactory.php",
+   "src/Symfony/Bundle/SecurityBundle/DependencyInjection/Security/AccessToken/OidcTokenHandlerFactory.php",
+   "src/Symfony/Bundle/SecurityBundle/DependencyInjection/Security/Factory/AccessTokenFactory.php"
+  ],
+  "3a20f3a62a": [
+   "src/Symfony/Component/Mailer/Transport/Smtp/SmtpTransport.php"
+  ],
+  "58d2b21b63": [
+   "src/Symfony/Component/Mailer/Bridge/AhaSend/Transport/AhaSendApiTransport.php"
+  ],
+  "1634f89d7a": [
+   "src/Symfony/Component/TypeInfo/TypeFactoryTrait.php"
+  ],
+  "3684d7ce4f": [
+   "src/Symfony/Component/DependencyInjection/Loader/YamlFileLoader.php",
+   "src/Symfony/Component/Routing/Loader/PhpFileLoader.php",
+   "src/Symfony/Component/Routing/Loader/YamlFileLoader.php",
+   "src/Symfony/Component/Translation/DependencyInjection/Translator.php",
+   "src/Symfony/Component/Translation/Loader/FileLoader.php",
+   "src/Symfony/Component/Translation/Loader/IcuDatFileLoader.php",
+   "src/Symfony/Component/Translation/Loader/IcuResFileLoader.php",
+   "src/Symfony/Component/Translation/Loader/QtFileLoader.php",
+   "src/Symfony/Component/Translation/Loader/XliffFileLoader.php"
+  ],
+  "49275f19d5": [
+   "src/Symfony/Component/HttpKernel/Kernel.php"
+  ],
+  "47e804217a": [
+   "src/Symfony/Component/TypeInfo/TypeFactoryTrait.php"
+  ],
+  "bb43b2c4fd": [
+   "src/Symfony/Component/DependencyInjection/Kernel/KernelTrait.php"
+  ],
+  "8357c898ee": [
+   "src/Symfony/Component/Config/Resource/DirectoryResource.php"
+  ],
+  "496586e353": [
+   "src/Symfony/Component/PropertyInfo/Extractor/PhpDocExtractor.php",
+   "src/Symfony/Component/PropertyInfo/Extractor/PhpStanExtractor.php",
+   "src/Symfony/Component/TypeInfo/TypeResolver/PhpDocAwareReflectionTypeResolver.php"
+  ],
+  "98fb035e62": [
+   "src/Symfony/Component/TypeInfo/TypeResolver/StringTypeResolver.php"
+  ],
+  "959e4a62af": [
+   "src/Symfony/Component/TypeInfo/TypeContext/TypeContextFactory.php"
+  ],
+  "58a4ee678e": [
+   "src/Symfony/Component/PropertyInfo/Extractor/PhpDocExtractor.php"
+  ],
+  "f0b6ed158a": [
+   "src/Symfony/Component/PropertyInfo/Extractor/PhpDocExtractor.php",
+   "src/Symfony/Component/PropertyInfo/Extractor/PhpStanExtractor.php"
+  ],
+  "6c9c349665": [
+   "src/Symfony/Component/TypeInfo/TypeContext/TypeContextFactory.php"
+  ],
+  "50a09ed157": [
+   "src/Symfony/Component/PropertyInfo/Extractor/PhpDocExtractor.php",
+   "src/Symfony/Component/PropertyInfo/Extractor/PhpStanExtractor.php",
+   "src/Symfony/Component/PropertyInfo/PhpStan/NameScopeFactory.php"
+  ],
+  "64a8465fcb": [
+   "src/Symfony/Component/Config/Resource/DirectoryResource.php"
+  ],
+  "53e166da44": [
+   "src/Symfony/Component/TypeInfo/TypeContext/TypeContextFactory.php"
+  ],
+  "72d573687b": [
+   "src/Symfony/Bundle/TwigBundle/DependencyInjection/Compiler/ExtensionPass.php",
+   "src/Symfony/Bundle/TwigBundle/DependencyInjection/TwigExtension.php",
+   "src/Symfony/Bundle/TwigBundle/Routing/TemplateRouteProcessor.php",
+   "src/Symfony/Component/Routing/Loader/DelegatingLoader.php",
+   "src/Symfony/Component/Routing/Resources/config/routing.php"
+  ],
+  "d409219a5a": [
+   "src/Symfony/Component/HttpKernel/HttpCache/HttpCache.php"
+  ],
+  "fd821dacba": [
+   "src/Symfony/Component/HttpKernel/HttpCache/Store.php"
+  ],
+  "eed3074ef9": [
+   "src/Symfony/Component/HttpKernel/HttpCache/HttpCache.php"
+  ],
+  "96fc6bf22d": [
+   "src/Symfony/Component/PropertyInfo/Extractor/PhpDocExtractor.php",
+   "src/Symfony/Component/PropertyInfo/Extractor/PhpStanExtractor.php"
+  ],
+  "3442ceabe7": [
+   "src/Symfony/Component/HttpKernel/HttpCache/HttpCache.php"
+  ],
+  "50521c2eba": [
+   "src/Symfony/Component/PropertyInfo/Extractor/PhpStanExtractor.php"
+  ],
+  "a0851afda7": [
+   "src/Symfony/Bundle/FrameworkBundle/CacheWarmer/AbstractPhpFileCacheWarmer.php",
+   "src/Symfony/Bundle/FrameworkBundle/CacheWarmer/CachePoolClearerCacheWarmer.php",
+   "src/Symfony/Bundle/FrameworkBundle/CacheWarmer/RouterCacheWarmer.php",
+   "src/Symfony/Bundle/FrameworkBundle/CacheWarmer/SerializerCacheWarmer.php",
+   "src/Symfony/Bundle/FrameworkBundle/CacheWarmer/TranslationsCacheWarmer.php",
+   "src/Symfony/Bundle/FrameworkBundle/CacheWarmer/ValidatorCacheWarmer.php",
+   "src/Symfony/Bundle/FrameworkBundle/Command/CachePoolDeleteCommand.php",
+   "src/Symfony/Bundle/FrameworkBundle/Command/CachePoolInvalidateTagsCommand.php",
+   "src/Symfony/Bundle/FrameworkBundle/Command/CachePoolListCommand.php",
+   "src/Symfony/Bundle/FrameworkBundle/Command/CachePoolPruneCommand.php",
+   "src/Symfony/Bundle/FrameworkBundle/Command/RouterMatchCommand.php",
+   "src/Symfony/Bundle/FrameworkBundle/Controller/RedirectController.php",
+   "src/Symfony/Bundle/FrameworkBundle/Controller/TemplateController.php",
+   "src/Symfony/Bundle/FrameworkBundle/Routing/AttributeRouteControllerLoader.php",
+   "src/Symfony/Bundle/FrameworkBundle/Routing/DelegatingLoader.php",
+   "src/Symfony/Bundle/FrameworkBundle/Routing/Router.php",
+   "src/Symfony/Bundle/FrameworkBundle/Translation/Translator.php",
+   "src/Symfony/Bundle/TwigBundle/Controller/TemplateController.php",
+   "src/Symfony/Component/Cache/CacheWarmer/AbstractPhpFileCacheWarmer.php",
+   "src/Symfony/Component/Cache/CacheWarmer/CachePoolClearerCacheWarmer.php",
+   "src/Symfony/Component/Cache/Command/CachePoolDeleteCommand.php",
+   "src/Symfony/Component/Cache/Command/CachePoolInvalidateTagsCommand.php",
+   "src/Symfony/Component/Cache/Command/CachePoolListCommand.php",
+   "src/Symfony/Component/Cache/Command/CachePoolPruneCommand.php",
+   "src/Symfony/Component/Routing/CacheWarmer/RouterCacheWarmer.php",
+   "src/Symfony/Component/Routing/Command/RouterMatchCommand.php",
+   "src/Symfony/Component/Routing/Controller/RedirectController.php",
+   "src/Symfony/Component/Routing/DependencyInjection/Router.php",
+   "src/Symfony/Component/Routing/Loader/AttributeRouteControllerLoader.php",
+   "src/Symfony/Component/Routing/Loader/DelegatingLoader.php",
+   "src/Symfony/Component/Serializer/CacheWarmer/SerializerCacheWarmer.php",
+   "src/Symfony/Component/Translation/CacheWarmer/TranslationsCacheWarmer.php",
+   "src/Symfony/Component/Translation/DependencyInjection/Translator.php",
+   "src/Symfony/Component/Validator/CacheWarmer/ValidatorCacheWarmer.php"
+  ],
+  "0e48044b00": [
+   "src/Symfony/Component/JsonSchema/ClassSchemaResolver/ClassSchemaResolverInterface.php",
+   "src/Symfony/Component/JsonSchema/ClassSchemaResolver/NativeClassSchemaResolver.php",
+   "src/Symfony/Component/JsonSchema/DefinitionPolicy/DefinitionPolicyInterface.php",
+   "src/Symfony/Component/JsonSchema/DefinitionPolicy/ShortNameDefinitionPolicy.php",
+   "src/Symfony/Component/JsonSchema/DefinitionProcessor/DefinitionProcessorInterface.php",
+   "src/Symfony/Component/JsonSchema/SchemaDocument.php",
+   "src/Symfony/Component/JsonSchema/SchemaGenerator.php"
+  ],
+  "c86c006258": [
+   "src/Symfony/Component/TypeInfo/Type/NullableType.php",
+   "src/Symfony/Component/TypeInfo/Type/UnionType.php",
+   "src/Symfony/Component/TypeInfo/TypeContext/TypeContextFactory.php"
+  ],
+  "e671f8ad61": [
+   "src/Symfony/Component/Console/Formatter/OutputFormatter.php",
+   "src/Symfony/Component/Console/Helper/OutputWrapper.php",
+   "src/Symfony/Component/Console/Helper/Table.php"
+  ],
+  "48166a8602": [
+   "src/Symfony/Component/Workflow/Dumper/GraphvizDumper.php"
+  ],
+  "b7a9d52008": [
+   "src/Symfony/Component/DependencyInjection/Kernel/FileLocator.php",
+   "src/Symfony/Component/DependencyInjection/ServicesResetter.php",
+   "src/Symfony/Component/DependencyInjection/ServicesResetterInterface.php",
+   "src/Symfony/Component/HttpKernel/Config/FileLocator.php",
+   "src/Symfony/Component/HttpKernel/DependencyInjection/ServicesResetter.php",
+   "src/Symfony/Component/HttpKernel/DependencyInjection/ServicesResetterInterface.php"
+  ],
+  "4b5ec48b34": [
+   ".github/build-packages.php"
+  ],
+  "3fe1ba111e": [
+   "src/Symfony/Component/PropertyInfo/Extractor/PhpDocExtractor.php",
+   "src/Symfony/Component/PropertyInfo/Extractor/PhpStanExtractor.php"
+  ],
+  "43123ce281": [
+   "src/Symfony/Component/HttpClient/Response/TraceableResponse.php"
+  ],
+  "724a5333f0": [
+   "src/Symfony/Component/JsonStreamer/Mapping/GenericTypePropertyMetadataLoader.php",
+   "src/Symfony/Component/Serializer/Normalizer/AbstractObjectNormalizer.php",
+   "src/Symfony/Component/TypeInfo/TypeContext/TypeContext.php",
+   "src/Symfony/Component/TypeInfo/TypeContext/TypeContextFactory.php",
+   "src/Symfony/Component/TypeInfo/TypeResolver/StringTypeResolver.php"
+  ],
+  "8f8ae32848": [
+   "src/Symfony/Component/TypeInfo/TypeContext/TypeContextFactory.php"
+  ],
+  "be695aa534": [
+   "src/Symfony/Component/Routing/Matcher/Dumper/CompiledUrlMatcherDumper.php",
+   "src/Symfony/Component/Routing/Matcher/Dumper/CompiledUrlMatcherTrait.php"
+  ],
+  "538615493a": [
+   "src/Symfony/Component/Config/Definition/EnumNode.php"
+  ],
+  "a77a37b40b": [
+   "src/Symfony/Component/JsonStreamer/Mapping/GenericTypePropertyMetadataLoader.php",
+   "src/Symfony/Component/TypeInfo/Type/ArrayShapeType.php",
+   "src/Symfony/Component/TypeInfo/TypeResolver/StringTypeResolver.php"
+  ],
+  "2a6f46ae88": [
+   "src/Symfony/Component/JsonStreamer/DataModel/Read/CompositeNode.php",
+   "src/Symfony/Component/JsonStreamer/DataModel/Read/ObjectNode.php",
+   "src/Symfony/Component/JsonStreamer/DataModel/Write/ObjectNode.php",
+   "src/Symfony/Component/JsonStreamer/Mapping/GenericTypePropertyMetadataLoader.php",
+   "src/Symfony/Component/JsonStreamer/Read/StreamReaderGenerator.php",
+   "src/Symfony/Component/JsonStreamer/Write/StreamWriterGenerator.php"
+  ],
+  "89c099f49a": [
+   "src/Symfony/Component/JsonStreamer/Mapping/GenericTypePropertyMetadataLoader.php",
+   "src/Symfony/Component/TypeInfo/TypeResolver/ReflectionTypeResolver.php",
+   "src/Symfony/Component/TypeInfo/TypeResolver/StringTypeResolver.php"
+  ],
+  "6f895c48ad": [
+   "src/Symfony/Component/Finder/Glob.php"
+  ],
+  "e42fa8d4ec": [
+   "src/Symfony/Component/TypeInfo/Type/IntersectionType.php",
+   "src/Symfony/Component/TypeInfo/Type/UnionType.php"
+  ],
+  "f0abb8b84e": [
+   "src/Symfony/Component/HttpFoundation/IpUtils.php"
+  ],
+  "aa72cb101d": [
+   "src/Symfony/Component/ObjectMapper/ClassHierarchyTrait.php",
+   "src/Symfony/Component/ObjectMapper/Metadata/PropertyTypeMappingMetadataFactory.php",
+   "src/Symfony/Component/ObjectMapper/Metadata/ReflectionPropertyMetadataFactory.php"
+  ],
+  "2d181edd5c": [
+   "src/Symfony/Component/Serializer/Normalizer/ObjectNormalizer.php"
+  ],
+  "4b6d3b0397": [
+   "src/Symfony/Component/Finder/Glob.php"
+  ],
+  "bb3f6a05be": [
+   "src/Symfony/Component/Serializer/Normalizer/AbstractObjectNormalizer.php"
+  ],
+  "bb8fbad67f": [
+   "src/Symfony/Component/Messenger/Command/ConsumeMessagesCommand.php",
+   "src/Symfony/Component/Messenger/Command/FailedMessagesRetryCommand.php"
+  ],
+  "d2f88e779b": [
+   "src/Symfony/Component/Config/Definition/BaseNode.php",
+   "src/Symfony/Component/Config/Definition/NumericNode.php"
+  ],
+  "5f05d1a66f": [
+   "src/Symfony/Component/Console/Helper/OutputWrapper.php"
+  ],
+  "0783e49c57": [
+   "src/Symfony/Component/TypeInfo/Type/CollectionType.php",
+   "src/Symfony/Component/TypeInfo/Type/IntersectionType.php",
+   "src/Symfony/Component/TypeInfo/Type/UnionType.php"
+  ],
+  "94f0094cbf": [
+   "src/Symfony/Component/PropertyAccess/PropertyAccessor.php"
+  ],
+  "35eb8413c5": [
+   "src/Symfony/Component/JsonStreamer/Mapping/GenericTypePropertyMetadataLoader.php"
+  ],
+  "8f7e425a69": [
+   "src/Symfony/Component/Form/Extension/Validator/Constraints/FormValidator.php"
+  ],
+  "0a0d17b548": [
+   "src/Symfony/Component/DependencyInjection/ContainerBuilder.php"
+  ],
+  "5ce00d0ae9": [
+   "src/Symfony/Component/Console/Helper/OutputWrapper.php"
+  ],
+  "737833ae25": [
+   "src/Symfony/Component/Cache/Adapter/RedisTagAwareAdapter.php"
+  ],
+  "eddce30883": [
+   "src/Symfony/Component/Security/Http/EventListener/LoginThrottlingListener.php"
+  ],
+  "e88f59c99d": [
+   "src/Symfony/Component/Security/Http/Authenticator/X509Authenticator.php",
+   "src/Symfony/Component/Security/Http/Firewall/X509AuthenticationListener.php"
+  ],
+  "b5a9a00912": [
+   "src/Symfony/Component/Console/Helper/Helper.php"
+  ],
+  "1f5eb29688": [
+   "src/Symfony/Component/Tui/Style/Style.php",
+   "src/Symfony/Component/Tui/Widget/AbstractWidget.php",
+   "src/Symfony/Component/Tui/Widget/WidgetContext.php"
+  ],
+  "14bd5b17cb": [
+   "src/Symfony/Bundle/FrameworkBundle/Resources/config/web.php"
+  ],
+  "333af0f78e": [
+   "src/Symfony/Component/Console/Application.php",
+   "src/Symfony/Component/Console/Helper/FormatterHelper.php",
+   "src/Symfony/Component/Console/Helper/Helper.php",
+   "src/Symfony/Component/Console/Helper/OutputWrapper.php",
+   "src/Symfony/Component/Console/Helper/Table.php"
+  ],
+  "f37f93a7f1": [
+   "src/Symfony/Component/Serializer/Normalizer/AbstractObjectNormalizer.php"
+  ],
+  "81fb4e43aa": [
+   "src/Symfony/Component/HttpKernel/Attribute/Lock.php",
+   "src/Symfony/Component/HttpKernel/Attribute/RateLimit.php",
+   "src/Symfony/Component/HttpKernel/EventListener/LockAttributeListener.php",
+   "src/Symfony/Component/HttpKernel/EventListener/RateLimitAttributeListener.php"
+  ],
+  "07d8da9261": [
+   "src/Symfony/Component/Tui/Widget/AbstractWidget.php",
+   "src/Symfony/Component/Tui/Widget/WidgetContext.php"
+  ],
+  "d7666eb5ec": [
+   "src/Symfony/Component/Tui/Ansi/AnsiCodeTracker.php",
+   "src/Symfony/Component/Tui/Ansi/ScreenBufferHtmlRenderer.php"
+  ],
+  "9fe5388142": [
+   "src/Symfony/Component/ObjectMapper/ObjectMapper.php"
+  ],
+  "8feae05e42": [
+   "src/Symfony/Component/JsonSchema/SchemaGenerator.php"
+  ],
+  "945d50deea": [
+   "src/Symfony/Component/Mime/Crypto/SMime.php"
+  ],
+  "6480cc7ce7": [
+   "src/Symfony/Component/HtmlSanitizer/Reference/W3CReference.php"
+  ],
+  "22c64b4900": [
+   "src/Symfony/Component/Tui/Render/PositionTracker.php",
+   "src/Symfony/Component/Tui/Render/Renderer.php"
+  ],
+  "123cd3c7db": [
+   "src/Symfony/Component/HtmlSanitizer/HtmlSanitizerConfig.php",
+   "src/Symfony/Component/HtmlSanitizer/Reference/W3CReference.php"
+  ],
+  "0ad8a78a43": [
+   "src/Symfony/Component/Serializer/Normalizer/AbstractObjectNormalizer.php",
+   "src/Symfony/Component/Serializer/Normalizer/GetSetMethodNormalizer.php",
+   "src/Symfony/Component/Serializer/Normalizer/ObjectNormalizer.php",
+   "src/Symfony/Component/Templating/PhpEngine.php"
+  ],
+  "8f57d8e798": [
+   "src/Symfony/Component/Cache/Adapter/MemcachedAdapter.php"
+  ],
+  "49a27ecc97": [
+   "src/Symfony/Component/HttpClient/CurlHttpClient.php"
+  ],
+  "55bb508e11": [
+   "src/Symfony/Component/HttpClient/Response/CurlResponse.php"
+  ],
+  "7e6ad5fa3d": [
+   "src/Symfony/Component/JsonStreamer/Mapping/GenericTypePropertyMetadataLoader.php"
+  ],
+  "5a0ee8a3c0": [
+   "src/Symfony/Component/Serializer/NameConverter/MetadataAwareNameConverter.php",
+   "src/Symfony/Component/Serializer/Normalizer/ObjectNormalizer.php"
+  ],
+  "a524b0ed86": [
+   "src/Symfony/Component/HttpClient/Internal/AmpResolverV5.php"
+  ],
+  "423e999414": [
+   "src/Symfony/Component/HttpClient/NoPrivateNetworkHttpClient.php"
+  ],
+  "bcdf1635d4": [
+   "src/Symfony/Component/Serializer/NameConverter/MetadataAwareNameConverter.php",
+   "src/Symfony/Component/Serializer/Normalizer/AbstractObjectNormalizer.php",
+   "src/Symfony/Component/Templating/PhpEngine.php"
+  ],
+  "240b84def7": [
+   "src/Symfony/Component/HttpClient/NoPrivateNetworkHttpClient.php"
+  ],
+  "201e3d78b0": [
+   "src/Symfony/Component/Serializer/Normalizer/GetSetMethodNormalizer.php",
+   "src/Symfony/Component/Serializer/Normalizer/ObjectNormalizer.php"
+  ],
+  "88b901605b": [
+   "src/Symfony/Bundle/FrameworkBundle/DependencyInjection/Configuration.php",
+   "src/Symfony/Component/HttpClient/ScopingHttpClient.php"
+  ],
+  "b9331d9ec8": [
+   "src/Symfony/Component/HtmlSanitizer/Reference/W3CReference.php"
+  ],
+  "4ef551f318": [
+   "src/Symfony/Component/Yaml/Inline.php",
+   "src/Symfony/Component/Yaml/Parser.php",
+   "src/Symfony/Component/Yaml/ParserState.php"
+  ],
+  "25a109bb36": [
+   "src/Symfony/Component/Yaml/Parser.php"
+  ],
+  "af5296f7b3": [
+   "src/Symfony/Component/Security/Http/Authenticator/RemoteUserAuthenticator.php"
+  ],
+  "a667a60899": [
+   "src/Symfony/Component/Validator/Constraints/IpValidator.php"
+  ],
+  "1c74a95ec0": [
+   "src/Symfony/Component/Serializer/Normalizer/ObjectNormalizer.php"
+  ],
+  "7bbec05fa3": [
+   "src/Symfony/Component/HttpFoundation/IpUtils.php"
+  ],
+  "312c13acef": [
+   "src/Symfony/Component/HttpKernel/Attribute/IsSignatureValid.php",
+   "src/Symfony/Component/Security/Http/Attribute/IsCsrfTokenValid.php",
+   "src/Symfony/Component/Security/Http/Attribute/IsGranted.php"
+  ],
+  "1ae26375da": [
+   "src/Symfony/Component/HttpKernel/Kernel.php"
+  ],
+  "7370442b17": [
+   "src/Symfony/Component/HttpKernel/Kernel.php"
+  ],
+  "0992f61936": [
+   "src/Symfony/Component/HttpClient/NoPrivateNetworkHttpClient.php",
+   "src/Symfony/Component/Validator/Constraints/IpValidator.php"
+  ],
+  "ace33112ac": [
+   "src/Symfony/Component/HttpKernel/Kernel.php"
+  ],
+  "1997dfde4e": [
+   "src/Symfony/Component/HttpKernel/Kernel.php"
+  ],
+  "276f92ed66": [
+   "src/Symfony/Component/HttpKernel/Kernel.php"
+  ],
+  "1e38d36994": [
+   "src/Symfony/Component/HttpKernel/Kernel.php"
+  ],
+  "58c5c0848f": [
+   "src/Symfony/Component/HttpKernel/Kernel.php"
+  ],
+  "0f1951fd80": [
+   "src/Symfony/Component/HttpKernel/Kernel.php"
+  ],
+  "136da6aa8d": [
+   "src/Symfony/Component/HttpKernel/Kernel.php"
+  ],
+  "50b78d576a": [
+   "src/Symfony/Component/HttpKernel/Attribute/MapRequestPayload.php",
+   "src/Symfony/Component/HttpKernel/Controller/ArgumentResolver/RequestPayloadValueResolver.php"
+  ],
+  "45e44c5e22": [
+   "src/Symfony/Component/JsonPath/JsonCrawler.php",
+   "src/Symfony/Component/JsonPath/JsonPathUtils.php"
+  ],
+  "b8312d79ec": [
+   "src/Symfony/Bundle/FrameworkBundle/FrameworkBundle.php",
+   "src/Symfony/Component/DependencyInjection/Compiler/ExtensionConfigTrees.php",
+   "src/Symfony/Component/DependencyInjection/Compiler/JsonSchemaConfigDumpPass.php",
+   "src/Symfony/Component/DependencyInjection/Compiler/PhpConfigReferenceDumpPass.php",
+   "src/Symfony/Component/DependencyInjection/Kernel/ServicesBundle.php"
+  ],
+  "15ff0891fe": [
+   "src/Symfony/Component/Console/Helper/ProgressBar.php"
+  ],
+  "b0987170cc": [
+   "src/Symfony/Component/HttpFoundation/Request.php"
+  ],
+  "72b72d2621": [
+   "src/Symfony/Component/Console/Helper/ProgressBar.php"
+  ],
+  "11650dc31f": [
+   "src/Symfony/Component/JsonPath/JsonCrawler.php"
+  ],
+  "7f1e183847": [
+   "src/Symfony/Component/HttpFoundation/Request.php"
+  ],
+  "94ec81e05e": [
+   "src/Symfony/Component/Console/Helper/ProgressBar.php"
+  ],
+  "7861174a49": [
+   "src/Symfony/Component/HttpFoundation/RequestMatcher.php"
+  ],
+  "9f7390678a": [
+   "src/Symfony/Component/Serializer/Normalizer/ObjectNormalizer.php"
+  ],
+  "5771861dfe": [
+   "src/Symfony/Component/HttpFoundation/Request.php"
+  ],
+  "d6e4aa6a0b": [
+   "src/Symfony/Component/Process/Process.php"
+  ],
+  "d6089f800b": [
+   "src/Symfony/Component/Console/Helper/ProgressBar.php"
+  ],
+  "08db22d52e": [
+   "src/Symfony/Component/Yaml/Inline.php",
+   "src/Symfony/Component/Yaml/Parser.php"
+  ],
+  "487f63bf2c": [
+   "src/Symfony/Component/Yaml/Inline.php",
+   "src/Symfony/Component/Yaml/Parser.php"
+  ],
+  "899b7bf456": [
+   "src/Symfony/Component/HttpFoundation/Request.php"
+  ],
+  "95d8199afe": [
+   ".github/patch-types.php",
+   "src/Symfony/Component/ObjectMapper/ObjectMapper.php"
+  ],
+  "b8c0bf70b2": [
+   "src/Symfony/Component/ObjectMapper/Metadata/PropertyMetadataFactoryInterface.php",
+   "src/Symfony/Component/ObjectMapper/Metadata/ReflectionPropertyMetadataFactory.php",
+   "src/Symfony/Component/ObjectMapper/ObjectMapper.php"
+  ],
+  "6c2ae6c35a": [
+   "src/Symfony/Component/Messenger/Transport/Serialization/SigningSerializer.php"
+  ],
+  "d5c0ebbac8": [
+   "src/Symfony/Component/Messenger/Bridge/MongoDb/Transport/Connection.php",
+   "src/Symfony/Component/Messenger/Bridge/MongoDb/Transport/MongoDbReceiver.php",
+   "src/Symfony/Component/Messenger/Bridge/MongoDb/Transport/MongoDbTransport.php"
+  ],
+  "b759643ca8": [
+   "src/Symfony/Component/HttpFoundation/UrlHelper.php"
+  ],
+  "532b88b02d": [
+   "src/Symfony/Component/Messenger/Middleware/DecodeFailedMessageMiddleware.php",
+   "src/Symfony/Component/Messenger/Transport/Serialization/SerializerInterface.php",
+   "src/Symfony/Component/Messenger/Transport/Serialization/SigningSerializer.php"
+  ],
+  "5fab0d6cab": [
+   "src/Symfony/Component/Console/Helper/ProgressBar.php"
+  ],
+  "8b1eef5427": [
+   "src/Symfony/Component/Tui/Widget/ProgressBarWidget.php"
+  ],
+  "e256536ee7": [
+   "src/Symfony/Component/HttpFoundation/Request.php"
+  ],
+  "aaec1e156f": [
+   "src/Symfony/Bundle/SecurityBundle/DependencyInjection/SecurityExtension.php",
+   "src/Symfony/Bundle/SecurityBundle/Resources/config/security_authenticator.php",
+   "src/Symfony/Component/Ldap/Security/CheckLdapCredentialsListener.php",
+   "src/Symfony/Component/Security/Http/EventListener/CheckCredentialsListener.php",
+   "src/Symfony/Component/Security/Http/EventListener/UserCheckerListener.php"
+  ],
+  "a362fd386e": [
+   "src/Symfony/Bundle/SecurityBundle/DependencyInjection/Security/Factory/LdapFactoryTrait.php",
+   "src/Symfony/Component/Ldap/Security/CheckLdapCredentialsListener.php",
+   "src/Symfony/Component/Ldap/Security/LdapAuthenticator.php",
+   "src/Symfony/Component/Ldap/Security/LdapBadge.php"
+  ],
+  "9441dd5f05": [
+   "src/Symfony/Component/Filesystem/Path.php"
+  ],
+  "067cde51e2": [
+   "src/Symfony/Component/Routing/Matcher/Dumper/CompiledUrlMatcherDumper.php"
+  ],
+  "4b4e683b2c": [
+   "src/Symfony/Component/HttpKernel/EventListener/RouterListener.php"
+  ],
+  "c459104eb1": [
+   "src/Symfony/Component/Serializer/Normalizer/DataUriNormalizer.php",
+   "src/Symfony/Component/Serializer/Serializer.php"
+  ],
+  "8241df6b9c": [
+   ".php-cs-fixer.dist.php",
+   "src/Symfony/Component/Console/Command/Command.php",
+   "src/Symfony/Component/Console/Tests/Formatter/OutputFormatterTest.php",
+   "src/Symfony/Component/Form/Tests/SimpleFormTest.php",
+   "src/Symfony/Component/HttpFoundation/IpUtils.php",
+   "src/Symfony/Component/PropertyInfo/Tests/Extractor/PhpDocExtractorTest.php",
+   "src/Symfony/Component/PropertyInfo/Tests/Extractor/PhpStanExtractorTest.php",
+   "src/Symfony/Component/Validator/Constraints/Composite.php",
+   "src/Symfony/Component/Validator/Tests/Mapping/Factory/LazyLoadingMetadataFactoryTest.php",
+   "src/Symfony/Component/Validator/Tests/Validator/RecursiveValidatorTest.php"
+  ]
+ },
+ "composer": {
+  "30cd5f0d59": [
+   "src/Composer/Util/RemoteFilesystem.php"
+  ],
+  "65822c6f7d": [
+   "src/Composer/DependencyResolver/SecurityAdvisoryPoolFilter.php"
+  ],
+  "d9d851d93b": [
+   "src/Composer/Composer.php"
+  ],
+  "12c820dbc3": [
+   "src/Composer/Composer.php"
+  ],
+  "562429b8e5": [
+   "src/Composer/Downloader/FileDownloader.php"
+  ],
+  "0b8179fb0a": [
+   "src/Composer/Downloader/FileDownloader.php",
+   "src/Composer/Repository/ComposerRepository.php"
+  ],
+  "648d7693c0": [
+   "src/Composer/Downloader/ZipDownloader.php"
+  ],
+  "f4f8ca8278": [
+   "src/Composer/Package/Loader/ArrayLoader.php",
+   "src/Composer/Util/Http/CurlDownloader.php"
+  ],
+  "2dd750e07b": [
+   "src/Composer/Util/Http/CurlDownloader.php"
+  ],
+  "19b2713d0f": [
+   "src/Composer/Util/Http/CurlDownloader.php"
+  ],
+  "bd513d7ba2": [
+   "src/Composer/Util/Http/CurlDownloader.php"
+  ],
+  "3872c8b1b8": [
+   "src/Composer/Package/Package.php"
+  ],
+  "672eb25a91": [
+   "src/Composer/Util/AuthHelper.php",
+   "src/Composer/Util/Http/CurlDownloader.php",
+   "src/Composer/Util/RemoteFilesystem.php"
+  ],
+  "c63c3347b7": [
+   "src/Composer/Repository/VcsRepository.php"
+  ],
+  "a05c4db9a6": [
+   "src/Composer/Repository/Vcs/ForgejoDriver.php",
+   "src/Composer/Repository/Vcs/GitBitbucketDriver.php",
+   "src/Composer/Repository/Vcs/GitLabDriver.php"
+  ],
+  "6b4a3d445a": [
+   "src/Composer/Config/JsonConfigSource.php",
+   "src/Composer/Json/JsonManipulator.php"
+  ],
+  "9b90cef0af": [
+   "src/Composer/Repository/Vcs/GitDriver.php",
+   "src/Composer/Util/Git.php"
+  ],
+  "f6840e6672": [
+   "src/Composer/Util/Http/Response.php"
+  ],
+  "be4c6f2f00": [
+   "src/Composer/Package/Package.php"
+  ],
+  "bec4675239": [
+   "src/Composer/Json/JsonManipulator.php"
+  ],
+  "5a2c84542a": [
+   "src/Composer/Util/PackageSorter.php"
+  ],
+  "e1460b9e86": [
+   "src/Composer/Util/Filesystem.php"
+  ],
+  "7c1570b077": [
+   "src/Composer/DependencyResolver/Problem.php",
+   "src/Composer/Repository/ComposerRepository.php"
+  ],
+  "17c39825ff": [
+   "src/Composer/Package/Loader/ArrayLoader.php"
+  ],
+  "16bd0bf2d2": [
+   "src/Composer/Util/Filesystem.php"
+  ],
+  "cc3f6f62b3": [
+   "src/Composer/Util/Filesystem.php"
+  ],
+  "02b85f1455": [
+   "src/Composer/Factory.php"
+  ],
+  "82f679ac06": [
+   "src/Composer/Repository/RepositoryUtils.php"
+  ],
+  "178e2235dd": [
+   "src/Composer/Repository/RepositoryUtils.php"
+  ],
+  "7c067c2fe6": [
+   "src/Composer/DependencyResolver/RuleWatchChain.php"
+  ],
+  "f6e3235ee3": [
+   "src/Composer/Util/Filesystem.php"
+  ],
+  "ca767c11b7": [
+   "src/Composer/Repository/FilesystemRepository.php"
+  ],
+  "3ad82f61c4": [
+   "src/Composer/Package/Archiver/BaseExcludeFilter.php"
+  ],
+  "2add472fe0": [
+   "src/Composer/Package/Locker.php"
+  ],
+  "d172853060": [
+   "src/Composer/Package/BasePackage.php"
+  ],
+  "915c5c0f28": [
+   "src/Composer/Util/TlsHelper.php"
+  ],
+  "68476ae2b1": [
+   "src/Composer/Package/Comparer/Comparer.php"
+  ],
+  "c3055b05df": [
+   "src/Composer/Util/PackageSorter.php"
+  ],
+  "6037559f27": [
+   "src/Composer/Util/Platform.php"
+  ],
+  "f60d99979d": [
+   "src/Composer/Util/Url.php"
+  ],
+  "f09abfe342": [
+   "src/Composer/DependencyResolver/RuleWatchGraph.php"
+  ],
+  "307786e400": [
+   "src/Composer/Composer.php"
+  ],
+  "472b418967": [
+   "src/Composer/Composer.php"
+  ],
+  "4bdf0dfc5a": [
+   "src/Composer/Console/Application.php",
+   "src/Composer/Util/Platform.php"
+  ],
+  "77e5f1be91": [
+   "src/Composer/Command/RequireCommand.php",
+   "src/Composer/Config/JsonConfigSource.php",
+   "src/Composer/Json/JsonManipulator.php"
+  ],
+  "58faf0d82d": [
+   "src/Composer/Package/Loader/ValidatingArrayLoader.php"
+  ],
+  "ffd9bd7290": [
+   "src/Composer/Util/AuthHelper.php"
+  ],
+  "6ec7071639": [
+   "src/Composer/Util/AuthHelper.php"
+  ],
+  "24dfd2ddab": [
+   "src/Composer/Composer.php"
+  ],
+  "e52c65bed1": [
+   "src/Composer/Composer.php"
+  ],
+  "3aaa62b953": [
+   "src/Composer/DependencyResolver/PoolOptimizer.php"
+  ],
+  "770ea8973e": [
+   "src/Composer/Factory.php",
+   "src/Composer/Package/Locker.php",
+   "src/Composer/Repository/ComposerRepository.php",
+   "src/Composer/Repository/FilesystemRepository.php",
+   "src/Composer/Repository/RepositoryManager.php"
+  ],
+  "64455e41e4": [
+   "src/Composer/DependencyResolver/LockTransaction.php",
+   "src/Composer/DependencyResolver/Transaction.php"
+  ],
+  "aa438b3f39": [
+   "src/Composer/EventDispatcher/EventDispatcher.php"
+  ],
+  "0bd5840915": [
+   "src/Composer/Downloader/FossilDownloader.php",
+   "src/Composer/Downloader/HgDownloader.php",
+   "src/Composer/Repository/Vcs/FossilDriver.php",
+   "src/Composer/Repository/Vcs/HgDriver.php"
+  ],
+  "20b469cd91": [
+   "src/Composer/Util/ProcessExecutor.php"
+  ],
+  "b56a3f558a": [
+   "src/Composer/Config/JsonConfigSource.php"
+  ],
+  "c05cfb321a": [
+   "src/Composer/Downloader/ArchiveDownloader.php",
+   "src/Composer/Util/Platform.php",
+   "src/Composer/Util/Tar.php",
+   "src/Composer/Util/Zip.php"
+  ],
+  "c17c92fa5a": [
+   "src/Composer/Util/GitHub.php"
+  ],
+  "f83588392d": [
+   "src/Composer/Composer.php"
+  ],
+  "31eb692a4c": [
+   "src/Composer/Composer.php"
+  ],
+  "5399ffc509": [
+   "src/Composer/Repository/Vcs/GitBitbucketDriver.php",
+   "src/Composer/Util/Git.php"
+  ],
+  "fa85ca52b1": [
+   "src/Composer/Command/BaseCommand.php",
+   "src/Composer/Command/CreateProjectCommand.php",
+   "src/Composer/Command/RemoveCommand.php",
+   "src/Composer/Command/RequireCommand.php",
+   "src/Composer/Command/UpdateCommand.php",
+   "src/Composer/DependencyResolver/PolicyRemovalReason.php",
+   "src/Composer/Policy/PolicyConfig.php"
+  ],
+  "6763337d52": [
+   "src/Composer/Advisory/Auditor.php",
+   "src/Composer/Repository/AdvisoryProviderInterface.php",
+   "src/Composer/Repository/ComposerRepository.php",
+   "src/Composer/Repository/PackageRepository.php",
+   "src/Composer/Repository/RepositorySet.php"
+  ],
+  "1bd7c27bc9": [
+   "src/Composer/Repository/VcsRepository.php"
+  ],
+  "39384d52ff": [
+   "src/Composer/Package/Locker.php"
+  ],
+  "35bda915ea": [
+   "src/Composer/Command/ShowCommand.php",
+   "src/Composer/Package/Version/VersionSelector.php"
+  ],
+  "e7417e73ff": [
+   "src/Composer/Plugin/PluginManager.php"
+  ],
+  "f5f1463b76": [
+   "src/Composer/Command/AuditCommand.php",
+   "src/Composer/Command/ReinstallCommand.php",
+   "src/Composer/Command/RequireCommand.php"
+  ],
+  "66c06e865a": [
+   "src/Composer/Repository/ComposerRepository.php",
+   "src/Composer/Repository/VcsRepository.php",
+   "src/Composer/Util/Http/CurlDownloader.php",
+   "src/Composer/Util/RemoteFilesystem.php"
+  ],
+  "b4100a67c7": [
+   "src/Composer/Repository/ComposerRepository.php"
+  ],
+  "515bd9bbe0": [
+   "src/Composer/Config.php"
+  ],
+  "efceccc5b5": [
+   "src/Composer/Config.php"
+  ],
+  "2d9583a396": [
+   "src/Composer/Repository/ComposerRepository.php"
+  ],
+  "c15dcead59": [
+   "src/Composer/Command/CreateProjectCommand.php",
+   "src/Composer/Command/RequireCommand.php",
+   "src/Composer/Console/Application.php",
+   "src/Composer/IO/ConsoleIO.php",
+   "src/Composer/Installer/InstallationManager.php",
+   "src/Composer/Util/Loop.php",
+   "src/Composer/Util/ProcessExecutor.php"
+  ],
+  "066604576d": [
+   "src/Composer/Command/AuditCommand.php"
+  ],
+  "72a4fff928": [
+   "src/Composer/Command/InitCommand.php"
+  ],
+  "51cde64917": [
+   "src/Composer/Util/AuthHelper.php",
+   "src/Composer/Util/Http/CurlDownloader.php"
+  ],
+  "0650346eec": [
+   "src/Composer/DependencyResolver/Problem.php"
+  ],
+  "a6ecad0faa": [
+   "src/Composer/Command/ClearCacheCommand.php",
+   "src/Composer/Command/DependsCommand.php",
+   "src/Composer/Command/DumpAutoloadCommand.php",
+   "src/Composer/Command/HomeCommand.php",
+   "src/Composer/Command/InstallCommand.php",
+   "src/Composer/Command/ProhibitsCommand.php",
+   "src/Composer/Command/RemoveCommand.php",
+   "src/Composer/Command/RequireCommand.php",
+   "src/Composer/Command/RunScriptCommand.php",
+   "src/Composer/Command/ScriptAliasCommand.php",
+   "src/Composer/Command/SelfUpdateCommand.php",
+   "src/Composer/Command/ShowCommand.php",
+   "src/Composer/Command/UpdateCommand.php",
+   "src/Composer/Console/Application.php",
+   "src/Composer/DependencyResolver/SolverProblemsException.php",
+   "src/Composer/Json/JsonManipulator.php",
+   "src/Composer/Package/Locker.php"
+  ],
+  "12a8cd1057": [
+   "src/Composer/DependencyResolver/PoolBuilder.php",
+   "src/Composer/DependencyResolver/Request.php",
+   "src/Composer/Installer.php"
+  ],
+  "c1d9525a1e": [
+   "src/Composer/Package/Version/VersionBumper.php"
+  ],
+  "8e6b065bcb": [
+   "src/Composer/DependencyResolver/Solver.php"
+  ],
+  "28145ca91e": [
+   "src/Composer/DependencyResolver/RuleWatchGraph.php"
+  ],
+  "9d8a1c2604": [
+   "src/Composer/DependencyResolver/PoolOptimizer.php"
+  ],
+  "43f7451702": [
+   "src/Composer/Command/BaseCommand.php",
+   "src/Composer/Command/CreateProjectCommand.php",
+   "src/Composer/Command/OutdatedCommand.php",
+   "src/Composer/Command/PackageDiscoveryTrait.php",
+   "src/Composer/Command/ShowCommand.php",
+   "src/Composer/Package/Version/VersionSelector.php",
+   "src/Composer/Policy/CooldownPolicyConfig.php"
+  ],
+  "b187adbb70": [
+   "src/Composer/Json/JsonManipulator.php"
+  ],
+  "d95679dd08": [
+   "src/Composer/Command/ShowCommand.php",
+   "src/Composer/Repository/RepositorySet.php"
+  ],
+  "bce9495257": [
+   "src/Composer/Command/ConfigCommand.php"
+  ],
+  "560806f892": [
+   "src/Composer/Package/Loader/ArrayLoader.php",
+   "src/Composer/Package/Package.php"
+  ],
+  "e9e8482d83": [
+   "src/Composer/DependencyResolver/PoolBuilder.php"
+  ],
+  "f003231e93": [
+   "src/Composer/Installer.php",
+   "src/Composer/Json/JsonFile.php"
+  ],
+  "8d71acb561": [
+   "src/Composer/Command/CreateProjectCommand.php",
+   "src/Composer/Command/PackageDiscoveryTrait.php",
+   "src/Composer/DependencyResolver/CooldownPoolFilter.php",
+   "src/Composer/DependencyResolver/FilterListPoolFilter.php",
+   "src/Composer/DependencyResolver/Pool.php",
+   "src/Composer/DependencyResolver/PoolBuilder.php",
+   "src/Composer/DependencyResolver/PoolOptimizer.php",
+   "src/Composer/DependencyResolver/Problem.php",
+   "src/Composer/DependencyResolver/RuleSetGenerator.php",
+   "src/Composer/DependencyResolver/SecurityAdvisoryPoolFilter.php",
+   "src/Composer/DependencyResolver/Solver.php",
+   "src/Composer/Package/Version/VersionSelector.php"
+  ],
+  "dfda78af1e": [
+   "src/Composer/Command/ConfigCommand.php",
+   "src/Composer/Package/Loader/ArrayLoader.php",
+   "src/Composer/Policy/CooldownPolicyConfig.php"
+  ],
+  "213b1ea0ed": [
+   "src/Composer/Command/ConfigCommand.php",
+   "src/Composer/DependencyResolver/Problem.php",
+   "src/Composer/Package/Version/VersionSelector.php",
+   "src/Composer/Policy/CooldownPolicyConfig.php"
+  ],
+  "4bddcad1c7": [
+   "src/Composer/Advisory/Auditor.php",
+   "src/Composer/Command/BaseCommand.php",
+   "src/Composer/Command/ConfigCommand.php",
+   "src/Composer/Command/CreateProjectCommand.php",
+   "src/Composer/Command/InstallCommand.php",
+   "src/Composer/Command/PackageDiscoveryTrait.php",
+   "src/Composer/Command/RemoveCommand.php",
+   "src/Composer/Command/RequireCommand.php",
+   "src/Composer/Command/UpdateCommand.php",
+   "src/Composer/DependencyResolver/Pool.php",
+   "src/Composer/DependencyResolver/PoolBuilder.php",
+   "src/Composer/DependencyResolver/PoolOptimizer.php",
+   "src/Composer/DependencyResolver/Problem.php",
+   "src/Composer/Installer.php",
+   "src/Composer/Package/AliasPackage.php",
+   "src/Composer/Package/Dumper/ArrayDumper.php",
+   "src/Composer/Package/Loader/ArrayLoader.php",
+   "src/Composer/Package/Locker.php",
+   "src/Composer/Package/Package.php",
+   "src/Composer/Package/PackageInterface.php",
+   "src/Composer/Package/Version/VersionSelector.php",
+   "src/Composer/Policy/PolicyConfig.php",
+   "src/Composer/Repository/ArtifactRepository.php",
+   "src/Composer/Repository/ComposerRepository.php",
+   "src/Composer/Repository/PathRepository.php",
+   "src/Composer/Repository/RepositorySet.php",
+   "src/Composer/Repository/VcsRepository.php"
+  ],
+  "8a2b3ede4a": [
+   "src/Composer/Util/Http/CurlDownloader.php"
+  ],
+  "b4cda8defe": [
+   "src/Composer/Command/ConfigCommand.php",
+   "src/Composer/Policy/CustomListPolicyConfig.php",
+   "src/Composer/Policy/ListPolicyConfig.php"
+  ],
+  "9c0fc6997c": [
+   "src/Composer/Installer/BinaryInstaller.php",
+   "src/Composer/Package/Loader/ValidatingArrayLoader.php"
+  ],
+  "c4ee141830": [
+   "src/Composer/Downloader/FileDownloader.php",
+   "src/Composer/Downloader/ZipDownloader.php"
+  ],
+  "6712f83974": [
+   "src/Composer/Util/AuthHelper.php"
+  ],
+  "48be8a79b9": [
+   "src/Composer/Command/ClearCacheCommand.php"
+  ],
+  "6fa7707e04": [
+   "src/Composer/Command/SuggestsCommand.php"
+  ],
+  "59a8a802ca": [
+   "src/Composer/Command/ConfigCommand.php",
+   "src/Composer/Command/DumpAutoloadCommand.php",
+   "src/Composer/Command/InstallCommand.php",
+   "src/Composer/Command/UpdateCommand.php",
+   "src/Composer/Config.php"
+  ],
+  "0fc32b949a": [
+   "src/Composer/Autoload/AutoloadGenerator.php"
+  ],
+  "1e619740d6": [
+   "src/Composer/Repository/Vcs/GitHubDriver.php"
+  ],
+  "4cec96ea69": [
+   "src/Composer/Repository/ComposerRepository.php",
+   "src/Composer/Util/Http/CurlDownloader.php",
+   "src/Composer/Util/HttpDownloader.php",
+   "src/Composer/Util/RemoteFilesystem.php"
+  ],
+  "2ad6e37e2e": [
+   "src/Composer/Advisory/Auditor.php",
+   "src/Composer/DependencyResolver/SecurityAdvisoryPoolFilter.php",
+   "src/Composer/Installer.php",
+   "src/Composer/Repository/RepositorySet.php"
+  ],
+  "cee1698f49": [
+   "src/Composer/DependencyResolver/PoolOptimizer.php"
+  ],
+  "c783931672": [
+   "src/Composer/Util/Url.php"
+  ],
+  "f406c1723a": [
+   "src/Composer/DependencyResolver/PoolOptimizer.php"
+  ],
+  "8df7fac1aa": [
+   "src/Composer/Downloader/DownloadManager.php",
+   "src/Composer/Factory.php"
+  ],
+  "4b72d5d764": [
+   "src/Composer/Plugin/PluginInterface.php"
+  ],
+  "a5055dad05": [
+   "src/Composer/Autoload/ClassMapGenerator.php",
+   "src/Composer/Command/BumpCommand.php",
+   "src/Composer/Command/InitCommand.php",
+   "src/Composer/Command/RemoveCommand.php",
+   "src/Composer/Command/RequireCommand.php",
+   "src/Composer/Config/JsonConfigSource.php",
+   "src/Composer/Installer/BinaryInstaller.php",
+   "src/Composer/Json/JsonFile.php",
+   "src/Composer/Util/Filesystem.php"
+  ],
+  "2f27c61a92": [
+   "src/Composer/Util/Platform.php",
+   "src/Composer/Util/StreamContextFactory.php"
+  ],
+  "cc85480881": [
+   "src/Composer/Util/Platform.php",
+   "src/Composer/Util/StreamContextFactory.php"
+  ],
+  "a971f4e8cb": [
+   "src/Composer/Autoload/AutoloadGenerator.php",
+   "src/Composer/Command/DumpAutoloadCommand.php"
+  ],
+  "6d920d4348": [
+   "src/Composer/Command/SelfUpdateCommand.php"
+  ],
+  "d77ba288b6": [
+   "src/Composer/Util/Http/CurlDownloader.php",
+   "src/Composer/Util/HttpDownloader.php"
+  ],
+  "85ae025152": [
+   "src/Composer/Command/ShowCommand.php"
+  ],
+  "2616959b47": [
+   "src/Composer/Repository/PlatformRepository.php"
+  ],
+  "1ff9cd279a": [
+   "src/Composer/EventDispatcher/EventDispatcher.php"
+  ],
+  "53e6ddca87": [
+   "src/Composer/Repository/ComposerRepository.php"
+  ],
+  "b7abcc3c3f": [
+   "src/Composer/Composer.php"
+  ],
+  "3d172baf55": [
+   "src/Composer/Composer.php"
+  ],
+  "f0de0bf902": [
+   "src/Composer/Composer.php"
+  ],
+  "0aac50528e": [
+   "src/Composer/Package/Loader/ValidatingArrayLoader.php",
+   "src/Composer/Util/Perforce.php"
+  ],
+  "53b8bb4c24": [
+   "src/Composer/Downloader/FileDownloader.php",
+   "src/Composer/Installer/BinaryInstaller.php"
+  ],
+  "24e396b527": [
+   "src/Composer/FilterList/FilterListApiClient.php",
+   "src/Composer/Repository/ComposerRepository.php"
+  ],
+  "f383d2318c": [
+   "src/Composer/Autoload/AutoloadGenerator.php"
+  ],
+  "ada00550c3": [
+   "src/Composer/Util/Git.php",
+   "src/Composer/Util/ProcessExecutor.php",
+   "src/Composer/Util/Url.php"
+  ],
+  "cd19785d71": [
+   "src/Composer/Repository/PlatformRepository.php"
+  ],
+  "eba7baa59e": [
+   "src/Composer/Util/Url.php"
+  ],
+  "5e9f655ba7": [
+   "src/Composer/Repository/ComposerRepository.php",
+   "src/Composer/Util/Http/CurlDownloader.php",
+   "src/Composer/Util/RemoteFilesystem.php"
+  ],
+  "6987fe5a4d": [
+   "src/Composer/DependencyResolver/LockTransaction.php",
+   "src/Composer/DependencyResolver/Pool.php",
+   "src/Composer/DependencyResolver/PoolBuilder.php",
+   "src/Composer/DependencyResolver/PoolOptimizer.php",
+   "src/Composer/DependencyResolver/Problem.php",
+   "src/Composer/DependencyResolver/Request.php",
+   "src/Composer/DependencyResolver/Solver.php",
+   "src/Composer/DependencyResolver/Transaction.php",
+   "src/Composer/Downloader/FileDownloader.php",
+   "src/Composer/EventDispatcher/EventDispatcher.php",
+   "src/Composer/Repository/ArrayRepository.php",
+   "src/Composer/Repository/ComposerRepository.php"
+  ],
+  "a271c92bae": [
+   "src/Composer/Repository/ComposerRepository.php"
+  ],
+  "bb38c69cac": [
+   "src/Composer/Advisory/Auditor.php",
+   "src/Composer/DependencyResolver/Pool.php"
+  ],
+  "1f54358cf8": [
+   "src/Composer/Util/Filesystem.php"
+  ],
+  "ada2556220": [
+   "src/Composer/Repository/Vcs/ForgejoDriver.php"
+  ],
+  "118acf3cb5": [
+   "src/Composer/Repository/PlatformRepository.php"
+  ],
+  "15352a5938": [
+   "src/Composer/Composer.php"
+  ],
+  "8d4439f572": [
+   "src/Composer/Composer.php"
+  ],
+  "8887ad76fb": [
+   "src/Composer/Util/AuthHelper.php",
+   "src/Composer/Util/Git.php",
+   "src/Composer/Util/ProcessExecutor.php",
+   "src/Composer/Util/Url.php"
+  ],
+  "502c6c4f69": [
+   "src/Composer/DependencyResolver/LockTransaction.php",
+   "src/Composer/Package/Loader/ValidatingArrayLoader.php"
+  ],
+  "e42b4f1215": [
+   "src/Composer/Util/Http/CurlDownloader.php"
+  ],
+  "8c3eba87d2": [
+   "src/Composer/Composer.php",
+   "src/Composer/Console/Application.php",
+   "src/Composer/Installer.php",
+   "src/Composer/Util/StreamContextFactory.php"
+  ],
+  "b7c4e393f1": [
+   "src/Composer/Util/Http/Response.php"
+  ],
+  "d63e06ab5f": [
+   "src/Composer/Downloader/PharDownloader.php",
+   "src/Composer/Downloader/TarDownloader.php",
+   "src/Composer/Util/Platform.php",
+   "src/Composer/Util/Tar.php"
+  ],
+  "ca64886dd0": [
+   "src/Composer/Util/Http/CurlDownloader.php",
+   "src/Composer/Util/RemoteFilesystem.php",
+   "src/Composer/Util/Url.php"
+  ],
+  "fef1d347c9": [
+   "src/Composer/Repository/ComposerRepository.php"
+  ],
+  "10f0c0f1b5": [
+   "src/Composer/Installer/SuggestedPackagesReporter.php"
+  ],
+  "5f05516569": [
+   "src/Composer/Advisory/Auditor.php"
+  ],
+  "c30c5cd252": [
+   "src/Composer/Command/SelfUpdateCommand.php",
+   "src/Composer/SelfUpdate/Versions.php"
+  ],
+  "e813f04e40": [
+   "src/Composer/Installer/SuggestedPackagesReporter.php"
+  ],
+  "2555b697e6": [
+   "src/Composer/FilterList/FilterListProvider/FilterListProviderSet.php",
+   "src/Composer/Repository/RepositorySet.php"
+  ],
+  "9d1b10d135": [
+   "src/Composer/IO/ConsoleIO.php"
+  ],
+  "5ab8ff3d6d": [
+   "src/Composer/Composer.php"
+  ],
+  "4120703b9b": [
+   "src/Composer/Composer.php"
+  ],
+  "a199d6af88": [
+   "src/Composer/Command/SelfUpdateCommand.php"
+  ],
+  "22bd443c6a": [
+   "src/Composer/Downloader/DownloadManager.php"
+  ],
+  "7f7e62bd63": [
+   "src/Composer/Downloader/DownloadManager.php"
+  ],
+  "5cc5e41f00": [
+   "src/Composer/Advisory/Auditor.php"
+  ],
+  "5de02c1a8e": [
+   "src/Composer/Util/AuthHelper.php"
+  ],
+  "4304bd541e": [
+   "src/Composer/Command/ConfigCommand.php"
+  ],
+  "922343ca5e": [
+   "src/Composer/Util/Http/CurlDownloader.php",
+   "src/Composer/Util/HttpDownloader.php"
+  ],
+  "16df251de2": [
+   "src/Composer/Downloader/DownloadManager.php"
+  ],
+  "68d6fee504": [
+   "src/Composer/Composer.php"
+  ],
+  "c13824d956": [
+   "src/Composer/Composer.php"
+  ],
+  "502e66a105": [
+   "src/Composer/IO/BaseIO.php",
+   "src/Composer/Util/ProcessExecutor.php",
+   "src/Composer/Util/Url.php"
+  ],
+  "f240bbed57": [
+   "src/Composer/Advisory/Auditor.php",
+   "src/Composer/Command/AuditCommand.php",
+   "src/Composer/Command/DiagnoseCommand.php",
+   "src/Composer/Policy/PolicyConfig.php"
+  ],
+  "624acb6489": [
+   "src/Composer/Advisory/Auditor.php",
+   "src/Composer/Command/AuditCommand.php",
+   "src/Composer/Command/ConfigCommand.php",
+   "src/Composer/Command/PolicyCommand.php",
+   "src/Composer/DependencyResolver/PoolBuilder.php",
+   "src/Composer/DependencyResolver/Rule.php",
+   "src/Composer/Policy/PolicyConfig.php"
+  ],
+  "9278cfbd49": [
+   "src/Composer/Config.php",
+   "src/Composer/Repository/RepositoryFactory.php",
+   "src/Composer/Util/Http/ProxyManager.php",
+   "src/Composer/Util/NoProxyPattern.php"
+  ],
+  "3873b52710": [
+   "src/Composer/Command/CreateProjectCommand.php",
+   "src/Composer/Command/InstallCommand.php",
+   "src/Composer/Command/ReinstallCommand.php",
+   "src/Composer/Command/RequireCommand.php",
+   "src/Composer/Command/UpdateCommand.php",
+   "src/Composer/Config.php",
+   "src/Composer/Downloader/DownloadManager.php",
+   "src/Composer/Factory.php",
+   "src/Composer/Installer.php"
+  ],
+  "bc868a58e6": [
+   "src/Composer/Config.php",
+   "src/Composer/Downloader/FileDownloader.php",
+   "src/Composer/Repository/ComposerRepository.php",
+   "src/Composer/Repository/PathRepository.php",
+   "src/Composer/Repository/RepositoryFactory.php",
+   "src/Composer/Repository/Vcs/ForgejoDriver.php",
+   "src/Composer/Repository/Vcs/FossilDriver.php",
+   "src/Composer/Repository/Vcs/GitBitbucketDriver.php",
+   "src/Composer/Repository/Vcs/GitDriver.php",
+   "src/Composer/Repository/Vcs/GitHubDriver.php",
+   "src/Composer/Repository/Vcs/GitLabDriver.php",
+   "src/Composer/Repository/Vcs/HgDriver.php",
+   "src/Composer/Repository/Vcs/SvnDriver.php",
+   "src/Composer/Repository/VcsRepository.php",
+   "src/Composer/Util/AuthHelper.php",
+   "src/Composer/Util/Git.php",
+   "src/Composer/Util/Hg.php",
+   "src/Composer/Util/Http/CurlDownloader.php",
+   "src/Composer/Util/Svn.php"
+  ],
+  "643d9cacf1": [
+   "src/Composer/Compiler.php"
+  ],
+  "0008fdbd48": [
+   "src/Composer/Command/AuditCommand.php"
+  ],
+  "24f7d02cd8": [
+   "src/Composer/Advisory/Auditor.php",
+   "src/Composer/Command/AuditCommand.php"
+  ],
+  "2f2498f5be": [
+   "src/Composer/Command/PackageDiscoveryTrait.php"
+  ],
+  "16bfe1e1cd": [
+   "src/Composer/Composer.php"
+  ],
+  "91c20d0b0a": [
+   "src/Composer/Composer.php"
+  ],
+  "e4912315d5": [
+   "src/Composer/Console/Application.php",
+   "src/Composer/Util/Http/CurlDownloader.php",
+   "src/Composer/Util/HttpDownloader.php"
+  ],
+  "5bd0e54684": [
+   "src/Composer/DependencyResolver/Problem.php"
+  ],
+  "16831cecc9": [
+   "src/Composer/FilterList/FilterListProvider/FilterListProviderSet.php"
+  ],
+  "49d88f1508": [
+   "src/Composer/FilterList/ComposerRepositoryFilterInformation.php",
+   "src/Composer/FilterList/FilterListProvider/UrlSourceFilterListProvider.php",
+   "src/Composer/Repository/ComposerRepository.php"
+  ],
+  "afbfb78d4b": [
+   "src/Composer/FilterList/ComposerRepositoryFilterInformation.php",
+   "src/Composer/FilterList/FilterListProvider/FilterListProviderSet.php",
+   "src/Composer/FilterList/FilterListProvider/UrlSourceFilterListProvider.php",
+   "src/Composer/Repository/ComposerRepository.php",
+   "src/Composer/Repository/FilterListProviderInterface.php",
+   "src/Composer/Repository/FilterRepository.php",
+   "src/Composer/Repository/PackageRepository.php"
+  ],
+  "13bd57984b": [
+   "src/Composer/Util/AuthHelper.php"
+  ],
+  "07e5bcb639": [
+   "src/Composer/DependencyResolver/RuleWatchGraph.php"
+  ],
+  "866309b395": [
+   "src/Composer/DependencyResolver/Problem.php"
+  ],
+  "3f5e7f9fbf": [
+   "src/Composer/IO/BaseIO.php",
+   "src/Composer/Util/GitHub.php"
+  ],
+  "53f0c49d8c": [
+   "src/Composer/Util/Http/CurlDownloader.php",
+   "src/Composer/Util/RemoteFilesystem.php"
+  ],
+  "3a968ba6ba": [
+   "src/Composer/Advisory/Auditor.php",
+   "src/Composer/Command/AuditCommand.php",
+   "src/Composer/Command/DiagnoseCommand.php",
+   "src/Composer/Config.php",
+   "src/Composer/Policy/ListPolicyConfig.php"
+  ],
+  "aaae5476b7": [
+   "src/Composer/FilterList/Source/SourceValidator.php"
+  ],
+  "3c2e5e5161": [
+   "src/Composer/DependencyResolver/Pool.php"
+  ],
+  "93f529a778": [
+   "src/Composer/DependencyResolver/FilterListPoolFilter.php",
+   "src/Composer/DependencyResolver/SecurityAdvisoryPoolFilter.php",
+   "src/Composer/Installer.php"
+  ],
+  "683ad0d536": [
+   "src/Composer/FilterList/ComposerRepositoryFilterInformation.php"
+  ],
+  "32daf6ba99": [
+   "src/Composer/FilterList/ComposerRepositoryFilterInformation.php"
+  ],
+  "4bd9d37dd0": [
+   "src/Composer/IO/ConsoleIO.php"
+  ],
+  "36c9073c95": [
+   "src/Composer/IO/ConsoleIO.php"
+  ],
+  "cbbe322373": [
+   "src/Composer/Repository/ComposerRepository.php"
+  ],
+  "b9e9032643": [
+   "src/Composer/DependencyResolver/FilterListPoolFilter.php",
+   "src/Composer/Installer.php"
+  ],
+  "e73bf59a09": [
+   "src/Composer/Config.php"
+  ],
+  "37825e9851": [
+   "src/Composer/Advisory/AuditConfig.php",
+   "src/Composer/Advisory/Auditor.php",
+   "src/Composer/Command/AuditCommand.php",
+   "src/Composer/Command/BaseCommand.php",
+   "src/Composer/Command/CreateProjectCommand.php",
+   "src/Composer/Command/DiagnoseCommand.php",
+   "src/Composer/Command/InstallCommand.php",
+   "src/Composer/Command/RemoveCommand.php",
+   "src/Composer/Command/RequireCommand.php",
+   "src/Composer/Command/UpdateCommand.php",
+   "src/Composer/DependencyResolver/SecurityAdvisoryPoolFilter.php",
+   "src/Composer/FilterList/FilterListAuditor.php",
+   "src/Composer/Installer.php",
+   "src/Composer/Policy/AbandonedPolicyConfig.php",
+   "src/Composer/Policy/AdvisoriesPolicyConfig.php",
+   "src/Composer/Policy/CustomListPolicyConfig.php",
+   "src/Composer/Policy/IgnoreUnreachable.php",
+   "src/Composer/Policy/ListPolicyConfig.php",
+   "src/Composer/Policy/MalwarePolicyConfig.php",
+   "src/Composer/Policy/PolicyConfig.php"
+  ],
+  "c1d6eaedc5": [
+   "src/Composer/Console/Application.php"
+  ],
+  "3a16d892fc": [
+   "src/Composer/Advisory/AuditConfig.php",
+   "src/Composer/Advisory/Auditor.php",
+   "src/Composer/DependencyResolver/FilterListPoolFilter.php",
+   "src/Composer/DependencyResolver/PoolBuilder.php",
+   "src/Composer/DependencyResolver/Problem.php",
+   "src/Composer/DependencyResolver/Request.php",
+   "src/Composer/DependencyResolver/Rule.php",
+   "src/Composer/DependencyResolver/RuleSetGenerator.php",
+   "src/Composer/DependencyResolver/Solver.php",
+   "src/Composer/FilterList/FilterListAuditor.php",
+   "src/Composer/Installer.php",
+   "src/Composer/PHPStan/RuleReasonDataReturnTypeExtension.php",
+   "src/Composer/Policy/IgnoreUnreachable.php",
+   "src/Composer/Policy/ListPolicyConfig.php",
+   "src/Composer/Policy/MalwarePolicyConfig.php",
+   "src/Composer/Policy/PolicyConfig.php"
+  ],
+  "1f5d665e21": [
+   "src/Composer/Command/BaseCommand.php",
+   "src/Composer/Config.php",
+   "src/Composer/Policy/PolicyConfig.php",
+   "src/Composer/Util/Platform.php"
+  ],
+  "685add70ec": [
+   "src/Composer/Command/ArchiveCommand.php",
+   "src/Composer/Command/ConfigCommand.php",
+   "src/Composer/Command/CreateProjectCommand.php",
+   "src/Composer/Command/InitCommand.php",
+   "src/Composer/Command/PackageDiscoveryTrait.php",
+   "src/Composer/Command/ShowCommand.php",
+   "src/Composer/DependencyResolver/DefaultPolicy.php",
+   "src/Composer/DependencyResolver/PoolBuilder.php",
+   "src/Composer/Installer.php",
+   "src/Composer/Package/BasePackage.php",
+   "src/Composer/Package/Loader/RootPackageLoader.php",
+   "src/Composer/Package/Loader/ValidatingArrayLoader.php",
+   "src/Composer/Package/Locker.php",
+   "src/Composer/Package/RootPackage.php",
+   "src/Composer/Package/RootPackageInterface.php",
+   "src/Composer/Package/Version/StabilityFilter.php",
+   "src/Composer/Package/Version/VersionSelector.php",
+   "src/Composer/Repository/ComposerRepository.php",
+   "src/Composer/Repository/RepositoryInterface.php",
+   "src/Composer/Repository/RepositorySet.php",
+   "tests/Composer/Test/DependencyResolver/PoolBuilderTest.php",
+   "tests/Composer/Test/Repository/FilterRepositoryTest.php"
+  ]
+ }
+}

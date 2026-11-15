@@ -1,0 +1,110 @@
+{
+  "name": "@plannotator/sem-jiff",
+  "version": "0.2.0",
+  "description": "Semantic diffs for code review: finds moved, renamed, reformatted, extracted and inlined code with tree-sitter, for any diff viewer.",
+  "license": "MIT OR Apache-2.0",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./summary": {
+      "types": "./dist/summary.d.ts",
+      "default": "./dist/summary.js"
+    },
+    "./opinions": {
+      "types": "./dist/opinions.d.ts",
+      "default": "./dist/opinions.js"
+    },
+    "./candidate": {
+      "types": "./dist/candidate.d.ts",
+      "default": "./dist/candidate.js"
+    },
+    "./languages": {
+      "types": "./dist/languages.d.ts",
+      "default": "./dist/languages.js"
+    },
+    "./grammars": {
+      "types": "./dist/grammars.d.ts",
+      "default": "./dist/grammars.js"
+    },
+    "./copy-wasm": {
+      "types": "./dist/copy-wasm.d.ts",
+      "default": "./dist/copy-wasm.js"
+    },
+    "./wasm/*": "./wasm/*",
+    "./package.json": "./package.json"
+  },
+  "types": "./dist/index.d.ts",
+  "bin": {
+    "sem-jiff-copy-wasm": "./dist/copy-wasm-bin.js"
+  },
+  "files": [
+    "dist",
+    "wasm",
+    "src/candidate.ts",
+    "src/opinions.ts",
+    "src/grammars.ts",
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE-MIT",
+    "LICENSE-APACHE",
+    "THIRD-PARTY-NOTICES"
+  ],
+  "keywords": [
+    "diff",
+    "semantic-diff",
+    "code-review",
+    "tree-sitter",
+    "refactoring",
+    "plannotator"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/plannotator/sem-jiff"
+  },
+  "homepage": "https://github.com/plannotator/sem-jiff#readme",
+  "bugs": {
+    "url": "https://github.com/plannotator/sem-jiff/issues"
+  },
+  "scripts": {
+    "test": "node --test --test-concurrency=${SEM_DIFF_TEST_WORKERS:-2} test/*.test.ts",
+    "typecheck": "tsc -p .",
+    "check": "npm run typecheck && npm test",
+    "demo:data": "node demo/data.ts",
+    "demo:build": "node demo/build.ts",
+    "build": "rm -rf dist && tsc -p tsconfig.build.json && node scripts/fix-dts.ts && node scripts/build-wasm.ts",
+    "prepack": "npm run build",
+    "smoke": "node scripts/smoke.mjs",
+    "smoke:browser": "node scripts/browser-smoke.mjs"
+  },
+  "engines": {
+    "node": ">=24"
+  },
+  "dependencies": {
+    "@vscode/diff": "^0.0.2-133",
+    "diff": "^8.0.4",
+    "web-tree-sitter": "^0.27.1"
+  },
+  "devDependencies": {
+    "@tree-sitter-grammars/tree-sitter-kotlin": "file:vendor/tree-sitter-kotlin",
+    "@types/node": "^24.19.2",
+    "esbuild": "^0.25.12",
+    "playwright": "^1.65.0",
+    "tree-sitter-c-sharp": "^0.23.5",
+    "tree-sitter-go": "^0.25.0",
+    "tree-sitter-java": "^0.23.5",
+    "tree-sitter-php": "^0.24.2",
+    "tree-sitter-python": "^0.25.0",
+    "tree-sitter-ruby": "^0.23.1",
+    "tree-sitter-rust": "^0.24.0",
+    "tree-sitter-swift": "file:vendor/tree-sitter-swift",
+    "tree-sitter-typescript": "^0.23.2",
+    "typescript": "5.9",
+    "vite": "^7.3.8"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

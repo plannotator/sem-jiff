@@ -1,0 +1,250 @@
+{
+ "how": "Curated PHP refactor commits named in the spec (sem-diff-languages.md section 5), read and labelled by hand on 2026-11-14 before any PHP engine code existed. The held-out composer commit is not labelled here; its claims go to the blind audit.",
+ "labels": [
+  {
+   "id": 1,
+   "project": "symfony",
+   "commit": "8241df6b9c",
+   "file": "src/Symfony/Component/HttpFoundation/IpUtils.php",
+   "kind": "reformatted",
+   "old": [
+    [
+     21,
+     46
+    ]
+   ],
+   "new": [
+    [
+     21,
+     46
+    ]
+   ],
+   "label": "correct",
+   "name": "PRIVATE_SUBNETS",
+   "note": "Only the spaces before the trailing comments changed (one comma gained a space)."
+  },
+  {
+   "id": 2,
+   "project": "symfony",
+   "commit": "8241df6b9c",
+   "file": "src/Symfony/Component/Validator/Constraints/Composite.php",
+   "kind": "reformatted",
+   "old": [
+    [
+     140,
+     141
+    ]
+   ],
+   "new": [
+    [
+     140,
+     143
+    ]
+   ],
+   "label": "wrong",
+   "expect": "edited",
+   "name": "getNestedConstraints",
+   "note": "A return became an assignment plus a return, and a doc comment became a plain comment: same behaviour, different code."
+  },
+  {
+   "id": 3,
+   "project": "symfony",
+   "commit": "8241df6b9c",
+   "file": "src/Symfony/Component/Console/Command/Command.php",
+   "kind": "reformatted",
+   "old": [
+    [
+     455,
+     456
+    ],
+    [
+     478,
+     480
+    ]
+   ],
+   "new": [
+    [
+     455,
+     456
+    ],
+    [
+     478,
+     480
+    ]
+   ],
+   "label": "borderline",
+   "note": "Only the alignment inside @param doc comment lines changed; a reformatted claim on comment text is defensible either way."
+  },
+  {
+   "id": 4,
+   "project": "symfony",
+   "commit": "8241df6b9c",
+   "file": "src/Symfony/Component/PropertyInfo/Tests/Extractor/PhpDocExtractorTest.php",
+   "kind": "moved",
+   "old": [
+    [
+     19,
+     19
+    ]
+   ],
+   "new": [
+    [
+     31,
+     31
+    ]
+   ],
+   "label": "correct",
+   "note": "use line sorted into place."
+  },
+  {
+   "id": 5,
+   "project": "symfony",
+   "commit": "8241df6b9c",
+   "file": "src/Symfony/Component/PropertyInfo/Tests/Extractor/PhpDocExtractorTest.php",
+   "kind": "moved",
+   "old": [
+    [
+     20,
+     20
+    ]
+   ],
+   "new": [
+    [
+     35,
+     35
+    ]
+   ],
+   "label": "correct",
+   "note": "use line sorted into place."
+  },
+  {
+   "id": 6,
+   "project": "symfony",
+   "commit": "8241df6b9c",
+   "file": "src/Symfony/Component/PropertyInfo/Tests/Extractor/PhpStanExtractorTest.php",
+   "kind": "moved",
+   "old": [
+    [
+     21,
+     21
+    ]
+   ],
+   "new": [
+    [
+     24,
+     24
+    ]
+   ],
+   "label": "correct",
+   "note": "use line sorted into place."
+  },
+  {
+   "id": 7,
+   "project": "symfony",
+   "commit": "8241df6b9c",
+   "file": "src/Symfony/Component/PropertyInfo/Tests/Extractor/PhpStanExtractorTest.php",
+   "kind": "moved",
+   "old": [
+    [
+     22,
+     22
+    ]
+   ],
+   "new": [
+    [
+     28,
+     28
+    ]
+   ],
+   "label": "correct",
+   "note": "use line sorted into place."
+  },
+  {
+   "id": 8,
+   "project": "symfony",
+   "commit": "8241df6b9c",
+   "file": "src/Symfony/Component/Validator/Tests/Mapping/Factory/LazyLoadingMetadataFactoryTest.php",
+   "kind": "moved",
+   "old": [
+    [
+     24,
+     25
+    ]
+   ],
+   "new": [
+    [
+     24,
+     25
+    ]
+   ],
+   "label": "correct",
+   "note": "Two adjacent use lines swapped; either one may be the moved one."
+  },
+  {
+   "id": 9,
+   "project": "laravel",
+   "commit": "2795df5abc",
+   "file": "src/Illuminate/Foundation/Console/Kernel.php",
+   "kind": "renamed",
+   "old": [
+    [
+     468,
+     468
+    ]
+   ],
+   "new": [
+    [
+     468,
+     468
+    ]
+   ],
+   "label": "correct",
+   "name": "commandNamed",
+   "note": "Public method commandNamed renamed findCommand; its callers are in other files."
+  },
+  {
+   "id": 10,
+   "project": "laravel",
+   "commit": "fc2cd955eb",
+   "file": "src/Illuminate/Http/Middleware/TrustProxies.php",
+   "kind": "renamed",
+   "old": [
+    [
+     50,
+     50
+    ]
+   ],
+   "new": [
+    [
+     50,
+     50
+    ]
+   ],
+   "label": "wrong",
+   "expect": "edited",
+   "note": "A property read became a method call: not a rename."
+  },
+  {
+   "id": 11,
+   "project": "laravel",
+   "commit": "fc2cd955eb",
+   "file": "src/Illuminate/Http/Middleware/TrustProxies.php",
+   "kind": "reformatted",
+   "old": [
+    [
+     13,
+     13
+    ]
+   ],
+   "new": [
+    [
+     13,
+     13
+    ]
+   ],
+   "label": "wrong",
+   "expect": "edited",
+   "note": "The order of types in a @var comment changed: a comment edit, not formatting."
+  }
+ ]
+}

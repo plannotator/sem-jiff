@@ -1,0 +1,136 @@
+{
+ "brew": {
+  "1838274fba": [
+   "Library/Homebrew/cask/upgrade.rb"
+  ],
+  "1d4cad75a4": [
+   "Library/Homebrew/vulns/scanner.rb"
+  ],
+  "4b20fddd70": [
+   "Library/Homebrew/cask/artifact/install_steps.rb"
+  ],
+  "5ad8947a94": [
+   "Library/Homebrew/dev-cmd/bump.rb"
+  ],
+  "7e837121be": [
+   "Library/Homebrew/cmd/update-report.rb"
+  ]
+ },
+ "jekyll": {
+  "0dedc09ab3": [
+   "lib/jekyll/path_manager.rb"
+  ],
+  "3f46f02108": [
+   "lib/jekyll/converters/markdown/kramdown_parser.rb",
+   "lib/jekyll/external.rb",
+   "lib/jekyll/page.rb"
+  ],
+  "55fba8ff31": [
+   "lib/jekyll/filters/url_filters.rb"
+  ],
+  "7558ecb1f7": [
+   "lib/jekyll/tags/highlight.rb"
+  ],
+  "758ee7ed87": [
+   "lib/jekyll/commands/serve.rb"
+  ],
+  "8b72fa3fbf": [
+   "lib/jekyll/site.rb"
+  ],
+  "9e137bae29": [
+   "lib/jekyll/excerpt.rb"
+  ],
+  "ad7a5c0121": [
+   "lib/jekyll/readers/post_reader.rb"
+  ],
+  "b4dcdd42f8": [
+   "lib/jekyll/frontmatter_defaults.rb"
+  ]
+ },
+ "rails": {
+  "03565b0a7d": [
+   "activesupport/lib/active_support/cache/strategy/local_cache.rb"
+  ],
+  "1a8dda450b": [
+   "railties/lib/rails/commands/query/query_command.rb"
+  ],
+  "1c04d75eb8": [
+   "activerecord/lib/active_record/relation/query_methods.rb"
+  ],
+  "1d8e6af2a3": [
+   "actionview/lib/action_view/helpers/form_helper.rb"
+  ],
+  "527449a206": [
+   "activerecord/lib/active_record/connection_adapters/abstract/database_statements.rb"
+  ],
+  "560645a8c2": [
+   "activerecord/lib/active_record/migration/command_recorder.rb"
+  ],
+  "6175f73f63": [
+   "activerecord/lib/active_record/connection_adapters/abstract/transaction.rb"
+  ],
+  "80e1b96b09": [
+   "actioncable/lib/action_cable/connection/subscriptions.rb"
+  ],
+  "8c3eac10f9": [
+   "activemodel/lib/active_model/attribute_set/builder.rb",
+   "activerecord/lib/active_record/attribute_methods/read.rb"
+  ],
+  "9076963e2e": [
+   "activemodel/lib/active_model/secure_password/bcrypt_password.rb"
+  ],
+  "be4e19c057": [
+   "activesupport/lib/active_support/duration/iso8601_serializer.rb"
+  ],
+  "c263999d79": [
+   "activerecord/lib/active_record/relation/query_methods.rb"
+  ],
+  "d09d580d01": [
+   "activesupport/lib/active_support/isolated_execution_state.rb"
+  ],
+  "debbd18c56": [
+   "railties/lib/rails/commands/query/query_command.rb"
+  ]
+ },
+ "rubocop": {
+  "04791193e9": [
+   "lib/rubocop/cop/lint/useless_assignment.rb"
+  ],
+  "3b70129cf6": [
+   "lib/rubocop/result_cache.rb"
+  ],
+  "3fbd64ce34": [
+   "lib/rubocop/cop/style/and_or.rb"
+  ],
+  "41f18ef381": [
+   "lib/rubocop/cop/style/empty_string_inside_interpolation.rb"
+  ],
+  "5ac83d983d": [
+   "lib/rubocop/runner.rb"
+  ],
+  "68f9201a0d": [
+   "lib/rubocop/lsp/routes.rb"
+  ],
+  "7042de6350": [
+   "lib/rubocop/cop/naming/binary_operator_parameter_name.rb"
+  ],
+  "96c7f49947": [
+   "lib/rubocop/config_loader.rb"
+  ],
+  "b61edc6ad9": [
+   "lib/rubocop/cop/layout/first_hash_element_indentation.rb"
+  ],
+  "d9bf647549": [
+   "lib/rubocop/cop/style/lambda.rb"
+  ],
+  "e9defb651d": [
+   "lib/rubocop/comment_config.rb"
+  ],
+  "ecaa3cf704": [
+   "lib/rubocop/cop/team.rb"
+  ],
+  "ed63c03aad": [
+   "lib/rubocop/runner.rb"
+  ]
+ }
+}

@@ -1,0 +1,6 @@
+01132f0cabd0a22d5d3cce8a960e0433041a2865e9af9f8a79d368bd0d4f7ce7  test/fixtures/traps/ruby.json
+f7b3f6f1f624b12fc4510a8cfb78d745e2fecf321f57dad4965f74499c5ab064  test/fixtures/labels/lang-ruby-extracts.json
+ff9465ea071cf231a0de378f5a762786c20ee8e5cf9e058529278b15109a6e94  test/fixtures/labels/lang-ruby-expected.json
+df366b78f1e3d5b2d9f3fbf8a2fefd0cb99373812b0ba2e99d8636ab6de1dbaa  harness/lang/ruby/manifest.json
+ff92beb21222c4aa7e578ae60008ebd3445b668fd159032227bb0d85e778ef8a  harness/lang/ruby/texts.sha256
+answers fixed 2026-11-15T03:55:52Z, before any engine run on these cases; the engine had not been run on any of them

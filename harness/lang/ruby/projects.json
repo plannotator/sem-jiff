@@ -1,0 +1,87 @@
+[
+ {
+  "name": "rails",
+  "set": "practice-ruby",
+  "labels": "lang-ruby-extracts.json",
+  "url": "https://github.com/rails/rails.git",
+  "licence": "MIT",
+  "fetch": [
+   "03565b0a7d4dc1ddc708e7c379f8bc3d3ceb1ad8",
+   "1a8dda450bbc2b5089f9004cac16a73972505f94",
+   "1c04d75eb80a8c48d0ec2d5484c506ff8ceb7be3",
+   "1d8e6af2a3ae8a5885e5c936515c5ba5be19312f",
+   "527449a20699a96e70e5c8370fd87ed8261912ad",
+   "560645a8c270d583b516031506081834583ae339",
+   "6175f73f6384be6581c8ba8a117e2d3d5dcde541",
+   "80e1b96b0925d9405dd4c3b8c79c42e9b36a543f",
+   "8c3eac10f909c9e402c4abacec0b61ac92aefb8f",
+   "9076963e2e37a4bb1028e714286f67556073f151",
+   "be4e19c05782b0aa79fdb44bfe54f58ad856b2f4",
+   "c263999d79d32ebcd17253a0d78a7d854cc5156c",
+   "d09d580d0144ef4bf07e1ffda14fcb9c0d1d7ef3",
+   "debbd18c562df17d01944c475e9291d927910b58"
+  ],
+  "files": 15,
+  "commits": 14
+ },
+ {
+  "name": "rubocop",
+  "set": "practice-ruby",
+  "labels": "lang-ruby-extracts.json",
+  "url": "https://github.com/rubocop/rubocop.git",
+  "licence": "MIT",
+  "fetch": [
+   "04791193e9ffc57e48185d9ffe9ad8cca8e69ec1",
+   "3b70129cf67b8f8c3f570ab3b2c28087a4c1921d",
+   "3fbd64ce343756bc89f368603200a28b3fad5601",
+   "41f18ef381c9e9650ceb7b4d51e9bb8adbc5e97a",
+   "5ac83d983da5fa75c19b9b59ddab415f66d9b8e0",
+   "68f9201a0d2c7ef3503df33c4fe98d7f3dbd52fb",
+   "7042de6350525017c78dd871db7d13d3dd31e94c",
+   "96c7f499479463284021d5a2ae54d9b05c354500",
+   "b61edc6ad9c28c34ed698c4b260c4fb3d3fdc98d",
+   "d9bf6475498ccb71190f9c8f60ac92513cf6da9e",
+   "e9defb651dff92627ac49ddca76211011c7cf08c",
+   "ecaa3cf704af7697a2a7ced69042d00bc3196c4e",
+   "ed63c03aad84d6349e231b9e993b264d2a7daab2"
+  ],
+  "files": 13,
+  "commits": 13
+ },
+ {
+  "name": "jekyll",
+  "set": "practice-ruby",
+  "labels": "lang-ruby-extracts.json",
+  "url": "https://github.com/jekyll/jekyll.git",
+  "licence": "MIT",
+  "fetch": [
+   "0dedc09ab31ee5ac73a79bd6b3ea451f05965205",
+   "3f46f02108048f2151724220d0037cbce09f483e",
+   "55fba8ff313aae36b3d3e9d05cad7223a9af734b",
+   "7558ecb1f7c4d5c078783f39befdbe544b5cfece",
+   "758ee7ed870c03ec4a8a764a4536d0040bfa9892",
+   "8b72fa3fbf78e399c84a1e9b5bf08c2a3aeb8d22",
+   "9e137bae29774a872b823d62e88d633b0c88a6bd",
+   "ad7a5c0121f21b72e72d109966a1aabc8d31eb04",
+   "b4dcdd42f8b0d97438457066154a1920cab46d68"
+  ],
+  "files": 11,
+  "commits": 9
+ },
+ {
+  "name": "brew",
+  "set": "practice-ruby",
+  "labels": "lang-ruby-extracts.json",
+  "url": "https://github.com/Homebrew/brew.git",
+  "licence": "BSD-2-Clause",
+  "fetch": [
+   "1838274fba4a5a5d8275f23530c9fad128ad233a",
+   "1d4cad75a4c05f99ecee3597bb246e54566e4260",
+   "4b20fddd700d9c03e3e8bccab7a779969be862ed",
+   "5ad8947a94aacb8c2d5296b51cd51f7acdf2c9d6",
+   "7e837121be9f48cea350bae85a1a62bf6a7e8bea"
+  ],
+  "files": 5,
+  "commits": 5
+ }
+]

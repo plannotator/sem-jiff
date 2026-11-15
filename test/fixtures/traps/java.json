@@ -1,0 +1,865 @@
+[
+  {
+    "id": "java-move-named-by-method",
+    "area": "trap",
+    "language": "java",
+    "title": "A method moved down inside its class is named by the method, not the class",
+    "expected": "tax() moved below describe(); the Sem tab names it \"tax\", never \"Order\".",
+    "status": "ok",
+    "old": "public class Order {\n  private final double amount;\n\n  public Order(double amount) {\n    this.amount = amount;\n  }\n\n  public double tax() {\n    return amount * 0.2;\n  }\n\n  public String describe() {\n    StringBuilder sb = new StringBuilder();\n    sb.append(\"Order of \");\n    sb.append(amount);\n    sb.append(\" with tax \");\n    sb.append(tax());\n    return sb.toString();\n  }\n}\n",
+    "new": "public class Order {\n  private final double amount;\n\n  public Order(double amount) {\n    this.amount = amount;\n  }\n\n  public String describe() {\n    StringBuilder sb = new StringBuilder();\n    sb.append(\"Order of \");\n    sb.append(amount);\n    sb.append(\" with tax \");\n    sb.append(tax());\n    return sb.toString();\n  }\n\n  public double tax() {\n    return amount * 0.2;\n  }\n}\n",
+    "ops": [
+      {
+        "type": "moved",
+        "old": [
+          [
+            8,
+            10
+          ]
+        ],
+        "new": [
+          [
+            17,
+            19
+          ]
+        ]
+      }
+    ],
+    "never": [
+      {
+        "type": "moved",
+        "old": [
+          [
+            12,
+            19
+          ]
+        ]
+      }
+    ],
+    "names": [
+      {
+        "type": "moved",
+        "name": "tax",
+        "not": [
+          "Order"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "java-move-in-nested-class",
+    "area": "trap",
+    "language": "java",
+    "title": "A method moved inside a nested class is named by the method, not by either class",
+    "expected": "hit() moved below render() inside Registry.Entry; named \"hit\", never \"Entry\" or \"Registry\".",
+    "status": "ok",
+    "old": "public class Registry {\n  private final Map<String, Entry> entries = new HashMap<>();\n\n  public void add(String key, Entry e) {\n    entries.put(key, e);\n  }\n\n  public static final class Entry {\n    private final String label;\n    private int hits;\n\n    public Entry(String label) {\n      this.label = label;\n    }\n\n    public void hit() {\n      hits++;\n    }\n\n    public String render() {\n      String head = label.toUpperCase();\n      String tail = Integer.toString(hits);\n      String joined = head + \":\" + tail;\n      return joined.trim();\n    }\n  }\n}\n",
+    "new": "public class Registry {\n  private final Map<String, Entry> entries = new HashMap<>();\n\n  public void add(String key, Entry e) {\n    entries.put(key, e);\n  }\n\n  public static final class Entry {\n    private final String label;\n    private int hits;\n\n    public Entry(String label) {\n      this.label = label;\n    }\n\n    public String render() {\n      String head = label.toUpperCase();\n      String tail = Integer.toString(hits);\n      String joined = head + \":\" + tail;\n      return joined.trim();\n    }\n\n    public void hit() {\n      hits++;\n    }\n  }\n}\n",
+    "ops": [
+      {
+        "type": "moved",
+        "old": [
+          [
+            16,
+            18
+          ]
+        ],
+        "new": [
+          [
+            23,
+            25
+          ]
+        ]
+      }
+    ],
+    "never": [
+      {
+        "type": "moved",
+        "old": [
+          [
+            20,
+            25
+          ]
+        ]
+      }
+    ],
+    "names": [
+      {
+        "type": "moved",
+        "name": "hit",
+        "not": [
+          "Entry",
+          "Registry"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "java-swap-two-methods",
+    "area": "trap",
+    "language": "java",
+    "title": "Two methods swapped: the move is named by a method, never by the class",
+    "expected": "area() and perimeter() swapped. The shorter area() is the one that moved (perimeter() stays matched); named \"area\", never \"Shapes\". A claim on perimeter instead is also true but not expected.",
+    "status": "ok",
+    "old": "public class Shapes {\n  public static double area(double w, double h) {\n    return w * h;\n  }\n\n  public static double perimeter(double w, double h) {\n    double twiceW = 2 * w;\n    double twiceH = 2 * h;\n    double sum = twiceW + twiceH;\n    return sum;\n  }\n}\n",
+    "new": "public class Shapes {\n  public static double perimeter(double w, double h) {\n    double twiceW = 2 * w;\n    double twiceH = 2 * h;\n    double sum = twiceW + twiceH;\n    return sum;\n  }\n\n  public static double area(double w, double h) {\n    return w * h;\n  }\n}\n",
+    "ops": [
+      {
+        "type": "moved",
+        "old": [
+          [
+            2,
+            4
+          ]
+        ],
+        "new": [
+          [
+            9,
+            11
+          ]
+        ]
+      }
+    ],
+    "names": [
+      {
+        "type": "moved",
+        "name": "area",
+        "not": [
+          "Shapes"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "java-move-hides-edit",
+    "area": "trap",
+    "language": "java",
+    "title": "A moved method whose body also changed is not a plain move",
+    "expected": "count() moved up (plain move, named \"count\"); min() moved to the end AND its start value changed from MAX_VALUE to MIN_VALUE, so it is movedWithEdit or edited, never plain moved.",
+    "status": "ok",
+    "old": "public class Stats {\n  private final int[] values;\n\n  public Stats(int[] values) {\n    this.values = values;\n  }\n\n  public int min() {\n    int m = Integer.MAX_VALUE;\n    for (int v : values) {\n      m = Math.min(m, v);\n    }\n    return m;\n  }\n\n  public int max() {\n    int m = Integer.MIN_VALUE;\n    for (int v : values) {\n      m = Math.max(m, v);\n    }\n    return m;\n  }\n\n  public int count() {\n    return values.length;\n  }\n}\n",
+    "new": "public class Stats {\n  private final int[] values;\n\n  public Stats(int[] values) {\n    this.values = values;\n  }\n\n  public int count() {\n    return values.length;\n  }\n\n  public int max() {\n    int m = Integer.MIN_VALUE;\n    for (int v : values) {\n      m = Math.max(m, v);\n    }\n    return m;\n  }\n\n  public int min() {\n    int m = Integer.MIN_VALUE;\n    for (int v : values) {\n      m = Math.min(m, v);\n    }\n    return m;\n  }\n}\n",
+    "ops": [
+      {
+        "type": "moved",
+        "old": [
+          [
+            24,
+            26
+          ]
+        ],
+        "new": [
+          [
+            8,
+            10
+          ]
+        ]
+      }
+    ],
+    "never": [
+      {
+        "type": "moved",
+        "old": [
+          [
+            8,
+            14
+          ]
+        ],
+        "new": [
+          [
+            20,
+            26
+          ]
+        ]
+      }
+    ],
+    "names": [
+      {
+        "type": "moved",
+        "name": "count",
+        "not": [
+          "Stats"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "java-move-to-end-no-brace",
+    "area": "trap",
+    "language": "java",
+    "title": "A method moved to the end of its class: no \"added\" blank line or closing brace",
+    "expected": "count() moved to the end of Cart. Only the move is shown; the blank line before it and the class's closing brace are unchanged, never added or deleted.",
+    "status": "ok",
+    "old": "public class Cart {\n  private final List<Item> items = new ArrayList<>();\n\n  public int count() {\n    return items.size();\n  }\n\n  public boolean isEmpty() {\n    return items.isEmpty();\n  }\n\n  public long total() {\n    long sum = 0;\n    for (Item i : items) {\n      sum += i.price();\n    }\n    return sum;\n  }\n}\n",
+    "new": "public class Cart {\n  private final List<Item> items = new ArrayList<>();\n\n  public boolean isEmpty() {\n    return items.isEmpty();\n  }\n\n  public long total() {\n    long sum = 0;\n    for (Item i : items) {\n      sum += i.price();\n    }\n    return sum;\n  }\n\n  public int count() {\n    return items.size();\n  }\n}\n",
+    "ops": [
+      {
+        "type": "moved",
+        "old": [
+          [
+            4,
+            6
+          ]
+        ],
+        "new": [
+          [
+            16,
+            18
+          ]
+        ]
+      }
+    ],
+    "never": [
+      {
+        "type": "added",
+        "new": [
+          [
+            15,
+            15
+          ],
+          [
+            19,
+            19
+          ]
+        ]
+      },
+      {
+        "type": "deleted",
+        "old": [
+          [
+            7,
+            7
+          ],
+          [
+            19,
+            19
+          ]
+        ]
+      }
+    ],
+    "names": [
+      {
+        "type": "moved",
+        "name": "count",
+        "not": [
+          "Cart"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "java-last-method-moved-up",
+    "area": "trap",
+    "language": "java",
+    "title": "The last method moved to the top: the brace and blank it leaves are not deleted",
+    "expected": "reset() moved from the end of Timer to the top. The blank line before it and the class's closing brace stay; never deleted on the old side, never added after it on the new side.",
+    "status": "ok",
+    "old": "public class Timer {\n  private long start;\n\n  public void begin() {\n    start = System.nanoTime();\n  }\n\n  public long elapsed() {\n    long now = System.nanoTime();\n    long diff = now - start;\n    return diff / 1_000_000;\n  }\n\n  public void reset() {\n    start = 0;\n  }\n}\n",
+    "new": "public class Timer {\n  private long start;\n\n  public void reset() {\n    start = 0;\n  }\n\n  public void begin() {\n    start = System.nanoTime();\n  }\n\n  public long elapsed() {\n    long now = System.nanoTime();\n    long diff = now - start;\n    return diff / 1_000_000;\n  }\n}\n",
+    "ops": [
+      {
+        "type": "moved",
+        "old": [
+          [
+            14,
+            16
+          ]
+        ],
+        "new": [
+          [
+            4,
+            6
+          ]
+        ]
+      }
+    ],
+    "never": [
+      {
+        "type": "deleted",
+        "old": [
+          [
+            13,
+            13
+          ],
+          [
+            17,
+            17
+          ]
+        ]
+      },
+      {
+        "type": "added",
+        "new": [
+          [
+            7,
+            7
+          ],
+          [
+            17,
+            17
+          ]
+        ]
+      }
+    ],
+    "names": [
+      {
+        "type": "moved",
+        "name": "reset",
+        "not": [
+          "Timer"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "java-nested-last-moved-braces",
+    "area": "trap",
+    "language": "java",
+    "title": "Last method of a nested class moved up: neither closing brace is added or deleted",
+    "expected": "validate() moved to the top of Builder. The two closing braces at the end (Builder's and Outer's) and the blank line are unchanged.",
+    "status": "ok",
+    "old": "public class Outer {\n  private int size;\n\n  static class Builder {\n    private int size;\n\n    Builder size(int s) {\n      this.size = s;\n      return this;\n    }\n\n    Outer build() {\n      Outer o = new Outer();\n      o.size = size;\n      return o;\n    }\n\n    void validate() {\n      if (size < 0) {\n        throw new IllegalArgumentException(\"size\");\n      }\n    }\n  }\n}\n",
+    "new": "public class Outer {\n  private int size;\n\n  static class Builder {\n    private int size;\n\n    void validate() {\n      if (size < 0) {\n        throw new IllegalArgumentException(\"size\");\n      }\n    }\n\n    Builder size(int s) {\n      this.size = s;\n      return this;\n    }\n\n    Outer build() {\n      Outer o = new Outer();\n      o.size = size;\n      return o;\n    }\n  }\n}\n",
+    "ops": [
+      {
+        "type": "moved",
+        "old": [
+          [
+            18,
+            22
+          ]
+        ],
+        "new": [
+          [
+            7,
+            11
+          ]
+        ]
+      }
+    ],
+    "never": [
+      {
+        "type": "deleted",
+        "old": [
+          [
+            17,
+            17
+          ],
+          [
+            23,
+            24
+          ]
+        ]
+      },
+      {
+        "type": "added",
+        "new": [
+          [
+            12,
+            12
+          ],
+          [
+            23,
+            24
+          ]
+        ]
+      }
+    ],
+    "names": [
+      {
+        "type": "moved",
+        "name": "validate",
+        "not": [
+          "Builder",
+          "Outer"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "java-helper-to-end-two-blanks",
+    "area": "trap",
+    "language": "java",
+    "title": "A private helper moved to the end past two methods: no stray added or deleted lines",
+    "expected": "peek() moved to the end of Parser. Nothing else changed: no added blank line or brace near it, nothing deleted where it was.",
+    "status": "ok",
+    "old": "public class Parser {\n  private final String input;\n  private int pos;\n\n  public Parser(String input) {\n    this.input = input;\n  }\n\n  private char peek() {\n    return input.charAt(pos);\n  }\n\n  public int parseNumber() {\n    int start = pos;\n    while (pos < input.length() && Character.isDigit(peek())) {\n      pos++;\n    }\n    return Integer.parseInt(input.substring(start, pos));\n  }\n\n  public boolean atEnd() {\n    return pos >= input.length();\n  }\n}\n",
+    "new": "public class Parser {\n  private final String input;\n  private int pos;\n\n  public Parser(String input) {\n    this.input = input;\n  }\n\n  public int parseNumber() {\n    int start = pos;\n    while (pos < input.length() && Character.isDigit(peek())) {\n      pos++;\n    }\n    return Integer.parseInt(input.substring(start, pos));\n  }\n\n  public boolean atEnd() {\n    return pos >= input.length();\n  }\n\n  private char peek() {\n    return input.charAt(pos);\n  }\n}\n",
+    "ops": [
+      {
+        "type": "moved",
+        "old": [
+          [
+            9,
+            11
+          ]
+        ],
+        "new": [
+          [
+            21,
+            23
+          ]
+        ]
+      }
+    ],
+    "never": [
+      {
+        "type": "added"
+      },
+      {
+        "type": "deleted"
+      }
+    ],
+    "names": [
+      {
+        "type": "moved",
+        "name": "peek",
+        "not": [
+          "Parser"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "java-rename-callers-first",
+    "area": "trap",
+    "language": "java",
+    "title": "A method rename whose callers come first in the file is named by the declaration",
+    "expected": "computeTotal renamed to calculateTotal with both callers. The first changed lines are call sites in summary() and isLarge(); the Sem tab names the rename \"computeTotal -> calculateTotal\", never by a caller.",
+    "status": "ok",
+    "old": "public class Invoice {\n  private final List<Line> lines = new ArrayList<>();\n\n  public String summary() {\n    return \"Total: \" + computeTotal();\n  }\n\n  public boolean isLarge() {\n    return computeTotal() > 10_000;\n  }\n\n  public long computeTotal() {\n    long sum = 0;\n    for (Line l : lines) {\n      sum += l.amount();\n    }\n    return sum;\n  }\n}\n",
+    "new": "public class Invoice {\n  private final List<Line> lines = new ArrayList<>();\n\n  public String summary() {\n    return \"Total: \" + calculateTotal();\n  }\n\n  public boolean isLarge() {\n    return calculateTotal() > 10_000;\n  }\n\n  public long calculateTotal() {\n    long sum = 0;\n    for (Line l : lines) {\n      sum += l.amount();\n    }\n    return sum;\n  }\n}\n",
+    "ops": [
+      {
+        "type": "renamed",
+        "old": [
+          [
+            5,
+            5
+          ],
+          [
+            9,
+            9
+          ],
+          [
+            12,
+            12
+          ]
+        ],
+        "new": [
+          [
+            5,
+            5
+          ],
+          [
+            9,
+            9
+          ],
+          [
+            12,
+            12
+          ]
+        ]
+      }
+    ],
+    "never": [
+      {
+        "type": "moved"
+      }
+    ],
+    "names": [
+      {
+        "type": "renamed",
+        "name": "computeTotal -> calculateTotal",
+        "not": [
+          "summary",
+          "isLarge",
+          "Invoice"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "java-rename-private-method",
+    "area": "trap",
+    "language": "java",
+    "title": "A private method renamed with its one caller is named by the declaration",
+    "expected": "expired renamed to isExpired (declaration and the call in check()); named \"expired -> isExpired\", never \"check\" or \"Session\".",
+    "status": "ok",
+    "old": "public class Session {\n  private final Clock clock;\n  private long lastSeen;\n\n  public Session(Clock clock) {\n    this.clock = clock;\n  }\n\n  private boolean expired(long ttl) {\n    return clock.millis() - lastSeen > ttl;\n  }\n\n  public void touch() {\n    lastSeen = clock.millis();\n  }\n\n  public boolean check(long ttl) {\n    if (expired(ttl)) {\n      return false;\n    }\n    touch();\n    return true;\n  }\n}\n",
+    "new": "public class Session {\n  private final Clock clock;\n  private long lastSeen;\n\n  public Session(Clock clock) {\n    this.clock = clock;\n  }\n\n  private boolean isExpired(long ttl) {\n    return clock.millis() - lastSeen > ttl;\n  }\n\n  public void touch() {\n    lastSeen = clock.millis();\n  }\n\n  public boolean check(long ttl) {\n    if (isExpired(ttl)) {\n      return false;\n    }\n    touch();\n    return true;\n  }\n}\n",
+    "ops": [
+      {
+        "type": "renamed",
+        "old": [
+          [
+            9,
+            9
+          ],
+          [
+            18,
+            18
+          ]
+        ],
+        "new": [
+          [
+            9,
+            9
+          ],
+          [
+            18,
+            18
+          ]
+        ]
+      }
+    ],
+    "names": [
+      {
+        "type": "renamed",
+        "name": "expired -> isExpired",
+        "not": [
+          "check",
+          "Session"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "java-rename-field",
+    "area": "trap",
+    "language": "java",
+    "title": "A field renamed with its uses is named by the field declaration",
+    "expected": "Field count renamed to total in its declaration and three methods; named \"count -> total\", never by a method that uses it.",
+    "status": "ok",
+    "old": "public class Counter {\n  private int count;\n\n  public void inc() {\n    count++;\n  }\n\n  public void add(int n) {\n    count += n;\n  }\n\n  public int get() {\n    return count;\n  }\n}\n",
+    "new": "public class Counter {\n  private int total;\n\n  public void inc() {\n    total++;\n  }\n\n  public void add(int n) {\n    total += n;\n  }\n\n  public int get() {\n    return total;\n  }\n}\n",
+    "ops": [
+      {
+        "type": "renamed",
+        "old": [
+          [
+            2,
+            2
+          ],
+          [
+            5,
+            5
+          ],
+          [
+            9,
+            9
+          ],
+          [
+            13,
+            13
+          ]
+        ],
+        "new": [
+          [
+            2,
+            2
+          ],
+          [
+            5,
+            5
+          ],
+          [
+            9,
+            9
+          ],
+          [
+            13,
+            13
+          ]
+        ]
+      }
+    ],
+    "names": [
+      {
+        "type": "renamed",
+        "name": "count -> total",
+        "not": [
+          "inc",
+          "add",
+          "get",
+          "Counter"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "java-rename-hides-edit",
+    "area": "trap",
+    "language": "java",
+    "title": "A method rename hides a changed call on one caller line",
+    "expected": "computeTotal renamed to calculateTotal (declaration and quote()); in quoteRounded the same line also changed Math.round to Math.floor, so that line is an edit, not part of the rename. Named by the declaration.",
+    "status": "ok",
+    "old": "public class Pricing {\n  private final double rate;\n\n  public Pricing(double rate) {\n    this.rate = rate;\n  }\n\n  public double computeTotal(double net) {\n    return net * (1 + rate);\n  }\n\n  public double quote(double net) {\n    return computeTotal(net);\n  }\n\n  public double quoteRounded(double net) {\n    return Math.round(computeTotal(net));\n  }\n}\n",
+    "new": "public class Pricing {\n  private final double rate;\n\n  public Pricing(double rate) {\n    this.rate = rate;\n  }\n\n  public double calculateTotal(double net) {\n    return net * (1 + rate);\n  }\n\n  public double quote(double net) {\n    return calculateTotal(net);\n  }\n\n  public double quoteRounded(double net) {\n    return Math.floor(calculateTotal(net));\n  }\n}\n",
+    "ops": [
+      {
+        "type": "renamed",
+        "old": [
+          [
+            8,
+            8
+          ],
+          [
+            13,
+            13
+          ]
+        ],
+        "new": [
+          [
+            8,
+            8
+          ],
+          [
+            13,
+            13
+          ]
+        ]
+      }
+    ],
+    "never": [
+      {
+        "type": "renamed",
+        "old": [
+          [
+            17,
+            17
+          ]
+        ],
+        "new": [
+          [
+            17,
+            17
+          ]
+        ]
+      }
+    ],
+    "names": [
+      {
+        "type": "renamed",
+        "name": "computeTotal -> calculateTotal",
+        "not": [
+          "quoteRounded",
+          "quote",
+          "Pricing"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "java-overload-moved",
+    "area": "trap",
+    "language": "java",
+    "title": "One of three overloads moved; overloads pair by parameter types",
+    "expected": "format(String) moved to the end, unchanged. format(double) stayed and changed %.2f to %.3f (an edit). The move pairs format(String) with itself, not with another format overload; named \"format\".",
+    "status": "ok",
+    "old": "public class Fmt {\n  public static String format(int n) {\n    return String.format(\"%,d\", n);\n  }\n\n  public static String format(String s) {\n    String t = s.trim();\n    if (t.isEmpty()) {\n      return \"-\";\n    }\n    return t;\n  }\n\n  public static String format(double d) {\n    return String.format(\"%.2f\", d);\n  }\n\n  public static String join(String a, String b) {\n    StringBuilder sb = new StringBuilder(a);\n    sb.append(\", \");\n    sb.append(b);\n    return sb.toString();\n  }\n}\n",
+    "new": "public class Fmt {\n  public static String format(int n) {\n    return String.format(\"%,d\", n);\n  }\n\n  public static String format(double d) {\n    return String.format(\"%.3f\", d);\n  }\n\n  public static String join(String a, String b) {\n    StringBuilder sb = new StringBuilder(a);\n    sb.append(\", \");\n    sb.append(b);\n    return sb.toString();\n  }\n\n  public static String format(String s) {\n    String t = s.trim();\n    if (t.isEmpty()) {\n      return \"-\";\n    }\n    return t;\n  }\n}\n",
+    "ops": [
+      {
+        "type": "moved",
+        "old": [
+          [
+            6,
+            12
+          ]
+        ],
+        "new": [
+          [
+            17,
+            23
+          ]
+        ]
+      }
+    ],
+    "never": [
+      {
+        "type": "moved",
+        "old": [
+          [
+            14,
+            16
+          ]
+        ]
+      },
+      {
+        "type": "renamed"
+      },
+      {
+        "type": "movedWithEdit",
+        "old": [
+          [
+            6,
+            12
+          ]
+        ]
+      }
+    ],
+    "names": [
+      {
+        "type": "moved",
+        "name": "format",
+        "not": [
+          "Fmt",
+          "join"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "java-annotated-moved",
+    "area": "trap",
+    "language": "java",
+    "title": "A method with Javadoc and annotations moved: they travel with it",
+    "expected": "get() moved to the end with its Javadoc, @Nullable and @Deprecated. One move covering the Javadoc and annotations; none of those lines is added or deleted.",
+    "status": "ok",
+    "old": "public class Store {\n  private final Map<String, String> data = new HashMap<>();\n\n  /**\n   * Returns the stored value.\n   *\n   * @param key the key to look up\n   * @return the value, or null\n   */\n  @Nullable\n  @Deprecated\n  public String get(String key) {\n    return data.get(key);\n  }\n\n  public void put(String key, String value) {\n    data.put(key, value);\n  }\n\n  @Override\n  public String toString() {\n    return \"Store\" + data;\n  }\n}\n",
+    "new": "public class Store {\n  private final Map<String, String> data = new HashMap<>();\n\n  public void put(String key, String value) {\n    data.put(key, value);\n  }\n\n  @Override\n  public String toString() {\n    return \"Store\" + data;\n  }\n\n  /**\n   * Returns the stored value.\n   *\n   * @param key the key to look up\n   * @return the value, or null\n   */\n  @Nullable\n  @Deprecated\n  public String get(String key) {\n    return data.get(key);\n  }\n}\n",
+    "ops": [
+      {
+        "type": "moved",
+        "old": [
+          [
+            4,
+            14
+          ]
+        ],
+        "new": [
+          [
+            13,
+            23
+          ]
+        ]
+      }
+    ],
+    "never": [
+      {
+        "type": "added",
+        "new": [
+          [
+            13,
+            23
+          ]
+        ]
+      },
+      {
+        "type": "deleted",
+        "old": [
+          [
+            4,
+            14
+          ]
+        ]
+      }
+    ],
+    "names": [
+      {
+        "type": "moved",
+        "name": "get",
+        "not": [
+          "Store",
+          "Nullable",
+          "Deprecated"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "java-move-between-classes",
+    "area": "trap",
+    "language": "java",
+    "title": "An instance method moved from one class to another in the same file changes meaning",
+    "expected": "fee() left Account and now sits in Ledger: same text, but balance is now Ledger.balance and Account callers break. Edited (deleted from Account, added to Ledger), never a plain move.",
+    "status": "ok",
+    "old": "class Account {\n  private long balance;\n\n  void deposit(long amount) {\n    balance += amount;\n  }\n\n  long fee() {\n    long base = balance / 100;\n    return Math.max(base, 1);\n  }\n}\n\nclass Ledger {\n  private long balance;\n\n  void record(long amount) {\n    balance -= amount;\n  }\n}\n",
+    "new": "class Account {\n  private long balance;\n\n  void deposit(long amount) {\n    balance += amount;\n  }\n}\n\nclass Ledger {\n  private long balance;\n\n  void record(long amount) {\n    balance -= amount;\n  }\n\n  long fee() {\n    long base = balance / 100;\n    return Math.max(base, 1);\n  }\n}\n",
+    "ops": [],
+    "never": [
+      {
+        "type": "moved"
+      }
+    ]
+  },
+  {
+    "id": "java-static-helper-between-classes",
+    "area": "trap",
+    "language": "java",
+    "title": "A private static pure helper moved between two classes in one file",
+    "expected": "strip() reads no fields and has no callers in Paths; moving it to Urls changes only where it lives (Paths.strip no longer exists). Defensible as moved (same code, no state) or as edited (it changed class, as the decided rule says for scope changes).",
+    "status": "borderline",
+    "old": "final class Paths {\n  static String join(String a, String b) {\n    return a.endsWith(\"/\") ? a + b : a + \"/\" + b;\n  }\n\n  private static String strip(String p) {\n    int end = p.length();\n    while (end > 0 && p.charAt(end - 1) == '/') {\n      end--;\n    }\n    return p.substring(0, end);\n  }\n}\n\nfinal class Urls {\n  static String host(String url) {\n    return url.split(\"/\")[2];\n  }\n}\n",
+    "new": "final class Paths {\n  static String join(String a, String b) {\n    return a.endsWith(\"/\") ? a + b : a + \"/\" + b;\n  }\n}\n\nfinal class Urls {\n  static String host(String url) {\n    return url.split(\"/\")[2];\n  }\n\n  private static String strip(String p) {\n    int end = p.length();\n    while (end > 0 && p.charAt(end - 1) == '/') {\n      end--;\n    }\n    return p.substring(0, end);\n  }\n}\n",
+    "ops": [
+      {
+        "type": "moved",
+        "old": [
+          [
+            6,
+            12
+          ]
+        ],
+        "new": [
+          [
+            12,
+            18
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "java-move-into-nested-class",
+    "area": "trap",
+    "language": "java",
+    "title": "An instance method moved from the outer class into its nested static class",
+    "expected": "port() moved into Config.Defaults (re-indented). In a static nested class props is no longer reachable and Config.port() is gone: the meaning changed, so edited, never a plain move.",
+    "status": "ok",
+    "old": "public class Config {\n  private final Properties props;\n\n  public Config(Properties props) {\n    this.props = props;\n  }\n\n  public int port() {\n    String raw = props.getProperty(\"port\", \"8080\");\n    return Integer.parseInt(raw);\n  }\n\n  public static class Defaults {\n    public static final int TIMEOUT = 30;\n  }\n}\n",
+    "new": "public class Config {\n  private final Properties props;\n\n  public Config(Properties props) {\n    this.props = props;\n  }\n\n  public static class Defaults {\n    public static final int TIMEOUT = 30;\n\n    public int port() {\n      String raw = props.getProperty(\"port\", \"8080\");\n      return Integer.parseInt(raw);\n    }\n  }\n}\n",
+    "ops": [],
+    "never": [
+      {
+        "type": "moved"
+      }
+    ]
+  },
+  {
+    "id": "java-imports-sorted",
+    "area": "trap",
+    "language": "java",
+    "title": "Imports sorted: a reorder, not added and deleted imports",
+    "expected": "The four imports were sorted; nothing else changed.",
+    "status": "ok",
+    "old": "import java.util.List;\nimport java.io.File;\nimport java.util.Map;\nimport java.io.IOException;\n\npublic class Loader {\n  public Map<String, List<File>> load() throws IOException {\n    return Map.of();\n  }\n}\n",
+    "new": "import java.io.File;\nimport java.io.IOException;\nimport java.util.List;\nimport java.util.Map;\n\npublic class Loader {\n  public Map<String, List<File>> load() throws IOException {\n    return Map.of();\n  }\n}\n",
+    "ops": [
+      {
+        "type": "reordered",
+        "old": [
+          [
+            1,
+            4
+          ]
+        ],
+        "new": [
+          [
+            1,
+            4
+          ]
+        ]
+      }
+    ],
+    "never": [
+      {
+        "type": "added"
+      },
+      {
+        "type": "deleted"
+      }
+    ]
+  }
+]

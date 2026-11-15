@@ -1,0 +1,10 @@
+57d50433a737da9607235e382e73f7f71431634b3a027e79d76a5f5522060c7e  test/fixtures/traps/php.json
+3a2f093a00538e90e6c632604b23c51e11aac80e0d3fbbbebabb80b7619c7dc5  test/fixtures/labels/lang-php-extracts.json
+0ab4e6e9149f6cffb65fbc2e7eaefd77213bbe4ae22cdc16b5762f6028a5685a  test/fixtures/labels/lang-php-expected.json
+9b8256d7200b463e33aed20e583e3cf19a24a6f64fc1a124f6d71f42ccb27408  test/traps.test.ts
+answers fixed 2026-11-15T03:09:12Z, before any PHP engine code; the engine had not been run on any PHP file
+a058efd5e84a2718ad78ef65310a0a08f37ec250490c098cd97e0db6903362dd  test/fixtures/labels/lang-php-extracts.json
+269878c438d8a55cb8708982678b3137431f1855942659393d0db7e57d6f6de1  test/fixtures/labels/locked-php-extracts.json
+06d18e69f2e222f4256da79603e45ead6a5175a26d0b00b98019064d134035d8  harness/lang/php/manifest.json
+5922aa1c9c92322982a198d1c235eb90f053b7d0b94bf8acdd5e0d06fa4a1fb4  harness/lang/php/texts.sha256
+corpus and blind labels fixed 2026-11-15T03:51:15Z, before any PHP engine code; the engine had not been run on any PHP file

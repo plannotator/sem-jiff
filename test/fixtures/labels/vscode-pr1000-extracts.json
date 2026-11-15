@@ -1,0 +1,294 @@
+{
+ "dataset": "vscode HEAD~60..HEAD (bench pr-1000.json), TypeScript files",
+ "how": "Candidates from a deliberately loose rule (any new function, called from an existing one, sharing >=30% of its code with code removed there). Each candidate read and labelled by hand.",
+ "labels": [
+  {
+   "file": "src/vs/platform/agentHost/node/copilot/customizations/copilotCustomizationInstallations.ts",
+   "from": "resolveMcpPackageConfiguration",
+   "into": "fetchMcpCardServer",
+   "label": "extract"
+  },
+  {
+   "file": "src/vs/platform/agentHost/node/copilot/customizations/copilotCustomizationInstallations.ts",
+   "from": "resolveMcpPackageConfiguration",
+   "into": "findMcpPackage",
+   "label": "extract"
+  },
+  {
+   "file": "src/vs/platform/agentHost/node/copilot/customizations/copilotCustomizationInstallations.ts",
+   "from": "resolveMcpPackageConfiguration",
+   "into": "toMcpPackageConfiguration",
+   "label": "extract"
+  },
+  {
+   "file": "src/vs/sessions/browser/workbench.ts",
+   "from": "_layoutGrid",
+   "into": "_gridGutter",
+   "label": "borderline"
+  },
+  {
+   "file": "src/vs/sessions/contrib/sessions/browser/sessionsActions.ts",
+   "from": "run",
+   "into": "getSessionsPickerChatWindow",
+   "label": "not-extract"
+  },
+  {
+   "file": "src/vs/sessions/contrib/sessions/browser/sessionsActions.ts",
+   "from": "run",
+   "into": "getSessionsPickerChatWindow",
+   "label": "not-extract"
+  },
+  {
+   "file": "src/vs/sessions/contrib/sessions/browser/sessionsActions.ts",
+   "from": "run",
+   "into": "getSessionsPickerChatWindow",
+   "label": "not-extract"
+  },
+  {
+   "file": "src/vs/sessions/contrib/sessions/browser/sessionsActions.ts",
+   "from": "run",
+   "into": "getSessionsPickerChatWindow",
+   "label": "not-extract"
+  },
+  {
+   "file": "src/vs/sessions/contrib/sessions/browser/sessionsActions.ts",
+   "from": "run",
+   "into": "openPickedSessionInChatWindow",
+   "label": "not-extract"
+  },
+  {
+   "file": "src/vs/sessions/contrib/sessions/browser/sessionsActions.ts",
+   "from": "run",
+   "into": "openPickedSessionInChatWindow",
+   "label": "not-extract"
+  },
+  {
+   "file": "src/vs/sessions/contrib/sessions/browser/sessionsActions.ts",
+   "from": "run",
+   "into": "openPickedSessionInChatWindow",
+   "label": "not-extract"
+  },
+  {
+   "file": "src/vs/sessions/contrib/sessions/browser/sessionsActions.ts",
+   "from": "run",
+   "into": "openPickedSessionInChatWindow",
+   "label": "not-extract"
+  },
+  {
+   "file": "src/vs/sessions/services/sessions/test/browser/sessionsManagementService.test.ts",
+   "from": "tabsOf",
+   "into": "slotPaneOf",
+   "label": "borderline"
+  },
+  {
+   "file": "src/vs/workbench/browser/parts/editor/editorPart.ts",
+   "from": "mergeGroup",
+   "into": "doMergeGroup",
+   "label": "extract"
+  },
+  {
+   "file": "src/vs/workbench/browser/parts/editor/editorPart.ts",
+   "from": "mergeAllGroups",
+   "into": "doMergeAllGroups",
+   "label": "extract"
+  },
+  {
+   "file": "src/vs/workbench/browser/parts/editor/editorTabsControl.ts",
+   "from": "isMoveOperation",
+   "into": "isCopyIntoOtherGroup",
+   "label": "extract"
+  },
+  {
+   "file": "src/vs/workbench/contrib/canvases/common/canvas.ts",
+   "from": "canMove",
+   "into": "getMoveVeto",
+   "label": "borderline"
+  },
+  {
+   "file": "src/vs/workbench/contrib/chat/browser/agentSessions/agentHost/agentHostCustomizationMarketplaceInstallProvider.ts",
+   "from": "toPlainLabel",
+   "into": "toPlainText",
+   "label": "extract"
+  },
+  {
+   "file": "src/vs/workbench/contrib/chat/browser/agentSessions/agentHost/agentHostCustomizationMarketplaceInstallProvider.ts",
+   "from": "collectConfiguration",
+   "into": "pickTransport",
+   "label": "borderline",
+   "note": "Relabelled Nov 2026: the items mapping and picker call did move out of collectConfiguration, but the picker API changed (showPickStep) and back-navigation was added."
+  },
+  {
+   "file": "src/vs/workbench/contrib/chat/browser/remoteAgentHost/cloudSandboxSessionContribution.ts",
+   "from": "_reconcileDiscoveredSessions",
+   "into": "_storeTask",
+   "label": "not-extract"
+  },
+  {
+   "file": "src/vs/workbench/contrib/chat/browser/widget/chatContentParts/chatQuestionCarouselPart.ts",
+   "from": "renderCurrentQuestion",
+   "into": "updateMaximizeVisibility",
+   "label": "not-extract"
+  },
+  {
+   "file": "src/vs/workbench/contrib/chatWindow/browser/chatWindowGrid.ts",
+   "from": "_arrange",
+   "into": "_restoreFocus",
+   "label": "extract"
+  },
+  {
+   "file": "src/vs/workbench/contrib/chatWindow/browser/chatWindowService.ts",
+   "from": "_besideGroup",
+   "into": "_groupOfChat",
+   "label": "extract"
+  },
+  {
+   "file": "src/vs/workbench/contrib/customEditor/browser/customEditorInput.ts",
+   "from": "doCanMove",
+   "into": "getCustomEditorWindowMoveVeto",
+   "label": "borderline"
+  },
+  {
+   "file": "src/vs/workbench/contrib/issue/browser/issueReporterEditorInput.ts",
+   "from": "canMove",
+   "into": "canMoveToNewWindow",
+   "label": "extract"
+  },
+  {
+   "file": "src/vs/workbench/contrib/sessions/browser/agentHostCustomizationService.ts",
+   "from": "getBackendChatResource",
+   "into": "_getFocusedChatOf",
+   "label": "extract"
+  },
+  {
+   "file": "src/vs/workbench/contrib/sessions/browser/parts/sessionsPart.ts",
+   "from": "resizeSession",
+   "into": "_resize",
+   "label": "extract"
+  },
+  {
+   "file": "src/vs/workbench/contrib/sessions/browser/sessionsService.ts",
+   "from": "_activate",
+   "into": "_focusActivePane",
+   "label": "borderline"
+  },
+  {
+   "file": "src/vs/workbench/contrib/sessions/browser/sessionsService.ts",
+   "from": "moveChatToGrid",
+   "into": "_focusActivePane",
+   "label": "not-extract"
+  },
+  {
+   "file": "src/vs/workbench/contrib/sessions/browser/sessionsService.ts",
+   "from": "focusActiveSession",
+   "into": "_focusActivePane",
+   "label": "not-extract"
+  },
+  {
+   "file": "src/vs/workbench/contrib/sessions/browser/sessionsService.ts",
+   "from": "_onDidChangeSessions",
+   "into": "_activeGridSession",
+   "label": "not-extract"
+  },
+  {
+   "file": "src/vs/workbench/contrib/sessions/browser/sessionsService.ts",
+   "from": "_openNewSession",
+   "into": "_activeGridSession",
+   "label": "not-extract"
+  },
+  {
+   "file": "src/vs/workbench/contrib/sessions/browser/sessionsService.ts",
+   "from": "hideChatFromGrid",
+   "into": "_activeGridSession",
+   "label": "not-extract"
+  },
+  {
+   "file": "src/vs/workbench/contrib/sessions/browser/sessionsService.ts",
+   "from": "closeSession",
+   "into": "_activeGridSession",
+   "label": "not-extract"
+  },
+  {
+   "file": "src/vs/workbench/contrib/sessions/browser/sessionsService.ts",
+   "from": "_snapshotVisibleSessionStates",
+   "into": "_activeGridSession",
+   "label": "not-extract"
+  },
+  {
+   "file": "src/vs/workbench/contrib/sessions/browser/sessionsService.ts",
+   "from": "_rememberDepartedSession",
+   "into": "_slotPaneOf",
+   "label": "borderline"
+  },
+  {
+   "file": "src/vs/workbench/contrib/sessions/browser/sessionsService.ts",
+   "from": "_onDidMoveChat",
+   "into": "_slotPaneOf",
+   "label": "not-extract"
+  },
+  {
+   "file": "src/vs/workbench/contrib/sessions/browser/sessionsService.ts",
+   "from": "_chatToOpen",
+   "into": "_slotPaneOf",
+   "label": "borderline"
+  },
+  {
+   "file": "src/vs/workbench/contrib/sessions/browser/sessionsService.ts",
+   "from": "hideChatFromGrid",
+   "into": "_slotPaneOf",
+   "label": "borderline"
+  },
+  {
+   "file": "src/vs/workbench/contrib/sessions/browser/sessionsService.ts",
+   "from": "_snapshotVisibleSessionStates",
+   "into": "_slotPaneOf",
+   "label": "not-extract"
+  },
+  {
+   "file": "src/vs/workbench/contrib/sessions/browser/sessionsService.ts",
+   "from": "detachChat",
+   "into": "_isLivePane",
+   "label": "not-extract"
+  },
+  {
+   "file": "src/vs/workbench/contrib/sessions/browser/sessionsService.ts",
+   "from": "constructor",
+   "into": "_skipMainWindowFocus",
+   "label": "not-extract"
+  },
+  {
+   "file": "src/vs/workbench/contrib/chat/browser/remoteAgentHost/cloudSandboxApiService.ts",
+   "from": "?",
+   "into": "_taskSummary",
+   "label": "borderline",
+   "note": "statements moved and the returned object rewritten; added after the engine surfaced it"
+  },
+  {
+   "file": "src/vs/workbench/contrib/chat/electron-browser/remoteConnectionsSharing.ts",
+   "from": "selectMethod",
+   "into": "_applyMethod",
+   "label": "extract",
+   "note": "Added Nov 2026: selectMethod's try body (availability checks, off/toggle) moved into _applyMethod, throws turned into notifications."
+  },
+  {
+   "file": "src/vs/sessions/contrib/chat/test/browser/sessionsGrid.fixture.ts",
+   "from": "setActive",
+   "into": "activate",
+   "label": "borderline",
+   "note": "Added Nov 2026: setActive's one-line body under a new name; closer to a rename than an extract."
+  },
+  {
+   "file": "src/vs/sessions/contrib/sessions/browser/customizationsToolbar.contribution.ts",
+   "from": "run",
+   "into": "customizationItemWhen",
+   "label": "extract",
+   "note": "Added Nov 2026: the ContextKeyExpr.and(...) ternary moved out of run() verbatim."
+  },
+  {
+   "file": "src/vs/sessions/contrib/sessionComparison/test/browser/sessionComparisonGridController.test.ts",
+   "from": "collapseToSession",
+   "into": "collapseTo",
+   "label": "borderline",
+   "note": "Added Nov 2026: collapseToSession's body under a new name, with a new caller; closer to a rename."
+  }
+ ]
+}

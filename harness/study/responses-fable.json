@@ -1,0 +1,245 @@
+{
+ "rater": "fable",
+ "answers": {
+  "1": {
+   "id": "a16ee547",
+   "repeat": false,
+   "verdict": "wrong",
+   "note": "New create never contains findModuleJSDoc's first-import/prefix-scan code; it now uses parseStandardJSDocsFromESTree, so the helper was deleted, not folded in."
+  },
+  "2": {
+   "id": "06fadc96",
+   "repeat": false,
+   "verdict": "right",
+   "note": "The threshold chain and trimDecimal moved verbatim into splitDuration; formatDuration now just formats its result."
+  },
+  "3": {
+   "id": "2bfb82b8",
+   "repeat": false,
+   "verdict": "right",
+   "note": "The .sass/.css suffix if-chain from Load became the switch in sassSourceSyntax and Load calls it (twice)."
+  },
+  "4": {
+   "id": "af5a42d3",
+   "repeat": false,
+   "verdict": "unsure",
+   "note": "One-line wrapper around the same _updateInterceptionPatterns call the caller used to make directly; exists for the @internal decorator, so an extract claim is defensible either way."
+  },
+  "5": {
+   "id": "95e94654",
+   "repeat": false,
+   "verdict": "wrong",
+   "note": "Helper tests SourceMap != \"\" && != \"none\", logic the old switch on external/inline never had; the caller's code was rewritten, not moved."
+  },
+  "6": {
+   "id": "7c853647",
+   "repeat": false,
+   "verdict": "right",
+   "note": "The NHCB ConvertNHCBToClassic callback, unlock, error handling and enqueue backoff loop moved from AppendHistograms into the helper, which the caller now calls."
+  },
+  "7": {
+   "id": "1d9cd145",
+   "repeat": false,
+   "verdict": "right",
+   "note": "Chunk collection, HeapProfiler CDP calls, overflow check and files.save moved verbatim into captureHeap; heap now routes to it through request/dispatch."
+  },
+  "8": {
+   "id": "bf3aef8a",
+   "repeat": false,
+   "verdict": "right",
+   "note": "The entire old body of enforceReviewerGate now lives in enforceReviewerAppGate and the caller yields it."
+  },
+  "9": {
+   "id": "5b9d7ce6",
+   "repeat": false,
+   "verdict": "right",
+   "note": "The 16-byte subarray loop moved verbatim into toEntryIds and the caller calls it."
+  },
+  "10": {
+   "id": "21f2a947",
+   "repeat": false,
+   "verdict": "right",
+   "note": "The duplicated SubscriptionRef.set + connectedSessions.offer({payload, globalHead, leaderHead, materializerHashes}) blocks in make became the nested publish, called from both sites."
+  },
+  "11": {
+   "id": "94a8039a",
+   "repeat": false,
+   "verdict": "right",
+   "note": "The o/O/y/c key-handling block moved essentially verbatim from the keypress handler into the nested handleOpenCopyKeys, which the caller calls."
+  },
+  "12": {
+   "id": "da5c148d",
+   "repeat": false,
+   "verdict": "right",
+   "note": "The fixedContactHost/verdictFor pair from the old loop body became the nested verdictOf closure, now applied via map in the same function."
+  },
+  "13": {
+   "id": "2899ef78",
+   "repeat": false,
+   "verdict": "wrong",
+   "note": "Old filter was t[0].isdigit(); is_valid_version parses with Version/InvalidVersion, which is new logic rather than moved code."
+  },
+  "14": {
+   "id": "8a7d0a50",
+   "repeat": false,
+   "verdict": "right",
+   "note": "deepMerge's prototype-setting, FORBIDDEN-filtered key loops and comment moved into mergeRecords (with memo/depth added); deepMerge now delegates to it."
+  },
+  "15": {
+   "id": "07bdee64",
+   "repeat": false,
+   "verdict": "right",
+   "note": "The two-state LeaveStart/LeaveAnimating expression moved into isLeaving and all three uses in view call it."
+  },
+  "16": {
+   "id": "57fb7171",
+   "repeat": false,
+   "verdict": "right",
+   "note": "The number/kind/title/authorLogin/baseRef/draft/labels mapping from the nested describe moved into fromView; describe now spreads item.entity and make calls fromView."
+  },
+  "17": {
+   "id": "ae533828",
+   "repeat": false,
+   "verdict": "right",
+   "note": "The BeforeMapActions loop moved verbatim into AddBeforeMap and CreateAssignmentFunc calls it."
+  },
+  "18": {
+   "id": "c8ca8364",
+   "repeat": false,
+   "verdict": "right",
+   "note": "The Reset/Set __name__ _bucket/Set le triple that was duplicated in ConvertNHCBToClassic now lives in bucketLabelsFor (plus a cache branch) and is called at both sites."
+  },
+  "19": {
+   "id": "2bc6f0ae",
+   "repeat": false,
+   "verdict": "right",
+   "note": "The ConnectionInvalidated object literal moved verbatim into invalidated and the case now returns invalidated(model, ...)."
+  },
+  "20": {
+   "id": "ea30f427",
+   "repeat": false,
+   "verdict": "right",
+   "note": "parseGoEnum + renderEnumTS lines moved into generateEnum (with a metadata branch added) and the loop destructures its result."
+  },
+  "21": {
+   "id": "8bdbdcb7",
+   "repeat": false,
+   "verdict": "right",
+   "note": "Helper body remainingCountUpdater.decrementAndGet(state) now sits in the caller as REMAINING_COUNT_UPDATER.decrementAndGet(this) in place of the ATOMIC_HELPER call."
+  },
+  "22": {
+   "id": "9b2392b6",
+   "repeat": false,
+   "verdict": "wrong",
+   "note": "New CreateProjection has none of Include's Condition/TypeIs/derived-projection code; it calls GetPolymorphicMaps instead, so the helper was not folded into this caller."
+  },
+  "23": {
+   "id": "5ad129df",
+   "repeat": false,
+   "verdict": "right",
+   "note": "The exact line sidecar.module ??= await loadClient() moved into loadModule and watchPlugins calls it."
+  },
+  "24": {
+   "id": "870fe7db",
+   "repeat": false,
+   "verdict": "right",
+   "note": "The Failed-branch error div moved verbatim into searchErrorView and resultsView calls it."
+  },
+  "25": {
+   "id": "5b9d7ce6",
+   "repeat": true,
+   "verdict": "right",
+   "note": "The 16-byte subarray loop moved verbatim into toEntryIds and the caller calls it."
+  },
+  "26": {
+   "id": "51172322",
+   "repeat": false,
+   "verdict": "right",
+   "note": "The attr.Value type switch moved into writeAttributeValue (gaining a string case and escaping) and the caller calls it."
+  },
+  "27": {
+   "id": "1d9cd145",
+   "repeat": true,
+   "verdict": "right",
+   "note": "Chunk collection, HeapProfiler CDP calls, overflow check and files.save moved verbatim into captureHeap; heap now routes to it through request/dispatch."
+  },
+  "28": {
+   "id": "dfde884e",
+   "repeat": false,
+   "verdict": "right",
+   "note": "The connectionString/ssl config object moved into clientConfig and withPgClient passes it to withClient."
+  },
+  "29": {
+   "id": "57fb7171",
+   "repeat": true,
+   "verdict": "right",
+   "note": "The number/kind/title/authorLogin/baseRef/draft/labels mapping from the nested describe moved into fromView; describe now spreads item.entity and make calls fromView."
+  },
+  "30": {
+   "id": "7c853647",
+   "repeat": true,
+   "verdict": "right",
+   "note": "The NHCB ConvertNHCBToClassic callback, unlock, error handling and enqueue backoff loop moved from AppendHistograms into the helper, which the caller now calls."
+  },
+  "31": {
+   "id": "7e738847",
+   "repeat": false,
+   "verdict": "right",
+   "note": "The ast.checks ? [...ast.checks, ...checks] : checks expression became combineChecks (with a symmetric null case) and appendChecks calls it."
+  },
+  "32": {
+   "id": "97e43c14",
+   "repeat": false,
+   "verdict": "right",
+   "note": "The duplicated frameId/frameRendering/getTargetFrame/shouldApplyFrameClip/frameClip block became the nested clipElementToFrame, called at both render sites."
+  },
+  "33": {
+   "id": "2ea0d410",
+   "repeat": false,
+   "verdict": "right",
+   "note": "The oversized-arrow console.error and reset-to-100x100 deleted element block moved into handleOversizedLinearElements, which the arrow and line cases now call."
+  },
+  "34": {
+   "id": "0f445c73",
+   "repeat": false,
+   "verdict": "right",
+   "note": "The retries/duration capture and into_kind match on Offline/MetadataParseError/Metadata/WrappedReqwestError moved into classify_metadata_error and the caller matches on its result."
+  },
+  "35": {
+   "id": "be941ff0",
+   "repeat": false,
+   "verdict": "wrong",
+   "note": "OptimizeAsync never contained a BaseItems.AnyAsync query; the helper is new gating logic while the old analysis_limit code was deleted."
+  },
+  "36": {
+   "id": "b4f7e9bf",
+   "repeat": false,
+   "verdict": "right",
+   "note": "The getFunctionUrlConfig call with its retry and catchTag pipe moved into readFunctionUrlConfig; read calls it and keeps only the map."
+  },
+  "37": {
+   "id": "90adab28",
+   "repeat": false,
+   "verdict": "right",
+   "note": "The dotted strokeLineDash / roughness adjustment from the default arrowhead branch moved into getArrowheadLineOptions, which the caller calls for every line arrowhead."
+  },
+  "38": {
+   "id": "8fc7b506",
+   "repeat": false,
+   "verdict": "right",
+   "note": "The header/content/footer array moved into sidebarPanel (header text swapped for sidebarBrand) and content now returns sidebarPanel(h)."
+  },
+  "39": {
+   "id": "1d20c1d7",
+   "repeat": false,
+   "verdict": "right",
+   "note": "The deviceConfiguration object literal duplicated twice in authHeaders moved into deviceConfiguration(device), called at both sites."
+  },
+  "40": {
+   "id": "d9869c2f",
+   "repeat": false,
+   "verdict": "unsure",
+   "note": "Only the one-line NormalizePath(CombinePaths(...)) came from the caller; pathForDynamicResolution and the directoryOnly trailing-separator logic are new, so extract vs new code is arguable."
+  }
+ }
+}

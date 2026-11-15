@@ -1,0 +1,21 @@
+name: check
+on:
+  push:
+  pull_request:
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - run: npm run check
+      - run: npm run build
+      # Pack, install into an empty project, import in Node, and bundle for the browser.
+      - run: npm run smoke
+      # Run the built engine in a Web Worker in headless Chromium, one change per language.
+      - run: npx playwright install --with-deps chromium-headless-shell
+      - run: npm run smoke:browser

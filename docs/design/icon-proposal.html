@@ -1,0 +1,290 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Semantic Diff Icons</title>
+<style>
+:root{--bg:#ffffff;--fg:#1f2328;--muted:#656d76;--line:#d0d7de;--card:#f6f8fa;--moved:#0969da;--edited:#8250df;--added:#1a7f37;--deleted:#cf222e;--fmt:#6e7781;}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#0d1117;--fg:#e6edf3;--muted:#8d96a0;--line:#30363d;--card:#161b22;--moved:#4493f8;--edited:#ab7df8;--added:#3fb950;--deleted:#f85149;--fmt:#8d96a0;}}
+:root[data-theme="dark"]{--bg:#0d1117;--fg:#e6edf3;--muted:#8d96a0;--line:#30363d;--card:#161b22;--moved:#4493f8;--edited:#ab7df8;--added:#3fb950;--deleted:#f85149;--fmt:#8d96a0;}
+*{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--fg);font:14px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif}
+main{max-width:1180px;margin:0 auto;padding:28px 16px 48px}
+h1{font-size:22px;margin:0 0 4px} h2{font-size:16px;margin:32px 0 10px} p{margin:6px 0} .muted{color:var(--muted)}
+.lede{color:var(--muted);max-width:780px}
+ul.findings{margin:8px 0 0;padding-left:18px} ul.findings li{margin:3px 0}
+.tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;min-width:980px}
+th,td{text-align:left;vertical-align:top;padding:10px 12px;border-top:1px solid var(--line)}
+thead th{border-top:0;background:var(--card);font-size:12px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted)}
+tbody th{white-space:nowrap}
+.pair{display:inline-flex;gap:8px;align-items:center}
+.ic{width:20px;height:20px} .ic.old{opacity:.55} .g16{width:16px;height:16px}
+.names{font:11px ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--muted);margin-top:4px}
+.prob,.why{max-width:280px} .src{font-size:12px;color:var(--muted);margin-top:4px}
+.labels{display:grid;gap:4px} .side{display:inline-block;width:30px;font-size:11px;color:var(--muted)}
+.chip{display:inline-block;font:12px ui-monospace,SFMono-Regular,Menlo,monospace;padding:1px 7px;border-radius:999px;border:1px solid var(--c);color:var(--c);white-space:nowrap}
+.mock{display:grid;grid-template-columns:1fr 1fr;gap:16px} @media (max-width:760px){.mock{grid-template-columns:1fr}}
+.mcol{border:1px solid var(--line);border-radius:8px;overflow:hidden;background:var(--card)}
+.mh{padding:8px 12px;font-weight:600;border-bottom:1px solid var(--line)}
+.row{display:flex;align-items:center;gap:8px;padding:4px 10px 4px 0;font:13px ui-monospace,SFMono-Regular,Menlo,monospace;background:color-mix(in srgb,var(--c) 10%,var(--bg))}
+.row .bar{width:3px;align-self:stretch;background:var(--c)} .row .g{color:var(--c);display:inline-flex} .row.o .g{opacity:.6}
+.row .ln{color:var(--muted);width:22px;text-align:right} .row code{white-space:pre;overflow:hidden;text-overflow:ellipsis}
+.inl{font-size:12px;color:var(--c);padding:2px 10px 6px 43px;background:color-mix(in srgb,var(--c) 10%,var(--bg))}
+.principles li{margin:4px 0}
+footer{margin-top:32px;font-size:12px;color:var(--muted)}
+a{color:var(--moved)}
+</style></head><body><main>
+<h1>Semantic diff icons: today vs suggested</h1>
+<p class="lede">Pierre's semantic view marks each kind of change with a gutter icon. Pierre's current icons are on the left, our suggestion is on the right, and the reasons follow. The colors are unchanged.</p>
+
+<h2>What the research found</h2>
+<ul class="findings">
+<li><b>Two pairs of change types can't be told apart today.</b> Edited and Renamed share one icon and one color, and so do Moved and Reordered. Showing a difference by color alone fails WCAG 1.4.1, and here even the color is the same.</li>
+<li><b>The extract and inline arrows are the “external link” icon.</b> Lucide and Codicons use exactly that shape to mean “open link”.</li>
+<li><b>» already has a meaning in diffs.</b> Phabricator uses it for indentation-only changes.</li>
+<li><b>Tools that link the two ends of a move use words.</b> Gerrit shows “Moved to lines 2–4” and “Moved from lines 4–6”. SemanticDiff draws a connector and labels the block “Moved without changes”.</li>
+<li><b>Icons need labels.</b> Nielsen Norman Group: “a text label must be present alongside an icon”, and don't rely on hover to show it.</li>
+</ul>
+
+<h2>Principles behind the suggestion</h2>
+<ol class="principles">
+<li>Each change type gets its own <b>shape</b>; color comes on top of that.</li>
+<li>For a move, the <b>shape on each side says “leaves” or “arrives”</b>. Extract and inline already differ in shape from each other, so there the label gives the direction.</li>
+<li>A <b>short visible label</b> names the other end, either a line number or a function name, and is clickable where possible. This is what fixes the ambiguity; the icon only helps you scan.</li>
+<li>Use well-known icons from <b>one set</b>, Lucide (ISC license), so the stroke style is consistent.</li>
+</ol>
+
+<h2>Icon by icon</h2>
+<div class="tablewrap"><table>
+<thead><tr><th>Change</th><th>Pierre today<br><span class="muted">old · new</span></th><th>Problem</th><th>Suggested<br><span class="muted">old · new</span></th><th>Visible label</th><th>Why</th></tr></thead>
+<tbody><tr><th scope="row">Moved</th><td><span class="pair" style="color:var(--moved)"><svg class="ic old" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+    <path d="M8 0C1.412 0 0 1.412 0 8s1.412 8 8 8 8-1.412 8-8-1.412-8-8-8" opacity=".2"/><path d="M8.496 4.695a.75.75 0 0 0-.051 1.06L10.486 8l-2.041 2.246a.75.75 0 0 0 1.11 1.008l2.5-2.75a.75.75 0 0 0 0-1.008l-2.5-2.75a.75.75 0 0 0-1.06-.051m-4 0a.75.75 0 0 0-.051 1.06L6.49 8.003 4.693 9.998a.75.75 0 0 0 1.114 1.004l2.25-2.5a.75.75 0 0 0-.002-1.007l-2.5-2.75a.75.75 0 0 0-1.06-.05"/>
+  </svg><svg class="ic new" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+    <path fill-rule="evenodd" d="M8 0c6.588 0 8 1.412 8 8s-1.412 8-8 8-8-1.412-8-8 1.412-8 8-8m1.555 4.745a.75.75 0 0 0-1.11 1.01L10.486 8l-2.04 2.245a.75.75 0 0 0 1.109 1.01l2.5-2.75a.75.75 0 0 0 0-1.01zm-4 0a.75.75 0 0 0-1.11 1.01l2.043 2.248-1.796 1.995a.75.75 0 0 0 1.116 1.004l2.25-2.5a.75.75 0 0 0-.003-1.007z" clip-rule="evenodd"/>
+  </svg></span></td><td class="prob">» reads as “next / expand”. In Phabricator, » marks an <em>indentation-only</em> change. The same glyph on both sides gives no direction.</td><td><span class="pair" style="color:var(--moved)">
+<svg class="ic old sug" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <path d="M3 5v14" />
+  <path d="M21 12H7" />
+  <path d="m15 18 6-6-6-6" />
+</svg>
+
+<svg class="ic new sug" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <path d="M17 12H3" />
+  <path d="m11 18 6-6-6-6" />
+  <path d="M21 5v14" />
+</svg>
+</span><div class="names">arrow-right-from-line / arrow-right-to-line</div></td><td><div class="labels"><div><span class="side">old</span><span class="chip" style="--c:var(--moved)">moved to L13 →</span></div><div><span class="side">new</span><span class="chip" style="--c:var(--moved)">← moved from L4</span></div></div></td><td class="why">Direction lives in the shape <em>and</em> a visible label with the other side’s line, as Gerrit does (“Moved to lines 2–4” / “Moved from lines 4–6”).<div class="src">Gerrit, Phabricator, NN/g</div></td></tr><tr><th scope="row">Moved + edited</th><td><span class="pair" style="color:var(--edited)"><svg class="ic old" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+    <path d="M8 0C1.412 0 0 1.412 0 8s1.412 8 8 8 8-1.412 8-8-1.412-8-8-8" opacity=".2"/><path d="M8.496 4.695a.75.75 0 0 0-.051 1.06L10.486 8l-2.041 2.246a.75.75 0 0 0 1.11 1.008l2.5-2.75a.75.75 0 0 0 0-1.008l-2.5-2.75a.75.75 0 0 0-1.06-.051m-4 0a.75.75 0 0 0-.051 1.06L6.49 8.003 4.693 9.998a.75.75 0 0 0 1.114 1.004l2.25-2.5a.75.75 0 0 0-.002-1.007l-2.5-2.75a.75.75 0 0 0-1.06-.05"/>
+  </svg><svg class="ic new" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+    <path fill-rule="evenodd" d="M8 0c6.588 0 8 1.412 8 8s-1.412 8-8 8-8-1.412-8-8 1.412-8 8-8m1.555 4.745a.75.75 0 0 0-1.11 1.01L10.486 8l-2.04 2.245a.75.75 0 0 0 1.109 1.01l2.5-2.75a.75.75 0 0 0 0-1.01zm-4 0a.75.75 0 0 0-1.11 1.01l2.043 2.248-1.796 1.995a.75.75 0 0 0 1.116 1.004l2.25-2.5a.75.75 0 0 0-.003-1.007z" clip-rule="evenodd"/>
+  </svg></span></td><td class="prob">Same » as a plain move; only the color differs.</td><td><span class="pair" style="color:var(--edited)">
+<svg class="ic old sug" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <path d="M3 5v14" />
+  <path d="M21 12H7" />
+  <path d="m15 18 6-6-6-6" />
+</svg>
+
+<svg class="ic new sug" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <path d="M17 12H3" />
+  <path d="m11 18 6-6-6-6" />
+  <path d="M21 5v14" />
+</svg>
+</span><div class="names">arrow-right-from-line / arrow-right-to-line</div></td><td><div class="labels"><div><span class="side">old</span><span class="chip" style="--c:var(--edited)">moved + edited to L13 →</span></div><div><span class="side">new</span><span class="chip" style="--c:var(--edited)">← moved + edited from L4</span></div></div></td><td class="why">Same move shape in the “edited” color, with the text saying so. Gerrit calls this “Moved and changed”.<div class="src">Gerrit, WCAG 1.4.1</div></td></tr><tr><th scope="row">Reordered</th><td><span class="pair" style="color:var(--moved)"><svg class="ic old" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+    <path d="M8 0C1.412 0 0 1.412 0 8s1.412 8 8 8 8-1.412 8-8-1.412-8-8-8" opacity=".2"/><path d="M8.496 4.695a.75.75 0 0 0-.051 1.06L10.486 8l-2.041 2.246a.75.75 0 0 0 1.11 1.008l2.5-2.75a.75.75 0 0 0 0-1.008l-2.5-2.75a.75.75 0 0 0-1.06-.051m-4 0a.75.75 0 0 0-.051 1.06L6.49 8.003 4.693 9.998a.75.75 0 0 0 1.114 1.004l2.25-2.5a.75.75 0 0 0-.002-1.007l-2.5-2.75a.75.75 0 0 0-1.06-.05"/>
+  </svg><svg class="ic new" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+    <path fill-rule="evenodd" d="M8 0c6.588 0 8 1.412 8 8s-1.412 8-8 8-8-1.412-8-8 1.412-8 8-8m1.555 4.745a.75.75 0 0 0-1.11 1.01L10.486 8l-2.04 2.245a.75.75 0 0 0 1.109 1.01l2.5-2.75a.75.75 0 0 0 0-1.01zm-4 0a.75.75 0 0 0-1.11 1.01l2.043 2.248-1.796 1.995a.75.75 0 0 0 1.116 1.004l2.25-2.5a.75.75 0 0 0-.003-1.007z" clip-rule="evenodd"/>
+  </svg></span></td><td class="prob">Identical to Moved (same shape, same color), so the two can’t be told apart.</td><td><span class="pair" style="color:var(--moved)">
+<svg class="ic old sug" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <path d="m3 16 4 4 4-4" />
+  <path d="M7 20V4" />
+  <path d="m21 8-4-4-4 4" />
+  <path d="M17 4v16" />
+</svg>
+
+<svg class="ic new sug" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <path d="m3 16 4 4 4-4" />
+  <path d="M7 20V4" />
+  <path d="m21 8-4-4-4 4" />
+  <path d="M17 4v16" />
+</svg>
+</span><div class="names">arrow-down-up</div></td><td><div class="labels"><div><span class="side">old</span><span class="chip" style="--c:var(--moved)">reordered</span></div><div><span class="side">new</span><span class="chip" style="--c:var(--moved)">reordered</span></div></div></td><td class="why">Swap/sort arrows are the usual “order changed” icon (Codicons arrow-swap, Lucide arrow-down-up).<div class="src">Codicons, Lucide, WCAG 1.4.1</div></td></tr><tr><th scope="row">Renamed</th><td><span class="pair" style="color:var(--edited)"><svg class="ic old" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+    <path d="M8 0C1.412 0 0 1.412 0 8s1.412 8 8 8 8-1.412 8-8-1.412-8-8-8" opacity=".2"/><path d="M11 8a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
+  </svg><svg class="ic new" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+    <path fill-rule="evenodd" d="M8 0c6.588 0 8 1.412 8 8s-1.412 8-8 8-8-1.412-8-8 1.412-8 8-8m0 5a3 3 0 1 0 0 6 3 3 0 0 0 0-6" clip-rule="evenodd"/>
+  </svg></span></td><td class="prob">Identical to Edited (same square-with-dot, same purple).</td><td><span class="pair" style="color:var(--edited)">
+<svg class="ic old sug" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <path d="M12 20h-1a2 2 0 0 1-2-2 2 2 0 0 1-2 2H6" />
+  <path d="M13 8h7a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2h-7" />
+  <path d="M5 16H4a2 2 0 0 1-2-2v-4a2 2 0 0 1 2-2h1" />
+  <path d="M6 4h1a2 2 0 0 1 2 2 2 2 0 0 1 2-2h1" />
+  <path d="M9 6v12" />
+</svg>
+
+<svg class="ic new sug" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <path d="M12 20h-1a2 2 0 0 1-2-2 2 2 0 0 1-2 2H6" />
+  <path d="M13 8h7a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2h-7" />
+  <path d="M5 16H4a2 2 0 0 1-2-2v-4a2 2 0 0 1 2-2h1" />
+  <path d="M6 4h1a2 2 0 0 1 2 2 2 2 0 0 1 2-2h1" />
+  <path d="M9 6v12" />
+</svg>
+</span><div class="names">text-cursor-input</div></td><td><div class="labels"><div><span class="side">old</span><span class="chip" style="--c:var(--edited)">renamed MAX_RETRIES</span></div><div><span class="side">new</span><span class="chip" style="--c:var(--edited)">→ MAX_ATTEMPTS</span></div></div></td><td class="why">A text-cursor/field icon (Codicons rename, Lucide text-cursor-input) says “a name changed”. Avoid diff-renamed: it means a <em>file</em> rename.<div class="src">Codicons, Octicons</div></td></tr><tr><th scope="row">Edited</th><td><span class="pair" style="color:var(--edited)"><svg class="ic old" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+    <path d="M8 0C1.412 0 0 1.412 0 8s1.412 8 8 8 8-1.412 8-8-1.412-8-8-8" opacity=".2"/><path d="M11 8a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
+  </svg><svg class="ic new" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+    <path fill-rule="evenodd" d="M8 0c6.588 0 8 1.412 8 8s-1.412 8-8 8-8-1.412-8-8 1.412-8 8-8m0 5a3 3 0 1 0 0 6 3 3 0 0 0 0-6" clip-rule="evenodd"/>
+  </svg></span></td><td class="prob">Fine: square-with-dot is git’s “modified” icon.</td><td><span class="pair" style="color:var(--edited)">
+<svg class="ic old sug" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <rect width="18" height="18" x="3" y="3" rx="2" />
+  <circle cx="12" cy="12" r="1" />
+</svg>
+
+<svg class="ic new sug" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <rect width="18" height="18" x="3" y="3" rx="2" />
+  <circle cx="12" cy="12" r="1" />
+</svg>
+</span><div class="names">square-dot</div></td><td><div class="labels"><div><span class="side">old</span><span class="chip" style="--c:var(--edited)">edited</span></div><div><span class="side">new</span><span class="chip" style="--c:var(--edited)">edited</span></div></div></td><td class="why">Keep. Same meaning as Octicons/Codicons diff-modified.<div class="src">Octicons, Codicons</div></td></tr><tr><th scope="row">Added</th><td><span class="pair" style="color:var(--added)"><svg class="ic old" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+    <path d="M8 0C1.412 0 0 1.412 0 8s1.412 8 8 8 8-1.412 8-8-1.412-8-8-8" opacity=".2"/><path d="M8 4a.75.75 0 0 1 .75.75v2.5h2.5a.75.75 0 0 1 0 1.5h-2.5v2.5a.75.75 0 0 1-1.5 0v-2.5h-2.5a.75.75 0 0 1 0-1.5h2.5v-2.5A.75.75 0 0 1 8 4"/>
+  </svg><svg class="ic new" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+    <path fill-rule="evenodd" d="M8 0c6.588 0 8 1.412 8 8s-1.412 8-8 8-8-1.412-8-8 1.412-8 8-8m0 4a.75.75 0 0 0-.75.75v2.5h-2.5a.75.75 0 0 0 0 1.5h2.5v2.5a.75.75 0 0 0 1.5 0v-2.5h2.5a.75.75 0 0 0 0-1.5h-2.5v-2.5A.75.75 0 0 0 8 4" clip-rule="evenodd"/>
+  </svg></span></td><td class="prob">Fine.</td><td><span class="pair" style="color:var(--added)">
+<svg class="ic old sug" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <rect width="18" height="18" x="3" y="3" rx="2" />
+  <path d="M8 12h8" />
+  <path d="M12 8v8" />
+</svg>
+
+<svg class="ic new sug" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <rect width="18" height="18" x="3" y="3" rx="2" />
+  <path d="M8 12h8" />
+  <path d="M12 8v8" />
+</svg>
+</span><div class="names">square-plus</div></td><td><div class="labels"><div><span class="side">old</span><span class="muted">—</span></div><div><span class="side">new</span><span class="chip" style="--c:var(--added)">added</span></div></div></td><td class="why">Keep: + is understood everywhere.<div class="src">Octicons diff-added</div></td></tr><tr><th scope="row">Deleted</th><td><span class="pair" style="color:var(--deleted)"><svg class="ic old" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+    <path d="M8 0C1.412 0 0 1.412 0 8s1.412 8 8 8 8-1.412 8-8-1.412-8-8-8" opacity=".2"/><path d="M4 8a.75.75 0 0 1 .75-.75h6.5a.75.75 0 0 1 0 1.5h-6.5A.75.75 0 0 1 4 8"/>
+  </svg><svg class="ic new" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+    <path fill-rule="evenodd" d="M8 0c6.588 0 8 1.412 8 8s-1.412 8-8 8-8-1.412-8-8 1.412-8 8-8M4.75 7.25a.75.75 0 0 0 0 1.5h6.5a.75.75 0 0 0 0-1.5z" clip-rule="evenodd"/>
+  </svg></span></td><td class="prob">Fine.</td><td><span class="pair" style="color:var(--deleted)">
+<svg class="ic old sug" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <rect width="18" height="18" x="3" y="3" rx="2" />
+  <path d="M8 12h8" />
+</svg>
+
+<svg class="ic new sug" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <rect width="18" height="18" x="3" y="3" rx="2" />
+  <path d="M8 12h8" />
+</svg>
+</span><div class="names">square-minus</div></td><td><div class="labels"><div><span class="side">old</span><span class="chip" style="--c:var(--deleted)">deleted</span></div><div><span class="side">new</span><span class="muted">—</span></div></div></td><td class="why">Keep: − is understood everywhere.<div class="src">Octicons diff-removed</div></td></tr><tr><th scope="row">Formatting only</th><td><span class="pair" style="color:var(--fmt)"><svg class="ic old" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+    <path d="m13.47 1.47-12 12 1.06 1.06 12-12zM8 14c-.92 0-1.802-.208-2.624-.547l1.173-1.174c.476.142.963.221 1.451.221 1.66 0 3.307-.949 4.626-2.196a10.4 10.4 0 0 0 1.494-1.751A5 5 0 0 0 14.443 8a5 5 0 0 0-.323-.553 10 10 0 0 0-1.238-1.5l1.061-1.062C15.222 6.173 16 7.511 16 8c0 1.05-3.582 6-8 6"/><path d="M8 11q-.084 0-.167-.005l3.162-3.162q.006.083.005.167a3 3 0 0 1-3 3M5.005 8.167l3.162-3.162a3 3 0 0 0-3.162 3.162"/><path d="M8 3.5c.485 0 .97.081 1.445.227l1.168-1.169C9.794 2.212 8.915 2 8 2 3.582 2 0 6.8 0 8c0 .555.766 1.88 2.027 3.144l1.06-1.06a9.5 9.5 0 0 1-1.203-1.461 4.3 4.3 0 0 1-.345-.617L1.536 8l.003-.006c.064-.149.176-.359.345-.617a9.8 9.8 0 0 1 1.482-1.73C4.675 4.427 6.326 3.5 8 3.5"/>
+  </svg><svg class="ic new" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+    <path d="m13.47 1.47-12 12 1.06 1.06 12-12zM8 14c-.92 0-1.802-.208-2.624-.547l1.173-1.174c.476.142.963.221 1.451.221 1.66 0 3.307-.949 4.626-2.196a10.4 10.4 0 0 0 1.494-1.751A5 5 0 0 0 14.443 8a5 5 0 0 0-.323-.553 10 10 0 0 0-1.238-1.5l1.061-1.062C15.222 6.173 16 7.511 16 8c0 1.05-3.582 6-8 6"/><path d="M8 11q-.084 0-.167-.005l3.162-3.162q.006.083.005.167a3 3 0 0 1-3 3M5.005 8.167l3.162-3.162a3 3 0 0 0-3.162 3.162"/><path d="M8 3.5c.485 0 .97.081 1.445.227l1.168-1.169C9.794 2.212 8.915 2 8 2 3.582 2 0 6.8 0 8c0 .555.766 1.88 2.027 3.144l1.06-1.06a9.5 9.5 0 0 1-1.203-1.461 4.3 4.3 0 0 1-.345-.617L1.536 8l.003-.006c.064-.149.176-.359.345-.617a9.8 9.8 0 0 1 1.482-1.73C4.675 4.427 6.326 3.5 8 3.5"/>
+  </svg></span></td><td class="prob">A crossed-out eye means “hidden / invisible” (Codicons eye-closed), not “formatting only”.</td><td><span class="pair" style="color:var(--fmt)">
+<svg class="ic old sug" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <path d="M13 4v16" />
+  <path d="M17 4v16" />
+  <path d="M19 4H9.5a4.5 4.5 0 0 0 0 9H13" />
+</svg>
+
+<svg class="ic new sug" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <path d="M13 4v16" />
+  <path d="M17 4v16" />
+  <path d="M19 4H9.5a4.5 4.5 0 0 0 0 9H13" />
+</svg>
+</span><div class="names">pilcrow</div></td><td><div class="labels"><div><span class="side">old</span><span class="chip" style="--c:var(--fmt)">format only</span></div><div><span class="side">new</span><span class="chip" style="--c:var(--fmt)">format only</span></div></div></td><td class="why">¶ is the editors’ symbol for invisible characters and layout (Codicons whitespace, Lucide pilcrow). Keep the eye for a “hide formatting changes” toggle.<div class="src">Codicons, Reviewable, GitHub</div></td></tr><tr><th scope="row">Extracted function</th><td><span class="pair" style="color:var(--moved)"><svg class="ic old" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+    <path fill-rule="evenodd" d="M8 0c6.588 0 8 1.412 8 8s-1.412 8-8 8-8-1.412-8-8 1.412-8 8-8" clip-rule="evenodd" opacity=".2"/><path d="M8.25 4.25a.75.75 0 0 1 0 1.5H6.81l3.302 3.302a1.5 1.5 0 1 1-1.06 1.06L5.75 6.811V8.25a.75.75 0 0 1-1.5 0V5A.75.75 0 0 1 5 4.25z"/>
+  </svg><svg class="ic new" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+    <path fill-rule="evenodd" d="M8 0c6.588 0 8 1.412 8 8s-1.412 8-8 8-8-1.412-8-8 1.412-8 8-8M5 4.25a.75.75 0 0 0-.75.75v3.25a.75.75 0 0 0 1.5 0V6.81l3.302 3.302a1.5 1.5 0 1 0 1.06-1.06L6.811 5.75H8.25a.75.75 0 0 0 0-1.5z" clip-rule="evenodd"/>
+  </svg></span></td><td class="prob">Arrow-out-of-box is the <em>external link</em> icon (Lucide square-arrow-out-up-right, Codicons link-external). Same icon on both sides, so it says “leaving” even where code arrived.</td><td><span class="pair" style="color:var(--moved)">
+<svg class="ic old sug" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <path d="M16 3h5v5" />
+  <path d="M8 3H3v5" />
+  <path d="M12 22v-8.3a4 4 0 0 0-1.172-2.872L3 3" />
+  <path d="m15 9 6-6" />
+</svg>
+
+<svg class="ic new sug" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <path d="M16 3h5v5" />
+  <path d="M8 3H3v5" />
+  <path d="M12 22v-8.3a4 4 0 0 0-1.172-2.872L3 3" />
+  <path d="m15 9 6-6" />
+</svg>
+</span><div class="names">split</div></td><td><div class="labels"><div><span class="side">old</span><span class="chip" style="--c:var(--moved)">extracted to sumLineItems() →</span></div><div><span class="side">new</span><span class="chip" style="--c:var(--moved)">← extracted from checkout()</span></div></div></td><td class="why">“Split” shows one piece of code becoming two, and doesn’t clash with links. The label names both functions.<div class="src">Lucide, NN/g</div></td></tr><tr><th scope="row">Inlined function</th><td><span class="pair" style="color:var(--moved)"><svg class="ic old" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+    <path fill-rule="evenodd" d="M8 16c-6.588 0-8-1.412-8-8s1.412-8 8-8 8 1.412 8 8-1.412 8-8 8" clip-rule="evenodd" opacity=".2"/><path d="M7.75 11.75a.75.75 0 0 1 0-1.5h1.44L5.887 6.948a1.5 1.5 0 1 1 1.06-1.06l3.302 3.301V7.75a.75.75 0 0 1 1.5 0V11a.75.75 0 0 1-.75.75z"/>
+  </svg><svg class="ic new" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+    <path fill-rule="evenodd" d="M8 0c6.588 0 8 1.412 8 8s-1.412 8-8 8-8-1.412-8-8 1.412-8 8-8M5.5 4a1.5 1.5 0 1 0 .388 2.948l3.301 3.302H7.75a.75.75 0 0 0 0 1.5H11a.75.75 0 0 0 .75-.75V7.75a.75.75 0 0 0-1.5 0v1.44L6.948 5.887A1.5 1.5 0 0 0 5.5 4" clip-rule="evenodd"/>
+  </svg></span></td><td class="prob">Mirror of the external-link arrow; easy to confuse with collapse/expand.</td><td><span class="pair" style="color:var(--moved)">
+<svg class="ic old sug" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <path d="m8 6 4-4 4 4" />
+  <path d="M12 2v10.3a4 4 0 0 1-1.172 2.872L4 22" />
+  <path d="m20 22-5-5" />
+</svg>
+
+<svg class="ic new sug" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <path d="m8 6 4-4 4 4" />
+  <path d="M12 2v10.3a4 4 0 0 1-1.172 2.872L4 22" />
+  <path d="m20 22-5-5" />
+</svg>
+</span><div class="names">merge</div></td><td><div class="labels"><div><span class="side">old</span><span class="chip" style="--c:var(--moved)">inlined into ActiveCartTotal() →</span></div><div><span class="side">new</span><span class="chip" style="--c:var(--moved)">← inlined from cartItemTotal()</span></div></div></td><td class="why">“Merge” shows two pieces becoming one, the opposite of Split, and is visually distinct from it.<div class="src">Codicons merge-into, Lucide</div></td></tr></tbody></table></div>
+
+<h2>In the gutter</h2>
+<p class="muted">Rows taken from our real examples. The label sits under the first row of each change, the way Pierre already shows “Moved N lines”.</p>
+
+<div class="mock">
+ <div class="mcol"><div class="mh">Pierre today</div>
+  <div class="row o" style="--c:var(--moved)"><span class="bar"></span><span class="g"><svg class="ic g16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+    <path fill-rule="evenodd" d="M8 0c6.588 0 8 1.412 8 8s-1.412 8-8 8-8-1.412-8-8 1.412-8 8-8" clip-rule="evenodd" opacity=".2"/><path d="M8.25 4.25a.75.75 0 0 1 0 1.5H6.81l3.302 3.302a1.5 1.5 0 1 1-1.06 1.06L5.75 6.811V8.25a.75.75 0 0 1-1.5 0V5A.75.75 0 0 1 5 4.25z"/>
+  </svg></span><span class="ln">2</span><code>  let subtotal = 0;</code></div>
+  <div class="row n" style="--c:var(--moved)"><span class="bar"></span><span class="g"><svg class="ic g16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+    <path fill-rule="evenodd" d="M8 0c6.588 0 8 1.412 8 8s-1.412 8-8 8-8-1.412-8-8 1.412-8 8-8M5 4.25a.75.75 0 0 0-.75.75v3.25a.75.75 0 0 0 1.5 0V6.81l3.302 3.302a1.5 1.5 0 1 0 1.06-1.06L6.811 5.75H8.25a.75.75 0 0 0 0-1.5z" clip-rule="evenodd"/>
+  </svg></span><span class="ln">7</span><code>  let subtotal = 0;</code></div>
+  <div class="row o" style="--c:var(--moved)"><span class="bar"></span><span class="g"><svg class="ic g16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+    <path d="M8 0C1.412 0 0 1.412 0 8s1.412 8 8 8 8-1.412 8-8-1.412-8-8-8" opacity=".2"/><path d="M8.496 4.695a.75.75 0 0 0-.051 1.06L10.486 8l-2.041 2.246a.75.75 0 0 0 1.11 1.008l2.5-2.75a.75.75 0 0 0 0-1.008l-2.5-2.75a.75.75 0 0 0-1.06-.051m-4 0a.75.75 0 0 0-.051 1.06L6.49 8.003 4.693 9.998a.75.75 0 0 0 1.114 1.004l2.25-2.5a.75.75 0 0 0-.002-1.007l-2.5-2.75a.75.75 0 0 0-1.06-.05"/>
+  </svg></span><span class="ln">4</span><code>export function formatUser(…)</code></div>
+  <div class="row o" style="--c:var(--fmt)"><span class="bar"></span><span class="g"><svg class="ic g16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+    <path d="m13.47 1.47-12 12 1.06 1.06 12-12zM8 14c-.92 0-1.802-.208-2.624-.547l1.173-1.174c.476.142.963.221 1.451.221 1.66 0 3.307-.949 4.626-2.196a10.4 10.4 0 0 0 1.494-1.751A5 5 0 0 0 14.443 8a5 5 0 0 0-.323-.553 10 10 0 0 0-1.238-1.5l1.061-1.062C15.222 6.173 16 7.511 16 8c0 1.05-3.582 6-8 6"/><path d="M8 11q-.084 0-.167-.005l3.162-3.162q.006.083.005.167a3 3 0 0 1-3 3M5.005 8.167l3.162-3.162a3 3 0 0 0-3.162 3.162"/><path d="M8 3.5c.485 0 .97.081 1.445.227l1.168-1.169C9.794 2.212 8.915 2 8 2 3.582 2 0 6.8 0 8c0 .555.766 1.88 2.027 3.144l1.06-1.06a9.5 9.5 0 0 1-1.203-1.461 4.3 4.3 0 0 1-.345-.617L1.536 8l.003-.006c.064-.149.176-.359.345-.617a9.8 9.8 0 0 1 1.482-1.73C4.675 4.427 6.326 3.5 8 3.5"/>
+  </svg></span><span class="ln">2</span><code>  return { timeout: 5000, … };</code></div>
+ </div>
+ <div class="mcol"><div class="mh">Suggested</div>
+  <div class="row o" style="--c:var(--moved)"><span class="bar"></span><span class="g">
+<svg class="ic g16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <path d="M16 3h5v5" />
+  <path d="M8 3H3v5" />
+  <path d="M12 22v-8.3a4 4 0 0 0-1.172-2.872L3 3" />
+  <path d="m15 9 6-6" />
+</svg>
+</span><span class="ln">2</span><code>  let subtotal = 0;</code></div><div class="inl" style="--c:var(--moved)">extracted to <b>sumLineItems()</b> → L7</div>
+  <div class="row n" style="--c:var(--moved)"><span class="bar"></span><span class="g">
+<svg class="ic g16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <path d="M16 3h5v5" />
+  <path d="M8 3H3v5" />
+  <path d="M12 22v-8.3a4 4 0 0 0-1.172-2.872L3 3" />
+  <path d="m15 9 6-6" />
+</svg>
+</span><span class="ln">7</span><code>  let subtotal = 0;</code></div><div class="inl" style="--c:var(--moved)">← extracted from <b>checkout()</b> L2</div>
+  <div class="row o" style="--c:var(--moved)"><span class="bar"></span><span class="g">
+<svg class="ic g16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <path d="M3 5v14" />
+  <path d="M21 12H7" />
+  <path d="m15 18 6-6-6-6" />
+</svg>
+</span><span class="ln">4</span><code>export function formatUser(…)</code></div><div class="inl" style="--c:var(--moved)">moved to L13 →</div>
+  <div class="row o" style="--c:var(--fmt)"><span class="bar"></span><span class="g">
+<svg class="ic g16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <path d="M13 4v16" />
+  <path d="M17 4v16" />
+  <path d="M19 4H9.5a4.5 4.5 0 0 0 0 9H13" />
+</svg>
+</span><span class="ln">2</span><code>  return { timeout: 5000, … };</code></div><div class="inl" style="--c:var(--fmt)">format only</div>
+ </div>
+</div>
+
+<h2>What other tools do</h2>
+<div class="tablewrap"><table style="min-width:760px"><thead><tr><th>Tool</th><th>Moved code</th><th>Linking the two ends</th><th>Formatting / whitespace</th></tr></thead><tbody>
+<tr><th>Gerrit</th><td>Chip with a move icon (Material move_item) and text</td><td>“Moved to lines …” / “Moved from lines …”; “Moved and changed”</td><td>Ignore-whitespace setting</td></tr>
+<tr><th>VS Code</th><td>Arrows showing where blocks moved (showMoves)</td><td>Arrows, plus a “Compare” button for the moved block</td><td>—</td></tr>
+<tr><th>SemanticDiff</th><td>Colored border around both blocks, one color per move</td><td>Connector line and a jump arrow; “Moved without changes”</td><td>Formatting-only changes are hidden</td></tr>
+<tr><th>Phabricator</th><td>Tinted gutter column on the new side, no glyph</td><td>“Moved from line N”</td><td>» chevron marks indentation-only changes</td></tr>
+<tr><th>Reviewable</th><td>No move detection</td><td>—</td><td>␣ marker on whitespace-only lines, can be collapsed</td></tr>
+<tr><th>git --color-moved</th><td>Color only (zebra / dimmed-zebra)</td><td>Color only</td><td>Ignores indentation changes</td></tr>
+<tr><th>GitHub, GitLab, JetBrains</th><td>No move detection found</td><td>—</td><td>Hide-whitespace toggle</td></tr>
+</tbody></table></div>
+
+<footer>
+<p>Sources: <a href="https://gerrit.googlesource.com/gerrit/+/f411dd0b7c0f4db6c664c25e82de37a9db49f7dc%5E%21">Gerrit move labels</a> · <a href="https://code.visualstudio.com/updates/v1_82">VS Code 1.82 moves</a> · <a href="https://semanticdiff.com/docs/understand-diff/moved-code/">SemanticDiff moved code</a> · <a href="https://raw.githubusercontent.com/phorgeit/phorge/master/webroot/rsrc/css/application/differential/changeset-view.css">Phorge diff CSS</a> · <a href="https://docs.reviewable.io/files">Reviewable files</a> · <a href="https://git-scm.com/docs/git-diff">git-diff</a> · <a href="https://www.nngroup.com/articles/icon-usability/">NN/g icon usability</a> · <a href="https://www.w3.org/WAI/WCAG22/Understanding/use-of-color.html">WCAG 1.4.1</a></p>
+<p>Current icons: Pierre's sprite (pierrecomputer/pierre, Apache-2.0). Suggested icons: <a href="https://lucide.dev">Lucide</a> (ISC). Not verified: CodeRabbit's semantic view has no published visuals; whether Gerrit's move chips are links.</p>
+</footer>
+</main></body></html>

@@ -1,0 +1,71 @@
+{
+  "how": "Java extracted functions on real same-file commits, labelled by reading the diffs (harness/LABELLING.md) before the engine was run on them, 2026-11-14. Small: the Java extract/inline sets already exist in the suite.",
+  "labels": [
+    {
+      "repo": "gson-mr",
+      "kind": "extract",
+      "commit": "ff521d70b2",
+      "file": "gson/src/main/java/com/google/gson/internal/Excluder.java",
+      "helper": "isExcludedByModifier",
+      "caller": "excludeField",
+      "label": "borderline",
+      "note": "One-line condition lifted from excludeField into a tiny helper; exact but trivial.",
+      "src": "curated"
+    },
+    {
+      "repo": "gson-mr",
+      "kind": "extract",
+      "commit": "ff521d70b2",
+      "file": "gson/src/main/java/com/google/gson/internal/Excluder.java",
+      "helper": "isExcludedByVersion",
+      "caller": "excludeField",
+      "label": "extract",
+      "note": "Version check moved from excludeField into a boolean helper it now calls.",
+      "src": "curated"
+    },
+    {
+      "repo": "gson-mr",
+      "kind": "extract",
+      "commit": "ff521d70b2",
+      "file": "gson/src/main/java/com/google/gson/internal/Excluder.java",
+      "helper": "isExcludedByExposeAnnotation",
+      "caller": "excludeField",
+      "label": "extract",
+      "note": "requireExpose/@Expose block moved into a helper with an early return.",
+      "src": "curated"
+    },
+    {
+      "repo": "gson-mr",
+      "kind": "extract",
+      "commit": "ff521d70b2",
+      "file": "gson/src/main/java/com/google/gson/internal/Excluder.java",
+      "helper": "isExcludedByStrategy",
+      "caller": "excludeField",
+      "label": "extract",
+      "note": "Exclusion-strategy loop moved from excludeField into a new helper it calls.",
+      "src": "curated"
+    },
+    {
+      "repo": "gson-mr",
+      "kind": "extract",
+      "commit": "3bf1967c0a",
+      "file": "gson/src/main/java/com/google/gson/internal/Excluder.java",
+      "helper": "excludeClassChecks",
+      "caller": "excludeClass",
+      "label": "extract",
+      "note": "Version, inner-class and anonymous checks moved out of excludeClass into a new helper (re-indented).",
+      "src": "curated"
+    },
+    {
+      "repo": "gson-mr",
+      "kind": "extract",
+      "commit": "3bf1967c0a",
+      "file": "gson/src/main/java/com/google/gson/internal/Excluder.java",
+      "helper": "excludeClassInStrategy",
+      "caller": "excludeClass",
+      "label": "extract",
+      "note": "Strategy loop moved out of excludeClass into a new helper; excludeClass now calls both.",
+      "src": "curated"
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+ba467c7ac33ed55e66a1b1e3d7d7c396aa88e31c4ac159b59cc688bbb6deb00b  test/fixtures/traps/csharp.json
+e5f727eafaf05c491581e0630d169ddd5ba36f291a93ae068361797bd2c9fe9d  test/fixtures/labels/lang-csharp-extracts.json
+e95ceaad3faba73abc20e8ccb934f790edda489e74ac14dda780221832481598  test/fixtures/labels/lang-csharp-expected.json
+26c0f0c00a209c2d754f23e2cd089674eedc2e6c4f66e327b9afaaba820a2f36  harness/lang/csharp/manifest.json
+d36b143220f61bb8be32dbdcaee227e99bf27db5e1d753c39e72f45b8484b874  harness/lang/csharp/texts.sha256
+answers fixed 2026-11-15T03:55:52Z, before any engine run on these cases; the engine had not been run on any of them

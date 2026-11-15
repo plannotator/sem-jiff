@@ -1,0 +1,2411 @@
+{
+ "how": "Every file in the practice projects where looking for renames inside edited declarations (rule INNER_RENAMES, harness/audit/rename-delta.ts) adds renamed lines: 70 files, 187 lines. Judged blind by three independent agents following harness/audit/AUDIT.md, 2026-11-09/10. Labels were given to an earlier, looser version of the rule and carried over per file; some notes mention lines the final rule no longer claims. 56 correct, 12 borderline, 2 wrong (the existing renamed audit: 126, 22, 2 of 150).",
+ "labels": [
+  {
+   "id": 1,
+   "project": "allthingsweb",
+   "commit": "2dec350448",
+   "file": "web/src/images/route.ts",
+   "kind": "renamed",
+   "old": [
+    [
+     511,
+     511
+    ]
+   ],
+   "new": [
+    [
+     564,
+     564
+    ]
+   ],
+   "label": "correct",
+   "note": "Destructured binding renamed only."
+  },
+  {
+   "id": 2,
+   "project": "allthingsweb",
+   "commit": "1db2e9fa51",
+   "file": "core/src/site-refresh.ts",
+   "kind": "renamed",
+   "old": [
+    [
+     52,
+     52
+    ]
+   ],
+   "new": [
+    [
+     94,
+     94
+    ]
+   ],
+   "label": "correct",
+   "note": "Declaration differs only by the variable name; same initializer."
+  },
+  {
+   "id": 3,
+   "project": "allthingsweb",
+   "commit": "b568c0d1ab",
+   "file": "infra/scripts/studio.ts",
+   "kind": "renamed",
+   "old": [
+    [
+     96,
+     96
+    ]
+   ],
+   "new": [
+    [
+     103,
+     103
+    ]
+   ],
+   "label": "correct",
+   "note": "Rest-binding renamed only on this line."
+  },
+  {
+   "id": 4,
+   "project": "avalonia",
+   "commit": "6612bd6380",
+   "file": "src/Avalonia.OpenGL/Controls/OpenGlControlResources.cs",
+   "kind": "renamed",
+   "old": [
+    [
+     104,
+     104
+    ],
+    [
+     122,
+     122
+    ]
+   ],
+   "new": [
+    [
+     61,
+     61
+    ],
+    [
+     84,
+     84
+    ]
+   ],
+   "label": "borderline",
+   "note": "Listed lines differ only by name, but the variable's declared type changed (IDisposable? to CompositionOpenGlSwapchain.Lease?) because BeginDraw now returns a different type."
+  },
+  {
+   "id": 5,
+   "project": "avalonia",
+   "commit": "0dbce40347",
+   "file": "src/Avalonia.Base/Media/Brush.cs",
+   "kind": "renamed",
+   "old": [
+    [
+     120,
+     120
+    ],
+    [
+     121,
+     121
+    ],
+    [
+     132,
+     132
+    ],
+    [
+     133,
+     133
+    ]
+   ],
+   "new": [
+    [
+     133,
+     133
+    ],
+    [
+     134,
+     134
+    ],
+    [
+     147,
+     147
+    ],
+    [
+     148,
+     148
+    ]
+   ],
+   "label": "correct",
+   "note": "Pattern variable renamed consistently."
+  },
+  {
+   "id": 6,
+   "project": "beep-effect",
+   "commit": "18c29d2618",
+   "file": "apps/professional-desktop/server/OntologyMcpTransport.ts",
+   "kind": "renamed",
+   "old": [
+    [
+     187,
+     187
+    ]
+   ],
+   "new": [
+    [
+     255,
+     255
+    ]
+   ],
+   "label": "correct",
+   "note": "Function renamed at declaration and call."
+  },
+  {
+   "id": 7,
+   "project": "beep-effect",
+   "commit": "d192effc46",
+   "file": "packages/tooling/tool/cli/src/commands/Worktree/internal/ResidueTerminalLaneLive.ts",
+   "kind": "renamed",
+   "old": [
+    [
+     160,
+     160
+    ],
+    [
+     161,
+     161
+    ],
+    [
+     162,
+     162
+    ],
+    [
+     163,
+     163
+    ],
+    [
+     164,
+     164
+    ],
+    [
+     165,
+     165
+    ]
+   ],
+   "new": [
+    [
+     142,
+     142
+    ],
+    [
+     143,
+     143
+    ],
+    [
+     144,
+     144
+    ],
+    [
+     145,
+     145
+    ],
+    [
+     146,
+     146
+    ],
+    [
+     147,
+     147
+    ]
+   ],
+   "label": "correct",
+   "note": "Only the name changes on the listed lines; same variable with a new name."
+  },
+  {
+   "id": 8,
+   "project": "effect-smol",
+   "commit": "388dcf953f",
+   "file": "packages/effect/src/unstable/httpapi/HttpApiClient.ts",
+   "kind": "renamed",
+   "old": [
+    [
+     859,
+     859
+    ],
+    [
+     862,
+     862
+    ],
+    [
+     871,
+     871
+    ]
+   ],
+   "new": [
+    [
+     859,
+     859
+    ],
+    [
+     862,
+     862
+    ],
+    [
+     871,
+     871
+    ]
+   ],
+   "label": "correct",
+   "note": "Only the name changes on the listed lines; same variable with a new name."
+  },
+  {
+   "id": 9,
+   "project": "effect-smol",
+   "commit": "4500fbfe00",
+   "file": "packages/effect/src/unstable/httpapi/OpenApi.ts",
+   "kind": "renamed",
+   "old": [
+    [
+     624,
+     624
+    ],
+    [
+     625,
+     625
+    ],
+    [
+     628,
+     628
+    ],
+    [
+     630,
+     630
+    ]
+   ],
+   "new": [
+    [
+     701,
+     701
+    ],
+    [
+     702,
+     702
+    ],
+    [
+     705,
+     705
+    ],
+    [
+     707,
+     707
+    ]
+   ],
+   "label": "correct",
+   "note": "Local renamed consistently; nothing else changed."
+  },
+  {
+   "id": 10,
+   "project": "excalidraw",
+   "commit": "4c3d037f9c",
+   "file": "packages/excalidraw/components/App.tsx",
+   "kind": "renamed",
+   "old": [
+    [
+     6625,
+     6625
+    ],
+    [
+     6627,
+     6627
+    ]
+   ],
+   "new": [
+    [
+     6714,
+     6714
+    ],
+    [
+     6717,
+     6717
+    ]
+   ],
+   "label": "correct",
+   "note": "Only the name changes on the listed lines; same variable with a new name."
+  },
+  {
+   "id": 11,
+   "project": "excalidraw",
+   "commit": "a70417f23f",
+   "file": "packages/element/src/utils.ts",
+   "kind": "renamed",
+   "old": [
+    [
+     612,
+     612
+    ],
+    [
+     614,
+     614
+    ],
+    [
+     616,
+     616
+    ]
+   ],
+   "new": [
+    [
+     702,
+     702
+    ],
+    [
+     704,
+     704
+    ],
+    [
+     706,
+     706
+    ]
+   ],
+   "label": "correct",
+   "note": "Only the name changes on the listed lines; same variable with a new name."
+  },
+  {
+   "id": 12,
+   "project": "foldkit-domains",
+   "commit": "8f9c42e270",
+   "file": "src/client/domain.ts",
+   "kind": "renamed",
+   "old": [
+    [
+     131,
+     131
+    ],
+    [
+     144,
+     144
+    ]
+   ],
+   "new": [
+    [
+     170,
+     170
+    ],
+    [
+     192,
+     192
+    ]
+   ],
+   "label": "correct",
+   "note": "Only the name changes on the listed lines; same variable with a new name."
+  },
+  {
+   "id": 13,
+   "project": "foldkit-domains",
+   "commit": "fcd0fc5505",
+   "file": "src/server/registrar.ts",
+   "kind": "renamed",
+   "old": [
+    [
+     90,
+     90
+    ],
+    [
+     94,
+     94
+    ],
+    [
+     136,
+     136
+    ]
+   ],
+   "new": [
+    [
+     88,
+     88
+    ],
+    [
+     92,
+     92
+    ],
+    [
+     140,
+     140
+    ]
+   ],
+   "label": "correct",
+   "note": "Only the name changes on the listed lines; same variable with a new name."
+  },
+  {
+   "id": 14,
+   "project": "foldkit",
+   "commit": "b950c054bb",
+   "file": "packages/foldkit/src/runtime/runtime.ts",
+   "kind": "renamed",
+   "old": [
+    [
+     449,
+     449
+    ],
+    [
+     450,
+     450
+    ],
+    [
+     471,
+     471
+    ],
+    [
+     489,
+     489
+    ],
+    [
+     493,
+     493
+    ]
+   ],
+   "new": [
+    [
+     451,
+     451
+    ],
+    [
+     452,
+     452
+    ],
+    [
+     473,
+     473
+    ],
+    [
+     491,
+     491
+    ],
+    [
+     495,
+     495
+    ]
+   ],
+   "label": "correct",
+   "note": "Pure renames, though three names change together (decode/encodeHmrModel and the hmrModel parameter), all consistently renamed at their declarations."
+  },
+  {
+   "id": 15,
+   "project": "foldkit",
+   "commit": "98de478809",
+   "file": "packages/foldkit/src/runtime/runtime.ts",
+   "kind": "renamed",
+   "old": [
+    [
+     316,
+     316
+    ],
+    [
+     318,
+     318
+    ],
+    [
+     319,
+     319
+    ],
+    [
+     320,
+     320
+    ],
+    [
+     323,
+     323
+    ],
+    [
+     324,
+     324
+    ],
+    [
+     325,
+     325
+    ],
+    [
+     677,
+     677
+    ],
+    [
+     685,
+     685
+    ],
+    [
+     751,
+     751
+    ]
+   ],
+   "new": [
+    [
+     316,
+     316
+    ],
+    [
+     318,
+     318
+    ],
+    [
+     319,
+     319
+    ],
+    [
+     320,
+     320
+    ],
+    [
+     323,
+     323
+    ],
+    [
+     324,
+     324
+    ],
+    [
+     325,
+     325
+    ],
+    [
+     677,
+     677
+    ],
+    [
+     685,
+     685
+    ],
+    [
+     750,
+     750
+    ]
+   ],
+   "label": "correct",
+   "note": "Consistent renames of the resolvedSlow* locals, nothing else changed."
+  },
+  {
+   "id": 16,
+   "project": "foldkit",
+   "commit": "49d911a3b5",
+   "file": "packages/oxlint-plugin-foldkit/src/rules/no-empty-object-tagged-call.ts",
+   "kind": "renamed",
+   "old": [
+    [
+     61,
+     61
+    ],
+    [
+     90,
+     90
+    ]
+   ],
+   "new": [
+    [
+     97,
+     97
+    ],
+    [
+     146,
+     146
+    ]
+   ],
+   "label": "correct",
+   "note": "Only the name changes on the listed lines; same variable with a new name."
+  },
+  {
+   "id": 17,
+   "project": "foldkit",
+   "commit": "c9f9c65ffa",
+   "file": "packages/oxlint-plugin-foldkit/src/rules/no-nonportable-server-globals.ts",
+   "kind": "renamed",
+   "old": [
+    [
+     170,
+     170
+    ]
+   ],
+   "new": [
+    [
+     114,
+     114
+    ]
+   ],
+   "label": "correct",
+   "note": "Declaration line differs only by the variable name (type change comes from the callee elsewhere)."
+  },
+  {
+   "id": 18,
+   "project": "ghui",
+   "commit": "c8d4c22334",
+   "file": "src/ui/pullRequests/atoms.ts",
+   "kind": "renamed",
+   "old": [
+    [
+     124,
+     124
+    ],
+    [
+     125,
+     125
+    ]
+   ],
+   "new": [
+    [
+     123,
+     123
+    ],
+    [
+     124,
+     124
+    ]
+   ],
+   "label": "correct",
+   "note": "Only the name changes on the listed lines; same variable with a new name."
+  },
+  {
+   "id": 19,
+   "project": "helix",
+   "commit": "2d903f82ba",
+   "file": "helix-vcs/src/git.rs",
+   "kind": "renamed",
+   "old": [
+    [
+     114,
+     114
+    ]
+   ],
+   "new": [
+    [
+     129,
+     129
+    ]
+   ],
+   "label": "correct",
+   "note": "Local renamed; declaration line otherwise identical."
+  },
+  {
+   "id": 20,
+   "project": "hono",
+   "commit": "2b8ed402cd",
+   "file": "src/jsx/context.ts",
+   "kind": "renamed",
+   "old": [
+    [
+     220,
+     220
+    ],
+    [
+     233,
+     233
+    ],
+    [
+     234,
+     234
+    ],
+    [
+     239,
+     239
+    ]
+   ],
+   "new": [
+    [
+     220,
+     220
+    ],
+    [
+     238,
+     238
+    ],
+    [
+     239,
+     239
+    ],
+    [
+     244,
+     244
+    ]
+   ],
+   "label": "correct",
+   "note": "Local renamed consistently; listed lines change only the name."
+  },
+  {
+   "id": 21,
+   "project": "hugo",
+   "commit": "80e60847fb",
+   "file": "parser/lowercase_camel_json.go",
+   "kind": "renamed",
+   "old": [
+    [
+     110,
+     110
+    ],
+    [
+     111,
+     111
+    ],
+    [
+     118,
+     118
+    ],
+    [
+     125,
+     125
+    ],
+    [
+     132,
+     132
+    ]
+   ],
+   "new": [
+    [
+     110,
+     110
+    ],
+    [
+     111,
+     111
+    ],
+    [
+     122,
+     122
+    ],
+    [
+     129,
+     129
+    ],
+    [
+     136,
+     136
+    ]
+   ],
+   "label": "correct",
+   "note": "Typo fix in a local function name, consistent on all lines."
+  },
+  {
+   "id": 22,
+   "project": "jenkins",
+   "commit": "c365518dcb",
+   "file": "core/src/main/java/hudson/search/CollectionSearchIndex.java",
+   "kind": "renamed",
+   "old": [
+    [
+     65,
+     65
+    ],
+    [
+     66,
+     66
+    ],
+    [
+     71,
+     71
+    ]
+   ],
+   "new": [
+    [
+     66,
+     66
+    ],
+    [
+     67,
+     67
+    ],
+    [
+     72,
+     72
+    ]
+   ],
+   "label": "correct",
+   "note": "Only the name changes on the listed lines; same variable with a new name."
+  },
+  {
+   "id": 23,
+   "project": "kafka",
+   "commit": "27a9d812f6",
+   "file": "group-coordinator/src/main/java/org/apache/kafka/coordinator/group/streams/AssignmentRefinerImpl.java",
+   "kind": "renamed",
+   "old": [
+    [
+     445,
+     445
+    ],
+    [
+     482,
+     482
+    ],
+    [
+     484,
+     484
+    ],
+    [
+     486,
+     486
+    ],
+    [
+     487,
+     487
+    ],
+    [
+     496,
+     496
+    ],
+    [
+     504,
+     504
+    ]
+   ],
+   "new": [
+    [
+     471,
+     471
+    ],
+    [
+     494,
+     494
+    ],
+    [
+     496,
+     496
+    ],
+    [
+     498,
+     498
+    ],
+    [
+     499,
+     499
+    ],
+    [
+     508,
+     508
+    ],
+    [
+     516,
+     516
+    ]
+   ],
+   "label": "correct",
+   "note": "Consistent local rename."
+  },
+  {
+   "id": 24,
+   "project": "language-service",
+   "commit": "dae2015eaf",
+   "file": "packages/language-service/src/diagnostics/runEffectInsideEffect.ts",
+   "kind": "renamed",
+   "old": [
+    [
+     148,
+     148
+    ],
+    [
+     170,
+     170
+    ],
+    [
+     176,
+     176
+    ]
+   ],
+   "new": [
+    [
+     150,
+     150
+    ],
+    [
+     172,
+     172
+    ],
+    [
+     178,
+     178
+    ]
+   ],
+   "label": "correct",
+   "note": "Only the name changes on the listed lines; same variable with a new name."
+  },
+  {
+   "id": 25,
+   "project": "language-service",
+   "commit": "fd4a8da7f4",
+   "file": "packages/language-service/src/core/TypeParser.ts",
+   "kind": "renamed",
+   "old": [
+    [
+     2603,
+     2603
+    ],
+    [
+     2605,
+     2605
+    ],
+    [
+     2606,
+     2606
+    ],
+    [
+     2608,
+     2608
+    ],
+    [
+     2609,
+     2609
+    ],
+    [
+     2610,
+     2610
+    ],
+    [
+     2611,
+     2611
+    ],
+    [
+     2614,
+     2614
+    ]
+   ],
+   "new": [
+    [
+     2603,
+     2603
+    ],
+    [
+     2605,
+     2605
+    ],
+    [
+     2606,
+     2606
+    ],
+    [
+     2608,
+     2608
+    ],
+    [
+     2609,
+     2609
+    ],
+    [
+     2610,
+     2610
+    ],
+    [
+     2611,
+     2611
+    ],
+    [
+     2614,
+     2614
+    ]
+   ],
+   "label": "correct",
+   "note": "Local names and the helper isNodeReferenceToServiceMapModuleApi are consistently renamed; the helper is the same function renamed at its declaration."
+  },
+  {
+   "id": 26,
+   "project": "language-service",
+   "commit": "2c93eabfd7",
+   "file": "packages/language-service/src/cli/overview.ts",
+   "kind": "renamed",
+   "old": [
+    [
+     472,
+     472
+    ]
+   ],
+   "new": [
+    [
+     466,
+     466
+    ]
+   ],
+   "label": "borderline",
+   "note": "Line differs only by name, but renderOverview now returns a string instead of a Doc, so the variable holds a different kind of value."
+  },
+  {
+   "id": 27,
+   "project": "language-service",
+   "commit": "2c93eabfd7",
+   "file": "packages/language-service/src/cli/setup/diagnostic-prompt.ts",
+   "kind": "renamed",
+   "old": [
+    [
+     186,
+     186
+    ]
+   ],
+   "new": [
+    [
+     195,
+     195
+    ]
+   ],
+   "label": "borderline",
+   "note": "Line differs only by name, but renderDiagnostics now returns a string instead of a Doc, so the variable holds a different kind of value."
+  },
+  {
+   "id": 28,
+   "project": "language-service",
+   "commit": "422087d012",
+   "file": "src/cli/patch.ts",
+   "kind": "renamed",
+   "old": [
+    [
+     64,
+     64
+    ],
+    [
+     181,
+     181
+    ],
+    [
+     271,
+     271
+    ],
+    [
+     277,
+     277
+    ],
+    [
+     278,
+     278
+    ]
+   ],
+   "new": [
+    [
+     63,
+     63
+    ],
+    [
+     179,
+     179
+    ],
+    [
+     266,
+     266
+    ],
+    [
+     272,
+     272
+    ],
+    [
+     273,
+     273
+    ]
+   ],
+   "label": "wrong",
+   "note": "Not a rename: the new variable holds a different range (object-literal property vs variable-declaration name), merges two old variables, and its None-check pairs with the other old variable's check."
+  },
+  {
+   "id": 29,
+   "project": "language-service",
+   "commit": "38d12abd7d",
+   "file": "src/core/TypeParser.ts",
+   "kind": "renamed",
+   "old": [
+    [
+     2290,
+     2290
+    ]
+   ],
+   "new": [
+    [
+     2246,
+     2246
+    ]
+   ],
+   "label": "correct",
+   "note": "Only the name changes on the listed lines; same variable with a new name."
+  },
+  {
+   "id": 30,
+   "project": "language-service",
+   "commit": "9064174603",
+   "file": "src/diagnostics/anyUnknownInErrorContext.ts",
+   "kind": "renamed",
+   "old": [
+    [
+     73,
+     73
+    ],
+    [
+     74,
+     74
+    ]
+   ],
+   "new": [
+    [
+     76,
+     76
+    ],
+    [
+     77,
+     77
+    ]
+   ],
+   "label": "correct",
+   "note": "Callback parameter renamed consistently."
+  },
+  {
+   "id": 31,
+   "project": "livestore",
+   "commit": "c8d4f13a4a",
+   "file": "packages/@livestore/common/src/leader-thread/LeaderSyncProcessor.ts",
+   "kind": "renamed",
+   "old": [
+    [
+     775,
+     775
+    ]
+   ],
+   "new": [
+    [
+     134,
+     134
+    ]
+   ],
+   "label": "correct",
+   "note": "Same fiber-handle declaration with only the name changed, inside a heavily rewritten file."
+  },
+  {
+   "id": 32,
+   "project": "livestore",
+   "commit": "9d182233c6",
+   "file": "packages/@livestore/livestore/src/store/store.ts",
+   "kind": "renamed",
+   "old": [
+    [
+     301,
+     301
+    ]
+   ],
+   "new": [
+    [
+     301,
+     301
+    ]
+   ],
+   "label": "borderline",
+   "note": "Line differs only by name, but .changeset changed shape (tagged object to raw data or undefined), as the edited use right below shows."
+  },
+  {
+   "id": 33,
+   "project": "livestore",
+   "commit": "d66325f47c",
+   "file": "packages/@livestore/livestore/src/store/store.ts",
+   "kind": "renamed",
+   "old": [
+    [
+     1287,
+     1287
+    ],
+    [
+     1288,
+     1288
+    ],
+    [
+     1294,
+     1294
+    ]
+   ],
+   "new": [
+    [
+     1283,
+     1283
+    ],
+    [
+     1284,
+     1284
+    ],
+    [
+     1292,
+     1292
+    ]
+   ],
+   "label": "borderline",
+   "note": "Lines differ only by name and still read commitArgs[0], but the callback contract changed (txn function receiving a commit fn vs builder returning an array)."
+  },
+  {
+   "id": 34,
+   "project": "livestore",
+   "commit": "c9bd4f48a6",
+   "file": "packages/@livestore/utils/src/effect/RpcClient.ts",
+   "kind": "renamed",
+   "old": [
+    [
+     52,
+     52
+    ],
+    [
+     54,
+     54
+    ]
+   ],
+   "new": [
+    [
+     54,
+     54
+    ],
+    [
+     56,
+     56
+    ]
+   ],
+   "label": "correct",
+   "note": "Only the name changes on the listed lines; same variable with a new name."
+  },
+  {
+   "id": 35,
+   "project": "livestore",
+   "commit": "0405a44c04",
+   "file": "packages/@livestore/utils/src/effect/RpcClient.ts",
+   "kind": "renamed",
+   "old": [
+    [
+     38,
+     38
+    ]
+   ],
+   "new": [
+    [
+     38,
+     38
+    ]
+   ],
+   "label": "borderline",
+   "note": "Line differs only by name, but the use changed from write(x) to writer.write(x), so the value is used as a different kind of thing."
+  },
+  {
+   "id": 36,
+   "project": "opencode",
+   "commit": "686c569e74",
+   "file": "packages/ui/src/components/menu-scroll.tsx",
+   "kind": "renamed",
+   "old": [
+    [
+     37,
+     37
+    ],
+    [
+     75,
+     75
+    ]
+   ],
+   "new": [
+    [
+     44,
+     44
+    ],
+    [
+     64,
+     64
+    ]
+   ],
+   "label": "correct",
+   "note": "Only the name changes on the listed lines; same variable with a new name."
+  },
+  {
+   "id": 37,
+   "project": "opencode",
+   "commit": "b8a9e8a73f",
+   "file": "packages/gui-plugins/src/review/model.ts",
+   "kind": "renamed",
+   "old": [
+    [
+     268,
+     268
+    ],
+    [
+     278,
+     278
+    ],
+    [
+     280,
+     280
+    ]
+   ],
+   "new": [
+    [
+     263,
+     263
+    ],
+    [
+     267,
+     267
+    ],
+    [
+     269,
+     269
+    ]
+   ],
+   "label": "correct",
+   "note": "Three consistent renames with only indentation otherwise."
+  },
+  {
+   "id": 38,
+   "project": "opencode",
+   "commit": "b903ae5cc9",
+   "file": "packages/app/src/settings/general/behavior.ts",
+   "kind": "renamed",
+   "old": [
+    [
+     47,
+     47
+    ],
+    [
+     53,
+     53
+    ],
+    [
+     64,
+     64
+    ]
+   ],
+   "new": [
+    [
+     53,
+     53
+    ],
+    [
+     63,
+     63
+    ],
+    [
+     79,
+     79
+    ]
+   ],
+   "label": "borderline",
+   "note": "Declaration is a pure rename, but the controller was rewritten: the paired clearTimeout / = undefined lines sit in different branches than their old counterparts (old reset inside the timer callback no longer exists)."
+  },
+  {
+   "id": 39,
+   "project": "opencode",
+   "commit": "883249d729",
+   "file": "packages/session-ui/src/components/tool-status-title.tsx",
+   "kind": "renamed",
+   "old": [
+    [
+     55,
+     55
+    ]
+   ],
+   "new": [
+    [
+     64,
+     64
+    ]
+   ],
+   "label": "correct",
+   "note": "Only the name changes on the listed lines; same variable with a new name."
+  },
+  {
+   "id": 40,
+   "project": "opencode",
+   "commit": "ae3de411ae",
+   "file": "packages/app/src/session/timeline/quote.tsx",
+   "kind": "renamed",
+   "old": [
+    [
+     53,
+     53
+    ],
+    [
+     124,
+     124
+    ]
+   ],
+   "new": [
+    [
+     63,
+     63
+    ],
+    [
+     130,
+     130
+    ]
+   ],
+   "label": "wrong",
+   "note": "Mispaired: old `frame` is the place frame (became placeFrame); reflowFrame is old `reflow`, and old line 124 (reset inside the place callback) is not new line 130 (reflow cancel)."
+  },
+  {
+   "id": 41,
+   "project": "overseer",
+   "commit": "043cc08e60",
+   "file": "src/adapters/gateway/gateway-application.ts",
+   "kind": "renamed",
+   "old": [
+    [
+     84,
+     84
+    ],
+    [
+     87,
+     87
+    ],
+    [
+     88,
+     88
+    ]
+   ],
+   "new": [
+    [
+     84,
+     84
+    ],
+    [
+     87,
+     87
+    ],
+    [
+     88,
+     88
+    ]
+   ],
+   "label": "correct",
+   "note": "Local renamed consistently with the same initializer."
+  },
+  {
+   "id": 42,
+   "project": "overseer",
+   "commit": "d12a347b45",
+   "file": "src/browser/shell/app-shell.tsx",
+   "kind": "renamed",
+   "old": [
+    [
+     392,
+     392
+    ],
+    [
+     393,
+     393
+    ],
+    [
+     417,
+     417
+    ]
+   ],
+   "new": [
+    [
+     542,
+     542
+    ],
+    [
+     544,
+     544
+    ],
+    [
+     606,
+     606
+    ]
+   ],
+   "label": "correct",
+   "note": "Only the name changes on the listed lines; same variable with a new name."
+  },
+  {
+   "id": 43,
+   "project": "prisma",
+   "commit": "aaa6e05d81",
+   "file": "packages/3-extensions/sql-orm-client/src/mutation-graph/insert-chunked.ts",
+   "kind": "renamed",
+   "old": [
+    [
+     43,
+     43
+    ]
+   ],
+   "new": [
+    [
+     47,
+     47
+    ]
+   ],
+   "label": "correct",
+   "note": "Only the name changes on the listed lines; same variable with a new name."
+  },
+  {
+   "id": 44,
+   "project": "prisma",
+   "commit": "6fd40d0fda",
+   "file": "packages/1-framework/3-tooling/cli/src/control-api/statements/resolve-statements.ts",
+   "kind": "renamed",
+   "old": [
+    [
+     1194,
+     1194
+    ]
+   ],
+   "new": [
+    [
+     1440,
+     1440
+    ]
+   ],
+   "label": "correct",
+   "note": "Only the name changes on the listed lines; same variable with a new name."
+  },
+  {
+   "id": 45,
+   "project": "prisma",
+   "commit": "10495aa81d",
+   "file": "packages/3-targets/postgres/1-target/src/core/psl-print/model-attributes.ts",
+   "kind": "renamed",
+   "old": [
+    [
+     46,
+     46
+    ],
+    [
+     54,
+     54
+    ]
+   ],
+   "new": [
+    [
+     49,
+     49
+    ],
+    [
+     59,
+     59
+    ]
+   ],
+   "label": "correct",
+   "note": "Two consistent renames (input field and local), nothing else changed on the lines."
+  },
+  {
+   "id": 46,
+   "project": "prisma",
+   "commit": "b8421eb21f",
+   "file": "packages/2-sql/2-authoring/contract-psl/src/psl-field-resolution.ts",
+   "kind": "renamed",
+   "old": [
+    [
+     556,
+     556
+    ]
+   ],
+   "new": [
+    [
+     479,
+     479
+    ]
+   ],
+   "label": "correct",
+   "note": "Declaration differs only by the variable name."
+  },
+  {
+   "id": 47,
+   "project": "prisma",
+   "commit": "07a7bc0699",
+   "file": "packages/1-framework/3-tooling/cli/src/orm/db/verify.ts",
+   "kind": "renamed",
+   "old": [
+    [
+     411,
+     411
+    ],
+    [
+     416,
+     416
+    ]
+   ],
+   "new": [
+    [
+     411,
+     411
+    ],
+    [
+     416,
+     416
+    ]
+   ],
+   "label": "correct",
+   "note": "Variable and the function invocation->commandLine are both pure renames; the function body is unchanged."
+  },
+  {
+   "id": 48,
+   "project": "prisma",
+   "commit": "07a7bc0699",
+   "file": "packages/3-targets/3-targets/postgres/src/core/migrations/operations/columns.ts",
+   "kind": "renamed",
+   "old": [
+    [
+     132,
+     132
+    ],
+    [
+     153,
+     153
+    ],
+    [
+     170,
+     170
+    ]
+   ],
+   "new": [
+    [
+     132,
+     132
+    ],
+    [
+     152,
+     152
+    ],
+    [
+     176,
+     176
+    ]
+   ],
+   "label": "correct",
+   "note": "Only the name changes on the listed lines; same variable with a new name."
+  },
+  {
+   "id": 49,
+   "project": "prisma",
+   "commit": "a8541ecb73",
+   "file": "packages/3-extensions/sql-orm-client/src/collection-column-mapping.ts",
+   "kind": "renamed",
+   "old": [
+    [
+     30,
+     30
+    ],
+    [
+     34,
+     34
+    ],
+    [
+     39,
+     39
+    ]
+   ],
+   "new": [
+    [
+     30,
+     30
+    ],
+    [
+     39,
+     39
+    ],
+    [
+     44,
+     44
+    ]
+   ],
+   "label": "correct",
+   "note": "Parameter renamed; listed lines change only the name."
+  },
+  {
+   "id": 50,
+   "project": "prisma",
+   "commit": "a8541ecb73",
+   "file": "packages/3-extensions/sql-orm-client/src/collection-tables.ts",
+   "kind": "renamed",
+   "old": [
+    [
+     89,
+     89
+    ]
+   ],
+   "new": [
+    [
+     89,
+     89
+    ]
+   ],
+   "label": "correct",
+   "note": "Parameter renamed consistently."
+  },
+  {
+   "id": 51,
+   "project": "prisma",
+   "commit": "156acc645b",
+   "file": "packages/3-extensions/sql-orm-client/src/query-plan-select.ts",
+   "kind": "renamed",
+   "old": [
+    [
+     161,
+     161
+    ],
+    [
+     168,
+     168
+    ]
+   ],
+   "new": [
+    [
+     161,
+     161
+    ],
+    [
+     167,
+     167
+    ]
+   ],
+   "label": "borderline",
+   "note": "Three separate renames; two are pure, but modelColumnsProjection is computed by a different function (getColumnsReadOnTable vs resolveTableColumns), so the passed argument is a different value."
+  },
+  {
+   "id": 52,
+   "project": "prisma",
+   "commit": "5d664d5426",
+   "file": "packages/2-sql/2-authoring/contract-psl/src/interpreter.ts",
+   "kind": "renamed",
+   "old": [
+    [
+     2742,
+     2742
+    ],
+    [
+     2747,
+     2747
+    ],
+    [
+     2750,
+     2750
+    ]
+   ],
+   "new": [
+    [
+     2740,
+     2740
+    ],
+    [
+     2745,
+     2745
+    ],
+    [
+     2748,
+     2748
+    ]
+   ],
+   "label": "correct",
+   "note": "Consistent local rename."
+  },
+  {
+   "id": 53,
+   "project": "prisma",
+   "commit": "7a47637acb",
+   "file": "apps/telemetry-backend/scripts/deploy.ts",
+   "kind": "renamed",
+   "old": [
+    [
+     65,
+     65
+    ],
+    [
+     66,
+     66
+    ]
+   ],
+   "new": [
+    [
+     65,
+     65
+    ],
+    [
+     66,
+     66
+    ]
+   ],
+   "label": "correct",
+   "note": "Only the name changes on the listed lines; same variable with a new name."
+  },
+  {
+   "id": 54,
+   "project": "prisma",
+   "commit": "6f5fc8d81f",
+   "file": "packages/2-sql/2-authoring/contract-psl/src/interpreter.ts",
+   "kind": "renamed",
+   "old": [
+    [
+     1904,
+     1904
+    ],
+    [
+     1993,
+     1993
+    ],
+    [
+     1995,
+     1995
+    ],
+    [
+     2576,
+     2576
+    ]
+   ],
+   "new": [
+    [
+     1913,
+     1913
+    ],
+    [
+     2006,
+     2006
+    ],
+    [
+     2009,
+     2009
+    ],
+    [
+     2608,
+     2608
+    ]
+   ],
+   "label": "borderline",
+   "note": "Lines differ only by name, but the set now holds namespace-qualified coordinate keys instead of model names, a real change of contents."
+  },
+  {
+   "id": 55,
+   "project": "prometheus",
+   "commit": "561358ddfc",
+   "file": "web/ui/module/lezer-promql/src/tokens.js",
+   "kind": "renamed",
+   "old": [
+    [
+     82,
+     82
+    ],
+    [
+     84,
+     84
+    ],
+    [
+     89,
+     89
+    ]
+   ],
+   "new": [
+    [
+     83,
+     83
+    ],
+    [
+     86,
+     86
+    ],
+    [
+     91,
+     91
+    ]
+   ],
+   "label": "correct",
+   "note": "Only the name changes on the listed lines; same variable with a new name."
+  },
+  {
+   "id": 56,
+   "project": "react-router",
+   "commit": "1d9634c142",
+   "file": "packages/react-router-dev/vite/rsc/plugin.ts",
+   "kind": "renamed",
+   "old": [
+    [
+     934,
+     934
+    ]
+   ],
+   "new": [
+    [
+     933,
+     933
+    ]
+   ],
+   "label": "borderline",
+   "note": "Line differs only by name, but transformToJs now returns an object (use changed to transformed.code) instead of a string."
+  },
+  {
+   "id": 57,
+   "project": "rich",
+   "commit": "65a04ccdb2",
+   "file": "rich/traceback.py",
+   "kind": "renamed",
+   "old": [
+    [
+     421,
+     421
+    ],
+    [
+     448,
+     448
+    ],
+    [
+     484,
+     484
+    ]
+   ],
+   "new": [
+    [
+     421,
+     421
+    ],
+    [
+     448,
+     448
+    ],
+    [
+     483,
+     483
+    ]
+   ],
+   "label": "correct",
+   "note": "Only the name changes on the listed lines; same variable with a new name."
+  },
+  {
+   "id": 58,
+   "project": "scrapy",
+   "commit": "c38f20cf3b",
+   "file": "scrapy/spiders/sitemap.py",
+   "kind": "renamed",
+   "old": [
+    [
+     241,
+     241
+    ]
+   ],
+   "new": [
+    [
+     313,
+     313
+    ]
+   ],
+   "label": "borderline",
+   "note": "The listed line differs only by name, but the list now holds 3-tuples (loc, callback, entry) instead of pairs."
+  },
+  {
+   "id": 59,
+   "project": "storybook",
+   "commit": "d9a3c37766",
+   "file": "code/builders/builder-webpack5/src/plugins/webpack-mock-plugin.ts",
+   "kind": "renamed",
+   "old": [
+    [
+     70,
+     70
+    ],
+    [
+     86,
+     86
+    ]
+   ],
+   "new": [
+    [
+     38,
+     38
+    ],
+    [
+     52,
+     52
+    ]
+   ],
+   "label": "correct",
+   "note": "Only the name changes on the listed lines; same variable with a new name."
+  },
+  {
+   "id": 60,
+   "project": "svelte",
+   "commit": "11985c020f",
+   "file": "packages/svelte/scripts/generate-browser-support.ts",
+   "kind": "renamed",
+   "old": [
+    [
+     674,
+     674
+    ],
+    [
+     691,
+     691
+    ]
+   ],
+   "new": [
+    [
+     681,
+     681
+    ],
+    [
+     690,
+     690
+    ]
+   ],
+   "label": "correct",
+   "note": "Only the name changes on the listed lines; same variable with a new name."
+  },
+  {
+   "id": 61,
+   "project": "typescript",
+   "commit": "a91e93821f",
+   "file": "tsc/internal/project/snapshotfs.go",
+   "kind": "renamed",
+   "old": [
+    [
+     536,
+     536
+    ],
+    [
+     538,
+     538
+    ],
+    [
+     594,
+     594
+    ],
+    [
+     599,
+     599
+    ],
+    [
+     603,
+     603
+    ]
+   ],
+   "new": [
+    [
+     554,
+     554
+    ],
+    [
+     556,
+     556
+    ],
+    [
+     620,
+     620
+    ],
+    [
+     625,
+     625
+    ],
+    [
+     629,
+     629
+    ]
+   ],
+   "label": "correct",
+   "note": "Two locals renamed consistently; listed lines change only names."
+  },
+  {
+   "id": 62,
+   "project": "uv",
+   "commit": "79422c835f",
+   "file": "crates/uv-distribution-types/src/variants_json.rs",
+   "kind": "renamed",
+   "old": [
+    [
+     120,
+     120
+    ]
+   ],
+   "new": [
+    [
+     99,
+     99
+    ]
+   ],
+   "label": "correct",
+   "note": "Parameter renamed; line changes only the name."
+  },
+  {
+   "id": 63,
+   "project": "uv",
+   "commit": "2b50cbc05b",
+   "file": "crates/uv-lock/src/lock/export/mod.rs",
+   "kind": "renamed",
+   "old": [
+    [
+     63,
+     63
+    ],
+    [
+     104,
+     104
+    ],
+    [
+     152,
+     152
+    ],
+    [
+     232,
+     232
+    ],
+    [
+     260,
+     260
+    ],
+    [
+     284,
+     284
+    ]
+   ],
+   "new": [
+    [
+     73,
+     73
+    ],
+    [
+     112,
+     112
+    ],
+    [
+     149,
+     149
+    ],
+    [
+     229,
+     229
+    ],
+    [
+     257,
+     257
+    ],
+    [
+     280,
+     280
+    ]
+   ],
+   "label": "correct",
+   "note": "Only the name changes on the listed lines; same variable with a new name."
+  },
+  {
+   "id": 64,
+   "project": "vite",
+   "commit": "a16299092c",
+   "file": "packages/vite/src/node/server/middlewares/indexHtml.ts",
+   "kind": "renamed",
+   "old": [
+    [
+     259,
+     259
+    ],
+    [
+     394,
+     394
+    ]
+   ],
+   "new": [
+    [
+     253,
+     253
+    ],
+    [
+     389,
+     389
+    ]
+   ],
+   "label": "correct",
+   "note": "Local array renamed consistently."
+  },
+  {
+   "id": 65,
+   "project": "vite",
+   "commit": "e38f29ee48",
+   "file": "packages/vite/src/node/plugins/assetImportMetaUrl.ts",
+   "kind": "renamed",
+   "old": [
+    [
+     142,
+     142
+    ],
+    [
+     159,
+     159
+    ]
+   ],
+   "new": [
+    [
+     142,
+     142
+    ],
+    [
+     159,
+     159
+    ]
+   ],
+   "label": "borderline",
+   "note": "Lines differ only by name, but the variable now holds a JS expression (fileToUrl called with 'js') rather than a URL string."
+  },
+  {
+   "id": 66,
+   "project": "vite",
+   "commit": "67a6807673",
+   "file": "packages/vite/src/node/plugins/importAnalysis.ts",
+   "kind": "renamed",
+   "old": [
+    [
+     685,
+     685
+    ],
+    [
+     688,
+     688
+    ],
+    [
+     708,
+     708
+    ]
+   ],
+   "new": [
+    [
+     684,
+     684
+    ],
+    [
+     688,
+     688
+    ],
+    [
+     708,
+     708
+    ]
+   ],
+   "label": "correct",
+   "note": "Only the name changes on the listed lines; same variable with a new name."
+  },
+  {
+   "id": 67,
+   "project": "vite",
+   "commit": "41df81a6a4",
+   "file": "packages/vite/src/node/optimizer/scan.ts",
+   "kind": "renamed",
+   "old": [
+    [
+     217,
+     217
+    ],
+    [
+     222,
+     222
+    ],
+    [
+     243,
+     243
+    ],
+    [
+     244,
+     244
+    ],
+    [
+     245,
+     245
+    ],
+    [
+     246,
+     246
+    ],
+    [
+     247,
+     247
+    ],
+    [
+     248,
+     248
+    ]
+   ],
+   "new": [
+    [
+     217,
+     217
+    ],
+    [
+     222,
+     222
+    ],
+    [
+     237,
+     237
+    ],
+    [
+     238,
+     238
+    ],
+    [
+     239,
+     239
+    ],
+    [
+     240,
+     240
+    ],
+    [
+     241,
+     241
+    ],
+    [
+     242,
+     242
+    ]
+   ],
+   "label": "correct",
+   "note": "Only the name changes on the listed lines; same variable with a new name."
+  },
+  {
+   "id": 68,
+   "project": "vitest",
+   "commit": "1d115dcc32",
+   "file": "packages/browser/src/client/tester/expect-element.ts",
+   "kind": "renamed",
+   "old": [
+    [
+     80,
+     80
+    ]
+   ],
+   "new": [
+    [
+     81,
+     81
+    ]
+   ],
+   "label": "correct",
+   "note": "Only the name changes on the listed lines; same variable with a new name."
+  },
+  {
+   "id": 69,
+   "project": "watchdog",
+   "commit": "a95a1183f4",
+   "file": "packages/caps/src/identity/pgp.lookup/interpret.ts",
+   "kind": "renamed",
+   "old": [
+    [
+     20,
+     20
+    ]
+   ],
+   "new": [
+    [
+     78,
+     78
+    ]
+   ],
+   "label": "correct",
+   "note": "Only the name changes on the listed lines; same variable with a new name."
+  },
+  {
+   "id": 70,
+   "project": "watchdog",
+   "commit": "7fd813d460",
+   "file": "packages/tools/src/dns/resolve.ts",
+   "kind": "renamed",
+   "old": [
+    [
+     39,
+     39
+    ],
+    [
+     71,
+     71
+    ]
+   ],
+   "new": [
+    [
+     39,
+     39
+    ],
+    [
+     52,
+     52
+    ]
+   ],
+   "label": "correct",
+   "note": "Local renamed; listed lines change only the name."
+  }
+ ]
+}

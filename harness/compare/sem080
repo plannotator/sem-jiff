@@ -1,0 +1,18 @@
+#!/bin/bash
+# `sem` v0.8.0 (linux-arm64) in Docker with no network, run in the current directory like the
+# native binary: `SEM=harness/compare/sem080 python3 harness/compare/synthetic_run.py ...`.
+# SEM080_DIR is the folder sem080-setup.sh extracted to; the binary is checked before every run.
+set -euo pipefail
+BINARY_SHA=e38d5e6406bebad212ffbe739054f2d15a90aaf64c9d4db6893c9c4ba743d7a5
+IMAGE=${SEM080_IMAGE:-oven/bun:1.4.4@sha256:1d22548f177f4ff38e0c15baa3c2c46c6c2060ba2d1bc573bb4720b407548f1d}
+DIR=${SEM080_DIR:?set SEM080_DIR (see sem080-setup.sh)}
+[ "$(shasum -a 256 "$DIR/sem" | cut -d' ' -f1)" = "$BINARY_SHA" ] || { echo "sem binary checksum mismatch" >&2; exit 3; }
+# `sem080 --batch <in-dir> <out-dir>`: one container runs `sem diff --stdin --json` on every <in-dir>/*.json
+# (a FileChange[] each) into <out-dir>/<same name>, so files never see each other. Both folders must be
+# under a path Docker shares (the home folder here; /tmp is not).
+if [ "${1:-}" = --batch ]; then
+  IN=$(cd "$2" && pwd -P); OUT=$(cd "$3" && pwd -P)
+  exec docker run --rm --network none --read-only --tmpfs /tmp -v "$DIR":/sem:ro -v "$IN":/in:ro -v "$OUT":/out --entrypoint /bin/sh "$IMAGE" \
+    -c 'for f in /in/*.json; do /sem/sem diff --stdin --json < "$f" > "/out/${f##*/}" 2>/dev/null || echo "{\"error\":true}" > "/out/${f##*/}"; done'
+fi
+exec docker run --rm -i --network none --read-only --tmpfs /tmp -v "$DIR":/sem:ro -v "$PWD":/w -w /w --entrypoint /sem/sem "$IMAGE" "$@"

@@ -1,0 +1,156 @@
+{
+  "polly-mr": {
+    "156a9bbee1": [
+      "src/Polly.Core/Retry/RetryHelper.cs"
+    ],
+    "19c0488315": [
+      "src/Polly.Core/ResilienceStrategyBuilderBase.cs"
+    ],
+    "3d720f5c4c": [
+      "src/Polly/AsyncPolicy.TResult.ExecuteOverloads.cs"
+    ],
+    "41322d96d3": [
+      "src/Polly/PolicyBase.cs"
+    ],
+    "47b2d2444c": [
+      "src/Polly/Timeout/AsyncTimeoutPolicy.cs",
+      "src/Polly/Wrap/PolicyWrap.cs"
+    ],
+    "54cff7ba26": [
+      "src/Polly.Core/Timeout/TimeoutRejectedException.cs"
+    ],
+    "70d1bd921e": [
+      "src/Polly.Core/Retry/RetryBackoffType.cs"
+    ],
+    "7d6f669ba9": [
+      "src/Polly.RateLimiting/RateLimiterStrategyOptions.cs"
+    ],
+    "940c6282db": [
+      "src/Polly/Timeout/AsyncTimeoutEngine.cs"
+    ],
+    "9fd37be6d2": [
+      "src/Polly.Extensions/Telemetry/Log.cs"
+    ],
+    "b1ec86347a": [
+      "src/Polly.Core/ReactiveResilienceStrategy.cs"
+    ],
+    "b703130adf": [
+      "src/Polly/Wrap/IPolicyWrapExtension.cs"
+    ],
+    "b9ce232036": [
+      "src/Polly.Core/Utils/ResilienceStrategyPipeline.cs"
+    ],
+    "daf152937a": [
+      "src/Polly/PolicyBase.ContextAndKeys.cs",
+      "src/Polly/Wrap/PolicyWrapSyntax.cs"
+    ],
+    "ed3d603c7b": [
+      "bench/Polly.Core.Benchmarks/Utils/Helper.MultipleStrategies.cs",
+      "src/Polly.Core/Utils/Pipeline/BridgeComponentBase.cs"
+    ],
+    "f25f2c5487": [
+      "test/Polly.Specs/Helpers/PolicyTResultExtensions.cs"
+    ],
+    "fae7486bdc": [
+      "src/Polly/Caching/RelativeTtl.cs"
+    ]
+  },
+  "newtonsoft-json-mr": {
+    "1a6f7cdada": [
+      "Src/Newtonsoft.Json/Utilities/DynamicUtils.cs"
+    ],
+    "1abcfb1ace": [
+      "Src/Newtonsoft.Json/Serialization/JsonPropertyCollection.cs"
+    ],
+    "28405e7309": [
+      "Src/Newtonsoft.Json/JsonObjectAttribute.cs"
+    ],
+    "5b392b54b8": [
+      "Src/Newtonsoft.Json/Utilities/ReflectionUtils.cs"
+    ],
+    "75ca4c8412": [
+      "Src/Newtonsoft.Json/Linq/JsonPath/QueryExpression.cs"
+    ],
+    "793c9a0a3d": [
+      "Src/Newtonsoft.Json/Serialization/JsonArrayContract.cs"
+    ],
+    "9932155295": [
+      "Src/Newtonsoft.Json/Utilities/EnumValue.cs"
+    ],
+    "ad246c775a": [
+      "Src/Newtonsoft.Json/Serialization/JsonSerializerInternalReader.cs"
+    ],
+    "de82488549": [
+      "Src/Newtonsoft.Json/Utilities/JavaScriptUtils.cs"
+    ],
+    "fb2a5998bc": [
+      "Src/Newtonsoft.Json/JsonReader.cs"
+    ]
+  },
+  "serilog-mr": {
+    "09afb7839d": [
+      "src/Serilog/Context/LogContext.cs"
+    ],
+    "3cbf04dda0": [
+      "src/Serilog/Events/MessageTemplate.cs"
+    ],
+    "6700587406": [
+      "src/Serilog/Parsing/MessageTemplateParser.cs"
+    ],
+    "90c2867c34": [
+      "src/Serilog/Formatting/Json/JsonFormatter.cs"
+    ],
+    "b412c6c78e": [
+      "src/Serilog/Settings/KeyValuePairs/CallableConfigurationMethodFinder.cs"
+    ],
+    "dde160df0c": [
+      "src/Serilog/Settings/KeyValuePairs/SettingValueConversions.cs"
+    ],
+    "fb964f8b84": [
+      "src/Serilog/Context/LogContext.cs"
+    ]
+  },
+  "humanizer-mr": {
+    "13d23549de": [
+      "src/Humanizer/Inflections/Vocabulary.cs"
+    ],
+    "1f97be8b61": [
+      "src/Humanizer/Truncation/Truncator.cs"
+    ],
+    "3d43f8e1c3": [
+      "src/Humanizer/Localisation/NumberToWords/SlovenianNumberToWordsConverter.cs"
+    ],
+    "4d7b9cb6b1": [
+      "src/Humanizer/Localisation/NumberToWords/Italian/ItalianOrdinalNumberCruncher.cs"
+    ],
+    "8f38a4ef98": [
+      "src/Humanizer/MetricNumeralExtensions.cs"
+    ],
+    "9357fe0484": [
+      "src/Humanizer/Localisation/Formatters/LithuanianFormatter.cs"
+    ],
+    "a3b09e3453": [
+      "src/Humanizer/Localisation/EnglishNumberToWordsConverter.cs"
+    ],
+    "c14fdeab9a": [
+      "src/Humanizer/RomanNumeralExtensions.cs"
+    ],
+    "ec69364728": [
+      "src/Humanizer/TimeSpanDehumanizeExtensions.cs"
+    ]
+  },
+  "fluentvalidation-mr": {
+    "23d7682bb4": [
+      "src/FluentValidation/IValidationRule.cs"
+    ],
+    "7865b14da9": [
+      "src/FluentValidation.AspNetCore/FluentValidationMvcExtensions.cs"
+    ],
+    "b7550140e0": [
+      "src/FluentValidation/Validators/NotEmptyValidator.cs"
+    ],
+    "dfa64c010a": [
+      "src/FluentValidation/Internal/PropertyRule.cs"
+    ]
+  }
+}

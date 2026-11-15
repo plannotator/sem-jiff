@@ -1,0 +1,1759 @@
+{
+  "how": "C# moves, renames, reformatting and reorders on real same-file commits (practice: Polly, Newtonsoft.Json; held out: whole projects, totals only), labelled by reading each diff before any C# engine run, 2026-11-14, following harness/audit/AUDIT.md. A move that changes meaning (into or out of an #if branch, out of a containing class, an enum member reordered, a modifier changed) is a wrong plain-move claim; a rename that also changes another token is wrong for renamed.",
+  "labels": [
+    {
+      "id": 1,
+      "project": "polly-mr",
+      "commit": "f25f2c5487",
+      "file": "test/Polly.Specs/Helpers/PolicyTResultExtensions.cs",
+      "kind": "reformatted",
+      "old": [
+        [
+          27,
+          28
+        ]
+      ],
+      "new": [
+        [
+          27,
+          27
+        ]
+      ],
+      "label": "correct",
+      "name": "RaiseResultAndOrExceptionSequence",
+      "note": "Two-line parameter list joined onto one line; same tokens."
+    },
+    {
+      "id": 2,
+      "project": "polly-mr",
+      "commit": "f25f2c5487",
+      "file": "test/Polly.Specs/Helpers/PolicyTResultExtensions.cs",
+      "kind": "reformatted",
+      "old": [
+        [
+          61,
+          65
+        ]
+      ],
+      "new": [
+        [
+          60,
+          70
+        ]
+      ],
+      "label": "correct",
+      "name": "RaiseResultSequenceAndOrCancellation",
+      "note": "Parameters and call arguments split one per line; same tokens."
+    },
+    {
+      "id": 3,
+      "project": "polly-mr",
+      "commit": "f25f2c5487",
+      "file": "test/Polly.Specs/Helpers/PolicyTResultExtensions.cs",
+      "kind": "reformatted",
+      "old": [
+        [
+          67,
+          67
+        ]
+      ],
+      "new": [
+        [
+          72,
+          77
+        ]
+      ],
+      "label": "correct",
+      "name": "RaiseResultSequenceAndOrCancellation",
+      "note": "One-line signature split one parameter per line; same tokens."
+    },
+    {
+      "id": 4,
+      "project": "polly-mr",
+      "commit": "ed3d603c7b",
+      "file": "bench/Polly.Core.Benchmarks/Utils/Helper.MultipleStrategies.cs",
+      "kind": "reformatted",
+      "old": [
+        [
+          22,
+          22
+        ]
+      ],
+      "new": [
+        [
+          22,
+          22
+        ]
+      ],
+      "label": "correct",
+      "name": "CreateStrategyPipeline",
+      "note": "Trailing comma added in an object initializer; nothing else."
+    },
+    {
+      "id": 5,
+      "project": "polly-mr",
+      "commit": "ed3d603c7b",
+      "file": "bench/Polly.Core.Benchmarks/Utils/Helper.MultipleStrategies.cs",
+      "kind": "reformatted",
+      "old": [
+        [
+          92,
+          93
+        ]
+      ],
+      "new": [
+        [
+          92,
+          93
+        ]
+      ],
+      "label": "correct",
+      "name": "CreateNonGenericStrategyPipeline",
+      "note": "Trailing commas added after a switch-expression arm and an initializer member."
+    },
+    {
+      "id": 6,
+      "project": "polly-mr",
+      "commit": "ed3d603c7b",
+      "file": "src/Polly.Core/Utils/Pipeline/BridgeComponentBase.cs",
+      "kind": "reformatted",
+      "old": [
+        [
+          3,
+          7
+        ]
+      ],
+      "new": [
+        [
+          3,
+          5
+        ]
+      ],
+      "label": "wrong",
+      "expect": "edited",
+      "name": "BridgeComponentBase",
+      "note": "Explicit constructor replaced by a primary constructor: different tokens and declarations, not layout."
+    },
+    {
+      "id": 7,
+      "project": "polly-mr",
+      "commit": "41322d96d3",
+      "file": "src/Polly/PolicyBase.cs",
+      "kind": "moved",
+      "old": [
+        [
+          18,
+          21
+        ]
+      ],
+      "new": [
+        [
+          8,
+          11
+        ]
+      ],
+      "label": "correct",
+      "name": "DefaultContinueOnCapturedContext",
+      "note": "Const field with its doc comment moved to the top of the class (SA1203), unchanged."
+    },
+    {
+      "id": 8,
+      "project": "polly-mr",
+      "commit": "b9ce232036",
+      "file": "src/Polly.Core/Utils/ResilienceStrategyPipeline.cs",
+      "kind": "renamed",
+      "old": [
+        [
+          60,
+          60
+        ],
+        [
+          69,
+          69
+        ],
+        [
+          83,
+          83
+        ],
+        [
+          88,
+          88
+        ],
+        [
+          96,
+          96
+        ]
+      ],
+      "new": [
+        [
+          60,
+          60
+        ],
+        [
+          69,
+          69
+        ],
+        [
+          83,
+          83
+        ],
+        [
+          88,
+          88
+        ],
+        [
+          96,
+          96
+        ]
+      ],
+      "label": "correct",
+      "name": "ExecuteCoreAsync -> ExecuteCore",
+      "note": "Override and its calls renamed consistently in both classes; nothing else changed on these lines."
+    },
+    {
+      "id": 9,
+      "project": "polly-mr",
+      "commit": "19c0488315",
+      "file": "src/Polly.Core/ResilienceStrategyBuilderBase.cs",
+      "kind": "renamed",
+      "old": [
+        [
+          27,
+          27
+        ],
+        [
+          44,
+          44
+        ],
+        [
+          51,
+          51
+        ],
+        [
+          164,
+          164
+        ]
+      ],
+      "new": [
+        [
+          27,
+          27
+        ],
+        [
+          44,
+          44
+        ],
+        [
+          51,
+          51
+        ],
+        [
+          164,
+          164
+        ]
+      ],
+      "label": "correct",
+      "name": "BuilderName -> Name",
+      "note": "Property, its uses and the cref renamed; the named argument builderName: is unchanged."
+    },
+    {
+      "id": 10,
+      "project": "polly-mr",
+      "commit": "47b2d2444c",
+      "file": "src/Polly/Wrap/PolicyWrap.cs",
+      "kind": "reformatted",
+      "old": [
+        [
+          36,
+          37
+        ]
+      ],
+      "new": [
+        [
+          36,
+          36
+        ]
+      ],
+      "label": "correct",
+      "name": "Implementation",
+      "note": "Closing parenthesis pulled up onto the last argument line (SA1111); same tokens."
+    },
+    {
+      "id": 11,
+      "project": "polly-mr",
+      "commit": "47b2d2444c",
+      "file": "src/Polly/Wrap/PolicyWrap.cs",
+      "kind": "reformatted",
+      "old": [
+        [
+          116,
+          118
+        ]
+      ],
+      "new": [
+        [
+          113,
+          113
+        ]
+      ],
+      "label": "correct",
+      "name": "Implementation",
+      "note": "Closing parenthesis pulled up and a blank line before the brace removed; same tokens."
+    },
+    {
+      "id": 12,
+      "project": "polly-mr",
+      "commit": "47b2d2444c",
+      "file": "src/Polly/Timeout/AsyncTimeoutPolicy.cs",
+      "kind": "reformatted",
+      "old": [
+        [
+          15,
+          16
+        ]
+      ],
+      "new": [
+        [
+          15,
+          15
+        ]
+      ],
+      "label": "correct",
+      "name": "AsyncTimeoutPolicy",
+      "note": "Constructor's closing parenthesis joined to the last parameter; same tokens."
+    },
+    {
+      "id": 13,
+      "project": "polly-mr",
+      "commit": "fae7486bdc",
+      "file": "src/Polly/Caching/RelativeTtl.cs",
+      "kind": "renamed",
+      "old": [
+        [
+          9,
+          9
+        ],
+        [
+          31,
+          31
+        ]
+      ],
+      "new": [
+        [
+          9,
+          9
+        ],
+        [
+          31,
+          31
+        ]
+      ],
+      "label": "correct",
+      "name": "ttl -> _ttl",
+      "note": "Private field renamed at its declaration and its read in GetTtl; the constructor parameter ttl keeps its name."
+    },
+    {
+      "id": 14,
+      "project": "polly-mr",
+      "commit": "fae7486bdc",
+      "file": "src/Polly/Caching/RelativeTtl.cs",
+      "kind": "renamed",
+      "old": [
+        [
+          22,
+          22
+        ]
+      ],
+      "new": [
+        [
+          22,
+          22
+        ]
+      ],
+      "label": "borderline",
+      "name": "ttl -> _ttl",
+      "note": "this.ttl = ttl became _ttl = ttl: the field is renamed and the this. qualifier dropped; same meaning, but more than one name changed on the line."
+    },
+    {
+      "id": 15,
+      "project": "polly-mr",
+      "commit": "9fd37be6d2",
+      "file": "src/Polly.Extensions/Telemetry/Log.cs",
+      "kind": "renamed",
+      "old": [
+        [
+          23,
+          24
+        ]
+      ],
+      "new": [
+        [
+          23,
+          24
+        ]
+      ],
+      "label": "correct",
+      "name": "builderName -> pipelineName",
+      "note": "Parameters builderName/builderInstance of a partial logging method renamed; only the names change."
+    },
+    {
+      "id": 16,
+      "project": "polly-mr",
+      "commit": "9fd37be6d2",
+      "file": "src/Polly.Extensions/Telemetry/Log.cs",
+      "kind": "renamed",
+      "old": [
+        [
+          15,
+          15
+        ]
+      ],
+      "new": [
+        [
+          15,
+          15
+        ]
+      ],
+      "label": "wrong",
+      "expect": "edited",
+      "name": "ResilienceEvent",
+      "note": "The log message template text changed ({BuilderName} to {PipelineName}): a string edit that changes the structured log's property names, not an identifier rename."
+    },
+    {
+      "id": 17,
+      "project": "polly-mr",
+      "commit": "156a9bbee1",
+      "file": "src/Polly.Core/Retry/RetryHelper.cs",
+      "kind": "moved",
+      "old": [
+        [
+          48,
+          78
+        ]
+      ],
+      "new": [
+        [
+          113,
+          143
+        ]
+      ],
+      "label": "correct",
+      "name": "GetRetryDelayCore",
+      "note": "Whole method (with its #if branches inside) moved to the end of the class, unchanged."
+    },
+    {
+      "id": 18,
+      "project": "polly-mr",
+      "commit": "156a9bbee1",
+      "file": "src/Polly.Core/Retry/RetryHelper.cs",
+      "kind": "movedWithEdit",
+      "old": [
+        [
+          134,
+          143
+        ]
+      ],
+      "new": [
+        [
+          48,
+          57
+        ]
+      ],
+      "label": "correct",
+      "name": "ApplyJitter",
+      "note": "Moved up with its pragma pair; private became internal and the closing pragma restore became disable."
+    },
+    {
+      "id": 19,
+      "project": "polly-mr",
+      "commit": "156a9bbee1",
+      "file": "src/Polly.Core/Retry/RetryHelper.cs",
+      "kind": "moved",
+      "old": [
+        [
+          135,
+          142
+        ]
+      ],
+      "new": [
+        [
+          49,
+          56
+        ]
+      ],
+      "label": "wrong",
+      "expect": "movedWithEdit",
+      "name": "ApplyJitter",
+      "note": "The method's modifier changed from private to internal on the way; a plain move would hide the visibility change."
+    },
+    {
+      "id": 20,
+      "project": "polly-mr",
+      "commit": "daf152937a",
+      "file": "src/Polly/Wrap/PolicyWrapSyntax.cs",
+      "kind": "moved",
+      "old": [
+        [
+          116,
+          168
+        ]
+      ],
+      "new": [
+        [
+          3,
+          55
+        ]
+      ],
+      "label": "borderline",
+      "name": "ISyncPolicyPolicyWrapExtensions",
+      "note": "Whole static class moved above Policy; identical except one cast lost a space ((Policy) outerPolicy to (Policy)outerPolicy), a whitespace-only change inside a line."
+    },
+    {
+      "id": 21,
+      "project": "polly-mr",
+      "commit": "daf152937a",
+      "file": "src/Polly/PolicyBase.ContextAndKeys.cs",
+      "kind": "movedWithEdit",
+      "old": [
+        [
+          31,
+          41
+        ]
+      ],
+      "new": [
+        [
+          17,
+          27
+        ]
+      ],
+      "label": "correct",
+      "name": "RestorePolicyContext",
+      "note": "Method with its docs moved up and made static on the way."
+    },
+    {
+      "id": 22,
+      "project": "polly-mr",
+      "commit": "daf152937a",
+      "file": "src/Polly/PolicyBase.ContextAndKeys.cs",
+      "kind": "moved",
+      "old": [
+        [
+          31,
+          41
+        ]
+      ],
+      "new": [
+        [
+          17,
+          27
+        ]
+      ],
+      "label": "wrong",
+      "expect": "movedWithEdit",
+      "name": "RestorePolicyContext",
+      "note": "internal void became internal static void: an instance method turned static is a real change, not a plain move."
+    },
+    {
+      "id": 23,
+      "project": "polly-mr",
+      "commit": "70d1bd921e",
+      "file": "src/Polly.Core/Retry/RetryBackoffType.cs",
+      "kind": "moved",
+      "old": [
+        [
+          8,
+          19
+        ]
+      ],
+      "new": [
+        [
+          42,
+          53
+        ]
+      ],
+      "label": "wrong",
+      "expect": "edited",
+      "name": "ExponentialWithJitter",
+      "note": "Enum member without explicit values moved from first to last: every member's numeric value and the enum's default (0) change; the commit's purpose was exactly that."
+    },
+    {
+      "id": 24,
+      "project": "newtonsoft-json-mr",
+      "commit": "75ca4c8412",
+      "file": "Src/Newtonsoft.Json/Linq/JsonPath/QueryExpression.cs",
+      "kind": "renamed",
+      "old": [
+        [
+          137,
+          137
+        ],
+        [
+          197,
+          197
+        ]
+      ],
+      "new": [
+        [
+          137,
+          137
+        ],
+        [
+          197,
+          197
+        ]
+      ],
+      "label": "correct",
+      "name": "RegExEquals -> RegexEquals",
+      "note": "Private method and its one call renamed; the enum member QueryOperator.RegExEquals on line 136 keeps its name."
+    },
+    {
+      "id": 25,
+      "project": "newtonsoft-json-mr",
+      "commit": "28405e7309",
+      "file": "Src/Newtonsoft.Json/JsonObjectAttribute.cs",
+      "kind": "renamed",
+      "old": [
+        [
+          41,
+          41
+        ],
+        [
+          59,
+          60
+        ]
+      ],
+      "new": [
+        [
+          41,
+          41
+        ],
+        [
+          59,
+          60
+        ]
+      ],
+      "label": "correct",
+      "name": "_nullValueHandling -> _itemNullValueHandling",
+      "note": "Backing field renamed at its declaration and in both accessors; the NullValueHandling type is unchanged."
+    },
+    {
+      "id": 26,
+      "project": "newtonsoft-json-mr",
+      "commit": "28405e7309",
+      "file": "Src/Newtonsoft.Json/JsonObjectAttribute.cs",
+      "kind": "renamed",
+      "old": [
+        [
+          57,
+          57
+        ]
+      ],
+      "new": [
+        [
+          57,
+          57
+        ]
+      ],
+      "label": "correct",
+      "name": "NullValueHandling -> ItemNullValueHandling",
+      "note": "Public property renamed; its type, also called NullValueHandling, is not."
+    },
+    {
+      "id": 27,
+      "project": "newtonsoft-json-mr",
+      "commit": "9932155295",
+      "file": "Src/Newtonsoft.Json/Utilities/EnumValue.cs",
+      "kind": "reformatted",
+      "old": [
+        [
+          33,
+          41
+        ]
+      ],
+      "new": [
+        [
+          33,
+          35
+        ]
+      ],
+      "label": "wrong",
+      "expect": "edited",
+      "name": "Name",
+      "note": "Getter blocks { get { return x; } } turned into expression bodies => x: different tokens, so an edit (same behaviour), not layout."
+    },
+    {
+      "id": 28,
+      "project": "newtonsoft-json-mr",
+      "commit": "793c9a0a3d",
+      "file": "Src/Newtonsoft.Json/Serialization/JsonArrayContract.cs",
+      "kind": "renamed",
+      "old": [
+        [
+          134,
+          216
+        ]
+      ],
+      "new": [
+        [
+          133,
+          215
+        ]
+      ],
+      "label": "wrong",
+      "expect": "edited",
+      "name": "JsonArrayContract",
+      "note": "Local t (deleted on line 118) replaced everywhere by the base property NonNullableUnderlyingType, which is computed differently (no EnsureNotByRefType): a substitution of a different value, not a rename."
+    },
+    {
+      "id": 29,
+      "project": "polly-mr",
+      "commit": "54cff7ba26",
+      "file": "src/Polly.Core/Timeout/TimeoutRejectedException.cs",
+      "kind": "moved",
+      "old": [
+        [
+          76,
+          79
+        ]
+      ],
+      "new": [
+        [
+          66,
+          69
+        ]
+      ],
+      "label": "correct",
+      "name": "Timeout",
+      "note": "Property with its docs moved above the #if !NETCOREAPP block; it is outside every #if branch before and after, unchanged."
+    },
+    {
+      "id": 30,
+      "project": "polly-mr",
+      "commit": "7d6f669ba9",
+      "file": "src/Polly.RateLimiting/RateLimiterStrategyOptions.cs",
+      "kind": "moved",
+      "old": [
+        [
+          41,
+          48
+        ]
+      ],
+      "new": [
+        [
+          16,
+          23
+        ]
+      ],
+      "label": "correct",
+      "name": "RateLimiter",
+      "note": "Property with its doc comment moved from the end of the class to just after the constructor, unchanged."
+    },
+    {
+      "id": 31,
+      "project": "polly-mr",
+      "commit": "b1ec86347a",
+      "file": "src/Polly.Core/ReactiveResilienceStrategy.cs",
+      "kind": "movedWithEdit",
+      "old": [
+        [
+          40,
+          43
+        ]
+      ],
+      "new": [
+        [
+          13,
+          39
+        ]
+      ],
+      "label": "correct",
+      "name": "ExecuteCore",
+      "note": "Abstract ExecuteCore<TState> moved above its ExecuteCore<TResult, TState> overload and gained a 23-line doc comment; the declaration itself is unchanged."
+    },
+    {
+      "id": 32,
+      "project": "polly-mr",
+      "commit": "b1ec86347a",
+      "file": "src/Polly.Core/ReactiveResilienceStrategy.cs",
+      "kind": "moved",
+      "old": [
+        [
+          40,
+          43
+        ]
+      ],
+      "new": [
+        [
+          36,
+          39
+        ]
+      ],
+      "label": "borderline",
+      "name": "ExecuteCore",
+      "note": "The four declaration lines are identical after the move, but a doc comment was added above them; correct for the code lines, incomplete for the declaration with its docs. Must pair with ExecuteCore<TState>, not the other ExecuteCore overload."
+    },
+    {
+      "id": 33,
+      "project": "newtonsoft-json-mr",
+      "commit": "de82488549",
+      "file": "Src/Newtonsoft.Json/Utilities/JavaScriptUtils.cs",
+      "kind": "moved",
+      "old": [
+        [
+          143,
+          173
+        ]
+      ],
+      "new": [
+        [
+          320,
+          350
+        ]
+      ],
+      "label": "wrong",
+      "expect": "edited",
+      "name": "FirstCharToEscape",
+      "note": "Method moved from unconditional code into the #if !(NET20 || NET35 || NET40 || PORTABLE40) block: it no longer exists on those targets (decided context rule)."
+    },
+    {
+      "id": 34,
+      "project": "newtonsoft-json-mr",
+      "commit": "1a6f7cdada",
+      "file": "Src/Newtonsoft.Json/Utilities/DynamicUtils.cs",
+      "kind": "reformatted",
+      "old": [
+        [
+          119,
+          120
+        ]
+      ],
+      "new": [
+        [
+          119,
+          120
+        ]
+      ],
+      "label": "correct",
+      "name": "GetMember",
+      "note": "Statement in the #else branch re-indented to match its method; same tokens."
+    },
+    {
+      "id": 35,
+      "project": "newtonsoft-json-mr",
+      "commit": "1a6f7cdada",
+      "file": "Src/Newtonsoft.Json/Utilities/DynamicUtils.cs",
+      "kind": "reformatted",
+      "old": [
+        [
+          130,
+          135
+        ]
+      ],
+      "new": [
+        [
+          130,
+          135
+        ]
+      ],
+      "label": "correct",
+      "name": "SetMember",
+      "note": "Multi-line call and array initializer re-indented; same tokens."
+    },
+    {
+      "id": 36,
+      "project": "newtonsoft-json-mr",
+      "commit": "5b392b54b8",
+      "file": "Src/Newtonsoft.Json/Utilities/ReflectionUtils.cs",
+      "kind": "reformatted",
+      "old": [
+        [
+          886,
+          899
+        ]
+      ],
+      "new": [
+        [
+          886,
+          899
+        ]
+      ],
+      "label": "correct",
+      "name": "GetProperties",
+      "note": "Tab indentation replaced by spaces; same tokens."
+    },
+    {
+      "id": 37,
+      "project": "newtonsoft-json-mr",
+      "commit": "ad246c775a",
+      "file": "Src/Newtonsoft.Json/Serialization/JsonSerializerInternalReader.cs",
+      "kind": "moved",
+      "old": [
+        [
+          306,
+          310
+        ]
+      ],
+      "new": [
+        [
+          312,
+          316
+        ]
+      ],
+      "label": "borderline",
+      "name": "CreateValueInternal",
+      "note": "The empty-string-to-null check now runs after the byte[] check: the block is unchanged but the new order is the bug fix (empty string now gives an empty byte array); true as a move, yet it hides a behaviour change."
+    },
+    {
+      "id": 38,
+      "project": "newtonsoft-json-mr",
+      "commit": "ad246c775a",
+      "file": "Src/Newtonsoft.Json/Serialization/JsonSerializerInternalReader.cs",
+      "kind": "moved",
+      "old": [
+        [
+          312,
+          316
+        ]
+      ],
+      "new": [
+        [
+          306,
+          310
+        ]
+      ],
+      "label": "borderline",
+      "name": "CreateValueInternal",
+      "note": "Same swap seen from the other block (byte[] check moved first); the order of the two early returns is the behaviour change."
+    },
+    {
+      "id": 39,
+      "project": "newtonsoft-json-mr",
+      "commit": "ad246c775a",
+      "file": "Src/Newtonsoft.Json/Serialization/JsonSerializerInternalReader.cs",
+      "kind": "reordered",
+      "old": [
+        [
+          306,
+          316
+        ]
+      ],
+      "new": [
+        [
+          306,
+          316
+        ]
+      ],
+      "label": "wrong",
+      "expect": "edited",
+      "name": "CreateValueInternal",
+      "note": "Two early-return if statements swapped inside a method: statement order is behaviour (it is the fix), so not a harmless reorder."
+    },
+    {
+      "id": 40,
+      "project": "serilog-mr",
+      "commit": "09afb7839d",
+      "file": "src/Serilog/Context/LogContext.cs",
+      "kind": "moved",
+      "old": [
+        [
+          66,
+          72
+        ]
+      ],
+      "new": [
+        [
+          185,
+          191
+        ]
+      ],
+      "label": "wrong",
+      "expect": "edited",
+      "name": "PermitCrossAppDomainCalls",
+      "note": "Public property moved into the #if REMOTING block: it disappears from builds without REMOTING (decided context rule)."
+    },
+    {
+      "id": 41,
+      "project": "serilog-mr",
+      "commit": "dde160df0c",
+      "file": "src/Serilog/Settings/KeyValuePairs/SettingValueConversions.cs",
+      "kind": "moved",
+      "old": [
+        [
+          38,
+          64
+        ]
+      ],
+      "new": [
+        [
+          64,
+          91
+        ]
+      ],
+      "label": "wrong",
+      "expect": "edited",
+      "name": "ConvertToType",
+      "note": "The static-member-accessor block moved from the top of ConvertToType into the 'interface or abstract type' branch: it now runs only for those types (the commit's purpose); comments were also added."
+    },
+    {
+      "id": 42,
+      "project": "serilog-mr",
+      "commit": "dde160df0c",
+      "file": "src/Serilog/Settings/KeyValuePairs/SettingValueConversions.cs",
+      "kind": "movedWithEdit",
+      "old": [
+        [
+          38,
+          64
+        ]
+      ],
+      "new": [
+        [
+          64,
+          91
+        ]
+      ],
+      "label": "borderline",
+      "name": "ConvertToType",
+      "note": "Same code plus comments, so movedWithEdit is literally true, but the new guarding condition is not inside the moved lines and a reviewer could miss that it now runs only for interface/abstract types."
+    },
+    {
+      "id": 43,
+      "project": "serilog-mr",
+      "commit": "90c2867c34",
+      "file": "src/Serilog/Formatting/Json/JsonFormatter.cs",
+      "kind": "renamed",
+      "old": [
+        [
+          385,
+          385
+        ],
+        [
+          398,
+          398
+        ],
+        [
+          412,
+          412
+        ],
+        [
+          427,
+          427
+        ],
+        [
+          443,
+          443
+        ],
+        [
+          456,
+          456
+        ]
+      ],
+      "new": [
+        [
+          385,
+          385
+        ],
+        [
+          398,
+          398
+        ],
+        [
+          412,
+          412
+        ],
+        [
+          427,
+          427
+        ],
+        [
+          443,
+          443
+        ],
+        [
+          456,
+          456
+        ]
+      ],
+      "label": "wrong",
+      "expect": "edited",
+      "name": "written",
+      "note": "out int written became out var written: the predefined type int replaced by var, not a renamed identifier (the variable keeps its name)."
+    },
+    {
+      "id": 44,
+      "project": "serilog-mr",
+      "commit": "90c2867c34",
+      "file": "src/Serilog/Formatting/Json/JsonFormatter.cs",
+      "kind": "reformatted",
+      "old": [
+        [
+          385,
+          385
+        ],
+        [
+          398,
+          398
+        ],
+        [
+          412,
+          412
+        ],
+        [
+          427,
+          427
+        ],
+        [
+          443,
+          443
+        ],
+        [
+          456,
+          456
+        ]
+      ],
+      "new": [
+        [
+          385,
+          385
+        ],
+        [
+          398,
+          398
+        ],
+        [
+          412,
+          412
+        ],
+        [
+          427,
+          427
+        ],
+        [
+          443,
+          443
+        ],
+        [
+          456,
+          456
+        ]
+      ],
+      "label": "wrong",
+      "expect": "edited",
+      "name": "written",
+      "note": "int to var is a token change (same inferred type), not layout."
+    },
+    {
+      "id": 45,
+      "project": "serilog-mr",
+      "commit": "b412c6c78e",
+      "file": "src/Serilog/Settings/KeyValuePairs/CallableConfigurationMethodFinder.cs",
+      "kind": "renamed",
+      "old": [
+        [
+          30,
+          30
+        ],
+        [
+          68,
+          68
+        ]
+      ],
+      "new": [
+        [
+          31,
+          31
+        ],
+        [
+          72,
+          72
+        ]
+      ],
+      "label": "correct",
+      "name": "SurrogateFromLogContextConfigurationMethod -> SurrogateEnrichFromLogContextConfigurationMethod",
+      "note": "Static field renamed at its declaration and its one use; a blank line was added above it, nothing else on these lines."
+    },
+    {
+      "id": 46,
+      "project": "serilog-mr",
+      "commit": "b412c6c78e",
+      "file": "src/Serilog/Settings/KeyValuePairs/CallableConfigurationMethodFinder.cs",
+      "kind": "renamed",
+      "old": [
+        [
+          44,
+          44
+        ],
+        [
+          74,
+          74
+        ]
+      ],
+      "new": [
+        [
+          47,
+          47
+        ],
+        [
+          78,
+          78
+        ]
+      ],
+      "label": "correct",
+      "name": "SurrogateFromDestructureToMaximumDepthConfigurationMethod -> SurrogateDestructureToMaximumDepthConfigurationMethod",
+      "note": "Static field renamed at its declaration and its use; one of four parallel renames in the commit."
+    },
+    {
+      "id": 47,
+      "project": "serilog-mr",
+      "commit": "3cbf04dda0",
+      "file": "src/Serilog/Events/MessageTemplate.cs",
+      "kind": "reformatted",
+      "old": [
+        [
+          89,
+          89
+        ]
+      ],
+      "new": [
+        [
+          89,
+          89
+        ]
+      ],
+      "label": "borderline",
+      "name": "GetElementsOfTypeToArray",
+      "note": "Explicit private removed from a class member: private is the default so nothing changes, but a token was removed rather than re-laid out."
+    },
+    {
+      "id": 48,
+      "project": "serilog-mr",
+      "commit": "fb964f8b84",
+      "file": "src/Serilog/Context/LogContext.cs",
+      "kind": "renamed",
+      "old": [
+        [
+          55,
+          55
+        ],
+        [
+          60,
+          60
+        ],
+        [
+          162,
+          162
+        ],
+        [
+          178,
+          178
+        ]
+      ],
+      "new": [
+        [
+          55,
+          55
+        ],
+        [
+          60,
+          60
+        ],
+        [
+          162,
+          162
+        ],
+        [
+          178,
+          178
+        ]
+      ],
+      "label": "wrong",
+      "expect": "edited",
+      "name": "ImmutableStack -> EnricherStack",
+      "note": "ImmutableStack<ILogEventEnricher> became EnricherStack: the type argument list is dropped too (a generic type replaced by a non-generic one), more than one name replaced."
+    },
+    {
+      "id": 49,
+      "project": "humanizer-mr",
+      "commit": "c14fdeab9a",
+      "file": "src/Humanizer/RomanNumeralExtensions.cs",
+      "kind": "moved",
+      "old": [
+        [
+          31,
+          34
+        ]
+      ],
+      "new": [
+        [
+          99,
+          102
+        ]
+      ],
+      "label": "correct",
+      "name": "IsInvalidRomanNumeral",
+      "note": "Private helper moved from the top of the class to the end, unchanged."
+    },
+    {
+      "id": 50,
+      "project": "humanizer-mr",
+      "commit": "c14fdeab9a",
+      "file": "src/Humanizer/RomanNumeralExtensions.cs",
+      "kind": "reformatted",
+      "old": [
+        [
+          14,
+          25
+        ]
+      ],
+      "new": [
+        [
+          14,
+          25
+        ]
+      ],
+      "label": "correct",
+      "name": "romanNumerals",
+      "note": "Trailing spaces removed from the collection initializer lines; same tokens."
+    },
+    {
+      "id": 51,
+      "project": "humanizer-mr",
+      "commit": "13d23549de",
+      "file": "src/Humanizer/Inflections/Vocabulary.cs",
+      "kind": "reformatted",
+      "old": [
+        [
+          33,
+          46
+        ]
+      ],
+      "new": [
+        [
+          33,
+          46
+        ]
+      ],
+      "label": "correct",
+      "name": "AddIrregular",
+      "note": "Method body re-indented one level to sit under its declaration; same tokens."
+    },
+    {
+      "id": 52,
+      "project": "humanizer-mr",
+      "commit": "1f97be8b61",
+      "file": "src/Humanizer/Truncation/Truncator.cs",
+      "kind": "moved",
+      "old": [
+        [
+          10,
+          23
+        ]
+      ],
+      "new": [
+        [
+          101,
+          114
+        ]
+      ],
+      "label": "wrong",
+      "expect": "edited",
+      "name": "TruncateFrom",
+      "note": "Enum moved out of the static class Truncator to namespace level: its full name changes from Truncator.TruncateFrom to Humanizer.TruncateFrom, which breaks every caller (a context change, not a plain move)."
+    },
+    {
+      "id": 53,
+      "project": "humanizer-mr",
+      "commit": "9357fe0484",
+      "file": "src/Humanizer/Localisation/Formatters/LithuanianFormatter.cs",
+      "kind": "renamed",
+      "old": [
+        [
+          6,
+          6
+        ],
+        [
+          10,
+          10
+        ]
+      ],
+      "new": [
+        [
+          6,
+          6
+        ],
+        [
+          10,
+          10
+        ]
+      ],
+      "label": "correct",
+      "name": "keysWithoutNumbersForms -> keysWithoutNumberForms",
+      "note": "Private static field renamed at its declaration and its one use; nothing else changed."
+    },
+    {
+      "id": 54,
+      "project": "humanizer-mr",
+      "commit": "4d7b9cb6b1",
+      "file": "src/Humanizer/Localisation/NumberToWords/Italian/ItalianOrdinalNumberCruncher.cs",
+      "kind": "renamed",
+      "old": [
+        [
+          8,
+          8
+        ],
+        [
+          13,
+          13
+        ],
+        [
+          86,
+          86
+        ]
+      ],
+      "new": [
+        [
+          8,
+          8
+        ],
+        [
+          13,
+          13
+        ],
+        [
+          86,
+          86
+        ]
+      ],
+      "label": "correct",
+      "name": "_fullNumber -> fullNumber",
+      "note": "Field renamed at its declaration and uses; these lines change only that name."
+    },
+    {
+      "id": 55,
+      "project": "humanizer-mr",
+      "commit": "4d7b9cb6b1",
+      "file": "src/Humanizer/Localisation/NumberToWords/Italian/ItalianOrdinalNumberCruncher.cs",
+      "kind": "renamed",
+      "old": [
+        [
+          87,
+          87
+        ],
+        [
+          19,
+          19
+        ]
+      ],
+      "new": [
+        [
+          87,
+          87
+        ],
+        [
+          19,
+          19
+        ]
+      ],
+      "label": "borderline",
+      "name": "_gender -> gender",
+      "note": "Field renamed to the same name as the primary constructor parameter (readonly ... gender = gender): same value, but uses of gender now resolve by C# shadowing rules and line 19 also renames _fullNumber."
+    },
+    {
+      "id": 56,
+      "project": "humanizer-mr",
+      "commit": "ec69364728",
+      "file": "src/Humanizer/TimeSpanDehumanizeExtensions.cs",
+      "kind": "reformatted",
+      "old": [
+        [
+          30,
+          33
+        ]
+      ],
+      "new": [
+        [
+          30,
+          31
+        ]
+      ],
+      "label": "borderline",
+      "name": "Dehumanize",
+      "note": "Braces around a single return removed: same behaviour, but the braces are tokens and the tree changes from a block to a bare statement, so not pure layout."
+    },
+    {
+      "id": 57,
+      "project": "humanizer-mr",
+      "commit": "8f38a4ef98",
+      "file": "src/Humanizer/MetricNumeralExtensions.cs",
+      "kind": "reformatted",
+      "old": [
+        [
+          112,
+          124
+        ]
+      ],
+      "new": [
+        [
+          112,
+          124
+        ]
+      ],
+      "label": "correct",
+      "name": "ToMetric",
+      "note": "Tab-indented doc comment lines and signature re-indented with spaces; same text."
+    },
+    {
+      "id": 58,
+      "project": "humanizer-mr",
+      "commit": "8f38a4ef98",
+      "file": "src/Humanizer/MetricNumeralExtensions.cs",
+      "kind": "reformatted",
+      "old": [
+        [
+          106,
+          124
+        ]
+      ],
+      "new": [
+        [
+          106,
+          124
+        ]
+      ],
+      "label": "borderline",
+      "name": "ToMetric",
+      "note": "Whole doc block re-indented, but line 111's doc text also changed (a <see cref> became an <a href> sentence): not code, yet more than layout."
+    },
+    {
+      "id": 59,
+      "project": "polly-mr",
+      "commit": "940c6282db",
+      "file": "src/Polly/Timeout/AsyncTimeoutEngine.cs",
+      "kind": "reformatted",
+      "old": [
+        [
+          63,
+          67
+        ]
+      ],
+      "new": [
+        [
+          72,
+          76
+        ]
+      ],
+      "label": "correct",
+      "name": "AsTask",
+      "note": "Over-indented Register call with its lambda body pulled back one level; same tokens."
+    },
+    {
+      "id": 60,
+      "project": "newtonsoft-json-mr",
+      "commit": "fb2a5998bc",
+      "file": "Src/Newtonsoft.Json/JsonReader.cs",
+      "kind": "moved",
+      "old": [
+        [
+          244,
+          251
+        ]
+      ],
+      "new": [
+        [
+          258,
+          265
+        ]
+      ],
+      "label": "correct",
+      "name": "Culture",
+      "note": "Property with its doc comment moved below Path, unchanged (Path's own virtual modifier is a separate edit)."
+    },
+    {
+      "id": 61,
+      "project": "newtonsoft-json-mr",
+      "commit": "1abcfb1ace",
+      "file": "Src/Newtonsoft.Json/Serialization/JsonPropertyCollection.cs",
+      "kind": "reformatted",
+      "old": [
+        [
+          85,
+          98
+        ]
+      ],
+      "new": [
+        [
+          86,
+          99
+        ]
+      ],
+      "label": "wrong",
+      "expect": "edited",
+      "name": "AddProperty",
+      "note": "The re-indented if block now sits inside a new else branch: same tokens per line, but it no longer runs after an ignored property is removed."
+    },
+    {
+      "id": 62,
+      "project": "humanizer-mr",
+      "commit": "a3b09e3453",
+      "file": "src/Humanizer/Localisation/EnglishNumberToWordsConverter.cs",
+      "kind": "movedWithEdit",
+      "old": [
+        [
+          110,
+          120
+        ]
+      ],
+      "new": [
+        [
+          11,
+          21
+        ]
+      ],
+      "label": "correct",
+      "name": "OrdinalExceptions",
+      "note": "Dictionary initializer moved from a local in ExceptionNumbersToWords to a static readonly field; the eight entries are identical, the declaration line changed."
+    },
+    {
+      "id": 63,
+      "project": "humanizer-mr",
+      "commit": "3d43f8e1c3",
+      "file": "src/Humanizer/Localisation/NumberToWords/SlovenianNumberToWordsConverter.cs",
+      "kind": "reformatted",
+      "old": [
+        [
+          81,
+          84
+        ]
+      ],
+      "new": [
+        [
+          86,
+          89
+        ]
+      ],
+      "label": "correct",
+      "name": "ConvertToOrdinal",
+      "note": "Method re-indented from 3/6 to 4/8 spaces; same tokens."
+    },
+    {
+      "id": 64,
+      "project": "humanizer-mr",
+      "commit": "3d43f8e1c3",
+      "file": "src/Humanizer/Localisation/NumberToWords/SlovenianNumberToWordsConverter.cs",
+      "kind": "reformatted",
+      "old": [
+        [
+          8,
+          9
+        ]
+      ],
+      "new": [
+        [
+          8,
+          9
+        ]
+      ],
+      "label": "correct",
+      "name": "UnitsMap",
+      "note": "Two static array fields re-indented; same tokens."
+    },
+    {
+      "id": 65,
+      "project": "fluentvalidation-mr",
+      "commit": "23d7682bb4",
+      "file": "src/FluentValidation/IValidationRule.cs",
+      "kind": "moved",
+      "old": [
+        [
+          36,
+          40
+        ]
+      ],
+      "new": [
+        [
+          125,
+          129
+        ]
+      ],
+      "label": "wrong",
+      "expect": "edited",
+      "name": "SetDisplayName",
+      "note": "Interface method moved from IValidationRule<T, TProperty> to the non-generic IValidationRule in the same file: it now belongs to a different type, which every implementer and caller sees."
+    },
+    {
+      "id": 66,
+      "project": "fluentvalidation-mr",
+      "commit": "7865b14da9",
+      "file": "src/FluentValidation.AspNetCore/FluentValidationMvcExtensions.cs",
+      "kind": "moved",
+      "old": [
+        [
+          100,
+          115
+        ]
+      ],
+      "new": [
+        [
+          88,
+          103
+        ]
+      ],
+      "label": "wrong",
+      "expect": "edited",
+      "name": "AddFluentValidation",
+      "note": "The services.Configure<MvcOptions> block moved into the if (config.AutomaticValidationEnabled) branch: it no longer runs when automatic validation is off (the commit's fix)."
+    },
+    {
+      "id": 67,
+      "project": "fluentvalidation-mr",
+      "commit": "dfa64c010a",
+      "file": "src/FluentValidation/Internal/PropertyRule.cs",
+      "kind": "renamed",
+      "old": [
+        [
+          277,
+          277
+        ],
+        [
+          358,
+          358
+        ]
+      ],
+      "new": [
+        [
+          277,
+          277
+        ],
+        [
+          358,
+          358
+        ]
+      ],
+      "label": "correct",
+      "name": "ShouldValidateAsync -> ShouldValidateAsynchronously",
+      "note": "Only the two call sites are in this file (the declaration is in IPropertyValidator.cs); each line changes only the method name."
+    },
+    {
+      "id": 68,
+      "project": "fluentvalidation-mr",
+      "commit": "b7550140e0",
+      "file": "src/FluentValidation/Validators/NotEmptyValidator.cs",
+      "kind": "reformatted",
+      "old": [
+        [
+          32,
+          48
+        ]
+      ],
+      "new": [
+        [
+          32,
+          48
+        ]
+      ],
+      "label": "correct",
+      "name": "IsValid",
+      "note": "Method body over-indented by one tab pulled back, and a trailing tab removed; same tokens."
+    }
+  ]
+}

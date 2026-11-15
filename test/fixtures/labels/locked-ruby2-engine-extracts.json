@@ -1,0 +1,148 @@
+{
+ "how": "Fresh held-out Ruby set: the extract/inline claims the engine made that the pre-registered key (locked-ruby2-extracts.json) did not cover, labelled blind after the run by an independent Fable agent from the same counts-only guide.",
+ "labels": [
+  {
+   "repo": "devise",
+   "kind": "extract",
+   "commit": "916f94e",
+   "file": "app/controllers/devise/passwords_controller.rb",
+   "helper": "sign_in_after_reset_password?",
+   "caller": "update",
+   "label": "extract",
+   "note": "One-line config check moved verbatim into the new predicate, called from update and after_resetting_password_path_for.",
+   "src": "engine"
+  },
+  {
+   "repo": "devise",
+   "kind": "extract",
+   "commit": "b20de50",
+   "file": "lib/devise/models/trackable.rb",
+   "helper": "extract_ip_from",
+   "caller": "update_tracked_fields",
+   "label": "extract",
+   "note": "request.remote_ip moved into the new overridable helper and the caller now calls it.",
+   "src": "engine"
+  },
+  {
+   "repo": "devise",
+   "kind": "extract",
+   "commit": "8461234",
+   "file": "lib/devise/failure_app.rb",
+   "helper": "route",
+   "caller": "scope_url",
+   "label": "extract",
+   "note": "The route symbol expression moved verbatim into the new method, called from scope_url.",
+   "src": "engine"
+  },
+  {
+   "repo": "fastlane",
+   "kind": "extract",
+   "commit": "b99f126",
+   "file": "fastlane/lib/fastlane/actions/notarize.rb",
+   "helper": "parse_notarytool_result",
+   "caller": "notarytool",
+   "label": "extract",
+   "note": "JSON.parse of the response moved into the new helper, which adds a rescue around it.",
+   "src": "engine"
+  },
+  {
+   "repo": "fastlane",
+   "kind": "extract",
+   "commit": "6dc02f6",
+   "file": "fastlane_core/lib/fastlane_core/itunes_transporter.rb",
+   "helper": "is_default_itms_on_xcode_11?",
+   "caller": "build_upload_command",
+   "label": "extract",
+   "note": "The three-part condition repeated in several JavaTransporterExecutor build_* methods moved verbatim into the new predicate.",
+   "src": "engine"
+  },
+  {
+   "repo": "puma",
+   "kind": "extract",
+   "commit": "ffd012b",
+   "file": "lib/puma/client.rb",
+   "helper": "parser_execute",
+   "caller": "try_to_finish",
+   "label": "extract",
+   "note": "The @parser.execute call moved from try_to_finish and reset into the new helper, which adds new error handling.",
+   "src": "engine"
+  },
+  {
+   "repo": "hanami",
+   "kind": "extract",
+   "commit": "9d46071",
+   "file": "lib/hanami/helpers/i18n_helper.rb",
+   "helper": "_i18n",
+   "caller": "translate",
+   "label": "extract",
+   "note": "_context.i18n used inline in translate and localize now lives in the new one-line view hook they call.",
+   "src": "engine"
+  },
+  {
+   "repo": "hanami",
+   "kind": "extract",
+   "commit": "8f3a283",
+   "file": "lib/hanami/providers/db/adapters.rb",
+   "helper": "new_adapter",
+   "caller": "initialize",
+   "label": "extract",
+   "note": "ADAPTER_CLASSES[key].new moved from the hash default block in initialize into the new class method.",
+   "src": "engine"
+  },
+  {
+   "repo": "hanami",
+   "kind": "extract",
+   "commit": "4912f39",
+   "file": "lib/hanami/extensions/view/part.rb",
+   "helper": "configure_for_slice",
+   "caller": "configure_for_slice",
+   "label": "borderline",
+   "note": "The one-line extend moved into a same-named class method on a new class that the old method now calls, but the receiver and surrounding code changed.",
+   "src": "engine"
+  },
+  {
+   "repo": "hanami",
+   "kind": "extract",
+   "commit": "42d459d",
+   "file": "lib/hanami/slice_registrar.rb",
+   "helper": "slice_module_name",
+   "caller": "load_slice",
+   "label": "extract",
+   "note": "The duplicated camelize expression in load_slice and build_slice moved verbatim into the new method.",
+   "src": "engine"
+  },
+  {
+   "repo": "hanami",
+   "kind": "extract",
+   "commit": "597a37b",
+   "file": "lib/hanami/application.rb",
+   "helper": "router_options",
+   "caller": "load_router",
+   "label": "extract",
+   "note": "configuration.router.options moved from the Router.new call into the new one-line method.",
+   "src": "engine"
+  },
+  {
+   "repo": "hanami",
+   "kind": "inline",
+   "commit": "1bbbe55",
+   "file": "lib/hanami/welcome.rb",
+   "helper": "app",
+   "caller": "application_name",
+   "label": "inline",
+   "note": "The removed method's body application_class.app_name now sits in application_name in place of the call.",
+   "src": "engine"
+  },
+  {
+   "repo": "hanami",
+   "kind": "extract",
+   "commit": "94887a6",
+   "file": "lib/hanami/middleware.rb",
+   "helper": "routes",
+   "caller": "load!",
+   "label": "extract",
+   "note": "The Components routes lookup written in load! and the welcome-page loader moved into the new method with application swapped for configuration.",
+   "src": "engine"
+  }
+ ]
+}

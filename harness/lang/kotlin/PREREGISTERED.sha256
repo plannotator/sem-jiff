@@ -1,0 +1,11 @@
+b67d78eefd9ab941c2b0853c3034d521b9eaf37fde3c316cb7e942669eb29af2  test/fixtures/traps/kotlin.json
+d25d40e08123fb7c3ce48982bffb9e007bc510d30f86ee7408262c5c293f4256  test/fixtures/labels/lang-kotlin-extracts.json
+2b9420d7ef39eacccf0984758afaabdaf31b10b10162d6cf3279e939207fdf62  test/fixtures/labels/lang-kotlin-expected.json
+a6aaec573deeae657968af1e2412be5bc7810eb467d055ab27899dfd6dbc19e8  harness/lang/kotlin/manifest.json
+589122d19dacb72c4fa2496e0e51e6b9645711d6f7639c3484366dc7101c0d60  harness/lang/kotlin/texts.sha256
+answers fixed 2026-11-15T03:55:52Z, before any engine run on these cases; the engine had not been run on any of them
+b393ea8ce9a466ff72781a0199fc7e523a878445f7aba5f8781e44a58f90ee5b  test/fixtures/labels/lang-kotlin-extracts.json
+502e684b191cfc141b12a876a5aa1c15e06e8ab60806c39e79d2213fbfbcc455  test/fixtures/labels/locked-kotlin-extracts.json
+dfa92d6aaaba90230750804cb396cadb5a28f518de6e13435bc82ed71298fa45  harness/lang/kotlin/manifest.json
+2a29609fd3cf73db1717dc3bd8b3a628f287d1871fd701682d0f94cab302b3e6  harness/lang/kotlin/texts.sha256
+corpus and blind labels fixed 2026-11-15T06:01:40Z, before any engine run on the 300-commit Kotlin datasets (built and searched with the main-branch engine, which does not read Kotlin, and the grammar alone)

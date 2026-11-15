@@ -1,0 +1,111 @@
+{
+  "guava-mr": {
+    "871d9af4be": [
+      "guava/src/com/google/common/cache/CacheBuilderSpec.java"
+    ],
+    "72a3f9060a": [
+      "guava/src/com/google/common/eventbus/Subscriber.java",
+      "guava/src/com/google/common/eventbus/SubscriberRegistry.java",
+      "guava/src/com/google/common/util/concurrent/JdkFutureAdapters.java"
+    ],
+    "e9d6b50397": [
+      "guava-tests/test/com/google/common/util/concurrent/ExecutionSequencerTest.java"
+    ]
+  },
+  "spring-framework-mr": {
+    "7e919d2c96": [
+      "spring-web/src/main/java/org/springframework/http/converter/DefaultHttpMessageConverters.java"
+    ],
+    "396b055325": [
+      "spring-core/src/main/java/org/springframework/aot/generate/NameGenerator.java"
+    ],
+    "43bbaa9e96": [
+      "spring-expression/src/main/java/org/springframework/expression/spel/SpelParserConfiguration.java"
+    ],
+    "00b9063e7d": [
+      "spring-web/src/main/java/org/springframework/http/converter/HttpMessageConverter.java"
+    ],
+    "6dcdf19169": [
+      "spring-web/src/main/java/org/springframework/http/codec/protobuf/ProtobufHttpMessageWriter.java"
+    ],
+    "4a92dd6ed1": [
+      "spring-test/src/test/java/org/springframework/test/web/servlet/result/MockMvcResultMatchersTests.java"
+    ],
+    "49ffb833a3": [
+      "spring-context/src/main/java/org/springframework/context/support/PropertySourcesPlaceholderConfigurer.java"
+    ],
+    "c1d241928c": [
+      "spring-core/src/test/java/org/springframework/util/backoff/ExponentialBackOffTests.java"
+    ],
+    "3e788e4ca1": [
+      "spring-core/src/main/java/org/springframework/core/annotation/AnnotatedElementUtils.java"
+    ],
+    "9d57dabe2f": [
+      "spring-core/src/main/java/org/springframework/core/retry/RetryTemplate.java"
+    ],
+    "e340e45f5a": [
+      "spring-tx/src/main/java/org/springframework/transaction/reactive/TransactionSynchronizationUtils.java",
+      "spring-tx/src/main/java/org/springframework/transaction/support/TransactionSynchronizationUtils.java"
+    ],
+    "64721b3bc0": [
+      "spring-r2dbc/src/test/java/org/springframework/r2dbc/connection/ConnectionFactoryUtilsTests.java"
+    ],
+    "4783c321d9": [
+      "spring-test/src/main/java/org/springframework/test/context/bean/override/mockito/MockitoBeanOverrideHandler.java"
+    ]
+  },
+  "gson-mr": {
+    "fc748cd0db": [
+      "gson/src/main/java-templates/com/google/gson/internal/GsonBuildConfig.java"
+    ],
+    "df01e943e5": [
+      "gson/src/main/java/com/google/gson/GsonBuilder.java",
+      "gson/src/main/java/com/google/gson/stream/JsonReader.java"
+    ],
+    "7d1973e6c5": [
+      "gson/src/main/java/com/google/gson/internal/bind/TypeAdapters.java"
+    ],
+    "7a1c94f986": [
+      "gson/src/main/java/com/google/gson/internal/bind/ReflectiveTypeAdapterFactory.java"
+    ],
+    "f1f838cf20": [
+      "gson/src/main/java/com/google/gson/internal/UnsafeAllocator.java"
+    ],
+    "a38b757bc4": [
+      "gson/src/main/java/com/google/gson/reflect/TypeToken.java"
+    ],
+    "00028fb5a7": [
+      "gson/src/main/java/com/google/gson/internal/bind/TypeAdapters.java"
+    ],
+    "ff521d70b2": [
+      "gson/src/main/java/com/google/gson/internal/Excluder.java"
+    ],
+    "3bf1967c0a": [
+      "gson/src/main/java/com/google/gson/internal/Excluder.java"
+    ]
+  },
+  "commons-lang-mr": {
+    "09430095a9": [
+      "src/main/java/org/apache/commons/lang3/concurrent/EventCountCircuitBreaker.java"
+    ],
+    "cc2ade0193": [
+      "src/test/java/org/apache/commons/lang3/reflect/ConstructorUtilsTest.java"
+    ],
+    "24e0b283d1": [
+      "src/test/java/org/apache/commons/lang3/builder/HashCodeBuilderTest.java"
+    ],
+    "b8286523de": [
+      "src/main/java/org/apache/commons/lang3/time/TimeZones.java",
+      "src/test/java/org/apache/commons/lang3/ArrayUtilsTest.java"
+    ],
+    "d5758118b5": [
+      "src/main/java/org/apache/commons/lang3/reflect/MethodUtils.java"
+    ],
+    "19adcd792f": [
+      "src/main/java/org/apache/commons/lang3/ClassUtils.java"
+    ],
+    "e547d704b2": [
+      "src/main/java/org/apache/commons/lang3/time/FastDateParser.java"
+    ]
+  }
+}

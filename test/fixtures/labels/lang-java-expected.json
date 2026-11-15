@@ -1,0 +1,1495 @@
+{
+  "how": "Java moves, renames, reformatting and reorders on real commits, labelled by reading each diff before the engine was run on them (2026-11-14), following harness/audit/AUDIT.md. Practice: guava-mr, spring-framework-mr. Held out (totals only): gson-mr, commons-lang-mr. Swaps are labelled with one side correct and the other borderline.",
+  "labels": [
+    {
+      "id": 1,
+      "project": "guava-mr",
+      "commit": "871d9af4be",
+      "file": "guava/src/com/google/common/cache/CacheBuilderSpec.java",
+      "kind": "renamed",
+      "old": [
+        [
+          294,
+          294
+        ],
+        [
+          331,
+          331
+        ],
+        [
+          367,
+          367
+        ]
+      ],
+      "new": [
+        [
+          296,
+          296
+        ],
+        [
+          333,
+          333
+        ],
+        [
+          369,
+          369
+        ]
+      ],
+      "label": "correct",
+      "name": "parseInteger -> writeToSpec",
+      "note": "IntegerParser.parseInteger and its two overrides renamed writeToSpec; declaration lines change only the name."
+    },
+    {
+      "id": 2,
+      "project": "guava-mr",
+      "commit": "871d9af4be",
+      "file": "guava/src/com/google/common/cache/CacheBuilderSpec.java",
+      "kind": "renamed",
+      "old": [
+        [
+          302,
+          302
+        ]
+      ],
+      "new": [
+        [
+          304,
+          304
+        ]
+      ],
+      "label": "borderline",
+      "name": "parseInteger -> writeToSpec",
+      "note": "Call site renamed, but the same line also turns Integer.parseInt into a static-imported parseInt (same method, different spelling)."
+    },
+    {
+      "id": 3,
+      "project": "guava-mr",
+      "commit": "871d9af4be",
+      "file": "guava/src/com/google/common/cache/CacheBuilderSpec.java",
+      "kind": "renamed",
+      "old": [
+        [
+          312,
+          312
+        ],
+        [
+          343,
+          343
+        ],
+        [
+          355,
+          355
+        ]
+      ],
+      "new": [
+        [
+          314,
+          314
+        ],
+        [
+          345,
+          345
+        ],
+        [
+          357,
+          357
+        ]
+      ],
+      "label": "correct",
+      "name": "parseLong -> writeToSpec",
+      "note": "LongParser.parseLong and its two overrides renamed writeToSpec on the declaration lines."
+    },
+    {
+      "id": 4,
+      "project": "guava-mr",
+      "commit": "871d9af4be",
+      "file": "guava/src/com/google/common/cache/CacheBuilderSpec.java",
+      "kind": "renamed",
+      "old": [
+        [
+          320,
+          320
+        ]
+      ],
+      "new": [
+        [
+          322,
+          322
+        ]
+      ],
+      "label": "borderline",
+      "name": "parseLong -> writeToSpec",
+      "note": "Call parseLong(spec, Long.parseLong(v)) became writeToSpec(spec, parseLong(v)): the old name now means the static-imported Long.parseLong, so name-based pairing is easy to get wrong."
+    },
+    {
+      "id": 5,
+      "project": "guava-mr",
+      "commit": "871d9af4be",
+      "file": "guava/src/com/google/common/cache/CacheBuilderSpec.java",
+      "kind": "renamed",
+      "old": [
+        [
+          423,
+          423
+        ],
+        [
+          452,
+          452
+        ],
+        [
+          463,
+          463
+        ],
+        [
+          473,
+          473
+        ],
+        [
+          483,
+          483
+        ]
+      ],
+      "new": [
+        [
+          425,
+          425
+        ],
+        [
+          454,
+          454
+        ],
+        [
+          465,
+          465
+        ],
+        [
+          475,
+          475
+        ],
+        [
+          485,
+          485
+        ]
+      ],
+      "label": "correct",
+      "name": "parseDuration -> writeToSpec",
+      "note": "DurationParser.parseDuration, its call and three overrides renamed writeToSpec; nothing else on these lines."
+    },
+    {
+      "id": 6,
+      "project": "guava-mr",
+      "commit": "72a3f9060a",
+      "file": "guava/src/com/google/common/eventbus/Subscriber.java",
+      "kind": "reformatted",
+      "old": [
+        [
+          67,
+          74
+        ]
+      ],
+      "new": [
+        [
+          67,
+          73
+        ]
+      ],
+      "label": "correct",
+      "name": "dispatchEvent",
+      "note": "Lambda argument re-wrapped onto the call line and re-indented; same tokens."
+    },
+    {
+      "id": 7,
+      "project": "guava-mr",
+      "commit": "72a3f9060a",
+      "file": "guava/src/com/google/common/eventbus/SubscriberRegistry.java",
+      "kind": "reformatted",
+      "old": [
+        [
+          231,
+          233
+        ]
+      ],
+      "new": [
+        [
+          231,
+          232
+        ]
+      ],
+      "label": "correct",
+      "name": "flattenHierarchyCache",
+      "note": "Lambda joined onto the CacheLoader.from line; same tokens."
+    },
+    {
+      "id": 8,
+      "project": "guava-mr",
+      "commit": "72a3f9060a",
+      "file": "guava/src/com/google/common/util/concurrent/JdkFutureAdapters.java",
+      "kind": "reformatted",
+      "old": [
+        [
+          147,
+          163
+        ]
+      ],
+      "new": [
+        [
+          147,
+          162
+        ]
+      ],
+      "label": "correct",
+      "name": "addListener",
+      "note": "Lambda (with its comments) re-wrapped and re-indented; same tokens."
+    },
+    {
+      "id": 9,
+      "project": "guava-mr",
+      "commit": "e9d6b50397",
+      "file": "guava-tests/test/com/google/common/util/concurrent/ExecutionSequencerTest.java",
+      "kind": "renamed",
+      "old": [
+        [
+          53,
+          53
+        ]
+      ],
+      "new": [
+        [
+          58,
+          58
+        ]
+      ],
+      "label": "wrong",
+      "name": "executor -> backgroundThread",
+      "note": "The field was renamed, but its declaration also became final with a newSingleThreadExecutor() initializer (setUp used to assign newCachedThreadPool()): a different executor hides under the rename.",
+      "expect": "edited"
+    },
+    {
+      "id": 10,
+      "project": "guava-mr",
+      "commit": "e9d6b50397",
+      "file": "guava-tests/test/com/google/common/util/concurrent/ExecutionSequencerTest.java",
+      "kind": "renamed",
+      "old": [
+        [
+          102,
+          102
+        ],
+        [
+          105,
+          105
+        ],
+        [
+          109,
+          109
+        ],
+        [
+          115,
+          115
+        ]
+      ],
+      "new": [
+        [
+          104,
+          104
+        ],
+        [
+          107,
+          107
+        ],
+        [
+          111,
+          111
+        ],
+        [
+          120,
+          120
+        ]
+      ],
+      "label": "correct",
+      "name": "blockingCallable -> firstCallable",
+      "note": "Local renamed in testCancellationMultipleThreads; these lines change only that name."
+    },
+    {
+      "id": 11,
+      "project": "spring-framework-mr",
+      "commit": "7e919d2c96",
+      "file": "spring-web/src/main/java/org/springframework/http/converter/DefaultHttpMessageConverters.java",
+      "kind": "moved",
+      "old": [
+        [
+          592,
+          593
+        ]
+      ],
+      "new": [
+        [
+          595,
+          596
+        ]
+      ],
+      "label": "borderline",
+      "name": "getMessageConverters",
+      "note": "Two addAll statements moved below the form-converter block, unchanged; but the order is the behaviour change (converter precedence), so \"moved\" undersells it."
+    },
+    {
+      "id": 12,
+      "project": "spring-framework-mr",
+      "commit": "396b055325",
+      "file": "spring-core/src/main/java/org/springframework/aot/generate/NameGenerator.java",
+      "kind": "moved",
+      "old": [
+        [
+          176,
+          186
+        ]
+      ],
+      "new": [
+        [
+          86,
+          96
+        ]
+      ],
+      "label": "correct",
+      "name": "withFeatureNamePrefix",
+      "note": "Method with Javadoc moved up next to the constructor, unchanged (blank lines around it also changed)."
+    },
+    {
+      "id": 13,
+      "project": "spring-framework-mr",
+      "commit": "43bbaa9e96",
+      "file": "spring-expression/src/main/java/org/springframework/expression/spel/SpelParserConfiguration.java",
+      "kind": "moved",
+      "old": [
+        [
+          49,
+          56
+        ]
+      ],
+      "new": [
+        [
+          72,
+          79
+        ]
+      ],
+      "label": "correct",
+      "name": "DEFAULT_MAX_AUTO_GROW_SIZE",
+      "note": "Constant with Javadoc moved below two other constants; a literal, so order does not matter."
+    },
+    {
+      "id": 14,
+      "project": "spring-framework-mr",
+      "commit": "00b9063e7d",
+      "file": "spring-web/src/main/java/org/springframework/http/converter/HttpMessageConverter.java",
+      "kind": "moved",
+      "old": [
+        [
+          111,
+          127
+        ]
+      ],
+      "new": [
+        [
+          59,
+          75
+        ]
+      ],
+      "label": "correct",
+      "name": "canWriteRepeatedly",
+      "note": "Last default method of the interface moved up after canWrite, unchanged; the closing brace stays."
+    },
+    {
+      "id": 15,
+      "project": "spring-framework-mr",
+      "commit": "6dcdf19169",
+      "file": "spring-web/src/main/java/org/springframework/http/codec/protobuf/ProtobufHttpMessageWriter.java",
+      "kind": "moved",
+      "old": [
+        [
+          121,
+          132
+        ]
+      ],
+      "new": [
+        [
+          98,
+          109
+        ]
+      ],
+      "label": "correct",
+      "name": "getMessageBuilder",
+      "note": "Last static method of the class moved up, unchanged; the closing brace stays."
+    },
+    {
+      "id": 16,
+      "project": "spring-framework-mr",
+      "commit": "4a92dd6ed1",
+      "file": "spring-test/src/test/java/org/springframework/test/web/servlet/result/MockMvcResultMatchersTests.java",
+      "kind": "moved",
+      "old": [
+        [
+          133,
+          137
+        ]
+      ],
+      "new": [
+        [
+          106,
+          110
+        ]
+      ],
+      "label": "correct",
+      "name": "forwardWithQueryString",
+      "note": "Test method moved up next to the other forward tests, unchanged."
+    },
+    {
+      "id": 17,
+      "project": "spring-framework-mr",
+      "commit": "49ffb833a3",
+      "file": "spring-context/src/main/java/org/springframework/context/support/PropertySourcesPlaceholderConfigurer.java",
+      "kind": "moved",
+      "old": [
+        [
+          235,
+          245
+        ]
+      ],
+      "new": [
+        [
+          245,
+          255
+        ]
+      ],
+      "label": "correct",
+      "name": "getProperty",
+      "note": "getProperty (with @Override @Nullable) swapped below containsProperty in ConfigurableEnvironmentPropertySource, unchanged."
+    },
+    {
+      "id": 18,
+      "project": "spring-framework-mr",
+      "commit": "49ffb833a3",
+      "file": "spring-context/src/main/java/org/springframework/context/support/PropertySourcesPlaceholderConfigurer.java",
+      "kind": "moved",
+      "old": [
+        [
+          247,
+          255
+        ]
+      ],
+      "new": [
+        [
+          235,
+          243
+        ]
+      ],
+      "label": "borderline",
+      "name": "containsProperty",
+      "note": "Other side of the same swap; either method can be called the mover."
+    },
+    {
+      "id": 19,
+      "project": "spring-framework-mr",
+      "commit": "49ffb833a3",
+      "file": "spring-context/src/main/java/org/springframework/context/support/PropertySourcesPlaceholderConfigurer.java",
+      "kind": "moved",
+      "old": [
+        [
+          276,
+          280
+        ]
+      ],
+      "new": [
+        [
+          281,
+          285
+        ]
+      ],
+      "label": "correct",
+      "name": "getProperty",
+      "note": "Same swap in FallbackEnvironmentPropertySource; the annotations travel with the method."
+    },
+    {
+      "id": 20,
+      "project": "spring-framework-mr",
+      "commit": "49ffb833a3",
+      "file": "spring-context/src/main/java/org/springframework/context/support/PropertySourcesPlaceholderConfigurer.java",
+      "kind": "moved",
+      "old": [
+        [
+          282,
+          285
+        ]
+      ],
+      "new": [
+        [
+          276,
+          279
+        ]
+      ],
+      "label": "borderline",
+      "name": "containsProperty",
+      "note": "Other side of the same swap."
+    },
+    {
+      "id": 21,
+      "project": "spring-framework-mr",
+      "commit": "c1d241928c",
+      "file": "spring-core/src/test/java/org/springframework/util/backoff/ExponentialBackOffTests.java",
+      "kind": "moved",
+      "old": [
+        [
+          131,
+          139
+        ]
+      ],
+      "new": [
+        [
+          81,
+          89
+        ]
+      ],
+      "label": "correct",
+      "name": "maxIntervalReachedImmediately",
+      "note": "Test moved up, unchanged."
+    },
+    {
+      "id": 22,
+      "project": "spring-framework-mr",
+      "commit": "c1d241928c",
+      "file": "spring-core/src/test/java/org/springframework/util/backoff/ExponentialBackOffTests.java",
+      "kind": "moved",
+      "old": [
+        [
+          162,
+          173
+        ]
+      ],
+      "new": [
+        [
+          103,
+          114
+        ]
+      ],
+      "label": "correct",
+      "name": "maxAttempts",
+      "note": "Last test of the class moved up, unchanged."
+    },
+    {
+      "id": 23,
+      "project": "spring-framework-mr",
+      "commit": "c1d241928c",
+      "file": "spring-core/src/test/java/org/springframework/util/backoff/ExponentialBackOffTests.java",
+      "kind": "renamed",
+      "old": [
+        [
+          82,
+          82
+        ]
+      ],
+      "new": [
+        [
+          92,
+          92
+        ]
+      ],
+      "label": "correct",
+      "name": "maxAttemptsReached -> maxElapsedTimeReached",
+      "note": "Test method renamed; body unchanged (it also shifts down because tests moved around it)."
+    },
+    {
+      "id": 24,
+      "project": "spring-framework-mr",
+      "commit": "3e788e4ca1",
+      "file": "spring-core/src/main/java/org/springframework/core/annotation/AnnotatedElementUtils.java",
+      "kind": "reordered",
+      "old": [
+        [
+          774,
+          774
+        ]
+      ],
+      "new": [
+        [
+          774,
+          774
+        ]
+      ],
+      "label": "wrong",
+      "name": "getRepeatableAnnotations",
+      "note": "Parameters containerType and annotationType swapped in a private signature: both are Class types, so a caller not updated would compile and silently swap them. A signature change, not a harmless reorder.",
+      "expect": "edited"
+    },
+    {
+      "id": 25,
+      "project": "spring-framework-mr",
+      "commit": "3e788e4ca1",
+      "file": "spring-core/src/main/java/org/springframework/core/annotation/AnnotatedElementUtils.java",
+      "kind": "reordered",
+      "old": [
+        [
+          801,
+          801
+        ]
+      ],
+      "new": [
+        [
+          801,
+          801
+        ]
+      ],
+      "label": "wrong",
+      "name": "findRepeatableAnnotations",
+      "note": "Same parameter swap in the second private signature.",
+      "expect": "edited"
+    },
+    {
+      "id": 26,
+      "project": "spring-framework-mr",
+      "commit": "3e788e4ca1",
+      "file": "spring-core/src/main/java/org/springframework/core/annotation/AnnotatedElementUtils.java",
+      "kind": "reordered",
+      "old": [
+        [
+          467,
+          467
+        ]
+      ],
+      "new": [
+        [
+          467,
+          467
+        ]
+      ],
+      "label": "borderline",
+      "name": "getMergedRepeatableAnnotations",
+      "note": "Call-site arguments swapped to match the swapped declaration in the same file; the program means the same, but the line passes arguments in a different order."
+    },
+    {
+      "id": 27,
+      "project": "spring-framework-mr",
+      "commit": "9d57dabe2f",
+      "file": "spring-core/src/main/java/org/springframework/core/retry/RetryTemplate.java",
+      "kind": "renamed",
+      "old": [
+        [
+          136,
+          137
+        ],
+        [
+          167,
+          167
+        ],
+        [
+          177,
+          177
+        ]
+      ],
+      "new": [
+        [
+          136,
+          137
+        ],
+        [
+          167,
+          167
+        ],
+        [
+          177,
+          177
+        ]
+      ],
+      "label": "correct",
+      "name": "retryException -> lastException",
+      "note": "Local renamed everywhere; note the old name retryException is reused below for another variable."
+    },
+    {
+      "id": 28,
+      "project": "spring-framework-mr",
+      "commit": "9d57dabe2f",
+      "file": "spring-core/src/main/java/org/springframework/core/retry/RetryTemplate.java",
+      "kind": "renamed",
+      "old": [
+        [
+          162,
+          162
+        ],
+        [
+          164,
+          167
+        ]
+      ],
+      "new": [
+        [
+          162,
+          162
+        ],
+        [
+          164,
+          167
+        ]
+      ],
+      "label": "correct",
+      "name": "currentAttemptException -> currentException",
+      "note": "Catch parameter renamed with all uses."
+    },
+    {
+      "id": 29,
+      "project": "spring-framework-mr",
+      "commit": "9d57dabe2f",
+      "file": "spring-core/src/main/java/org/springframework/core/retry/RetryTemplate.java",
+      "kind": "renamed",
+      "old": [
+        [
+          173,
+          173
+        ],
+        [
+          176,
+          176
+        ],
+        [
+          178,
+          178
+        ]
+      ],
+      "new": [
+        [
+          173,
+          173
+        ],
+        [
+          176,
+          176
+        ],
+        [
+          178,
+          178
+        ]
+      ],
+      "label": "correct",
+      "name": "finalException -> retryException",
+      "note": "Local renamed to the name the other local gave up."
+    },
+    {
+      "id": 30,
+      "project": "spring-framework-mr",
+      "commit": "9d57dabe2f",
+      "file": "spring-core/src/main/java/org/springframework/core/retry/RetryTemplate.java",
+      "kind": "renamed",
+      "old": [
+        [
+          172,
+          172
+        ]
+      ],
+      "new": [
+        [
+          172,
+          172
+        ]
+      ],
+      "label": "wrong",
+      "name": "comment",
+      "note": "The comment changed \"initial exception\" to \"last exception\": a corrected description, not an identifier rename.",
+      "expect": "edited"
+    },
+    {
+      "id": 31,
+      "project": "spring-framework-mr",
+      "commit": "e340e45f5a",
+      "file": "spring-tx/src/main/java/org/springframework/transaction/reactive/TransactionSynchronizationUtils.java",
+      "kind": "renamed",
+      "old": [
+        [
+          45,
+          45
+        ],
+        [
+          61,
+          61
+        ]
+      ],
+      "new": [
+        [
+          45,
+          45
+        ],
+        [
+          61,
+          61
+        ]
+      ],
+      "label": "correct",
+      "name": "aopAvailable -> aopPresent",
+      "note": "Private static field renamed with its one use."
+    },
+    {
+      "id": 32,
+      "project": "spring-framework-mr",
+      "commit": "e340e45f5a",
+      "file": "spring-tx/src/main/java/org/springframework/transaction/support/TransactionSynchronizationUtils.java",
+      "kind": "renamed",
+      "old": [
+        [
+          43,
+          43
+        ],
+        [
+          70,
+          70
+        ]
+      ],
+      "new": [
+        [
+          43,
+          43
+        ],
+        [
+          70,
+          70
+        ]
+      ],
+      "label": "correct",
+      "name": "aopAvailable -> aopPresent",
+      "note": "Same field rename in the support copy."
+    },
+    {
+      "id": 33,
+      "project": "spring-framework-mr",
+      "commit": "64721b3bc0",
+      "file": "spring-r2dbc/src/test/java/org/springframework/r2dbc/connection/ConnectionFactoryUtilsTests.java",
+      "kind": "reformatted",
+      "old": [
+        [
+          139,
+          140
+        ]
+      ],
+      "new": [
+        [
+          139,
+          141
+        ]
+      ],
+      "label": "correct",
+      "name": "messageGeneration",
+      "note": "Assertion chain re-wrapped one call per line; same tokens."
+    },
+    {
+      "id": 34,
+      "project": "spring-framework-mr",
+      "commit": "64721b3bc0",
+      "file": "spring-r2dbc/src/test/java/org/springframework/r2dbc/connection/ConnectionFactoryUtilsTests.java",
+      "kind": "reformatted",
+      "old": [
+        [
+          147,
+          148
+        ]
+      ],
+      "new": [
+        [
+          148,
+          150
+        ]
+      ],
+      "label": "correct",
+      "name": "messageGenerationNullSQL",
+      "note": "Assertion chain re-wrapped; same tokens."
+    },
+    {
+      "id": 35,
+      "project": "spring-framework-mr",
+      "commit": "64721b3bc0",
+      "file": "spring-r2dbc/src/test/java/org/springframework/r2dbc/connection/ConnectionFactoryUtilsTests.java",
+      "kind": "reformatted",
+      "old": [
+        [
+          155,
+          156
+        ]
+      ],
+      "new": [
+        [
+          157,
+          159
+        ]
+      ],
+      "label": "correct",
+      "name": "messageGenerationNullMessage",
+      "note": "Assertion chain re-wrapped; same tokens."
+    },
+    {
+      "id": 36,
+      "project": "spring-framework-mr",
+      "commit": "4783c321d9",
+      "file": "spring-test/src/main/java/org/springframework/test/context/bean/override/mockito/MockitoBeanOverrideHandler.java",
+      "kind": "reformatted",
+      "old": [
+        [
+          116,
+          116
+        ]
+      ],
+      "new": [
+        [
+          116,
+          117
+        ]
+      ],
+      "label": "correct",
+      "name": "createOverrideInstance",
+      "note": "Long parameter list wrapped onto a second line (plus a blank line after); same tokens."
+    },
+    {
+      "id": 37,
+      "project": "gson-mr",
+      "commit": "fc748cd0db",
+      "file": "gson/src/main/java-templates/com/google/gson/internal/GsonBuildConfig.java",
+      "kind": "reformatted",
+      "old": [
+        [
+          20,
+          21
+        ]
+      ],
+      "new": [
+        [
+          20,
+          21
+        ]
+      ],
+      "label": "correct",
+      "name": "GsonBuildConfig",
+      "note": "Javadoc sentence re-wrapped; same words."
+    },
+    {
+      "id": 38,
+      "project": "gson-mr",
+      "commit": "fc748cd0db",
+      "file": "gson/src/main/java-templates/com/google/gson/internal/GsonBuildConfig.java",
+      "kind": "reformatted",
+      "old": [
+        [
+          31,
+          31
+        ]
+      ],
+      "new": [
+        [
+          31,
+          31
+        ]
+      ],
+      "label": "correct",
+      "name": "GsonBuildConfig",
+      "note": "Empty constructor body \"{ }\" became \"{}\"."
+    },
+    {
+      "id": 39,
+      "project": "gson-mr",
+      "commit": "df01e943e5",
+      "file": "gson/src/main/java/com/google/gson/GsonBuilder.java",
+      "kind": "reformatted",
+      "old": [
+        [
+          678,
+          678
+        ]
+      ],
+      "new": [
+        [
+          678,
+          678
+        ]
+      ],
+      "label": "correct",
+      "name": "registerTypeAdapter",
+      "note": "Space added before \"{\" only."
+    },
+    {
+      "id": 40,
+      "project": "gson-mr",
+      "commit": "df01e943e5",
+      "file": "gson/src/main/java/com/google/gson/GsonBuilder.java",
+      "kind": "reformatted",
+      "old": [
+        [
+          698,
+          700
+        ]
+      ],
+      "new": [
+        [
+          698,
+          700
+        ]
+      ],
+      "label": "correct",
+      "name": "isTypeObjectOrJsonElement",
+      "note": "Same boolean expression; && moved to the line start and re-indented."
+    },
+    {
+      "id": 41,
+      "project": "gson-mr",
+      "commit": "df01e943e5",
+      "file": "gson/src/main/java/com/google/gson/stream/JsonReader.java",
+      "kind": "reformatted",
+      "old": [
+        [
+          807,
+          807
+        ]
+      ],
+      "new": [
+        [
+          807,
+          807
+        ]
+      ],
+      "label": "correct",
+      "name": "peekNumber",
+      "note": "Spaces added around != only."
+    },
+    {
+      "id": 42,
+      "project": "gson-mr",
+      "commit": "df01e943e5",
+      "file": "gson/src/main/java/com/google/gson/stream/JsonReader.java",
+      "kind": "reformatted",
+      "old": [
+        [
+          1758,
+          1758
+        ]
+      ],
+      "new": [
+        [
+          1758,
+          1758
+        ]
+      ],
+      "label": "correct",
+      "name": "consumeNonExecutePrefix",
+      "note": "Space added after \"if\" only."
+    },
+    {
+      "id": 43,
+      "project": "gson-mr",
+      "commit": "7d1973e6c5",
+      "file": "gson/src/main/java/com/google/gson/internal/bind/TypeAdapters.java",
+      "kind": "reordered",
+      "old": [
+        [
+          37,
+          52
+        ]
+      ],
+      "new": [
+        [
+          19,
+          34
+        ]
+      ],
+      "label": "correct",
+      "name": "imports",
+      "note": "The com.google.gson imports moved above the java.* imports, unchanged."
+    },
+    {
+      "id": 44,
+      "project": "gson-mr",
+      "commit": "7d1973e6c5",
+      "file": "gson/src/main/java/com/google/gson/internal/bind/TypeAdapters.java",
+      "kind": "renamed",
+      "old": [
+        [
+          818,
+          819
+        ]
+      ],
+      "new": [
+        [
+          821,
+          822
+        ]
+      ],
+      "label": "correct",
+      "name": "TT -> T1",
+      "note": "Type parameter TT renamed T1 on the signature lines; the body below is a separate, real edit."
+    },
+    {
+      "id": 45,
+      "project": "gson-mr",
+      "commit": "7a1c94f986",
+      "file": "gson/src/main/java/com/google/gson/internal/bind/ReflectiveTypeAdapterFactory.java",
+      "kind": "reordered",
+      "old": [
+        [
+          19,
+          44
+        ]
+      ],
+      "new": [
+        [
+          19,
+          43
+        ]
+      ],
+      "label": "correct",
+      "name": "imports",
+      "note": "Static import moved to the bottom and java.* after com.google.*; same imports."
+    },
+    {
+      "id": 46,
+      "project": "gson-mr",
+      "commit": "f1f838cf20",
+      "file": "gson/src/main/java/com/google/gson/internal/UnsafeAllocator.java",
+      "kind": "moved",
+      "old": [
+        [
+          73,
+          94
+        ]
+      ],
+      "new": [
+        [
+          54,
+          75
+        ]
+      ],
+      "label": "borderline",
+      "name": "create",
+      "note": "Post-Gingerbread attempt (comment and try block) moved above the pre-Gingerbread one, unchanged; but the order of attempts is the behaviour change, so \"moved\" undersells it."
+    },
+    {
+      "id": 47,
+      "project": "gson-mr",
+      "commit": "f1f838cf20",
+      "file": "gson/src/main/java/com/google/gson/internal/UnsafeAllocator.java",
+      "kind": "moved",
+      "old": [
+        [
+          54,
+          71
+        ]
+      ],
+      "new": [
+        [
+          77,
+          94
+        ]
+      ],
+      "label": "borderline",
+      "name": "create",
+      "note": "The other half of the same swap: true, but either block can be called the mover."
+    },
+    {
+      "id": 48,
+      "project": "gson-mr",
+      "commit": "a38b757bc4",
+      "file": "gson/src/main/java/com/google/gson/reflect/TypeToken.java",
+      "kind": "moved",
+      "old": [
+        [
+          369,
+          374
+        ]
+      ],
+      "new": [
+        [
+          360,
+          365
+        ]
+      ],
+      "label": "correct",
+      "name": "getParameterized",
+      "note": "Argument-count check moved up above the owner-type check, unchanged."
+    },
+    {
+      "id": 49,
+      "project": "gson-mr",
+      "commit": "00028fb5a7",
+      "file": "gson/src/main/java/com/google/gson/internal/bind/TypeAdapters.java",
+      "kind": "moved",
+      "old": [
+        [
+          973,
+          982
+        ]
+      ],
+      "new": [
+        [
+          963,
+          972
+        ]
+      ],
+      "label": "borderline",
+      "name": "EnumTypeAdapter",
+      "note": "Lines identical up to indentation, but lifted out of an AccessController.doPrivileged action, so they now run outside the privileged context."
+    },
+    {
+      "id": 50,
+      "project": "commons-lang-mr",
+      "commit": "09430095a9",
+      "file": "src/main/java/org/apache/commons/lang3/concurrent/EventCountCircuitBreaker.java",
+      "kind": "moved",
+      "old": [
+        [
+          194,
+          234
+        ]
+      ],
+      "new": [
+        [
+          140,
+          180
+        ]
+      ],
+      "label": "correct",
+      "name": "AbstractStateStrategy",
+      "note": "Nested abstract class moved to the top of the class with its Javadoc, unchanged (sort members)."
+    },
+    {
+      "id": 51,
+      "project": "commons-lang-mr",
+      "commit": "cc2ade0193",
+      "file": "src/test/java/org/apache/commons/lang3/reflect/ConstructorUtilsTest.java",
+      "kind": "moved",
+      "old": [
+        [
+          49,
+          49
+        ]
+      ],
+      "new": [
+        [
+          55,
+          55
+        ]
+      ],
+      "label": "correct",
+      "name": "value",
+      "note": "Field moved below the nested class, unchanged (the nested class moving up instead is the same change seen from the other side)."
+    },
+    {
+      "id": 52,
+      "project": "commons-lang-mr",
+      "commit": "cc2ade0193",
+      "file": "src/test/java/org/apache/commons/lang3/reflect/ConstructorUtilsTest.java",
+      "kind": "moved",
+      "old": [
+        [
+          62,
+          64
+        ]
+      ],
+      "new": [
+        [
+          66,
+          68
+        ]
+      ],
+      "label": "correct",
+      "name": "PrivateClass",
+      "note": "Constructor overload PrivateClass(String) moved below PrivateClass(Number), unchanged; pairs by parameter types."
+    },
+    {
+      "id": 53,
+      "project": "commons-lang-mr",
+      "commit": "24e0b283d1",
+      "file": "src/test/java/org/apache/commons/lang3/builder/HashCodeBuilderTest.java",
+      "kind": "moved",
+      "old": [
+        [
+          34,
+          34
+        ]
+      ],
+      "new": [
+        [
+          193,
+          193
+        ]
+      ],
+      "label": "correct",
+      "name": "INITIAL",
+      "note": "Constant moved below the fixture classes, unchanged (compile-time constant, so order cannot matter)."
+    },
+    {
+      "id": 54,
+      "project": "commons-lang-mr",
+      "commit": "24e0b283d1",
+      "file": "src/test/java/org/apache/commons/lang3/builder/HashCodeBuilderTest.java",
+      "kind": "moved",
+      "old": [
+        [
+          35,
+          35
+        ]
+      ],
+      "new": [
+        [
+          195,
+          195
+        ]
+      ],
+      "label": "correct",
+      "name": "CONSTANT",
+      "note": "Constant moved with INITIAL, now separated by a blank line; unchanged."
+    },
+    {
+      "id": 55,
+      "project": "commons-lang-mr",
+      "commit": "b8286523de",
+      "file": "src/main/java/org/apache/commons/lang3/time/TimeZones.java",
+      "kind": "moved",
+      "old": [
+        [
+          86,
+          93
+        ]
+      ],
+      "new": [
+        [
+          50,
+          57
+        ]
+      ],
+      "label": "correct",
+      "name": "SORTED_AVAILABLE_IDS",
+      "note": "Static field with Javadoc moved up; its initializer reads no other field of the class, so initialization order does not change its value."
+    },
+    {
+      "id": 56,
+      "project": "commons-lang-mr",
+      "commit": "b8286523de",
+      "file": "src/test/java/org/apache/commons/lang3/ArrayUtilsTest.java",
+      "kind": "moved",
+      "old": [
+        [
+          6962,
+          6966
+        ]
+      ],
+      "new": [
+        [
+          1973,
+          1977
+        ]
+      ],
+      "label": "correct",
+      "name": "testMaxArrayLength",
+      "note": "Last test method moved up into alphabetical place, unchanged."
+    },
+    {
+      "id": 57,
+      "project": "commons-lang-mr",
+      "commit": "d5758118b5",
+      "file": "src/main/java/org/apache/commons/lang3/reflect/MethodUtils.java",
+      "kind": "moved",
+      "old": [
+        [
+          98,
+          109
+        ]
+      ],
+      "new": [
+        [
+          123,
+          134
+        ]
+      ],
+      "label": "correct",
+      "name": "getAccessibleMethod",
+      "note": "Overload getAccessibleMethod(Class, String, Class...) moved down with its Javadoc, unchanged."
+    },
+    {
+      "id": 58,
+      "project": "commons-lang-mr",
+      "commit": "d5758118b5",
+      "file": "src/main/java/org/apache/commons/lang3/reflect/MethodUtils.java",
+      "kind": "moved",
+      "old": [
+        [
+          111,
+          120
+        ]
+      ],
+      "new": [
+        [
+          136,
+          145
+        ]
+      ],
+      "label": "correct",
+      "name": "getAccessibleMethod",
+      "note": "Overload getAccessibleMethod(Method) moved down with the other one, unchanged."
+    },
+    {
+      "id": 59,
+      "project": "commons-lang-mr",
+      "commit": "19adcd792f",
+      "file": "src/main/java/org/apache/commons/lang3/ClassUtils.java",
+      "kind": "moved",
+      "old": [
+        [
+          71,
+          83
+        ]
+      ],
+      "new": [
+        [
+          51,
+          63
+        ]
+      ],
+      "label": "correct",
+      "name": "Interfaces",
+      "note": "Nested enum moved to the top of the class, unchanged."
+    },
+    {
+      "id": 60,
+      "project": "commons-lang-mr",
+      "commit": "19adcd792f",
+      "file": "src/main/java/org/apache/commons/lang3/ClassUtils.java",
+      "kind": "moved",
+      "old": [
+        [
+          1599,
+          1619
+        ]
+      ],
+      "new": [
+        [
+          1538,
+          1558
+        ]
+      ],
+      "label": "correct",
+      "name": "toClass",
+      "note": "Static method moved up with its Javadoc, unchanged."
+    },
+    {
+      "id": 61,
+      "project": "commons-lang-mr",
+      "commit": "e547d704b2",
+      "file": "src/main/java/org/apache/commons/lang3/time/FastDateParser.java",
+      "kind": "moved",
+      "old": [
+        [
+          564,
+          569
+        ]
+      ],
+      "new": [
+        [
+          550,
+          555
+        ]
+      ],
+      "label": "correct",
+      "name": "GMT_OPTION",
+      "note": "Two static constants (GMT_OPTION, ID) moved above the static methods in the nested TimeZoneStrategy, unchanged; constants, so order does not matter."
+    }
+  ]
+}
