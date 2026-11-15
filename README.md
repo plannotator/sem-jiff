@@ -54,20 +54,25 @@ In Node nothing else is needed. In a browser, copy the grammars next to your app
 ## Power Up: Jev and Clef
 
 The rules are strict, so they miss extracted functions whose code was reworded on the way out.
-Give the engine a second opinion and it asks about exactly those candidates, once per file:
-Jev (via TypeSafe) decides, and Clef (Cloudflare) breaks the tie when Jev is unsure.
+Add a decision model and the engine asks it about exactly those candidates, once per file.
 Your key, your account; call it from a server or your own machine.
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/plannotator/sem-jiff/main/docs/assets/power-up-flow-dark.svg">
-  <img src="https://raw.githubusercontent.com/plannotator/sem-jiff/main/docs/assets/power-up-flow-light.svg" width="800" alt="Engine rules, then unsure candidates go to Jev, and Clef breaks ties when Jev is unsure.">
-</picture>
+**Try it with Jev** (by TypeSafe):
+
+```ts
+import { jevOpinion } from '@plannotator/sem-jiff/opinions';
+
+const diff = await semanticDiffFile('typescript', oldText, newText, 'src/cart.ts', {
+  secondOpinion: jevOpinion({ apiKey }),
+});
+```
+
+**Or with both:** Clef (Cloudflare) breaks the tie when Jev is unsure.
 
 ```ts
 import { jevOpinion, clefScore } from '@plannotator/sem-jiff/opinions';
 
 const secondOpinion = jevOpinion({ apiKey, tieBreaker: { ask: clefScore({ accountId, apiToken }) } });
-const diff = await semanticDiffFile('typescript', oldText, newText, 'src/cart.ts', { secondOpinion });
 ```
 
 <picture>
