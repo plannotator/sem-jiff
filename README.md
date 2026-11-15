@@ -1,6 +1,8 @@
 # @plannotator/sem-jiff
 
-Part of [Plannotator](https://github.com/backnotprop/plannotator).
+Part of Plannotator, try [Plannotator Inbox](https://github.com/backnotprop/plannotator); an inbox to stay in the loop and organize better code review.
+
+
 
 A diff shows lines that were added and deleted. Much of that is not a real change:
 a function moved further down the file, a variable renamed, code reformatted, a
@@ -11,6 +13,10 @@ can skip what kept its meaning and focus on what didn't.
 It returns that as plain data (`semanticOperations` and `semanticFolds`, with the matching patch) that any
 diff viewer can draw. The operation types in `src/pierre-types.ts` are copied from
 [Pierre](https://github.com/pierrecomputer/pierre) (Apache-2.0).
+
+Example, rendered in Plannotator:<br/>
+<img width="800" height="" alt="Screenshot 2026-11-15 at 11 39 21 AM" src="https://github.com/user-attachments/assets/a54a923c-d2f9-408f-b5da-48ce40755bfb" />
+
 
 ## What it finds
 
