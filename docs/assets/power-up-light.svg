@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="220" viewBox="0 0 800 220" role="img" aria-labelledby="t d">
+  <title id="t">Extracted and inlined functions found on the fresh final set</title>
+  <desc id="d">193 real extract and inline cases in TypeScript, Go, Rust, Python, Java and C#. Engine alone: 127 found (66%), 1 wrong of 133 claims. With Jev: 168 found (87%), 5 wrong of 181 claims. With Jev and Clef as tie-breaker: 171 found (89%), 5 wrong of 186 claims.</desc>
+  <style>
+    text { font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; fill: #0b0b0b; }
+    .title { font-size: 17px; font-weight: 600; }
+    .sub { font-size: 13px; fill: #52514e; }
+    .label { font-size: 14px; }
+    .label-strong { font-size: 14px; font-weight: 600; }
+    .group { font-size: 13px; font-weight: 600; fill: #52514e; }
+    .value, .value-strong { paint-order: stroke; stroke: #ffffff; stroke-width: 4px; stroke-linejoin: round; }
+    .value { font-size: 13px; font-variant-numeric: tabular-nums; }
+    .value-strong { font-size: 13px; font-weight: 600; font-variant-numeric: tabular-nums; }
+    .head { font-size: 12px; fill: #898781; }
+    .tick { font-size: 11px; fill: #898781; font-variant-numeric: tabular-nums; }
+  </style>
+  <text class="title" x="0" y="22">Extracted and inlined functions found, fresh final set</text>
+  <text class="sub" x="0" y="43">193 real cases in seven projects: TypeScript, Go, Rust, Python, Java, C#</text>
+  <text class="head" x="200" y="76">Found, of 193</text>
+  <text class="head" x="800" y="76" text-anchor="end">Wrong claims</text>
+  <line x1="200" y1="86" x2="200" y2="194" stroke="#c3c2b7" stroke-width="1"/>
+  <text class="tick" x="200" y="209" text-anchor="middle">0%</text>
+  <line x1="292.5" y1="86" x2="292.5" y2="194" stroke="#e1e0d9" stroke-width="1"/>
+  <text class="tick" x="292.5" y="209" text-anchor="middle">25%</text>
+  <line x1="385" y1="86" x2="385" y2="194" stroke="#e1e0d9" stroke-width="1"/>
+  <text class="tick" x="385" y="209" text-anchor="middle">50%</text>
+  <line x1="477.5" y1="86" x2="477.5" y2="194" stroke="#e1e0d9" stroke-width="1"/>
+  <text class="tick" x="477.5" y="209" text-anchor="middle">75%</text>
+  <line x1="570" y1="86" x2="570" y2="194" stroke="#e1e0d9" stroke-width="1"/>
+  <text class="tick" x="570" y="209" text-anchor="middle">100%</text>
+  <text class="label" x="0" y="107">Engine alone</text>
+  <path d="M200 92h239.5a4 4 0 0 1 4 4v12a4 4 0 0 1 -4 4h-239.5z" fill="#b5b3ad"/>
+  <text class="value" x="451.5" y="107">127 (66%)</text>
+  <text class="value" x="800" y="107" text-anchor="end">1 wrong of 133 claims</text>
+  <text class="label-strong" x="0" y="145">+ Jev</text>
+  <path d="M200 130h318.1a4 4 0 0 1 4 4v12a4 4 0 0 1 -4 4h-318.1z" fill="#2a78d6"/>
+  <text class="value-strong" x="530.1" y="145">168 (87%)</text>
+  <text class="value" x="800" y="145" text-anchor="end">5 wrong of 181 claims</text>
+  <text class="label-strong" x="0" y="183">+ Jev, Clef tie-breaker</text>
+  <path d="M200 168h323.8a4 4 0 0 1 4 4v12a4 4 0 0 1 -4 4h-323.8z" fill="#2a78d6"/>
+  <text class="value-strong" x="535.8" y="183">171 (89%)</text>
+  <text class="value" x="800" y="183" text-anchor="end">5 wrong of 186 claims</text>
+
+</svg>
