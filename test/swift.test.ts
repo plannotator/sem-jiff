@@ -22,8 +22,8 @@ test('the grammar is the tree-sitter-swift 0.7.3 release file, unchanged', () =>
 
 import { LANGUAGES } from '../src/parse.ts';
 
-// These tests check Swift's rules, so they run with nothing held back (LanguageConfig.holdBack); the last
-// test checks what v1 ships.
+// These tests check Swift's rules, so they run with nothing held back (LanguageConfig.holdBack); the
+// hold-back test checks what 0.2.1 ships.
 const rules = async (a: string, b: string) => {
   const held = LANGUAGES.swift.holdBack;
   LANGUAGES.swift.holdBack = undefined;
@@ -84,14 +84,15 @@ test('a body re-indented into an #if branch or a constrained extension is not re
   assert.ok(!(await types(before, ext)).includes('reformatted'));
 });
 
-test('Swift v1 holds back moved-with-edits only: its lines are plain edits; moves and renames are claimed', async () => {
-  assert.deepEqual([...(LANGUAGES.swift.holdBack ?? [])], ['movedWithEdit']);
+test('Swift 0.2.1 holds back moved-with-edits, moves, renames, extract and inline: their lines are plain edits; formatting is claimed', async () => {
+  assert.deepEqual([...(LANGUAGES.swift.holdBack ?? [])], ['movedWithEdit', 'moved', 'renamed', 'extractedFunction', 'inlinedFunction']);
   const long = (n: string) => `    func ${n}() -> Int {\n${[1, 2, 3, 4, 5].map((i) => `        let v${i} = ${i} * 2\n`).join('')}        return v1 + v5\n    }\n`;
   const moving = (y: number) => `    func b() -> Int {\n        let x = 2\n        let y = ${y}\n        return x + y\n    }\n`;
   const t = await shipped(`struct A {\n${moving(3)}\n${long('a')}\n${long('c')}}\n`, `struct A {\n${long('a')}\n${long('c')}\n${moving(30)}}\n`);
   assert.ok(!t.includes('movedWithEdit') && !t.includes('moved') && t.some((x) => x === 'edited' || x === 'added' || x === 'deleted'), t.join());
   const before = `struct Box {\n    var size: Int\n\n    func twice() -> Int {\n        self.size * 2\n    }\n\n    func plus(_ n: Int) -> Int {\n        size + n\n    }\n}\n`;
-  assert.ok((await shipped(before, before.replaceAll('size', 'width'))).includes('renamed'));
+  assert.ok((await types(before, before.replaceAll('size', 'width'))).includes('renamed'));
+  assert.ok(!(await shipped(before, before.replaceAll('size', 'width'))).includes('renamed'));
   assert.deepEqual(await shipped(before, before.replace('        size + n', '            size + n')), ['reformatted']);
 });
 

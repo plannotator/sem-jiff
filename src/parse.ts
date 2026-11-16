@@ -76,9 +76,9 @@ export interface LanguageConfig {
    */
   contextRuns?: boolean;
   /**
-   * Claims this language does not make yet: their lines are shown as plain edits. Ruby holds back
-   * moved-with-edits in v1 (3 of its 29 on the held-out set were wrong); so does Kotlin (too few
-   * held-out claims, 5, to measure).
+   * Claims this language does not make yet: their lines are shown as plain edits (0.2.1: the classes over
+   * the bar on the held3 blind set, in Ruby, Kotlin and Swift). Measurement lifts it with the HOLD_BACK
+   * rule off (SEMANTIC_NO_HOLD_BACK=1 in the harness).
    */
   holdBack?: ReadonlySet<string>;
   /**
@@ -678,7 +678,8 @@ function rubyVisibility(body: Node, before: number): string {
 const ruby: LanguageConfig = {
   id: 'ruby',
   wasm: 'tree-sitter-ruby/tree-sitter-ruby.wasm',
-  holdBack: new Set(['movedWithEdit']),
+  // held3 blind audit, wrong in n: moved 2/96, renamed 2/146, extract/inline 2/145 (bar 1 in 50).
+  holdBack: new Set(['movedWithEdit', 'moved', 'renamed', 'extractedFunction', 'inlinedFunction']),
   functionTypes: new Set(['method', 'singleton_method']),
   callTypes: new Set(['call', 'identifier']),
   blockTypes: RUBY_BLOCKS,
@@ -884,7 +885,8 @@ const kotlin: LanguageConfig = {
   identifierTypes: new Set(['identifier']),
   harmlessMissing: new Set(['_class_member_semi']),
   contextRuns: true,
-  holdBack: new Set(['movedWithEdit']),
+  // held3 blind audit, wrong in n: renamed 2/143, extract/inline 4/142 (bar 1 in 50); moved 0/138 stays.
+  holdBack: new Set(['movedWithEdit', 'renamed', 'extractedFunction', 'inlinedFunction']),
   declarationsIn: (container) => {
     const out: Declaration[] = [];
     for (const child of container.namedChildren) {
@@ -1090,7 +1092,8 @@ const swift: LanguageConfig = {
     return out;
   },
   // Moved-with-edits was wrong 2 times in 10 on the held-out sets: held back in v1, as in Ruby and Kotlin.
-  holdBack: new Set(['movedWithEdit']),
+  // held3 blind audit, wrong in n: moved 4/131, renamed 3/149, extract/inline 6/142 (bar 1 in 50).
+  holdBack: new Set(['movedWithEdit', 'moved', 'renamed', 'extractedFunction', 'inlinedFunction']),
   moveEditedFirst: true,
   // A whole `#if` block or extension moved with its directives and doc comment keeps its move.
   contextRuns: true,

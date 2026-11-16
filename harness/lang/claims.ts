@@ -1,9 +1,13 @@
 // Our engine's moved / renamed / reformatted / reordered claims on a corpus, in the line format
 // harness/compare/tool_claims.py writes for sem and difftastic, so all three are judged the same way.
 // Usage: node harness/lang/claims.ts <out.jsonl> <project>...   (reads harness/work/data/hist-<project>.json)
+// SEMANTIC_NO_<RULE>=1 switches a rule off, as in bench/recall.ts (SEMANTIC_NO_HOLD_BACK=1: nothing held back).
 import fs from 'node:fs';
 import path from 'node:path';
 import { languageForPath, semanticDiffFile } from '../../src/index.ts';
+import { switchRulesOff } from '../../src/runtime.ts';
+
+switchRulesOff(Object.keys(process.env).filter((k) => k.startsWith('SEMANTIC_NO_') && process.env[k]).map((k) => k.slice('SEMANTIC_NO_'.length)));
 
 const here = path.dirname(new URL(import.meta.url).pathname);
 const work = process.env.WORK ?? path.join(here, '..', 'work');

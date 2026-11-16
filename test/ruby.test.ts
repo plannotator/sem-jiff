@@ -3,10 +3,21 @@
 import assert from 'node:assert/strict';
 import { test } from 'node:test';
 import { languageForPath, semanticDiffFile } from '../src/index.ts';
+import { switchRulesOff } from '../src/runtime.ts';
 
-const ops = async (a: string, b: string) =>
-  (await semanticDiffFile('ruby', a, b, 'x.rb')).semanticOperations.map((o) => [o.type, o.lines.old.map((l) => [l.start, l.end]), o.lines.new.map((l) => [l.start, l.end])]);
+// These tests check Ruby's rules, so they run with the hold-back lifted (the HOLD_BACK rule off); the
+// hold-back tests check what 0.2.1 ships.
+const run = async (a: string, b: string, lifted: boolean) => {
+  if (lifted) switchRulesOff(['HOLD_BACK']);
+  try {
+    return (await semanticDiffFile('ruby', a, b, 'x.rb')).semanticOperations.map((o) => [o.type, o.lines.old.map((l) => [l.start, l.end]), o.lines.new.map((l) => [l.start, l.end])]);
+  } finally {
+    switchRulesOff([]);
+  }
+};
+const ops = (a: string, b: string) => run(a, b, true);
 const types = async (a: string, b: string) => (await ops(a, b)).map((o) => o[0]);
+const shipped = async (a: string, b: string) => (await run(a, b, false)).map((o) => o[0]);
 
 test('Ruby files are read; ERB templates are not', () => {
   assert.equal(languageForPath('lib/cart.rb'), 'ruby');
@@ -90,7 +101,7 @@ test('a method re-indented in place, same context, is still formatting', async (
 test('moved-with-edits is held back in Ruby: the lines are plain edits', async () => {
   const long = (n: string) => `  def ${n}\n${[1, 2, 3, 4, 5].map((i) => `    v${i} = ${n}${i}\n`).join('')}  end\n`;
   const moving = (y: number) => `  def b\n    x = 2\n    y = ${y}\n    x + y\n  end\n`;
-  const t = await types(`class A\n${moving(3)}\n${long('a')}\n${long('c')}end\n`, `class A\n${long('a')}\n${long('c')}\n${moving(30)}end\n`);
+  const t = await shipped(`class A\n${moving(3)}\n${long('a')}\n${long('c')}end\n`, `class A\n${long('a')}\n${long('c')}\n${moving(30)}end\n`);
   assert.ok(!t.includes('movedWithEdit') && !t.includes('moved') && t.some((x) => x === 'edited' || x === 'added' || x === 'deleted'), t.join());
   const { LANGUAGES } = await import('../src/parse.ts');
   for (const [id, cfg] of Object.entries(LANGUAGES)) if (id !== 'ruby' && id !== 'kotlin' && id !== 'swift') assert.equal(cfg.holdBack, undefined, id);

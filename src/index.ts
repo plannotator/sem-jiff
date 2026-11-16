@@ -12,17 +12,20 @@ import { detectEdits, replacementsFromBlocks } from './edits.ts';
 import { alignedLineDiff, diffLines, toPatch } from './linediff.ts';
 import { computeTextDiff, WORK_PER_SECOND } from './textdiff.ts';
 import { detectTextMoves } from './textmoves.ts';
+import { attachSymbols, type SemDiffOperation } from './symbols.ts';
 
 export type { SemanticDiffFold, SemanticDiffOperation } from './pierre-types.ts';
 export { languageForPath, type LanguageId } from './languages.ts';
+export type { OperationSymbol, SemDiffOperation, SymbolKind } from './symbols.ts';
 export { configure, type Candidate, type SemDiffSetup, type WasmSource } from './runtime.ts';
 export { reviewSummary, READ_KINDS, SKIM_KINDS, type ReviewSummary } from './summary.ts';
 import type { Candidate } from './runtime.ts';
-import { flags } from './runtime.ts';
+import { flags, rule } from './runtime.ts';
 import { OpinionKeyError, type OpinionAnswer, type OpinionBand } from './opinions.ts';
 
 export interface SemanticFileDiff {
-  semanticOperations: SemanticDiffOperation[];
+  /** Pierre's operations, each with the optional `symbol` it is about (docs/symbols.md). */
+  semanticOperations: SemDiffOperation[];
   semanticFolds: SemanticDiffFold[];
   /**
    * Unified diff built from the declaration-aware line diff. Give it to your
@@ -359,7 +362,9 @@ export async function semanticDiffFile(language: LanguageId, oldText: string, ne
         detectExtracted(a.rootNode, b.rootNode, newText, cfg, collect);
       });
       const rejected = new Set(options.rejectedCandidates ?? []);
-      const toAsk = asked.filter((c) => !rejected.has(candidateId(c)));
+      // A held-back extract or inline is never shown: no model is asked about it.
+      const held = (c: Candidate) => rule('HOLD_BACK') && !!cfg.holdBack?.has(c.kind === 'extract' ? 'extractedFunction' : 'inlinedFunction');
+      const toAsk = asked.filter((c) => !rejected.has(candidateId(c)) && !held(c));
       const answers = toAsk.length ? await options.secondOpinion(toAsk) : [];
       toAsk.forEach((c, i) => {
         const a = answers[i];
@@ -470,7 +475,7 @@ export async function semanticDiffFile(language: LanguageId, oldText: string, ne
           : ownsText(op, oldLines, newLines, inString);
       if (!keep || (op.type === 'movedWithEdit' && !alike(op, oldLines, newLines))) return;
       // A claim the language holds back: the safety net below marks its lines as plain changes.
-      if (cfg.holdBack?.has(op.type)) return;
+      if (rule('HOLD_BACK') && cfg.holdBack?.has(op.type)) return;
       // Lines that now sit in another context (wrapped into Ruby's `class << self`, under a new `private`) are
       // not just laid out differently either.
       // A move that changes the position of an item whose order means something (a constructor parameter) is an edit.
@@ -497,7 +502,15 @@ export async function semanticDiffFile(language: LanguageId, oldText: string, ne
         }))
       )
       .sort((x, y) => x.old.start - y.old.start);
-    return { semanticOperations: withinFile(operations, dOld.length, dNew.length), semanticFolds, patch: toPatch(name, blocks, dOld, dNew), diagnostics };
+    const semanticOperations: SemDiffOperation[] = withinFile(operations, dOld.length, dNew.length);
+    // The declaration each operation is about (docs/symbols.md). Additive: a failure here only costs the symbols.
+    try {
+      attachSymbols(semanticOperations, a.rootNode, b.rootNode, oldText, newText, cfg);
+    } catch (e) {
+      if (flags.reasons()) console.error('[semantic] symbols failed:', e);
+      for (const op of semanticOperations) delete op.symbol;
+    }
+    return { semanticOperations, semanticFolds, patch: toPatch(name, blocks, dOld, dNew), diagnostics };
   });
   if (!report) return result;
   return { ...result, secondOpinion: { ...report, links: linksFor(result.semanticOperations, acceptedAnswers, oldText, newText) } };
@@ -538,6 +551,6 @@ function linksFor(
   return links;
 }
 
-export async function semanticDiff(language: LanguageId, oldText: string, newText: string): Promise<SemanticDiffOperation[]> {
+export async function semanticDiff(language: LanguageId, oldText: string, newText: string): Promise<SemDiffOperation[]> {
   return (await semanticDiffFile(language, oldText, newText)).semanticOperations;
 }

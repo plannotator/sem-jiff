@@ -29,7 +29,10 @@ function applyErrata(expected: unknown) {
 
 test('matches Pierre fixture op-inlined-function-nested exactly (one documented erratum)', async () => {
   const ops = await semanticDiff(fixture.language, fixture.oldContents, fixture.newContents);
-  assert.deepStrictEqual(ops, applyErrata(fixture.expected));
+  // `symbol` is ours, on top of Pierre's operation shape (docs/symbols.md): compared on its own.
+  const symbols = ops.map((o) => o.symbol);
+  assert.deepStrictEqual(ops.map(({ symbol, ...pierre }) => pierre), applyErrata(fixture.expected));
+  assert.deepStrictEqual(symbols, [{ name: 'cartItemTotal', kind: 'function' }]);
 });
 
 test('is deterministic', async () => {

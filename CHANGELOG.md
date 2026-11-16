@@ -1,5 +1,27 @@
 # Changelog
 
+## 0.2.1
+
+Held back in Swift, Ruby and Kotlin: claims whose wrong rate, measured on a fresh blind set, could be above our
+1-in-50 bar. Their lines show as plain edits. The set: 30 projects never used before (10 per language), every claim
+labelled blind by two raters and a third where they disagreed; the bar is the one-sided 95% upper bound on the wrong
+rate, at most 2%.
+
+| Language | Held back (wrong in n, 95% upper bound) | Still claimed |
+|---|---|---|
+| Swift | moved 4 in 131 (6.9%), renamed 3 in 149 (5.1%), extract/inline 6 in 142 (8.2%) | reformatted (0 in 150) |
+| Ruby | moved 2 in 96 (6.4%), renamed 2 in 146 (4.3%), extract/inline 2 in 145 (4.3%) | reformatted (0 in 150) |
+| Kotlin | renamed 2 in 143 (4.3%), extract/inline 4 in 142 (6.3%) | moved (0 in 138, under 2.2%), reformatted (0 in 150) |
+
+Moved-with-edits stays held back in all three (wrong 30 in 125, 7 in 50, 69 in 131). No second opinion is asked
+about an extract or inline a language holds back. 0.3 brings these back once each is measured under the bar.
+The other eight languages are unchanged.
+
+- Each operation can carry an optional `symbol: { name, kind, oldName?, container? }`: the declaration it is about
+  (docs/symbols.md). Additive: no other field changes, and it is left out when the engine is unsure.
+- Docs: `copyWasm` in the README; the `sem-jiff-copy-wasm` bin needs Node 24 or later, or Bun; vendoring the source
+  tree needs the devDependencies (PACKAGING.md).
+
 ## 0.2.0 (2026-11-15)
 
 The engine Plannotator's code review runs, now as one package. Languages, and the claims each holds back in this version

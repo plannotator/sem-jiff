@@ -28,6 +28,11 @@ Example, rendered in Plannotator:<br/>
 It prefers saying nothing to saying something wrong: a missed change falls back to
 the plain diff, while a wrong label would mislead the reviewer.
 
+**Held back in 0.2.1.** A fresh blind test on 30 new Swift, Ruby and Kotlin projects found some labels wrong more
+often than our 1-in-50 bar, so for now those lines show as plain edits:
+Swift and Ruby moves, renames and extracts; Kotlin renames and extracts.
+Numbers in [CHANGELOG.md](CHANGELOG.md). 0.3 brings them back once each passes the bar.
+
 ## Install
 
 ```sh
@@ -48,7 +53,7 @@ const { semanticOperations, semanticFolds, patch } =
 ```
 
 In Node nothing else is needed. In a browser, copy the grammars next to your app
-(`npx sem-jiff-copy-wasm <dir>`) and tell the engine where they are served from with
+(`npx sem-jiff-copy-wasm <dir>`, which needs Node 24+ or Bun, or `copyWasm(dir)` from `@plannotator/sem-jiff/copy-wasm`) and tell the engine where they are served from with
 `configure({ locateGrammar, locateRuntime })`. Options, `reviewSummary` and browser setup: [docs/usage.md](docs/usage.md).
 
 ## Power Up: Jev and Clef
@@ -93,6 +98,7 @@ costs nothing. More in [docs/usage.md](docs/usage.md#second-opinion-power-up).
 On TypeScript practice commits (187 real cases): RefactoringMiner 73 found, 14 wrong; sem-jiff 105, 1 wrong;
 with Jev 148, 1 wrong. Every comparison: [harness/compare/README.md](harness/compare/README.md).
 How the engine is tested: [docs/verification.md](docs/verification.md).
+The Kotlin and Swift figures above are from earlier held-out sets; the newer blind set is in the 0.2.1 notes.
 
 ## Languages
 
