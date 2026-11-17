@@ -2,6 +2,7 @@
 import assert from 'node:assert/strict';
 import { test } from 'node:test';
 import { semanticDiffFile } from '../src/index.ts';
+import { switchRulesOff } from '../src/runtime.ts';
 import type { SemanticDiffOperation } from '../src/pierre-types.ts';
 
 const PLAIN = new Set(['added', 'deleted', 'edited']);
@@ -48,10 +49,18 @@ test('a function moved to the end is one move, and folds', async () => {
   assert.deepEqual(r.semanticFolds, [{ old: { start: 3, end: 6 }, operations: [0], counts: { moved: 4, edited: 0, removed: 0 } }]);
 });
 
-test('moved and edited is movedWithEdit and does not fold', async () => {
-  const r = await semanticDiffFile('typescript', users, usersMoved.replace('user.email', 'user.mail'));
-  assert.deepEqual(types(r.semanticOperations), ['movedWithEdit']);
-  assert.deepEqual(r.semanticFolds, []);
+test('moved and edited is movedWithEdit (hold-back lifted) and does not fold; shipped, its lines are plain edits', async () => {
+  const shipped = await semanticDiffFile('typescript', users, usersMoved.replace('user.email', 'user.mail'));
+  assert.ok(!types(shipped.semanticOperations).includes('movedWithEdit'));
+  assert.deepEqual(shipped.semanticFolds, []);
+  switchRulesOff(['HOLD_BACK']);
+  try {
+    const r = await semanticDiffFile('typescript', users, usersMoved.replace('user.email', 'user.mail'));
+    assert.deepEqual(types(r.semanticOperations), ['movedWithEdit']);
+    assert.deepEqual(r.semanticFolds, []);
+  } finally {
+    switchRulesOff([]);
+  }
 });
 
 const retry = `const MAX_RETRIES = 3;
@@ -157,7 +166,9 @@ test('a different declaration is not a rename just because it has the same shape
 test("VS Code fixture noisy-move1: the moved block is found", async () => {
   const fs = await import('node:fs');
   const dir = new URL('./fixtures/vscode/noisy-move1/', import.meta.url);
-  const r = await semanticDiffFile('typescript', fs.readFileSync(new URL('1.tst', dir), 'utf8'), fs.readFileSync(new URL('2.tst', dir), 'utf8'));
+  // Found as movedWithEdit, which ships held back: measured with the hold-back lifted.
+  switchRulesOff(['HOLD_BACK']);
+  const r = await semanticDiffFile('typescript', fs.readFileSync(new URL('1.tst', dir), 'utf8'), fs.readFileSync(new URL('2.tst', dir), 'utf8')).finally(() => switchRulesOff([]));
   const moves = r.semanticOperations.filter((o) => o.type === 'moved' || o.type === 'movedWithEdit');
   // VS Code expects old lines [477, 537) to move to [107, 165).
   assert.ok(moves.some((o) => o.lines.old.some((l) => l.start <= 477 && l.end >= 536)), JSON.stringify(moves.map((o) => o.lines)));

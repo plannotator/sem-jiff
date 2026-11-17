@@ -25,8 +25,8 @@ const types = async (c: Case, lifted: boolean) => {
   }
 };
 
-test('the held-back classes per language; every other language holds nothing back', () => {
-  for (const [id, cfg] of Object.entries(LANGUAGES)) assert.deepEqual([...(cfg.holdBack ?? [])], HELD[id] ?? [], id);
+test('the held-back classes per language; every other language holds back movedWithEdit only (held4)', () => {
+  for (const [id, cfg] of Object.entries(LANGUAGES)) assert.deepEqual([...(cfg.holdBack ?? [])], HELD[id] ?? ['movedWithEdit'], id);
 });
 
 for (const lang of Object.keys(HELD)) {

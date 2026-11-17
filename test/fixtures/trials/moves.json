@@ -1,0 +1,286 @@
+[
+ {
+  "id": "swift-ext-conformance-changed",
+  "language": "swift",
+  "file": "Chunk.swift",
+  "title": "swift: an extension's conformance renamed (`_RopeElement` -> `RopeElement`): its untouched members did not move",
+  "old": "struct Chunk {\n    var a: Int\n}\n\nextension Chunk: _RopeElement {\n    func alpha(_ x: Int) -> Int {\n        let y = x * 2\n        return y + 2\n    }\n\n    func beta(_ x: Int) -> Int {\n        let y = x * 3\n        return y + 3\n    }\n}\n\nextension Chunk: CustomStringConvertible {\n    var description: String { \"chunk\" }\n}\n",
+  "new": "struct Chunk {\n    var a: Int\n}\n\nextension Chunk: RopeElement {\n    func alpha(_ x: Int) -> Int {\n        let y = x * 2\n        return y + 2\n    }\n\n    func beta(_ x: Int) -> Int {\n        let y = x * 3\n        return y + 3\n    }\n}\n\nextension Chunk: CustomStringConvertible {\n    var description: String { \"chunk\" }\n}\n",
+  "off": [
+   "moved 6-9 -> 6-9",
+   "moved 11-14 -> 11-14"
+  ],
+  "on": {
+   "DROP_UNTOUCHED_MOVE": [],
+   "EXT_BY_MEMBERS": []
+  }
+ },
+ {
+  "id": "swift-ext-same-header",
+  "language": "swift",
+  "file": "Chunk.swift",
+  "title": "swift: two extensions with one header, the first one's signatures changed: the untouched member of the second did not move",
+  "old": "extension Wrapper where Base: Item {\n    func setImage(_ url: URL, done: (Result) -> Void) {\n        load(url, done)\n    }\n\n    func setPlaceholder(_ url: URL, done: (Result) -> Void) {\n        load(url, done)\n    }\n}\n\nextension Wrapper where Base: Item {\n    func cancelDownloadTask() {\n        task?.cancel()\n        task = nil\n    }\n}\n",
+  "new": "extension Wrapper where Base: Item {\n    func setImage(_ url: URL, done: @MainActor @Sendable (Result) -> Void) {\n        load(url, done)\n    }\n\n    func setPlaceholder(_ url: URL, done: @MainActor @Sendable (Result) -> Void) {\n        load(url, done)\n    }\n}\n\nextension Wrapper where Base: Item {\n    func cancelDownloadTask() {\n        task?.cancel()\n        task = nil\n    }\n}\n",
+  "off": [],
+  "on": {
+   "DROP_UNTOUCHED_MOVE": [],
+   "EXT_BY_MEMBERS": []
+  }
+ },
+ {
+  "id": "swift-ext-if-branches",
+  "language": "swift",
+  "file": "Chunk.swift",
+  "title": "swift: a conformance added makes an extension's header equal its twin in the other `#if` branch: nothing moved",
+  "old": "#if os(macOS)\nextension DisplayLink: Compatible, @unchecked Sendable {\n    var rate: Int { 60 }\n}\n#else\nextension DisplayLink: Compatible {\n    var rate: Int { 120 }\n}\n#endif\n",
+  "new": "#if os(macOS)\nextension DisplayLink: Compatible, @unchecked Sendable {\n    var rate: Int { 60 }\n}\n#else\nextension DisplayLink: Compatible, @unchecked Sendable {\n    var rate: Int { 120 }\n}\n#endif\n",
+  "off": [
+   "moved 7-7 -> 7-7"
+  ],
+  "on": {
+   "DROP_UNTOUCHED_MOVE": [],
+   "EXT_BY_MEMBERS": []
+  }
+ },
+ {
+  "id": "swift-ext-respaced",
+  "language": "swift",
+  "file": "Chunk.swift",
+  "title": "swift: an extension header only respaced: its members did not move",
+  "old": "extension Chunk :Equatable{\n    func alpha(_ x: Int) -> Int {\n        let y = x * 2\n        return y + 2\n    }\n}\n\nextension Chunk: Hashable {\n    func beta(_ x: Int) -> Int {\n        let y = x * 3\n        return y + 3\n    }\n}\n",
+  "new": "extension Chunk: Equatable {\n    func alpha(_ x: Int) -> Int {\n        let y = x * 2\n        return y + 2\n    }\n}\n\nextension Chunk: Hashable {\n    func beta(_ x: Int) -> Int {\n        let y = x * 3\n        return y + 3\n    }\n}\n",
+  "off": [
+   "moved 2-5 -> 2-5"
+  ],
+  "on": {
+   "DROP_UNTOUCHED_MOVE": [],
+   "EXT_BY_MEMBERS": []
+  }
+ },
+ {
+  "id": "swift-ext-real-move",
+  "language": "swift",
+  "file": "Chunk.swift",
+  "title": "swift: a method moved from one extension into another is still a move",
+  "old": "extension Chunk: Equatable {\n    func alpha(_ x: Int) -> Int {\n        let y = x * 2\n        return y + 2\n    }\n\n    func gamma(_ x: Int) -> Int {\n        let y = x * 5\n        return y + 5\n    }\n}\n\nextension Chunk: Hashable {\n    func beta(_ x: Int) -> Int {\n        let y = x * 3\n        return y + 3\n    }\n}\n",
+  "new": "extension Chunk: Equatable {\n    func alpha(_ x: Int) -> Int {\n        let y = x * 2\n        return y + 2\n    }\n}\n\nextension Chunk: Hashable {\n    func beta(_ x: Int) -> Int {\n        let y = x * 3\n        return y + 3\n    }\n\n    func gamma(_ x: Int) -> Int {\n        let y = x * 5\n        return y + 5\n    }\n}\n",
+  "off": [
+   "moved 7-10 -> 14-17"
+  ],
+  "on": {
+   "DROP_UNTOUCHED_MOVE": [
+    "moved 7-10 -> 14-17"
+   ],
+   "EXT_BY_MEMBERS": [
+    "moved 7-10 -> 14-17"
+   ],
+   "DUP_TIEBREAK": [
+    "moved 7-10 -> 14-17"
+   ]
+  }
+ },
+ {
+  "id": "swift-ext-move-from-deleted",
+  "language": "swift",
+  "file": "Chunk.swift",
+  "title": "swift: a method moved out of an extension that is deleted into one whose header changed: the claims stay as they are",
+  "old": "extension Chunk: Equatable {\n    func gamma(_ x: Int) -> Int {\n        let y = x * 5\n        return y + 5\n    }\n}\n\nextension Chunk: Hashable {\n    func beta(_ x: Int) -> Int {\n        let y = x * 3\n        return y + 3\n    }\n}\n",
+  "new": "extension Chunk: Hashable, Sendable {\n    func beta(_ x: Int) -> Int {\n        let y = x * 3\n        return y + 3\n    }\n\n    func gamma(_ x: Int) -> Int {\n        let y = x * 5\n        return y + 5\n    }\n}\n",
+  "off": [
+   "movedWithEdit 8-12 -> 1-5"
+  ],
+  "on": {
+   "DROP_UNTOUCHED_MOVE": [
+    "movedWithEdit 8-12 -> 1-5"
+   ],
+   "EXT_BY_MEMBERS": [
+    "movedWithEdit 8-12 -> 1-5"
+   ]
+  }
+ },
+ {
+  "id": "ts-real-move",
+  "language": "typescript",
+  "file": "calc.ts",
+  "title": "typescript: a function moved to the end is still a move",
+  "old": "export function alpha(a: number): number {\n  const b = a * 2;\n  return b + 1;\n}\n\nexport function beta(a: number): number {\n  const b = a * 3;\n  return b + 1;\n}\n\nexport function gamma(a: number): number {\n  return a;\n}\n",
+  "new": "export function beta(a: number): number {\n  const b = a * 3;\n  return b + 1;\n}\n\nexport function gamma(a: number): number {\n  return a;\n}\n\nexport function alpha(a: number): number {\n  const b = a * 2;\n  return b + 1;\n}\n",
+  "off": [
+   "moved 1-4 -> 10-13"
+  ],
+  "on": {
+   "DROP_UNTOUCHED_MOVE": [
+    "moved 1-4 -> 10-13"
+   ],
+   "DUP_TIEBREAK": [
+    "moved 1-4 -> 10-13"
+   ],
+   "IMPORT_NO_RENAME": [
+    "moved 1-4 -> 10-13"
+   ]
+  }
+ },
+ {
+  "id": "ruby-require-dup",
+  "language": "ruby",
+  "file": "liquid.rb",
+  "title": "ruby: a require copied to the top while the original stays: the original did not move",
+  "old": "require 'liquid/parser'\nrequire 'liquid/i18n'\nrequire 'liquid/drop'\nrequire 'liquid/tag'\nrequire 'liquid/block'\nrequire 'liquid/document'\n",
+  "new": "require 'liquid/tag'\nrequire 'liquid/parser'\nrequire 'liquid/i18n'\nrequire 'liquid/drop'\nrequire 'liquid/tag'\nrequire 'liquid/block'\nrequire 'liquid/document'\n",
+  "off": [
+   "moved 4-4 -> 1-1"
+  ],
+  "on": {
+   "DUP_TIEBREAK": []
+  }
+ },
+ {
+  "id": "ruby-require-moved",
+  "language": "ruby",
+  "file": "liquid.rb",
+  "title": "ruby: a require moved to the top (no copy left) is still a move",
+  "old": "require 'liquid/parser'\nrequire 'liquid/i18n'\nrequire 'liquid/drop'\nrequire 'liquid/tag'\nrequire 'liquid/block'\nrequire 'liquid/document'\n",
+  "new": "require 'liquid/tag'\nrequire 'liquid/parser'\nrequire 'liquid/i18n'\nrequire 'liquid/drop'\nrequire 'liquid/block'\nrequire 'liquid/document'\n",
+  "off": [
+   "moved 4-4 -> 1-1"
+  ],
+  "on": {
+   "DUP_TIEBREAK": [
+    "moved 4-4 -> 1-1"
+   ],
+   "DROP_UNTOUCHED_MOVE": [
+    "moved 4-4 -> 1-1"
+   ],
+   "IMPORT_NO_RENAME": [
+    "moved 4-4 -> 1-1"
+   ]
+  }
+ },
+ {
+  "id": "ruby-require-two-copies-one-moves",
+  "language": "ruby",
+  "file": "liquid.rb",
+  "title": "ruby: of two copies of a require, the second one moved to the top: one move, of that copy",
+  "old": "require 'a'\nrequire 'b'\nrequire 'c'\nrequire 'd'\nrequire 'b'\nrequire 'e'\n",
+  "new": "require 'b'\nrequire 'a'\nrequire 'b'\nrequire 'c'\nrequire 'd'\nrequire 'e'\n",
+  "off": [
+   "moved 2-2 -> 1-1",
+   "moved 5-5 -> 3-3"
+  ],
+  "on": {
+   "DUP_TIEBREAK": [
+    "moved 5-5 -> 1-1"
+   ]
+  }
+ },
+ {
+  "id": "kotlin-import-dup",
+  "language": "kotlin",
+  "file": "App.kt",
+  "title": "kotlin: an import copied to the top while the original stays: the original did not move",
+  "old": "package x\n\nimport a.B\nimport a.C\nimport a.D\nimport a.E\n\nfun f() = 1\n",
+  "new": "package x\n\nimport a.D\nimport a.B\nimport a.C\nimport a.D\nimport a.E\n\nfun f() = 1\n",
+  "off": [
+   "moved 5-5 -> 3-3"
+  ],
+  "on": {
+   "DUP_TIEBREAK": []
+  }
+ },
+ {
+  "id": "swift-import-dup",
+  "language": "swift",
+  "file": "Chunk.swift",
+  "title": "swift: an import copied to the top while the original stays: the original did not move",
+  "old": "import Foundation\nimport UIKit\nimport Combine\nimport os\n\nlet x = 1\n",
+  "new": "import Combine\nimport Foundation\nimport UIKit\nimport Combine\nimport os\n\nlet x = 1\n",
+  "off": [
+   "moved 3-3 -> 1-1"
+  ],
+  "on": {
+   "DUP_TIEBREAK": []
+  }
+ },
+ {
+  "id": "kotlin-import-replaced",
+  "language": "kotlin",
+  "file": "App.kt",
+  "title": "kotlin: one import replaced by another in a different place: two imports are not one moved and renamed",
+  "old": "package org.koin.compose\n\nimport androidx.compose.runtime.Composable\nimport androidx.compose.runtime.ProvidableCompositionLocal\nimport androidx.compose.runtime.ReadOnlyComposable\nimport androidx.compose.runtime.compositionLocalOf\nimport org.koin.core.Koin\n\nfun f() = 1\n",
+  "new": "package org.koin.compose\n\nimport androidx.compose.runtime.Composable\nimport androidx.compose.runtime.InternalComposeApi\nimport androidx.compose.runtime.ProvidableCompositionLocal\nimport androidx.compose.runtime.compositionLocalOf\nimport org.koin.core.Koin\n\nfun f() = 1\n",
+  "off": [
+   "movedWithEdit 5-5 -> 4-4"
+  ],
+  "on": {
+   "IMPORT_NO_RENAME": []
+  }
+ },
+ {
+  "id": "java-import-replaced",
+  "language": "java",
+  "file": "A.java",
+  "title": "java: one import replaced by another in a different place: two imports are not one moved and renamed",
+  "old": "package x;\n\nimport java.util.List;\nimport java.util.Map;\nimport java.util.Optional;\nimport java.util.Set;\n\nclass A {}\n",
+  "new": "package x;\n\nimport java.util.Collection;\nimport java.util.List;\nimport java.util.Map;\nimport java.util.Set;\n\nclass A {}\n",
+  "off": [
+   "movedWithEdit 5-5 -> 3-3"
+  ],
+  "on": {
+   "IMPORT_NO_RENAME": []
+  }
+ },
+ {
+  "id": "kotlin-import-moved",
+  "language": "kotlin",
+  "file": "App.kt",
+  "title": "kotlin: an unchanged import moved to the top is still a move",
+  "old": "package x\n\nimport a.B\nimport a.C\nimport a.D\nimport a.E\n\nfun f() = 1\n",
+  "new": "package x\n\nimport a.E\nimport a.B\nimport a.C\nimport a.D\n\nfun f() = 1\n",
+  "off": [
+   "moved 6-6 -> 3-3"
+  ],
+  "on": {
+   "IMPORT_NO_RENAME": [
+    "moved 6-6 -> 3-3"
+   ],
+   "DUP_TIEBREAK": [
+    "moved 6-6 -> 3-3"
+   ],
+   "DROP_UNTOUCHED_MOVE": [
+    "moved 6-6 -> 3-3"
+   ]
+  }
+ },
+ {
+  "id": "kotlin-fun-renamed-moved",
+  "language": "kotlin",
+  "file": "App.kt",
+  "title": "kotlin: a function renamed and moved is still paired by the rename pass",
+  "old": "package x\n\nimport a.B\n\nfun alpha(x: Int): Int {\n    val y = x * 2\n    return y + 1\n}\n\nfun beta(x: Int): Int {\n    val y = x * 3\n    return y + 1\n}\n\nfun call() = alpha(1) + beta(2)\n",
+  "new": "package x\n\nimport a.B\n\nfun beta(x: Int): Int {\n    val y = x * 3\n    return y + 1\n}\n\nfun call() = first(1) + beta(2)\n\nfun first(x: Int): Int {\n    val y = x * 2\n    return y + 1\n}\n",
+  "off": [
+   "movedWithEdit 5-8 -> 12-15"
+  ],
+  "on": {
+   "IMPORT_NO_RENAME": [
+    "movedWithEdit 5-8 -> 12-15"
+   ]
+  }
+ },
+ {
+  "id": "kotlin-import-shifted",
+  "language": "kotlin",
+  "file": "App.kt",
+  "title": "kotlin: an import that only shifted a line, beside two imports paired as one renamed import, did not move",
+  "old": "package org.koin.compose\n\nimport androidx.compose.runtime.Composable\nimport androidx.compose.runtime.ReadOnlyComposable\nimport androidx.compose.runtime.remember\nimport org.koin.core.Koin\n\nfun f() = 1\n",
+  "new": "package org.koin.compose\n\nimport androidx.compose.runtime.Composable\nimport androidx.compose.runtime.remember\nimport androidx.compose.runtime.currentComposer\nimport org.koin.core.Koin\n\nfun f() = 1\n",
+  "off": [
+   "moved 5-5 -> 4-4"
+  ],
+  "on": {
+   "DROP_UNTOUCHED_MOVE": [],
+   "IMPORT_NO_RENAME": []
+  }
+ }
+]

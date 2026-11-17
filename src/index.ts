@@ -9,7 +9,7 @@ import { uncoveredChanges } from './coverage.ts';
 import type { Node } from 'web-tree-sitter';
 import { endLine, startLine } from './syntax.ts';
 import { detectEdits, replacementsFromBlocks } from './edits.ts';
-import { alignedLineDiff, diffLines, toPatch } from './linediff.ts';
+import { alignedLineDiff, diffLines, toPatch, unchangedLinePairs } from './linediff.ts';
 import { computeTextDiff, WORK_PER_SECOND } from './textdiff.ts';
 import { detectTextMoves } from './textmoves.ts';
 import { attachSymbols, type SemDiffOperation } from './symbols.ts';
@@ -20,7 +20,7 @@ export type { OperationSymbol, SemDiffOperation, SymbolKind } from './symbols.ts
 export { configure, type Candidate, type SemDiffSetup, type WasmSource } from './runtime.ts';
 export { reviewSummary, READ_KINDS, SKIM_KINDS, type ReviewSummary } from './summary.ts';
 import type { Candidate } from './runtime.ts';
-import { flags, rule } from './runtime.ts';
+import { flags, rule, trial } from './runtime.ts';
 import { OpinionKeyError, type OpinionAnswer, type OpinionBand } from './opinions.ts';
 
 export interface SemanticFileDiff {
@@ -342,6 +342,39 @@ function contextChanged(op: SemanticDiffOperation, cfg: LanguageConfig, oldRoot:
   return before.length !== after.length || before.some((c, i) => c !== after[i]);
 }
 
+/**
+ * Extends each move (moved, movedWithEdit, one range per side) over the blank lines directly above and below it on
+ * that side, when they are changed lines no other operation owns and not inside a multi-line string. The root span
+ * and its line pair follow the range, so the move draws them as its own. Nothing else changes.
+ */
+function attachBlankSeparators(ops: SemanticDiffOperation[], changed: Sides, inString: Sides, oldLines: string[], newLines: string[]): void {
+  const owned = { old: new Set<number>(), new: new Set<number>() };
+  for (const op of ops) for (const side of ['old', 'new'] as const) for (const l of op.lines[side]) for (let n = l.start; n <= l.end; n++) owned[side].add(n);
+  for (const op of ops) {
+    if (op.type !== 'moved' && op.type !== 'movedWithEdit') continue;
+    for (const side of ['old', 'new'] as const) {
+      if (op.lines[side].length !== 1) continue;
+      const r = op.lines[side][0]!;
+      const lines = side === 'old' ? oldLines : newLines;
+      const free = (n: number) => n >= 1 && n <= lines.length && !(lines[n - 1] ?? '').trim() && changed[side].has(n) && !owned[side].has(n) && !inString[side].has(n);
+      let start = r.start;
+      let end = r.end;
+      while (free(start - 1)) owned[side].add(--start);
+      while (free(end + 1)) owned[side].add(++end);
+      if (start === r.start && end === r.end) continue;
+      r.start = start;
+      r.end = end;
+      const root = op.spans[r.spanIndex];
+      if (root && root.role === 'root' && 'linePairs' in root) {
+        const ranges = (root as { old?: SemanticDiffTextRange[]; new?: SemanticDiffTextRange[] })[side];
+        if (ranges?.length === 1) ranges[0] = { start: { line: start, character: 0 }, end: { line: end + 1, character: 0 } };
+        const pair = root.linePairs?.length === 1 ? root.linePairs[0] : undefined;
+        if (pair) pair[side] = { start, end };
+      }
+    }
+  }
+}
+
 export async function semanticDiffFile(language: LanguageId, oldText: string, newText: string, name = 'file', options: DiffOptions = {}): Promise<SemanticFileDiff> {
   const cfg = LANGUAGES[language];
   const started = performance.now();
@@ -413,7 +446,9 @@ export async function semanticDiffFile(language: LanguageId, oldText: string, ne
     };
     const noInline = minified(oldText) || minified(newText) ? 'minified code' : nestingDepth(oldText) > 80 || nestingDepth(newText) > 80 ? 'nesting too deep' : undefined;
     const inlined = run('inline-extract', () => [...detectInlined(a.rootNode, b.rootNode, oldText, cfg, inlineOptions), ...detectExtracted(a.rootNode, b.rootNode, newText, cfg, inlineOptions)], [], noInline);
-    const structure = run('structure', () => detectStructure(a.rootNode, b.rootNode, cfg), { operations: [], folds: [], paired: [] });
+    // Trial DUP_TIEBREAK: the structure pass breaks ties between duplicates by the line diff's unchanged lines.
+    const keptLines = trial('DUP_TIEBREAK') ? unchangedLinePairs(alignedLineDiff(a.rootNode, b.rootNode, cfg, diffLines(oldText), diffLines(newText)), diffLines(oldText).length) : undefined;
+    const structure = run('structure', () => detectStructure(a.rootNode, b.rootNode, cfg, keptLines), { operations: [], folds: [], paired: [], wordsChanged: new Set<number>() });
     const textDiff = computeTextDiff(oldText, newText, 0.4 * WORK_PER_SECOND);
     const text = run('text-moves', () => detectTextMoves(textDiff, oldText, newText), { operations: [], folds: [] });
     // A text move is redundant when every non-blank line it moves is already explained.
@@ -456,6 +491,24 @@ export async function semanticDiffFile(language: LanguageId, oldText: string, ne
     const textKept = text.operations.map((op, i) => ({ op, i })).filter(({ op }) => !covered(op) && agrees(op));
     // Plain edits go last: they describe only what no semantic pass explained.
     const explainedOps = [...inlined, ...structure.operations, ...textKept.map((t) => t.op), ...reindented(blocks, oldLines, newLines, inString, language)];
+    // Trial DROP_UNTOUCHED_MOVE: a structure move none of whose non-blank lines, on either side, is a changed line
+    // claims nothing the patch shows (the code only shifted against neighbours that were added or removed, or it
+    // sits where it was under a changed container header): drop it, before it takes any line from the passes after it.
+    const untouchedMoves = new Set<number>();
+    if (trial('DROP_UNTOUCHED_MOVE'))
+      structure.operations.forEach((op, k) => {
+        if (op.type !== 'moved' && op.type !== 'movedWithEdit') return;
+        const touched = (['old', 'new'] as const).some((side) =>
+          op.lines[side].some((r) => {
+            const lines = side === 'old' ? oldLines : newLines;
+            for (let l = r.start; l <= r.end; l++) if ((lines[l - 1] ?? '').trim() && changed[side].has(l)) return true;
+            return false;
+          })
+        );
+        if (!touched) untouchedMoves.add(inlined.length + k);
+      });
+    // The dropped move keeps its place in the list (folds refer to operations by index) but owns no line.
+    for (const i of untouchedMoves) explainedOps[i] = { ...explainedOps[i]!, lines: { old: [], new: [] } };
     const assigned = assignLines([...explainedOps, ...detectEdits(replacementsFromBlocks(blocks, oldText, newText), oldText, newText)]);
     // Drop operations left with nothing to show: semantic ones that lost every
     // line to an earlier pass (e.g. the same extract found from a second call
@@ -476,6 +529,9 @@ export async function semanticDiffFile(language: LanguageId, oldText: string, ne
       if (!keep || (op.type === 'movedWithEdit' && !alike(op, oldLines, newLines))) return;
       // A claim the language holds back: the safety net below marks its lines as plain changes.
       if (rule('HOLD_BACK') && cfg.holdBack?.has(op.type)) return;
+      // Formatting whose words changed (a docstring reworded, not just rewrapped) is an edit: its lines show as
+      // plain changes. Dropped here, not in the structure pass, so no other pass sees a difference.
+      if (rule('REFORMAT_WORDS') && i >= inlined.length && structure.wordsChanged.has(i - inlined.length)) return;
       // Lines that now sit in another context (wrapped into Ruby's `class << self`, under a new `private`) are
       // not just laid out differently either.
       // A move that changes the position of an item whose order means something (a constructor parameter) is an edit.
@@ -484,6 +540,9 @@ export async function semanticDiffFile(language: LanguageId, oldText: string, ne
       finalIndex.set(i, operations.length);
       operations.push(op);
     });
+    // Trial ATTACH_BLANK: a blank separator line left beside a moved block (removed with it, or added with it) is part
+    // of the move, not a change of its own.
+    if (trial('ATTACH_BLANK')) attachBlankSeparators(operations, changed, inString, oldLines, newLines);
     operations.push(...uncoveredChanges(blocks, oldText, newText, operations, inString));
     const structureOffset = inlined.length;
     const textOffset = structureOffset + structure.operations.length;

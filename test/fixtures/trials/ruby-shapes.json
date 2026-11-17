@@ -1,0 +1,239 @@
+[
+ {
+  "id": "two-callers",
+  "trial": "RUBY_SHAPES",
+  "language": "ruby",
+  "file": "client.rb",
+  "title": "ruby: one helper pulled out of two callers that held the same lines: an extract from each",
+  "old": "class Client\n  def setup_body(len)\n    if @limit && len > @limit\n      @buffer = nil\n      @body = EmptyBody\n      @error_status_code = 413\n      @env[HTTP_CONNECTION] = 'close'\n      raise HttpParserError, \"Payload Too Large\"\n    end\n    @body.read(len)\n  end\n\n  def write_chunk(str)\n    if @limit && @size + str.bytesize > @limit\n      @buffer = nil\n      @body = EmptyBody\n      @error_status_code = 413\n      @env[HTTP_CONNECTION] = 'close'\n      raise HttpParserError, \"Payload Too Large\"\n    end\n    @size += @body.write(str)\n  end\nend\n",
+  "new": "class Client\n  def setup_body(len)\n    reject_payload if @limit && len > @limit\n    @body.read(len)\n  end\n\n  def write_chunk(str)\n    reject_payload if @limit && @size + str.bytesize > @limit\n    @size += @body.write(str)\n  end\n\n  def reject_payload\n    @limit_exceeded = true\n    @buffer = nil\n    @body = EmptyBody\n    @error_status_code = 413\n    @env[HTTP_CONNECTION] = 'close'\n    raise HttpParserError, \"Payload Too Large\"\n  end\nend\n",
+  "on": {
+   "must": [
+    {
+     "type": "extractedFunction",
+     "name": "reject_payload",
+     "count": 1
+    },
+    {
+     "type": "extractedFunction",
+     "old": [
+      15,
+      19
+     ],
+     "new": [
+      8,
+      8
+     ]
+    }
+   ]
+  },
+  "off": {
+   "never": [
+    {
+     "type": "extractedFunction",
+     "name": "reject_payload"
+    }
+   ]
+  }
+ },
+ {
+  "id": "tail-statement",
+  "trial": "RUBY_SHAPES",
+  "language": "ruby",
+  "file": "relations.rb",
+  "title": "ruby: a helper whose last statement is a loop, called as a statement: its tail moved, it is no value",
+  "old": "class Relations < Source\n  def start\n    target.start(:db)\n    rom = target[\"db.rom\"]\n    rom.relations.each do |name, _|\n      register(name) { rom.relations[name] }\n    end\n  end\nend\n",
+  "new": "class Relations < Source\n  def start\n    target.start(:db)\n    register_relations target[\"db.rom\"]\n  end\n\n  private\n\n  def register_relations(rom)\n    rom.relations.each do |name, _|\n      register name, rom.relations[name]\n    end\n  end\nend\n",
+  "on": {
+   "must": [
+    {
+     "type": "extractedFunction",
+     "name": "register_relations"
+    }
+   ]
+  },
+  "off": {
+   "never": [
+    {
+     "type": "extractedFunction",
+     "name": "register_relations"
+    }
+   ]
+  }
+ },
+ {
+  "id": "copies-stay",
+  "trial": "RUBY_SHAPES",
+  "language": "ruby",
+  "file": "client.rb",
+  "title": "ruby: the callers keep their repeated lines and also call a new helper holding the same lines: a copy, no extract",
+  "old": "class Client\n  def setup_body(len)\n    if len > @limit\n      @buffer = nil\n      @body = EmptyBody\n      @error_status_code = 413\n      @env[HTTP_CONNECTION] = 'close'\n      raise HttpParserError, \"Payload Too Large\"\n    end\n    @body.read(len)\n  end\n\n  def write_chunk(str)\n    if @size > @limit\n      @buffer = nil\n      @body = EmptyBody\n      @error_status_code = 413\n      @env[HTTP_CONNECTION] = 'close'\n      raise HttpParserError, \"Payload Too Large\"\n    end\n    @size += @body.write(str)\n  end\nend\n",
+  "new": "class Client\n  def setup_body(len)\n    if len > @limit\n      reset_state\n      @buffer = nil\n      @body = EmptyBody\n      @error_status_code = 413\n      @env[HTTP_CONNECTION] = 'close'\n      raise HttpParserError, \"Payload Too Large\"\n    end\n    @body.read(len)\n  end\n\n  def write_chunk(str)\n    if @size > @limit\n      reset_state\n      @buffer = nil\n      @body = EmptyBody\n      @error_status_code = 413\n      @env[HTTP_CONNECTION] = 'close'\n      raise HttpParserError, \"Payload Too Large\"\n    end\n    @size += @body.write(str)\n  end\n\n  def reset_state\n    @buffer = nil\n    @body = EmptyBody\n    @error_status_code = 413\n  end\nend\n",
+  "on": {
+   "never": [
+    {
+     "type": "extractedFunction",
+     "name": "reset_state"
+    }
+   ]
+  },
+  "off": {
+   "never": [
+    {
+     "type": "extractedFunction",
+     "name": "reset_state"
+    }
+   ]
+  }
+ },
+ {
+  "id": "repeated-elsewhere",
+  "trial": "RUBY_SHAPES",
+  "language": "ruby",
+  "file": "conn.rb",
+  "title": "ruby (conservative guard): the lines are still repeated, on the helper side, in a method that does not call it, so they stay boilerplate and back no extract",
+  "old": "class Conn\n  def close\n    @socket = nil\n    @buffer = nil\n    @open = false\n    log \"closed\"\n  end\n\n  def reset\n    @socket = nil\n    @buffer = nil\n    @open = false\n    log \"reset\"\n  end\n\n  def abort\n    @socket = nil\n    @buffer = nil\n    @open = false\n    log \"aborted\"\n  end\nend\n",
+  "new": "class Conn\n  def close\n    clear\n    log \"closed\"\n  end\n\n  def reset\n    clear\n    log \"reset\"\n  end\n\n  def abort\n    @socket = nil\n    @buffer = nil\n    @open = false\n    log \"aborted\"\n  end\n\n  def clear\n    @socket = nil\n    @buffer = nil\n    @open = false\n  end\nend\n",
+  "on": {
+   "never": [
+    {
+     "type": "extractedFunction",
+     "name": "clear"
+    }
+   ]
+  },
+  "off": {
+   "never": [
+    {
+     "type": "extractedFunction",
+     "name": "clear"
+    }
+   ]
+  }
+ },
+ {
+  "id": "tiny-tail",
+  "trial": "RUBY_SHAPES",
+  "language": "ruby",
+  "file": "job.rb",
+  "title": "ruby: a one-word helper called as a statement, whose only line the caller lost: too little to be evidence",
+  "old": "class Job\n  def finish\n    flush\n    close\n  end\nend\n",
+  "new": "class Job\n  def finish\n    flush\n    shutdown\n  end\n\n  def shutdown\n    close\n  end\nend\n",
+  "on": {
+   "never": [
+    {
+     "type": "extractedFunction",
+     "name": "shutdown"
+    }
+   ]
+  },
+  "off": {
+   "never": [
+    {
+     "type": "extractedFunction",
+     "name": "shutdown"
+    }
+   ]
+  }
+ },
+ {
+  "id": "in-place-value",
+  "trial": "RUBY_SHAPES",
+  "language": "ruby",
+  "file": "common_logger.rb",
+  "title": "ruby: the call took the place of an edited expression in an otherwise unchanged line: the helper came from there",
+  "old": "class CommonLogger\n  def log(env, status, began_at)\n    msg = [\n      ip:     env[REMOTE_ADDR],\n      path:   env[SCRIPT_NAME] + env[PATH_INFO],\n      params: env[QUERY_HASH].merge(env[FORM_HASH] || Hash[]),\n      status: status\n    ]\n    logger.info(msg)\n  end\nend\n",
+  "new": "class CommonLogger\n  def log(env, status, began_at)\n    msg = [\n      ip:     env[REMOTE_ADDR],\n      path:   env[SCRIPT_NAME] + env[PATH_INFO],\n      params: extract_params(env),\n      status: status\n    ]\n    logger.info(msg)\n  end\n\n  def extract_params(env)\n    (env[QUERY_HASH] || {}).merge(env[FORM_HASH] || {})\n  end\nend\n",
+  "on": {
+   "must": [
+    {
+     "type": "extractedFunction",
+     "name": "extract_params"
+    }
+   ]
+  },
+  "off": {
+   "never": [
+    {
+     "type": "extractedFunction",
+     "name": "extract_params"
+    }
+   ]
+  }
+ },
+ {
+  "id": "in-place-other-calls",
+  "trial": "RUBY_SHAPES",
+  "language": "ruby",
+  "file": "greeter.rb",
+  "title": "ruby: the call took the place of an expression that calls other methods (name.strip vs nickname.downcase): not where the helper came from",
+  "old": "class Greeter\n  def greet(user)\n    name = user.name.strip\n    \"Hello, #{name}\"\n  end\nend\n",
+  "new": "class Greeter\n  def greet(user)\n    name = display_name(user)\n    \"Hello, #{name}\"\n  end\n\n  def display_name(user)\n    user.nickname.downcase\n  end\nend\n",
+  "on": {
+   "never": [
+    {
+     "type": "extractedFunction",
+     "name": "display_name"
+    }
+   ]
+  },
+  "off": {
+   "never": [
+    {
+     "type": "extractedFunction",
+     "name": "display_name"
+    }
+   ]
+  }
+ },
+ {
+  "id": "in-place-other-literals",
+  "trial": "RUBY_SHAPES",
+  "language": "ruby",
+  "file": "client.rb",
+  "title": "ruby: the call took the place of a lookalike with other symbols (fetch(:timeout) vs fetch(:retries)): not where the helper came from",
+  "old": "class Client\n  def connect\n    timeout = config.fetch(:timeout, 30) + 5\n    open(timeout)\n  end\nend\n",
+  "new": "class Client\n  def connect\n    timeout = default_timeout + 5\n    open(timeout)\n  end\n\n  def default_timeout\n    config.fetch(:retries, 3)\n  end\nend\n",
+  "on": {
+   "never": [
+    {
+     "type": "extractedFunction",
+     "name": "default_timeout"
+    }
+   ]
+  },
+  "off": {
+   "never": [
+    {
+     "type": "extractedFunction",
+     "name": "default_timeout"
+    }
+   ]
+  }
+ },
+ {
+  "id": "tail-fallback",
+  "trial": "RUBY_SHAPES",
+  "language": "ruby",
+  "file": "application.rb",
+  "title": "ruby: a helper called as a statement whose last line is the edited call it replaced (rake display_cause_details): when the tail does not pair as a statement, it is read as the value, and the extract stays",
+  "old": "class Application\n  def display_exception_details(ex)\n    seen = Thread.current[:seen] ||= []\n    return if seen.include? ex\n    seen << ex\n\n    display_exception_message_details(ex)\n    display_exception_backtrace(ex)\n    display_exception_details(ex.cause) if has_cause?(ex)\n  end\nend\n",
+  "new": "class Application\n  def display_exception_details(ex)\n    seen << ex\n\n    display_exception_message_details(ex)\n    display_exception_backtrace(ex)\n    display_cause_details(ex.cause) if has_cause?(ex)\n  end\n\n  def display_cause_details(ex)\n    return if seen.include? ex\n\n    trace \"\\nCaused by:\"\n    display_exception_details(ex)\n  end\nend\n",
+  "on": {
+   "must": [
+    {
+     "type": "extractedFunction",
+     "name": "display_cause_details"
+    }
+   ]
+  },
+  "off": {
+   "must": [
+    {
+     "type": "extractedFunction",
+     "name": "display_cause_details"
+    }
+   ]
+  }
+ }
+]

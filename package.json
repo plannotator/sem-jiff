@@ -1,6 +1,7 @@
 {
   "name": "@plannotator/sem-jiff",
-  "version": "0.2.1",
+  "version": "0.2.2",
+  "private": true,
   "description": "Semantic diffs for code review: finds moved, renamed, reformatted, extracted and inlined code with tree-sitter, for any diff viewer.",
   "license": "MIT OR Apache-2.0",
   "type": "module",
@@ -103,8 +104,5 @@
     "tree-sitter-typescript": "^0.23.2",
     "typescript": "5.9",
     "vite": "^7.3.8"
-  },
-  "publishConfig": {
-    "access": "public"
   }
 }

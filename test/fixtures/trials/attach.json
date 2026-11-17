@@ -1,0 +1,211 @@
+[
+ {
+  "id": "blank-typescript-move",
+  "fix": "ATTACH_BLANK",
+  "language": "typescript",
+  "file": "calc.ts",
+  "title": "typescript: a function moved to the end takes its blank separator line with it",
+  "old": "export function alpha(a: number): number {\n  const b = a * 2;\n  const c = b + 2;\n  return c - 1;\n}\n\nexport function beta(a: number): number {\n  const b = a * 3;\n  const c = b + 3;\n  return c - 1;\n}\n\nexport function gamma(a: number): number {\n  const b = a * 4;\n  const c = b + 4;\n  return c - 1;\n}\n",
+  "new": "export function beta(a: number): number {\n  const b = a * 3;\n  const c = b + 3;\n  return c - 1;\n}\n\nexport function gamma(a: number): number {\n  const b = a * 4;\n  const c = b + 4;\n  return c - 1;\n}\n\nexport function alpha(a: number): number {\n  const b = a * 2;\n  const c = b + 2;\n  return c - 1;\n}\n",
+  "expect": "clears"
+ },
+ {
+  "id": "doc-typescript-move",
+  "fix": "ATTACH_DOC",
+  "language": "typescript",
+  "file": "calc.ts",
+  "title": "typescript: a documented function moved to the end: its /** doc comment lines up with its own, not a neighbour's",
+  "old": "/**\n * alpha does a thing number 2.\n */\nexport function alpha(a: number): number {\n  const b = a * 2;\n  const c = b + 2;\n  return c - 1;\n}\n\n/**\n * beta does a thing number 3.\n */\nexport function beta(a: number): number {\n  const b = a * 3;\n  const c = b + 3;\n  return c - 1;\n}\n\n/**\n * gamma does a thing number 4.\n */\nexport function gamma(a: number): number {\n  const b = a * 4;\n  const c = b + 4;\n  return c - 1;\n}\n",
+  "new": "/**\n * beta does a thing number 3.\n */\nexport function beta(a: number): number {\n  const b = a * 3;\n  const c = b + 3;\n  return c - 1;\n}\n\n/**\n * gamma does a thing number 4.\n */\nexport function gamma(a: number): number {\n  const b = a * 4;\n  const c = b + 4;\n  return c - 1;\n}\n\n/**\n * alpha does a thing number 2.\n */\nexport function alpha(a: number): number {\n  const b = a * 2;\n  const c = b + 2;\n  return c - 1;\n}\n",
+  "expect": "clears",
+  "both": true,
+  "needsDoc": true
+ },
+ {
+  "id": "blank-python-move",
+  "fix": "ATTACH_BLANK",
+  "language": "python",
+  "file": "calc.py",
+  "title": "python: a function moved to the end takes its blank separator line with it",
+  "old": "def alpha(a):\n    b = a * 2\n    c = b + 2\n    return c - 1\n\n\ndef beta(a):\n    b = a * 3\n    c = b + 3\n    return c - 1\n\n\ndef gamma(a):\n    b = a * 4\n    c = b + 4\n    return c - 1\n",
+  "new": "def beta(a):\n    b = a * 3\n    c = b + 3\n    return c - 1\n\n\ndef gamma(a):\n    b = a * 4\n    c = b + 4\n    return c - 1\n\n\ndef alpha(a):\n    b = a * 2\n    c = b + 2\n    return c - 1\n",
+  "expect": "clears"
+ },
+ {
+  "id": "blank-go-move",
+  "fix": "ATTACH_BLANK",
+  "language": "go",
+  "file": "calc.go",
+  "title": "go: a function moved to the end takes its blank separator line with it",
+  "old": "package calc\n\nfunc alpha(a int) int {\n\tb := a * 2\n\tc := b + 2\n\treturn c - 1\n}\n\nfunc beta(a int) int {\n\tb := a * 3\n\tc := b + 3\n\treturn c - 1\n}\n\nfunc gamma(a int) int {\n\tb := a * 4\n\tc := b + 4\n\treturn c - 1\n}\n",
+  "new": "package calc\n\nfunc beta(a int) int {\n\tb := a * 3\n\tc := b + 3\n\treturn c - 1\n}\n\nfunc gamma(a int) int {\n\tb := a * 4\n\tc := b + 4\n\treturn c - 1\n}\n\nfunc alpha(a int) int {\n\tb := a * 2\n\tc := b + 2\n\treturn c - 1\n}\n",
+  "expect": "clears"
+ },
+ {
+  "id": "blank-go-documented-move",
+  "fix": "ATTACH_BLANK",
+  "language": "go",
+  "file": "calc.go",
+  "title": "go: a function with line comments above it moved to the end: its blank separator joins the move",
+  "old": "package calc\n\n// alpha does a thing number 2.\nfunc alpha(a int) int {\n\tb := a * 2\n\tc := b + 2\n\treturn c - 1\n}\n\n// beta does a thing number 3.\nfunc beta(a int) int {\n\tb := a * 3\n\tc := b + 3\n\treturn c - 1\n}\n\n// gamma does a thing number 4.\nfunc gamma(a int) int {\n\tb := a * 4\n\tc := b + 4\n\treturn c - 1\n}\n",
+  "new": "package calc\n\n// beta does a thing number 3.\nfunc beta(a int) int {\n\tb := a * 3\n\tc := b + 3\n\treturn c - 1\n}\n\n// gamma does a thing number 4.\nfunc gamma(a int) int {\n\tb := a * 4\n\tc := b + 4\n\treturn c - 1\n}\n\n// alpha does a thing number 2.\nfunc alpha(a int) int {\n\tb := a * 2\n\tc := b + 2\n\treturn c - 1\n}\n",
+  "expect": "clears"
+ },
+ {
+  "id": "blank-kotlin-move",
+  "fix": "ATTACH_BLANK",
+  "language": "kotlin",
+  "file": "Calc.kt",
+  "title": "kotlin: a function moved to the end takes its blank separator line with it",
+  "old": "package calc\n\nfun alpha(a: Int): Int {\n    val b = a * 2\n    val c = b + 2\n    return c - 1\n}\n\nfun beta(a: Int): Int {\n    val b = a * 3\n    val c = b + 3\n    return c - 1\n}\n\nfun gamma(a: Int): Int {\n    val b = a * 4\n    val c = b + 4\n    return c - 1\n}\n",
+  "new": "package calc\n\nfun beta(a: Int): Int {\n    val b = a * 3\n    val c = b + 3\n    return c - 1\n}\n\nfun gamma(a: Int): Int {\n    val b = a * 4\n    val c = b + 4\n    return c - 1\n}\n\nfun alpha(a: Int): Int {\n    val b = a * 2\n    val c = b + 2\n    return c - 1\n}\n",
+  "expect": "clears"
+ },
+ {
+  "id": "doc-kotlin-move",
+  "fix": "ATTACH_DOC",
+  "language": "kotlin",
+  "file": "Calc.kt",
+  "title": "kotlin: a documented function moved to the end: its /** doc comment lines up with its own, not a neighbour's",
+  "old": "package calc\n\n/**\n * alpha does a thing number 2.\n */\nfun alpha(a: Int): Int {\n    val b = a * 2\n    val c = b + 2\n    return c - 1\n}\n\n/**\n * beta does a thing number 3.\n */\nfun beta(a: Int): Int {\n    val b = a * 3\n    val c = b + 3\n    return c - 1\n}\n\n/**\n * gamma does a thing number 4.\n */\nfun gamma(a: Int): Int {\n    val b = a * 4\n    val c = b + 4\n    return c - 1\n}\n",
+  "new": "package calc\n\n/**\n * beta does a thing number 3.\n */\nfun beta(a: Int): Int {\n    val b = a * 3\n    val c = b + 3\n    return c - 1\n}\n\n/**\n * gamma does a thing number 4.\n */\nfun gamma(a: Int): Int {\n    val b = a * 4\n    val c = b + 4\n    return c - 1\n}\n\n/**\n * alpha does a thing number 2.\n */\nfun alpha(a: Int): Int {\n    val b = a * 2\n    val c = b + 2\n    return c - 1\n}\n",
+  "expect": "clears",
+  "both": true,
+  "needsDoc": true
+ },
+ {
+  "id": "blank-ruby-move",
+  "fix": "ATTACH_BLANK",
+  "language": "ruby",
+  "file": "calc.rb",
+  "title": "ruby: a function moved to the end takes its blank separator line with it",
+  "old": "def alpha(a)\n  b = a * 2\n  c = b + 2\n  c - 1\nend\n\ndef beta(a)\n  b = a * 3\n  c = b + 3\n  c - 1\nend\n\ndef gamma(a)\n  b = a * 4\n  c = b + 4\n  c - 1\nend\n",
+  "new": "def beta(a)\n  b = a * 3\n  c = b + 3\n  c - 1\nend\n\ndef gamma(a)\n  b = a * 4\n  c = b + 4\n  c - 1\nend\n\ndef alpha(a)\n  b = a * 2\n  c = b + 2\n  c - 1\nend\n",
+  "expect": "clears"
+ },
+ {
+  "id": "blank-ruby-documented-move",
+  "fix": "ATTACH_BLANK",
+  "language": "ruby",
+  "file": "calc.rb",
+  "title": "ruby: a function with line comments above it moved to the end: its blank separator joins the move",
+  "old": "# alpha does a thing number 2.\ndef alpha(a)\n  b = a * 2\n  c = b + 2\n  c - 1\nend\n\n# beta does a thing number 3.\ndef beta(a)\n  b = a * 3\n  c = b + 3\n  c - 1\nend\n\n# gamma does a thing number 4.\ndef gamma(a)\n  b = a * 4\n  c = b + 4\n  c - 1\nend\n",
+  "new": "# beta does a thing number 3.\ndef beta(a)\n  b = a * 3\n  c = b + 3\n  c - 1\nend\n\n# gamma does a thing number 4.\ndef gamma(a)\n  b = a * 4\n  c = b + 4\n  c - 1\nend\n\n# alpha does a thing number 2.\ndef alpha(a)\n  b = a * 2\n  c = b + 2\n  c - 1\nend\n",
+  "expect": "clears"
+ },
+ {
+  "id": "blank-java-move",
+  "fix": "ATTACH_BLANK",
+  "language": "java",
+  "file": "Calc.java",
+  "title": "java: a function moved to the end takes its blank separator line with it",
+  "old": "class Calc {\n    int alpha(int a) {\n        int b = a * 2;\n        int c = b + 2;\n        return c - 1;\n    }\n\n    int beta(int a) {\n        int b = a * 3;\n        int c = b + 3;\n        return c - 1;\n    }\n\n    int gamma(int a) {\n        int b = a * 4;\n        int c = b + 4;\n        return c - 1;\n    }\n}\n",
+  "new": "class Calc {\n    int beta(int a) {\n        int b = a * 3;\n        int c = b + 3;\n        return c - 1;\n    }\n\n    int gamma(int a) {\n        int b = a * 4;\n        int c = b + 4;\n        return c - 1;\n    }\n\n    int alpha(int a) {\n        int b = a * 2;\n        int c = b + 2;\n        return c - 1;\n    }\n}\n",
+  "expect": "clears"
+ },
+ {
+  "id": "doc-java-move",
+  "fix": "ATTACH_DOC",
+  "language": "java",
+  "file": "Calc.java",
+  "title": "java: a documented function moved to the end: its /** doc comment lines up with its own, not a neighbour's",
+  "old": "class Calc {\n    /**\n     * alpha does a thing number 2.\n     */\n    int alpha(int a) {\n        int b = a * 2;\n        int c = b + 2;\n        return c - 1;\n    }\n\n    /**\n     * beta does a thing number 3.\n     */\n    int beta(int a) {\n        int b = a * 3;\n        int c = b + 3;\n        return c - 1;\n    }\n\n    /**\n     * gamma does a thing number 4.\n     */\n    int gamma(int a) {\n        int b = a * 4;\n        int c = b + 4;\n        return c - 1;\n    }\n}\n",
+  "new": "class Calc {\n    /**\n     * beta does a thing number 3.\n     */\n    int beta(int a) {\n        int b = a * 3;\n        int c = b + 3;\n        return c - 1;\n    }\n\n    /**\n     * gamma does a thing number 4.\n     */\n    int gamma(int a) {\n        int b = a * 4;\n        int c = b + 4;\n        return c - 1;\n    }\n\n    /**\n     * alpha does a thing number 2.\n     */\n    int alpha(int a) {\n        int b = a * 2;\n        int c = b + 2;\n        return c - 1;\n    }\n}\n",
+  "expect": "clears",
+  "both": true,
+  "needsDoc": true
+ },
+ {
+  "id": "blank-php-move",
+  "fix": "ATTACH_BLANK",
+  "language": "php",
+  "file": "Calc.php",
+  "title": "php: a function moved to the end takes its blank separator line with it",
+  "old": "<?php\nclass Calc\n{\n    public function alpha($a)\n    {\n        $b = $a * 2;\n        $c = $b + 2;\n        return $c - 1;\n    }\n\n    public function beta($a)\n    {\n        $b = $a * 3;\n        $c = $b + 3;\n        return $c - 1;\n    }\n\n    public function gamma($a)\n    {\n        $b = $a * 4;\n        $c = $b + 4;\n        return $c - 1;\n    }\n}\n",
+  "new": "<?php\nclass Calc\n{\n    public function beta($a)\n    {\n        $b = $a * 3;\n        $c = $b + 3;\n        return $c - 1;\n    }\n\n    public function gamma($a)\n    {\n        $b = $a * 4;\n        $c = $b + 4;\n        return $c - 1;\n    }\n\n    public function alpha($a)\n    {\n        $b = $a * 2;\n        $c = $b + 2;\n        return $c - 1;\n    }\n}\n",
+  "expect": "clears"
+ },
+ {
+  "id": "doc-php-move",
+  "fix": "ATTACH_DOC",
+  "language": "php",
+  "file": "Calc.php",
+  "title": "php: a documented function moved to the end: its /** doc comment lines up with its own, not a neighbour's",
+  "old": "<?php\nclass Calc\n{\n    /**\n     * alpha does a thing number 2.\n     */\n    public function alpha($a)\n    {\n        $b = $a * 2;\n        $c = $b + 2;\n        return $c - 1;\n    }\n\n    /**\n     * beta does a thing number 3.\n     */\n    public function beta($a)\n    {\n        $b = $a * 3;\n        $c = $b + 3;\n        return $c - 1;\n    }\n\n    /**\n     * gamma does a thing number 4.\n     */\n    public function gamma($a)\n    {\n        $b = $a * 4;\n        $c = $b + 4;\n        return $c - 1;\n    }\n}\n",
+  "new": "<?php\nclass Calc\n{\n    /**\n     * beta does a thing number 3.\n     */\n    public function beta($a)\n    {\n        $b = $a * 3;\n        $c = $b + 3;\n        return $c - 1;\n    }\n\n    /**\n     * gamma does a thing number 4.\n     */\n    public function gamma($a)\n    {\n        $b = $a * 4;\n        $c = $b + 4;\n        return $c - 1;\n    }\n\n    /**\n     * alpha does a thing number 2.\n     */\n    public function alpha($a)\n    {\n        $b = $a * 2;\n        $c = $b + 2;\n        return $c - 1;\n    }\n}\n",
+  "expect": "clears",
+  "both": true,
+  "needsDoc": true
+ },
+ {
+  "id": "doc-typescript-neighbour-comment",
+  "fix": "ATTACH_DOC",
+  "language": "typescript",
+  "file": "calc.ts",
+  "title": "a comment separated from the declarations by a blank line stays where it is and is never moved with them",
+  "old": "export function alpha(a: number): number {\n  return a + 1;\n}\n\n// Helpers below.\n\nexport function beta(a: number): number {\n  const b = a * 3;\n  const c = b + 3;\n  return c - 1;\n}\n\nexport function gamma(a: number): number {\n  const d = a * 4;\n  return d - 1;\n}\n",
+  "new": "export function alpha(a: number): number {\n  return a + 1;\n}\n\n// Helpers below.\n\nexport function gamma(a: number): number {\n  const d = a * 4;\n  return d - 1;\n}\n\nexport function beta(a: number): number {\n  const b = a * 3;\n  const c = b + 3;\n  return c - 1;\n}\n",
+  "expect": "guard",
+  "notMoved": "// Helpers"
+ },
+ {
+  "id": "blank-typescript-string",
+  "fix": "ATTACH_BLANK",
+  "language": "typescript",
+  "file": "calc.ts",
+  "title": "a blank line inside a template string next to a moved block is the string's content, never part of the move",
+  "old": "export const banner = `\nhello\n\n`;\n\nexport function beta(a: number): number {\n  const b = a * 3;\n  const c = b + 3;\n  return c - 1;\n}\n\nexport function gamma(a: number): number {\n  const d = a * 4;\n  return d - 1;\n}\n",
+  "new": "export const banner = `\nhello\n`;\n\nexport function gamma(a: number): number {\n  const d = a * 4;\n  return d - 1;\n}\n\nexport function beta(a: number): number {\n  const b = a * 3;\n  const c = b + 3;\n  return c - 1;\n}\n",
+  "expect": "guard",
+  "stringLine": [
+   3,
+   null
+  ]
+ },
+ {
+  "id": "doc-swift-move",
+  "fix": "ATTACH_DOC",
+  "language": "swift",
+  "file": "Calc.swift",
+  "title": "swift: a documented function moved to the end: its /** doc comment lines up with its own, not a neighbour's",
+  "expect": "clears",
+  "both": true,
+  "needsDoc": true,
+  "old": "/**\n * alpha does a thing number 2.\n */\nfunc alpha(_ a: Int) -> Int {\n    let b = a * 2\n    let c = b + 2\n    return c - 1\n}\n\n/**\n * beta does a thing number 3.\n */\nfunc beta(_ a: Int) -> Int {\n    let b = a * 3\n    let c = b + 3\n    return c - 1\n}\n\n/**\n * gamma does a thing number 4.\n */\nfunc gamma(_ a: Int) -> Int {\n    let b = a * 4\n    let c = b + 4\n    return c - 1\n}\n",
+  "new": "/**\n * beta does a thing number 3.\n */\nfunc beta(_ a: Int) -> Int {\n    let b = a * 3\n    let c = b + 3\n    return c - 1\n}\n\n/**\n * gamma does a thing number 4.\n */\nfunc gamma(_ a: Int) -> Int {\n    let b = a * 4\n    let c = b + 4\n    return c - 1\n}\n\n/**\n * alpha does a thing number 2.\n */\nfunc alpha(_ a: Int) -> Int {\n    let b = a * 2\n    let c = b + 2\n    return c - 1\n}\n"
+ },
+ {
+  "id": "doc-kotlin-neighbour-doc-below",
+  "fix": "ATTACH_DOC",
+  "language": "kotlin",
+  "file": "Calc.kt",
+  "title": "kotlin: the doc comment right below a moved function (no blank line) is the next function's, and stays out of the move",
+  "expect": "guard",
+  "both": true,
+  "notMoved": " * beta",
+  "old": "package calc\n\n/**\n * alpha does a thing number 2.\n */\nfun alpha(a: Int): Int {\n    val b = a * 2\n    val c = b + 2\n    return c - 1\n}\n/**\n * beta does a thing number 3.\n */\nfun beta(a: Int): Int {\n    val b = a * 3\n    val c = b + 3\n    return c - 1\n}\n\nfun gamma(a: Int): Int {\n    val b = a * 4\n    val c = b + 4\n    return c - 1\n}\n",
+  "new": "package calc\n\n/**\n * beta does a thing number 3.\n */\nfun beta(a: Int): Int {\n    val b = a * 3\n    val c = b + 3\n    return c - 1\n}\n\nfun gamma(a: Int): Int {\n    val b = a * 4\n    val c = b + 4\n    return c - 1\n}\n\n/**\n * alpha does a thing number 2.\n */\nfun alpha(a: Int): Int {\n    val b = a * 2\n    val c = b + 2\n    return c - 1\n}\n"
+ },
+ {
+  "id": "doc-typescript-commented-out-above",
+  "fix": "ATTACH_DOC",
+  "language": "typescript",
+  "file": "calc.ts",
+  "title": "typescript: a section comment separated by a blank line from a moved function stays where it is",
+  "expect": "guard",
+  "notMoved": "// ---- math",
+  "old": "// ---- math\n\n/**\n * alpha does a thing.\n */\nexport function alpha(a: number): number {\n  const b = a * 2;\n  return b - 1;\n}\n\nexport function beta(a: number): number {\n  const b = a * 3;\n  return b - 1;\n}\n",
+  "new": "// ---- math\n\nexport function beta(a: number): number {\n  const b = a * 3;\n  return b - 1;\n}\n\n/**\n * alpha does a thing.\n */\nexport function alpha(a: number): number {\n  const b = a * 2;\n  return b - 1;\n}\n"
+ },
+ {
+  "id": "doc-swift-reindented-comment",
+  "fix": "ATTACH_DOC",
+  "language": "swift",
+  "file": "Proxy.swift",
+  "title": "swift: comments reindented with their code, one function also edited: every claim stays as it is (a changed comment is not part of the declaration's anchor)",
+  "expect": "guard",
+  "sameClaims": true,
+  "old": "import UIKit\n\n    open class Proxy: Base {\n        /// Typed parent object.\n        public weak var parent: Parent?\n\n        // Register known implementations\n        public static func registerKnownImplementations() {\n            self.register { Proxy(parent: $0) }\n        }\n\n        /// - parameter parent: Parent object.\n        public init(parent: Parent) {\n            self.parent = parent\n        }\n    }\n",
+  "new": "import UIKit\n\nopen class Proxy: Base {\n    /// Typed parent object.\n    public weak var parent: Parent?\n\n    // Register known implementations\n    public static func registerKnownImplementations() {\n        register { Proxy(parent: $0) }\n    }\n\n    /// - parameter parent: Parent object.\n    public init(parent: Parent) {\n        self.parent = parent\n    }\n}\n"
+ }
+]

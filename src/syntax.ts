@@ -289,7 +289,7 @@ export function keepWeights(newStarts: number[], lines: number[], unchanged?: bo
  * imports from one module) pair by similarity, not position, so inserting one
  * overload first does not shift every pairing by one.
  */
-export function pairSameNamed<T>(olds: T[], news: T[], base: (t: T) => string, toks: (t: T) => string[]): Array<[T, T]> {
+export function pairSameNamed<T>(olds: T[], news: T[], base: (t: T) => string, toks: (t: T) => string[], kept?: (a: T, b: T) => boolean, exact?: (t: T) => string | null): Array<[T, T]> {
   const group = (xs: T[]) => {
     const m = new Map<string, T[]>();
     for (const x of xs) m.set(base(x), [...(m.get(base(x)) ?? []), x]);
@@ -304,15 +304,37 @@ export function pairSameNamed<T>(olds: T[], news: T[], base: (t: T) => string, t
     // Huge groups (generated code repeating one name thousands of times) pair in
     // order: comparing every pair would take time and memory in the square of the size.
     if ((as.length === 1 && bs.length === 1) || as.length * bs.length > 2500) {
+      if (exact && as.length * bs.length > 2500) {
+        // With `exact` (trial FN_PAIRING): a key found once on each side pairs first; the rest pair in order,
+        // so one deleted overload among hundreds does not shift every pair after it.
+        const once = (xs: T[]) => {
+          const m = new Map<string, T[]>();
+          for (const x of xs) { const e = exact(x); if (e !== null) m.set(e, [...(m.get(e) ?? []), x]); }
+          return m;
+        };
+        const ea = once(as);
+        const eb = once(bs);
+        const done = new Set<T>();
+        for (const [e, xs] of ea) {
+          const ys = eb.get(e);
+          if (xs.length === 1 && ys?.length === 1) { out.push([xs[0]!, ys[0]!]); done.add(xs[0]!).add(ys[0]!); }
+        }
+        const ra = as.filter((x) => !done.has(x));
+        const rb = bs.filter((x) => !done.has(x));
+        for (let i = 0; i < Math.min(ra.length, rb.length); i++) out.push([ra[i]!, rb[i]!]);
+        continue;
+      }
       for (let i = 0; i < Math.min(as.length, bs.length); i++) out.push([as[i]!, bs[i]!]);
       continue;
     }
     const ta = as.map(toks);
     const tb = bs.map(toks);
-    const cand: Array<[number, number, number]> = [];
-    as.forEach((_, i) => bs.forEach((_, j) => cand.push([dice(ta[i]!, tb[j]!), i, j])));
-    // Most similar first; ties keep their order (the i-th old with the i-th new).
-    cand.sort((x, y) => y[0] - x[0] || Math.abs(x[1] - x[2]) - Math.abs(y[1] - y[2]) || x[1] - y[1]);
+    const cand: Array<[number, number, number, number]> = [];
+    as.forEach((a, i) => bs.forEach((b, j) => cand.push([dice(ta[i]!, tb[j]!), i, j, kept?.(a, b) ? 1 : 0])));
+    // Most similar first; ties keep their order (the i-th old with the i-th new). With `kept` (trial DUP_TIEBREAK),
+    // equally similar copies go first to the pair the line diff keeps unchanged in place (the original of a
+    // duplicated `require`, not the copy added above it).
+    cand.sort((x, y) => y[0] - x[0] || y[3] - x[3] || Math.abs(x[1] - x[2]) - Math.abs(y[1] - y[2]) || x[1] - y[1]);
     const ua = new Set<number>();
     const ub = new Set<number>();
     for (const [sim, i, j] of cand) {
@@ -358,6 +380,14 @@ function yieldsEffect(n: Node | null, name: string): boolean {
 function thisCall(call: Node): boolean {
   if (call.namedChild(0)?.type === 'navigation_expression') return call.namedChild(0)!.childForFieldName('target')?.type === 'self_expression';
   return call.childForFieldName('function')?.childForFieldName('object')?.type === 'this';
+}
+
+/** The call reaches the parent class's version: `super.f()`, `super.init(...)`, Ruby `superclass.f` / `superclass&.f`. */
+export function callsParent(call: Node): boolean {
+  if (!memberCall(call)) return false;
+  const f = call.childForFieldName('function') ?? (call.type === 'call_expression' ? call.namedChild(0) : null);
+  const r = call.childForFieldName('receiver') ?? call.childForFieldName('object') ?? f?.childForFieldName('target') ?? f?.childForFieldName('object') ?? f?.namedChild(0);
+  return !!r && (/^super/.test(r.type) || /^(super|superclass)$/.test(r.text));
 }
 
 function memberCall(call: Node): boolean {

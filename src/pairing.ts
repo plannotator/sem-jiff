@@ -1,10 +1,10 @@
 // Which function on one side is the same function on the other: the pairing the extract/inline
 // check builds on. A function with a counterpart still exists (it was not inlined or extracted);
 // one with a twin moved or was renamed. Each rule below is one way the same function shows up.
-import { rule } from './runtime.ts';
+import { rule, trial } from './runtime.ts';
 import type { Node } from 'web-tree-sitter';
-import type { LanguageConfig } from './parse.ts';
-import { callsTo, dice, pairSameNamed, tokens, type FunctionInfo } from './syntax.ts';
+import { swiftParams, type LanguageConfig } from './parse.ts';
+import { callsParent, callsTo, dice, pairSameNamed, tokens, type FunctionInfo } from './syntax.ts';
 
 
 export interface Pairing {
@@ -21,8 +21,15 @@ export function pairFunctions(oldFns: FunctionInfo[], newFns: FunctionInfo[], ol
   // The overload that kept the old parameter list is the old function: when code moves
   // into a new, longer overload (`readFrom(in, funnel)` -> `readFrom(in, funnel, max)`),
   // body similarity alone would pair the old one with the overload now holding its code.
+  // Trial FN_PAIRING: Swift has no `parameters` field. Its signature is the declaration's header before the
+  // body (parameter labels and types, `async`, `throws`, the result type), so overloads are told apart by what
+  // they take and give, not by their bodies alone.
+  const fnPairing = trial('FN_PAIRING');
+  const swiftSig = (f: FunctionInfo) => fnPairing && cfg.id === 'swift' && SWIFT_SIGNED.has(f.node.type);
   const signature = (f: FunctionInfo) => {
-    const p = tokens(f.node.childForFieldName('parameters') ?? f.node.childForFieldName('value')?.childForFieldName('parameters') ?? f.body).slice(0, 60);
+    const p = swiftSig(f)
+      ? f.node.children.filter((c): c is Node => !!c && c.endIndex <= f.body.startIndex && c.type !== 'modifiers').flatMap(tokens).slice(0, 60)
+      : tokens(f.node.childForFieldName('parameters') ?? f.node.childForFieldName('value')?.childForFieldName('parameters') ?? f.body).slice(0, 60);
     return [...p, ...p, ...p, ...tokens(f.body)];
   };
   // An overload that kept the old parameter list exactly is the old function, however
@@ -33,6 +40,8 @@ export function pairFunctions(oldFns: FunctionInfo[], newFns: FunctionInfo[], ol
     const p = f.node.childForFieldName('parameters') ?? f.node.childForFieldName('value')?.childForFieldName('parameters');
     return p ? tokens(p).join(' ') : null;
   };
+  // A tie-break, not a key: only huge same-name groups (which otherwise pair in order) pair an exact parameter list first.
+  const exactSignature = (f: FunctionInfo) => (swiftSig(f) ? swiftParams(f.node) : params(f));
   const samePlace = (fs: FunctionInfo[], f: FunctionInfo) => fs.filter((g) => base(g) === base(f));
   const pinned: Array<[FunctionInfo, FunctionInfo]> = [];
   // Either way round: one function became several overloads, or several became one.
@@ -79,17 +88,20 @@ export function pairFunctions(oldFns: FunctionInfo[], newFns: FunctionInfo[], ol
       pinned.push([f, g]);
       taken.add(f).add(g);
     }
+    if (fnPairing) pinned.push(...renameChains(oldFns, newFns, oldRoot, newRoot, cfg, base, taken));
   }
   const pinnedOld = new Set(pinned.map(([a]) => a));
   const pinnedNew = new Set(pinned.map(([, b]) => b));
   const byKey = new Map([
     ...pinned,
-    ...pairSameNamed(oldFns.filter((f) => !pinnedOld.has(f)), newFns.filter((f) => !pinnedNew.has(f)), base, signature),
+    ...pairSameNamed(oldFns.filter((f) => !pinnedOld.has(f)), newFns.filter((f) => !pinnedNew.has(f)), base, signature, undefined, fnPairing ? exactSignature : undefined),
   ]);
   const count = (fs: FunctionInfo[]) => fs.reduce((m, f) => m.set(f.name, (m.get(f.name) ?? 0) + 1), new Map<string, number>());
   const oldCount = count(oldFns);
   const newCount = count(newFns);
-  const newOnlyByName = new Map(newFns.filter((f) => newCount.get(f.name) === 1).map((f) => [f.name, f]));
+  // With FN_PAIRING, a function already paired (a rename chain took it) is no one else's counterpart by name.
+  const pairedNew = fnPairing ? new Set(byKey.values()) : new Set<FunctionInfo>();
+  const newOnlyByName = new Map(newFns.filter((f) => newCount.get(f.name) === 1 && !pairedNew.has(f)).map((f) => [f.name, f]));
   const counterpart = (f: FunctionInfo) =>
     byKey.get(f) ?? (oldCount.get(f.name) === 1 ? newOnlyByName.get(f.name) : undefined);
   // A function whose twin (same name, same body) is on the other side was moved or
@@ -121,6 +133,102 @@ export function pairFunctions(oldFns: FunctionInfo[], newFns: FunctionInfo[], ol
 
   return { counterpart, hasTwin };
 }
+
+/**
+ * Trial FN_PAIRING: renames where a new function took the old name, which name-only pairing reads as an
+ * extract or inline. `f` (old) and `g` (new) under different names
+ * in one class are one function when their bodies are near-identical (dice >= 0.9, 12+ tokens), or identical and short
+ * with the references to the name moved over (`schema` -> `__schema__`, callers updated); one to one, and
+ * only when a namesake took a name. A namesake that calls the other one took its body (an inline or an
+ * extract), unless it is itself one link of the chain: its body reappears in another new (old) function,
+ * with the call renamed (`clearDiskCache()` -> `clearDiskCache_()` while `clearDiskCacheWith...(_:)` ->
+ * `clearDiskCache(with:)`); a call to the parent's version (`super.f`, `superclass&.__schema__`) never counts.
+ */
+function renameChains(oldFns: FunctionInfo[], newFns: FunctionInfo[], oldRoot: Node, newRoot: Node, cfg: LanguageConfig, base: (f: FunctionInfo) => string, taken: Set<FunctionInfo>): Array<[FunctionInfo, FunctionInfo]> {
+  const out: Array<[FunctionInfo, FunctionInfo]> = [];
+  const toks = new Map<FunctionInfo, string[]>();
+  const t = (f: FunctionInfo) => toks.get(f) ?? (toks.set(f, tokens(f.body)), toks.get(f)!);
+  const same = (a: string[], b: string[]) => a.length === b.length && a.every((x, i) => x === b[i]);
+  let refs: [Map<string, number>, Map<string, number>] | null = null;
+  const moved = (from: string, to: string) => {
+    refs ??= [leafCounts(oldRoot), leafCounts(newRoot)];
+    const [o, n] = refs;
+    return (o.get(from) ?? 0) > (n.get(from) ?? 0) && (n.get(to) ?? 0) > (o.get(to) ?? 0);
+  };
+  const alike = (f: FunctionInfo, g: FunctionInfo): number => {
+    const a = t(f);
+    const b = t(g);
+    if (a.length >= 12 && b.length >= 12) return dice(a, b);
+    return a.length >= 4 && same(a, b) && f.name !== g.name && moved(f.name, g.name) ? 1 : 0;
+  };
+  const scope = (f: FunctionInfo) => base(f).slice(0, base(f).lastIndexOf('/'));
+  const ownCalls = (x: FunctionInfo, name: string) => callsTo(x.node, name, cfg).filter((c) => !callsParent(c));
+  // `x` (on one side) calls `name`; its own twin `y` on the other side calls `to` and reads the same with the call renamed.
+  // `y` is new to its side: no function of its name on `x`'s side.
+  const chainTwin = (x: FunctionInfo, name: string, to: string, others: FunctionInfo[], xSide: FunctionInfo[]) => {
+    const want = t(x).map((k) => (k === name ? to : k));
+    return others.find((y) => !taken.has(y) && y.name !== x.name && !xSide.some((z) => base(z) === base(y)) && ownCalls(y, to).length && dice(want, t(y)) >= 0.8);
+  };
+  const best = (pool: FunctionInfo[], skip: (g: FunctionInfo) => boolean, score1: (g: FunctionInfo) => number) => {
+    let top: FunctionInfo | null = null;
+    let score = 0;
+    let tie = false;
+    for (const g of pool) {
+      if (taken.has(g) || skip(g)) continue;
+      const s = score1(g);
+      if (s > score) { top = g; score = s; tie = false; }
+      else if (s === score && s > 0) tie = true;
+    }
+    return score >= 0.9 && !tie ? { g: top!, score } : null;
+  };
+  for (const f of oldFns) {
+    if (taken.has(f)) continue;
+    const m = best(newFns, (g) => g.name === f.name || scope(g) !== scope(f), (g) => alike(f, g));
+    if (!m) continue;
+    const { g, score } = m;
+    const back = best(oldFns, (x) => x.name === g.name || scope(x) !== scope(g), (x) => alike(x, g));
+    if (back?.g !== f) continue;
+    const sameNameNew = newFns.filter((x) => base(x) === base(f));
+    const sameNameOld = oldFns.filter((x) => base(x) === base(g));
+    if (!sameNameNew.length && !sameNameOld.length) continue; // a plain rename: hasTwin handles it
+    // A same-name partner just as alike: a copy, not a rename.
+    if (sameNameNew.some((x) => alike(f, x) >= score) || sameNameOld.some((x) => alike(x, g) >= score)) continue;
+    const links: Array<[FunctionInfo, FunctionInfo]> = [];
+    let namesakeTookIt = false;
+    for (const x of sameNameOld) {
+      if (!ownCalls(x, f.name).length) continue;
+      const y = chainTwin(x, f.name, g.name, newFns.filter((y) => y !== g), oldFns);
+      if (y) links.push([x, y]);
+      else namesakeTookIt = true;
+    }
+    for (const x of sameNameNew) {
+      if (!ownCalls(x, g.name).length) continue;
+      const y = chainTwin(x, g.name, f.name, oldFns.filter((y) => y !== f), newFns);
+      if (y) links.push([y, x]);
+      else namesakeTookIt = true;
+    }
+    if (namesakeTookIt) continue;
+    out.push([f, g], ...links);
+    taken.add(f).add(g);
+    for (const [a, b] of links) taken.add(a).add(b);
+  }
+  return out;
+}
+
+/** How often each leaf text occurs in the tree (declarations and references alike). */
+function leafCounts(root: Node): Map<string, number> {
+  const out = new Map<string, number>();
+  const stack: Node[] = [root];
+  while (stack.length) {
+    const n = stack.pop()!;
+    if (n.childCount === 0) { out.set(n.text, (out.get(n.text) ?? 0) + 1); continue; }
+    for (const c of n.children) if (c) stack.push(c);
+  }
+  return out;
+}
+
+/** Swift declarations with a parameter list (a computed property has none). */
+const SWIFT_SIGNED = new Set(['function_declaration', 'init_declaration', 'subscript_declaration']);
 
 /** How often the tree declares each name (a leaf that is its parent's `name` field). */
 function namesIn(root: Node): Map<string, number> {

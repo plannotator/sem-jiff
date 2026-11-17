@@ -61,6 +61,15 @@ export function switchRulesOff(names: Iterable<string>): void {
   for (const n of names) rulesOff.add(n);
 }
 
+// Trial rules: off unless switched on (harness: SEMANTIC_TRY_<NAME>=1), measured on a fresh draw before
+// they may ship. Like the rule switches, not part of the public setup.
+const trialsOn = new Set<string>();
+export const trial = (name: string): boolean => trialsOn.has(name);
+export function switchTrialsOn(names: Iterable<string>): void {
+  trialsOn.clear();
+  for (const n of names) trialsOn.add(n);
+}
+
 /**
  * The default grammar lookup (Node only, loaded only when needed and never bundled): the file in this
  * package's own `wasm/` folder when it is there (an installed package), else Node's resolver from the

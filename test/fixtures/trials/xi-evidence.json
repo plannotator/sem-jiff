@@ -1,0 +1,195 @@
+[
+ {
+  "id": "swift-two-wrappers",
+  "trial": "XI_EVIDENCE",
+  "language": "swift",
+  "file": "RetryWhen.swift",
+  "title": "swift: two overloads each become a wrapper around their own new overload: no extract built from the other one's evidence",
+  "old": "extension ObservableType {\n    public func retryWhen<TriggerObservable: ObservableType, Error: Swift.Error>(_ notificationHandler: @escaping (Observable<Error>) -> TriggerObservable)\n        -> Observable<Element> {\n        RetryWhenSequence(sources: InfiniteSequence(repeatedValue: self.asObservable()), notificationHandler: notificationHandler)\n    }\n\n    public func retryWhen<TriggerObservable: ObservableType>(_ notificationHandler: @escaping (Observable<Swift.Error>) -> TriggerObservable)\n        -> Observable<Element> {\n        RetryWhenSequence(sources: InfiniteSequence(repeatedValue: self.asObservable()), notificationHandler: notificationHandler)\n    }\n}\n",
+  "new": "extension ObservableType {\n    public func retry<TriggerObservable: ObservableType, Error: Swift.Error>(when notificationHandler: @escaping (Observable<Error>) -> TriggerObservable)\n        -> Observable<Element> {\n        RetryWhenSequence(sources: InfiniteSequence(repeatedValue: self.asObservable()), notificationHandler: notificationHandler)\n    }\n\n    @available(*, deprecated, renamed: \"retry(when:)\")\n    public func retryWhen<TriggerObservable: ObservableType, Error: Swift.Error>(_ notificationHandler: @escaping (Observable<Error>) -> TriggerObservable)\n        -> Observable<Element> {\n        retry(when: notificationHandler)\n    }\n\n    public func retry<TriggerObservable: ObservableType>(when notificationHandler: @escaping (Observable<Swift.Error>) -> TriggerObservable)\n        -> Observable<Element> {\n        RetryWhenSequence(sources: InfiniteSequence(repeatedValue: self.asObservable()), notificationHandler: notificationHandler)\n    }\n\n    @available(*, deprecated, renamed: \"retry(when:)\")\n    public func retryWhen<TriggerObservable: ObservableType>(_ notificationHandler: @escaping (Observable<Swift.Error>) -> TriggerObservable)\n        -> Observable<Element> {\n        retry(when: notificationHandler)\n    }\n}\n",
+  "on": {
+   "never": [
+    {
+     "type": "extractedFunction",
+     "oldEmpty": true
+    }
+   ]
+  },
+  "off": {
+   "must": [
+    {
+     "type": "extractedFunction",
+     "oldEmpty": true
+    }
+   ]
+  }
+ },
+ {
+  "id": "kt-lookalike-helpers",
+  "trial": "XI_EVIDENCE",
+  "language": "kotlin",
+  "file": "Context.kt",
+  "title": "kotlin: two lookalike helpers both deleted, the caller holds one of them: the inline names that one",
+  "old": "class Context {\n    fun execute(rule: Rule, autocorrect: Boolean) {\n        if (autocorrect) {\n            executeWithApprove(rule, node)\n        } else {\n            executeLegacy(rule, node)\n        }\n    }\n\n    private fun executeLegacy(rule: Rule, node: Node) {\n        rule.beforeVisit(node, emit)\n        node.children.forEach { child -> executeLegacy(rule, child) }\n        rule.afterVisit(node, emit)\n    }\n\n    private fun executeWithApprove(rule: Rule, node: Node) {\n        rule.beforeVisit(node) { offset, message, fix -> approve(offset, message, fix) }\n        node.children.forEach { child -> executeWithApprove(rule, child) }\n        rule.afterVisit(node) { offset, message, fix -> approve(offset, message, fix) }\n    }\n}\n",
+  "new": "class Context {\n    fun execute(rule: Rule, autocorrect: Boolean) {\n        rule.beforeVisit(node) { offset, message, fix -> approve(offset, message, fix) }\n        node.children.forEach { child -> visitChild(rule, child) }\n        rule.afterVisit(node) { offset, message, fix -> approve(offset, message, fix) }\n    }\n}\n",
+  "on": {
+   "must": [
+    {
+     "type": "inlinedFunction",
+     "name": "executeWithApprove"
+    }
+   ],
+   "never": [
+    {
+     "type": "inlinedFunction",
+     "name": "executeLegacy"
+    }
+   ]
+  },
+  "off": {}
+ },
+ {
+  "id": "kt-lookalike-messages",
+  "trial": "XI_EVIDENCE",
+  "language": "kotlin",
+  "file": "TrailingComma.kt",
+  "title": "kotlin: statements that differ only in their message string are different code: the extract does not take the other branch",
+  "old": "class TrailingComma {\n    fun visit(node: Node, state: State, emit: Emit) {\n        when (state) {\n            State.EXISTS -> {\n                emit(node.startOffset + node.textLength, \"Unnecessary trailing comma before \\\"${node.text}\\\"\", true).ifAllowed { node.removeComma(node.parent!!.indent) }\n            }\n            State.MISSING -> {\n                emit(node.startOffset + node.textLength, \"Missing trailing comma before \\\"${node.text}\\\"\", true).ifAllowed { node.addComma(node.parent!!.indent) }\n            }\n            State.REDUNDANT -> {\n                emit(node.startOffset + node.textLength, \"Unnecessary trailing comma before \\\"${node.text}\\\"\", true).ifAllowed { node.removeComma(node.parent!!.indent) }\n            }\n        }\n    }\n}\n",
+  "new": "class TrailingComma {\n    fun visit(node: Node, state: State, emit: Emit) {\n        when (state) {\n            State.EXISTS -> {\n                emit(node.startOffset + node.textLength, \"Unnecessary trailing comma before \\\"${node.text}\\\"\", true).ifAllowed { node.removeComma(node.parent!!.indent) }\n            }\n            State.MISSING -> {\n                node.addMissingComma(emit)\n            }\n            State.REDUNDANT -> {\n                node.removeRedundantComma(emit)\n            }\n        }\n    }\n\n    private fun Node.removeRedundantComma(emit: Emit) {\n        emit(startOffset + textLength, \"Unnecessary trailing comma before \\\"${text}\\\"\", true).ifAllowed { this.removeComma(parent!!.indent) }\n    }\n}\n",
+  "on": {
+   "never": [
+    {
+     "type": "extractedFunction",
+     "name": "removeRedundantComma",
+     "old": [
+      8,
+      8
+     ]
+    }
+   ]
+  },
+  "off": {
+   "must": [
+    {
+     "type": "extractedFunction",
+     "name": "removeRedundantComma",
+     "old": [
+      8,
+      8
+     ]
+    }
+   ]
+  }
+ },
+ {
+  "id": "rb-lookalike-symbols",
+  "trial": "XI_EVIDENCE",
+  "language": "ruby",
+  "file": "openid.rb",
+  "title": "ruby: a value that differs only in its symbol (fetch :error vs fetch :no_session) is not where the helper went",
+  "old": "class OpenID\n  def call(env)\n    return no_session unless session = env['rack.session']\n    finish(session)\n  end\n\n  def no_session\n    @options.\n      fetch :no_session, [500, {'Content-Type'=>'text/plain'}, 'No session available.']\n  end\nend\n",
+  "new": "class OpenID\n  def call(env)\n    raise NoSession unless session = env['rack.session']\n    finish(session)\n  rescue NoSession\n    @options.\n      fetch :no_session, [500, {'Content-Type'=>'text/plain'}, $!.message]\n  rescue\n    @options.\n      fetch :error, [500, {'Content-Type'=>'text/plain'}, 'OpenID has encountered an error.']\n  end\nend\n",
+  "on": {
+   "must": [
+    {
+     "type": "inlinedFunction",
+     "name": "no_session",
+     "new": [
+      6,
+      7
+     ]
+    }
+   ],
+   "never": [
+    {
+     "type": "inlinedFunction",
+     "new": [
+      9,
+      10
+     ]
+    }
+   ]
+  },
+  "off": {
+   "must": [
+    {
+     "type": "inlinedFunction",
+     "new": [
+      9,
+      10
+     ]
+    }
+   ]
+  }
+ },
+ {
+  "id": "kt-broken-tree",
+  "trial": "XI_EVIDENCE",
+  "language": "kotlin",
+  "file": "Spec.kt",
+  "title": "kotlin: a file the parser cannot read (a class header split before an annotated constructor) gets no inline or extract",
+  "old": "class Spec @Inject internal constructor(val builder: Builder) {\n    val name = builder.name\n\n    internal fun emit(codeWriter: CodeWriter) {\n        codeWriter.emit(\"(\")\n        codeWriter.emit(name)\n        codeWriter.emit(\")\")\n    }\n\n    fun write(codeWriter: CodeWriter) {\n        codeWriter.emit(\"<\")\n        emit(codeWriter)\n        codeWriter.emit(\">\")\n    }\n}\n",
+  "new": "class Spec\n@Inject internal constructor(val builder: Builder) {\n  val name = builder.name\n\n  internal fun emit(codeWriter: CodeWriter) {\n    codeWriter.emit(\"(\")\n    codeWriter.emit(name)\n    codeWriter.emit(\")\")\n  }\n\n  fun write(codeWriter: CodeWriter) {\n    codeWriter.emit(\"<\")\n    emit(codeWriter)\n    codeWriter.emit(\">\")\n  }\n}\n",
+  "on": {
+   "never": [
+    {
+     "type": "inlinedFunction"
+    },
+    {
+     "type": "extractedFunction"
+    }
+   ]
+  },
+  "off": {}
+ },
+ {
+  "id": "ts-two-callers-kept",
+  "trial": "XI_EVIDENCE",
+  "language": "typescript",
+  "file": "calc.ts",
+  "title": "typescript: a helper inlined into two callers is still two inlines (evidence in each caller is its own)",
+  "old": "function normalise(raw: string): string {\n  const trimmed = raw.trim().toLowerCase();\n  const collapsed = trimmed.replace(/\\s+/g, ' ');\n  return collapsed.normalize('NFC');\n}\n\nexport function title(raw: string): string {\n  return normalise(raw).toUpperCase();\n}\n\nexport function slug(raw: string): string {\n  return normalise(raw).replace(/ /g, '-');\n}\n",
+  "new": "export function title(raw: string): string {\n  const trimmed = raw.trim().toLowerCase();\n  const collapsed = trimmed.replace(/\\s+/g, ' ');\n  return collapsed.normalize('NFC').toUpperCase();\n}\n\nexport function slug(raw: string): string {\n  const trimmed = raw.trim().toLowerCase();\n  const collapsed = trimmed.replace(/\\s+/g, ' ');\n  return collapsed.normalize('NFC').replace(/ /g, '-');\n}\n",
+  "on": {
+   "must": [
+    {
+     "type": "inlinedFunction",
+     "count": 2
+    }
+   ]
+  },
+  "off": {
+   "must": [
+    {
+     "type": "inlinedFunction",
+     "count": 2
+    }
+   ]
+  }
+ },
+ {
+  "id": "kt-extract-kept",
+  "trial": "XI_EVIDENCE",
+  "language": "kotlin",
+  "file": "Gen.kt",
+  "title": "kotlin: a plain extract next to an untouched lookalike function is still an extract",
+  "old": "class Gen {\n    fun generate(out: Writer) {\n        out.begin()\n        val names = fields.map { it.name }\n        val types = fields.map { it.type }\n        out.write(names.zip(types).joinToString(\", \"))\n        out.end()\n    }\n}\n",
+  "new": "class Gen {\n    fun generate(out: Writer) {\n        out.begin()\n        writeFields(out)\n        out.end()\n    }\n\n    private fun writeFields(out: Writer) {\n        val names = fields.map { it.name }\n        val types = fields.map { it.type }\n        out.write(names.zip(types).joinToString(\", \"))\n    }\n}\n",
+  "on": {
+   "must": [
+    {
+     "type": "extractedFunction",
+     "count": 1
+    }
+   ]
+  },
+  "off": {
+   "must": [
+    {
+     "type": "extractedFunction",
+     "count": 1
+    }
+   ]
+  }
+ }
+]

@@ -8,6 +8,7 @@
 import { diffArrays } from 'diff';
 import type { Node } from 'web-tree-sitter';
 import type { Declaration, LanguageConfig } from './parse.ts';
+import { trial } from './runtime.ts';
 import { attachedAbove, codeLines, endLine, keepWeights, longestInOrder, pairSameNamed, startLine, tokens } from './syntax.ts';
 
 /** A run of changed lines; one side is null for a pure insertion or deletion. */
@@ -69,6 +70,18 @@ export function diffLines(text: string): string[] {
 }
 
 /** Lines as `diffLines` gives them (see there). */
+/** First line of the comments and attributes directly above a declaration (no blank line between), else its own first line. */
+function commentStart(n: Node, cfg: LanguageConfig): number {
+  let line = startLine(n);
+  for (let c = n.previousSibling; c && cfg.attachedTypes.has(c.type); c = c.previousSibling) {
+    // A comment node can end at the start of the next line (Rust line comments): compare where it really ends.
+    const end = c.endPosition.column === 0 && c.endPosition.row > c.startPosition.row ? c.endPosition.row : c.endPosition.row + 1;
+    if (end !== line - 1) break;
+    line = startLine(c);
+  }
+  return line;
+}
+
 export function alignedLineDiff(oldRoot: Node, newRoot: Node, cfg: LanguageConfig, oldLines: string[], newLines: string[]): ChangeBlock[] {
   const blocks: ChangeBlock[] = [];
 
@@ -109,10 +122,24 @@ export function alignedLineDiff(oldRoot: Node, newRoot: Node, cfg: LanguageConfi
     let n = r.newStart;
     for (const p of pairs) {
       // Half-written code can end past the last line (the parser supplies a missing `}`).
+      // Trial ATTACH_DOC: a declaration's anchor starts at the comments directly above it, so its doc comment lines
+      // up with its own counterpart, not with a lookalike `/**` of a neighbour. Only when those comments are the same
+      // lines on both sides: a comment that changed (reindented with its code) stays a change block of its own, as before.
+      let docOld = startLine(p.a);
+      let docNew = startLine(p.b);
+      if (trial('ATTACH_DOC')) {
+        const ca = commentStart(p.a, cfg);
+        const cb = commentStart(p.b, cfg);
+        const same = startLine(p.a) - ca === startLine(p.b) - cb && oldLines.slice(ca - 1, startLine(p.a) - 1).every((l, i) => l === newLines[cb - 1 + i]);
+        if (same) {
+          docOld = ca;
+          docNew = cb;
+        }
+      }
       const ps: Region = {
-        oldStart: startLine(p.a),
+        oldStart: docOld,
         oldEnd: Math.min(endLine(p.a), oldLines.length),
-        newStart: startLine(p.b),
+        newStart: docNew,
         newEnd: Math.min(endLine(p.b), newLines.length),
       };
       if (ps.oldStart > oldLines.length || ps.newStart > newLines.length) continue;
@@ -172,4 +199,18 @@ export function toPatch(name: string, blocks: ChangeBlock[], oldLines: string[],
   }
   // git's marker for a last line without a newline, right after that line.
   return out.flatMap((l) => (l.endsWith(NO_FINAL_NEWLINE) ? [l.slice(0, -NO_FINAL_NEWLINE.length), '\\ No newline at end of file'] : [l])).join('\n') + '\n';
+}
+
+/** The lines `blocks` leave unchanged, old line to new line (1-based). */
+export function unchangedLinePairs(blocks: ChangeBlock[], oldCount: number): Map<number, number> {
+  const out = new Map<number, number>();
+  let o = 1;
+  let n = 1;
+  for (const b of [...blocks].sort((x, y) => x.oldAt - y.oldAt || x.newAt - y.newAt)) {
+    while (o < b.oldAt && n < b.newAt) out.set(o++, n++);
+    o = b.old ? b.old.end + 1 : b.oldAt;
+    n = b.new ? b.new.end + 1 : b.newAt;
+  }
+  while (o <= oldCount) out.set(o++, n++);
+  return out;
 }
