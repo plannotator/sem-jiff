@@ -1,7 +1,7 @@
 // Parser setup and per-language knowledge: what a function is, where its
 // statements live, what a call and a return look like.
 import { Language, Parser, type Node, type Tree } from 'web-tree-sitter';
-import { currentSetup, resolveInNode, rule } from './runtime.ts';
+import { currentSetup, resolveInNode, rule, trial } from './runtime.ts';
 
 import type { LanguageId } from './languages.ts';
 export { languageForPath, type LanguageId } from './languages.ts';
@@ -942,7 +942,7 @@ const kotlin: LanguageConfig = {
  * A move into or out of a constrained extension, or into another `#if` branch, is an edit (contextAt).
  */
 const SWIFT_NOT_EXPRESSION = /declaration|statement|assignment|directive|^diagnostic$/;
-const swiftParams = (fn: Node) =>
+export const swiftParams = (fn: Node): string =>
   fn.namedChildren
     .filter((c): c is Node => c?.type === 'parameter')
     .map((p) => {
@@ -1195,20 +1195,37 @@ export const LANGUAGES: Record<LanguageId, LanguageConfig> = {
   swift,
 };
 
+/**
+ * Claims held back in every language, on top of each language's own `holdBack`. movedWithEdit: on the held4 blind
+ * set about 1 in 3 sampled claims paired two different functions or blocks as one moved-and-edited thing (Go about
+ * 8%, Kotlin about 63%). Its lines show as plain edits until a pairing rule passes the bar.
+ */
+const HELD_BACK_EVERYWHERE = ['movedWithEdit'];
+for (const cfg of Object.values(LANGUAGES)) cfg.holdBack = new Set([...(cfg.holdBack ?? []), ...HELD_BACK_EVERYWHERE]);
+
 
 let ready: Promise<void> | null = null;
-const loaded = new Map<LanguageId, Language>();
+const loaded = new Map<string, Language>();
+
+/**
+ * Trial KOTLIN_GRAMMAR: tree-sitter-kotlin 1.1.0 rebuilt with a patched scanner (vendor/tree-sitter-kotlin,
+ * README): a class header followed on the next line by `@Ann internal constructor(...)`, or in a nested
+ * class by `internal constructor(...)`, keeps its primary constructor instead of ending the class there.
+ * Node only (the source tree); the package's wasm/ folder ships the release grammar.
+ */
+const KOTLIN_PATCHED = '@tree-sitter-grammars/tree-sitter-kotlin/tree-sitter-kotlin-patched.wasm';
 
 export async function getParser(id: LanguageId): Promise<Parser> {
   const setup = currentSetup();
   ready ??= Parser.init(setup.locateRuntime ? { locateFile: setup.locateRuntime } : undefined);
   await ready;
-  let lang = loaded.get(id);
+  const patched = id === 'kotlin' && trial('KOTLIN_GRAMMAR');
+  const file = patched ? KOTLIN_PATCHED : LANGUAGES[id].wasm;
+  let lang = loaded.get(file);
   if (!lang) {
-    const file = LANGUAGES[id].wasm;
     const source = setup.locateGrammar ? await setup.locateGrammar(file, id) : await resolveInNode(file);
     lang = await Language.load(source instanceof URL ? source.href : source);
-    loaded.set(id, lang);
+    loaded.set(file, lang);
   }
   const parser = new Parser();
   parser.setLanguage(lang);

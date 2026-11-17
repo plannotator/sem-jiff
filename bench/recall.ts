@@ -5,7 +5,7 @@
 // One helper per (repo, commit, file, kind) counts once, however many callers it has.
 import fs from 'node:fs';
 import { configure, languageForPath, semanticDiffFile } from '../src/index.ts';
-import { switchRulesOff } from '../src/runtime.ts';
+import { switchRulesOff, switchTrialsOn } from '../src/runtime.ts';
 
 const [, , labelsPath, ...sets] = process.argv;
 if (!labelsPath || !sets.length) throw new Error('usage: node bench/recall.ts labels.json repo=data.json ...');
@@ -39,6 +39,8 @@ const nameIn = (header: string) =>
 // answer is at least CLEF_T (harness/compare/clef.py asks; answers keyed by `ckey` below).
 // SEMANTIC_NO_<RULE>=1 switches one engine rule off for this run, to measure what it adds.
 switchRulesOff(Object.keys(process.env).filter((k) => k.startsWith('SEMANTIC_NO_') && process.env[k]).map((k) => k.slice('SEMANTIC_NO_'.length)));
+// SEMANTIC_TRY_<RULE>=1 switches a trial rule on (off by default), to measure it on a fresh draw.
+switchTrialsOn(Object.keys(process.env).filter((k) => k.startsWith('SEMANTIC_TRY_') && process.env[k]).map((k) => k.slice('SEMANTIC_TRY_'.length)));
 let currentFile = '';
 if (process.env.CLEF_ANSWERS) {
   const { createHash } = await import('node:crypto');

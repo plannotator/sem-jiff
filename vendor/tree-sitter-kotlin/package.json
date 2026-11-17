@@ -8,6 +8,9 @@
     "tree-sitter-kotlin.wasm",
     "LICENSE",
     "SHA256SUMS",
-    "README.md"
+    "README.md",
+    "tree-sitter-kotlin-patched.wasm",
+    "PATCHED-SHA256SUMS",
+    "scanner.patch"
   ]
 }

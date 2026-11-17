@@ -1,0 +1,245 @@
+[
+ {
+  "id": "rb-global-stream",
+  "trial": "RENAME_GUARDS",
+  "language": "ruby",
+  "file": "Rakefile",
+  "title": "ruby: $stdout switched to $stderr is a different stream, never a rename",
+  "old": "task :docs do\n  $stdout = File.open(\"docs.log\", \"w\")\n  run_docs\n  $stdout.flush\nend\n",
+  "new": "task :docs do\n  $stderr = File.open(\"docs.log\", \"w\")\n  run_docs\n  $stderr.flush\nend\n",
+  "on": {
+   "never": [
+    {
+     "type": "renamed"
+    }
+   ]
+  },
+  "off": {
+   "must": [
+    {
+     "type": "renamed"
+    }
+   ]
+  }
+ },
+ {
+  "id": "kt-callee-replaced",
+  "trial": "RENAME_GUARDS",
+  "language": "kotlin",
+  "file": "Rule.kt",
+  "title": "kotlin: a call switched to a new helper with other logic (old helper deleted) is not a rename",
+  "old": "class Rule {\n    fun check(node: Node): Boolean =\n        node.hasArgs() && node.hasNewline()\n\n    private fun Node.hasArgs() = children().isNotEmpty()\n\n    private fun Node.hasNewline() =\n        children().any { it.isNewline() }\n}\n",
+  "new": "class Rule {\n    fun check(node: Node): Boolean =\n        node.hasArgs() && node.hasArgumentFollowedByNewline()\n\n    private fun Node.hasArgs() = children().isNotEmpty()\n\n    private fun Node.hasArgumentFollowedByNewline(): Boolean =\n        findArgumentFollowedByNewline() != null\n\n    private fun Node.findArgumentFollowedByNewline() =\n        this.findChild(ARGUMENT)?.nextSibling { it.isNewline() }\n}\n",
+  "on": {
+   "never": [
+    {
+     "type": "renamed"
+    }
+   ]
+  },
+  "off": {}
+ },
+ {
+  "id": "swift-closure-swap",
+  "trial": "RENAME_GUARDS",
+  "language": "swift",
+  "file": "Steps.swift",
+  "title": "swift: closure parameters that swapped places are other parameters, not renames",
+  "old": "func reversedSteps(head: Item, tail: [Item]) -> [Item] {\n    let pairs = zip([head] + tail, tail)\n        .map { (element, nextElement) in\n            Item(\n                key: nextElement.key,\n                value: element.value)\n        }\n    return pairs.reversed()\n}\n",
+  "new": "func reversedSteps(steps: [Item]) -> [Item] {\n    let pairs = zip(steps, steps.dropFirst())\n        .map { (step, nextStep) in\n            Item(\n                key: step.key,\n                value: nextStep.value)\n        }\n    return pairs.reversed()\n}\n",
+  "on": {
+   "never": [
+    {
+     "type": "renamed"
+    }
+   ]
+  },
+  "off": {}
+ },
+ {
+  "id": "swift-bool-negated",
+  "trial": "RENAME_GUARDS",
+  "language": "swift",
+  "file": "TableInfo.swift",
+  "title": "swift: a bool renamed to its negation (`!` dropped, callers compare to false) means the opposite: no rename",
+  "old": "struct TableInfo {\n    var hasRowID: Bool\n\n    init(row: Row) {\n        hasRowID = !row.flag\n    }\n}\n\nfunc rowIDColumn(_ t: TableInfo) -> Bool {\n    return t.hasRowID\n}\n",
+  "new": "struct TableInfo {\n    var isWithoutRowID: Bool\n\n    init(row: Row) {\n        isWithoutRowID = row.flag\n    }\n}\n\nfunc rowIDColumn(_ t: TableInfo) -> Bool {\n    return t.isWithoutRowID == false\n}\n",
+  "on": {
+   "never": [
+    {
+     "type": "renamed"
+    }
+   ]
+  },
+  "off": {
+   "must": [
+    {
+     "type": "renamed"
+    }
+   ]
+  }
+ },
+ {
+  "id": "kt-field-replaced",
+  "trial": "RENAME_GUARDS",
+  "language": "kotlin",
+  "file": "Loader.kt",
+  "title": "kotlin: a field now built from another class (NetworkObserver -> SystemCallbacks) was replaced, not renamed",
+  "old": "class Loader(context: Context) {\n    private val networkObserver = NetworkObserver(context, logger)\n\n    fun online() = networkObserver.isOnline()\n\n    fun shutdown() {\n        networkObserver.shutdown()\n    }\n}\n",
+  "new": "class Loader(context: Context) {\n    private val systemCallbacks = SystemCallbacks(this, context)\n\n    fun online() = systemCallbacks.isOnline\n\n    fun shutdown() {\n        systemCallbacks.shutdown()\n    }\n}\n",
+  "on": {
+   "never": [
+    {
+     "type": "renamed"
+    }
+   ]
+  },
+  "off": {
+   "must": [
+    {
+     "type": "renamed"
+    }
+   ]
+  }
+ },
+ {
+  "id": "kt-param-default-kept",
+  "trial": "RENAME_GUARDS",
+  "language": "kotlin",
+  "file": "FunSpec.kt",
+  "title": "kotlin: a boolean parameter renamed and given a default (`= false`) is still a rename, not a negation",
+  "old": "class FunSpec {\n  fun emit(\n    writer: Writer,\n    includeParametersKdoc: Boolean\n  ) {\n    if (includeParametersKdoc) {\n      writer.emitKdoc(kdoc)\n    }\n  }\n\n  fun emitConstructor(writer: Writer) {\n    emit(\n      writer = writer,\n      includeParametersKdoc = true)\n  }\n}\n",
+  "new": "class FunSpec {\n  fun emit(\n    writer: Writer,\n    includeKdocTags: Boolean = false\n  ) {\n    if (includeKdocTags) {\n      writer.emitKdoc(kdoc)\n    }\n  }\n\n  fun emitConstructor(writer: Writer) {\n    emit(\n      writer = writer,\n      includeKdocTags = true)\n  }\n}\n",
+  "on": {
+   "must": [
+    {
+     "type": "renamed",
+     "name": "includeKdocTags"
+    }
+   ]
+  },
+  "off": {
+   "must": [
+    {
+     "type": "renamed",
+     "name": "includeKdocTags"
+    }
+   ]
+  }
+ },
+ {
+  "id": "kt-expression-body-kept",
+  "trial": "RENAME_GUARDS",
+  "language": "kotlin",
+  "file": "Image.kt",
+  "title": "kotlin: a method renamed whose block body became an expression body is still a rename",
+  "old": "interface Image {\n    fun asBitmap(): Bitmap\n}\n\nclass BitmapImage(val bitmap: Bitmap) : Image {\n    override fun asBitmap(): Bitmap {\n        return bitmap\n    }\n}\n",
+  "new": "interface Image {\n    fun toBitmap(): Bitmap\n}\n\nclass BitmapImage(val bitmap: Bitmap) : Image {\n    override fun toBitmap(): Bitmap = bitmap\n}\n",
+  "on": {
+   "must": [
+    {
+     "type": "renamed"
+    }
+   ]
+  },
+  "off": {
+   "must": [
+    {
+     "type": "renamed"
+    }
+   ]
+  }
+ },
+ {
+  "id": "rb-param-rename-kept",
+  "trial": "RENAME_GUARDS",
+  "language": "ruby",
+  "file": "cart.rb",
+  "title": "ruby: a parameter renamed inside its method is still a rename",
+  "old": "class Cart\n  def total(items)\n    sum = 0\n    items.each { |i| sum += i.price }\n    sum + items.size\n  end\nend\n",
+  "new": "class Cart\n  def total(entries)\n    sum = 0\n    entries.each { |i| sum += i.price }\n    sum + entries.size\n  end\nend\n",
+  "on": {
+   "must": [
+    {
+     "type": "renamed"
+    }
+   ]
+  },
+  "off": {}
+ },
+ {
+  "id": "kt-function-rename-kept",
+  "trial": "RENAME_GUARDS",
+  "language": "kotlin",
+  "file": "Rule.kt",
+  "title": "kotlin: a helper renamed with its body unchanged and its callers updated is still a rename",
+  "old": "class Rule {\n    fun check(node: Node): Boolean =\n        hasArgs(node) && hasNewline(node)\n\n    fun again(node: Node) = hasNewline(node)\n\n    private fun hasArgs(node: Node) = node.children().isNotEmpty()\n\n    private fun hasNewline(node: Node) =\n        node.children().any { it.isNewline() }\n}\n",
+  "new": "class Rule {\n    fun check(node: Node): Boolean =\n        hasArgs(node) && hasLineBreak(node)\n\n    fun again(node: Node) = hasLineBreak(node)\n\n    private fun hasArgs(node: Node) = node.children().isNotEmpty()\n\n    private fun hasLineBreak(node: Node) =\n        node.children().any { it.isNewline() }\n}\n",
+  "on": {
+   "must": [
+    {
+     "type": "renamed"
+    }
+   ]
+  },
+  "off": {
+   "must": [
+    {
+     "type": "renamed"
+    }
+   ]
+  }
+ },
+ {
+  "id": "swift-closure-rename-kept",
+  "trial": "RENAME_GUARDS",
+  "language": "swift",
+  "file": "Steps.swift",
+  "title": "swift: closure parameters renamed in place are still renames",
+  "old": "func merged(_ xs: [Item]) -> [Int] {\n    return zip(xs, xs.dropFirst()).map { (element, nextElement) in\n        element.value + nextElement.value\n    }\n}\n",
+  "new": "func merged(_ xs: [Item]) -> [Int] {\n    return zip(xs, xs.dropFirst()).map { (step, nextStep) in\n        step.value + nextStep.value\n    }\n}\n",
+  "on": {
+   "must": [
+    {
+     "type": "renamed"
+    }
+   ]
+  },
+  "off": {}
+ },
+ {
+  "id": "kt-field-class-renamed-kept",
+  "trial": "RENAME_GUARDS",
+  "language": "kotlin",
+  "file": "Loader.kt",
+  "title": "kotlin: a field renamed together with the class it is built from is still a rename",
+  "old": "class Repo(val db: Db)\n\nclass Loader(db: Db) {\n    private val repo = Repo(db)\n\n    fun load() = repo.db\n\n    fun close() {\n        repo.db.close()\n    }\n}\n",
+  "new": "class Store(val db: Db)\n\nclass Loader(db: Db) {\n    private val store = Store(db)\n\n    fun load() = store.db\n\n    fun close() {\n        store.db.close()\n    }\n}\n",
+  "on": {
+   "must": [
+    {
+     "type": "renamed",
+     "name": "store"
+    }
+   ]
+  },
+  "off": {}
+ },
+ {
+  "id": "swift-bool-rename-kept",
+  "trial": "RENAME_GUARDS",
+  "language": "swift",
+  "file": "State.swift",
+  "title": "swift: a bool renamed with every use unchanged is still a rename",
+  "old": "struct State {\n    var isReady: Bool\n\n    init(row: Row) {\n        isReady = !row.pending\n    }\n}\n\nfunc check(_ s: State) -> Bool {\n    return s.isReady\n}\n",
+  "new": "struct State {\n    var ready: Bool\n\n    init(row: Row) {\n        ready = !row.pending\n    }\n}\n\nfunc check(_ s: State) -> Bool {\n    return s.ready\n}\n",
+  "on": {
+   "must": [
+    {
+     "type": "renamed"
+    }
+   ]
+  },
+  "off": {}
+ }
+]

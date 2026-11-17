@@ -3,6 +3,7 @@
 import assert from 'node:assert/strict';
 import { test } from 'node:test';
 import { semanticDiffFile } from '../src/index.ts';
+import { switchRulesOff } from '../src/runtime.ts';
 import type { SemanticDiffOperation } from '../src/pierre-types.ts';
 
 const summary = (ops: SemanticDiffOperation[]) => ops.map((o) => `${o.type} ${o.lines.old.map((l) => `${l.start}-${l.end}`)}>${o.lines.new.map((l) => `${l.start}-${l.end}`)}`);
@@ -19,8 +20,14 @@ test('TypeScript: re-sorted imports are moves', async () => {
 test('TypeScript: an import that moved and gained a name is moved with an edit', async () => {
   const a = `import { b } from './b';\nimport { a } from './a';\n`;
   const b = `import { a, c } from './a';\nimport { b } from './b';\n`;
-  const r = await semanticDiffFile('typescript', a, b);
-  assert.deepEqual(kinds(r.semanticOperations), ['movedWithEdit']);
+  // movedWithEdit is held back in every language (held4): shipped, the lines are plain edits; lifted, the pairing still holds.
+  assert.ok(!kinds((await semanticDiffFile('typescript', a, b)).semanticOperations).includes('movedWithEdit'));
+  switchRulesOff(['HOLD_BACK']);
+  try {
+    assert.deepEqual(kinds((await semanticDiffFile('typescript', a, b)).semanticOperations), ['movedWithEdit']);
+  } finally {
+    switchRulesOff([]);
+  }
 });
 
 test('TypeScript: a type import and a value import from one module are different imports', async () => {

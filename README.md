@@ -28,10 +28,11 @@ Example, rendered in Plannotator:<br/>
 It prefers saying nothing to saying something wrong: a missed change falls back to
 the plain diff, while a wrong label would mislead the reviewer.
 
-**Held back in 0.2.1.** A fresh blind test on 30 new Swift, Ruby and Kotlin projects found some labels wrong more
+**Held back.** A fresh blind test on 30 new Swift, Ruby and Kotlin projects found some labels wrong more
 often than our 1-in-50 bar, so for now those lines show as plain edits:
 Swift and Ruby moves, renames and extracts; Kotlin renames and extracts.
-Numbers in [CHANGELOG.md](CHANGELOG.md). 0.3 brings them back once each passes the bar.
+Since 0.2.2, "moved with edits" is held back in every language, and "reformatted" needs the same words,
+docstrings included. Numbers in [CHANGELOG.md](CHANGELOG.md). Each comes back once it passes the bar.
 
 ## Install
 

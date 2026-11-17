@@ -10,14 +10,14 @@
 //    text are `reformatted`.
 import type { Node } from 'web-tree-sitter';
 import { brokenTree, isComment, type Declaration, type LanguageConfig } from './parse.ts';
-import { rule } from './runtime.ts';
+import { rule, trial } from './runtime.ts';
 import type {
   SemanticDiffFold,
   SemanticDiffLinePair,
   SemanticDiffOperation,
   SemanticDiffTextRange,
 } from './pierre-types.ts';
-import { attachedAbove, codeLines, endLine, keepWeights, longestInOrder, pairSameNamed, range, rangeOf, startLine } from './syntax.ts';
+import { attachedAbove, codeLines, dice, endLine, keepWeights, longestInOrder, pairSameNamed, range, rangeOf, startLine } from './syntax.ts';
 
 interface Entity {
   decl: Declaration;
@@ -42,6 +42,12 @@ export interface StructureResult {
   folds: SemanticDiffFold[];
   /** Old-side lines (doc comments included) of every declaration paired across versions. */
   paired: Array<{ start: number; end: number }>;
+  /**
+   * Indices into `operations` of `reformatted` claims whose words changed (rule REFORMAT_WORDS): text inside a
+   * node that no token covers, such as a Python string's words around an escape, differs. The caller drops them
+   * at the end, like a held-back claim, so every other pass sees the same operations either way.
+   */
+  wordsChanged: Set<number>;
 }
 
 function leaves(n: Node, cfg: LanguageConfig) {
@@ -166,6 +172,35 @@ function withoutTrailingCommas(seq: string[]): string[] {
   });
 }
 
+/**
+ * The words no token holds: the text inside a node between its children (a Python string's content around an
+ * escape sequence, `"a \\n b"` holds only `\\n` as a token). Words only (letters, digits, `_`), so wrapping and
+ * spacing change nothing and any changed word does; symbols there are mostly layout the grammar leaves out of the
+ * tree (Swift's optional `;`, Rust's raw-string `#`). Comments are whole tokens already.
+ */
+function gapWords(n: Node): string {
+  const out: string[] = [];
+  const stack: Node[] = [n];
+  while (stack.length) {
+    const x = stack.pop()!;
+    if (x.childCount === 0 || isComment(x)) continue;
+    const text = x.text;
+    let at = x.startIndex;
+    const gap = (end: number) => {
+      if (end > at) out.push(...(text.slice(at - x.startIndex, end - x.startIndex).match(/[\p{L}\p{N}_]+/gu) ?? []));
+    };
+    const kids = x.children.filter((c): c is Node => !!c);
+    for (const c of kids) {
+      gap(c.startIndex);
+      at = Math.max(at, c.endIndex);
+    }
+    gap(x.endIndex);
+    for (let i = kids.length - 1; i >= 0; i--) stack.push(kids[i]!);
+  }
+  return out.join('\u0000');
+}
+const declGapWords = (d: Declaration) => gapWords(d.node) + (d.tail ? '\u0001' + gapWords(d.tail) : '');
+
 /** A declaration's text, through its tail (a Ruby heredoc body after it). */
 const declText = (d: Declaration, source: string) => (d.tail ? source.slice(d.node.startIndex, d.tail.endIndex) : d.node.text);
 /** Last line of a declaration, through its tail. */
@@ -201,6 +236,70 @@ function collect(root: Node, cfg: LanguageConfig): Entity[] {
   };
   visit(root, '', null);
   return out;
+}
+
+/**
+ * Trial EXT_BY_MEMBERS. For deciding which members crossed into another container, the containers of one type (Swift
+ * extensions) whose header pairing is missing or ambiguous pair by where their paired members went: an extension whose
+ * header changed (`_RopeElement` -> `RopeElement`, a conformance added), or two extensions with one header, are still
+ * the container their members stayed in. A container with a header found once on each side keeps its pairing, so a
+ * member moved from the type's body into a new extension still crossed. Among the open containers of one type and
+ * kind, the old and new ones holding the most paired members in common pair first, one to one (ties: the pairing by
+ * header, then file order); an open container left over keeps its pairing by header if that partner is still free.
+ * Only `holders` changes.
+ */
+function pairContainersByMembers(pairs: Array<[Entity, Entity]>, olds: Entity[], news: Entity[], holders: Map<Entity, Entity>, cfg: LanguageConfig): void {
+  const isContainer = (e: Entity) => !!cfg.typeOf!(e.decl);
+  const oldC = olds.filter(isContainer);
+  const newC = news.filter(isContainer);
+  const count = (list: Entity[]) => {
+    const m = new Map<string, number>();
+    for (const e of list) m.set(`${e.parent}\u0000${e.base}`, (m.get(`${e.parent}\u0000${e.base}`) ?? 0) + 1);
+    return (e: Entity) => m.get(`${e.parent}\u0000${e.base}`) ?? 0;
+  };
+  const inOld = count(oldC);
+  const inNew = count(newC);
+  const byHeader = new Map(oldC.flatMap((e) => (holders.has(e) ? [[e, holders.get(e)!] as [Entity, Entity]] : [])));
+  const pairedNew = new Set(byHeader.values());
+  const ambiguous = (e: Entity) => inOld(e) > 1 || inNew(e) > 1;
+  const openOld = new Set(oldC.filter((e) => !byHeader.has(e) || ambiguous(e) || ambiguous(byHeader.get(e)!)));
+  const openNew = new Set(newC.filter((e) => !pairedNew.has(e) || ambiguous(e)));
+  for (const [a, b] of byHeader) if (openOld.has(a)) openNew.add(b);
+  const typeKey = (e: Entity) => `${e.parent}\u0000${e.decl.kind}\u0000${cfg.typeOf!(e.decl)}`;
+  const flow = new Map<Entity, Map<Entity, number>>();
+  for (const [a, b] of pairs) {
+    const ha = a.holder;
+    const hb = b.holder;
+    if (!ha || !hb || !openOld.has(ha) || !openNew.has(hb) || typeKey(ha) !== typeKey(hb)) continue;
+    const m = flow.get(ha) ?? new Map<Entity, number>();
+    m.set(hb, (m.get(hb) ?? 0) + 1);
+    flow.set(ha, m);
+  }
+  if (!flow.size) return;
+  const order = new Map<Entity, number>([...olds, ...news].map((e, i) => [e, i]));
+  const cand: Array<[number, number, Entity, Entity]> = [];
+  for (const [ha, m] of flow) for (const [hb, n] of m) cand.push([n, byHeader.get(ha) === hb ? 1 : 0, ha, hb]);
+  cand.sort((x, y) => y[0] - x[0] || y[1] - x[1] || order.get(x[2])! - order.get(y[2])! || order.get(x[3])! - order.get(y[3])!);
+  const usedNew = new Set<Entity>();
+  const result = new Map<Entity, Entity>();
+  for (const [, , ha, hb] of cand) {
+    if (result.has(ha) || usedNew.has(hb)) continue;
+    result.set(ha, hb);
+    usedNew.add(hb);
+  }
+  for (const ha of openOld) {
+    if (result.has(ha)) continue;
+    const hb = byHeader.get(ha);
+    if (hb && !usedNew.has(hb)) {
+      result.set(ha, hb);
+      usedNew.add(hb);
+    }
+  }
+  for (const ha of openOld) {
+    const hb = result.get(ha);
+    if (hb) holders.set(ha, hb);
+    else holders.delete(ha);
+  }
 }
 
 /**
@@ -257,7 +356,11 @@ function changedLines(a: string, b: string) {
   return { old: { start: head + 1, end: la.length - tail }, new: { start: head + 1, end: lb.length - tail } };
 }
 
-export function detectStructure(oldRoot: Node, newRoot: Node, cfg: LanguageConfig): StructureResult {
+/**
+ * `keptLines` (trial DUP_TIEBREAK): the line diff's unchanged lines, old line to new line. Equally similar same-named
+ * declarations pair first where the line diff keeps one unchanged in place.
+ */
+export function detectStructure(oldRoot: Node, newRoot: Node, cfg: LanguageConfig, keptLines?: Map<number, number>): StructureResult {
   const olds = collect(oldRoot, cfg);
   const news = collect(newRoot, cfg);
   const pairs: Array<[Entity, Entity]> = [];
@@ -285,7 +388,8 @@ export function detectStructure(oldRoot: Node, newRoot: Node, cfg: LanguageConfi
     const level = `${oldParent}\u0000${newParent}`;
     if (levels.has(level)) return;
     levels.add(level);
-    for (const [a, b] of pairSameNamed(oldKids.get(oldParent) ?? [], newKids.get(newParent) ?? [], (e) => e.base, similarBy)) {
+    const inPlace = keptLines ? (a: Entity, b: Entity) => keptLines.get(startLine(a.decl.node)) === startLine(b.decl.node) : undefined;
+    for (const [a, b] of pairSameNamed(oldKids.get(oldParent) ?? [], newKids.get(newParent) ?? [], (e) => e.base, similarBy, inPlace)) {
       pairs.push([a, b]);
       usedOld.add(a);
       usedNew.add(b);
@@ -296,6 +400,9 @@ export function detectStructure(oldRoot: Node, newRoot: Node, cfg: LanguageConfi
   // Renamed declarations: same container and kind, identical apart from consistently swapped names.
   for (const a of olds) {
     if (usedOld.has(a)) continue;
+    // Trial IMPORT_NO_RENAME: an import names something else when its last segment changes
+    // (`runtime.ReadOnlyComposable` -> `runtime.currentComposer`): two imports are never one renamed declaration.
+    if (a.decl.kind === 'import' && trial('IMPORT_NO_RENAME')) continue;
     for (const b of news) {
       if (usedNew.has(b) || b.parent !== a.parent || b.decl.kind !== a.decl.kind) continue;
       const sub = identifierSubstitution(a, b);
@@ -323,6 +430,7 @@ export function detectStructure(oldRoot: Node, newRoot: Node, cfg: LanguageConfi
   const byParent = new Map<string, Array<[Entity, Entity]>>();
   for (const p of pairs) if (p[0].parent === p[1].parent) byParent.set(p[0].parent, [...(byParent.get(p[0].parent) ?? []), p]);
   const holders = new Map<Entity, Entity>(pairs);
+  if (cfg.typeOf && trial('EXT_BY_MEMBERS')) pairContainersByMembers(pairs, olds, news, holders, cfg);
   for (const group of byParent.values()) {
     const ordered = [...group].sort((p, q) => p[0].decl.node.startIndex - q[0].decl.node.startIndex);
     // A member now in another reopening of its Ruby class, or another container of its Swift type, moved, whatever the order says.
@@ -443,6 +551,7 @@ export function detectStructure(oldRoot: Node, newRoot: Node, cfg: LanguageConfi
     return best;
   };
   const accepted = new Map<string, { oldIds: Node[]; newIds: Node[] }>();
+  const guards = trial('RENAME_GUARDS');
   for (const [from, to] of renames) {
     if (conflicted.has(from)) continue;
     // A renamed name is gone afterwards and its new name was not there before.
@@ -463,6 +572,11 @@ export function detectStructure(oldRoot: Node, newRoot: Node, cfg: LanguageConfi
     };
     const oldIds = ownUses(sameKind(oldIndex.get(from)), oldIndex);
     const newIds = ownUses(sameKind(newIndex.get(to)), newIndex);
+    if (guards) {
+      // Trial RENAME_GUARDS, targeted: renames where the name now stands for something else.
+      // A Ruby global (`$stdout` -> `$stderr`) is never declared here: switching it switches what the code talks to.
+      if (cfg.id === 'ruby' && from.startsWith('$')) continue;
+    }
     // Every occurrence must have a counterpart, or this is not a clean rename.
     if (!oldIds.length || oldIds.length !== newIds.length) continue;
     // A name used once (`Once` -> `OnceExit`) is a different thing, not a rename.
@@ -473,6 +587,13 @@ export function detectStructure(oldRoot: Node, newRoot: Node, cfg: LanguageConfi
     // A field or parameter that also changed type was replaced, not renamed
     // (`toPath func(string) Path` -> `caseSensitivity CaseSensitivity`).
     if (oldIds.some((o, i) => isDeclarationName(o) && declaredTypeChanged(o, newIds[i]!, from, to))) continue;
+    if (guards) {
+      // A parameter that changed place in its list is another parameter (`{ (a, b) in }` -> `{ (b, a) in }`).
+      if (oldIds.some((o, i) => { if (!isDeclarationName(o)) return false; const a = parameterIndex(o); const b = parameterIndex(newIds[i]!); return a !== null && b !== null && a !== b; })) continue;
+      // A value built from another class (`networkObserver = NetworkObserver(...)` -> `systemCallbacks = SystemCallbacks(...)`)
+      // was replaced, unless that class was renamed too.
+      if (oldIds.some((o, i) => isDeclarationName(o) && constructedTypeChanged(o, newIds[i]!, renames, cfg))) continue;
+    }
     // A declaration renamed and also edited is not paired, but is still this rename's own declaration.
     const counterpartOf = (e: Entity) =>
       partner.get(e) ?? (e.decl.name.split('.').at(-1) === from ? news.find((x) => x.parent === e.parent && x.decl.kind === e.decl.kind && x.decl.name === e.decl.name.replace(new RegExp(`${from}$`), to)) : undefined);
@@ -553,6 +674,28 @@ export function detectStructure(oldRoot: Node, newRoot: Node, cfg: LanguageConfi
   const root = (k: string): string => (group.get(k) === k ? k : root(group.get(k)!));
   const lineOwner = new Map<number, string>();
   const kept = new Map<string, Array<[Node, Node]>>();
+  // Trial RENAME_GUARDS: a function renamed whose body is mostly new (the old helper deleted, a different one called
+  // instead) was replaced, not renamed: fewer than half the names in its body alike, renames applied.
+  if (guards) {
+    for (const [from, { oldIds, newIds }] of [...accepted]) {
+      if (innerOnly.has(from)) continue;
+      if (oldIds.some((o, i) => {
+        if (!isDeclarationName(o) || !/function|method|constructor/.test(o.parent!.type)) return false;
+        const ba = cfg.bodyOf(o.parent!);
+        const bb = cfg.bodyOf(newIds[i]!.parent!);
+        if (!ba || !bb) return false;
+        const names = (n: Node) => leaves(n, cfg).tokens.filter((t) => /^[\p{L}_$][\p{L}\p{N}_$]*$/u.test(t));
+        return dice(names(ba).map((t) => renames.get(t) ?? t), names(bb)) < 0.5;
+      })) accepted.delete(from);
+    }
+  }
+  // Trial RENAME_GUARDS: a use whose only other change is a negation (`hasRowID = !x` -> `isWithoutRowID = x`,
+  // `.hasRowID` -> `.isWithoutRowID == false`) shows the name now means the opposite: no rename at all.
+  if (guards) {
+    for (const [from, { oldIds, newIds }] of [...accepted]) {
+      if (oldIds.some((o, i) => negatedOnly(words(swapped(startLine(o))), words(newText[startLine(newIds[i]!) - 1] ?? '')))) accepted.delete(from);
+    }
+  }
   for (const [from, { oldIds, newIds }] of accepted) {
     const occ = oldIds.map((o, i) => [o, newIds[i]!] as [Node, Node]).filter(([o, n]) => clean(o, n));
     if (!occ.length) continue;
@@ -594,6 +737,7 @@ export function detectStructure(oldRoot: Node, newRoot: Node, cfg: LanguageConfi
   // A class or interface whose whole shape is unchanged (`interface P { a: string }` wrapped
   // onto lines) is reformatted as a whole; otherwise its changed members are reported.
   const whole = pairs.filter(([a, b]) => a.decl.members && !moved.has(a) && a.text !== b.text && a.seq === b.seq && !brokenTree(a.decl.node, cfg) && !brokenTree(b.decl.node, cfg) && invisibles(a.text) === invisibles(b.text)).map(([a]) => a.decl.node);
+  const wordsChanged = new Set<number>();
   const insideWhole = (a: Entity) => whole.some((w) => w.id !== a.decl.node.id && w.startIndex <= a.decl.node.startIndex && a.decl.node.endIndex <= w.endIndex);
   for (const [a, b] of pairs) {
     if (moved.has(a) || a.text === b.text || insideWhole(a)) continue;
@@ -617,6 +761,9 @@ export function detectStructure(oldRoot: Node, newRoot: Node, cfg: LanguageConfi
       old: { start: oldStart, end: startLine(a.decl.node) + rel.old.end - 1 },
       new: { start: newStart, end: startLine(b.decl.node) + rel.new.end - 1 },
     };
+    // The words must be the same too, inside strings and docstrings: rewrapping a docstring is formatting, changing
+    // its words is an edit (held4: Python docstrings with an escape sequence read only the escape as a token).
+    if (declGapWords(a.decl) !== declGapWords(b.decl)) wordsChanged.add(operations.length);
     operations.push({
       type: 'reformatted',
       spans: [
@@ -633,7 +780,7 @@ export function detectStructure(oldRoot: Node, newRoot: Node, cfg: LanguageConfi
   }
 
   const paired = pairs.map(([a]) => ({ start: docStart(a.decl.node, cfg), end: declEnd(a.decl) }));
-  return { operations, folds, paired };
+  return { operations, folds, paired, wordsChanged };
 }
 
 const invisibles = (t: string) => (t.match(/[\u200b-\u200f\u2028\u2029\u2060\ufeff\u00ad]/g) ?? []).join('');
@@ -704,6 +851,53 @@ function declaredType(id: Node): Node | null {
   if (p.type === 'parameter' || p.type === 'lambda_parameter') return p.childrenForFieldName('name').find((c) => c && c.id !== id.id && c.type !== 'simple_identifier') ?? null;
   if (p.type === 'pattern' && p.parent?.type === 'property_declaration') return p.parent.namedChildren.find((c) => c?.type === 'type_annotation') ?? null;
   return null;
+}
+
+/** Position of a parameter in its list (function, closure or block parameters), or null. */
+function parameterIndex(id: Node): number | null {
+  let q: Node | null = id;
+  for (let depth = 0; q?.parent && depth < 4; depth++, q = q.parent) {
+    const list = q.parent;
+    if (/(^|_)parameters$|parameter_list|lambda_function_type_parameters|closure_parameters|block_parameters/.test(list.type)) {
+      const items = list.namedChildren.filter((c): c is Node => !!c && !isComment(c) && c.type === q!.type);
+      const i = items.findIndex((c) => c.id === q!.id);
+      return i < 0 ? null : i;
+    }
+  }
+  return null;
+}
+
+/** The class a declaration's value is built from (`= Foo(...)`, `= Foo.new(...)`), when it is one. */
+function constructedType(id: Node, cfg: LanguageConfig): string | null {
+  let d: Node | null = id.parent;
+  for (let depth = 0; d && depth < 3 && !/property_declaration|variable_declaration|assignment|lexical_declaration|local_variable_declaration|field_declaration|variable_declarator/.test(d.type); depth++) d = d.parent;
+  if (d?.type === 'variable_declaration' && d.parent?.type === 'property_declaration') d = d.parent; // Kotlin
+  if (!d) return null;
+  const value = d.childForFieldName('value') ?? d.childForFieldName('right') ?? d.namedChildren.filter((c): c is Node => !!c && !isComment(c)).at(-1) ?? null;
+  if (!value || value.startIndex <= id.startIndex || !cfg.callTypes.has(value.type)) return null;
+  let name = cfg.calleeOf(value);
+  if (name === 'new') name = (value.childForFieldName('receiver') ?? null)?.text ?? null;
+  return name && /^[A-Z]/.test(name) ? name : null;
+}
+
+function constructedTypeChanged(o: Node, n: Node, renames: Map<string, string>, cfg: LanguageConfig): boolean {
+  const a = constructedType(o, cfg);
+  const b = constructedType(n, cfg);
+  return !!a && !!b && a !== b && renames.get(a) !== b;
+}
+
+/** The two lines differ only by a negation: `!` or `not` added or dropped, or `== false` / `!= true` appended. */
+function negatedOnly(a: string[], b: string[]): boolean {
+  if (a.join(' ') === b.join(' ')) return false;
+  const count = (xs: string[]) => xs.reduce((m, x) => m.set(x, (m.get(x) ?? 0) + 1), new Map<string, number>());
+  const ca = count(a);
+  const cb = count(b);
+  const diff: string[] = [];
+  for (const k of new Set([...ca.keys(), ...cb.keys()])) for (let i = Math.abs((ca.get(k) ?? 0) - (cb.get(k) ?? 0)); i > 0; i--) diff.push(k);
+  if (!diff.length || !diff.every((x) => /^(!|=|not|false|true)$/.test(x))) return false;
+  const n = (re: RegExp) => diff.filter((x) => re.test(x)).length;
+  // `!x` / `not x`, or a comparison appended (`== false`): never a default value (`flag: Boolean = false`).
+  return n(/^(!|not)$/) > 0 || (n(/^=$/) === 2 && n(/^(false|true)$/) === 1);
 }
 
 function declaredTypeChanged(o: Node, n: Node, from: string, to: string): boolean {

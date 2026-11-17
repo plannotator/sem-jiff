@@ -1,0 +1,133 @@
+[
+ {
+  "id": "swift-rename-chain",
+  "trial": "FN_PAIRING",
+  "language": "swift",
+  "file": "Cache.swift",
+  "title": "swift: f() -> f_() while fWithX(_:) -> f(with:): renames, not an inline",
+  "old": "final class Cache {\n    public func clearDiskCache() {\n        clearDiskCacheWithCompletionHandler(nil)\n    }\n\n    public func clearDiskCacheWithCompletionHandler(_ completionHandler: (() -> Void)?) {\n        ioQueue.async {\n            self.removeAllFiles()\n            self.createDirectory()\n            DispatchQueue.main.async {\n                completionHandler?()\n            }\n        }\n    }\n}\n",
+  "new": "final class Cache {\n    private func clearDiskCache_() {\n        clearDiskCache(with: nil)\n    }\n\n    public func clearDiskCache(with completionHandler: (() -> Void)? = nil) {\n        ioQueue.async {\n            self.removeAllFiles()\n            self.createDirectory()\n            DispatchQueue.main.async {\n                completionHandler?()\n            }\n        }\n    }\n}\n",
+  "on": {
+   "never": [
+    {
+     "type": "inlinedFunction"
+    },
+    {
+     "type": "extractedFunction"
+    }
+   ]
+  },
+  "off": {
+   "must": [
+    {
+     "type": "inlinedFunction"
+    }
+   ]
+  }
+ },
+ {
+  "id": "rb-rename-superclass-namesake",
+  "trial": "FN_PAIRING",
+  "language": "ruby",
+  "file": "class_interface.rb",
+  "title": "ruby: schema -> __schema__ and a new schema(&block) calling superclass&.__schema__: a rename, not an extract",
+  "old": "module ClassInterface\n  def params(&block)\n    @__schema__ ||= Schema.Params(parent: superclass&.schema, &block)\n  end\n\n  def json(&block)\n    @__schema__ ||= Schema.JSON(parent: superclass&.schema, &block)\n  end\n\n  def schema\n    @__schema__ if defined?(@__schema__)\n  end\nend\n",
+  "new": "module ClassInterface\n  def params(&block)\n    @__schema__ ||= Schema.Params(parent: superclass&.__schema__, &block)\n  end\n\n  def json(&block)\n    @__schema__ ||= Schema.JSON(parent: superclass&.__schema__, &block)\n  end\n\n  def schema(&block)\n    @__schema__ ||= Schema.define(parent: superclass&.__schema__, &block)\n  end\n\n  def __schema__\n    @__schema__ if defined?(@__schema__)\n  end\nend\n",
+  "on": {
+   "never": [
+    {
+     "type": "inlinedFunction"
+    },
+    {
+     "type": "extractedFunction"
+    }
+   ]
+  },
+  "off": {
+   "must": [
+    {
+     "type": "extractedFunction"
+    }
+   ]
+  }
+ },
+ {
+  "id": "swift-many-overloads",
+  "trial": "FN_PAIRING",
+  "language": "swift",
+  "file": "Rule.swift",
+  "title": "swift: 60 visit(_:) overloads, one deleted: the extract comes from the overload that lost the code, not a neighbour shifted by the deletion",
+  "old": "final class Rule: SyntaxVisitor {\n    override func visit(_ node: Type0Syntax) -> Kind {\n        let name0 = node.name.text\n        record(name0, kind: \"k0\")\n        return .visitChildren\n    }\n\n    override func visit(_ node: Type1Syntax) -> Kind {\n        let name1 = node.name.text\n        record(name1, kind: \"k1\")\n        return .visitChildren\n    }\n\n    override func visit(_ node: Type2Syntax) -> Kind {\n        let name2 = node.name.text\n        record(name2, kind: \"k2\")\n        return .visitChildren\n    }\n\n    override func visit(_ node: Type3Syntax) -> Kind {\n        let name3 = node.name.text\n        record(name3, kind: \"k3\")\n        return .visitChildren\n    }\n\n    override func visit(_ node: Type4Syntax) -> Kind {\n        let name4 = node.name.text\n        record(name4, kind: \"k4\")\n        return .visitChildren\n    }\n\n    override func visit(_ node: Type5Syntax) -> Kind {\n        let name5 = node.name.text\n        record(name5, kind: \"k5\")\n        return .visitChildren\n    }\n\n    override func visit(_ node: Type6Syntax) -> Kind {\n        let name6 = node.name.text\n        record(name6, kind: \"k6\")\n        return .visitChildren\n    }\n\n    override func visit(_ node: Type7Syntax) -> Kind {\n        let name7 = node.name.text\n        record(name7, kind: \"k7\")\n        return .visitChildren\n    }\n\n    override func visit(_ node: Type8Syntax) -> Kind {\n        let name8 = node.name.text\n        record(name8, kind: \"k8\")\n        return .visitChildren\n    }\n\n    override func visit(_ node: Type9Syntax) -> Kind {\n        let name9 = node.name.text\n        record(name9, kind: \"k9\")\n        return .visitChildren\n    }\n\n    override func visit(_ node: Type10Syntax) -> Kind {\n        let name10 = node.name.text\n        record(name10, kind: \"k10\")\n        return .visitChildren\n    }\n\n    override func visit(_ node: Type11Syntax) -> Kind {\n        let name11 = node.name.text\n        record(name11, kind: \"k11\")\n        return .visitChildren\n    }\n\n    override func visit(_ node: Type12Syntax) -> Kind {\n        let name12 = node.name.text\n        record(name12, kind: \"k12\")\n        return .visitChildren\n    }\n\n    override func visit(_ node: Type13Syntax) -> Kind {\n        let name13 = node.name.text\n        record(name13, kind: \"k13\")\n        return .visitChildren\n    }\n\n    override func visit(_ node: Type14Syntax) -> Kind {\n        let name14 = node.name.text\n        record(name14, kind: \"k14\")\n        return .visitChildren\n    }\n\n    override func visit(_ node: Type15Syntax) -> Kind {\n        let name15 = node.name.text\n        record(name15, kind: \"k15\")\n        return .visitChildren\n    }\n\n    override func visit(_ node: Type16Syntax) -> Kind {\n        let name16 = node.name.text\n        record(name16, kind: \"k16\")\n        return .visitChildren\n    }\n\n    override func visit(_ node: Type17Syntax) -> Kind {\n        let name17 = node.name.text\n        record(name17, kind: \"k17\")\n        return .visitChildren\n    }\n\n    override func visit(_ node: Type18Syntax) -> Kind {\n        let name18 = node.name.text\n        record(name18, kind: \"k18\")\n        return .visitChildren\n    }\n\n    override func visit(_ node: Type19Syntax) -> Kind {\n        let name19 = node.name.text\n        record(name19, kind: \"k19\")\n        return .visitChildren\n    }\n\n    override func visit(_ node: Type20Syntax) -> Kind {\n        let name20 = node.name.text\n        record(name20, kind: \"k20\")\n        return .visitChildren\n    }\n\n    override func visit(_ node: Type21Syntax) -> Kind {\n        let name21 = node.name.text\n        record(name21, kind: \"k21\")\n        return .visitChildren\n    }\n\n    override func visit(_ node: Type22Syntax) -> Kind {\n        let name22 = node.name.text\n        record(name22, kind: \"k22\")\n        return .visitChildren\n    }\n\n    override func visit(_ node: Type23Syntax) -> Kind {\n        let name23 = node.name.text\n        record(name23, kind: \"k23\")\n        return .visitChildren\n    }\n\n    override func visit(_ node: Type24Syntax) -> Kind {\n        let name24 = node.name.text\n        record(name24, kind: \"k24\")\n        return .visitChildren\n    }\n\n    override func visit(_ node: Type25Syntax) -> Kind {\n        let name25 = node.name.text\n        record(name25, kind: \"k25\")\n        return .visitChildren\n    }\n\n    override func visit(_ node: Type26Syntax) -> Kind {\n        let name26 = node.name.text\n        record(name26, kind: \"k26\")\n        return .visitChildren\n    }\n\n    override func visit(_ node: Type27Syntax) -> Kind {\n        let name27 = node.name.text\n        record(name27, kind: \"k27\")\n        return .visitChildren\n    }\n\n    override func visit(_ node: Type28Syntax) -> Kind {\n        let name28 = node.name.text\n        record(name28, kind: \"k28\")\n        return .visitChildren\n    }\n\n    override func visit(_ node: Type29Syntax) -> Kind {\n        let name29 = node.name.text\n        record(name29, kind: \"k29\")\n        return .visitChildren\n    }\n\n    override func visit(_ node: Type30Syntax) -> Kind {\n        let name30 = node.name.text\n        record(name30, kind: \"k30\")\n        return .visitChildren\n    }\n\n    override func visit(_ node: Type31Syntax) -> Kind {\n        let name31 = node.name.text\n        record(name31, kind: \"k31\")\n        return .visitChildren\n    }\n\n    override func visit(_ node: Type32Syntax) -> Kind {\n        let name32 = node.name.text\n        record(name32, kind: \"k32\")\n        return .visitChildren\n    }\n\n    override func visit(_ node: Type33Syntax) -> Kind {\n        let name33 = node.name.text\n        record(name33, kind: \"k33\")\n        return .visitChildren\n    }\n\n    override func visit(_ node: Type34Syntax) -> Kind {\n        let name34 = node.name.text\n        record(name34, kind: \"k34\")\n        return .visitChildren\n    }\n\n    override func visit(_ node: Type35Syntax) -> Kind {\n        let name35 = node.name.text\n        record(name35, kind: \"k35\")\n        return .visitChildren\n    }\n\n    override func visit(_ node: Type36Syntax) -> Kind {\n        let name36 = node.name.text\n        record(name36, kind: \"k36\")\n        return .visitChildren\n    }\n\n    override func visit(_ node: Type37Syntax) -> Kind {\n        let name37 = node.name.text\n        record(name37, kind: \"k37\")\n        return .visitChildren\n    }\n\n    override func visit(_ node: Type38Syntax) -> Kind {\n        let name38 = node.name.text\n        record(name38, kind: \"k38\")\n        return .visitChildren\n    }\n\n    override func visit(_ node: Type39Syntax) -> Kind {\n        let name39 = node.name.text\n        record(name39, kind: \"k39\")\n        return .visitChildren\n    }\n\n    override func visit(_ node: Type40Syntax) -> Kind {\n        let name40 = node.name.text\n        record(name40, kind: \"k40\")\n        return .visitChildren\n    }\n\n    override func visit(_ node: Type41Syntax) -> Kind {\n        let name41 = node.name.text\n        record(name41, kind: \"k41\")\n        return .visitChildren\n    }\n\n    override func visit(_ node: Type42Syntax) -> Kind {\n        let name42 = node.name.text\n        record(name42, kind: \"k42\")\n        return .visitChildren\n    }\n\n    override func visit(_ node: Type43Syntax) -> Kind {\n        let name43 = node.name.text\n        record(name43, kind: \"k43\")\n        return .visitChildren\n    }\n\n    override func visit(_ node: Type44Syntax) -> Kind {\n        let name44 = node.name.text\n        record(name44, kind: \"k44\")\n        return .visitChildren\n    }\n\n    override func visit(_ node: Type45Syntax) -> Kind {\n        let name45 = node.name.text\n        record(name45, kind: \"k45\")\n        return .visitChildren\n    }\n\n    override func visit(_ node: Type46Syntax) -> Kind {\n        let name46 = node.name.text\n        record(name46, kind: \"k46\")\n        return .visitChildren\n    }\n\n    override func visit(_ node: Type47Syntax) -> Kind {\n        let name47 = node.name.text\n        record(name47, kind: \"k47\")\n        return .visitChildren\n    }\n\n    override func visit(_ node: Type48Syntax) -> Kind {\n        let name48 = node.name.text\n        record(name48, kind: \"k48\")\n        return .visitChildren\n    }\n\n    override func visit(_ node: Type49Syntax) -> Kind {\n        let name49 = node.name.text\n        record(name49, kind: \"k49\")\n        return .visitChildren\n    }\n\n    override func visit(_ node: Type50Syntax) -> Kind {\n        let name50 = node.name.text\n        record(name50, kind: \"k50\")\n        return .visitChildren\n    }\n\n    override func visit(_ node: Type51Syntax) -> Kind {\n        let name51 = node.name.text\n        record(name51, kind: \"k51\")\n        return .visitChildren\n    }\n\n    override func visit(_ node: Type52Syntax) -> Kind {\n        let name52 = node.name.text\n        record(name52, kind: \"k52\")\n        return .visitChildren\n    }\n\n    override func visit(_ node: Type53Syntax) -> Kind {\n        let name53 = node.name.text\n        record(name53, kind: \"k53\")\n        return .visitChildren\n    }\n\n    override func visit(_ node: Type54Syntax) -> Kind {\n        let name54 = node.name.text\n        record(name54, kind: \"k54\")\n        return .visitChildren\n    }\n\n    override func visit(_ node: Type55Syntax) -> Kind {\n        let name55 = node.name.text\n        record(name55, kind: \"k55\")\n        return .visitChildren\n    }\n\n    override func visit(_ node: Type56Syntax) -> Kind {\n        let name56 = node.name.text\n        record(name56, kind: \"k56\")\n        return .visitChildren\n    }\n\n    override func visit(_ node: Type57Syntax) -> Kind {\n        let name57 = node.name.text\n        record(name57, kind: \"k57\")\n        return .visitChildren\n    }\n\n    override func visit(_ node: Type58Syntax) -> Kind {\n        let name58 = node.name.text\n        record(name58, kind: \"k58\")\n        return .visitChildren\n    }\n\n    override func visit(_ node: Type59Syntax) -> Kind {\n        let name59 = node.name.text\n        record(name59, kind: \"k59\")\n        return .visitChildren\n    }\n\n}\n",
+  "new": "final class Rule: SyntaxVisitor {\n    override func visit(_ node: Type0Syntax) -> Kind {\n        let name0 = node.name.text\n        record(name0, kind: \"k0\")\n        return .visitChildren\n    }\n\n    override func visit(_ node: Type1Syntax) -> Kind {\n        let name1 = node.name.text\n        record(name1, kind: \"k1\")\n        return .visitChildren\n    }\n\n    override func visit(_ node: Type2Syntax) -> Kind {\n        let name2 = node.name.text\n        record(name2, kind: \"k2\")\n        return .visitChildren\n    }\n\n    override func visit(_ node: Type3Syntax) -> Kind {\n        let name3 = node.name.text\n        record(name3, kind: \"k3\")\n        return .visitChildren\n    }\n\n    override func visit(_ node: Type4Syntax) -> Kind {\n        let name4 = node.name.text\n        record(name4, kind: \"k4\")\n        return .visitChildren\n    }\n\n    override func visit(_ node: Type5Syntax) -> Kind {\n        let name5 = node.name.text\n        record(name5, kind: \"k5\")\n        return .visitChildren\n    }\n\n    override func visit(_ node: Type6Syntax) -> Kind {\n        let name6 = node.name.text\n        record(name6, kind: \"k6\")\n        return .visitChildren\n    }\n\n    override func visit(_ node: Type7Syntax) -> Kind {\n        let name7 = node.name.text\n        record(name7, kind: \"k7\")\n        return .visitChildren\n    }\n\n    override func visit(_ node: Type8Syntax) -> Kind {\n        let name8 = node.name.text\n        record(name8, kind: \"k8\")\n        return .visitChildren\n    }\n\n    override func visit(_ node: Type9Syntax) -> Kind {\n        let name9 = node.name.text\n        record(name9, kind: \"k9\")\n        return .visitChildren\n    }\n\n    override func visit(_ node: Type11Syntax) -> Kind {\n        let name11 = node.name.text\n        record(name11, kind: \"k11\")\n        return .visitChildren\n    }\n\n    override func visit(_ node: Type12Syntax) -> Kind {\n        let name12 = node.name.text\n        record(name12, kind: \"k12\")\n        return .visitChildren\n    }\n\n    override func visit(_ node: Type13Syntax) -> Kind {\n        let name13 = node.name.text\n        record(name13, kind: \"k13\")\n        return .visitChildren\n    }\n\n    override func visit(_ node: Type14Syntax) -> Kind {\n        let name14 = node.name.text\n        record(name14, kind: \"k14\")\n        return .visitChildren\n    }\n\n    override func visit(_ node: Type15Syntax) -> Kind {\n        let name15 = node.name.text\n        record(name15, kind: \"k15\")\n        return .visitChildren\n    }\n\n    override func visit(_ node: Type16Syntax) -> Kind {\n        let name16 = node.name.text\n        record(name16, kind: \"k16\")\n        return .visitChildren\n    }\n\n    override func visit(_ node: Type17Syntax) -> Kind {\n        let name17 = node.name.text\n        record(name17, kind: \"k17\")\n        return .visitChildren\n    }\n\n    override func visit(_ node: Type18Syntax) -> Kind {\n        let name18 = node.name.text\n        record(name18, kind: \"k18\")\n        return .visitChildren\n    }\n\n    override func visit(_ node: Type19Syntax) -> Kind {\n        let name19 = node.name.text\n        record(name19, kind: \"k19\")\n        return .visitChildren\n    }\n\n    override func visit(_ node: Type20Syntax) -> Kind {\n        let name20 = node.name.text\n        record(name20, kind: \"k20\")\n        return .visitChildren\n    }\n\n    override func visit(_ node: Type21Syntax) -> Kind {\n        let name21 = node.name.text\n        record(name21, kind: \"k21\")\n        return .visitChildren\n    }\n\n    override func visit(_ node: Type22Syntax) -> Kind {\n        let name22 = node.name.text\n        record(name22, kind: \"k22\")\n        return .visitChildren\n    }\n\n    override func visit(_ node: Type23Syntax) -> Kind {\n        let name23 = node.name.text\n        record(name23, kind: \"k23\")\n        return .visitChildren\n    }\n\n    override func visit(_ node: Type24Syntax) -> Kind {\n        let name24 = node.name.text\n        record(name24, kind: \"k24\")\n        return .visitChildren\n    }\n\n    override func visit(_ node: Type25Syntax) -> Kind {\n        let name25 = node.name.text\n        record(name25, kind: \"k25\")\n        return .visitChildren\n    }\n\n    override func visit(_ node: Type26Syntax) -> Kind {\n        let name26 = node.name.text\n        record(name26, kind: \"k26\")\n        return .visitChildren\n    }\n\n    override func visit(_ node: Type27Syntax) -> Kind {\n        let name27 = node.name.text\n        record(name27, kind: \"k27\")\n        return .visitChildren\n    }\n\n    override func visit(_ node: Type28Syntax) -> Kind {\n        let name28 = node.name.text\n        record(name28, kind: \"k28\")\n        return .visitChildren\n    }\n\n    override func visit(_ node: Type29Syntax) -> Kind {\n        let name29 = node.name.text\n        record(name29, kind: \"k29\")\n        return .visitChildren\n    }\n\n    override func visit(_ node: Type30Syntax) -> Kind {\n        let name30 = node.name.text\n        record(name30, kind: \"k30\")\n        return .visitChildren\n    }\n\n    override func visit(_ node: Type31Syntax) -> Kind {\n        let name31 = node.name.text\n        record(name31, kind: \"k31\")\n        return .visitChildren\n    }\n\n    override func visit(_ node: Type32Syntax) -> Kind {\n        let name32 = node.name.text\n        record(name32, kind: \"k32\")\n        return .visitChildren\n    }\n\n    override func visit(_ node: Type33Syntax) -> Kind {\n        let name33 = node.name.text\n        record(name33, kind: \"k33\")\n        return .visitChildren\n    }\n\n    override func visit(_ node: Type34Syntax) -> Kind {\n        let name34 = node.name.text\n        record(name34, kind: \"k34\")\n        return .visitChildren\n    }\n\n    override func visit(_ node: Type35Syntax) -> Kind {\n        let name35 = node.name.text\n        record(name35, kind: \"k35\")\n        return .visitChildren\n    }\n\n    override func visit(_ node: Type36Syntax) -> Kind {\n        let name36 = node.name.text\n        record(name36, kind: \"k36\")\n        return .visitChildren\n    }\n\n    override func visit(_ node: Type37Syntax) -> Kind {\n        let name37 = node.name.text\n        record(name37, kind: \"k37\")\n        return .visitChildren\n    }\n\n    override func visit(_ node: Type38Syntax) -> Kind {\n        let name38 = node.name.text\n        record(name38, kind: \"k38\")\n        return .visitChildren\n    }\n\n    override func visit(_ node: Type39Syntax) -> Kind {\n        let name39 = node.name.text\n        record(name39, kind: \"k39\")\n        return .visitChildren\n    }\n\n    override func visit(_ node: Type40Syntax) -> Kind {\n        checkNode40(node)\n        return .visitChildren\n    }\n\n    override func visit(_ node: Type41Syntax) -> Kind {\n        let name41 = node.name.text\n        record(name41, kind: \"k41\")\n        return .visitChildren\n    }\n\n    override func visit(_ node: Type42Syntax) -> Kind {\n        let name42 = node.name.text\n        record(name42, kind: \"k42\")\n        return .visitChildren\n    }\n\n    override func visit(_ node: Type43Syntax) -> Kind {\n        let name43 = node.name.text\n        record(name43, kind: \"k43\")\n        return .visitChildren\n    }\n\n    override func visit(_ node: Type44Syntax) -> Kind {\n        let name44 = node.name.text\n        record(name44, kind: \"k44\")\n        return .visitChildren\n    }\n\n    override func visit(_ node: Type45Syntax) -> Kind {\n        let name45 = node.name.text\n        record(name45, kind: \"k45\")\n        return .visitChildren\n    }\n\n    override func visit(_ node: Type46Syntax) -> Kind {\n        let name46 = node.name.text\n        record(name46, kind: \"k46\")\n        return .visitChildren\n    }\n\n    override func visit(_ node: Type47Syntax) -> Kind {\n        let name47 = node.name.text\n        record(name47, kind: \"k47\")\n        return .visitChildren\n    }\n\n    override func visit(_ node: Type48Syntax) -> Kind {\n        let name48 = node.name.text\n        record(name48, kind: \"k48\")\n        return .visitChildren\n    }\n\n    override func visit(_ node: Type49Syntax) -> Kind {\n        let name49 = node.name.text\n        record(name49, kind: \"k49\")\n        return .visitChildren\n    }\n\n    override func visit(_ node: Type50Syntax) -> Kind {\n        let name50 = node.name.text\n        record(name50, kind: \"k50\")\n        return .visitChildren\n    }\n\n    override func visit(_ node: Type51Syntax) -> Kind {\n        let name51 = node.name.text\n        record(name51, kind: \"k51\")\n        return .visitChildren\n    }\n\n    override func visit(_ node: Type52Syntax) -> Kind {\n        let name52 = node.name.text\n        record(name52, kind: \"k52\")\n        return .visitChildren\n    }\n\n    override func visit(_ node: Type53Syntax) -> Kind {\n        let name53 = node.name.text\n        record(name53, kind: \"k53\")\n        return .visitChildren\n    }\n\n    override func visit(_ node: Type54Syntax) -> Kind {\n        let name54 = node.name.text\n        record(name54, kind: \"k54\")\n        return .visitChildren\n    }\n\n    override func visit(_ node: Type55Syntax) -> Kind {\n        let name55 = node.name.text\n        record(name55, kind: \"k55\")\n        return .visitChildren\n    }\n\n    override func visit(_ node: Type56Syntax) -> Kind {\n        let name56 = node.name.text\n        record(name56, kind: \"k56\")\n        return .visitChildren\n    }\n\n    override func visit(_ node: Type57Syntax) -> Kind {\n        let name57 = node.name.text\n        record(name57, kind: \"k57\")\n        return .visitChildren\n    }\n\n    override func visit(_ node: Type58Syntax) -> Kind {\n        let name58 = node.name.text\n        record(name58, kind: \"k58\")\n        return .visitChildren\n    }\n\n    override func visit(_ node: Type59Syntax) -> Kind {\n        let name59 = node.name.text\n        record(name59, kind: \"k59\")\n        return .visitChildren\n    }\n\n    private func checkNode40(_ node: Type40Syntax) {\n        let name40 = node.name.text\n        record(name40, kind: \"k40\")\n    }\n\n}\n",
+  "on": {
+   "must": [
+    {
+     "type": "extractedFunction",
+     "name": "checkNode40",
+     "old": [
+      243,
+      244
+     ]
+    }
+   ]
+  },
+  "off": {
+   "never": [
+    {
+     "type": "extractedFunction",
+     "name": "checkNode40",
+     "old": [
+      243,
+      244
+     ]
+    }
+   ]
+  }
+ },
+ {
+  "id": "kt-namesake-inline-kept",
+  "trial": "FN_PAIRING",
+  "language": "kotlin",
+  "file": "Entries.kt",
+  "title": "kotlin: entrySet() that called createEntrySet() now holds its body: still an inline",
+  "old": "class Table {\n    fun entrySet(): Set<Entry> = createEntrySet()\n\n    private fun createEntrySet(): Set<Entry> {\n        val out = LinkedHashSet<Entry>()\n        for (row in rows) {\n            out.add(Entry(row.key, row.value))\n        }\n        return out\n    }\n}\n",
+  "new": "class Table {\n    fun entrySet(): Set<Entry> {\n        val out = LinkedHashSet<Entry>()\n        for (row in rows) {\n            out.add(Entry(row.key, row.value))\n        }\n        return out\n    }\n}\n",
+  "on": {
+   "must": [
+    {
+     "type": "inlinedFunction"
+    }
+   ]
+  },
+  "off": {
+   "must": [
+    {
+     "type": "inlinedFunction"
+    }
+   ]
+  }
+ },
+ {
+  "id": "kt-forwarder-extract-kept",
+  "trial": "FN_PAIRING",
+  "language": "kotlin",
+  "file": "Builder.kt",
+  "title": "kotlin: addSubclass renamed to subclass, addSubclass kept as a forwarder to it: still an extract",
+  "old": "class Builder<Base : Any> {\n    fun <T : Base> addSubclass(subclass: KClass<T>, serializer: KSerializer<T>) {\n        subclasses.add(subclass to serializer)\n    }\n\n    fun <T : Base> KClass<T>.with(serializer: KSerializer<T>): Unit = addSubclass(this, serializer)\n}\n",
+  "new": "class Builder<Base : Any> {\n    fun <T : Base> subclass(subclass: KClass<T>, serializer: KSerializer<T>) {\n        subclasses.add(subclass to serializer)\n    }\n\n    @Deprecated(\"Use subclass\")\n    fun <T : Base> addSubclass(subclass: KClass<T>, serializer: KSerializer<T>): Unit = subclass(subclass, serializer)\n\n    fun <T : Base> KClass<T>.with(serializer: KSerializer<T>): Unit = subclass(this, serializer)\n}\n",
+  "on": {
+   "must": [
+    {
+     "type": "extractedFunction"
+    }
+   ]
+  },
+  "off": {
+   "must": [
+    {
+     "type": "extractedFunction"
+    }
+   ]
+  }
+ }
+]

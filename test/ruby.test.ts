@@ -104,5 +104,6 @@ test('moved-with-edits is held back in Ruby: the lines are plain edits', async (
   const t = await shipped(`class A\n${moving(3)}\n${long('a')}\n${long('c')}end\n`, `class A\n${long('a')}\n${long('c')}\n${moving(30)}end\n`);
   assert.ok(!t.includes('movedWithEdit') && !t.includes('moved') && t.some((x) => x === 'edited' || x === 'added' || x === 'deleted'), t.join());
   const { LANGUAGES } = await import('../src/parse.ts');
-  for (const [id, cfg] of Object.entries(LANGUAGES)) if (id !== 'ruby' && id !== 'kotlin' && id !== 'swift') assert.equal(cfg.holdBack, undefined, id);
+  // Every other language holds back movedWithEdit only (held4).
+  for (const [id, cfg] of Object.entries(LANGUAGES)) if (id !== 'ruby' && id !== 'kotlin' && id !== 'swift') assert.deepEqual([...(cfg.holdBack ?? [])], ['movedWithEdit'], id);
 });

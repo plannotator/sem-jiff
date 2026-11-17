@@ -28,6 +28,7 @@ for (const c of cases) {
     }
     assert.deepEqual(brokenRules(c.old, c.new, r), []);
     const ops = r.semanticOperations.filter((o) => SEMANTIC.has(o.type)).map((o) => ({ type: o.type, old: o.lines.old.map((l) => [l.start, l.end]), new: o.lines.new.map((l) => [l.start, l.end]) }));
-    assert.deepEqual(ops, c.ops);
+    // Pinned before movedWithEdit was held back in every language (held4): as shipped those lines are plain edits.
+    assert.deepEqual(ops, (c.ops as Array<{ type: string }>).filter((o) => o.type !== 'movedWithEdit'));
   });
 }

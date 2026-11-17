@@ -42,6 +42,7 @@ node harness/score.ts                      # score every set
 node harness/score.ts --set held-effect    # one set
 node harness/score.ts --engine <other-checkout>   # compare another version of the engine
 SEMANTIC_NO_<RULE>=1 node harness/score.ts --set practice --label rule-off   # one rule off
+SEMANTIC_TRY_<RULE>=1 node harness/score.ts --set <fresh-set> --label trial-on   # one trial rule on (off by default)
 python3 harness/analysis/judge.py rule-off rule-on    # did the rule help? (reads the ledger)
 harness/unlabelled.sh <out-dir> [SEMANTIC_NO_<RULE>=1]   # practice claims with no label yet
 ```

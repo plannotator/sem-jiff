@@ -5,9 +5,11 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { languageForPath, semanticDiffFile } from '../../src/index.ts';
-import { switchRulesOff } from '../../src/runtime.ts';
+import { switchRulesOff, switchTrialsOn } from '../../src/runtime.ts';
 
 switchRulesOff(Object.keys(process.env).filter((k) => k.startsWith('SEMANTIC_NO_') && process.env[k]).map((k) => k.slice('SEMANTIC_NO_'.length)));
+// SEMANTIC_TRY_<RULE>=1 switches a trial rule on (off by default), as in bench/recall.ts.
+switchTrialsOn(Object.keys(process.env).filter((k) => k.startsWith('SEMANTIC_TRY_') && process.env[k]).map((k) => k.slice('SEMANTIC_TRY_'.length)));
 
 const here = path.dirname(new URL(import.meta.url).pathname);
 const work = process.env.WORK ?? path.join(here, '..', 'work');

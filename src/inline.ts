@@ -9,7 +9,7 @@
 import type { Node } from 'web-tree-sitter';
 import { isComment, type LanguageConfig } from './parse.ts';
 import { likelyMoved, probabilityMoved, type Evidence } from './classifier.ts';
-import { currentSetup, flags, rule, type Candidate } from './runtime.ts';
+import { currentSetup, flags, rule, trial, type Candidate } from './runtime.ts';
 import { pairFunctions } from './pairing.ts';
 import type { SemanticDiffLineRange, SemanticDiffOperation } from './pierre-types.ts';
 import {
@@ -91,6 +91,111 @@ function boilerplate(roots: Node[], cfg: LanguageConfig): Set<string> {
   }
   return out;
 }
+/** Statements of a tree by shape (short ones only, as in boilerplate). */
+function statementsByShape(root: Node, cfg: LanguageConfig): Map<string, Node[]> {
+  const out = new Map<string, Node[]>();
+  for (const st of allStatements(root, cfg)) {
+    const k = shape(st);
+    if (k !== null) out.set(k, [...(out.get(k) ?? []), st]);
+  }
+  return out;
+}
+
+const inside = (n: Node, outer: Node) => outer.startIndex <= n.startIndex && n.endIndex <= outer.endIndex;
+
+/**
+ * Trial RUBY_SHAPES: a helper pulled out of several callers left one copy of each of its statements per caller, which
+ * reads as repetition. Such a statement is evidence after all for this helper when, on the helper's side, every
+ * copy is inside the helper, and on the other side every copy is inside a caller of it.
+ */
+function repeatedFor(
+  helper: FunctionInfo,
+  fns: FunctionInfo[],
+  counterpart: (f: FunctionInfo) => FunctionInfo | null | undefined,
+  common: Set<string>,
+  [here, there]: readonly [Map<string, Node[]>, Map<string, Node[]>],
+  cfg: LanguageConfig
+): Set<string> {
+  const callers = fns.flatMap((f) => {
+    const other = f !== helper ? counterpart(f) : null;
+    return other && callsTo(f.node, helper.name, cfg, helper.node).some((c) => !inside(c, helper.node)) ? [other.node] : [];
+  });
+  if (!callers.length) return common;
+  const out = new Set(common);
+  for (const st of allStatements(helper.body, cfg)) {
+    const k = shape(st);
+    if (k === null || !common.has(k)) continue;
+    const mine = here.get(k) ?? [];
+    const theirs = there.get(k) ?? [];
+    if (mine.every((n) => inside(n, helper.node)) && theirs.length >= 2 && theirs.every((n) => callers.some((c) => inside(n, c)))) out.delete(k);
+  }
+  return out;
+}
+
+/** Leaf tokens with their offsets, as tokens() reads them. */
+function leaves(n: Node): Array<{ text: string; start: number; end: number }> {
+  const out: Array<{ text: string; start: number; end: number }> = [];
+  const stack: Node[] = [n];
+  while (stack.length) {
+    const x = stack.pop()!;
+    if (isComment(x)) continue;
+    if (x.childCount === 0) { if (x.text.length) out.push({ text: x.text, start: x.startIndex, end: x.endIndex }); continue; }
+    for (let i = x.childCount - 1; i >= 0; i--) { const c = x.child(i); if (c) stack.push(c); }
+  }
+  return out;
+}
+
+/**
+ * Trial RUBY_SHAPES: the call replaced one expression of a statement and nothing else in it changed (`params:
+ * env[Q].merge(env[F] || Hash[])` became `params: extract_params(env)`). That place anchors the old expression,
+ * so it is the helper's value when it is similar enough (half its tokens, the same calls, no other literals).
+ */
+function inPlace(call: Node, value: Node, body: Node, fresh: Node[], cfg: LanguageConfig): Node | null {
+  let st: Node = call;
+  while (st.parent && st.parent.id !== body.id && !(cfg.blockTypes.has(st.parent.type) && cfg.statementsOf(st.parent).some((x) => x.id === st.id))) st = st.parent;
+  if (st.id === call.id) return null;
+  const ls = leaves(st);
+  const before = ls.filter((l) => l.end <= call.startIndex).map((l) => l.text);
+  const after = ls.filter((l) => l.start >= call.endIndex).map((l) => l.text);
+  if (before.length + after.length < 2) return null;
+  const want = tokens(value);
+  if (want.length < 3) return null;
+  const wantCalls = methodsCalled(value);
+  for (const f of outermost(fresh)) {
+    const lf = leaves(f);
+    const n = lf.length - before.length - after.length;
+    if (n < 3 || lf.slice(0, before.length).some((l, i) => l.text !== before[i]) || lf.slice(lf.length - after.length).some((l, i) => l.text !== after[i])) continue;
+    const mid = lf.slice(before.length, before.length + n);
+    if (dice(mid.map((l) => l.text), want) < 0.5) continue;
+    const node = f.descendantForIndex(mid[0]!.start, mid.at(-1)!.end);
+    if (!node || disjointLiterals(literals(node), literals(value))) continue;
+    const calls = methodsCalled(node);
+    if (wantCalls.size && ![...calls].some((x) => wantCalls.has(x))) continue;
+    return node;
+  }
+  return null;
+}
+
+/** Ruby: the names of the methods a node calls (`a.b.c(d)` calls b and c). */
+function methodsCalled(n: Node): Set<string> {
+  const out = new Set<string>();
+  const stack: Node[] = [n];
+  while (stack.length) {
+    const x = stack.pop()!;
+    if (x.type === 'call') { const m = x.childForFieldName('method')?.text; if (m) out.add(m); }
+    for (const c of x.namedChildren) if (c) stack.push(c);
+  }
+  return out;
+}
+
+/** Ruby: the call is a statement of its own (also as the body of a modifier `if`), so its value is not used. */
+function valueDropped(call: Node, cfg: LanguageConfig): boolean {
+  let x = call;
+  while (x.parent && /^(if|unless|while|until)_modifier$/.test(x.parent.type) && x.parent.childForFieldName('body')?.id === x.id) x = x.parent;
+  const block = x.parent;
+  return !!block && cfg.blockTypes.has(block.type) && cfg.statementsOf(block).some((s) => s.id === x.id);
+}
+
 const why = (helper: string, reason: string) => { if (flags.reasons()) console.error(`[inline] ${helper}: ${reason}`); };
 
 /** `const x = helper(...)` where the helper returns the identifier `x`. */
@@ -104,6 +209,28 @@ function assignsToSameName(call: Node, value: Node): boolean {
   return false;
 }
 
+/** The literal text in a node: string pieces around any code inside, and symbols (`"msg"`, `:no_session`). */
+function literals(n: Node): Set<string> {
+  const out = new Set<string>();
+  const walk = (x: Node) => {
+    if (isComment(x)) return;
+    if ((/string|template/.test(x.type) && !/content|fragment/.test(x.type)) || /^(simple_symbol|delimited_symbol|hash_key_symbol|symbol_literal)$/.test(x.type)) {
+      // The code inside a string (`"${a.line}:"`) is not literal: only the text around it counts.
+      let text = x.text;
+      for (const c of [...x.namedChildren].reverse()) if (c && /interpolation|substitution|template_|expression/.test(c.type)) text = text.slice(0, c.startIndex - x.startIndex) + '\u0000' + text.slice(c.endIndex - x.startIndex);
+      // Pieces with a letter or digit: quotes and separators say nothing.
+      for (const piece of text.split('\u0000')) if (/[\p{L}\p{N}]/u.test(piece)) out.add(piece);
+      return;
+    }
+    for (const c of x.namedChildren) if (c) walk(c);
+  };
+  walk(n);
+  return out;
+}
+
+/** Both have literals and share none. */
+const disjointLiterals = (a: Set<string>, b: Set<string>) => a.size > 0 && b.size > 0 && ![...a].some((x) => b.has(x));
+
 /** Best one-to-one pairing of two statement lists by similarity, greedy and deterministic. */
 /** Statements this long (in tokens) rarely look alike by chance. */
 const LONG_STATEMENT = 25;
@@ -111,6 +238,11 @@ const LONG_STATEMENT = 25;
 function pairStatements(a: Node[], b: Node[], min: number, common: Set<string> = new Set()): Array<{ a: Node; b: Node; similarity: number }> {
   const ta = a.map(tokens);
   const tb = b.map(tokens);
+  // Trial XI_EVIDENCE: lookalikes that differ only in their literals are different code
+  // (`emit(offset, "Missing comma")` is not `emit(offset, "Unnecessary comma")`, `fetch :error` is not `fetch :no_session`).
+  const literalAware = trial('XI_EVIDENCE');
+  const la = literalAware ? a.map(literals) : [];
+  const lb = literalAware ? b.map(literals) : [];
   const wa = a.map(words);
   const wb = b.map(words);
   const ca = ta.map((t) => new Set(calledNames(t)));
@@ -127,7 +259,7 @@ function pairStatements(a: Node[], b: Node[], min: number, common: Set<string> =
       // Same punctuation and keywords is not enough: `db, err := openDB(cfg.DSN)` is
       // not `exp, err := newExporter(cfg.TraceURL)`. In a short statement, where shapes repeat
       // by chance, most names and values must match too (60%); a long one is evidence by its length.
-      if (s >= min && sameAction(i, j) && (x.length >= LONG_STATEMENT || !wa[i]!.length || dice(wa[i]!, wb[j]!) >= 0.6)) candidates.push([s, i, j]);
+      if (s >= min && sameAction(i, j) && (x.length >= LONG_STATEMENT || !wa[i]!.length || dice(wa[i]!, wb[j]!) >= 0.6) && (!literalAware || !disjointLiterals(la[i]!, lb[j]!))) candidates.push([s, i, j]);
     });
   });
   candidates.sort((p, q) => q[0] - p[0] || p[1] - q[1] || p[2] - q[2]);
@@ -192,7 +324,8 @@ function findReplacementAnywhere(
     if (hit) return hit;
   }
   const want = tokens(value);
-  const names = check === 'keepNames' ? want.filter((t) => /^[A-Za-z_$][\w$]*$/.test(t)) : [];
+  // Trial XI_EVIDENCE: a Ruby symbol names what it fetches or sends (`fetch :no_session` is not `fetch :error`): kept too.
+  const names = check === 'keepNames' ? want.filter((t) => /^[A-Za-z_$][\w$]*$/.test(t) || (trial('XI_EVIDENCE') && /^:[A-Za-z_]\w*[?!=]?$/.test(t))) : [];
   // Calls in the arguments at the call site stand in for the helper's parameters.
   const wantCalls = new Set([...calledNames(want), ...(passedIn ? calledNames(tokens(passedIn)) : [])]);
   // The older code may not call anything the newer value does not (`Config.FileNames()` is not `Config.BaseDirectory()`).
@@ -203,12 +336,13 @@ function findReplacementAnywhere(
     (check !== 'sameCalls' || calledNames(t).every((c) => wantCalls.has(c))) && valueCalls.every((c) => calledNames(t).includes(c));
   let best: Node | null = null;
   let bestScore = minSimilarity;
+  const wantLiterals = trial('XI_EVIDENCE') ? literals(value) : null;
   const walk = (n: Node) => {
     if (n.startIndex >= after && inFresh(n) && n.namedChildCount > 0) {
       const t = tokens(n);
       if (t.length >= want.length / 2 && t.length <= want.length * 2) {
         const s = dice(want, t);
-        if (s > bestScore && names.every((x) => t.includes(x)) && callsOk(t) && (params === null || sameOrder(want, t, params, VALUE_ORDER))) {
+        if (s > bestScore && names.every((x) => t.includes(x)) && callsOk(t) && (params === null || sameOrder(want, t, params, VALUE_ORDER)) && !(wantLiterals && disjointLiterals(wantLiterals, literals(n)))) {
           bestScore = s;
           best = n;
         }
@@ -361,6 +495,12 @@ export function detectInlined(
   const oldLines = oldText.split('\n');
   const ops: SemanticDiffOperation[] = [];
   const common = boilerplate([oldRoot, newRoot], cfg);
+  // Trial XI_EVIDENCE: every candidate is scored first, then assigned one to one (see assignEvidence).
+  const oneToOne = trial('XI_EVIDENCE');
+  const accepted: Accepted[] = [];
+  // Trial RUBY_SHAPES (Ruby): see repeatedFor and tailIsValue.
+  const rubyShapes = trial('RUBY_SHAPES') && cfg.id === 'ruby';
+  const copies = rubyShapes ? [statementsByShape(oldRoot, cfg), statementsByShape(newRoot, cfg)] as const : null;
 
   for (const helper of oldFns.filter((f) => {
     if (counterpart(f)) { why(f.name, 'not a candidate: it still exists on the other side'); return false; }
@@ -369,6 +509,7 @@ export function detectInlined(
   })) {
     // Debug only: why a helper never became a candidate with any caller.
     const seen = flags.reasons() ? { calledByUnpaired: 0, stillCalled: 0, candidates: 0 } : null;
+    const helperCommon = copies ? repeatedFor(helper, oldFns, counterpart, common, copies, cfg) : common;
     for (const caller of oldFns) {
       if (caller === helper) continue;
       const callerNew = counterpart(caller);
@@ -381,12 +522,20 @@ export function detectInlined(
       if (!calls.length) continue;
       if (callsTo(callerNew.node, helper.name, cfg, rule('STILL_CALLED_ARITY') ? helper.node : undefined).length) { if (seen) seen.stillCalled++; continue; }
       if (seen) seen.candidates++;
+      // Trial XI_EVIDENCE: code inside a parse error is no evidence of anything.
+      if (oneToOne && [helper, caller, callerNew].some((f) => unreadable(f.node))) { why(helper.name, 'not a candidate: its helper or caller sits inside a parse error'); continue; }
 
-      const c = makeCase({ helper, caller, callerNew, calls, oldFns, newFns, cfg, common, options });
+      let c = makeCase({ helper, caller, callerNew, calls, oldFns, newFns, cfg, common: helperCommon, options });
       // Evidence 1: the helper's statements reappear one by one. Evidence 2, when statements changed
       // shape on the way (`x = A` in an if/else chain became `return A`): the helper's tokens line up,
       // in order, with the code the caller lost.
       let found = byStatements(c) ?? alignedTokens(c.stmts, c.fresh, helper.name, callerNew.body, caller.body, helper.node);
+      // Trial RUBY_SHAPES: the tail read as a statement did not pair; read it as the value, as by default.
+      if (!found && c.tailDropped) {
+        why(helper.name, 'tail as a statement found nothing: read as the value');
+        c = makeCase({ helper, caller, callerNew, calls, oldFns, newFns, cfg, common: helperCommon, options, tailAsValue: true });
+        found = byStatements(c) ?? alignedTokens(c.stmts, c.fresh, helper.name, callerNew.body, caller.body, helper.node);
+      }
       // The rules above are strict on purpose. A candidate they reject can still be accepted by the
       // learned check (`classifier.ts`) or a second opinion (a decision model), each with its own guards.
       const secondOpinion = options.secondOpinion ?? currentSetup().secondOpinion;
@@ -398,12 +547,58 @@ export function detectInlined(
       if (!found && ev && secondOpinion) found = bySecondOpinion(c, ev, secondOpinion);
       if (!found) continue;
       const { pairs, replacement } = found;
-      ops.push(buildOperation({ helper, calls, ret: c.ret, pairs, replacement, oldLines }));
+      if (oneToOne) accepted.push({ c, pairs, replacement, order: accepted.length });
+      else ops.push(buildOperation({ helper, calls, ret: c.ret, pairs, replacement, oldLines }));
     }
     if (seen && !seen.candidates)
       why(helper.name, seen.stillCalled ? 'not a candidate: callers still call it' : seen.calledByUnpaired ? "not a candidate: its callers have no counterpart on the other side" : 'not a candidate: no call to it found');
   }
+  if (oneToOne) for (const a of assignEvidence(accepted)) ops.push(buildOperation({ helper: a.c.helper, calls: a.c.calls, ret: a.c.ret, pairs: a.pairs, replacement: a.replacement, oldLines }));
   return ops;
+}
+
+/**
+ * The function sits inside a parse error: the parser lost the code around it (a class header it could not read
+ * turns the members into top-level functions). An error inside a function (newer syntax the grammar lacks) is
+ * not enough: the function is still where it was.
+ */
+function unreadable(n: Node): boolean {
+  for (let p = n.parent; p; p = p.parent) if (p.isError) return true;
+  return false;
+}
+
+type Accepted = { c: Case; pairs: Pair[]; replacement: Node | null; order: number };
+
+/**
+ * Trial XI_EVIDENCE: one piece of evidence backs one operation. A statement of the caller's other version, the
+ * expression that replaced a call, and a call site belong to the candidate that explains the most of its helper
+ * (helper tokens matched, weighted by similarity; then the share of its helper); a helper may still go to several callers. A candidate that
+ * shares a call site loses; one that shares moved code keeps what is left only if that still covers enough of its
+ * helper. Candidates are not handed leftover lines: a loser is rebuilt from its own evidence or dropped.
+ */
+function assignEvidence(cands: Accepted[]): Accepted[] {
+  const helperTokens = (c: Case) => c.stmts.reduce((n, s) => n + tokens(s).length, 0) || 1;
+  const valueTokens = (a: Accepted) => (a.replacement ? tokens(a.replacement).length : 0);
+  const score = (a: Accepted, pairs: Pair[]) => pairs.reduce((n, p) => n + tokens(p.a).length * p.similarity, 0) + valueTokens(a);
+  // The same node, not merely nested: two helpers can come out of one large statement.
+  const overlaps = (x: Node, y: Node) => x.startIndex === y.startIndex && x.endIndex === y.endIndex;
+  const order = [...cands].sort((x, y) => score(y, y.pairs) - score(x, x.pairs) || score(y, y.pairs) / helperTokens(y.c) - score(x, x.pairs) / helperTokens(x.c) || x.order - y.order);
+  const usedBodies: Node[] = [];
+  const usedCalls = new Set<number>();
+  const out: Accepted[] = [];
+  for (const a of order) {
+    if (a.c.calls.some((call) => usedCalls.has(call.startIndex))) { why(a.c.helper.name, `one to one: its call site went to another candidate`); continue; }
+    const pairs = a.pairs.filter((p) => !usedBodies.some((u) => overlaps(u, p.b)));
+    const replacement = a.replacement && !usedBodies.some((u) => overlaps(u, a.replacement!)) ? a.replacement : null;
+    if (pairs.length < a.pairs.length || replacement !== a.replacement) {
+      const left = score({ ...a, replacement }, pairs) / helperTokens(a.c);
+      if ((!pairs.length && !replacement) || left < a.c.options.coverage) { why(a.c.helper.name, `one to one: its evidence went to another candidate (${left.toFixed(2)} left)`); continue; }
+    }
+    out.push({ ...a, pairs, replacement });
+    usedBodies.push(...pairs.map((p) => p.b), ...(replacement ? [replacement] : []));
+    for (const call of a.c.calls) usedCalls.add(call.startIndex);
+  }
+  return out.sort((x, y) => x.order - y.order);
 }
 
 type Pair = { a: Node; b: Node; similarity: number };
@@ -417,13 +612,18 @@ interface Case {
   /** Statements new in the caller, outside closures new to it. */
   fresh: Node[];
   cfg: LanguageConfig; common: Set<string>; options: InlineOptions;
+  /** Trial RUBY_SHAPES: the tail was read as a statement, not a value (see valueDropped). */
+  tailDropped?: boolean;
 }
 
-function makeCase(a: { helper: FunctionInfo; caller: FunctionInfo; callerNew: FunctionInfo; calls: Node[]; oldFns: FunctionInfo[]; newFns: FunctionInfo[]; cfg: LanguageConfig; common: Set<string>; options: InlineOptions }): Case {
+function makeCase(a: { helper: FunctionInfo; caller: FunctionInfo; callerNew: FunctionInfo; calls: Node[]; oldFns: FunctionInfo[]; newFns: FunctionInfo[]; cfg: LanguageConfig; common: Set<string>; options: InlineOptions; tailAsValue?: boolean }): Case {
   const { helper, caller, callerNew, calls, oldFns, newFns, cfg, common, options } = a;
   const stmts = helper.statements;
   const last = stmts.at(-1);
-  const ret = last && cfg.isReturn(last, true) ? last : null;
+  // Trial RUBY_SHAPES: an implicit return is no value when every call drops it.
+  const tailIsValue = !!a.tailAsValue || !(trial('RUBY_SHAPES') && cfg.id === 'ruby' && last?.type !== 'return' && calls.every((c) => valueDropped(c, cfg)));
+  const ret = last && tailIsValue && cfg.isReturn(last, true) ? last : null;
+  const tailDropped = !tailIsValue && !!last && cfg.isReturn(last, true);
   const moved = ret ? stmts.slice(0, -1) : stmts;
   const call = calls[0]!;
 
@@ -443,7 +643,7 @@ function makeCase(a: { helper: FunctionInfo; caller: FunctionInfo; callerNew: Fu
   const fresh = allStatements(callerNew.body, cfg).filter(
     (s) => !before.has(key(s)) && !nested.some((f) => declares(s, f) || (f.node.startIndex <= s.startIndex && s.endIndex <= f.node.endIndex))
   );
-  return { helper, caller, callerNew, calls, call, stmts, ret, moved, fresh, cfg, common, options };
+  return { helper, caller, callerNew, calls, call, stmts, ret, moved, fresh, cfg, common, options, tailDropped };
 }
 
 /** The rule: the helper's statements reappear, one by one, in code new to the caller (and its value at the call's place). */
@@ -471,12 +671,16 @@ function byStatements(c: Case): Found | null {
   const check = pairs.length ? 'none' : options.mirrored ? 'sameCalls' : 'keepNames';
   // `const x = helper()` + `return x`: the helper's own `x` took over, so no expression replaced the
   // call. Looking for one anyway would land on some later use of `x` and claim that line.
-  const replacement = value && calls.length === 1 && !assignsToSameName(call, value) ? findReplacement(callerNew.body, value, afterMoved, inFresh, pairs.length ? 0.6 : 0.8, check, call.childForFieldName('arguments'), !pairs.length && helper.body.type !== 'statement_block' && helper.body.parent?.type === 'arrow_function' ? parameterNames(helper) : null, substitutedValue(helper, value, call), !pairs.length && stmts.length === 1 ? caller.body : null, caller.body) : null;
+  const found = value && calls.length === 1 && !assignsToSameName(call, value) ? findReplacement(callerNew.body, value, afterMoved, inFresh, pairs.length ? 0.6 : 0.8, check, call.childForFieldName('arguments'), !pairs.length && helper.body.type !== 'statement_block' && helper.body.parent?.type === 'arrow_function' ? parameterNames(helper) : null, substitutedValue(helper, value, call), !pairs.length && stmts.length === 1 ? caller.body : null, caller.body) : null;
+  // Trial RUBY_SHAPES: an edited value is still found where the call took its place in an otherwise unchanged statement.
+  const replacement = found ?? (value && calls.length === 1 && trial('RUBY_SHAPES') && cfg.id === 'ruby' ? inPlace(call, value, caller.body, fresh, cfg) : null);
   // No replacement expression: accept only when the call's result was stored in a
   // variable of the same name the helper returned (`const x = helper()` + `return x`),
   // so the helper's own `x` simply took over.
   // Boilerplate statements still count in the total: they cannot be evidence, but the helper is made of them.
   const helperTokens = stmts.reduce((n, s) => n + tokens(s).length, 0) || 1;
+  // The tiny-value rule below, for a tail read as a statement: `def finish; close; end` is no evidence.
+  if (c.tailDropped && helperTokens < 3) { why(helper.name, 'only a tiny statement reappears'); return null; }
   // When most of the helper's statements came from the caller, its return value
   // may be new (`return true`, `return nil`): the moved code is evidence enough.
   const movedShare = pairs.reduce((n, p) => n + tokens(p.a).length * p.similarity, 0) / helperTokens;

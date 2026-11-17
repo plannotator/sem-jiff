@@ -17,6 +17,10 @@ import type { Node } from 'web-tree-sitter';
 import { languageForPath, semanticDiffFile } from '../src/index.ts';
 import { getParser, LANGUAGES, type LanguageConfig, type LanguageId } from '../src/parse.ts';
 import { functionsIn, isMethod, type FunctionInfo } from '../src/syntax.ts';
+import { switchTrialsOn } from '../src/runtime.ts';
+
+// SEMANTIC_TRY_<RULE>=1 switches a trial rule on (off by default), as in bench/recall.ts.
+switchTrialsOn(Object.keys(process.env).filter((k) => k.startsWith('SEMANTIC_TRY_') && process.env[k]).map((k) => k.slice('SEMANTIC_TRY_'.length)));
 
 const [, , dataPath, maxFiles = '400', seedArg = '1'] = process.argv;
 if (!dataPath) throw new Error('usage: node bench/synthetic.ts data.json [max-files] [seed]');

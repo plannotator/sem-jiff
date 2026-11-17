@@ -1,5 +1,20 @@
 # Changelog
 
+## 0.2.2 (trust release)
+
+Two safety fixes from the held4 blind set (110 projects, 11 languages). Both only take claims away.
+
+- `reformatted` now needs the same words, inside strings and docstrings too. A Python string holding an escape
+  sequence (`\\_`, `\n`) parses as the escape alone, so the words around it were never compared: reworded
+  docstrings, deleted `.. versionadded::` notes and renamed doctest variables were called formatting (58 of 150
+  sampled Python claims wrong). Rewrapping keeps the claim; changing a word makes the lines plain edits. Rule
+  `REFORMAT_WORDS`.
+- Moved-with-edits is held back in every language: about 1 in 3 sampled claims paired two different functions or
+  blocks (Go about 8%, Kotlin about 63%). Its lines show as plain edits.
+
+Also in the code, switched off: eleven trial rules (`SEMANTIC_TRY_*`) that were scored on the same blind set and did
+not pass. They change nothing unless switched on.
+
 ## 0.2.1
 
 Held back in Swift, Ruby and Kotlin: claims whose wrong rate, measured on a fresh blind set, could be above our
